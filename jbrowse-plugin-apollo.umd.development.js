@@ -1,8 +1,8 @@
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@jbrowse/core/Plugin'), require('@jbrowse/core/util'), require('@jbrowse/core/configuration'), require('@jbrowse/core/pluggableElementTypes'), require('@mui/material/utils'), require('react/jsx-runtime'), require('mobx'), require('mobx-state-tree'), require('@mui/material'), require('tss-react/mui'), require('react'), require('@jbrowse/core/ui'), require('mobx-react'), require('@jbrowse/core/util/types/mst'), require('@jbrowse/core/util/io'), require('@mui/material/Checkbox'), require('@mui/material/FormControlLabel'), require('@mui/material/LinearProgress'), require('@mui/x-data-grid'), require('@jbrowse/core/pluggableElementTypes/AdapterType'), require('@jbrowse/core/data_adapters/BaseAdapter'), require('@jbrowse/core/util/rxjs'), require('@jbrowse/core/util/tracks')) :
-	typeof define === 'function' && define.amd ? define(['exports', '@jbrowse/core/Plugin', '@jbrowse/core/util', '@jbrowse/core/configuration', '@jbrowse/core/pluggableElementTypes', '@mui/material/utils', 'react/jsx-runtime', 'mobx', 'mobx-state-tree', '@mui/material', 'tss-react/mui', 'react', '@jbrowse/core/ui', 'mobx-react', '@jbrowse/core/util/types/mst', '@jbrowse/core/util/io', '@mui/material/Checkbox', '@mui/material/FormControlLabel', '@mui/material/LinearProgress', '@mui/x-data-grid', '@jbrowse/core/pluggableElementTypes/AdapterType', '@jbrowse/core/data_adapters/BaseAdapter', '@jbrowse/core/util/rxjs', '@jbrowse/core/util/tracks'], factory) :
-	(global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.JBrowsePluginApollo = {}, global.JBrowseExports["@jbrowse/core/Plugin"], global.JBrowseExports["@jbrowse/core/util"], global.JBrowseExports["@jbrowse/core/configuration"], global.JBrowseExports["@jbrowse/core/pluggableElementTypes"], global.JBrowseExports["@mui/material/utils"], global.JBrowseExports["react/jsx-runtime"], global.JBrowseExports.mobx, global.JBrowseExports["mobx-state-tree"], global.JBrowseExports["@mui/material"], global.JBrowseExports["tss-react/mui"], global.JBrowseExports.react, global.JBrowseExports["@jbrowse/core/ui"], global.JBrowseExports["mobx-react"], global.JBrowseExports["@jbrowse/core/util/types/mst"], global.JBrowseExports["@jbrowse/core/util/io"], global.JBrowseExports["@mui/material/Checkbox"], global.JBrowseExports["@mui/material/FormControlLabel"], global.JBrowseExports["@mui/material/LinearProgress"], global.JBrowseExports["@mui/x-data-grid"], global.JBrowseExports["@jbrowse/core/pluggableElementTypes/AdapterType"], global.JBrowseExports["@jbrowse/core/data_adapters/BaseAdapter"], global.JBrowseExports["@jbrowse/core/util/rxjs"], global.JBrowseExports["@jbrowse/core/util/tracks"]));
-})(this, (function (exports, require$$1$1, require$$1$2, configuration, pluggableElementTypes, require$$0$2, require$$2$1, mobx, require$$1$3, material, mui, React, ui, mobxReact, mst, io, Checkbox, FormControlLabel, LinearProgress, xDataGrid, AdapterType, BaseAdapter, rxjs, tracks) { 'use strict';
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@jbrowse/core/Plugin'), require('@jbrowse/core/util'), require('@jbrowse/core/configuration'), require('@jbrowse/core/pluggableElementTypes'), require('@mui/material/utils'), require('react/jsx-runtime'), require('mobx'), require('mobx-state-tree'), require('@mui/material'), require('react'), require('tss-react/mui'), require('@jbrowse/core/ui'), require('mobx-react'), require('@jbrowse/core/util/types/mst'), require('@jbrowse/core/util/io'), require('@mui/material/Checkbox'), require('@mui/material/FormControlLabel'), require('@mui/material/LinearProgress'), require('@mui/x-data-grid'), require('@jbrowse/core/pluggableElementTypes/AdapterType'), require('@jbrowse/core/data_adapters/BaseAdapter'), require('@jbrowse/core/util/rxjs'), require('@jbrowse/core/util/tracks')) :
+	typeof define === 'function' && define.amd ? define(['exports', '@jbrowse/core/Plugin', '@jbrowse/core/util', '@jbrowse/core/configuration', '@jbrowse/core/pluggableElementTypes', '@mui/material/utils', 'react/jsx-runtime', 'mobx', 'mobx-state-tree', '@mui/material', 'react', 'tss-react/mui', '@jbrowse/core/ui', 'mobx-react', '@jbrowse/core/util/types/mst', '@jbrowse/core/util/io', '@mui/material/Checkbox', '@mui/material/FormControlLabel', '@mui/material/LinearProgress', '@mui/x-data-grid', '@jbrowse/core/pluggableElementTypes/AdapterType', '@jbrowse/core/data_adapters/BaseAdapter', '@jbrowse/core/util/rxjs', '@jbrowse/core/util/tracks'], factory) :
+	(global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.JBrowsePluginApollo = {}, global.JBrowseExports["@jbrowse/core/Plugin"], global.JBrowseExports["@jbrowse/core/util"], global.JBrowseExports["@jbrowse/core/configuration"], global.JBrowseExports["@jbrowse/core/pluggableElementTypes"], global.JBrowseExports["@mui/material/utils"], global.JBrowseExports["react/jsx-runtime"], global.JBrowseExports.mobx, global.JBrowseExports["mobx-state-tree"], global.JBrowseExports["@mui/material"], global.JBrowseExports.react, global.JBrowseExports["tss-react/mui"], global.JBrowseExports["@jbrowse/core/ui"], global.JBrowseExports["mobx-react"], global.JBrowseExports["@jbrowse/core/util/types/mst"], global.JBrowseExports["@jbrowse/core/util/io"], global.JBrowseExports["@mui/material/Checkbox"], global.JBrowseExports["@mui/material/FormControlLabel"], global.JBrowseExports["@mui/material/LinearProgress"], global.JBrowseExports["@mui/x-data-grid"], global.JBrowseExports["@jbrowse/core/pluggableElementTypes/AdapterType"], global.JBrowseExports["@jbrowse/core/data_adapters/BaseAdapter"], global.JBrowseExports["@jbrowse/core/util/rxjs"], global.JBrowseExports["@jbrowse/core/util/tracks"]));
+})(this, (function (exports, require$$1$1, require$$1$2, configuration, pluggableElementTypes, require$$0$2, require$$2$1, mobx, require$$1$3, material, React, mui, ui, mobxReact, mst, io, Checkbox, FormControlLabel, LinearProgress, xDataGrid, AdapterType, BaseAdapter, rxjs, tracks) { 'use strict';
 
 	function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -17757,13 +17757,19 @@
 	        var _changes = _slicedToArray(changes, 1),
 	          _changes$ = _changes[0],
 	          attributes = _changes$.attributes,
-	          featureId = _changes$.featureId;
+	          featureId = _changes$.featureId,
+	          attributeAdded = _changes$.attributeAdded,
+	          attributeEdited = _changes$.attributeEdited,
+	          attributeDeleted = _changes$.attributeDeleted;
 	        return {
 	          typeName: typeName,
 	          changedIds: changedIds,
 	          assembly: assembly,
 	          featureId: featureId,
-	          attributes: attributes
+	          attributes: attributes,
+	          attributeAdded: attributeAdded,
+	          attributeEdited: attributeEdited,
+	          attributeDeleted: attributeDeleted
 	        };
 	      }
 	      return {
@@ -20298,8 +20304,8 @@
 	CoreValidation$1.CoreValidation = void 0;
 	CoreValidation$1.isTypeChange = isTypeChange;
 	var tslib_1$2 = require$$0$1;
-	var soSequenceTypes_1 = /*#__PURE__*/tslib_1$2.__importDefault(soSequenceTypes$1);
 	var Validation_1$1 = Validation$1;
+	var soSequenceTypes_1 = /*#__PURE__*/tslib_1$2.__importDefault(soSequenceTypes$1);
 	function isTypeChange(thing) {
 	  return 'oldType' in thing && 'newType' in thing;
 	}
@@ -21228,7 +21234,7 @@
 	}), 'Add');
 	default_1$j = Add["default"] = _default$l;
 
-	var version = "0.3.5";
+	var version = "0.3.6";
 
 	const ApolloConfigSchema = configuration.ConfigurationSchema('ApolloInternetAccount', {
 	    baseURL: {
@@ -28754,36 +28760,46 @@
 	    return checkResults;
 	}
 
-	function getFeatureName(feature) {
+	function getFeatureName$1(feature) {
 	    const { attributes } = feature;
-	    const name = attributes.get('gff_name');
-	    if (name) {
-	        return name[0];
+	    const keys = [
+	        'name',
+	        'gff_name',
+	        'gene_name',
+	        'transcript_name',
+	        'exon_name',
+	        'protein_name',
+	    ];
+	    for (const key of keys) {
+	        const value = attributes.get(key);
+	        if (value?.[0]) {
+	            return value[0];
+	        }
 	    }
 	    return '';
 	}
 	function getFeatureId$1(feature) {
 	    const { attributes } = feature;
-	    const id = attributes.get('gff_id');
-	    const transcript_id = attributes.get('transcript_id');
-	    const exon_id = attributes.get('exon_id');
-	    const protein_id = attributes.get('protein_id');
-	    if (id) {
-	        return id[0];
-	    }
-	    if (transcript_id) {
-	        return transcript_id[0];
-	    }
-	    if (exon_id) {
-	        return exon_id[0];
-	    }
-	    if (protein_id) {
-	        return protein_id[0];
+	    const keys = [
+	        'id',
+	        'gff_id',
+	        'gene_id',
+	        'stable_id',
+	        'gene_stable_id',
+	        'transcript_id',
+	        'exon_id',
+	        'protein_id',
+	    ];
+	    for (const key of keys) {
+	        const value = attributes.get(key);
+	        if (value?.[0]) {
+	            return value[0];
+	        }
 	    }
 	    return '';
 	}
 	function getFeatureNameOrId$1(feature) {
-	    const name = getFeatureName(feature);
+	    const name = getFeatureName$1(feature);
 	    const id = getFeatureId$1(feature);
 	    if (name) {
 	        return `: ${name}`;
@@ -28820,19 +28836,75 @@
 	    return internetAccounts.find((ia) => ia.type === 'ApolloInternetAccount');
 	}
 
-	var Close = {};
+	var Info = {};
 
 	var _interopRequireDefault$i = interopRequireDefault.exports;
-	Object.defineProperty(Close, "__esModule", {
+	Object.defineProperty(Info, "__esModule", {
 	  value: true
 	});
-	var default_1$i = Close["default"] = void 0;
+	var default_1$i = Info["default"] = void 0;
 	var _createSvgIcon$i = /*#__PURE__*/_interopRequireDefault$i(createSvgIcon);
 	var _jsxRuntime$i = require$$2__default["default"];
 	var _default$k = /*#__PURE__*/(0, _createSvgIcon$i["default"])( /*#__PURE__*/(0, _jsxRuntime$i.jsx)("path", {
+	  d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+	}), 'Info');
+	default_1$i = Info["default"] = _default$k;
+
+	var Link = {};
+
+	var _interopRequireDefault$h = interopRequireDefault.exports;
+	Object.defineProperty(Link, "__esModule", {
+	  value: true
+	});
+	var default_1$h = Link["default"] = void 0;
+	var _createSvgIcon$h = /*#__PURE__*/_interopRequireDefault$h(createSvgIcon);
+	var _jsxRuntime$h = require$$2__default["default"];
+	var _default$j = /*#__PURE__*/(0, _createSvgIcon$h["default"])( /*#__PURE__*/(0, _jsxRuntime$h.jsx)("path", {
+	  d: "M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"
+	}), 'Link');
+	default_1$h = Link["default"] = _default$j;
+
+	var RadioButtonChecked = {};
+
+	var _interopRequireDefault$g = interopRequireDefault.exports;
+	Object.defineProperty(RadioButtonChecked, "__esModule", {
+	  value: true
+	});
+	var default_1$g = RadioButtonChecked["default"] = void 0;
+	var _createSvgIcon$g = /*#__PURE__*/_interopRequireDefault$g(createSvgIcon);
+	var _jsxRuntime$g = require$$2__default["default"];
+	var _default$i = /*#__PURE__*/(0, _createSvgIcon$g["default"])( /*#__PURE__*/(0, _jsxRuntime$g.jsx)("path", {
+	  d: "M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+	}), 'RadioButtonChecked');
+	default_1$g = RadioButtonChecked["default"] = _default$i;
+
+	var RadioButtonUnchecked = {};
+
+	var _interopRequireDefault$f = interopRequireDefault.exports;
+	Object.defineProperty(RadioButtonUnchecked, "__esModule", {
+	  value: true
+	});
+	var default_1$f = RadioButtonUnchecked["default"] = void 0;
+	var _createSvgIcon$f = /*#__PURE__*/_interopRequireDefault$f(createSvgIcon);
+	var _jsxRuntime$f = require$$2__default["default"];
+	var _default$h = /*#__PURE__*/(0, _createSvgIcon$f["default"])( /*#__PURE__*/(0, _jsxRuntime$f.jsx)("path", {
+	  d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+	}), 'RadioButtonUnchecked');
+	default_1$f = RadioButtonUnchecked["default"] = _default$h;
+
+	var Close = {};
+
+	var _interopRequireDefault$e = interopRequireDefault.exports;
+	Object.defineProperty(Close, "__esModule", {
+	  value: true
+	});
+	var default_1$e = Close["default"] = void 0;
+	var _createSvgIcon$e = /*#__PURE__*/_interopRequireDefault$e(createSvgIcon);
+	var _jsxRuntime$e = require$$2__default["default"];
+	var _default$g = /*#__PURE__*/(0, _createSvgIcon$e["default"])( /*#__PURE__*/(0, _jsxRuntime$e.jsx)("path", {
 	  d: "M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
 	}), 'Close');
-	default_1$i = Close["default"] = _default$k;
+	default_1$e = Close["default"] = _default$g;
 
 	/* eslint-disable @typescript-eslint/unbound-method */
 	const useStyles$h = mui.makeStyles()((theme) => ({
@@ -28854,64 +28926,8 @@
 	    return (React__default["default"].createElement(ui.Dialog, { ...other, header: React__default["default"].createElement(React__default["default"].Fragment, null,
 	            React__default["default"].createElement(material.DialogTitle, { className: classes.dialogTitle }, title),
 	            React__default["default"].createElement(material.IconButton, { "aria-label": "close", onClick: handleClose, className: classes.closeButton },
-	                React__default["default"].createElement(default_1$i, null))) }));
+	                React__default["default"].createElement(default_1$e, null))) }));
 	});
-
-	var RadioButtonUnchecked = {};
-
-	var _interopRequireDefault$h = interopRequireDefault.exports;
-	Object.defineProperty(RadioButtonUnchecked, "__esModule", {
-	  value: true
-	});
-	var default_1$h = RadioButtonUnchecked["default"] = void 0;
-	var _createSvgIcon$h = /*#__PURE__*/_interopRequireDefault$h(createSvgIcon);
-	var _jsxRuntime$h = require$$2__default["default"];
-	var _default$j = /*#__PURE__*/(0, _createSvgIcon$h["default"])( /*#__PURE__*/(0, _jsxRuntime$h.jsx)("path", {
-	  d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
-	}), 'RadioButtonUnchecked');
-	default_1$h = RadioButtonUnchecked["default"] = _default$j;
-
-	var RadioButtonChecked = {};
-
-	var _interopRequireDefault$g = interopRequireDefault.exports;
-	Object.defineProperty(RadioButtonChecked, "__esModule", {
-	  value: true
-	});
-	var default_1$g = RadioButtonChecked["default"] = void 0;
-	var _createSvgIcon$g = /*#__PURE__*/_interopRequireDefault$g(createSvgIcon);
-	var _jsxRuntime$g = require$$2__default["default"];
-	var _default$i = /*#__PURE__*/(0, _createSvgIcon$g["default"])( /*#__PURE__*/(0, _jsxRuntime$g.jsx)("path", {
-	  d: "M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
-	}), 'RadioButtonChecked');
-	default_1$g = RadioButtonChecked["default"] = _default$i;
-
-	var Info = {};
-
-	var _interopRequireDefault$f = interopRequireDefault.exports;
-	Object.defineProperty(Info, "__esModule", {
-	  value: true
-	});
-	var default_1$f = Info["default"] = void 0;
-	var _createSvgIcon$f = /*#__PURE__*/_interopRequireDefault$f(createSvgIcon);
-	var _jsxRuntime$f = require$$2__default["default"];
-	var _default$h = /*#__PURE__*/(0, _createSvgIcon$f["default"])( /*#__PURE__*/(0, _jsxRuntime$f.jsx)("path", {
-	  d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
-	}), 'Info');
-	default_1$f = Info["default"] = _default$h;
-
-	var Link = {};
-
-	var _interopRequireDefault$e = interopRequireDefault.exports;
-	Object.defineProperty(Link, "__esModule", {
-	  value: true
-	});
-	var default_1$e = Link["default"] = void 0;
-	var _createSvgIcon$e = /*#__PURE__*/_interopRequireDefault$e(createSvgIcon);
-	var _jsxRuntime$e = require$$2__default["default"];
-	var _default$g = /*#__PURE__*/(0, _createSvgIcon$e["default"])( /*#__PURE__*/(0, _jsxRuntime$e.jsx)("path", {
-	  d: "M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"
-	}), 'Link');
-	default_1$e = Link["default"] = _default$g;
 
 	/* eslint-disable @typescript-eslint/unbound-method */
 	var FileType;
@@ -29203,7 +29219,7 @@
 	                        checkAssemblyName(e.target.value);
 	                    }, disabled: submitted && !errorMessage }),
 	                React__default["default"].createElement(material.Accordion, { disableGutters: true, elevation: 0, square: true, className: classes.accordion, expanded: expanded === 'panelFastaInput', onChange: handleAccordionChange('panelFastaInput') },
-	                    React__default["default"].createElement(material.AccordionSummary, { className: classes.accordionSummary, expandIcon: expanded === 'panelFastaInput' ? (React__default["default"].createElement(default_1$g, { className: classes.radioIcon, sx: { fontSize: '1.2rem', ml: 5 } })) : (React__default["default"].createElement(default_1$h, { className: classes.radioIcon, sx: { fontSize: '1.2rem', mr: 5 } })), "aria-controls": "panelFastaInputd-content", id: "panelFastaInputd-header" },
+	                    React__default["default"].createElement(material.AccordionSummary, { className: classes.accordionSummary, expandIcon: expanded === 'panelFastaInput' ? (React__default["default"].createElement(default_1$g, { className: classes.radioIcon, sx: { fontSize: '1.2rem', ml: 5 } })) : (React__default["default"].createElement(default_1$f, { className: classes.radioIcon, sx: { fontSize: '1.2rem', mr: 5 } })), "aria-controls": "panelFastaInputd-content", id: "panelFastaInputd-header" },
 	                        React__default["default"].createElement(material.Typography, { component: "span" }, "FASTA input")),
 	                    React__default["default"].createElement(material.AccordionDetails, { className: classes.accordionDetails },
 	                        React__default["default"].createElement(material.FormGroup, null,
@@ -29218,14 +29234,14 @@
 	                                    "Use external URLs",
 	                                    React__default["default"].createElement(material.Tooltip, { title: "Use external URLs to provide FASTA and index files. Does not copy the files to the Apollo collaboration server, so ensure the URLs are stable.", placement: "top-start" },
 	                                        React__default["default"].createElement(material.IconButton, { size: "small" },
-	                                            React__default["default"].createElement(default_1$f, { sx: { fontSize: 18 } })))) }),
+	                                            React__default["default"].createElement(default_1$i, { sx: { fontSize: 18 } })))) }),
 	                            React__default["default"].createElement(material.FormControlLabel, { "data-testid": "sequence-is-editable-checkbox", control: React__default["default"].createElement(material.Checkbox, { onChange: () => {
 	                                        setSequenceIsEditable(!sequenceIsEditable);
 	                                    } }), checked: sequenceIsEditable, disabled: fileType === FileType.EXTERNAL, label: React__default["default"].createElement(material.Box, { display: "flex", alignItems: "center" },
 	                                    "Store sequence in database",
 	                                    React__default["default"].createElement(material.Tooltip, { title: "Enables users to edit the genomic sequence, but comes with performance impacts. Use with care.", placement: "top-start" },
 	                                        React__default["default"].createElement(material.IconButton, { size: "small" },
-	                                            React__default["default"].createElement(default_1$f, { sx: { fontSize: 18 } })))) }),
+	                                            React__default["default"].createElement(default_1$i, { sx: { fontSize: 18 } })))) }),
 	                            React__default["default"].createElement(material.FormControlLabel, { "data-testid": "fasta-is-gzip-checkbox", control: React__default["default"].createElement(material.Checkbox, { checked: isGzip, onChange: () => {
 	                                        if (sequenceIsEditable) {
 	                                            setIsGzip(!isGzip);
@@ -29237,74 +29253,74 @@
 	                            fileType === FileType.BGZIP_FASTA ||
 	                                fileType === FileType.GFF3 ? (React__default["default"].createElement(material.Table, { size: "small", sx: { mt: 2 } },
 	                                React__default["default"].createElement(material.TableBody, null,
-	                                    React__default["default"].createElement(material.TableRow, null),
-	                                    React__default["default"].createElement(material.TableCell, { style: { borderBottomWidth: 0 } },
-	                                        React__default["default"].createElement(material.Box, { display: "flex", alignItems: "center" },
-	                                            React__default["default"].createElement("span", null, "FASTA"),
-	                                            React__default["default"].createElement(material.Tooltip, { title: 'Unless "Store sequence in database" enabled, FASTA input must be compressed with bgzip and indexed with samtools faidx (or equivalent). Compression is optional for sequences stored in the database.' },
-	                                                React__default["default"].createElement(material.IconButton, { size: "small" },
-	                                                    React__default["default"].createElement(default_1$f, { sx: { fontSize: 18 } }))))),
-	                                    React__default["default"].createElement(material.TableCell, { style: { borderBottomWidth: 0 } },
-	                                        React__default["default"].createElement("input", { "data-testid": "fasta-input-file", type: "file", onChange: (e) => {
-	                                                setFastaFile(e.target.files?.item(0) ?? null);
-	                                            }, disabled: submitted && !errorMessage })),
-	                                    React__default["default"].createElement(material.TableRow, null),
-	                                    React__default["default"].createElement(material.TableCell, { style: { borderBottomWidth: 0 } }, "FASTA index (.fai)"),
-	                                    React__default["default"].createElement(material.TableCell, { style: { borderBottomWidth: 0 } },
-	                                        React__default["default"].createElement("input", { "data-testid": "fai-input-file", type: "file", onChange: (e) => {
-	                                                setFastaIndexFile(e.target.files?.item(0) ?? null);
-	                                            }, disabled: (submitted && !errorMessage) || sequenceIsEditable })),
-	                                    React__default["default"].createElement(material.TableRow, null),
-	                                    React__default["default"].createElement(material.TableCell, { style: { borderBottomWidth: 0 } }, "FASTA binary index (.gzi)"),
-	                                    React__default["default"].createElement(material.TableCell, { style: { borderBottomWidth: 0 } },
-	                                        React__default["default"].createElement("input", { "data-testid": "gzi-input-file", type: "file", onChange: (e) => {
-	                                                setFastaGziIndexFile(e.target.files?.item(0) ?? null);
-	                                            }, disabled: (submitted && !errorMessage) || sequenceIsEditable }))))) : (React__default["default"].createElement(material.Table, { size: "small", sx: { mt: 2 } },
+	                                    React__default["default"].createElement(material.TableRow, null,
+	                                        React__default["default"].createElement(material.TableCell, { style: { borderBottomWidth: 0 } },
+	                                            React__default["default"].createElement(material.Box, { display: "flex", alignItems: "center" },
+	                                                React__default["default"].createElement("span", null, "FASTA"),
+	                                                React__default["default"].createElement(material.Tooltip, { title: 'Unless "Store sequence in database" enabled, FASTA input must be compressed with bgzip and indexed with samtools faidx (or equivalent). Compression is optional for sequences stored in the database.' },
+	                                                    React__default["default"].createElement(material.IconButton, { size: "small" },
+	                                                        React__default["default"].createElement(default_1$i, { sx: { fontSize: 18 } }))))),
+	                                        React__default["default"].createElement(material.TableCell, { style: { borderBottomWidth: 0 } },
+	                                            React__default["default"].createElement("input", { "data-testid": "fasta-input-file", type: "file", onChange: (e) => {
+	                                                    setFastaFile(e.target.files?.item(0) ?? null);
+	                                                }, disabled: submitted && !errorMessage }))),
+	                                    React__default["default"].createElement(material.TableRow, null,
+	                                        React__default["default"].createElement(material.TableCell, { style: { borderBottomWidth: 0 } }, "FASTA index (.fai)"),
+	                                        React__default["default"].createElement(material.TableCell, { style: { borderBottomWidth: 0 } },
+	                                            React__default["default"].createElement("input", { "data-testid": "fai-input-file", type: "file", onChange: (e) => {
+	                                                    setFastaIndexFile(e.target.files?.item(0) ?? null);
+	                                                }, disabled: (submitted && !errorMessage) || sequenceIsEditable }))),
+	                                    React__default["default"].createElement(material.TableRow, null,
+	                                        React__default["default"].createElement(material.TableCell, { style: { borderBottomWidth: 0 } }, "FASTA binary index (.gzi)"),
+	                                        React__default["default"].createElement(material.TableCell, { style: { borderBottomWidth: 0 } },
+	                                            React__default["default"].createElement("input", { "data-testid": "gzi-input-file", type: "file", onChange: (e) => {
+	                                                    setFastaGziIndexFile(e.target.files?.item(0) ?? null);
+	                                                }, disabled: (submitted && !errorMessage) || sequenceIsEditable })))))) : (React__default["default"].createElement(material.Table, { size: "small", sx: { mt: 2 } },
 	                                React__default["default"].createElement(material.TableBody, null,
-	                                    React__default["default"].createElement(material.TableRow, null),
-	                                    React__default["default"].createElement(material.TableCell, { style: { borderBottomWidth: 0 } },
-	                                        React__default["default"].createElement(material.Box, { display: "flex", alignItems: "center" },
-	                                            React__default["default"].createElement("span", null, "FASTA"),
-	                                            React__default["default"].createElement(material.Tooltip, { title: "Remote FASTA input must be compressed with bgzip and indexed with samtools faidx (or equivalent)" },
-	                                                React__default["default"].createElement(material.IconButton, { size: "small" },
-	                                                    React__default["default"].createElement(default_1$f, { sx: { fontSize: 18 } }))))),
-	                                    React__default["default"].createElement(material.TableCell, { style: { borderBottomWidth: 0 } },
-	                                        React__default["default"].createElement(material.TextField, { "data-testid": "fasta-input-url", variant: "outlined", value: fastaUrl, error: !validFastaUrl, onChange: (e) => {
-	                                                setFastaUrl(e.target.value);
-	                                            }, disabled: submitted && !errorMessage, slotProps: {
-	                                                input: {
-	                                                    startAdornment: (React__default["default"].createElement(material.InputAdornment, { position: "start" },
-	                                                        React__default["default"].createElement(default_1$e, null))),
-	                                                },
-	                                            } })),
-	                                    React__default["default"].createElement(material.TableRow, null),
-	                                    React__default["default"].createElement(material.TableCell, { style: { borderBottomWidth: 0 } }, "FASTA index (.fai)"),
-	                                    React__default["default"].createElement(material.TableCell, { style: { borderBottomWidth: 0 } },
-	                                        React__default["default"].createElement(material.TextField, { "data-testid": "fai-input-url", variant: "outlined", value: fastaIndexUrl, error: !validFastaIndexUrl, onChange: (e) => {
-	                                                setFastaIndexUrl(e.target.value);
-	                                            }, disabled: submitted && !errorMessage, slotProps: {
-	                                                input: {
-	                                                    startAdornment: (React__default["default"].createElement(material.InputAdornment, { position: "start" },
-	                                                        React__default["default"].createElement(default_1$e, null))),
-	                                                },
-	                                            } })),
-	                                    React__default["default"].createElement(material.TableRow, null),
-	                                    React__default["default"].createElement(material.TableCell, { style: { borderBottomWidth: 0 } }, "FASTA binary index (.gzi)"),
-	                                    React__default["default"].createElement(material.TableCell, { style: { borderBottomWidth: 0 } },
-	                                        React__default["default"].createElement(material.TextField, { "data-testid": "gzi-input-url", variant: "outlined", value: fastaGziIndexUrl, error: !validFastaGziIndexUrl, onChange: (e) => {
-	                                                setFastaGziIndexUrl(e.target.value);
-	                                            }, disabled: submitted && !errorMessage, slotProps: {
-	                                                input: {
-	                                                    startAdornment: (React__default["default"].createElement(material.InputAdornment, { position: "start" },
-	                                                        React__default["default"].createElement(default_1$e, null))),
-	                                                },
-	                                            } })))))))),
+	                                    React__default["default"].createElement(material.TableRow, null,
+	                                        React__default["default"].createElement(material.TableCell, { style: { borderBottomWidth: 0 } },
+	                                            React__default["default"].createElement(material.Box, { display: "flex", alignItems: "center" },
+	                                                React__default["default"].createElement("span", null, "FASTA"),
+	                                                React__default["default"].createElement(material.Tooltip, { title: "Remote FASTA input must be compressed with bgzip and indexed with samtools faidx (or equivalent)" },
+	                                                    React__default["default"].createElement(material.IconButton, { size: "small" },
+	                                                        React__default["default"].createElement(default_1$i, { sx: { fontSize: 18 } }))))),
+	                                        React__default["default"].createElement(material.TableCell, { style: { borderBottomWidth: 0 } },
+	                                            React__default["default"].createElement(material.TextField, { "data-testid": "fasta-input-url", variant: "outlined", value: fastaUrl, error: !validFastaUrl, onChange: (e) => {
+	                                                    setFastaUrl(e.target.value);
+	                                                }, disabled: submitted && !errorMessage, slotProps: {
+	                                                    input: {
+	                                                        startAdornment: (React__default["default"].createElement(material.InputAdornment, { position: "start" },
+	                                                            React__default["default"].createElement(default_1$h, null))),
+	                                                    },
+	                                                } }))),
+	                                    React__default["default"].createElement(material.TableRow, null,
+	                                        React__default["default"].createElement(material.TableCell, { style: { borderBottomWidth: 0 } }, "FASTA index (.fai)"),
+	                                        React__default["default"].createElement(material.TableCell, { style: { borderBottomWidth: 0 } },
+	                                            React__default["default"].createElement(material.TextField, { "data-testid": "fai-input-url", variant: "outlined", value: fastaIndexUrl, error: !validFastaIndexUrl, onChange: (e) => {
+	                                                    setFastaIndexUrl(e.target.value);
+	                                                }, disabled: submitted && !errorMessage, slotProps: {
+	                                                    input: {
+	                                                        startAdornment: (React__default["default"].createElement(material.InputAdornment, { position: "start" },
+	                                                            React__default["default"].createElement(default_1$h, null))),
+	                                                    },
+	                                                } }))),
+	                                    React__default["default"].createElement(material.TableRow, null,
+	                                        React__default["default"].createElement(material.TableCell, { style: { borderBottomWidth: 0 } }, "FASTA binary index (.gzi)"),
+	                                        React__default["default"].createElement(material.TableCell, { style: { borderBottomWidth: 0 } },
+	                                            React__default["default"].createElement(material.TextField, { "data-testid": "gzi-input-url", variant: "outlined", value: fastaGziIndexUrl, error: !validFastaGziIndexUrl, onChange: (e) => {
+	                                                    setFastaGziIndexUrl(e.target.value);
+	                                                }, disabled: submitted && !errorMessage, slotProps: {
+	                                                    input: {
+	                                                        startAdornment: (React__default["default"].createElement(material.InputAdornment, { position: "start" },
+	                                                            React__default["default"].createElement(default_1$h, null))),
+	                                                    },
+	                                                } }))))))))),
 	                React__default["default"].createElement(material.Accordion, { disableGutters: true, elevation: 0, square: true, className: classes.accordion, expanded: expanded === 'panelGffInput', onChange: handleAccordionChange('panelGffInput') },
-	                    React__default["default"].createElement(material.AccordionSummary, { className: classes.accordionSummary, expandIcon: expanded === 'panelGffInput' ? (React__default["default"].createElement(default_1$g, { className: classes.radioIcon, sx: { fontSize: '1.2rem', ml: 5 } })) : (React__default["default"].createElement(default_1$h, { className: classes.radioIcon, sx: { fontSize: '1.2rem', mr: 5 } })), "aria-controls": "panelGffInputd-content" },
+	                    React__default["default"].createElement(material.AccordionSummary, { className: classes.accordionSummary, expandIcon: expanded === 'panelGffInput' ? (React__default["default"].createElement(default_1$g, { className: classes.radioIcon, sx: { fontSize: '1.2rem', ml: 5 } })) : (React__default["default"].createElement(default_1$f, { className: classes.radioIcon, sx: { fontSize: '1.2rem', mr: 5 } })), "aria-controls": "panelGffInputd-content" },
 	                        React__default["default"].createElement(material.Typography, { component: "span" },
 	                            "GFF3 input",
 	                            React__default["default"].createElement(material.Tooltip, { title: "GFF3 must includes FASTA sequences. File can be gzip compressed." },
-	                                React__default["default"].createElement(default_1$f, { className: classes.radioIcon, sx: { fontSize: 18 } })))),
+	                                React__default["default"].createElement(default_1$i, { className: classes.radioIcon, sx: { fontSize: 18 } })))),
 	                    React__default["default"].createElement(material.AccordionDetails, { className: classes.accordionDetails },
 	                        React__default["default"].createElement(material.Box, { style: { marginTop: 20 } },
 	                            React__default["default"].createElement("input", { "data-testid": "gff3-input-file", type: "file", disabled: submitted && !errorMessage, onChange: (e) => {
@@ -47414,7 +47430,6 @@
 	            React__default["default"].createElement(material.DialogContentText, { color: "error" }, errorMessage))) : null));
 	}
 
-	/* eslint-disable @typescript-eslint/unbound-method */
 	var NewFeature;
 	(function (NewFeature) {
 	    NewFeature["GENE_AND_SUBFEATURES"] = "GENE_AND_SUBFEATURES";
@@ -47590,12 +47605,12 @@
 	                                "Add gene and sub-features",
 	                                React__default["default"].createElement(material.Tooltip, { title: "This is a shortcut to create a gene with a single mRNA, exon, and CDS" },
 	                                    React__default["default"].createElement(material.IconButton, { size: "small" },
-	                                        React__default["default"].createElement(default_1$f, { sx: { fontSize: 18 } })))) }),
+	                                        React__default["default"].createElement(default_1$i, { sx: { fontSize: 18 } })))) }),
 	                        React__default["default"].createElement(material.FormControlLabel, { value: NewFeature.TRANSCRIPT_AND_SUBFEATURES, control: React__default["default"].createElement(material.Radio, null), label: React__default["default"].createElement(material.Box, { display: "flex", alignItems: "center" },
 	                                "Add transcript and sub-features",
 	                                React__default["default"].createElement(material.Tooltip, { title: "This is a shortcut to create a single mRNA with exon and CDS, but without a parent gene" },
 	                                    React__default["default"].createElement(material.IconButton, { size: "small" },
-	                                        React__default["default"].createElement(default_1$f, { sx: { fontSize: 18 } })))) }),
+	                                        React__default["default"].createElement(default_1$i, { sx: { fontSize: 18 } })))) }),
 	                        React__default["default"].createElement(material.FormControlLabel, { value: NewFeature.CUSTOM, checked: type !== NewFeature.GENE_AND_SUBFEATURES &&
 	                                type !== NewFeature.TRANSCRIPT_AND_SUBFEATURES, control: React__default["default"].createElement(material.Radio, null), label: "Add feature with a sequence ontology type" }))),
 	                type === NewFeature.CUSTOM ? (React__default["default"].createElement(OntologyTermAutocomplete, { session: session, ontologyName: "Sequence Ontology", style: { width: 170 }, value: "", filterTerms: isOntologyClass, renderInput: (params) => (React__default["default"].createElement(material.TextField, { ...params, label: "Type", variant: "outlined", fullWidth: true })), onChange: (_oldValue, newValue) => {
@@ -48814,7 +48829,8 @@
 	            React__default["default"].createElement(material.DialogContentText, { color: "error" }, errorMessage))) : null));
 	}
 
-	const columns = [
+	/* eslint-disable @typescript-eslint/unbound-method */
+	const columns$1 = [
 	    { field: 'refName', headerName: 'Ref Name' },
 	    { field: 'aliases', headerName: 'Aliases', editable: true },
 	];
@@ -48963,7 +48979,7 @@
 	                    React__default["default"].createElement("input", { type: "file", onChange: handleChangeFileHandler, ref: fileRef, disabled: (enableSubmit && !errorMessage) || !selectedAssembly }))),
 	            selectedAssembly && refNameAliasMap.size > 0 ? (React__default["default"].createElement("div", { style: { height: 200, width: '100%', marginTop: 20 } },
 	                React__default["default"].createElement(material.InputLabel, null, "Refname aliases found for selected assembly."),
-	                React__default["default"].createElement(xDataGrid.DataGrid, { rows: getTableRows(), columns: columns, initialState: {
+	                React__default["default"].createElement(xDataGrid.DataGrid, { rows: getTableRows(), columns: columns$1, initialState: {
 	                        pagination: {
 	                            paginationModel: { page: 0, pageSize: 5 },
 	                        },
@@ -49637,6 +49653,80 @@
 	    }));
 	};
 
+	function isApolloRefNameAliasMessage(data) {
+	    return (typeof data === 'object' &&
+	        data !== null &&
+	        'apollo' in data &&
+	        data.apollo === true &&
+	        'refNameAliases' in data);
+	}
+	const isInWebWorker$1 = typeof sessionStorage === 'undefined';
+	class RefNameAliasAdapter extends BaseAdapter.BaseAdapter {
+	    refNameAliases;
+	    async getRefNameAliases() {
+	        const assemblyId = configuration.readConfObject(this.config, 'assemblyId');
+	        if (!isInWebWorker$1) {
+	            const dataStore = this.pluginManager?.rootModel?.session?.apolloDataStore;
+	            if (!dataStore) {
+	                throw new Error('No Apollo data store found');
+	            }
+	            const backendDriver = dataStore.getBackendDriver(assemblyId);
+	            const refNameAliases = await backendDriver.getRefNameAliases(assemblyId);
+	            return refNameAliases;
+	        }
+	        const refNameAliases = await new Promise((resolve, reject) => {
+	            const timeoutId = setTimeout(() => {
+	                reject(new Error('timeout'));
+	            }, 20_000);
+	            const messageId = nanoid();
+	            const messageListener = (event) => {
+	                const data = event.data;
+	                if (!isApolloRefNameAliasMessage(data)) {
+	                    return;
+	                }
+	                if (data.messageId !== messageId) {
+	                    return;
+	                }
+	                clearTimeout(timeoutId);
+	                removeEventListener('message', messageListener);
+	                resolve(data.refNameAliases);
+	            };
+	            addEventListener('message', messageListener);
+	            rpcServer.emit('apollo', {
+	                apollo: true,
+	                method: 'getRefNameAliases',
+	                assembly: assemblyId,
+	                messageId,
+	            });
+	        });
+	        this.refNameAliases = refNameAliases;
+	        return refNameAliases;
+	    }
+	    freeResources() {
+	        // no resources to free
+	    }
+	}
+
+	var configSchema$4 = configuration.ConfigurationSchema('ApolloRefNameAliasAdapter', {
+	    assemblyId: {
+	        type: 'string',
+	        defaultValue: '',
+	    },
+	}, { explicitlyTyped: true });
+
+	function installApolloRefNameAliasAdapter(pluginManager) {
+	    pluginManager.addAdapterType(() => new AdapterType__default["default"]({
+	        name: 'ApolloRefNameAliasAdapter',
+	        configSchema: configSchema$4,
+	        adapterMetadata: {
+	            category: undefined,
+	            hiddenFromGUI: true,
+	            description: undefined,
+	        },
+	        AdapterClass: RefNameAliasAdapter,
+	    }));
+	}
+
 	var simpleFeature = {};
 
 	Object.defineProperty(simpleFeature, "__esModule", {
@@ -49745,7 +49835,7 @@
 	        'apollo' in data &&
 	        data.apollo === true);
 	}
-	const isInWebWorker$1 = typeof sessionStorage === 'undefined';
+	const isInWebWorker = typeof sessionStorage === 'undefined';
 	class ApolloSequenceAdapter extends BaseAdapter.BaseSequenceAdapter {
 	    regions;
 	    async getRefNames() {
@@ -49757,7 +49847,7 @@
 	            return this.regions;
 	        }
 	        const assemblyId = configuration.readConfObject(this.config, 'assemblyId');
-	        if (!isInWebWorker$1) {
+	        if (!isInWebWorker) {
 	            const dataStore = this.pluginManager?.rootModel?.session?.apolloDataStore;
 	            if (!dataStore) {
 	                throw new Error('No Apollo data store found');
@@ -49806,7 +49896,7 @@
 	        const assemblyId = configuration.readConfObject(this.config, 'assemblyId');
 	        const regionWithAssemblyName = { ...region, assemblyName: assemblyId };
 	        return rxjs.ObservableCreate(async (observer) => {
-	            if (!isInWebWorker$1) {
+	            if (!isInWebWorker) {
 	                const dataStore = this.pluginManager?.rootModel?.session?.apolloDataStore;
 	                if (!dataStore) {
 	                    observer.error('No Apollo data store found');
@@ -49872,7 +49962,7 @@
 	    freeResources( /* { region } */) { }
 	}
 
-	var configSchema$4 = configuration.ConfigurationSchema('ApolloSequenceAdapter', {
+	var configSchema$3 = configuration.ConfigurationSchema('ApolloSequenceAdapter', {
 	    assemblyId: {
 	        type: 'string',
 	        defaultValue: '',
@@ -49882,7 +49972,7 @@
 	function installApolloSequenceAdapter(pluginManager) {
 	    pluginManager.addAdapterType(() => new AdapterType__default["default"]({
 	        name: 'ApolloSequenceAdapter',
-	        configSchema: configSchema$4,
+	        configSchema: configSchema$3,
 	        adapterMetadata: {
 	            category: undefined,
 	            hiddenFromGUI: true,
@@ -50035,7 +50125,7 @@
 	    freeResources() { }
 	}
 
-	var configSchema$3 = configuration.ConfigurationSchema('ApolloTextSearchAdapter', {
+	var configSchema$2 = configuration.ConfigurationSchema('ApolloTextSearchAdapter', {
 	    assemblyNames: {
 	        type: 'stringArray',
 	        defaultValue: [],
@@ -50058,553 +50148,10 @@
 	    pluginManager.addTextSearchAdapterType(() => new pluggableElementTypes.TextSearchAdapterType({
 	        name: 'ApolloTextSearchAdapter',
 	        displayName: 'Apollo text search adapter',
-	        configSchema: configSchema$3,
+	        configSchema: configSchema$2,
 	        AdapterClass: ApolloTextSearchAdapter,
 	        description: 'Apollo Text Search adapter',
 	    }));
-	}
-
-	const ApolloPluginConfigurationSchema = configuration.ConfigurationSchema('ApolloPlugin', {
-	    ontologies: require$$1$3.types.array(OntologyRecordConfiguration),
-	    featureTypeOntologyName: {
-	        description: 'Name of the feature type ontology',
-	        type: 'string',
-	        defaultValue: 'Sequence Ontology',
-	    },
-	});
-
-	function parseCigar(cigar) {
-	    return (cigar.toUpperCase().match(/\d+\D/g) ?? []).map((op) => {
-	        return [(/\D/.exec(op) ?? [])[0], Number.parseInt(op, 10)];
-	    });
-	}
-	function annotationFromPileup(pluggableElement) {
-	    if (pluggableElement.name !== 'LinearPileupDisplay') {
-	        return pluggableElement;
-	    }
-	    const { stateModel } = pluggableElement;
-	    const newStateModel = stateModel
-	        .views((self) => ({
-	        getFirstRegion() {
-	            const lgv = require$$1$2.getContainingView(self);
-	            return lgv.dynamicBlocks.contentBlocks[0];
-	        },
-	        getAssembly() {
-	            const firstRegion = self.getFirstRegion();
-	            const session = require$$1$2.getSession(self);
-	            const { assemblyManager } = session;
-	            const { assemblyName } = firstRegion;
-	            const assembly = assemblyManager.get(assemblyName);
-	            if (!assembly) {
-	                throw new Error(`Could not find assembly named ${assemblyName}`);
-	            }
-	            return assembly;
-	        },
-	        getRefSeqId(assembly) {
-	            const firstRegion = self.getFirstRegion();
-	            const { refName } = firstRegion;
-	            const { refNameAliases } = assembly;
-	            if (!refNameAliases) {
-	                throw new Error(`Could not find aliases for ${assembly.name}`);
-	            }
-	            const newRefNames = [...Object.entries(refNameAliases)]
-	                .filter(([id, refName]) => id !== refName)
-	                .map(([id, refName]) => ({
-	                _id: id,
-	                name: refName,
-	            }));
-	            const refSeqId = newRefNames.find((item) => item.name === refName)?._id;
-	            if (!refSeqId) {
-	                throw new Error(`Could not find refSeqId named ${refName}`);
-	            }
-	            return refSeqId;
-	        },
-	        createFeature() {
-	            const feature = self.contextMenuFeature;
-	            const assembly = self.getAssembly();
-	            const refSeqId = self.getRefSeqId(assembly);
-	            const cigarData = feature.get('CIGAR');
-	            const ops = parseCigar(cigarData);
-	            let currOffset = 0;
-	            const start = feature.get('start');
-	            let openStart;
-	            const exons = [];
-	            for (const [op, len] of ops) {
-	                // open or continue open
-	                if (op === 'M' || op === '=') {
-	                    // if it was closed, then open with start, strand, type
-	                    if (openStart === undefined) {
-	                        // add subfeature
-	                        openStart = currOffset + start;
-	                    }
-	                }
-	                else if (op === 'N' && openStart !== undefined) {
-	                    // if it was open, then close and add the subfeature
-	                    exons.push({
-	                        start: openStart,
-	                        end: currOffset + openStart,
-	                    });
-	                    openStart = undefined;
-	                }
-	                if (op !== 'I') {
-	                    // we ignore insertions when calculating potential exon length
-	                    currOffset += len;
-	                }
-	            }
-	            // if we are still open, then close with the final length and add subfeature
-	            if (openStart !== undefined) {
-	                exons.push({
-	                    start: openStart,
-	                    end: currOffset + start,
-	                });
-	            }
-	            const newFeature = {
-	                _id: objectid().toHexString(),
-	                refSeq: refSeqId,
-	                min: feature.get('start'),
-	                max: feature.get('end'),
-	                type: 'mRNA',
-	                strand: feature.get('strand'),
-	            };
-	            if (exons.length === 0) {
-	                return newFeature;
-	            }
-	            const children = {};
-	            newFeature.children = children;
-	            const [firstExon] = exons;
-	            const cdsFeature = {
-	                _id: objectid().toHexString(),
-	                refSeq: refSeqId,
-	                min: firstExon.start,
-	                max: firstExon.end,
-	                type: 'CDS',
-	                strand: feature.get('strand'),
-	            };
-	            newFeature.children[cdsFeature._id] = cdsFeature;
-	            if (exons.length === 1) {
-	                const exon = {
-	                    _id: objectid().toHexString(),
-	                    refSeq: refSeqId,
-	                    min: firstExon.start,
-	                    max: firstExon.end,
-	                    type: 'exon',
-	                    strand: feature.get('strand'),
-	                };
-	                newFeature.children[exon._id] = exon;
-	                return newFeature;
-	            }
-	            for (const exon of exons) {
-	                cdsFeature.min = Math.min(cdsFeature.min, exon.start);
-	                cdsFeature.max = Math.max(cdsFeature.max, exon.end);
-	                const { end, start } = exon;
-	                const newExon = {
-	                    _id: objectid().toHexString(),
-	                    refSeq: refSeqId,
-	                    min: start,
-	                    max: end,
-	                    type: 'exon',
-	                    strand: feature.get('strand'),
-	                };
-	                newFeature.children[newExon._id] = newExon;
-	            }
-	            return newFeature;
-	        },
-	        async onPileupFeatureContext() {
-	            const newFeature = self.createFeature();
-	            const assembly = self.getAssembly();
-	            const assemblyId = assembly.name;
-	            const change = new dist$2.AddFeatureChange({
-	                changedIds: [newFeature._id],
-	                typeName: 'AddFeatureChange',
-	                assembly: assemblyId,
-	                addedFeature: newFeature,
-	            });
-	            const session = require$$1$2.getSession(self);
-	            await session.apolloDataStore.changeManager.submit(change);
-	            session.notify('Annotation added successfully', 'success');
-	        },
-	    }))
-	        .views((self) => {
-	        const superContextMenuItems = self.contextMenuItems;
-	        return {
-	            contextMenuItems() {
-	                const feature = self.contextMenuFeature;
-	                if (!feature) {
-	                    return superContextMenuItems();
-	                }
-	                return [
-	                    ...superContextMenuItems(),
-	                    {
-	                        label: 'Create Apollo annotation',
-	                        icon: default_1$j,
-	                        onClick: self.onPileupFeatureContext,
-	                    },
-	                ];
-	            },
-	        };
-	    });
-	    pluggableElement.stateModel = newStateModel;
-	    return pluggableElement;
-	}
-
-	/* eslint-disable react-hooks/exhaustive-deps */
-	const isGeneOrTranscript = (annotationFeature, apolloSessionModel) => {
-	    const { featureTypeOntology } = apolloSessionModel.apolloDataStore.ontologyManager;
-	    if (!featureTypeOntology) {
-	        throw new Error('featureTypeOntology is undefined');
-	    }
-	    return (featureTypeOntology.isTypeOf(annotationFeature.type, 'gene') ||
-	        featureTypeOntology.isTypeOf(annotationFeature.type, 'transcript') ||
-	        featureTypeOntology.isTypeOf(annotationFeature.type, 'pseudogene') ||
-	        featureTypeOntology.isTypeOf(annotationFeature.type, 'pseudogenic_transcript'));
-	};
-	const isGene = (annotationFeature, apolloSessionModel) => {
-	    const { featureTypeOntology } = apolloSessionModel.apolloDataStore.ontologyManager;
-	    if (!featureTypeOntology) {
-	        throw new Error('featureTypeOntology is undefined');
-	    }
-	    return (featureTypeOntology.isTypeOf(annotationFeature.type, 'gene') ||
-	        featureTypeOntology.isTypeOf(annotationFeature.type, 'pseudogene'));
-	};
-	const isTranscript = (annotationFeature, apolloSessionModel) => {
-	    const { featureTypeOntology } = apolloSessionModel.apolloDataStore.ontologyManager;
-	    if (!featureTypeOntology) {
-	        throw new Error('featureTypeOntology is undefined');
-	    }
-	    return (featureTypeOntology.isTypeOf(annotationFeature.type, 'transcript') ||
-	        featureTypeOntology.isTypeOf(annotationFeature.type, 'pseudogenic_transcript'));
-	};
-	const getFeatureId = (feature) => {
-	    const { attributes } = feature;
-	    const id = attributes?.id;
-	    if (id) {
-	        return id[0];
-	    }
-	    return feature.type;
-	};
-	const getFeatureNameOrId = (feature, apolloSessionModel) => {
-	    const { featureTypeOntology } = apolloSessionModel.apolloDataStore.ontologyManager;
-	    if (!featureTypeOntology) {
-	        return getFeatureId(feature);
-	    }
-	    let attrName = '';
-	    if (featureTypeOntology.isTypeOf(feature.type, 'gene')) {
-	        attrName = 'gene_name';
-	    }
-	    if (featureTypeOntology.isTypeOf(feature.type, 'transcript')) {
-	        attrName = 'transcript_name';
-	    }
-	    const { attributes } = feature;
-	    const name = attributes?.[attrName];
-	    if (name) {
-	        return name[0];
-	    }
-	    return getFeatureId(feature);
-	};
-	function CreateApolloAnnotation({ annotationFeature, assembly, handleClose, refSeqId, session, }) {
-	    const apolloSessionModel = session;
-	    const childIds = React.useMemo(() => Object.keys(annotationFeature.children ?? {}), [annotationFeature]);
-	    const features = React.useMemo(() => {
-	        for (const [, asm] of apolloSessionModel.apolloDataStore.assemblies) {
-	            if (asm._id === assembly.name) {
-	                for (const [, refSeq] of asm.refSeqs) {
-	                    if (refSeq._id === refSeqId) {
-	                        return refSeq.features;
-	                    }
-	                }
-	            }
-	        }
-	        return [];
-	    }, []);
-	    const [parentFeatureChecked, setParentFeatureChecked] = React.useState(true);
-	    const [checkedChildrens, setCheckedChildrens] = React.useState(childIds);
-	    const [errorMessage, setErrorMessage] = React.useState('');
-	    const [destinationFeatures, setDestinationFeatures] = React.useState([]);
-	    const [selectedDestinationFeature, setSelectedDestinationFeature] = React.useState();
-	    const getFeatures = (min, max) => {
-	        const filteredFeatures = [];
-	        for (const [, f] of features) {
-	            if (f.type === 'chromosome') {
-	                continue;
-	            }
-	            const featureSnapshot = require$$1$3.getSnapshot(f);
-	            if (min >= featureSnapshot.min && max <= featureSnapshot.max) {
-	                filteredFeatures.push(featureSnapshot);
-	            }
-	        }
-	        return filteredFeatures;
-	    };
-	    React.useEffect(() => {
-	        setErrorMessage('');
-	        let mins = [];
-	        let maxes = [];
-	        if (annotationFeature.children) {
-	            const checkedAnnotationFeatureChildren = Object.values(annotationFeature.children)
-	                .filter((child) => isTranscript(child, apolloSessionModel))
-	                .filter((child) => checkedChildrens.includes(child._id));
-	            mins = checkedAnnotationFeatureChildren.map((f) => f.min);
-	            maxes = checkedAnnotationFeatureChildren.map((f) => f.max);
-	        }
-	        const { featureTypeOntology } = apolloSessionModel.apolloDataStore.ontologyManager;
-	        if (featureTypeOntology &&
-	            featureTypeOntology.isTypeOf(annotationFeature.type, 'transcript')) {
-	            mins = [annotationFeature.min, ...mins];
-	            maxes = [annotationFeature.max, ...maxes];
-	        }
-	        const min = Math.min(...mins);
-	        const max = Math.max(...maxes);
-	        const filteredFeatures = getFeatures(min, max);
-	        setDestinationFeatures(filteredFeatures);
-	        setSelectedDestinationFeature(filteredFeatures[0]);
-	    }, [checkedChildrens, parentFeatureChecked]);
-	    const handleParentFeatureCheck = (event) => {
-	        const isChecked = event.target.checked;
-	        setParentFeatureChecked(isChecked);
-	        setCheckedChildrens(isChecked ? childIds : []);
-	    };
-	    const handleChildFeatureCheck = (event, child) => {
-	        setCheckedChildrens((prevChecked) => event.target.checked
-	            ? [...prevChecked, child._id]
-	            : prevChecked.filter((childId) => childId !== child._id));
-	    };
-	    const handleDestinationFeatureChange = (e) => {
-	        const selectedFeature = destinationFeatures.find((f) => f._id === e.target.value);
-	        setSelectedDestinationFeature(selectedFeature);
-	    };
-	    const handleCreateApolloAnnotation = async () => {
-	        if (parentFeatureChecked) {
-	            let change;
-	            if (isGene(annotationFeature, apolloSessionModel)) {
-	                if (annotationFeature.children &&
-	                    checkedChildrens.length !==
-	                        Object.values(annotationFeature.children).length) {
-	                    const childrens = {};
-	                    for (const childId of checkedChildrens) {
-	                        childrens[childId] = annotationFeature.children[childId];
-	                    }
-	                    change = new dist$2.AddFeatureChange({
-	                        changedIds: [annotationFeature._id],
-	                        typeName: 'AddFeatureChange',
-	                        assembly: assembly.name,
-	                        addedFeature: {
-	                            ...annotationFeature,
-	                            children: childrens,
-	                        },
-	                    });
-	                }
-	                else {
-	                    change = new dist$2.AddFeatureChange({
-	                        changedIds: [annotationFeature._id],
-	                        typeName: 'AddFeatureChange',
-	                        assembly: assembly.name,
-	                        addedFeature: annotationFeature,
-	                    });
-	                }
-	            }
-	            if (isTranscript(annotationFeature, apolloSessionModel)) {
-	                if (selectedDestinationFeature) {
-	                    change = new dist$2.AddFeatureChange({
-	                        parentFeatureId: selectedDestinationFeature._id,
-	                        changedIds: [selectedDestinationFeature._id],
-	                        typeName: 'AddFeatureChange',
-	                        assembly: assembly.name,
-	                        addedFeature: annotationFeature,
-	                    });
-	                }
-	                else {
-	                    setErrorMessage('There is no destination gene for this transcript');
-	                    return;
-	                }
-	            }
-	            if (!change) {
-	                return;
-	            }
-	            await apolloSessionModel.apolloDataStore.changeManager.submit(change);
-	            session.notify('Annotation added successfully', 'success');
-	            handleClose();
-	        }
-	        else {
-	            if (!annotationFeature.children) {
-	                return;
-	            }
-	            if (!selectedDestinationFeature) {
-	                return;
-	            }
-	            for (const childId of checkedChildrens) {
-	                const child = annotationFeature.children[childId];
-	                const change = new dist$2.AddFeatureChange({
-	                    parentFeatureId: selectedDestinationFeature._id,
-	                    changedIds: [selectedDestinationFeature._id],
-	                    typeName: 'AddFeatureChange',
-	                    assembly: assembly.name,
-	                    addedFeature: child,
-	                });
-	                await apolloSessionModel.apolloDataStore.changeManager.submit(change);
-	            }
-	            session.notify('Annotation added successfully', 'success');
-	            handleClose();
-	        }
-	    };
-	    return (React__default["default"].createElement(Dialog, { open: true, title: "Create Apollo Annotation", handleClose: handleClose, fullWidth: true, maxWidth: "sm" },
-	        React__default["default"].createElement(material.DialogTitle, { fontSize: 15 }, "Select the feature to be copied to apollo track"),
-	        React__default["default"].createElement(material.DialogContent, null,
-	            React__default["default"].createElement(material.Box, { sx: { ml: 3 } },
-	                isGeneOrTranscript(annotationFeature, apolloSessionModel) && (React__default["default"].createElement(material.FormControlLabel, { control: React__default["default"].createElement(material.Checkbox, { size: "small", checked: parentFeatureChecked, onChange: handleParentFeatureCheck }), label: `${getFeatureNameOrId(annotationFeature, apolloSessionModel)} (${annotationFeature.min + 1}..${annotationFeature.max})` })),
-	                annotationFeature.children && (React__default["default"].createElement(material.Box, { sx: { display: 'flex', flexDirection: 'column', ml: 3 } }, Object.values(annotationFeature.children)
-	                    .filter((child) => isTranscript(child, apolloSessionModel))
-	                    .map((child) => (React__default["default"].createElement(material.FormControlLabel, { key: child._id, control: React__default["default"].createElement(material.Checkbox, { size: "small", checked: checkedChildrens.includes(child._id), onChange: (e) => {
-	                            handleChildFeatureCheck(e, child);
-	                        } }), label: `${getFeatureNameOrId(child, apolloSessionModel)} (${child.min + 1}..${child.max})` })))))),
-	            destinationFeatures.length > 0 &&
-	                ((!parentFeatureChecked && checkedChildrens.length > 0) ||
-	                    (parentFeatureChecked &&
-	                        isTranscript(annotationFeature, apolloSessionModel))) && (React__default["default"].createElement(material.Box, { sx: { ml: 3 } },
-	                React__default["default"].createElement(material.Typography, { variant: "caption", fontSize: 12 }, "Select the destination feature to copy the selected features"),
-	                React__default["default"].createElement(material.Box, { sx: { mt: 1 } },
-	                    React__default["default"].createElement(material.Select, { labelId: "label", style: { width: '100%' }, value: selectedDestinationFeature?._id ?? '', onChange: handleDestinationFeatureChange }, destinationFeatures.map((f) => (React__default["default"].createElement(material.MenuItem, { key: f._id, value: f._id }, `${getFeatureNameOrId(f, apolloSessionModel)} (${f.min}..${f.max})`)))))))),
-	        React__default["default"].createElement(material.DialogActions, null,
-	            React__default["default"].createElement(material.Button, { variant: "contained", type: "submit", disabled: checkedChildrens.length === 0 ||
-	                    (!parentFeatureChecked &&
-	                        checkedChildrens.length > 0 &&
-	                        !selectedDestinationFeature), onClick: handleCreateApolloAnnotation }, "Create"),
-	            React__default["default"].createElement(material.Button, { variant: "outlined", type: "submit", onClick: handleClose }, "Cancel")),
-	        errorMessage ? (React__default["default"].createElement(material.DialogContent, null,
-	            React__default["default"].createElement(material.DialogContentText, { color: "error" }, errorMessage))) : null));
-	}
-
-	function simpleFeatureToGFF3Feature(feature, refSeqId) {
-	    // eslint-disable-next-line unicorn/prefer-structured-clone
-	    const xfeature = JSON.parse(JSON.stringify(feature));
-	    const children = xfeature.subfeatures;
-	    const gff3Feature = [
-	        {
-	            start: xfeature.start + 1,
-	            end: xfeature.end,
-	            seq_id: refSeqId,
-	            source: xfeature.source ?? null,
-	            type: xfeature.type ?? null,
-	            score: xfeature.score ?? null,
-	            strand: xfeature.strand ? (xfeature.strand === 1 ? '+' : '-') : null,
-	            phase: xfeature.phase !== null || xfeature.phase !== undefined
-	                ? xfeature.phase
-	                : null,
-	            attributes: convertFeatureAttributes(xfeature),
-	            derived_features: [],
-	            child_features: children
-	                ? children.map((x) => simpleFeatureToGFF3Feature(x, refSeqId))
-	                : [],
-	        },
-	    ];
-	    return gff3Feature;
-	}
-	function jbrowseFeatureToAnnotationFeature(feature, refSeqId) {
-	    return dist$2.gff3ToAnnotationFeature(simpleFeatureToGFF3Feature(feature, refSeqId));
-	}
-	function convertFeatureAttributes(feature) {
-	    const attributes = {};
-	    const defaultFields = new Set([
-	        'start',
-	        'end',
-	        'type',
-	        'strand',
-	        'refName',
-	        'subfeatures',
-	        'derived_features',
-	        'phase',
-	        'source',
-	        'score',
-	    ]);
-	    for (const [key, value] of Object.entries(feature)) {
-	        if (defaultFields.has(key)) {
-	            continue;
-	        }
-	        attributes[key] = Array.isArray(value) ? value.map(String) : [String(value)];
-	    }
-	    return attributes;
-	}
-	function annotationFromJBrowseFeature(pluggableElement) {
-	    if (pluggableElement.name !== 'LinearBasicDisplay') {
-	        return pluggableElement;
-	    }
-	    const { stateModel } = pluggableElement;
-	    const newStateModel = stateModel
-	        .views((self) => ({
-	        getFirstRegion() {
-	            const lgv = require$$1$2.getContainingView(self);
-	            return lgv.dynamicBlocks.contentBlocks[0];
-	        },
-	        getAssembly() {
-	            const firstRegion = self.getFirstRegion();
-	            const session = require$$1$2.getSession(self);
-	            const { assemblyManager } = session;
-	            const { assemblyName } = firstRegion;
-	            const assembly = assemblyManager.get(assemblyName);
-	            if (!assembly) {
-	                throw new Error(`Could not find assembly named ${assemblyName}`);
-	            }
-	            return assembly;
-	        },
-	        getRefSeqId(assembly) {
-	            const firstRegion = self.getFirstRegion();
-	            const { refName } = firstRegion;
-	            const { refNameAliases } = assembly;
-	            if (!refNameAliases) {
-	                throw new Error(`Could not find aliases for ${assembly.name}`);
-	            }
-	            const newRefNames = [...Object.entries(refNameAliases)]
-	                .filter(([id, refName]) => id !== refName)
-	                .map(([id, refName]) => ({
-	                _id: id,
-	                name: refName,
-	            }));
-	            const refSeqId = newRefNames.find((item) => item.name === refName)?._id;
-	            if (!refSeqId) {
-	                throw new Error(`Could not find refSeqId named ${refName}`);
-	            }
-	            return refSeqId;
-	        },
-	        getAnnotationFeature(assembly) {
-	            const refSeqId = self.getRefSeqId(assembly);
-	            const sfeature = self.contextMenuFeature.data;
-	            return jbrowseFeatureToAnnotationFeature(sfeature, refSeqId);
-	        },
-	    }))
-	        .views((self) => {
-	        const superContextMenuItems = self.contextMenuItems;
-	        return {
-	            contextMenuItems() {
-	                const session = require$$1$2.getSession(self);
-	                const assembly = self.getAssembly();
-	                const feature = self.contextMenuFeature;
-	                if (!feature) {
-	                    return superContextMenuItems();
-	                }
-	                return [
-	                    ...superContextMenuItems(),
-	                    {
-	                        label: 'Create Apollo annotation',
-	                        icon: default_1$j,
-	                        onClick: () => {
-	                            session.queueDialog((doneCallback) => [
-	                                CreateApolloAnnotation,
-	                                {
-	                                    session,
-	                                    handleClose: () => {
-	                                        doneCallback();
-	                                    },
-	                                    annotationFeature: self.getAnnotationFeature(assembly),
-	                                    assembly,
-	                                    refSeqId: self.getRefSeqId(assembly),
-	                                },
-	                            ]);
-	                        },
-	                    },
-	                ];
-	            },
-	        };
-	    });
-	    pluggableElement.stateModel = newStateModel;
-	    return pluggableElement;
 	}
 
 	var ExpandMore = {};
@@ -50649,6 +50196,35 @@
 	}), 'MoreHoriz');
 	default_1$9 = MoreHoriz["default"] = _default$9;
 
+	const useStyles$c = mui.makeStyles()((theme) => ({
+	    attributeKey: {
+	        fontWeight: 'bold',
+	        marginRight: theme.spacing(2),
+	    },
+	}));
+	function AttributeKey({ attributeKey: key }) {
+	    const { classes } = useStyles$c();
+	    const startsWithCapital = /^[A-Z]/.test(key);
+	    let displayKey = key;
+	    let titleText;
+	    if (dist$2.isGFFInternalAttribute(key)) {
+	        displayKey = dist$2.internalToGFF[key];
+	        titleText = `On GFF3 export, this will be assigned to the GFF3's reserved "${displayKey}" attribute`;
+	    }
+	    else if (dist$2.isGFFColumnInternal(key)) {
+	        displayKey = dist$2.gffInternalToColumn[key];
+	        titleText = `On GFF3 export, this will be placed in the GFF3's "${displayKey}" column`;
+	    }
+	    else if (startsWithCapital) {
+	        titleText =
+	            'On GFF3 export, this attribute will be changed to start with a lower-case letter because attributes starting with an upper-case letter are reserved in GFF3';
+	    }
+	    return (React__default["default"].createElement("div", { style: { display: 'flex' } },
+	        React__default["default"].createElement(material.Typography, { className: classes.attributeKey }, displayKey),
+	        titleText ? (React__default["default"].createElement(material.Tooltip, { title: titleText },
+	            React__default["default"].createElement(material.Chip, { icon: React__default["default"].createElement(default_1$i, null), label: "GFF3", size: "small", variant: "outlined" }))) : null));
+	}
+
 	const customKeyName = 'Custom';
 	const gffKeys = {
 	    [customKeyName]: 'custom',
@@ -50691,35 +50267,6 @@
 	            React__default["default"].createElement(material.Button, { color: "primary", variant: "contained", type: "submit", disabled: isCustom && !customKey }, "Add"),
 	            React__default["default"].createElement(material.Button, { variant: "outlined", onClick: handleCancel }, "Cancel"))));
 	});
-
-	const useStyles$c = mui.makeStyles()((theme) => ({
-	    attributeKey: {
-	        fontWeight: 'bold',
-	        marginRight: theme.spacing(2),
-	    },
-	}));
-	function AttributeKey({ attributeKey: key }) {
-	    const { classes } = useStyles$c();
-	    const startsWithCapital = /^[A-Z]/.test(key);
-	    let displayKey = key;
-	    let titleText;
-	    if (dist$2.isGFFInternalAttribute(key)) {
-	        displayKey = dist$2.internalToGFF[key];
-	        titleText = `On GFF3 export, this will be assigned to the GFF3's reserved "${displayKey}" attribute`;
-	    }
-	    else if (dist$2.isGFFColumnInternal(key)) {
-	        displayKey = dist$2.gffInternalToColumn[key];
-	        titleText = `On GFF3 export, this will be placed in the GFF3's "${displayKey}" column`;
-	    }
-	    else if (startsWithCapital) {
-	        titleText =
-	            'On GFF3 export, this attribute will be changed to start with a lower-case letter because attributes starting with an upper-case letter are reserved in GFF3';
-	    }
-	    return (React__default["default"].createElement("div", { style: { display: 'flex' } },
-	        React__default["default"].createElement(material.Typography, { className: classes.attributeKey }, displayKey),
-	        titleText ? (React__default["default"].createElement(material.Tooltip, { title: titleText },
-	            React__default["default"].createElement(material.Chip, { icon: React__default["default"].createElement(default_1$f, null), label: "GFF3", size: "small", variant: "outlined" }))) : null));
-	}
 
 	var AddBox = {};
 
@@ -50867,6 +50414,7 @@
 	            assembly,
 	            featureId: _id,
 	            attributes: remainingAttributes,
+	            attributeDeleted: { [key]: deletedAttribute },
 	        });
 	        void changeManager.submit(change);
 	    }
@@ -50887,6 +50435,14 @@
 	            assembly,
 	            featureId: feature._id,
 	            attributes: serializedAttributes,
+	            attributeEdited: {
+	                old: {
+	                    [key]: oldAttribute,
+	                },
+	                new: {
+	                    [key]: attribute,
+	                },
+	            },
 	        });
 	        void changeManager.submit(change);
 	    }
@@ -50903,6 +50459,9 @@
 	            assembly,
 	            featureId: feature._id,
 	            attributes: serializedAttributes,
+	            attributeAdded: {
+	                [key]: attribute,
+	            },
 	        });
 	        void changeManager.submit(change);
 	    }
@@ -51075,41 +50634,6 @@
 	        errorMessage ? (React__default["default"].createElement(material.Typography, { color: "error" }, errorMessage)) : null));
 	});
 
-	function formatSequence(seq, refName, start, end, wrap) {
-	    const header = `>${refName}:${start + 1}–${end}\n`;
-	    const body = wrap === undefined ? seq : dist$2.splitStringIntoChunks(seq, wrap).join('\n');
-	    return `${header}${body}`;
-	}
-	const useStyles$a = mui.makeStyles()({
-	    sequence: {
-	        width: '100%',
-	        resize: 'vertical',
-	    },
-	});
-	const Sequence = mobxReact.observer(function Sequence({ assembly, feature, refName, session, }) {
-	    const currentAssembly = session.apolloDataStore.assemblies.get(assembly);
-	    const { classes } = useStyles$a();
-	    if (!(feature && currentAssembly)) {
-	        return null;
-	    }
-	    const refSeq = currentAssembly.getByRefName(refName);
-	    if (!refSeq) {
-	        return null;
-	    }
-	    const { max, min } = feature;
-	    let sequence = refSeq.getSequence(min, max);
-	    if (sequence) {
-	        sequence = formatSequence(sequence, refName, min, max);
-	    }
-	    else {
-	        void session.apolloDataStore.loadRefSeq([
-	            { assemblyName: assembly, refName, start: min, end: max },
-	        ]);
-	    }
-	    return (React__default["default"].createElement("div", null,
-	        React__default["default"].createElement("textarea", { readOnly: true, rows: 20, className: classes.sequence, value: sequence })));
-	});
-
 	const FeatureDetailsNavigation = mobxReact.observer(function FeatureDetailsNavigation(props) {
 	    const { feature, model } = props;
 	    const { children, parent } = feature;
@@ -51150,6 +50674,41 @@
 	                    "..",
 	                    child.max,
 	                    ")"))))))));
+	});
+
+	function formatSequence(seq, refName, start, end, wrap) {
+	    const header = `>${refName}:${start + 1}–${end}\n`;
+	    const body = wrap === undefined ? seq : dist$2.splitStringIntoChunks(seq, wrap).join('\n');
+	    return `${header}${body}`;
+	}
+	const useStyles$a = mui.makeStyles()({
+	    sequence: {
+	        width: '100%',
+	        resize: 'vertical',
+	    },
+	});
+	const Sequence = mobxReact.observer(function Sequence({ assembly, feature, refName, session, }) {
+	    const currentAssembly = session.apolloDataStore.assemblies.get(assembly);
+	    const { classes } = useStyles$a();
+	    if (!(feature && currentAssembly)) {
+	        return null;
+	    }
+	    const refSeq = currentAssembly.getByRefName(refName);
+	    if (!refSeq) {
+	        return null;
+	    }
+	    const { max, min } = feature;
+	    let sequence = refSeq.getSequence(min, max);
+	    if (sequence) {
+	        sequence = formatSequence(sequence, refName, min, max);
+	    }
+	    else {
+	        void session.apolloDataStore.loadRefSeq([
+	            { assemblyName: assembly, refName, start: min, end: max },
+	        ]);
+	    }
+	    return (React__default["default"].createElement("div", null,
+	        React__default["default"].createElement("textarea", { readOnly: true, rows: 20, className: classes.sequence, value: sequence })));
 	});
 
 	const useStyles$9 = mui.makeStyles()((theme) => ({
@@ -53956,6 +53515,300 @@
 	  newStyled[tagName] = newStyled(tagName);
 	});
 
+	const StyledGridOverlay = newStyled('div')(() => ({
+	    display: 'flex',
+	    flexDirection: 'column',
+	    alignItems: 'center',
+	    justifyContent: 'center',
+	    height: '100%',
+	    '& .no-rows-primary': {
+	        fill: 'lightgray',
+	    },
+	    '& .no-rows-secondary': {
+	        fill: 'lightgray',
+	    },
+	}));
+	const CustomNoRowsOverlay = () => {
+	    return (React__default["default"].createElement(StyledGridOverlay, null,
+	        React__default["default"].createElement("svg", { xmlns: "http://www.w3.org/2000/svg", fill: "none", width: 96, viewBox: "0 0 452 257", "aria-hidden": true, focusable: "false" },
+	            React__default["default"].createElement("path", { className: "no-rows-primary", d: "M348 69c-46.392 0-84 37.608-84 84s37.608 84 84 84 84-37.608 84-84-37.608-84-84-84Zm-104 84c0-57.438 46.562-104 104-104s104 46.562 104 104-46.562 104-104 104-104-46.562-104-104Z" }),
+	            React__default["default"].createElement("path", { className: "no-rows-primary", d: "M308.929 113.929c3.905-3.905 10.237-3.905 14.142 0l63.64 63.64c3.905 3.905 3.905 10.236 0 14.142-3.906 3.905-10.237 3.905-14.142 0l-63.64-63.64c-3.905-3.905-3.905-10.237 0-14.142Z" }),
+	            React__default["default"].createElement("path", { className: "no-rows-primary", d: "M308.929 191.711c-3.905-3.906-3.905-10.237 0-14.142l63.64-63.64c3.905-3.905 10.236-3.905 14.142 0 3.905 3.905 3.905 10.237 0 14.142l-63.64 63.64c-3.905 3.905-10.237 3.905-14.142 0Z" }),
+	            React__default["default"].createElement("path", { className: "no-rows-secondary", d: "M0 10C0 4.477 4.477 0 10 0h380c5.523 0 10 4.477 10 10s-4.477 10-10 10H10C4.477 20 0 15.523 0 10ZM0 59c0-5.523 4.477-10 10-10h231c5.523 0 10 4.477 10 10s-4.477 10-10 10H10C4.477 69 0 64.523 0 59ZM0 106c0-5.523 4.477-10 10-10h203c5.523 0 10 4.477 10 10s-4.477 10-10 10H10c-5.523 0-10-4.477-10-10ZM0 153c0-5.523 4.477-10 10-10h195.5c5.523 0 10 4.477 10 10s-4.477 10-10 10H10c-5.523 0-10-4.477-10-10ZM0 200c0-5.523 4.477-10 10-10h203c5.523 0 10 4.477 10 10s-4.477 10-10 10H10c-5.523 0-10-4.477-10-10ZM0 247c0-5.523 4.477-10 10-10h231c5.523 0 10 4.477 10 10s-4.477 10-10 10H10c-5.523 0-10-4.477-10-10Z" })),
+	        React__default["default"].createElement(material.Box, { sx: { mt: 2 } }, "No rows")));
+	};
+	const columns = [
+	    { field: 'type', headerName: 'Type', width: 100 },
+	    { field: 'nameOrId', headerName: 'Name/ID', width: 200 },
+	    { field: 'status', headerName: 'Status', width: 150 },
+	    { field: 'changeType', headerName: 'Change Type', width: 200 },
+	    {
+	        field: 'change',
+	        headerName: 'Change',
+	        width: 300,
+	        renderCell: (params) => (React__default["default"].createElement("div", { style: { whiteSpace: 'pre-wrap' } }, params.value)),
+	    },
+	    { field: 'user', headerName: 'User', width: 150 },
+	    { field: 'createdAt', headerName: 'Created At', width: 150 },
+	];
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	const getChangeInfo = (c) => {
+	    if (c.typeName === 'FeatureAttributeChange') {
+	        if (c.attributeAdded) {
+	            const addedAttribute = c.attributeAdded;
+	            const [response] = Object.keys(addedAttribute).map((key) => `${key}: ${addedAttribute[key].join(',')}`);
+	            return `ADDED: \n${response}`;
+	        }
+	        if (c.attributeEdited) {
+	            const oldAttribute = (c.attributeEdited.old ?? {});
+	            const newAttribute = (c.attributeEdited.new ?? {});
+	            const [old] = Object.keys(oldAttribute).map((key) => `${key}: ${oldAttribute[key].join(',')}`);
+	            const [newAttr] = Object.keys(newAttribute).map((key) => `${key}: ${newAttribute[key].join(',')}`);
+	            return `BEFORE UPDATE: \n${old} \nAFTER UPDATE: \n${newAttr}`;
+	        }
+	        if (c.attributeDeleted) {
+	            const deletedAttribute = c.attributeDeleted;
+	            const [response] = Object.keys(deletedAttribute).map((key) => `${key}: ${deletedAttribute[key].join(',')}`);
+	            return `DELETED: \n${response}`;
+	        }
+	    }
+	    if (c.typeName === 'TypeChange') {
+	        return `OLD TYPE: \n${c.oldType} \nNEW TYPE: \n${c.newType}`;
+	    }
+	    if (c.typeName === 'LocationEndChange') {
+	        return `OLD END: \n${c.oldEnd} \nNEW END: \n${c.newEnd}`;
+	    }
+	    if (c.typeName === 'LocationStartChange') {
+	        return `OLD START: \n${c.oldStart} \nNEW START: \n${c.newStart}`;
+	    }
+	    return '';
+	};
+	const ChangeHistory = mobxReact.observer(function ChangeHistory(props) {
+	    const { feature, session, handleClose, assembly } = props;
+	    const { ontologyManager } = session.apolloDataStore;
+	    const { featureTypeOntology } = ontologyManager;
+	    const [menuItems, setMenuItems] = React__default["default"].useState();
+	    const [changesData, setChangesData] = React__default["default"].useState([]);
+	    const [changeHistoryData, setChangeHistoryData] = React__default["default"].useState([]);
+	    const initializeMenuItems = () => {
+	        if (!featureTypeOntology) {
+	            return;
+	        }
+	        let gene;
+	        let transcript;
+	        if (featureTypeOntology.isTypeOf(feature.type, 'gene')) {
+	            gene = feature;
+	        }
+	        if (featureTypeOntology.isTypeOf(feature.type, 'CDS') ||
+	            featureTypeOntology.isTypeOf(feature.type, 'exon')) {
+	            transcript = feature.parent;
+	            gene = transcript?.parent;
+	        }
+	        if (featureTypeOntology.isTypeOf(feature.type, 'transcript')) {
+	            transcript = feature;
+	            gene = feature.parent;
+	        }
+	        if (!gene) {
+	            return;
+	        }
+	        const changeHistoryMenus = {
+	            id: gene._id,
+	            label: getFeatureName$1(gene) || getFeatureId$1(gene) || gene.type,
+	            feature: gene,
+	            childrens: [],
+	            isSelected: feature._id === gene._id,
+	        };
+	        for (const [, child] of gene.children ?? []) {
+	            let isSelected = false;
+	            if (transcript && transcript._id === child._id) {
+	                isSelected = true;
+	            }
+	            changeHistoryMenus.childrens.push({
+	                id: child._id,
+	                label: getFeatureName$1(child) || getFeatureId$1(child) || child.type,
+	                feature: child,
+	                childrens: [],
+	                isSelected,
+	            });
+	        }
+	        setMenuItems(changeHistoryMenus);
+	    };
+	    const fetchChangeHistoryData = async (features) => {
+	        if (Array.isArray(changesData) && changesData.length > 0) {
+	            handleChangeHistoryData(changesData, features);
+	            return;
+	        }
+	        const { internetAccounts } = require$$1$3.getRoot(session);
+	        const apolloInternetAccount = internetAccounts.find((ia) => ia.type === 'ApolloInternetAccount');
+	        if (!apolloInternetAccount) {
+	            throw new Error('No Apollo internet account found');
+	        }
+	        const { baseURL } = apolloInternetAccount;
+	        const url = new URL('changes', baseURL);
+	        const searchParams = new URLSearchParams({ assembly });
+	        url.search = searchParams.toString();
+	        const uri = url.toString();
+	        const apolloFetch = apolloInternetAccount.getFetcher({
+	            locationType: 'UriLocation',
+	            uri,
+	        });
+	        const response = await apolloFetch(uri, {
+	            headers: new Headers({ 'Content-Type': 'application/json' }),
+	        });
+	        if (!response.ok) {
+	            return;
+	        }
+	        const changes = await response.json();
+	        setChangesData(changes);
+	        handleChangeHistoryData(changes, features);
+	    };
+	    const handleChangeHistoryData = (changes, features) => {
+	        if (!Array.isArray(changes)) {
+	            return;
+	        }
+	        const changeHistory = [];
+	        for (const ch of changes) {
+	            if (ch.changes && ch.changes.length > 0) {
+	                for (const c of ch.changes) {
+	                    for (const f of features) {
+	                        try {
+	                            const id = c.changedIds && c.changedIds.length > 0
+	                                ? c.changedIds[0]
+	                                : c.featureId;
+	                            if (id === f._id) {
+	                                const changeData = {
+	                                    id: String(ch._id) + String(id),
+	                                    type: f.type,
+	                                    nameOrId: getFeatureName$1(f) || getFeatureId$1(f) || '',
+	                                    status: ch.processed ? 'Processed' : 'Not processed',
+	                                    changeType: ch.typeName,
+	                                    change: getChangeInfo(c),
+	                                    user: ch.user,
+	                                    createdAt: ch.createdAt,
+	                                };
+	                                changeHistory.push(changeData);
+	                            }
+	                        }
+	                        catch {
+	                            // pass
+	                            console.error('Error in change history data', c);
+	                        }
+	                    }
+	                }
+	            }
+	        }
+	        setChangeHistoryData(changeHistory);
+	    };
+	    React.useEffect(() => {
+	        // Initialize the menu items when the component mounts or when the feature changes
+	        initializeMenuItems();
+	        // TODO: Note: If multiple changes are committed at once in a single API call, Will this work?
+	        // Now the changedIds in DB should be subset of the changedIds (below) passed as filter to the API
+	        const changedFeatures = [];
+	        let changedFeature = feature;
+	        if (featureTypeOntology &&
+	            (featureTypeOntology.isTypeOf(changedFeature.type, 'CDS') ||
+	                featureTypeOntology.isTypeOf(changedFeature.type, 'exon'))) {
+	            // transcript
+	            changedFeature = feature.parent;
+	        }
+	        if (!changedFeature) {
+	            return;
+	        }
+	        changedFeatures.push(changedFeature);
+	        for (const [, child] of changedFeature.children ?? []) {
+	            changedFeatures.push(child);
+	            if (featureTypeOntology &&
+	                featureTypeOntology.isTypeOf(changedFeature.type, 'gene')) {
+	                for (const [, grandChild] of child.children ?? []) {
+	                    changedFeatures.push(grandChild);
+	                }
+	            }
+	        }
+	        fetchChangeHistoryData(changedFeatures).catch(() => {
+	            setChangeHistoryData([]);
+	        });
+	        // eslint-disable-next-line react-hooks/exhaustive-deps
+	    }, [feature]);
+	    if (!menuItems) {
+	        return null;
+	    }
+	    const handleMenuItemClick = (item) => {
+	        if (item.id === menuItems.id) {
+	            setMenuItems({
+	                ...menuItems,
+	                isSelected: true,
+	                childrens: menuItems.childrens.map((child) => ({
+	                    ...child,
+	                    isSelected: false,
+	                })),
+	            });
+	            // fetch change history data for the gene
+	            const { feature } = item;
+	            const features = [];
+	            features.push(feature);
+	            for (const [, child] of feature.children ?? []) {
+	                features.push(child);
+	                for (const [, grandChild] of child.children ?? []) {
+	                    features.push(grandChild);
+	                }
+	            }
+	            handleChangeHistoryData(changesData, features);
+	        }
+	        else {
+	            setMenuItems({
+	                ...menuItems,
+	                isSelected: false,
+	                childrens: menuItems.childrens.map((child) => ({
+	                    ...child,
+	                    isSelected: child.id === item.id,
+	                })),
+	            });
+	            // fetch change history data for the transcript
+	            const { feature } = item;
+	            const features = [];
+	            features.push(feature);
+	            for (const [, child] of feature.children ?? []) {
+	                features.push(child);
+	            }
+	            handleChangeHistoryData(changesData, features);
+	        }
+	    };
+	    return (React__default["default"].createElement(Dialog, { open: true, handleClose: handleClose, "data-testid": "change-history-dialog", title: "Change History", maxWidth: "xl", fullWidth: true },
+	        React__default["default"].createElement(material.DialogContent, null,
+	            React__default["default"].createElement(material.Grid2, { container: true, spacing: 1, sx: { p: 1 } },
+	                React__default["default"].createElement(material.Grid2, { size: 2, sx: {
+	                        height: 'calc(80vh - 64px)',
+	                        overflowY: 'scroll',
+	                        border: '1px solid #ccc',
+	                        borderRadius: 1,
+	                    } },
+	                    React__default["default"].createElement(material.List, { sx: { ml: 2 } },
+	                        React__default["default"].createElement(material.ListItem, { style: {
+	                                backgroundColor: menuItems.isSelected
+	                                    ? '#f0f0f0'
+	                                    : 'transparent',
+	                                cursor: 'pointer',
+	                            }, onClick: () => {
+	                                handleMenuItemClick(menuItems);
+	                            }, disablePadding: true },
+	                            React__default["default"].createElement(material.ListItemText, { primary: React__default["default"].createElement(material.Typography, { fontWeight: "bold" },
+	                                    React__default["default"].createElement("small", null, menuItems.label)) })),
+	                        React__default["default"].createElement(material.Box, { sx: { borderLeft: '1px dashed #ccc' } }, menuItems.childrens.map((m) => (React__default["default"].createElement(material.Box, { key: m.id, sx: { mt: 1, ml: 2 } },
+	                            React__default["default"].createElement(material.ListItem, { style: {
+	                                    backgroundColor: m.isSelected
+	                                        ? '#f0f0f0'
+	                                        : 'transparent',
+	                                    cursor: 'pointer',
+	                                }, onClick: () => {
+	                                    handleMenuItemClick(m);
+	                                }, disablePadding: true },
+	                                React__default["default"].createElement(material.ListItemText, { primary: React__default["default"].createElement(material.Typography, null,
+	                                        React__default["default"].createElement("small", null, m.label)) })))))))),
+	                React__default["default"].createElement(material.Grid2, { size: 10, sx: { height: 'calc(80vh - 64px)', overflowY: 'scroll' } },
+	                    React__default["default"].createElement(xDataGrid.DataGrid, { rows: changeHistoryData, columns: columns, slots: { noRowsOverlay: CustomNoRowsOverlay }, getRowHeight: () => 'auto' }))))));
+	});
+
 	const SEQUENCE_WRAP_LENGTH = 60;
 	function getSequenceSegments(segmentType, feature, getSequence) {
 	    const segments = [];
@@ -54184,80 +54037,48 @@
 	                    sequenceLine.length !== SEQUENCE_WRAP_LENGTH ? null : (React__default["default"].createElement("br", null)))))))))));
 	});
 
-	const HeaderTableCell = newStyled(material.TableCell)(() => ({
-	    fontWeight: 'bold',
-	}));
-	const TranscriptWidgetSummary = mobxReact.observer(function TranscriptWidgetSummary(props) {
-	    const { feature } = props;
-	    const name = getFeatureName(feature);
-	    const id = getFeatureId$1(feature);
-	    return (React__default["default"].createElement(material.Table, { size: "small", sx: { fontSize: '0.75rem', '& .MuiTableCell-root': { padding: '4px' } } },
-	        React__default["default"].createElement(material.TableBody, null,
-	            name !== '' && (React__default["default"].createElement(material.TableRow, null,
-	                React__default["default"].createElement(HeaderTableCell, null, "Name"),
-	                React__default["default"].createElement(material.TableCell, null, getFeatureName(feature)))),
-	            id !== '' && (React__default["default"].createElement(material.TableRow, null,
-	                React__default["default"].createElement(HeaderTableCell, null, "ID"),
-	                React__default["default"].createElement(material.TableCell, null, getFeatureId$1(feature)))),
-	            React__default["default"].createElement(material.TableRow, null,
-	                React__default["default"].createElement(HeaderTableCell, null, "Type"),
-	                React__default["default"].createElement(material.TableCell, null, feature.type)),
-	            React__default["default"].createElement(material.TableRow, null,
-	                React__default["default"].createElement(HeaderTableCell, null, "Location"),
-	                React__default["default"].createElement(material.TableCell, null,
-	                    props.refName,
-	                    ":",
-	                    feature.min,
-	                    "..",
-	                    feature.max)),
-	            React__default["default"].createElement(material.TableRow, null,
-	                React__default["default"].createElement(HeaderTableCell, null, "Strand"),
-	                React__default["default"].createElement(material.TableCell, null, getStrand(feature.strand))))));
-	});
-
-	var Remove = {};
-
-	var _interopRequireDefault$7 = interopRequireDefault.exports;
-	Object.defineProperty(Remove, "__esModule", {
-	  value: true
-	});
-	var default_1$7 = Remove["default"] = void 0;
-	var _createSvgIcon$7 = /*#__PURE__*/_interopRequireDefault$7(createSvgIcon);
-	var _jsxRuntime$7 = require$$2__default["default"];
-	var _default$7 = /*#__PURE__*/(0, _createSvgIcon$7["default"])( /*#__PURE__*/(0, _jsxRuntime$7.jsx)("path", {
-	  d: "M19 13H5v-2h14v2z"
-	}), 'Remove');
-	default_1$7 = Remove["default"] = _default$7;
-
 	var ContentCopy = {};
 
-	var _interopRequireDefault$6 = interopRequireDefault.exports;
+	var _interopRequireDefault$7 = interopRequireDefault.exports;
 	Object.defineProperty(ContentCopy, "__esModule", {
 	  value: true
 	});
-	var default_1$6 = ContentCopy["default"] = void 0;
-	var _createSvgIcon$6 = /*#__PURE__*/_interopRequireDefault$6(createSvgIcon);
-	var _jsxRuntime$6 = require$$2__default["default"];
-	var _default$6 = /*#__PURE__*/(0, _createSvgIcon$6["default"])( /*#__PURE__*/(0, _jsxRuntime$6.jsx)("path", {
+	var default_1$7 = ContentCopy["default"] = void 0;
+	var _createSvgIcon$7 = /*#__PURE__*/_interopRequireDefault$7(createSvgIcon);
+	var _jsxRuntime$7 = require$$2__default["default"];
+	var _default$7 = /*#__PURE__*/(0, _createSvgIcon$7["default"])( /*#__PURE__*/(0, _jsxRuntime$7.jsx)("path", {
 	  d: "M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"
 	}), 'ContentCopy');
-	default_1$6 = ContentCopy["default"] = _default$6;
+	default_1$7 = ContentCopy["default"] = _default$7;
 
 	var ContentCut = {};
 
-	var _interopRequireDefault$5 = interopRequireDefault.exports;
+	var _interopRequireDefault$6 = interopRequireDefault.exports;
 	Object.defineProperty(ContentCut, "__esModule", {
 	  value: true
 	});
-	var default_1$5 = ContentCut["default"] = void 0;
+	var default_1$6 = ContentCut["default"] = void 0;
+	var _createSvgIcon$6 = /*#__PURE__*/_interopRequireDefault$6(createSvgIcon);
+	var _jsxRuntime$6 = require$$2__default["default"];
+	var _default$6 = /*#__PURE__*/(0, _createSvgIcon$6["default"])( /*#__PURE__*/(0, _jsxRuntime$6.jsx)("path", {
+	  d: "M9.64 7.64c.23-.5.36-1.05.36-1.64 0-2.21-1.79-4-4-4S2 3.79 2 6s1.79 4 4 4c.59 0 1.14-.13 1.64-.36L10 12l-2.36 2.36C7.14 14.13 6.59 14 6 14c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4c0-.59-.13-1.14-.36-1.64L12 14l7 7h3v-1L9.64 7.64zM6 8c-1.1 0-2-.89-2-2s.9-2 2-2 2 .89 2 2-.9 2-2 2zm0 12c-1.1 0-2-.89-2-2s.9-2 2-2 2 .89 2 2-.9 2-2 2zm6-7.5c-.28 0-.5-.22-.5-.5s.22-.5.5-.5.5.22.5.5-.22.5-.5.5zM19 3l-6 6 2 2 7-7V3z"
+	}), 'ContentCut');
+	default_1$6 = ContentCut["default"] = _default$6;
+
+	var Remove = {};
+
+	var _interopRequireDefault$5 = interopRequireDefault.exports;
+	Object.defineProperty(Remove, "__esModule", {
+	  value: true
+	});
+	var default_1$5 = Remove["default"] = void 0;
 	var _createSvgIcon$5 = /*#__PURE__*/_interopRequireDefault$5(createSvgIcon);
 	var _jsxRuntime$5 = require$$2__default["default"];
 	var _default$5 = /*#__PURE__*/(0, _createSvgIcon$5["default"])( /*#__PURE__*/(0, _jsxRuntime$5.jsx)("path", {
-	  d: "M9.64 7.64c.23-.5.36-1.05.36-1.64 0-2.21-1.79-4-4-4S2 3.79 2 6s1.79 4 4 4c.59 0 1.14-.13 1.64-.36L10 12l-2.36 2.36C7.14 14.13 6.59 14 6 14c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4c0-.59-.13-1.14-.36-1.64L12 14l7 7h3v-1L9.64 7.64zM6 8c-1.1 0-2-.89-2-2s.9-2 2-2 2 .89 2 2-.9 2-2 2zm0 12c-1.1 0-2-.89-2-2s.9-2 2-2 2 .89 2 2-.9 2-2 2zm6-7.5c-.28 0-.5-.22-.5-.5s.22-.5.5-.5.5.22.5.5-.22.5-.5.5zM19 3l-6 6 2 2 7-7V3z"
-	}), 'ContentCut');
-	default_1$5 = ContentCut["default"] = _default$5;
+	  d: "M19 13H5v-2h14v2z"
+	}), 'Remove');
+	default_1$5 = Remove["default"] = _default$5;
 
-	/* eslint-disable unicorn/no-nested-ternary */
 	const StyledTextField = newStyled(NumberTextField)(() => ({
 	    '&.MuiFormControl-root': {
 	        marginTop: 0,
@@ -54286,7 +54107,16 @@
 	});
 	const Strand = (props) => {
 	    const { strand } = props;
-	    return (React__default["default"].createElement("div", null, strand === 1 ? (React__default["default"].createElement(default_1$j, null)) : strand === -1 ? (React__default["default"].createElement(default_1$7, null)) : (React__default["default"].createElement(material.Typography, { component: 'span' }, "N/A"))));
+	    return (React__default["default"].createElement("div", null, strand === 1 ? (React__default["default"].createElement(default_1$j, null)) : strand === -1 ? (React__default["default"].createElement(default_1$5, null)) : (React__default["default"].createElement(material.Typography, { component: 'span' }, "N/A"))));
+	};
+	const minMaxExonTranscriptLocation = (transcript, featureTypeOntology) => {
+	    const { transcriptExonParts } = transcript;
+	    const exonParts = transcriptExonParts
+	        .filter((part) => featureTypeOntology.isTypeOf(part.type, 'exon'))
+	        .sort(({ min: a }, { min: b }) => a - b);
+	    const exonMin = exonParts[0]?.min;
+	    const exonMax = exonParts[exonParts.length - 1]?.max;
+	    return [exonMin, exonMax];
 	};
 	const TranscriptWidgetEditLocation = mobxReact.observer(function TranscriptWidgetEditLocation({ assembly, feature, refName, session, }) {
 	    const { notify } = session;
@@ -54294,221 +54124,17 @@
 	    const refData = currentAssembly?.getByRefName(refName);
 	    const { changeManager } = session.apolloDataStore;
 	    const seqRef = React.useRef(null);
-	    // Separate function to handle CDS location change
-	    // because start of CDS and exon might be same
-	    function handleCDSLocationChange(oldLocation, newLocation, feature, isMin) {
-	        if (!feature.children) {
-	            throw new Error('Transcript should have child features');
-	        }
-	        for (const [, child] of feature.children) {
-	            if (child.type !== 'CDS') {
-	                continue;
-	            }
-	            if (isMin && oldLocation === child.min) {
-	                const newLoc = newLocation - 1;
-	                if (newLoc < 0) {
-	                    notify('Start location should be greater than 0', 'error');
-	                    return;
-	                }
-	                const change = new dist$2.LocationStartChange({
-	                    typeName: 'LocationStartChange',
-	                    changedIds: [child._id],
-	                    featureId: child._id,
-	                    oldStart: child.min,
-	                    newStart: newLoc,
-	                    assembly,
-	                });
-	                changeManager.submit(change).catch(() => {
-	                    notify('Error updating feature start position', 'error');
-	                });
-	                return;
-	            }
-	            if (!isMin && oldLocation === child.max) {
-	                const change = new dist$2.LocationEndChange({
-	                    typeName: 'LocationEndChange',
-	                    changedIds: [child._id],
-	                    featureId: child._id,
-	                    oldEnd: child.max,
-	                    newEnd: newLocation,
-	                    assembly,
-	                });
-	                changeManager.submit(change).catch(() => {
-	                    notify('Error updating feature start position', 'error');
-	                });
-	                return;
-	            }
-	        }
-	    }
-	    function handleExonLocationChange(oldLocation, newLocation, feature, isMin, index, transcriptExonParts) {
-	        if (!feature.children) {
-	            throw new Error('Transcript should have child features');
-	        }
-	        for (const [, child] of feature.children) {
-	            if (child.type !== 'exon') {
-	                continue;
-	            }
-	            if (isMin && oldLocation === child.min) {
-	                // Internally its 0-based but we are displaying 1-based location so subtract 1 from newLocation
-	                const newLoc = newLocation - 1;
-	                if (newLoc < 0) {
-	                    notify('Start location should be greater than 0', 'error');
-	                    return;
-	                }
-	                // Check if the new location is less than the previous exon end location
-	                // If the new location is less than the previous exon end location, show an error
-	                // and return without making any changes
-	                if (feature.strand === 1 && index > 0) {
-	                    for (let i = index - 1; i >= 0; i--) {
-	                        const prevLoc = transcriptExonParts[i];
-	                        if (prevLoc.type === 'exon') {
-	                            if (prevLoc.max > newLoc) {
-	                                notify('Start location should be greater than previous exon end location', 'error');
-	                                return;
-	                            }
-	                            break;
-	                        }
-	                    }
-	                }
-	                if (feature.strand === -1 && index < transcriptExonParts.length - 1) {
-	                    for (let i = index + 1; i < transcriptExonParts.length; i++) {
-	                        const prevLoc = transcriptExonParts[i];
-	                        if (prevLoc.type === 'exon') {
-	                            if (prevLoc.max > newLoc) {
-	                                notify('Start location should be greater than previous exon end location', 'error');
-	                                return;
-	                            }
-	                            break;
-	                        }
-	                    }
-	                }
-	                const change = new dist$2.LocationStartChange({
-	                    typeName: 'LocationStartChange',
-	                    changedIds: [],
-	                    changes: [],
-	                    assembly,
-	                });
-	                // If we change the start location of the first exon beyond the transcript start or gene start
-	                // we need to update the transcript and gene start locations as well
-	                if ((index === 0 && feature.strand === 1) ||
-	                    (index === transcriptExonParts.length - 1 && feature.strand === -1)) {
-	                    const transcriptStart = feature.min;
-	                    const geneStart = feature.parent?.min;
-	                    if (newLoc < transcriptStart) {
-	                        if (geneStart && newLoc < geneStart) {
-	                            // gene start
-	                            change.changedIds.push(feature.parent._id);
-	                            change.changes.push({
-	                                featureId: feature.parent._id,
-	                                oldStart: feature.parent.min,
-	                                newStart: newLoc,
-	                            });
-	                        }
-	                        // transcript start
-	                        change.changedIds.push(feature._id);
-	                        change.changes.push({
-	                            featureId: feature._id,
-	                            oldStart: feature.min,
-	                            newStart: newLoc,
-	                        });
-	                    }
-	                }
-	                // exon start
-	                change.changedIds.push(child._id);
-	                change.changes.push({
-	                    featureId: child._id,
-	                    oldStart: child.min,
-	                    newStart: newLoc,
-	                });
-	                void changeManager.submit(change).catch(() => {
-	                    notify('Error updating feature start position', 'error');
-	                });
-	                return;
-	            }
-	            if (!isMin && oldLocation === child.max) {
-	                // Check if the new location is greater than the next exon start location
-	                // If the new location is greater than the next exon start location, show an error
-	                // and return without making any changes
-	                if (index < transcriptExonParts.length - 1 && feature.strand === 1) {
-	                    for (let i = index + 1; i < transcriptExonParts.length; i++) {
-	                        const nextLoc = transcriptExonParts[i];
-	                        if (nextLoc.type === 'exon') {
-	                            if (nextLoc.min < newLocation) {
-	                                notify('End location should be less than next exon start location', 'error');
-	                                return;
-	                            }
-	                            break;
-	                        }
-	                    }
-	                }
-	                if (index > 0 && feature.strand === -1) {
-	                    for (let i = index - 1; i >= 0; i--) {
-	                        const nextLoc = transcriptExonParts[i];
-	                        if (nextLoc.type === 'exon') {
-	                            if (nextLoc.min < newLocation) {
-	                                notify('End location should be less than next exon start location', 'error');
-	                                return;
-	                            }
-	                            break;
-	                        }
-	                    }
-	                }
-	                const change = new dist$2.LocationEndChange({
-	                    typeName: 'LocationEndChange',
-	                    changedIds: [],
-	                    changes: [],
-	                    assembly,
-	                });
-	                // If we change the end location of the last exon beyond the transcript end or gene end
-	                // we need to update the transcript and gene end locations as well
-	                if ((index === transcriptExonParts.length - 1 &&
-	                    feature.strand === 1) ||
-	                    (index === 0 && feature.strand === -1)) {
-	                    const transcriptEnd = feature.max;
-	                    const geneEnd = feature.parent?.max;
-	                    if (newLocation > transcriptEnd) {
-	                        if (geneEnd && newLocation > geneEnd) {
-	                            // gene end
-	                            change.changedIds.push(feature.parent._id);
-	                            change.changes.push({
-	                                featureId: feature.parent._id,
-	                                oldEnd: feature.parent.max,
-	                                newEnd: newLocation,
-	                            });
-	                        }
-	                        // transcript end
-	                        change.changedIds.push(feature._id);
-	                        change.changes.push({
-	                            featureId: feature._id,
-	                            oldEnd: feature.max,
-	                            newEnd: newLocation,
-	                        });
-	                    }
-	                }
-	                // exon end
-	                change.changedIds.push(child._id);
-	                change.changes.push({
-	                    featureId: child._id,
-	                    oldEnd: child.max,
-	                    newEnd: newLocation,
-	                });
-	                // Submit all changes sequentially. gene -> transcript -> exon
-	                void changeManager.submit(change).catch(() => {
-	                    notify('Error updating feature end position', 'error');
-	                });
-	                return;
-	            }
-	        }
-	    }
 	    if (!refData) {
 	        return null;
 	    }
+	    const { apolloDataStore } = session;
+	    const { featureTypeOntology } = apolloDataStore.ontologyManager;
+	    if (!featureTypeOntology.isTypeOf(feature.type, 'transcript')) {
+	        throw new Error('Feature is not a transcript or equivalent');
+	    }
 	    const { cdsLocations, transcriptExonParts, strand } = feature;
 	    const [firstCDSLocation] = cdsLocations;
-	    const exonParts = transcriptExonParts
-	        .filter((part) => part.type === 'exon')
-	        .sort(({ min: a }, { min: b }) => a - b);
-	    const exonMin = exonParts[0]?.min;
-	    const exonMax = exonParts[exonParts.length - 1]?.max;
+	    const [exonMin, exonMax] = minMaxExonTranscriptLocation(feature, featureTypeOntology);
 	    let cdsMin = exonMin;
 	    let cdsMax = exonMax;
 	    const cdsPresent = firstCDSLocation.length > 0;
@@ -54517,6 +54143,484 @@
 	        cdsMin = sortedCDSLocations[0].min;
 	        cdsMax = sortedCDSLocations[sortedCDSLocations.length - 1].max;
 	    }
+	    function handleCDSLocationChange(oldLocation, newLocation, feature, isMin, onComplete) {
+	        if (!feature.children) {
+	            throw new Error('Transcript should have child features');
+	        }
+	        const overlappingExon = getOverlappingExonForCDS(feature, featureTypeOntology, oldLocation, isMin);
+	        if (!overlappingExon) {
+	            notify('No matching exon found', 'error');
+	            return;
+	        }
+	        const oldExonLocation = isMin ? overlappingExon.min : overlappingExon.max;
+	        const { prevExon, nextExon } = getNeighboringExonParts(feature, featureTypeOntology, oldExonLocation, isMin);
+	        // Start location should be less than end location
+	        if (isMin && newLocation >= overlappingExon.max) {
+	            notify('Start location should be less than overlapping exon end location', 'error');
+	            return;
+	        }
+	        // End location should be greater than start location
+	        if (!isMin && newLocation <= overlappingExon.min) {
+	            notify('End location should be greater than overlapping exon start location', 'error');
+	            return;
+	        }
+	        // Changed location should be greater than end location of previous exon - give 2bp buffer
+	        if (prevExon && prevExon.max + 2 > newLocation) {
+	            notify('Start location should be greater than previous exon end location', 'error');
+	            return;
+	        }
+	        // Changed location should be less than start location of next exon
+	        if (nextExon && nextExon.min - 2 < newLocation) {
+	            notify('End location should be less than next exon start location', 'error');
+	            return;
+	        }
+	        const cdsFeature = getMatchingCDSFeature(feature, featureTypeOntology, oldLocation, isMin);
+	        if (!cdsFeature) {
+	            notify('No matching CDS feature found', 'error');
+	            return;
+	        }
+	        if (!isMin && newLocation <= cdsFeature.min) {
+	            notify('End location should be greater than CDS start location', 'error');
+	            return;
+	        }
+	        if (isMin && newLocation >= cdsFeature.max) {
+	            notify('Start location should be less than CDS end location', 'error');
+	            return;
+	        }
+	        const overlappingExonFeature = getExonFeature(feature, overlappingExon.min, overlappingExon.max, featureTypeOntology);
+	        if (!overlappingExonFeature) {
+	            notify('No matching exon feature found', 'error');
+	            return;
+	        }
+	        if (isMin && newLocation !== cdsFeature.min) {
+	            const startChange = new dist$2.LocationStartChange({
+	                typeName: 'LocationStartChange',
+	                changedIds: [],
+	                changes: [],
+	                assembly,
+	            });
+	            if (newLocation < overlappingExon.min) {
+	                if (prevExon) {
+	                    // update exon start location
+	                    appendStartLocationChange(overlappingExonFeature, startChange, newLocation);
+	                    // update CDS start location
+	                    appendStartLocationChange(cdsFeature, startChange, newLocation);
+	                }
+	                else {
+	                    const transcriptStart = feature.min;
+	                    const gene = feature.parent;
+	                    if (newLocation < transcriptStart) {
+	                        if (gene && newLocation < gene.min) {
+	                            // update gene start location
+	                            appendStartLocationChange(gene, startChange, newLocation);
+	                        }
+	                        // update transcript start location
+	                        appendStartLocationChange(feature, startChange, newLocation);
+	                        // update exon start location
+	                        appendStartLocationChange(overlappingExonFeature, startChange, newLocation);
+	                        // update CDS start location
+	                        appendStartLocationChange(cdsFeature, startChange, newLocation);
+	                    }
+	                }
+	            }
+	            else {
+	                // update CDS start location
+	                appendStartLocationChange(cdsFeature, startChange, newLocation);
+	            }
+	            void changeManager
+	                .submit(startChange)
+	                .then(() => {
+	                if (onComplete) {
+	                    onComplete();
+	                }
+	            })
+	                .catch(() => {
+	                notify('Error updating feature CDS start position', 'error');
+	            });
+	        }
+	        if (!isMin && newLocation !== cdsFeature.max) {
+	            const endChange = new dist$2.LocationEndChange({
+	                typeName: 'LocationEndChange',
+	                changedIds: [],
+	                changes: [],
+	                assembly,
+	            });
+	            if (newLocation > overlappingExon.max) {
+	                if (nextExon) {
+	                    // update exon end location
+	                    appendEndLocationChange(overlappingExonFeature, endChange, newLocation);
+	                    // update CDS end location
+	                    appendEndLocationChange(cdsFeature, endChange, newLocation);
+	                }
+	                else {
+	                    const transcriptEnd = feature.max;
+	                    const gene = feature.parent;
+	                    if (newLocation > transcriptEnd) {
+	                        if (gene && newLocation > gene.max) {
+	                            // update gene end location
+	                            appendEndLocationChange(gene, endChange, newLocation);
+	                        }
+	                        // update transcript end location
+	                        appendEndLocationChange(feature, endChange, newLocation);
+	                        // update exon end location
+	                        appendEndLocationChange(overlappingExonFeature, endChange, newLocation);
+	                        // update CDS end location
+	                        appendEndLocationChange(cdsFeature, endChange, newLocation);
+	                    }
+	                }
+	            }
+	            else {
+	                // update CDS end location
+	                appendEndLocationChange(cdsFeature, endChange, newLocation);
+	            }
+	            void changeManager
+	                .submit(endChange)
+	                .then(() => {
+	                if (onComplete) {
+	                    onComplete();
+	                }
+	            })
+	                .catch(() => {
+	                notify('Error updating feature CDS end position', 'error');
+	            });
+	        }
+	    }
+	    const updateCDSLocation = (oldLocation, newLocation, feature, isMin) => {
+	        if (!feature.children) {
+	            throw new Error('Transcript should have child features');
+	        }
+	        if (oldLocation === newLocation) {
+	            return;
+	        }
+	        const cdsFeature = getMatchingCDSFeature(feature, featureTypeOntology, oldLocation, isMin);
+	        if (!cdsFeature) {
+	            notify('No matching CDS feature found', 'error');
+	            return;
+	        }
+	        const change = isMin
+	            ? new dist$2.LocationStartChange({
+	                typeName: 'LocationStartChange',
+	                changedIds: [cdsFeature._id],
+	                featureId: cdsFeature._id,
+	                oldStart: cdsFeature.min,
+	                newStart: newLocation,
+	                assembly,
+	            })
+	            : new dist$2.LocationEndChange({
+	                typeName: 'LocationEndChange',
+	                changedIds: [cdsFeature._id],
+	                featureId: cdsFeature._id,
+	                oldEnd: cdsFeature.max,
+	                newEnd: newLocation,
+	                assembly,
+	            });
+	        void changeManager.submit(change).catch(() => {
+	            notify('Error updating feature CDS position', 'error');
+	        });
+	    };
+	    function handleExonLocationChange(oldLocation, newLocation, feature, isMin) {
+	        if (!feature.children) {
+	            throw new Error('Transcript should have child features');
+	        }
+	        const { matchingExon, prevExon, nextExon } = getNeighboringExonParts(feature, featureTypeOntology, oldLocation, isMin);
+	        if (!matchingExon) {
+	            notify('No matching exon found', 'error');
+	            return;
+	        }
+	        // Start location should be less than end location
+	        if (isMin && newLocation >= matchingExon.max) {
+	            notify(`Start location should be less than end location`, 'error');
+	            return;
+	        }
+	        // End location should be greater than start location
+	        if (!isMin && newLocation <= matchingExon.min) {
+	            notify(`End location should be greater than start location`, 'error');
+	            return;
+	        }
+	        // Changed location should be greater than end location of previous exon - give 2bp buffer
+	        if (prevExon && prevExon.max + 2 > newLocation) {
+	            notify(`Error while changing start location`, 'error');
+	            return;
+	        }
+	        // Changed location should be less than start location of next exon - give 2bp buffer
+	        if (nextExon && nextExon.min - 2 < newLocation) {
+	            notify(`Error while changing end location`, 'error');
+	            return;
+	        }
+	        const exonFeature = getExonFeature(feature, matchingExon.min, matchingExon.max, featureTypeOntology);
+	        if (!exonFeature) {
+	            notify('No matching exon feature found', 'error');
+	            return;
+	        }
+	        const cdsFeature = getFirstCDSFeature(feature, featureTypeOntology);
+	        // START LOCATION CHANGE
+	        if (isMin && newLocation !== matchingExon.min) {
+	            const startChange = new dist$2.LocationStartChange({
+	                typeName: 'LocationStartChange',
+	                changedIds: [],
+	                changes: [],
+	                assembly,
+	            });
+	            if (prevExon) {
+	                // update exon start location
+	                appendStartLocationChange(exonFeature, startChange, newLocation);
+	            }
+	            else {
+	                const transcriptStart = feature.min;
+	                const gene = feature.parent;
+	                if (newLocation < transcriptStart) {
+	                    if (gene && newLocation < gene.min) {
+	                        // update gene start location
+	                        appendStartLocationChange(gene, startChange, newLocation);
+	                    }
+	                    // update transcript start location
+	                    appendStartLocationChange(feature, startChange, newLocation);
+	                    // update exon start location
+	                    appendStartLocationChange(exonFeature, startChange, newLocation);
+	                }
+	                else if (newLocation > transcriptStart) {
+	                    // update exon start location
+	                    appendStartLocationChange(exonFeature, startChange, newLocation);
+	                    // update transcript start location
+	                    appendStartLocationChange(feature, startChange, newLocation);
+	                    if (gene) {
+	                        const [geneMinWithNewLoc] = geneMinMaxWithNewLocation(gene, feature, newLocation, featureTypeOntology, isMin);
+	                        if (gene.min != geneMinWithNewLoc) {
+	                            // update gene start location
+	                            appendStartLocationChange(gene, startChange, geneMinWithNewLoc);
+	                        }
+	                    }
+	                }
+	            }
+	            // When we change the start location of the exon overlapping with start location of the CDS
+	            // and the new start location is greater than the CDS start location then we need to update the CDS start location
+	            if (cdsFeature &&
+	                cdsFeature.min >= matchingExon.min &&
+	                cdsFeature.min <= matchingExon.max &&
+	                newLocation > cdsFeature.min) {
+	                // update CDS start location
+	                appendStartLocationChange(cdsFeature, startChange, newLocation);
+	            }
+	            void changeManager.submit(startChange).catch(() => {
+	                notify('Error updating feature exon start position', 'error');
+	            });
+	        }
+	        // END LOCATION CHANGE
+	        if (!isMin && newLocation !== matchingExon.max) {
+	            const endChange = new dist$2.LocationEndChange({
+	                typeName: 'LocationEndChange',
+	                changedIds: [],
+	                changes: [],
+	                assembly,
+	            });
+	            if (nextExon) {
+	                // update exon end location
+	                appendEndLocationChange(exonFeature, endChange, newLocation);
+	            }
+	            else {
+	                const transcriptEnd = feature.max;
+	                const gene = feature.parent;
+	                if (newLocation > transcriptEnd) {
+	                    if (gene && newLocation > gene.max) {
+	                        // update gene end location
+	                        appendEndLocationChange(gene, endChange, newLocation);
+	                    }
+	                    // update transcript end location
+	                    appendEndLocationChange(feature, endChange, newLocation);
+	                    // update exon end location
+	                    appendEndLocationChange(exonFeature, endChange, newLocation);
+	                }
+	                else if (newLocation < transcriptEnd) {
+	                    // update exon end location
+	                    appendEndLocationChange(exonFeature, endChange, newLocation);
+	                    // update transcript end location
+	                    appendEndLocationChange(feature, endChange, newLocation);
+	                    if (gene) {
+	                        const [, geneMaxWithNewLoc] = geneMinMaxWithNewLocation(gene, feature, newLocation, featureTypeOntology, isMin);
+	                        if (gene.max != geneMaxWithNewLoc) {
+	                            // update gene end location
+	                            appendEndLocationChange(gene, endChange, geneMaxWithNewLoc);
+	                        }
+	                    }
+	                }
+	            }
+	            // When we change the end location of the exon overlapping with end location of the CDS
+	            // and the new end location is less than the CDS end location then we need to update the CDS end location
+	            if (cdsFeature &&
+	                cdsFeature.max >= matchingExon.min &&
+	                cdsFeature.max <= matchingExon.max &&
+	                newLocation < cdsFeature.max) {
+	                // update CDS end location
+	                appendEndLocationChange(cdsFeature, endChange, newLocation);
+	            }
+	            void changeManager.submit(endChange).catch(() => {
+	                notify('Error updating feature exon end position', 'error');
+	            });
+	        }
+	    }
+	    const appendEndLocationChange = (feature, change, newLocation) => {
+	        change.changedIds.push(feature._id);
+	        change.changes.push({
+	            featureId: feature._id,
+	            oldEnd: feature.max,
+	            newEnd: newLocation,
+	        });
+	    };
+	    const appendStartLocationChange = (feature, change, newLocation) => {
+	        change.changedIds.push(feature._id);
+	        change.changes.push({
+	            featureId: feature._id,
+	            oldStart: feature.min,
+	            newStart: newLocation,
+	        });
+	    };
+	    const getMatchingCDSFeature = (feature, featureTypeOntology, oldCDSLocation, isMin) => {
+	        let cdsFeature;
+	        for (const [, child] of feature.children ?? []) {
+	            if (!featureTypeOntology.isTypeOf(child.type, 'CDS')) {
+	                continue;
+	            }
+	            if (isMin && oldCDSLocation === child.min) {
+	                cdsFeature = child;
+	                break;
+	            }
+	            if (!isMin && oldCDSLocation === child.max) {
+	                cdsFeature = child;
+	                break;
+	            }
+	        }
+	        return cdsFeature;
+	    };
+	    const getFirstCDSFeature = (feature, featureTypeOntology) => {
+	        let cdsFeature;
+	        for (const [, child] of feature.children ?? []) {
+	            if (!featureTypeOntology.isTypeOf(child.type, 'CDS')) {
+	                continue;
+	            }
+	            cdsFeature = child;
+	            break;
+	        }
+	        return cdsFeature;
+	    };
+	    const getExonFeature = (feature, exonMin, exonMax, featureTypeOntology) => {
+	        let exonFeature;
+	        for (const [, child] of feature.children ?? []) {
+	            if (!featureTypeOntology.isTypeOf(child.type, 'exon')) {
+	                continue;
+	            }
+	            if (exonMin === child.min && exonMax === child.max) {
+	                exonFeature = child;
+	                break;
+	            }
+	        }
+	        return exonFeature;
+	    };
+	    const geneMinMaxWithNewLocation = (gene, transcript, newLocation, featureTypeOntology, isMin) => {
+	        const mins = [];
+	        const maxs = [];
+	        for (const [, t] of gene.children?.entries() ?? []) {
+	            if (!featureTypeOntology.isTypeOf(t.type, 'transcript')) {
+	                continue;
+	            }
+	            if (t._id === transcript._id) {
+	                if (isMin) {
+	                    mins.push(newLocation);
+	                    maxs.push(t.max);
+	                }
+	                else {
+	                    maxs.push(newLocation);
+	                    mins.push(t.min);
+	                }
+	            }
+	            else {
+	                mins.push(t.min);
+	                maxs.push(t.max);
+	            }
+	        }
+	        const newMin = Math.min(...mins);
+	        const newMax = Math.max(...maxs);
+	        return [newMin, newMax];
+	    };
+	    const getOverlappingExonForCDS = (transcript, featureTypeOntology, oldCDSLocation, isMin) => {
+	        const { transcriptExonParts } = transcript;
+	        let overlappingExonPart;
+	        for (const [, exonPart] of transcriptExonParts.entries()) {
+	            if (!featureTypeOntology.isTypeOf(exonPart.type, 'exon')) {
+	                continue;
+	            }
+	            if (!isMin &&
+	                oldCDSLocation >= exonPart.min &&
+	                oldCDSLocation <= exonPart.max) {
+	                overlappingExonPart = exonPart;
+	                break;
+	            }
+	            if (isMin &&
+	                oldCDSLocation >= exonPart.min &&
+	                oldCDSLocation <= exonPart.max) {
+	                overlappingExonPart = exonPart;
+	                break;
+	            }
+	        }
+	        return overlappingExonPart;
+	    };
+	    const getNeighboringExonParts = (transcript, featureTypeOntology, oldExonLoc, isMin) => {
+	        const { transcriptExonParts, strand } = transcript;
+	        let matchingExon, matchingExonIdx, prevExon, nextExon;
+	        for (const [i, exonPart] of transcriptExonParts.entries()) {
+	            if (!featureTypeOntology.isTypeOf(exonPart.type, 'exon')) {
+	                continue;
+	            }
+	            if (isMin && exonPart.min === oldExonLoc) {
+	                matchingExon = exonPart;
+	                matchingExonIdx = i;
+	                break;
+	            }
+	            if (!isMin && exonPart.max === oldExonLoc) {
+	                matchingExon = exonPart;
+	                matchingExonIdx = i;
+	                break;
+	            }
+	        }
+	        if (matchingExon && matchingExonIdx !== undefined) {
+	            if (strand === 1 && matchingExonIdx > 0) {
+	                for (let i = matchingExonIdx - 1; i >= 0; i--) {
+	                    const prevLoc = transcriptExonParts[i];
+	                    if (featureTypeOntology.isTypeOf(prevLoc.type, 'exon')) {
+	                        prevExon = prevLoc;
+	                        break;
+	                    }
+	                }
+	            }
+	            if (strand === -1 && matchingExonIdx < transcriptExonParts.length - 1) {
+	                for (let i = matchingExonIdx + 1; i < transcriptExonParts.length; i++) {
+	                    const prevLoc = transcriptExonParts[i];
+	                    if (featureTypeOntology.isTypeOf(prevLoc.type, 'exon')) {
+	                        prevExon = prevLoc;
+	                        break;
+	                    }
+	                }
+	            }
+	            if (strand === 1 && matchingExonIdx < transcriptExonParts.length - 1) {
+	                for (let i = matchingExonIdx + 1; i < transcriptExonParts.length; i++) {
+	                    const nextLoc = transcriptExonParts[i];
+	                    if (featureTypeOntology.isTypeOf(nextLoc.type, 'exon')) {
+	                        nextExon = nextLoc;
+	                        break;
+	                    }
+	                }
+	            }
+	            if (strand === -1 && matchingExonIdx > 0) {
+	                for (let i = matchingExonIdx - 1; i >= 0; i--) {
+	                    const nextLoc = transcriptExonParts[i];
+	                    if (featureTypeOntology.isTypeOf(nextLoc.type, 'exon')) {
+	                        nextExon = nextLoc;
+	                        break;
+	                    }
+	                }
+	            }
+	        }
+	        return { matchingExon, prevExon, nextExon };
+	    };
 	    const getFivePrimeSpliceSite = (loc, prevLocIdx) => {
 	        let spliceSite = '';
 	        if (prevLocIdx > 0) {
@@ -54565,11 +54669,13 @@
 	        let wholeSequence = '';
 	        const [firstLocation] = cdsLocations;
 	        for (const loc of firstLocation) {
-	            let sequence = refData.getSequence(loc.min, loc.max);
-	            if (strand === -1) {
-	                sequence = require$$1$2.revcom(sequence);
-	            }
-	            wholeSequence += sequence;
+	            wholeSequence += refData.getSequence(loc.min, loc.max);
+	        }
+	        if (strand === -1) {
+	            // Original: ACGCAT
+	            // Complement: TGCGTA
+	            // Reverse complement: ATGCGT
+	            wholeSequence = require$$1$2.revcom(wholeSequence);
 	        }
 	        const elements = [];
 	        for (let codonGenomicPos = 0; codonGenomicPos < wholeSequence.length; codonGenomicPos += 3) {
@@ -54587,10 +54693,12 @@
 	                        // NOTE: codonGenomicPos is important here for calculating the genomic location
 	                        // of the start codon. We are using the codonGenomicPos as the key in the typography
 	                        // elements to maintain the genomic postion of the codon start
-	                        // Add 1 for 1-based genomic location
-	                        const startCodonGenomicLocation = getStartCodonGenomicLocation(codonGenomicPos) + 1;
-	                        if (startCodonGenomicLocation !== cdsMin) {
-	                            handleCDSLocationChange(cdsMin, startCodonGenomicLocation, feature, true);
+	                        const startCodonGenomicLocation = getCodonGenomicLocation(codonGenomicPos);
+	                        if (startCodonGenomicLocation !== cdsMin && strand === 1) {
+	                            updateCDSLocation(cdsMin, startCodonGenomicLocation, feature, true);
+	                        }
+	                        if (startCodonGenomicLocation !== cdsMax && strand === -1) {
+	                            updateCDSLocation(cdsMax, startCodonGenomicLocation, feature, false);
 	                        }
 	                    } }, protein));
 	            }
@@ -54609,32 +54717,35 @@
 	    };
 	    // Codon position is the index of the start codon in the CDS genomic sequence
 	    // Calculate the genomic location of the start codon based on the codon position in the CDS
-	    const getStartCodonGenomicLocation = (codonGenomicPosition) => {
+	    const getCodonGenomicLocation = (codonGenomicPosition) => {
 	        const [firstLocation] = cdsLocations;
 	        let cdsLen = 0;
-	        for (const loc of firstLocation) {
-	            const locLength = loc.max - loc.min;
-	            // Suppose CDS locations are [{min: 0, max: 10}, {min: 20, max: 30}, {min: 40, max: 50}]
-	            // and codonGenomicPosition is 25
-	            // (((10 - 0) + (30 - 20)) + 10) > 25
-	            // 40 + (25-20) = 45 is the genomic location of the start codon
-	            if (cdsLen + locLength > codonGenomicPosition) {
-	                return loc.min + (codonGenomicPosition - cdsLen);
+	        // Suppose CDS locations are [{min: 0, max: 10}, {min: 20, max: 30}, {min: 40, max: 50}]
+	        // and codonGenomicPosition is 25
+	        // ((10 - 0) + (30 - 20) + (50 - 40)) > 25
+	        // So, start codon is in (40, 50)
+	        // 40 + (25-20) = 45 is the genomic location of the start codon
+	        if (strand === 1) {
+	            for (const loc of firstLocation) {
+	                const locLength = loc.max - loc.min;
+	                if (cdsLen + locLength > codonGenomicPosition) {
+	                    return loc.min + (codonGenomicPosition - cdsLen);
+	                }
+	                cdsLen += locLength;
 	            }
-	            cdsLen += locLength;
 	        }
-	        return cdsMin;
-	    };
-	    const getStopCodonGenomicLocation = (codonGenomicPosition) => {
-	        const [firstLocation] = cdsLocations;
-	        let cdsLen = 0;
-	        for (const loc of firstLocation) {
-	            const locLength = loc.max - loc.min;
-	            // Check if the codonPosition is within the current location
-	            if (cdsLen + locLength > codonGenomicPosition) {
-	                return loc.min + (codonGenomicPosition - cdsLen);
+	        else if (strand === -1) {
+	            for (let i = firstLocation.length - 1; i >= 0; i--) {
+	                const loc = firstLocation[i];
+	                const locLength = loc.max - loc.min;
+	                if (cdsLen + locLength > codonGenomicPosition) {
+	                    return loc.max - (codonGenomicPosition - cdsLen);
+	                }
+	                cdsLen += locLength;
 	            }
-	            cdsLen += locLength;
+	        }
+	        if (strand === 1) {
+	            return cdsMin;
 	        }
 	        return cdsMax;
 	    };
@@ -54659,26 +54770,55 @@
 	        if (translSeqCodonStartGenomicPosArr.length === 0) {
 	            return;
 	        }
-	        // Trim any sequence before first start codon and after last stop codon
+	        // Trim any sequence before first start codon and after stop codon
 	        const startCodonIndex = translationSequence.indexOf('M');
-	        const stopCodonIndex = translationSequence.lastIndexOf('*') + 1;
+	        const stopCodonIndex = translationSequence.indexOf('*') + 1;
 	        const startCodonPos = translSeqCodonStartGenomicPosArr[startCodonIndex].codonGenomicPos;
 	        const stopCodonPos = translSeqCodonStartGenomicPosArr[stopCodonIndex].codonGenomicPos;
 	        if (!startCodonPos || !stopCodonPos) {
 	            return;
 	        }
-	        // Add 1 for 1-based genomic location
-	        const startCodonGenomicLoc = getStartCodonGenomicLocation(startCodonPos) + 1;
-	        const stopCodonGenomicLoc = getStopCodonGenomicLocation(stopCodonPos);
-	        if (startCodonGenomicLoc !== cdsMin) {
-	            handleCDSLocationChange(cdsMin, startCodonGenomicLoc, feature, true);
+	        const startCodonGenomicLoc = getCodonGenomicLocation(startCodonPos);
+	        const stopCodonGenomicLoc = getCodonGenomicLocation(stopCodonPos);
+	        if (strand === 1) {
+	            let promise;
+	            if (startCodonGenomicLoc !== cdsMin) {
+	                promise = new Promise((resolve) => {
+	                    handleCDSLocationChange(cdsMin, startCodonGenomicLoc, feature, true, () => {
+	                        resolve(true);
+	                    });
+	                });
+	            }
+	            if (stopCodonGenomicLoc !== cdsMax) {
+	                if (promise) {
+	                    void promise.then(() => {
+	                        handleCDSLocationChange(cdsMax, stopCodonGenomicLoc, feature, false);
+	                    });
+	                }
+	                else {
+	                    handleCDSLocationChange(cdsMax, stopCodonGenomicLoc, feature, false);
+	                }
+	            }
 	        }
-	        if (stopCodonGenomicLoc !== cdsMax) {
-	            // TODO: getting error when trying to change the CDS start and end location at the same time
-	            // Need to fix this
-	            setTimeout(() => {
-	                handleCDSLocationChange(cdsMax, stopCodonGenomicLoc, feature, false);
-	            }, 1000);
+	        if (strand === -1) {
+	            let promise;
+	            if (startCodonGenomicLoc !== cdsMax) {
+	                promise = new Promise((resolve) => {
+	                    handleCDSLocationChange(cdsMax, startCodonGenomicLoc, feature, false, () => {
+	                        resolve(true);
+	                    });
+	                });
+	            }
+	            if (stopCodonGenomicLoc !== cdsMin) {
+	                if (promise) {
+	                    void promise.then(() => {
+	                        handleCDSLocationChange(cdsMin, stopCodonGenomicLoc, feature, true);
+	                    });
+	                }
+	                else {
+	                    handleCDSLocationChange(cdsMin, stopCodonGenomicLoc, feature, true);
+	                }
+	            }
 	        }
 	    };
 	    const copyToClipboard = () => {
@@ -54696,12 +54836,12 @@
 	    };
 	    return (React__default["default"].createElement("div", null,
 	        cdsPresent && (React__default["default"].createElement("div", null,
-	            React__default["default"].createElement(material.Accordion, { defaultExpanded: true },
+	            React__default["default"].createElement(material.Accordion, null,
 	                React__default["default"].createElement(StyledAccordionSummary, { expandIcon: React__default["default"].createElement(default_1$b, { style: { color: 'white' } }), "aria-controls": "panel1-content", id: "panel1-header" },
 	                    React__default["default"].createElement(material.Typography, { component: "span", fontWeight: 'bold' }, "Translation")),
 	                React__default["default"].createElement(material.AccordionDetails, null,
 	                    React__default["default"].createElement(SequenceContainer, null,
-	                        React__default["default"].createElement(material.Typography, { component: 'span', ref: seqRef }, getTranslationSequence())),
+	                        React__default["default"].createElement(material.Typography, { component: 'span', ref: seqRef, style: { maxHeight: 120, overflowY: 'scroll' } }, getTranslationSequence())),
 	                    React__default["default"].createElement("div", { style: {
 	                            marginTop: 10,
 	                            display: 'flex',
@@ -54710,14 +54850,14 @@
 	                            gap: 10,
 	                        } },
 	                        React__default["default"].createElement(material.Tooltip, { title: "Copy" },
-	                            React__default["default"].createElement(default_1$6, { style: { fontSize: 15, cursor: 'pointer' }, onClick: copyToClipboard })),
+	                            React__default["default"].createElement(default_1$7, { style: { fontSize: 15, cursor: 'pointer' }, onClick: copyToClipboard })),
 	                        React__default["default"].createElement(material.Tooltip, { title: "Trim" },
-	                            React__default["default"].createElement("div", null, feature.strand === 1 ? (React__default["default"].createElement(default_1$5, { style: { fontSize: 15, cursor: 'pointer' }, onClick: trimTranslationSequence })) : undefined))))),
+	                            React__default["default"].createElement(default_1$6, { style: { fontSize: 15, cursor: 'pointer' }, onClick: trimTranslationSequence }))))),
 	            React__default["default"].createElement(material.Grid2, { container: true, justifyContent: "center", alignItems: "center", style: { textAlign: 'center', marginTop: 10 } },
 	                React__default["default"].createElement(material.Grid2, { size: 1 }),
 	                React__default["default"].createElement(material.Grid2, { size: 4 },
 	                    React__default["default"].createElement(StyledTextField, { margin: "dense", variant: "outlined", value: cdsMin + 1, onChangeCommitted: (newLocation) => {
-	                            handleCDSLocationChange(cdsMin, newLocation, feature, true);
+	                            handleCDSLocationChange(cdsMin, newLocation - 1, feature, true);
 	                        } })),
 	                React__default["default"].createElement(material.Grid2, { size: 2 },
 	                    React__default["default"].createElement(material.Typography, { component: 'span' }, "CDS")),
@@ -54732,17 +54872,48 @@
 	                    getFivePrimeSpliceSite(loc, index).map((site, idx) => (React__default["default"].createElement(material.Typography, { key: idx, component: 'span', color: site.color }, site.spliceSite)))),
 	                React__default["default"].createElement(material.Grid2, { size: 4, style: { padding: 0 } },
 	                    React__default["default"].createElement(StyledTextField, { margin: "dense", variant: "outlined", value: loc.min + 1, onChangeCommitted: (newLocation) => {
-	                            handleExonLocationChange(loc.min, newLocation, feature, true, index, transcriptExonParts);
+	                            handleExonLocationChange(loc.min, newLocation - 1, feature, true);
 	                        } })),
 	                React__default["default"].createElement(material.Grid2, { size: 2 },
 	                    React__default["default"].createElement(Strand, { strand: feature.strand })),
 	                React__default["default"].createElement(material.Grid2, { size: 4, style: { padding: 0 } },
 	                    React__default["default"].createElement(StyledTextField, { margin: "dense", variant: "outlined", value: loc.max, onChangeCommitted: (newLocation) => {
-	                            handleExonLocationChange(loc.max, newLocation, feature, false, index, transcriptExonParts);
+	                            handleExonLocationChange(loc.max, newLocation, feature, false);
 	                        } })),
 	                React__default["default"].createElement(material.Grid2, { size: 1 }, index !== transcriptExonParts.length - 1 &&
 	                    getThreePrimeSpliceSite(loc, index).map((site, idx) => (React__default["default"].createElement(material.Typography, { key: idx, component: 'span', color: site.color }, site.spliceSite))))))));
 	        }))));
+	});
+
+	const HeaderTableCell = newStyled(material.TableCell)(() => ({
+	    fontWeight: 'bold',
+	}));
+	const TranscriptWidgetSummary = mobxReact.observer(function TranscriptWidgetSummary(props) {
+	    const { feature } = props;
+	    const name = getFeatureName$1(feature);
+	    const id = getFeatureId$1(feature);
+	    return (React__default["default"].createElement(material.Table, { size: "small", sx: { fontSize: '0.75rem', '& .MuiTableCell-root': { padding: '4px' } } },
+	        React__default["default"].createElement(material.TableBody, null,
+	            name !== '' && (React__default["default"].createElement(material.TableRow, null,
+	                React__default["default"].createElement(HeaderTableCell, null, "Name"),
+	                React__default["default"].createElement(material.TableCell, null, getFeatureName$1(feature)))),
+	            id !== '' && (React__default["default"].createElement(material.TableRow, null,
+	                React__default["default"].createElement(HeaderTableCell, null, "ID"),
+	                React__default["default"].createElement(material.TableCell, null, getFeatureId$1(feature)))),
+	            React__default["default"].createElement(material.TableRow, null,
+	                React__default["default"].createElement(HeaderTableCell, null, "Type"),
+	                React__default["default"].createElement(material.TableCell, null, feature.type)),
+	            React__default["default"].createElement(material.TableRow, null,
+	                React__default["default"].createElement(HeaderTableCell, null, "Location"),
+	                React__default["default"].createElement(material.TableCell, null,
+	                    props.refName,
+	                    ":",
+	                    feature.min,
+	                    "..",
+	                    feature.max)),
+	            React__default["default"].createElement(material.TableRow, null,
+	                React__default["default"].createElement(HeaderTableCell, null, "Strand"),
+	                React__default["default"].createElement(material.TableCell, null, getStrand(feature.strand))))));
 	});
 
 	const useStyles$8 = mui.makeStyles()((theme) => ({
@@ -54760,7 +54931,7 @@
 	}));
 	const ApolloTranscriptDetailsWidget = mobxReact.observer(function ApolloTranscriptDetails(props) {
 	    const { classes } = useStyles$8();
-	    const DEFAULT_PANELS = ['summary', 'location', 'attrs'];
+	    const DEFAULT_PANELS = ['summary', 'location'];
 	    const [panelState, setPanelState] = React.useState(DEFAULT_PANELS);
 	    const { model } = props;
 	    const { assembly, feature, refName } = model;
@@ -54814,6 +54985,26 @@
 	        session,
 	        assembly,
 	    });
+	    const HavanaAttributesComponent = pluginManager.evaluateExtensionPoint('Apollo-HavanaAttributes', () => null, {
+	        key: 'status',
+	        feature,
+	        session,
+	        assembly,
+	        FeatureAttributeChange: dist$2.FeatureAttributeChange,
+	    });
+	    const openChangeHistory = () => {
+	        session.queueDialog((doneCallback) => [
+	            ChangeHistory,
+	            {
+	                session: apolloSession,
+	                handleClose: () => {
+	                    doneCallback();
+	                },
+	                feature,
+	                assembly,
+	            },
+	        ]);
+	    };
 	    return (React__default["default"].createElement("div", { className: classes.root },
 	        React__default["default"].createElement(material.Accordion, { expanded: panelState.includes('summary'), onChange: (e, expanded) => {
 	                handlePanelChange(expanded, 'summary');
@@ -54829,7 +55020,9 @@
 	                React__default["default"].createElement(material.Typography, { component: "span", fontWeight: 'bold' }, "Location")),
 	            React__default["default"].createElement(material.AccordionDetails, null,
 	                React__default["default"].createElement(TranscriptWidgetEditLocation, { feature: feature, refName: refName, session: apolloSession, assembly: currentAssembly._id || '' }),
-	                React__default["default"].createElement(BiotypesComponent, { feature: feature, session: session, assembly: assembly, TypeChange: dist$2.TypeChange, DeleteFeatureChange: dist$2.DeleteFeatureChange, AddFeatureChange: dist$2.AddFeatureChange, FeatureAttributeChange: dist$2.FeatureAttributeChange }))),
+	                React__default["default"].createElement(BiotypesComponent, { feature: feature, session: session, assembly: assembly, TypeChange: dist$2.TypeChange, DeleteFeatureChange: dist$2.DeleteFeatureChange, AddFeatureChange: dist$2.AddFeatureChange, FeatureAttributeChange: dist$2.FeatureAttributeChange }),
+	                React__default["default"].createElement(HavanaAttributesComponent, { feature: feature, session: session, assembly: assembly, FeatureAttributeChange: dist$2.FeatureAttributeChange }),
+	                React__default["default"].createElement(material.Button, { variant: "outlined", color: "primary", style: { width: '100%', marginTop: 5 }, onClick: openChangeHistory }, "View Change History"))),
 	        React__default["default"].createElement(material.Accordion, { style: { marginTop: 5 }, expanded: panelState.includes('attrs'), onChange: (e, expanded) => {
 	                handlePanelChange(expanded, 'attrs');
 	            } },
@@ -54839,7 +55032,7 @@
 	                        "Attributes",
 	                        ' '),
 	                    React__default["default"].createElement(material.Tooltip, { title: "Separate multiple values for the attribute with commas" },
-	                        React__default["default"].createElement(default_1$f, { style: { color: 'white', fontSize: 15, marginLeft: 10 } })))),
+	                        React__default["default"].createElement(default_1$i, { style: { color: 'white', fontSize: 15, marginLeft: 10 } })))),
 	            React__default["default"].createElement(material.AccordionDetails, null,
 	                React__default["default"].createElement(Attributes, { feature: feature, session: apolloSession, assembly: currentAssembly._id || '', editable: editable }))),
 	        React__default["default"].createElement(material.Accordion, { style: { marginTop: 5 }, expanded: panelState.includes('sequence'), onChange: (e, expanded) => {
@@ -54851,7 +55044,7 @@
 	        React__default["default"].createElement(SaveComponent, { feature: feature, session: session, assembly: assembly })));
 	});
 
-	const configSchema$2 = configuration.ConfigurationSchema('LinearApolloDisplay', {}, { explicitIdentifier: 'displayId', explicitlyTyped: true });
+	const configSchema$1 = configuration.ConfigurationSchema('LinearApolloDisplay', {}, { explicitIdentifier: 'displayId', explicitlyTyped: true });
 
 	function handleFeatureTypeChange(changeManager, feature, oldType, newType) {
 	    const featureId = feature._id;
@@ -54930,6 +55123,66 @@
 	        .map(([key, values]) => `${key}=${Array.isArray(values) ? values.join(', ') : values}`)
 	        .join(', ');
 	    return React__default["default"].createElement(Highlight, { text: attrString, highlight: filterText });
+	});
+
+	/* eslint-disable @typescript-eslint/unbound-method */
+	const useStyles$6 = mui.makeStyles()((theme) => ({
+	    inputWrapper: {
+	        position: 'relative',
+	    },
+	    hiddenWidthSpan: {
+	        padding: theme.spacing(0.5),
+	        color: 'transparent',
+	    },
+	    numberTextInput: {
+	        border: 'none',
+	        background: 'inherit',
+	        font: 'inherit',
+	        position: 'absolute',
+	        width: '100%',
+	        left: 0,
+	    },
+	}));
+	const NumberCell = mobxReact.observer(function NumberCell({ initialValue, notifyError, onChangeCommitted, }) {
+	    const [value, setValue] = React.useState(initialValue);
+	    const [blur, setBlur] = React.useState(false);
+	    const [inputNode, setInputNode] = React.useState(null);
+	    const { classes } = useStyles$6();
+	    React.useEffect(() => {
+	        if (initialValue !== value) {
+	            setValue(initialValue);
+	        }
+	        // eslint-disable-next-line react-hooks/exhaustive-deps
+	    }, [initialValue]);
+	    React.useEffect(() => {
+	        if (blur) {
+	            inputNode?.blur();
+	            setBlur(false);
+	        }
+	    }, [blur, inputNode]);
+	    function onChange(event) {
+	        const newValue = Number(event.target.value);
+	        if (!Number.isNaN(newValue)) {
+	            setValue(newValue);
+	        }
+	    }
+	    return (React__default["default"].createElement("span", { className: classes.inputWrapper },
+	        React__default["default"].createElement("span", { className: classes.hiddenWidthSpan, "aria-hidden": true }, value),
+	        React__default["default"].createElement("input", { type: "text", value: value, className: classes.numberTextInput, onChange: onChange, onKeyDown: (event) => {
+	                if (event.key === 'Enter') {
+	                    inputNode?.blur();
+	                }
+	                else if (event.key === 'Escape') {
+	                    setValue(initialValue);
+	                    setBlur(true);
+	                }
+	            }, onBlur: () => {
+	                if (value !== initialValue) {
+	                    onChangeCommitted(value).catch(notifyError);
+	                }
+	            }, ref: (node) => {
+	                setInputNode(node);
+	            } })));
 	});
 
 	function featureContextMenuItems(feature, region, getAssemblyId, selectedFeature, setSelectedFeature, session, changeManager) {
@@ -55029,66 +55282,6 @@
 	    }
 	    return menuItems;
 	}
-
-	/* eslint-disable @typescript-eslint/unbound-method */
-	const useStyles$6 = mui.makeStyles()((theme) => ({
-	    inputWrapper: {
-	        position: 'relative',
-	    },
-	    hiddenWidthSpan: {
-	        padding: theme.spacing(0.5),
-	        color: 'transparent',
-	    },
-	    numberTextInput: {
-	        border: 'none',
-	        background: 'inherit',
-	        font: 'inherit',
-	        position: 'absolute',
-	        width: '100%',
-	        left: 0,
-	    },
-	}));
-	const NumberCell = mobxReact.observer(function NumberCell({ initialValue, notifyError, onChangeCommitted, }) {
-	    const [value, setValue] = React.useState(initialValue);
-	    const [blur, setBlur] = React.useState(false);
-	    const [inputNode, setInputNode] = React.useState(null);
-	    const { classes } = useStyles$6();
-	    React.useEffect(() => {
-	        if (initialValue !== value) {
-	            setValue(initialValue);
-	        }
-	        // eslint-disable-next-line react-hooks/exhaustive-deps
-	    }, [initialValue]);
-	    React.useEffect(() => {
-	        if (blur) {
-	            inputNode?.blur();
-	            setBlur(false);
-	        }
-	    }, [blur, inputNode]);
-	    function onChange(event) {
-	        const newValue = Number(event.target.value);
-	        if (!Number.isNaN(newValue)) {
-	            setValue(newValue);
-	        }
-	    }
-	    return (React__default["default"].createElement("span", { className: classes.inputWrapper },
-	        React__default["default"].createElement("span", { className: classes.hiddenWidthSpan, "aria-hidden": true }, value),
-	        React__default["default"].createElement("input", { type: "text", value: value, className: classes.numberTextInput, onChange: onChange, onKeyDown: (event) => {
-	                if (event.key === 'Enter') {
-	                    inputNode?.blur();
-	                }
-	                else if (event.key === 'Escape') {
-	                    setValue(initialValue);
-	                    setBlur(true);
-	                }
-	            }, onBlur: () => {
-	                if (value !== initialValue) {
-	                    onChangeCommitted(value).catch(notifyError);
-	                }
-	            }, ref: (node) => {
-	                setInputNode(node);
-	            } })));
-	});
 
 	/* eslint-disable unicorn/no-nested-ternary */
 	const useStyles$5 = mui.makeStyles()((theme) => ({
@@ -55427,346 +55620,6 @@
 	    // },
 	}));
 
-	const FilterFeatures = mobxReact.observer(function FilterFeatures({ featureTypes, handleClose, onUpdate, session, }) {
-	    const [type, setType] = React.useState('');
-	    const [selectedFeatureTypes, setSelectedFeatureTypes] = React.useState(featureTypes);
-	    const handleChange = (value) => {
-	        setType(value);
-	    };
-	    const handleAddFeatureType = () => {
-	        if (type) {
-	            if (selectedFeatureTypes.includes(type)) {
-	                return;
-	            }
-	            onUpdate([...selectedFeatureTypes, type]);
-	            setSelectedFeatureTypes([...selectedFeatureTypes, type]);
-	        }
-	    };
-	    const handleFeatureTypeDelete = (value) => {
-	        const newTypes = selectedFeatureTypes.filter((type) => type !== value);
-	        onUpdate(newTypes);
-	        setSelectedFeatureTypes(newTypes);
-	    };
-	    return (React__default["default"].createElement(Dialog, { open: true, maxWidth: false, "data-testid": "filter-features-dialog", title: "Filter features by type", handleClose: handleClose },
-	        React__default["default"].createElement(material.DialogContent, null,
-	            React__default["default"].createElement(material.DialogContentText, null, "Select the feature types you want to display in the apollo track"),
-	            React__default["default"].createElement(material.Grid2, { container: true, spacing: 2 },
-	                React__default["default"].createElement(material.Grid2, { size: 8 },
-	                    React__default["default"].createElement(OntologyTermAutocomplete, { session: session, ontologyName: "Sequence Ontology", style: { width: '100%' }, value: type, filterTerms: isOntologyClass, renderInput: (params) => (React__default["default"].createElement(material.TextField, { ...params, label: "Feature type", variant: "outlined", fullWidth: true })), onChange: (oldValue, newValue) => {
-	                            if (newValue) {
-	                                handleChange(newValue);
-	                            }
-	                        } })),
-	                React__default["default"].createElement(material.Grid2, { size: 4 },
-	                    React__default["default"].createElement(material.Button, { variant: "contained", onClick: handleAddFeatureType, disabled: !type, style: { marginTop: 9 }, size: "medium" }, "Add"))),
-	            selectedFeatureTypes.length > 0 && (React__default["default"].createElement("div", null,
-	                React__default["default"].createElement("hr", null),
-	                React__default["default"].createElement("div", { style: { width: 300 } },
-	                    React__default["default"].createElement(material.DialogContentText, null, "Selected feature types:"),
-	                    React__default["default"].createElement(material.Box, { sx: { display: 'flex', flexWrap: 'wrap', gap: 0.5 } }, selectedFeatureTypes.map((value) => (React__default["default"].createElement(material.Chip, { key: value, label: value, onDelete: () => {
-	                            handleFeatureTypeDelete(value);
-	                        } }))))))))));
-	});
-
-	const minDisplayHeight$1 = 20;
-	function baseModelFactory$1(_pluginManager, configSchema) {
-	    return pluggableElementTypes.BaseDisplay.named('BaseLinearApolloDisplay')
-	        .props({
-	        type: require$$1$3.types.literal('LinearApolloDisplay'),
-	        configuration: configuration.ConfigurationReference(configSchema),
-	        graphical: true,
-	        table: false,
-	        showStartCodons: false,
-	        showStopCodons: true,
-	        highContrast: false,
-	        heightPreConfig: require$$1$3.types.maybe(require$$1$3.types.refinement('displayHeight', require$$1$3.types.number, (n) => n >= minDisplayHeight$1)),
-	        filteredFeatureTypes: require$$1$3.types.array(require$$1$3.types.string),
-	        loadingState: false,
-	    })
-	        .views((self) => {
-	        const { configuration, renderProps: superRenderProps } = self;
-	        return {
-	            renderProps() {
-	                return {
-	                    ...superRenderProps(),
-	                    ...tracks.getParentRenderProps(self),
-	                    config: configuration.renderer,
-	                };
-	            },
-	        };
-	    })
-	        .volatile(() => ({
-	        scrollTop: 0,
-	    }))
-	        .views((self) => ({
-	        get lgv() {
-	            return require$$1$2.getContainingView(self);
-	        },
-	        get height() {
-	            if (self.heightPreConfig) {
-	                return self.heightPreConfig;
-	            }
-	            if (self.graphical && self.table) {
-	                return 500;
-	            }
-	            if (self.graphical) {
-	                return 200;
-	            }
-	            return 300;
-	        },
-	        get loading() {
-	            return self.loadingState;
-	        },
-	    }))
-	        .views((self) => ({
-	        get rendererTypeName() {
-	            return self.configuration.renderer.type;
-	        },
-	        get session() {
-	            return require$$1$2.getSession(self);
-	        },
-	        get regions() {
-	            const regions = self.lgv.dynamicBlocks.contentBlocks.map(({ assemblyName, end, refName, start }) => ({
-	                assemblyName,
-	                refName,
-	                start: Math.round(start),
-	                end: Math.round(end),
-	            }));
-	            return regions;
-	        },
-	        regionCannotBeRendered( /* region */) {
-	            if (self.lgv && self.lgv.bpPerPx >= 200) {
-	                return 'Zoom in to see annotations';
-	            }
-	            return;
-	        },
-	    }))
-	        .views((self) => ({
-	        get apolloInternetAccount() {
-	            const [region] = self.regions;
-	            const { internetAccounts } = require$$1$3.getRoot(self);
-	            const { assemblyName } = region;
-	            const { assemblyManager } = self.session;
-	            const assembly = assemblyManager.get(assemblyName);
-	            if (!assembly) {
-	                throw new Error(`No assembly found with name ${assemblyName}`);
-	            }
-	            const { internetAccountConfigId } = configuration.getConf(assembly, [
-	                'sequence',
-	                'metadata',
-	            ]);
-	            return internetAccounts.find((ia) => configuration.getConf(ia, 'internetAccountId') === internetAccountConfigId);
-	        },
-	        get changeManager() {
-	            return self.session.apolloDataStore
-	                .changeManager;
-	        },
-	        getAssemblyId(assemblyName) {
-	            const { assemblyManager } = self.session;
-	            const assembly = assemblyManager.get(assemblyName);
-	            if (!assembly) {
-	                throw new Error(`Could not find assembly named ${assemblyName}`);
-	            }
-	            return assembly.name;
-	        },
-	        get selectedFeature() {
-	            return self.session
-	                .apolloSelectedFeature;
-	        },
-	    }))
-	        .actions((self) => ({
-	        setScrollTop(scrollTop) {
-	            self.scrollTop = scrollTop;
-	        },
-	        setHeight(displayHeight) {
-	            self.heightPreConfig = Math.max(displayHeight, minDisplayHeight$1);
-	            return self.height;
-	        },
-	        resizeHeight(distance) {
-	            const oldHeight = self.height;
-	            const newHeight = this.setHeight(self.height + distance);
-	            return newHeight - oldHeight;
-	        },
-	        showGraphicalOnly() {
-	            self.graphical = true;
-	            self.table = false;
-	        },
-	        showTableOnly() {
-	            self.graphical = false;
-	            self.table = true;
-	        },
-	        showGraphicalAndTable() {
-	            self.graphical = true;
-	            self.table = true;
-	        },
-	        toggleShowStartCodons() {
-	            self.showStartCodons = !self.showStartCodons;
-	        },
-	        toggleShowStopCodons() {
-	            self.showStopCodons = !self.showStopCodons;
-	        },
-	        toggleHighContrast() {
-	            self.highContrast = !self.highContrast;
-	        },
-	        updateFilteredFeatureTypes(types) {
-	            self.filteredFeatureTypes = require$$1$3.cast(types);
-	        },
-	        setLoading(loading) {
-	            self.loadingState = loading;
-	        },
-	    }))
-	        .views((self) => {
-	        const { filteredFeatureTypes, trackMenuItems: superTrackMenuItems } = self;
-	        return {
-	            trackMenuItems() {
-	                const { graphical, table, showStartCodons, showStopCodons, highContrast, } = self;
-	                return [
-	                    ...superTrackMenuItems(),
-	                    {
-	                        type: 'subMenu',
-	                        label: 'Appearance',
-	                        subMenu: [
-	                            {
-	                                label: 'Show graphical display',
-	                                type: 'radio',
-	                                checked: graphical && !table,
-	                                onClick: () => {
-	                                    self.showGraphicalOnly();
-	                                },
-	                            },
-	                            {
-	                                label: 'Show table display',
-	                                type: 'radio',
-	                                checked: table && !graphical,
-	                                onClick: () => {
-	                                    self.showTableOnly();
-	                                },
-	                            },
-	                            {
-	                                label: 'Show both graphical and table display',
-	                                type: 'radio',
-	                                checked: table && graphical,
-	                                onClick: () => {
-	                                    self.showGraphicalAndTable();
-	                                },
-	                            },
-	                            {
-	                                label: 'Show start codons',
-	                                type: 'checkbox',
-	                                checked: showStartCodons,
-	                                onClick: () => {
-	                                    self.toggleShowStartCodons();
-	                                },
-	                            },
-	                            {
-	                                label: 'Show stop codons',
-	                                type: 'checkbox',
-	                                checked: showStopCodons,
-	                                onClick: () => {
-	                                    self.toggleShowStopCodons();
-	                                },
-	                            },
-	                            {
-	                                label: 'Use high contrast colors',
-	                                type: 'checkbox',
-	                                checked: highContrast,
-	                                onClick: () => {
-	                                    self.toggleHighContrast();
-	                                },
-	                            },
-	                        ],
-	                    },
-	                    {
-	                        label: 'Filter features by type',
-	                        onClick: () => {
-	                            const session = self.session;
-	                            self.session.queueDialog((doneCallback) => [
-	                                FilterFeatures,
-	                                {
-	                                    session,
-	                                    handleClose: () => {
-	                                        doneCallback();
-	                                    },
-	                                    featureTypes: require$$1$3.getSnapshot(filteredFeatureTypes),
-	                                    onUpdate: (types) => {
-	                                        self.updateFilteredFeatureTypes(types);
-	                                    },
-	                                },
-	                            ]);
-	                        },
-	                    },
-	                ];
-	            },
-	        };
-	    })
-	        .actions((self) => ({
-	        setSelectedFeature(feature) {
-	            self.session.apolloSetSelectedFeature(feature);
-	        },
-	        showFeatureDetailsWidget(feature) {
-	            const { session } = self;
-	            const { changeManager } = session.apolloDataStore;
-	            const [region] = self.regions;
-	            const { assemblyName, refName } = region;
-	            const assembly = self.getAssemblyId(assemblyName);
-	            if (!assembly) {
-	                return;
-	            }
-	            const { apolloDataStore } = session;
-	            const { featureTypeOntology } = apolloDataStore.ontologyManager;
-	            if (!featureTypeOntology) {
-	                throw new Error('featureTypeOntology is undefined');
-	            }
-	            let containsCDSOrExon = false;
-	            for (const [, child] of feature.children ?? []) {
-	                if (featureTypeOntology.isTypeOf(child.type, 'CDS') ||
-	                    featureTypeOntology.isTypeOf(child.type, 'exon')) {
-	                    containsCDSOrExon = true;
-	                    break;
-	                }
-	            }
-	            if ((featureTypeOntology.isTypeOf(feature.type, 'transcript') ||
-	                featureTypeOntology.isTypeOf(feature.type, 'pseudogenic_transcript')) &&
-	                containsCDSOrExon) {
-	                const apolloTranscriptWidget = session.addWidget('ApolloTranscriptDetails', 'apolloTranscriptDetails', {
-	                    feature,
-	                    assembly,
-	                    refName,
-	                    changeManager,
-	                });
-	                session.showWidget(apolloTranscriptWidget);
-	            }
-	            else {
-	                const apolloFeatureWidget = session.addWidget('ApolloFeatureDetailsWidget', 'apolloFeatureDetailsWidget', {
-	                    feature,
-	                    assembly,
-	                    refName,
-	                    changeManager,
-	                });
-	                session.showWidget(apolloFeatureWidget);
-	            }
-	        },
-	        afterAttach() {
-	            require$$1$3.addDisposer(self, mobx.autorun(() => {
-	                if (!self.lgv.initialized || self.regionCannotBeRendered()) {
-	                    return;
-	                }
-	                self.setLoading(true);
-	                void self.session.apolloDataStore
-	                    .loadFeatures(self.regions)
-	                    .then(() => {
-	                    setTimeout(() => {
-	                        self.setLoading(false);
-	                    }, 1000);
-	                });
-	                if (self.lgv.bpPerPx <= 3) {
-	                    void self.session.apolloDataStore.loadRefSeq(self.regions);
-	                }
-	            }, { name: 'LinearApolloDisplayLoadFeatures', delay: 1000 }));
-	        },
-	    }));
-	}
-
 	function drawBoxOutline(ctx, x, y, width, height, color) {
 	    drawBox(ctx, x, y, width, height, color);
 	    if (width <= 2) {
@@ -55948,6 +55801,21 @@
 	    const sourceAssemblyId = display.getAssemblyId(region.assemblyName);
 	    const currentAssemblyId = display.getAssemblyId(region.assemblyName);
 	    menuItems.push({
+	        label: 'View change history',
+	        onClick: () => {
+	            session.queueDialog((doneCallback) => [
+	                ChangeHistory,
+	                {
+	                    session,
+	                    handleClose: () => {
+	                        doneCallback();
+	                    },
+	                    feature: sourceFeature,
+	                    assembly: currentAssemblyId,
+	                },
+	            ]);
+	        },
+	    }, {
 	        label: 'Add child feature',
 	        disabled: readOnly,
 	        onClick: () => {
@@ -56770,6 +56638,346 @@
 	    onMouseMove: onMouseMove$1,
 	    onMouseUp: onMouseUp$1,
 	};
+
+	const FilterFeatures = mobxReact.observer(function FilterFeatures({ featureTypes, handleClose, onUpdate, session, }) {
+	    const [type, setType] = React.useState('');
+	    const [selectedFeatureTypes, setSelectedFeatureTypes] = React.useState(featureTypes);
+	    const handleChange = (value) => {
+	        setType(value);
+	    };
+	    const handleAddFeatureType = () => {
+	        if (type) {
+	            if (selectedFeatureTypes.includes(type)) {
+	                return;
+	            }
+	            onUpdate([...selectedFeatureTypes, type]);
+	            setSelectedFeatureTypes([...selectedFeatureTypes, type]);
+	        }
+	    };
+	    const handleFeatureTypeDelete = (value) => {
+	        const newTypes = selectedFeatureTypes.filter((type) => type !== value);
+	        onUpdate(newTypes);
+	        setSelectedFeatureTypes(newTypes);
+	    };
+	    return (React__default["default"].createElement(Dialog, { open: true, maxWidth: false, "data-testid": "filter-features-dialog", title: "Filter features by type", handleClose: handleClose },
+	        React__default["default"].createElement(material.DialogContent, null,
+	            React__default["default"].createElement(material.DialogContentText, null, "Select the feature types you want to display in the apollo track"),
+	            React__default["default"].createElement(material.Grid2, { container: true, spacing: 2 },
+	                React__default["default"].createElement(material.Grid2, { size: 8 },
+	                    React__default["default"].createElement(OntologyTermAutocomplete, { session: session, ontologyName: "Sequence Ontology", style: { width: '100%' }, value: type, filterTerms: isOntologyClass, renderInput: (params) => (React__default["default"].createElement(material.TextField, { ...params, label: "Feature type", variant: "outlined", fullWidth: true })), onChange: (oldValue, newValue) => {
+	                            if (newValue) {
+	                                handleChange(newValue);
+	                            }
+	                        } })),
+	                React__default["default"].createElement(material.Grid2, { size: 4 },
+	                    React__default["default"].createElement(material.Button, { variant: "contained", onClick: handleAddFeatureType, disabled: !type, style: { marginTop: 9 }, size: "medium" }, "Add"))),
+	            selectedFeatureTypes.length > 0 && (React__default["default"].createElement("div", null,
+	                React__default["default"].createElement("hr", null),
+	                React__default["default"].createElement("div", { style: { width: 300 } },
+	                    React__default["default"].createElement(material.DialogContentText, null, "Selected feature types:"),
+	                    React__default["default"].createElement(material.Box, { sx: { display: 'flex', flexWrap: 'wrap', gap: 0.5 } }, selectedFeatureTypes.map((value) => (React__default["default"].createElement(material.Chip, { key: value, label: value, onDelete: () => {
+	                            handleFeatureTypeDelete(value);
+	                        } }))))))))));
+	});
+
+	const minDisplayHeight$1 = 20;
+	function baseModelFactory$1(_pluginManager, configSchema) {
+	    return pluggableElementTypes.BaseDisplay.named('BaseLinearApolloDisplay')
+	        .props({
+	        type: require$$1$3.types.literal('LinearApolloDisplay'),
+	        configuration: configuration.ConfigurationReference(configSchema),
+	        graphical: true,
+	        table: false,
+	        showStartCodons: false,
+	        showStopCodons: true,
+	        highContrast: false,
+	        heightPreConfig: require$$1$3.types.maybe(require$$1$3.types.refinement('displayHeight', require$$1$3.types.number, (n) => n >= minDisplayHeight$1)),
+	        filteredFeatureTypes: require$$1$3.types.array(require$$1$3.types.string),
+	        loadingState: false,
+	    })
+	        .views((self) => {
+	        const { configuration, renderProps: superRenderProps } = self;
+	        return {
+	            renderProps() {
+	                return {
+	                    ...superRenderProps(),
+	                    ...tracks.getParentRenderProps(self),
+	                    config: configuration.renderer,
+	                };
+	            },
+	        };
+	    })
+	        .volatile(() => ({
+	        scrollTop: 0,
+	    }))
+	        .views((self) => ({
+	        get lgv() {
+	            return require$$1$2.getContainingView(self);
+	        },
+	        get height() {
+	            if (self.heightPreConfig) {
+	                return self.heightPreConfig;
+	            }
+	            if (self.graphical && self.table) {
+	                return 500;
+	            }
+	            if (self.graphical) {
+	                return 200;
+	            }
+	            return 300;
+	        },
+	        get loading() {
+	            return self.loadingState;
+	        },
+	    }))
+	        .views((self) => ({
+	        get rendererTypeName() {
+	            return self.configuration.renderer.type;
+	        },
+	        get session() {
+	            return require$$1$2.getSession(self);
+	        },
+	        get regions() {
+	            const regions = self.lgv.dynamicBlocks.contentBlocks.map(({ assemblyName, end, refName, start }) => ({
+	                assemblyName,
+	                refName,
+	                start: Math.round(start),
+	                end: Math.round(end),
+	            }));
+	            return regions;
+	        },
+	        regionCannotBeRendered( /* region */) {
+	            if (self.lgv && self.lgv.bpPerPx >= 200) {
+	                return 'Zoom in to see annotations';
+	            }
+	            return;
+	        },
+	    }))
+	        .views((self) => ({
+	        get apolloInternetAccount() {
+	            const [region] = self.regions;
+	            const { internetAccounts } = require$$1$3.getRoot(self);
+	            const { assemblyName } = region;
+	            const { assemblyManager } = self.session;
+	            const assembly = assemblyManager.get(assemblyName);
+	            if (!assembly) {
+	                throw new Error(`No assembly found with name ${assemblyName}`);
+	            }
+	            const { internetAccountConfigId } = configuration.getConf(assembly, [
+	                'sequence',
+	                'metadata',
+	            ]);
+	            return internetAccounts.find((ia) => configuration.getConf(ia, 'internetAccountId') === internetAccountConfigId);
+	        },
+	        get changeManager() {
+	            return self.session.apolloDataStore
+	                .changeManager;
+	        },
+	        getAssemblyId(assemblyName) {
+	            const { assemblyManager } = self.session;
+	            const assembly = assemblyManager.get(assemblyName);
+	            if (!assembly) {
+	                throw new Error(`Could not find assembly named ${assemblyName}`);
+	            }
+	            return assembly.name;
+	        },
+	        get selectedFeature() {
+	            return self.session
+	                .apolloSelectedFeature;
+	        },
+	    }))
+	        .actions((self) => ({
+	        setScrollTop(scrollTop) {
+	            self.scrollTop = scrollTop;
+	        },
+	        setHeight(displayHeight) {
+	            self.heightPreConfig = Math.max(displayHeight, minDisplayHeight$1);
+	            return self.height;
+	        },
+	        resizeHeight(distance) {
+	            const oldHeight = self.height;
+	            const newHeight = this.setHeight(self.height + distance);
+	            return newHeight - oldHeight;
+	        },
+	        showGraphicalOnly() {
+	            self.graphical = true;
+	            self.table = false;
+	        },
+	        showTableOnly() {
+	            self.graphical = false;
+	            self.table = true;
+	        },
+	        showGraphicalAndTable() {
+	            self.graphical = true;
+	            self.table = true;
+	        },
+	        toggleShowStartCodons() {
+	            self.showStartCodons = !self.showStartCodons;
+	        },
+	        toggleShowStopCodons() {
+	            self.showStopCodons = !self.showStopCodons;
+	        },
+	        toggleHighContrast() {
+	            self.highContrast = !self.highContrast;
+	        },
+	        updateFilteredFeatureTypes(types) {
+	            self.filteredFeatureTypes = require$$1$3.cast(types);
+	        },
+	        setLoading(loading) {
+	            self.loadingState = loading;
+	        },
+	    }))
+	        .views((self) => {
+	        const { filteredFeatureTypes, trackMenuItems: superTrackMenuItems } = self;
+	        return {
+	            trackMenuItems() {
+	                const { graphical, table, showStartCodons, showStopCodons, highContrast, } = self;
+	                return [
+	                    ...superTrackMenuItems(),
+	                    {
+	                        type: 'subMenu',
+	                        label: 'Appearance',
+	                        subMenu: [
+	                            {
+	                                label: 'Show graphical display',
+	                                type: 'radio',
+	                                checked: graphical && !table,
+	                                onClick: () => {
+	                                    self.showGraphicalOnly();
+	                                },
+	                            },
+	                            {
+	                                label: 'Show table display',
+	                                type: 'radio',
+	                                checked: table && !graphical,
+	                                onClick: () => {
+	                                    self.showTableOnly();
+	                                },
+	                            },
+	                            {
+	                                label: 'Show both graphical and table display',
+	                                type: 'radio',
+	                                checked: table && graphical,
+	                                onClick: () => {
+	                                    self.showGraphicalAndTable();
+	                                },
+	                            },
+	                            {
+	                                label: 'Show start codons',
+	                                type: 'checkbox',
+	                                checked: showStartCodons,
+	                                onClick: () => {
+	                                    self.toggleShowStartCodons();
+	                                },
+	                            },
+	                            {
+	                                label: 'Show stop codons',
+	                                type: 'checkbox',
+	                                checked: showStopCodons,
+	                                onClick: () => {
+	                                    self.toggleShowStopCodons();
+	                                },
+	                            },
+	                            {
+	                                label: 'Use high contrast colors',
+	                                type: 'checkbox',
+	                                checked: highContrast,
+	                                onClick: () => {
+	                                    self.toggleHighContrast();
+	                                },
+	                            },
+	                        ],
+	                    },
+	                    {
+	                        label: 'Filter features by type',
+	                        onClick: () => {
+	                            const session = self.session;
+	                            self.session.queueDialog((doneCallback) => [
+	                                FilterFeatures,
+	                                {
+	                                    session,
+	                                    handleClose: () => {
+	                                        doneCallback();
+	                                    },
+	                                    featureTypes: require$$1$3.getSnapshot(filteredFeatureTypes),
+	                                    onUpdate: (types) => {
+	                                        self.updateFilteredFeatureTypes(types);
+	                                    },
+	                                },
+	                            ]);
+	                        },
+	                    },
+	                ];
+	            },
+	        };
+	    })
+	        .actions((self) => ({
+	        setSelectedFeature(feature) {
+	            self.session.apolloSetSelectedFeature(feature);
+	        },
+	        showFeatureDetailsWidget(feature) {
+	            const { session } = self;
+	            const { changeManager } = session.apolloDataStore;
+	            const [region] = self.regions;
+	            const { assemblyName, refName } = region;
+	            const assembly = self.getAssemblyId(assemblyName);
+	            if (!assembly) {
+	                return;
+	            }
+	            const { apolloDataStore } = session;
+	            const { featureTypeOntology } = apolloDataStore.ontologyManager;
+	            if (!featureTypeOntology) {
+	                throw new Error('featureTypeOntology is undefined');
+	            }
+	            let containsCDSOrExon = false;
+	            for (const [, child] of feature.children ?? []) {
+	                if (featureTypeOntology.isTypeOf(child.type, 'CDS') ||
+	                    featureTypeOntology.isTypeOf(child.type, 'exon')) {
+	                    containsCDSOrExon = true;
+	                    break;
+	                }
+	            }
+	            if ((featureTypeOntology.isTypeOf(feature.type, 'transcript') ||
+	                featureTypeOntology.isTypeOf(feature.type, 'pseudogenic_transcript')) &&
+	                containsCDSOrExon) {
+	                const apolloTranscriptWidget = session.addWidget('ApolloTranscriptDetails', 'apolloTranscriptDetails', {
+	                    feature,
+	                    assembly,
+	                    refName,
+	                    changeManager,
+	                });
+	                session.showWidget(apolloTranscriptWidget);
+	            }
+	            else {
+	                const apolloFeatureWidget = session.addWidget('ApolloFeatureDetailsWidget', 'apolloFeatureDetailsWidget', {
+	                    feature,
+	                    assembly,
+	                    refName,
+	                    changeManager,
+	                });
+	                session.showWidget(apolloFeatureWidget);
+	            }
+	        },
+	        afterAttach() {
+	            require$$1$3.addDisposer(self, mobx.autorun(() => {
+	                if (!self.lgv.initialized || self.regionCannotBeRendered()) {
+	                    return;
+	                }
+	                self.setLoading(true);
+	                void self.session.apolloDataStore
+	                    .loadFeatures(self.regions)
+	                    .then(() => {
+	                    setTimeout(() => {
+	                        self.setLoading(false);
+	                    }, 1000);
+	                });
+	                if (self.lgv.bpPerPx <= 3) {
+	                    void self.session.apolloDataStore.loadRefSeq(self.regions);
+	                }
+	            }, { name: 'LinearApolloDisplayLoadFeatures', delay: 1000 }));
+	        },
+	    }));
+	}
 
 	/* eslint-disable @typescript-eslint/no-unnecessary-condition */
 	function getRowsForFeature(startingRow, rowCount, filledRowLocations) {
@@ -57738,213 +57946,7 @@
 	        .named('LinearApolloDisplay');
 	}
 
-	const configSchema$1 = configuration.ConfigurationSchema('LinearApolloSixFrameDisplay', {}, { explicitIdentifier: 'displayId', explicitlyTyped: true });
-
-	const minDisplayHeight = 20;
-	function baseModelFactory(_pluginManager, configSchema) {
-	    return pluggableElementTypes.BaseDisplay.named('BaseLinearApolloSixFrameDisplay')
-	        .props({
-	        type: require$$1$3.types.literal('LinearApolloSixFrameDisplay'),
-	        configuration: configuration.ConfigurationReference(configSchema),
-	        graphical: true,
-	        table: false,
-	        heightPreConfig: require$$1$3.types.maybe(require$$1$3.types.refinement('displayHeight', require$$1$3.types.number, (n) => n >= minDisplayHeight)),
-	        filteredFeatureTypes: require$$1$3.types.array(require$$1$3.types.string),
-	    })
-	        .views((self) => {
-	        const { configuration, renderProps: superRenderProps } = self;
-	        return {
-	            renderProps() {
-	                return {
-	                    ...superRenderProps(),
-	                    ...tracks.getParentRenderProps(self),
-	                    config: configuration.renderer,
-	                };
-	            },
-	        };
-	    })
-	        .volatile(() => ({
-	        scrollTop: 0,
-	    }))
-	        .views((self) => ({
-	        get lgv() {
-	            return require$$1$2.getContainingView(self);
-	        },
-	        get height() {
-	            if (self.heightPreConfig) {
-	                return self.heightPreConfig;
-	            }
-	            if (self.graphical && self.table) {
-	                return 500;
-	            }
-	            if (self.graphical) {
-	                return 200;
-	            }
-	            return 300;
-	        },
-	    }))
-	        .views((self) => ({
-	        get rendererTypeName() {
-	            return self.configuration.renderer.type;
-	        },
-	        get session() {
-	            return require$$1$2.getSession(self);
-	        },
-	        get regions() {
-	            const regions = self.lgv.dynamicBlocks.contentBlocks.map(({ assemblyName, end, refName, start }) => ({
-	                assemblyName,
-	                refName,
-	                start: Math.round(start),
-	                end: Math.round(end),
-	            }));
-	            return regions;
-	        },
-	        regionCannotBeRendered( /* region */) {
-	            if (self.lgv && self.lgv.bpPerPx >= 200) {
-	                return 'Zoom in to see annotations';
-	            }
-	            return;
-	        },
-	    }))
-	        .views((self) => ({
-	        get apolloInternetAccount() {
-	            const [region] = self.regions;
-	            const { internetAccounts } = require$$1$3.getRoot(self);
-	            const { assemblyName } = region;
-	            const { assemblyManager } = self.session;
-	            const assembly = assemblyManager.get(assemblyName);
-	            if (!assembly) {
-	                throw new Error(`No assembly found with name ${assemblyName}`);
-	            }
-	            const { internetAccountConfigId } = configuration.getConf(assembly, [
-	                'sequence',
-	                'metadata',
-	            ]);
-	            return internetAccounts.find((ia) => configuration.getConf(ia, 'internetAccountId') === internetAccountConfigId);
-	        },
-	        get changeManager() {
-	            return self.session.apolloDataStore
-	                .changeManager;
-	        },
-	        getAssemblyId(assemblyName) {
-	            const { assemblyManager } = self.session;
-	            const assembly = assemblyManager.get(assemblyName);
-	            if (!assembly) {
-	                throw new Error(`Could not find assembly named ${assemblyName}`);
-	            }
-	            return assembly.name;
-	        },
-	        get selectedFeature() {
-	            return self.session
-	                .apolloSelectedFeature;
-	        },
-	    }))
-	        .actions((self) => ({
-	        setScrollTop(scrollTop) {
-	            self.scrollTop = scrollTop;
-	        },
-	        setHeight(displayHeight) {
-	            self.heightPreConfig = Math.max(displayHeight, minDisplayHeight);
-	            return self.height;
-	        },
-	        resizeHeight(distance) {
-	            const oldHeight = self.height;
-	            const newHeight = this.setHeight(self.height + distance);
-	            return newHeight - oldHeight;
-	        },
-	        showGraphicalOnly() {
-	            self.graphical = true;
-	            self.table = false;
-	        },
-	        showTableOnly() {
-	            self.graphical = false;
-	            self.table = true;
-	        },
-	        showGraphicalAndTable() {
-	            self.graphical = true;
-	            self.table = true;
-	        },
-	        updateFilteredFeatureTypes(types) {
-	            self.filteredFeatureTypes = require$$1$3.cast(types);
-	        },
-	    }))
-	        .views((self) => {
-	        const { filteredFeatureTypes, trackMenuItems: superTrackMenuItems } = self;
-	        return {
-	            trackMenuItems() {
-	                const { graphical, table } = self;
-	                return [
-	                    ...superTrackMenuItems(),
-	                    {
-	                        type: 'subMenu',
-	                        label: 'Appearance',
-	                        subMenu: [
-	                            {
-	                                label: 'Show graphical display',
-	                                type: 'radio',
-	                                checked: graphical && !table,
-	                                onClick: () => {
-	                                    self.showGraphicalOnly();
-	                                },
-	                            },
-	                            {
-	                                label: 'Show table display',
-	                                type: 'radio',
-	                                checked: table && !graphical,
-	                                onClick: () => {
-	                                    self.showTableOnly();
-	                                },
-	                            },
-	                            {
-	                                label: 'Show both graphical and table display',
-	                                type: 'radio',
-	                                checked: table && graphical,
-	                                onClick: () => {
-	                                    self.showGraphicalAndTable();
-	                                },
-	                            },
-	                        ],
-	                    },
-	                    {
-	                        label: 'Filter features by type',
-	                        onClick: () => {
-	                            const session = self.session;
-	                            self.session.queueDialog((doneCallback) => [
-	                                FilterFeatures,
-	                                {
-	                                    session,
-	                                    handleClose: () => {
-	                                        doneCallback();
-	                                    },
-	                                    featureTypes: require$$1$3.getSnapshot(filteredFeatureTypes),
-	                                    onUpdate: (types) => {
-	                                        self.updateFilteredFeatureTypes(types);
-	                                    },
-	                                },
-	                            ]);
-	                        },
-	                    },
-	                ];
-	            },
-	        };
-	    })
-	        .actions((self) => ({
-	        setSelectedFeature(feature) {
-	            self.session.apolloSetSelectedFeature(feature);
-	        },
-	        afterAttach() {
-	            require$$1$3.addDisposer(self, mobx.autorun(() => {
-	                if (!self.lgv.initialized || self.regionCannotBeRendered()) {
-	                    return;
-	                }
-	                void self.session.apolloDataStore.loadFeatures(self.regions);
-	                if (self.lgv.bpPerPx <= 3) {
-	                    void self.session.apolloDataStore.loadRefSeq(self.regions);
-	                }
-	            }, { name: 'LinearApolloSixFrameDisplayLoadFeatures', delay: 1000 }));
-	        },
-	    }));
-	}
+	const configSchema = configuration.ConfigurationSchema('LinearApolloSixFrameDisplay', {}, { explicitIdentifier: 'displayId', explicitlyTyped: true });
 
 	let forwardFillLight = null;
 	let backwardFillLight = null;
@@ -58058,6 +58060,10 @@
 	    const renderedCDS = new Set();
 	    // Draw exon and CDS for each mRNA
 	    for (const [, child] of children) {
+	        if (!(featureTypeOntology.isTypeOf(child.type, 'transcript') ||
+	            featureTypeOntology.isTypeOf(child.type, 'pseudogenic_transcript'))) {
+	            continue;
+	        }
 	        const { children: childrenOfmRNA, cdsLocations, _id } = child;
 	        if (!childrenOfmRNA) {
 	            continue;
@@ -58548,6 +58554,212 @@
 	    onMouseMove,
 	    onMouseUp,
 	};
+
+	const minDisplayHeight = 20;
+	function baseModelFactory(_pluginManager, configSchema) {
+	    return pluggableElementTypes.BaseDisplay.named('BaseLinearApolloSixFrameDisplay')
+	        .props({
+	        type: require$$1$3.types.literal('LinearApolloSixFrameDisplay'),
+	        configuration: configuration.ConfigurationReference(configSchema),
+	        graphical: true,
+	        table: false,
+	        heightPreConfig: require$$1$3.types.maybe(require$$1$3.types.refinement('displayHeight', require$$1$3.types.number, (n) => n >= minDisplayHeight)),
+	        filteredFeatureTypes: require$$1$3.types.array(require$$1$3.types.string),
+	    })
+	        .views((self) => {
+	        const { configuration, renderProps: superRenderProps } = self;
+	        return {
+	            renderProps() {
+	                return {
+	                    ...superRenderProps(),
+	                    ...tracks.getParentRenderProps(self),
+	                    config: configuration.renderer,
+	                };
+	            },
+	        };
+	    })
+	        .volatile(() => ({
+	        scrollTop: 0,
+	    }))
+	        .views((self) => ({
+	        get lgv() {
+	            return require$$1$2.getContainingView(self);
+	        },
+	        get height() {
+	            if (self.heightPreConfig) {
+	                return self.heightPreConfig;
+	            }
+	            if (self.graphical && self.table) {
+	                return 500;
+	            }
+	            if (self.graphical) {
+	                return 200;
+	            }
+	            return 300;
+	        },
+	    }))
+	        .views((self) => ({
+	        get rendererTypeName() {
+	            return self.configuration.renderer.type;
+	        },
+	        get session() {
+	            return require$$1$2.getSession(self);
+	        },
+	        get regions() {
+	            const regions = self.lgv.dynamicBlocks.contentBlocks.map(({ assemblyName, end, refName, start }) => ({
+	                assemblyName,
+	                refName,
+	                start: Math.round(start),
+	                end: Math.round(end),
+	            }));
+	            return regions;
+	        },
+	        regionCannotBeRendered( /* region */) {
+	            if (self.lgv && self.lgv.bpPerPx >= 200) {
+	                return 'Zoom in to see annotations';
+	            }
+	            return;
+	        },
+	    }))
+	        .views((self) => ({
+	        get apolloInternetAccount() {
+	            const [region] = self.regions;
+	            const { internetAccounts } = require$$1$3.getRoot(self);
+	            const { assemblyName } = region;
+	            const { assemblyManager } = self.session;
+	            const assembly = assemblyManager.get(assemblyName);
+	            if (!assembly) {
+	                throw new Error(`No assembly found with name ${assemblyName}`);
+	            }
+	            const { internetAccountConfigId } = configuration.getConf(assembly, [
+	                'sequence',
+	                'metadata',
+	            ]);
+	            return internetAccounts.find((ia) => configuration.getConf(ia, 'internetAccountId') === internetAccountConfigId);
+	        },
+	        get changeManager() {
+	            return self.session.apolloDataStore
+	                .changeManager;
+	        },
+	        getAssemblyId(assemblyName) {
+	            const { assemblyManager } = self.session;
+	            const assembly = assemblyManager.get(assemblyName);
+	            if (!assembly) {
+	                throw new Error(`Could not find assembly named ${assemblyName}`);
+	            }
+	            return assembly.name;
+	        },
+	        get selectedFeature() {
+	            return self.session
+	                .apolloSelectedFeature;
+	        },
+	    }))
+	        .actions((self) => ({
+	        setScrollTop(scrollTop) {
+	            self.scrollTop = scrollTop;
+	        },
+	        setHeight(displayHeight) {
+	            self.heightPreConfig = Math.max(displayHeight, minDisplayHeight);
+	            return self.height;
+	        },
+	        resizeHeight(distance) {
+	            const oldHeight = self.height;
+	            const newHeight = this.setHeight(self.height + distance);
+	            return newHeight - oldHeight;
+	        },
+	        showGraphicalOnly() {
+	            self.graphical = true;
+	            self.table = false;
+	        },
+	        showTableOnly() {
+	            self.graphical = false;
+	            self.table = true;
+	        },
+	        showGraphicalAndTable() {
+	            self.graphical = true;
+	            self.table = true;
+	        },
+	        updateFilteredFeatureTypes(types) {
+	            self.filteredFeatureTypes = require$$1$3.cast(types);
+	        },
+	    }))
+	        .views((self) => {
+	        const { filteredFeatureTypes, trackMenuItems: superTrackMenuItems } = self;
+	        return {
+	            trackMenuItems() {
+	                const { graphical, table } = self;
+	                return [
+	                    ...superTrackMenuItems(),
+	                    {
+	                        type: 'subMenu',
+	                        label: 'Appearance',
+	                        subMenu: [
+	                            {
+	                                label: 'Show graphical display',
+	                                type: 'radio',
+	                                checked: graphical && !table,
+	                                onClick: () => {
+	                                    self.showGraphicalOnly();
+	                                },
+	                            },
+	                            {
+	                                label: 'Show table display',
+	                                type: 'radio',
+	                                checked: table && !graphical,
+	                                onClick: () => {
+	                                    self.showTableOnly();
+	                                },
+	                            },
+	                            {
+	                                label: 'Show both graphical and table display',
+	                                type: 'radio',
+	                                checked: table && graphical,
+	                                onClick: () => {
+	                                    self.showGraphicalAndTable();
+	                                },
+	                            },
+	                        ],
+	                    },
+	                    {
+	                        label: 'Filter features by type',
+	                        onClick: () => {
+	                            const session = self.session;
+	                            self.session.queueDialog((doneCallback) => [
+	                                FilterFeatures,
+	                                {
+	                                    session,
+	                                    handleClose: () => {
+	                                        doneCallback();
+	                                    },
+	                                    featureTypes: require$$1$3.getSnapshot(filteredFeatureTypes),
+	                                    onUpdate: (types) => {
+	                                        self.updateFilteredFeatureTypes(types);
+	                                    },
+	                                },
+	                            ]);
+	                        },
+	                    },
+	                ];
+	            },
+	        };
+	    })
+	        .actions((self) => ({
+	        setSelectedFeature(feature) {
+	            self.session.apolloSetSelectedFeature(feature);
+	        },
+	        afterAttach() {
+	            require$$1$3.addDisposer(self, mobx.autorun(() => {
+	                if (!self.lgv.initialized || self.regionCannotBeRendered()) {
+	                    return;
+	                }
+	                void self.session.apolloDataStore.loadFeatures(self.regions);
+	                if (self.lgv.bpPerPx <= 3) {
+	                    void self.session.apolloDataStore.loadRefSeq(self.regions);
+	                }
+	            }, { name: 'LinearApolloSixFrameDisplayLoadFeatures', delay: 1000 }));
+	        },
+	    }));
+	}
 
 	/* eslint-disable @typescript-eslint/no-unnecessary-condition */
 	function layoutsModelFactory(pluginManager, configSchema) {
@@ -59080,6 +59292,676 @@
 	    return mouseEventsModelFactory(pluginManager, configSchema)
 	        .props({ tabularEditor: require$$1$3.types.optional(TabularEditorStateModelType, {}) })
 	        .named('LinearApolloSixFrameDisplay');
+	}
+
+	const ApolloPluginConfigurationSchema = configuration.ConfigurationSchema('ApolloPlugin', {
+	    ontologies: require$$1$3.types.array(OntologyRecordConfiguration),
+	    featureTypeOntologyName: {
+	        description: 'Name of the feature type ontology',
+	        type: 'string',
+	        defaultValue: 'Sequence Ontology',
+	    },
+	});
+
+	function parseCigar(cigar) {
+	    return (cigar.toUpperCase().match(/\d+\D/g) ?? []).map((op) => {
+	        return [(/\D/.exec(op) ?? [])[0], Number.parseInt(op, 10)];
+	    });
+	}
+	function annotationFromPileup(pluggableElement) {
+	    if (pluggableElement.name !== 'LinearPileupDisplay') {
+	        return pluggableElement;
+	    }
+	    const { stateModel } = pluggableElement;
+	    const newStateModel = stateModel
+	        .views((self) => ({
+	        getFirstRegion() {
+	            const lgv = require$$1$2.getContainingView(self);
+	            return lgv.dynamicBlocks.contentBlocks[0];
+	        },
+	        getAssembly() {
+	            const firstRegion = self.getFirstRegion();
+	            const session = require$$1$2.getSession(self);
+	            const { assemblyManager } = session;
+	            const { assemblyName } = firstRegion;
+	            const assembly = assemblyManager.get(assemblyName);
+	            if (!assembly) {
+	                throw new Error(`Could not find assembly named ${assemblyName}`);
+	            }
+	            return assembly;
+	        },
+	        getRefSeqId(assembly) {
+	            const firstRegion = self.getFirstRegion();
+	            const { refName } = firstRegion;
+	            const { refNameAliases } = assembly;
+	            if (!refNameAliases) {
+	                throw new Error(`Could not find aliases for ${assembly.name}`);
+	            }
+	            const newRefNames = [...Object.entries(refNameAliases)]
+	                .filter(([id, refName]) => id !== refName)
+	                .map(([id, refName]) => ({
+	                _id: id,
+	                name: refName,
+	            }));
+	            const refSeqId = newRefNames.find((item) => item.name === refName)?._id;
+	            if (!refSeqId) {
+	                throw new Error(`Could not find refSeqId named ${refName}`);
+	            }
+	            return refSeqId;
+	        },
+	        createFeature() {
+	            const feature = self.contextMenuFeature;
+	            const assembly = self.getAssembly();
+	            const refSeqId = self.getRefSeqId(assembly);
+	            const cigarData = feature.get('CIGAR');
+	            const ops = parseCigar(cigarData);
+	            let currOffset = 0;
+	            const start = feature.get('start');
+	            let openStart;
+	            const exons = [];
+	            for (const [op, len] of ops) {
+	                // open or continue open
+	                if (op === 'M' || op === '=') {
+	                    // if it was closed, then open with start, strand, type
+	                    if (openStart === undefined) {
+	                        // add subfeature
+	                        openStart = currOffset + start;
+	                    }
+	                }
+	                else if (op === 'N' && openStart !== undefined) {
+	                    // if it was open, then close and add the subfeature
+	                    exons.push({
+	                        start: openStart,
+	                        end: currOffset + openStart,
+	                    });
+	                    openStart = undefined;
+	                }
+	                if (op !== 'I') {
+	                    // we ignore insertions when calculating potential exon length
+	                    currOffset += len;
+	                }
+	            }
+	            // if we are still open, then close with the final length and add subfeature
+	            if (openStart !== undefined) {
+	                exons.push({
+	                    start: openStart,
+	                    end: currOffset + start,
+	                });
+	            }
+	            const newFeature = {
+	                _id: objectid().toHexString(),
+	                refSeq: refSeqId,
+	                min: feature.get('start'),
+	                max: feature.get('end'),
+	                type: 'mRNA',
+	                strand: feature.get('strand'),
+	            };
+	            if (exons.length === 0) {
+	                return newFeature;
+	            }
+	            const children = {};
+	            newFeature.children = children;
+	            const [firstExon] = exons;
+	            const cdsFeature = {
+	                _id: objectid().toHexString(),
+	                refSeq: refSeqId,
+	                min: firstExon.start,
+	                max: firstExon.end,
+	                type: 'CDS',
+	                strand: feature.get('strand'),
+	            };
+	            newFeature.children[cdsFeature._id] = cdsFeature;
+	            if (exons.length === 1) {
+	                const exon = {
+	                    _id: objectid().toHexString(),
+	                    refSeq: refSeqId,
+	                    min: firstExon.start,
+	                    max: firstExon.end,
+	                    type: 'exon',
+	                    strand: feature.get('strand'),
+	                };
+	                newFeature.children[exon._id] = exon;
+	                return newFeature;
+	            }
+	            for (const exon of exons) {
+	                cdsFeature.min = Math.min(cdsFeature.min, exon.start);
+	                cdsFeature.max = Math.max(cdsFeature.max, exon.end);
+	                const { end, start } = exon;
+	                const newExon = {
+	                    _id: objectid().toHexString(),
+	                    refSeq: refSeqId,
+	                    min: start,
+	                    max: end,
+	                    type: 'exon',
+	                    strand: feature.get('strand'),
+	                };
+	                newFeature.children[newExon._id] = newExon;
+	            }
+	            return newFeature;
+	        },
+	        async onPileupFeatureContext() {
+	            const newFeature = self.createFeature();
+	            const assembly = self.getAssembly();
+	            const assemblyId = assembly.name;
+	            const change = new dist$2.AddFeatureChange({
+	                changedIds: [newFeature._id],
+	                typeName: 'AddFeatureChange',
+	                assembly: assemblyId,
+	                addedFeature: newFeature,
+	            });
+	            const session = require$$1$2.getSession(self);
+	            await session.apolloDataStore.changeManager.submit(change);
+	            session.notify('Annotation added successfully', 'success');
+	        },
+	    }))
+	        .views((self) => {
+	        const superContextMenuItems = self.contextMenuItems;
+	        return {
+	            contextMenuItems() {
+	                const feature = self.contextMenuFeature;
+	                if (!feature) {
+	                    return superContextMenuItems();
+	                }
+	                return [
+	                    ...superContextMenuItems(),
+	                    {
+	                        label: 'Create Apollo annotation',
+	                        icon: default_1$j,
+	                        onClick: self.onPileupFeatureContext,
+	                    },
+	                ];
+	            },
+	        };
+	    });
+	    pluggableElement.stateModel = newStateModel;
+	    return pluggableElement;
+	}
+
+	/* eslint-disable react-hooks/exhaustive-deps */
+	const isGeneOrTranscript = (annotationFeature, apolloSessionModel) => {
+	    const { featureTypeOntology } = apolloSessionModel.apolloDataStore.ontologyManager;
+	    if (!featureTypeOntology) {
+	        throw new Error('featureTypeOntology is undefined');
+	    }
+	    return (featureTypeOntology.isTypeOf(annotationFeature.type, 'gene') ||
+	        featureTypeOntology.isTypeOf(annotationFeature.type, 'transcript') ||
+	        featureTypeOntology.isTypeOf(annotationFeature.type, 'pseudogene') ||
+	        featureTypeOntology.isTypeOf(annotationFeature.type, 'pseudogenic_transcript'));
+	};
+	const isGene = (annotationFeature, apolloSessionModel) => {
+	    const { featureTypeOntology } = apolloSessionModel.apolloDataStore.ontologyManager;
+	    if (!featureTypeOntology) {
+	        throw new Error('featureTypeOntology is undefined');
+	    }
+	    return (featureTypeOntology.isTypeOf(annotationFeature.type, 'gene') ||
+	        featureTypeOntology.isTypeOf(annotationFeature.type, 'pseudogene'));
+	};
+	const isTranscript = (annotationFeature, apolloSessionModel) => {
+	    const { featureTypeOntology } = apolloSessionModel.apolloDataStore.ontologyManager;
+	    if (!featureTypeOntology) {
+	        throw new Error('featureTypeOntology is undefined');
+	    }
+	    return (featureTypeOntology.isTypeOf(annotationFeature.type, 'transcript') ||
+	        featureTypeOntology.isTypeOf(annotationFeature.type, 'pseudogenic_transcript'));
+	};
+	function getFeatureName(feature) {
+	    const { attributes } = feature;
+	    const keys = ['name', 'gff_name', 'transcript_name', 'gene_name'];
+	    for (const key of keys) {
+	        const value = attributes?.[key];
+	        if (value?.[0]) {
+	            return value[0];
+	        }
+	    }
+	    return '';
+	}
+	function getGeneNameOrId(feature) {
+	    const { attributes } = feature;
+	    const keys = ['gene_name', 'gene_id', 'gene_stable_id'];
+	    for (const key of keys) {
+	        const value = attributes?.[key];
+	        if (value?.[0]) {
+	            return value[0];
+	        }
+	    }
+	    return '';
+	}
+	function getFeatureId(feature) {
+	    const { attributes } = feature;
+	    const keys = [
+	        'id',
+	        'gff_id',
+	        'transcript_id',
+	        'gene_id',
+	        'gene_stable_id',
+	        'stable_id',
+	    ];
+	    for (const key of keys) {
+	        const value = attributes?.[key];
+	        if (value?.[0]) {
+	            return value[0];
+	        }
+	    }
+	    return '';
+	}
+	const getFeatureNameOrId = (feature) => {
+	    const name = getFeatureName(feature);
+	    const id = getFeatureId(feature);
+	    if (name) {
+	        return `${feature.type} - ${name}`;
+	    }
+	    if (id) {
+	        return `${feature.type} - ${id}`;
+	    }
+	    return feature.type;
+	};
+	function CreateApolloAnnotation({ annotationFeature, assembly, handleClose, refSeqId, session, region, }) {
+	    const apolloSessionModel = session;
+	    const { featureTypeOntology } = apolloSessionModel.apolloDataStore.ontologyManager;
+	    const childIds = React.useMemo(() => Object.keys(annotationFeature.children ?? {}), [annotationFeature]);
+	    const features = React.useMemo(() => {
+	        for (const [, asm] of apolloSessionModel.apolloDataStore.assemblies) {
+	            if (asm._id === assembly.name) {
+	                for (const [, refSeq] of asm.refSeqs) {
+	                    if (refSeq._id === refSeqId) {
+	                        return refSeq.features;
+	                    }
+	                }
+	            }
+	        }
+	        return [];
+	    }, []);
+	    const [parentFeatureChecked, setParentFeatureChecked] = React.useState(true);
+	    const [checkedChildrens, setCheckedChildrens] = React.useState(childIds);
+	    const [errorMessage, setErrorMessage] = React.useState('');
+	    const [destinationFeatures, setDestinationFeatures] = React.useState([]);
+	    const [createNewGene, setCreateNewGene] = React.useState(false);
+	    const [selectedDestinationFeature, setSelectedDestinationFeature] = React.useState();
+	    const getDestinationFeatures = () => {
+	        const filteredFeatures = [];
+	        for (const [, f] of features) {
+	            if (f.min > region.end || f.max < region.start) {
+	                continue;
+	            }
+	            if (featureTypeOntology?.isTypeOf(f.type, 'gene')) {
+	                const featureSnapshot = require$$1$3.getSnapshot(f);
+	                filteredFeatures.push(featureSnapshot);
+	            }
+	        }
+	        return filteredFeatures;
+	    };
+	    React.useEffect(() => {
+	        setErrorMessage('');
+	        const features = getDestinationFeatures();
+	        setDestinationFeatures(features);
+	        setSelectedDestinationFeature(features[0]);
+	    }, [checkedChildrens, parentFeatureChecked, region]);
+	    const handleParentFeatureCheck = (event) => {
+	        const isChecked = event.target.checked;
+	        setParentFeatureChecked(isChecked);
+	        setCheckedChildrens(isChecked ? childIds : []);
+	    };
+	    const handleChildFeatureCheck = (event, child) => {
+	        setCheckedChildrens((prevChecked) => event.target.checked
+	            ? [...prevChecked, child._id]
+	            : prevChecked.filter((childId) => childId !== child._id));
+	    };
+	    const handleDestinationFeatureChange = (e) => {
+	        const selectedFeature = destinationFeatures.find((f) => f._id === e.target.value);
+	        setSelectedDestinationFeature(selectedFeature);
+	    };
+	    const handleCreateApolloAnnotation = async () => {
+	        if (parentFeatureChecked) {
+	            // IF SOURCE FEATURE IS GENE
+	            if (isGene(annotationFeature, apolloSessionModel)) {
+	                await copyGeneFeature();
+	                session.notify('Successfully copied selected gene and transcript(s)', 'success');
+	            }
+	            if (isTranscript(annotationFeature, apolloSessionModel)) {
+	                // IF THE SOURCE IS TRANSCRIPT AND THE DESTINATION IS SELECTED AND CREATE NEW GENE IS NOT CHECKED
+	                if (selectedDestinationFeature && !createNewGene) {
+	                    const transcripts = {};
+	                    transcripts[annotationFeature._id] = annotationFeature;
+	                    // If source trancript doesn't overlap with destination gene
+	                    // If not overlapping, then extend the destination gene to include the transcript
+	                    if (selectedDestinationFeature.max < annotationFeature.max ||
+	                        selectedDestinationFeature.min > annotationFeature.min) {
+	                        const newMin = Math.min(selectedDestinationFeature.min, annotationFeature.min);
+	                        const newMax = Math.max(selectedDestinationFeature.max, annotationFeature.max);
+	                        await extendSelectedDestinationFeatureLocation(newMin, newMax);
+	                        await copyTranscriptsToDestinationGene(transcripts);
+	                    }
+	                    else {
+	                        await copyTranscriptsToDestinationGene(transcripts);
+	                    }
+	                    session.notify('Successfully copied selected transcripts to destination gene', 'success');
+	                }
+	                else {
+	                    // IF THERE IS NO DESTINATION GENE SELECTED AND CREATE NEW GENE IS CHECKED
+	                    const childrens = {};
+	                    childrens[annotationFeature._id] = annotationFeature;
+	                    await createNewGeneFeatureWithTranscripts(childrens);
+	                    session.notify('Successfully created a new gene with selected transcripts', 'success');
+	                }
+	            }
+	        }
+	        else {
+	            // IF PARENT (GENE) FEATURE IS NOT CHECKED AND WE ARE COPYING CHILDREN (TRANSCRIPTS)
+	            if (!annotationFeature.children) {
+	                return;
+	            }
+	            // IF DESTINATION IS SELECTED AND CREATE NEW GENE IS NOT CHECKED
+	            if (selectedDestinationFeature && !createNewGene) {
+	                const childrens = {};
+	                for (const childId of checkedChildrens) {
+	                    childrens[childId] = annotationFeature.children[childId];
+	                }
+	                const min = Math.min(...Object.values(childrens).map((child) => child.min));
+	                const max = Math.max(...Object.values(childrens).map((child) => child.max));
+	                // If source trancript doesn't overlap with destination gene
+	                // If not overlapping, then extend the destination gene to include the transcript
+	                if (selectedDestinationFeature.min > min ||
+	                    selectedDestinationFeature.max < max) {
+	                    const newMin = Math.min(selectedDestinationFeature.min, min);
+	                    const newMax = Math.max(selectedDestinationFeature.max, max);
+	                    await extendSelectedDestinationFeatureLocation(newMin, newMax);
+	                    await copyTranscriptsToDestinationGene(childrens);
+	                }
+	                else {
+	                    await copyTranscriptsToDestinationGene(childrens);
+	                }
+	                session.notify('Successfully copied transcript to destination gene', 'success');
+	            }
+	            else {
+	                // IF THERE IS NO DESTINATION GENE SELECTED AND CREATE NEW GENE IS CHECKED
+	                const childrens = {};
+	                for (const childId of checkedChildrens) {
+	                    childrens[childId] = annotationFeature.children[childId];
+	                }
+	                await createNewGeneFeatureWithTranscripts(childrens);
+	                session.notify('Successfully created a new gene with selected transcript', 'success');
+	            }
+	        }
+	        handleClose();
+	    };
+	    // Copies gene feature along with its selected children
+	    const copyGeneFeature = async () => {
+	        let change;
+	        if (annotationFeature.children &&
+	            checkedChildrens.length !==
+	                Object.values(annotationFeature.children).length) {
+	            // IF SOME CHILDREN ARE CHECKED
+	            const childrens = {};
+	            for (const childId of checkedChildrens) {
+	                childrens[childId] = annotationFeature.children[childId];
+	            }
+	            change = new dist$2.AddFeatureChange({
+	                changedIds: [annotationFeature._id],
+	                typeName: 'AddFeatureChange',
+	                assembly: assembly.name,
+	                addedFeature: {
+	                    ...annotationFeature,
+	                    children: childrens,
+	                },
+	            });
+	        }
+	        else {
+	            // IF PARENT AND ALL CHILDREN ARE CHECKED
+	            change = new dist$2.AddFeatureChange({
+	                changedIds: [annotationFeature._id],
+	                typeName: 'AddFeatureChange',
+	                assembly: assembly.name,
+	                addedFeature: annotationFeature,
+	            });
+	        }
+	        await submitChange(change);
+	    };
+	    const copyTranscriptsToDestinationGene = async (transcripts) => {
+	        if (!selectedDestinationFeature) {
+	            return;
+	        }
+	        for (const transcriptId of Object.keys(transcripts)) {
+	            const transcript = transcripts[transcriptId];
+	            const change = new dist$2.AddFeatureChange({
+	                parentFeatureId: selectedDestinationFeature._id,
+	                changedIds: [selectedDestinationFeature._id],
+	                typeName: 'AddFeatureChange',
+	                assembly: assembly.name,
+	                addedFeature: transcript,
+	            });
+	            await submitChange(change);
+	        }
+	    };
+	    const createNewGeneFeatureWithTranscripts = async (childrens) => {
+	        const newGeneId = new objectid().toHexString();
+	        const min = Math.min(...Object.values(childrens).map((child) => child.min));
+	        const max = Math.max(...Object.values(childrens).map((child) => child.max));
+	        const change = new dist$2.AddFeatureChange({
+	            changedIds: [newGeneId],
+	            typeName: 'AddFeatureChange',
+	            assembly: assembly.name,
+	            addedFeature: {
+	                _id: newGeneId,
+	                refSeq: refSeqId,
+	                min,
+	                max,
+	                strand: annotationFeature.strand,
+	                type: 'gene',
+	                children: childrens,
+	                attributes: {
+	                    name: [getGeneNameOrId(annotationFeature)],
+	                    gene_name: [getGeneNameOrId(annotationFeature)],
+	                },
+	            },
+	        });
+	        await submitChange(change);
+	    };
+	    const extendSelectedDestinationFeatureLocation = async (newMin, newMax) => {
+	        if (!selectedDestinationFeature) {
+	            return;
+	        }
+	        const changes = [];
+	        if (newMin !== selectedDestinationFeature.min) {
+	            changes.push(new dist$2.LocationStartChange({
+	                typeName: 'LocationStartChange',
+	                changedIds: [selectedDestinationFeature._id],
+	                featureId: selectedDestinationFeature._id,
+	                assembly: assembly.name,
+	                oldStart: selectedDestinationFeature.min,
+	                newStart: newMin,
+	            }));
+	        }
+	        if (newMax !== selectedDestinationFeature.max) {
+	            changes.push(new dist$2.LocationEndChange({
+	                typeName: 'LocationEndChange',
+	                changedIds: [selectedDestinationFeature._id],
+	                featureId: selectedDestinationFeature._id,
+	                assembly: assembly.name,
+	                oldEnd: selectedDestinationFeature.max,
+	                newEnd: newMax,
+	            }));
+	        }
+	        for (const change of changes) {
+	            await submitChange(change);
+	        }
+	    };
+	    const submitChange = async (change) => {
+	        await apolloSessionModel.apolloDataStore.changeManager.submit(change);
+	    };
+	    const handleCreateNewGeneChange = (e) => {
+	        setCreateNewGene(e.target.checked);
+	    };
+	    return (React__default["default"].createElement(Dialog, { open: true, title: "Create Apollo Annotation", handleClose: handleClose, fullWidth: true, maxWidth: "sm" },
+	        React__default["default"].createElement(material.DialogTitle, { fontSize: 15 }, "Select the feature to be copied to apollo track"),
+	        React__default["default"].createElement(material.DialogContent, null,
+	            React__default["default"].createElement(material.Box, { sx: { ml: 3 } },
+	                isGeneOrTranscript(annotationFeature, apolloSessionModel) && (React__default["default"].createElement(material.FormControlLabel, { control: React__default["default"].createElement(material.Checkbox, { size: "small", checked: parentFeatureChecked, onChange: handleParentFeatureCheck }), label: `${getFeatureNameOrId(annotationFeature)} (${annotationFeature.min + 1}..${annotationFeature.max})` })),
+	                annotationFeature.children && (React__default["default"].createElement(material.Box, { sx: { display: 'flex', flexDirection: 'column', ml: 3 } }, Object.values(annotationFeature.children)
+	                    .filter((child) => isTranscript(child, apolloSessionModel))
+	                    .map((child) => (React__default["default"].createElement(material.FormControlLabel, { key: child._id, control: React__default["default"].createElement(material.Checkbox, { size: "small", checked: checkedChildrens.includes(child._id), onChange: (e) => {
+	                            handleChildFeatureCheck(e, child);
+	                        } }), label: `${getFeatureNameOrId(child)} (${child.min + 1}..${child.max})` })))))),
+	            destinationFeatures.length > 0 &&
+	                ((!parentFeatureChecked && checkedChildrens.length > 0) ||
+	                    (parentFeatureChecked &&
+	                        isTranscript(annotationFeature, apolloSessionModel))) && (React__default["default"].createElement("div", { style: {
+	                    border: '1px solid #ccc',
+	                    marginTop: 20,
+	                    padding: 10,
+	                    borderRadius: 5,
+	                } },
+	                React__default["default"].createElement(material.Box, { sx: { ml: 3 } },
+	                    React__default["default"].createElement(material.Typography, { variant: "caption", fontSize: 12 }, "Select the destination feature to copy the selected features"),
+	                    React__default["default"].createElement(material.Box, { sx: { mt: 1 } },
+	                        React__default["default"].createElement(material.Select, { labelId: "label", style: { width: '100%' }, value: selectedDestinationFeature?._id ?? '', onChange: handleDestinationFeatureChange, disabled: createNewGene }, destinationFeatures.map((f) => (React__default["default"].createElement(material.MenuItem, { key: f._id, value: f._id }, `${getFeatureNameOrId(f)} (${f.min + 1}..${f.max})`)))))),
+	                React__default["default"].createElement(material.Box, { sx: { ml: 3 } },
+	                    React__default["default"].createElement(material.FormGroup, null,
+	                        React__default["default"].createElement(material.FormControlLabel, { control: React__default["default"].createElement(material.Checkbox, { checked: createNewGene, onChange: handleCreateNewGeneChange }), label: "Create new gene" })))))),
+	        React__default["default"].createElement(material.DialogActions, null,
+	            React__default["default"].createElement(material.Button, { variant: "contained", type: "submit", disabled: checkedChildrens.length === 0 ||
+	                    (!parentFeatureChecked &&
+	                        checkedChildrens.length > 0 &&
+	                        !selectedDestinationFeature), onClick: handleCreateApolloAnnotation }, "Create"),
+	            React__default["default"].createElement(material.Button, { variant: "outlined", type: "submit", onClick: handleClose }, "Cancel")),
+	        errorMessage ? (React__default["default"].createElement(material.DialogContent, null,
+	            React__default["default"].createElement(material.DialogContentText, { color: "error" }, errorMessage))) : null));
+	}
+
+	function simpleFeatureToGFF3Feature(feature, refSeqId) {
+	    // eslint-disable-next-line unicorn/prefer-structured-clone
+	    const xfeature = JSON.parse(JSON.stringify(feature));
+	    const children = xfeature.subfeatures;
+	    const gff3Feature = [
+	        {
+	            start: xfeature.start + 1,
+	            end: xfeature.end,
+	            seq_id: refSeqId,
+	            source: xfeature.source ?? null,
+	            type: xfeature.type ?? null,
+	            score: xfeature.score ?? null,
+	            strand: xfeature.strand ? (xfeature.strand === 1 ? '+' : '-') : null,
+	            phase: xfeature.phase !== null || xfeature.phase !== undefined
+	                ? xfeature.phase
+	                : null,
+	            attributes: convertFeatureAttributes(xfeature),
+	            derived_features: [],
+	            child_features: children
+	                ? children.map((x) => simpleFeatureToGFF3Feature(x, refSeqId))
+	                : [],
+	        },
+	    ];
+	    return gff3Feature;
+	}
+	function jbrowseFeatureToAnnotationFeature(feature, refSeqId) {
+	    return dist$2.gff3ToAnnotationFeature(simpleFeatureToGFF3Feature(feature, refSeqId));
+	}
+	function convertFeatureAttributes(feature) {
+	    const attributes = {};
+	    const defaultFields = new Set([
+	        'start',
+	        'end',
+	        'type',
+	        'strand',
+	        'refName',
+	        'subfeatures',
+	        'derived_features',
+	        'phase',
+	        'source',
+	        'score',
+	    ]);
+	    for (const [key, value] of Object.entries(feature)) {
+	        if (defaultFields.has(key)) {
+	            continue;
+	        }
+	        attributes[key] = Array.isArray(value) ? value.map(String) : [String(value)];
+	    }
+	    return attributes;
+	}
+	function annotationFromJBrowseFeature(pluggableElement) {
+	    if (pluggableElement.name !== 'LinearBasicDisplay') {
+	        return pluggableElement;
+	    }
+	    const { stateModel } = pluggableElement;
+	    const newStateModel = stateModel
+	        .views((self) => ({
+	        getFirstRegion() {
+	            const lgv = require$$1$2.getContainingView(self);
+	            return lgv.dynamicBlocks.contentBlocks[0];
+	        },
+	        getAssembly() {
+	            const firstRegion = self.getFirstRegion();
+	            const session = require$$1$2.getSession(self);
+	            const { assemblyManager } = session;
+	            const { assemblyName } = firstRegion;
+	            const assembly = assemblyManager.get(assemblyName);
+	            if (!assembly) {
+	                throw new Error(`Could not find assembly named ${assemblyName}`);
+	            }
+	            return assembly;
+	        },
+	        getRefSeqId(assembly) {
+	            const firstRegion = self.getFirstRegion();
+	            const { refName } = firstRegion;
+	            const { refNameAliases } = assembly;
+	            if (!refNameAliases) {
+	                throw new Error(`Could not find aliases for ${assembly.name}`);
+	            }
+	            const newRefNames = [...Object.entries(refNameAliases)]
+	                .filter(([id, refName]) => id !== refName)
+	                .map(([id, refName]) => ({
+	                _id: id,
+	                name: refName,
+	            }));
+	            const refSeqId = newRefNames.find((item) => item.name === refName)?._id;
+	            if (!refSeqId) {
+	                throw new Error(`Could not find refSeqId named ${refName}`);
+	            }
+	            return refSeqId;
+	        },
+	        getAnnotationFeature(assembly) {
+	            const refSeqId = self.getRefSeqId(assembly);
+	            const sfeature = self.contextMenuFeature.data;
+	            return jbrowseFeatureToAnnotationFeature(sfeature, refSeqId);
+	        },
+	    }))
+	        .views((self) => {
+	        const superContextMenuItems = self.contextMenuItems;
+	        return {
+	            contextMenuItems() {
+	                const session = require$$1$2.getSession(self);
+	                const assembly = self.getAssembly();
+	                const region = self.getFirstRegion();
+	                const feature = self.contextMenuFeature;
+	                if (!feature) {
+	                    return superContextMenuItems();
+	                }
+	                return [
+	                    ...superContextMenuItems(),
+	                    {
+	                        label: 'Create Apollo annotation',
+	                        icon: default_1$j,
+	                        onClick: () => {
+	                            session.queueDialog((doneCallback) => [
+	                                CreateApolloAnnotation,
+	                                {
+	                                    session,
+	                                    handleClose: () => {
+	                                        doneCallback();
+	                                    },
+	                                    annotationFeature: self.getAnnotationFeature(assembly),
+	                                    assembly,
+	                                    refSeqId: self.getRefSeqId(assembly),
+	                                    region,
+	                                },
+	                            ]);
+	                        },
+	                    },
+	                ];
+	            },
+	        };
+	    });
+	    pluggableElement.stateModel = newStateModel;
+	    return pluggableElement;
 	}
 
 	var ExpandLess = {};
@@ -60094,7 +60976,7 @@
 	            throw new Error(`Assembly ${assemblyName} not found`);
 	        }
 	        const { file } = configuration.getConf(assembly, ['sequence', 'metadata']);
-	        // eslint-disable-next-line @typescript-eslint/no-require-imports
+	        // eslint-disable-next-line @typescript-eslint/no-require-imports, @typescript-eslint/consistent-type-imports
 	        const fs = require('node:fs');
 	        const fileContents = await fs.promises.readFile(file, 'utf8');
 	        return loadAssemblyIntoClient(assemblyName, fileContents, this.clientStore);
@@ -60204,7 +61086,7 @@
 	            });
 	        }
 	        const gff3Contents = gff.formatSync(gff3Items);
-	        // eslint-disable-next-line @typescript-eslint/no-require-imports
+	        // eslint-disable-next-line @typescript-eslint/no-require-imports, @typescript-eslint/consistent-type-imports
 	        const fs = require('node:fs');
 	        await fs.promises.writeFile(file, gff3Contents, 'utf8');
 	        const results = new dist$2.ValidationResultSet();
@@ -60516,16 +61398,6 @@
 	                                : {}),
 	                        },
 	                    },
-	                    displays: [
-	                        {
-	                            type: 'LinearApolloDisplay',
-	                            displayId: `${trackId}-LinearApolloDisplay`,
-	                        },
-	                        {
-	                            type: 'SixFrameFeatureDisplay',
-	                            displayId: `${trackId}-SixFrameFeatureDisplay`,
-	                        },
-	                    ],
 	                });
 	            }
 	        },
@@ -60811,80 +61683,6 @@
 	    });
 	}
 
-	var configSchema = configuration.ConfigurationSchema('ApolloRefNameAliasAdapter', {
-	    assemblyId: {
-	        type: 'string',
-	        defaultValue: '',
-	    },
-	}, { explicitlyTyped: true });
-
-	function isApolloRefNameAliasMessage(data) {
-	    return (typeof data === 'object' &&
-	        data !== null &&
-	        'apollo' in data &&
-	        data.apollo === true &&
-	        'refNameAliases' in data);
-	}
-	const isInWebWorker = typeof sessionStorage === 'undefined';
-	class RefNameAliasAdapter extends BaseAdapter.BaseAdapter {
-	    refNameAliases;
-	    async getRefNameAliases() {
-	        const assemblyId = configuration.readConfObject(this.config, 'assemblyId');
-	        if (!isInWebWorker) {
-	            const dataStore = this.pluginManager?.rootModel?.session?.apolloDataStore;
-	            if (!dataStore) {
-	                throw new Error('No Apollo data store found');
-	            }
-	            const backendDriver = dataStore.getBackendDriver(assemblyId);
-	            const refNameAliases = await backendDriver.getRefNameAliases(assemblyId);
-	            return refNameAliases;
-	        }
-	        const refNameAliases = await new Promise((resolve, reject) => {
-	            const timeoutId = setTimeout(() => {
-	                reject(new Error('timeout'));
-	            }, 20_000);
-	            const messageId = nanoid();
-	            const messageListener = (event) => {
-	                const data = event.data;
-	                if (!isApolloRefNameAliasMessage(data)) {
-	                    return;
-	                }
-	                if (data.messageId !== messageId) {
-	                    return;
-	                }
-	                clearTimeout(timeoutId);
-	                removeEventListener('message', messageListener);
-	                resolve(data.refNameAliases);
-	            };
-	            addEventListener('message', messageListener);
-	            rpcServer.emit('apollo', {
-	                apollo: true,
-	                method: 'getRefNameAliases',
-	                assembly: assemblyId,
-	                messageId,
-	            });
-	        });
-	        this.refNameAliases = refNameAliases;
-	        return refNameAliases;
-	    }
-	    freeResources() {
-	        // no resources to free
-	    }
-	}
-
-	function installApolloRefNameAliasAdapter(pluginManager) {
-	    pluginManager.addAdapterType(() => new AdapterType__default["default"]({
-	        name: 'ApolloRefNameAliasAdapter',
-	        configSchema,
-	        adapterMetadata: {
-	            category: undefined,
-	            hiddenFromGUI: true,
-	            description: undefined,
-	        },
-	        AdapterClass: RefNameAliasAdapter,
-	    }));
-	}
-
 	/* eslint-disable @typescript-eslint/unbound-method */
 	function isApolloMessageData(data) {
 	    return (typeof data === 'object' &&
@@ -60949,7 +61747,7 @@
 	            });
 	        });
 	        pluginManager.addDisplayType(() => {
-	            const configSchema = configSchema$2;
+	            const configSchema = configSchema$1;
 	            return new pluggableElementTypes.DisplayType({
 	                name: 'LinearApolloDisplay',
 	                configSchema,
@@ -60960,11 +61758,11 @@
 	            });
 	        });
 	        pluginManager.addDisplayType(() => {
-	            const configSchema = configSchema$1;
+	            const configSchema$1 = configSchema;
 	            return new pluggableElementTypes.DisplayType({
 	                name: 'LinearApolloSixFrameDisplay',
-	                configSchema,
-	                stateModel: stateModelFactory(pluginManager, configSchema),
+	                configSchema: configSchema$1,
+	                stateModel: stateModelFactory(pluginManager, configSchema$1),
 	                trackType: 'ApolloTrack',
 	                viewType: 'LinearGenomeView',
 	                ReactComponent: LinearApolloSixFrameDisplayComponent,
