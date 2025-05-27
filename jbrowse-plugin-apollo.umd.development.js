@@ -54774,6 +54774,10 @@
 	        const startCodonGenomicLoc = getCodonGenomicLocation(startCodonPos);
 	        const stopCodonGenomicLoc = getCodonGenomicLocation(stopCodonPos);
 	        if (strand === 1) {
+	            if (startCodonGenomicLoc > stopCodonGenomicLoc) {
+	                notify('Start codon genomic location should be less than stop codon genomic location', 'error');
+	                return;
+	            }
 	            let promise;
 	            if (startCodonGenomicLoc !== cdsMin) {
 	                promise = new Promise((resolve) => {
@@ -54794,6 +54798,10 @@
 	            }
 	        }
 	        if (strand === -1) {
+	            if (startCodonGenomicLoc < stopCodonGenomicLoc) {
+	                notify('Start codon genomic location should be less than stop codon genomic location', 'error');
+	                return;
+	            }
 	            let promise;
 	            if (startCodonGenomicLoc !== cdsMax) {
 	                promise = new Promise((resolve) => {
@@ -54813,6 +54821,7 @@
 	                }
 	            }
 	        }
+	        notify('Translation sequence trimmed to start and stop codons', 'success');
 	    };
 	    const copyToClipboard = () => {
 	        const seqDiv = seqRef.current;
