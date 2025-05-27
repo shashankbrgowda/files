@@ -54143,7 +54143,7 @@
 	        cdsMin = sortedCDSLocations[0].min;
 	        cdsMax = sortedCDSLocations[sortedCDSLocations.length - 1].max;
 	    }
-	    function handleCDSLocationChange(oldLocation, newLocation, feature, isMin, onComplete) {
+	    function handleCDSLocationChange(oldLocation, newLocation, feature, isMin) {
 	        if (!feature.children) {
 	            throw new Error('Transcript should have child features');
 	        }
@@ -54227,14 +54227,7 @@
 	                // update CDS start location
 	                appendStartLocationChange(cdsFeature, startChange, newLocation);
 	            }
-	            void changeManager
-	                .submit(startChange)
-	                .then(() => {
-	                if (onComplete) {
-	                    onComplete();
-	                }
-	            })
-	                .catch(() => {
+	            void changeManager.submit(startChange).catch(() => {
 	                notify('Error updating feature CDS start position', 'error');
 	            });
 	        }
@@ -54273,19 +54266,12 @@
 	                // update CDS end location
 	                appendEndLocationChange(cdsFeature, endChange, newLocation);
 	            }
-	            void changeManager
-	                .submit(endChange)
-	                .then(() => {
-	                if (onComplete) {
-	                    onComplete();
-	                }
-	            })
-	                .catch(() => {
+	            void changeManager.submit(endChange).catch(() => {
 	                notify('Error updating feature CDS end position', 'error');
 	            });
 	        }
 	    }
-	    const updateCDSLocation = (oldLocation, newLocation, feature, isMin) => {
+	    const updateCDSLocation = (oldLocation, newLocation, feature, isMin, onComplete) => {
 	        if (!feature.children) {
 	            throw new Error('Transcript should have child features');
 	        }
@@ -54314,7 +54300,14 @@
 	                newEnd: newLocation,
 	                assembly,
 	            });
-	        void changeManager.submit(change).catch(() => {
+	        void changeManager
+	            .submit(change)
+	            .then(() => {
+	            if (onComplete) {
+	                onComplete();
+	            }
+	        })
+	            .catch(() => {
 	            notify('Error updating feature CDS position', 'error');
 	        });
 	    };
@@ -54784,7 +54777,7 @@
 	            let promise;
 	            if (startCodonGenomicLoc !== cdsMin) {
 	                promise = new Promise((resolve) => {
-	                    handleCDSLocationChange(cdsMin, startCodonGenomicLoc, feature, true, () => {
+	                    updateCDSLocation(cdsMin, startCodonGenomicLoc, feature, true, () => {
 	                        resolve(true);
 	                    });
 	                });
@@ -54792,11 +54785,11 @@
 	            if (stopCodonGenomicLoc !== cdsMax) {
 	                if (promise) {
 	                    void promise.then(() => {
-	                        handleCDSLocationChange(cdsMax, stopCodonGenomicLoc, feature, false);
+	                        updateCDSLocation(cdsMax, stopCodonGenomicLoc, feature, false);
 	                    });
 	                }
 	                else {
-	                    handleCDSLocationChange(cdsMax, stopCodonGenomicLoc, feature, false);
+	                    updateCDSLocation(cdsMax, stopCodonGenomicLoc, feature, false);
 	                }
 	            }
 	        }
@@ -54804,7 +54797,7 @@
 	            let promise;
 	            if (startCodonGenomicLoc !== cdsMax) {
 	                promise = new Promise((resolve) => {
-	                    handleCDSLocationChange(cdsMax, startCodonGenomicLoc, feature, false, () => {
+	                    updateCDSLocation(cdsMax, startCodonGenomicLoc, feature, false, () => {
 	                        resolve(true);
 	                    });
 	                });
@@ -54812,11 +54805,11 @@
 	            if (stopCodonGenomicLoc !== cdsMin) {
 	                if (promise) {
 	                    void promise.then(() => {
-	                        handleCDSLocationChange(cdsMin, stopCodonGenomicLoc, feature, true);
+	                        updateCDSLocation(cdsMin, stopCodonGenomicLoc, feature, true);
 	                    });
 	                }
 	                else {
-	                    handleCDSLocationChange(cdsMin, stopCodonGenomicLoc, feature, true);
+	                    updateCDSLocation(cdsMin, stopCodonGenomicLoc, feature, true);
 	                }
 	            }
 	        }
