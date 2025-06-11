@@ -3939,6 +3939,77 @@
 	        _id: newId
 	      });
 	    }
+	  }, {
+	    key: "addChild",
+	    value: function addChild(parentFeature, child) {
+	      var _a;
+	      if (!((_a = parentFeature.attributes) === null || _a === void 0 ? void 0 : _a._id)) {
+	        var attributes = parentFeature.attributes;
+	        if (!attributes) {
+	          attributes = {};
+	        }
+	        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+	        attributes = _objectSpread2({
+	          _id: [parentFeature._id.toString()]
+	        }, JSON.parse(JSON.stringify(attributes)));
+	        parentFeature.attributes = attributes;
+	      }
+	      var _id = child._id;
+	      if (!parentFeature.children) {
+	        parentFeature.children = new Map();
+	      }
+	      parentFeature.children.set(_id, _objectSpread2(_objectSpread2({
+	        allIds: []
+	      }, child), {}, {
+	        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+	        // @ts-expect-error
+	        _id: _id
+	      }));
+	      // Child features should be sorted for click and drag of gene glyphs to work properly
+	      parentFeature.children = new Map(_toConsumableArray(parentFeature.children.entries()).sort(function (a, b) {
+	        return a[1].min - b[1].min;
+	      }));
+	    }
+	    /**
+	     * Delete feature's subfeatures that match an ID and return the IDs of any
+	     * sub-subfeatures that were deleted
+	     * @param feature -
+	     * @param featureIdToDelete -
+	     * @returns - list of deleted feature IDs
+	     */
+	  }, {
+	    key: "findAndDeleteChildFeature",
+	    value: function findAndDeleteChildFeature(feature, featureIdToDelete) {
+	      if (!feature.children) {
+	        throw new Error("Feature ".concat(feature._id.toHexString(), " has no children"));
+	      }
+	      var _id = feature._id,
+	        children = feature.children;
+	      var child = children.get(featureIdToDelete);
+	      if (child) {
+	        var deletedIds = this.getChildFeatureIds(child);
+	        children["delete"](featureIdToDelete);
+	        return deletedIds;
+	      }
+	      var _iterator3 = _createForOfIteratorHelper(children),
+	        _step3;
+	      try {
+	        for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+	          var _step3$value = _slicedToArray(_step3.value, 2),
+	            childFeature = _step3$value[1];
+	          try {
+	            return this.findAndDeleteChildFeature(childFeature, featureIdToDelete);
+	          } catch (_unused) {
+	            // pass
+	          }
+	        }
+	      } catch (err) {
+	        _iterator3.e(err);
+	      } finally {
+	        _iterator3.f();
+	      }
+	      throw new Error("Feature \"".concat(featureIdToDelete, "\" not found in ").concat(_id.toHexString()));
+	    }
 	  }]);
 	  return FeatureChange;
 	}(AssemblySpecificChange_1$1.AssemblySpecificChange);
@@ -4510,6 +4581,77 @@
 	        children: feature.children && children,
 	        _id: newId
 	      });
+	    }
+	  }, {
+	    key: "addChild",
+	    value: function addChild(parentFeature, child) {
+	      var _a;
+	      if (!((_a = parentFeature.attributes) === null || _a === void 0 ? void 0 : _a._id)) {
+	        var attributes = parentFeature.attributes;
+	        if (!attributes) {
+	          attributes = {};
+	        }
+	        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+	        attributes = _objectSpread2({
+	          _id: [parentFeature._id.toString()]
+	        }, JSON.parse(JSON.stringify(attributes)));
+	        parentFeature.attributes = attributes;
+	      }
+	      var _id = child._id;
+	      if (!parentFeature.children) {
+	        parentFeature.children = new Map();
+	      }
+	      parentFeature.children.set(_id, _objectSpread2(_objectSpread2({
+	        allIds: []
+	      }, child), {}, {
+	        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+	        // @ts-expect-error
+	        _id: _id
+	      }));
+	      // Child features should be sorted for click and drag of gene glyphs to work properly
+	      parentFeature.children = new Map(_toConsumableArray(parentFeature.children.entries()).sort(function (a, b) {
+	        return a[1].min - b[1].min;
+	      }));
+	    }
+	    /**
+	     * Delete feature's subfeatures that match an ID and return the IDs of any
+	     * sub-subfeatures that were deleted
+	     * @param feature -
+	     * @param featureIdToDelete -
+	     * @returns - list of deleted feature IDs
+	     */
+	  }, {
+	    key: "findAndDeleteChildFeature",
+	    value: function findAndDeleteChildFeature(feature, featureIdToDelete) {
+	      if (!feature.children) {
+	        throw new Error("Feature ".concat(feature._id.toHexString(), " has no children"));
+	      }
+	      var _id = feature._id,
+	        children = feature.children;
+	      var child = children.get(featureIdToDelete);
+	      if (child) {
+	        var deletedIds = this.getChildFeatureIds(child);
+	        children["delete"](featureIdToDelete);
+	        return deletedIds;
+	      }
+	      var _iterator3 = _createForOfIteratorHelper(children),
+	        _step3;
+	      try {
+	        for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+	          var _step3$value = _slicedToArray(_step3.value, 2),
+	            childFeature = _step3$value[1];
+	          try {
+	            return this.findAndDeleteChildFeature(childFeature, featureIdToDelete);
+	          } catch (_unused) {
+	            // pass
+	          }
+	        }
+	      } catch (err) {
+	        _iterator3.e(err);
+	      } finally {
+	        _iterator3.f();
+	      }
+	      throw new Error("Feature \"".concat(featureIdToDelete, "\" not found in ").concat(_id.toHexString()));
 	    }
 	  }]);
 	  return FeatureChange;
@@ -5589,7 +5731,7 @@
 	/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 	/* eslint-disable @typescript-eslint/no-unsafe-call */
 	/* eslint-disable @typescript-eslint/no-unsafe-argument */
-	var common_1$g = dist$1;
+	var common_1$k = dist$1;
 	var GFF3_1 = GFF3;
 	var FromFileBaseChange = /*#__PURE__*/function (_common_1$AssemblySpe) {
 	  _inherits(FromFileBaseChange, _common_1$AssemblySpe);
@@ -6025,7 +6167,7 @@
 	    }()
 	  }]);
 	  return FromFileBaseChange;
-	}(common_1$g.AssemblySpecificChange);
+	}(common_1$k.AssemblySpecificChange);
 	FromFileBaseChange$1.FromFileBaseChange = FromFileBaseChange;
 
 	/* eslint-disable @typescript-eslint/require-await */
@@ -15731,7 +15873,7 @@
 	});
 	AddAssemblyFromExternalChange$1.AddAssemblyFromExternalChange = void 0;
 	/* eslint-disable @typescript-eslint/require-await */
-	var common_1$f = dist$1;
+	var common_1$j = dist$1;
 	var indexedfasta_1$1 = require$$0;
 	var generic_filehandle_1 = require$$2;
 	var AddAssemblyFromExternalChange = /*#__PURE__*/function (_common_1$AssemblySpe) {
@@ -15969,7 +16111,7 @@
 	    }
 	  }]);
 	  return AddAssemblyFromExternalChange;
-	}(common_1$f.AssemblySpecificChange);
+	}(common_1$j.AssemblySpecificChange);
 	AddAssemblyFromExternalChange$1.AddAssemblyFromExternalChange = AddAssemblyFromExternalChange;
 
 	var AddAssemblyFromFileChange$1 = {};
@@ -16354,7 +16496,7 @@
 	/* eslint-disable @typescript-eslint/restrict-template-expressions */
 	/* eslint-disable @typescript-eslint/require-await */
 	/* eslint-disable @typescript-eslint/no-unnecessary-condition */
-	var common_1$e = dist$1;
+	var common_1$i = dist$1;
 	var AddFeatureChange_1 = AddFeatureChange$1;
 	var DeleteFeatureChange = /*#__PURE__*/function (_common_1$FeatureChan) {
 	  _inherits(DeleteFeatureChange, _common_1$FeatureChan);
@@ -16515,46 +16657,6 @@
 	      }
 	      return executeOnServer;
 	    }()
-	    /**
-	     * Delete feature's subfeatures that match an ID and return the IDs of any
-	     * sub-subfeatures that were deleted
-	     * @param feature -
-	     * @param featureIdToDelete -
-	     * @returns - list of deleted feature IDs
-	     */
-	  }, {
-	    key: "findAndDeleteChildFeature",
-	    value: function findAndDeleteChildFeature(feature, featureIdToDelete) {
-	      if (!feature.children) {
-	        throw new Error("Feature ".concat(feature._id, " has no children"));
-	      }
-	      var _id = feature._id,
-	        children = feature.children;
-	      var child = children.get(featureIdToDelete);
-	      if (child) {
-	        var deletedIds = this.getChildFeatureIds(child);
-	        children["delete"](featureIdToDelete);
-	        return deletedIds;
-	      }
-	      var _iterator2 = _createForOfIteratorHelper(children),
-	        _step2;
-	      try {
-	        for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-	          var _step2$value = _slicedToArray(_step2.value, 2),
-	            childFeature = _step2$value[1];
-	          try {
-	            return this.findAndDeleteChildFeature(childFeature, featureIdToDelete);
-	          } catch (_unused) {
-	            // pass
-	          }
-	        }
-	      } catch (err) {
-	        _iterator2.e(err);
-	      } finally {
-	        _iterator2.f();
-	      }
-	      throw new Error("Feature \"".concat(featureIdToDelete, "\" not found in ").concat(_id));
-	    }
 	  }, {
 	    key: "executeOnLocalGFF3",
 	    value: function () {
@@ -16578,7 +16680,7 @@
 	    key: "executeOnClient",
 	    value: function () {
 	      var _executeOnClient = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(dataStore) {
-	        var _iterator3, _step3, change, deletedFeature, parentFeatureId, parentFeature;
+	        var _iterator2, _step2, change, deletedFeature, parentFeatureId, parentFeature;
 	        return _regeneratorRuntime().wrap(function _callee3$(_context4) {
 	          while (1) switch (_context4.prev = _context4.next) {
 	            case 0:
@@ -16588,15 +16690,15 @@
 	              }
 	              throw new Error('No data store');
 	            case 2:
-	              _iterator3 = _createForOfIteratorHelper(this.changes);
+	              _iterator2 = _createForOfIteratorHelper(this.changes);
 	              _context4.prev = 3;
-	              _iterator3.s();
+	              _iterator2.s();
 	            case 5:
-	              if ((_step3 = _iterator3.n()).done) {
+	              if ((_step2 = _iterator2.n()).done) {
 	                _context4.next = 18;
 	                break;
 	              }
-	              change = _step3.value;
+	              change = _step2.value;
 	              deletedFeature = change.deletedFeature, parentFeatureId = change.parentFeatureId;
 	              if (!parentFeatureId) {
 	                _context4.next = 15;
@@ -16625,10 +16727,10 @@
 	            case 20:
 	              _context4.prev = 20;
 	              _context4.t0 = _context4["catch"](3);
-	              _iterator3.e(_context4.t0);
+	              _iterator2.e(_context4.t0);
 	            case 23:
 	              _context4.prev = 23;
-	              _iterator3.f();
+	              _iterator2.f();
 	              return _context4.finish(23);
 	            case 26:
 	            case "end":
@@ -16650,10 +16752,10 @@
 	        changes = this.changes,
 	        logger = this.logger;
 	      var inverseChangedIds = _toConsumableArray(changedIds).reverse();
-	      var inverseChanges = _toConsumableArray(changes).reverse().map(function (deleteFeatuerChange) {
+	      var inverseChanges = _toConsumableArray(changes).reverse().map(function (deleteFeatureChange) {
 	        return {
-	          addedFeature: deleteFeatuerChange.deletedFeature,
-	          parentFeatureId: deleteFeatuerChange.parentFeatureId
+	          addedFeature: deleteFeatureChange.deletedFeature,
+	          parentFeatureId: deleteFeatureChange.parentFeatureId
 	        };
 	      });
 	      (_logger$debug4 = logger.debug) === null || _logger$debug4 === void 0 || _logger$debug4.call(logger, "INVERSE CHANGE '".concat(JSON.stringify(inverseChanges), "'"));
@@ -16668,7 +16770,7 @@
 	    }
 	  }]);
 	  return DeleteFeatureChange;
-	}(common_1$e.FeatureChange);
+	}(common_1$i.FeatureChange);
 	DeleteFeatureChange$1.DeleteFeatureChange = DeleteFeatureChange;
 	function isDeleteFeatureChange(change) {
 	  return change.typeName === 'DeleteFeatureChange';
@@ -16680,10 +16782,9 @@
 	AddFeatureChange$1.AddFeatureChange = void 0;
 	AddFeatureChange$1.isAddFeatureChange = isAddFeatureChange;
 	/* eslint-disable @typescript-eslint/restrict-template-expressions */
-	/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 	/* eslint-disable @typescript-eslint/require-await */
 	/* eslint-disable @typescript-eslint/no-unnecessary-condition */
-	var common_1$d = dist$1;
+	var common_1$h = dist$1;
 	var DeleteFeatureChange_1 = DeleteFeatureChange$1;
 	var AddFeatureChange = /*#__PURE__*/function (_common_1$FeatureChan) {
 	  _inherits(AddFeatureChange, _common_1$FeatureChan);
@@ -16738,7 +16839,7 @@
 	    value: function () {
 	      var _executeOnServer = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(backend) {
 	        var _logger$debug, _logger$debug2;
-	        var assemblyModel, featureModel, refSeqModel, session, user, assembly, changes, logger, assemblyDoc, errMsg, featureCnt, _iterator, _step, _logger$debug3, change, addedFeature, allIds, copyFeature, parentFeatureId, _id, refSeq, refSeqDoc, _logger$debug4, _yield$featureModel$c, _yield$featureModel$c2, newFeatureDoc, _parentFeature$attrib, _topLevelFeature$allI, topLevelFeature, parentFeature, attributes, childIds, _logger$verbose, _childIds, allIdsV2, _yield$featureModel$c3, _yield$featureModel$c4, _newFeatureDoc;
+	        var assemblyModel, featureModel, refSeqModel, session, user, assembly, changes, logger, assemblyDoc, errMsg, featureCnt, _iterator, _step, _logger$debug3, change, addedFeature, allIds, copyFeature, parentFeatureId, _id, refSeq, refSeqDoc, _logger$debug4, _yield$featureModel$c, _yield$featureModel$c2, newFeatureDoc, _topLevelFeature$allI, topLevelFeature, parentFeature, childIds, _logger$verbose, _childIds, allIdsV2, _yield$featureModel$c3, _yield$featureModel$c4, _newFeatureDoc;
 	        return _regeneratorRuntime().wrap(function _callee$(_context) {
 	          while (1) switch (_context.prev = _context.next) {
 	            case 0:
@@ -16764,7 +16865,7 @@
 	              _iterator.s();
 	            case 14:
 	              if ((_step = _iterator.n()).done) {
-	                _context.next = 64;
+	                _context.next = 61;
 	                break;
 	              }
 	              change = _step.value;
@@ -16799,11 +16900,11 @@
 	              newFeatureDoc = _yield$featureModel$c2[0];
 	              (_logger$debug4 = logger.debug) === null || _logger$debug4 === void 0 || _logger$debug4.call(logger, "Copied feature, docId \"".concat(newFeatureDoc._id, "\" to assembly \"").concat(assembly, "\""));
 	              featureCnt++;
-	              _context.next = 61;
+	              _context.next = 58;
 	              break;
 	            case 34:
 	              if (!parentFeatureId) {
-	                _context.next = 53;
+	                _context.next = 50;
 	                break;
 	              }
 	              _context.next = 37;
@@ -16825,75 +16926,52 @@
 	              }
 	              throw new Error("Could not find feature with ID \"".concat(parentFeatureId, "\" in feature \"").concat(topLevelFeature._id, "\""));
 	            case 43:
-	              if (!parentFeature.children) {
-	                parentFeature.children = new Map();
-	              }
-	              if (!((_parentFeature$attrib = parentFeature.attributes) !== null && _parentFeature$attrib !== void 0 && _parentFeature$attrib._id)) {
-	                attributes = parentFeature.attributes;
-	                if (!attributes) {
-	                  attributes = {};
-	                }
-	                attributes = _objectSpread2({
-	                  _id: [parentFeature._id.toString()]
-	                }, JSON.parse(JSON.stringify(attributes)));
-	                parentFeature.attributes = attributes;
-	              }
-	              parentFeature.children.set(_id, _objectSpread2(_objectSpread2({
-	                allIds: []
-	              }, addedFeature), {}, {
-	                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-	                // @ts-expect-error
-	                _id: _id
-	              }));
-	              // Child features should be sorted for click and drag of gene glyphs to work properly
-	              parentFeature.children = new Map(_toConsumableArray(parentFeature.children.entries()).sort(function (a, b) {
-	                return a[1].min - b[1].min;
-	              }));
+	              this.addChild(parentFeature, addedFeature);
 	              childIds = this.getChildFeatureIds(addedFeature);
 	              (_topLevelFeature$allI = topLevelFeature.allIds).push.apply(_topLevelFeature$allI, [_id].concat(_toConsumableArray(childIds)));
-	              _context.next = 51;
+	              _context.next = 48;
 	              return topLevelFeature.save();
-	            case 51:
-	              _context.next = 61;
+	            case 48:
+	              _context.next = 58;
 	              break;
-	            case 53:
+	            case 50:
 	              _childIds = this.getChildFeatureIds(addedFeature);
 	              allIdsV2 = [_id].concat(_toConsumableArray(_childIds));
-	              _context.next = 57;
+	              _context.next = 54;
 	              return featureModel.create([_objectSpread2({
 	                allIds: allIdsV2,
 	                status: 0
 	              }, addedFeature)], {
 	                session: session
 	              });
-	            case 57:
+	            case 54:
 	              _yield$featureModel$c3 = _context.sent;
 	              _yield$featureModel$c4 = _slicedToArray(_yield$featureModel$c3, 1);
 	              _newFeatureDoc = _yield$featureModel$c4[0];
 	              (_logger$verbose = logger.verbose) === null || _logger$verbose === void 0 || _logger$verbose.call(logger, "Added docId \"".concat(_newFeatureDoc._id, "\""));
-	            case 61:
+	            case 58:
 	              featureCnt++;
-	            case 62:
+	            case 59:
 	              _context.next = 14;
 	              break;
-	            case 64:
-	              _context.next = 69;
+	            case 61:
+	              _context.next = 66;
 	              break;
-	            case 66:
-	              _context.prev = 66;
+	            case 63:
+	              _context.prev = 63;
 	              _context.t0 = _context["catch"](12);
 	              _iterator.e(_context.t0);
-	            case 69:
-	              _context.prev = 69;
+	            case 66:
+	              _context.prev = 66;
 	              _iterator.f();
-	              return _context.finish(69);
-	            case 72:
+	              return _context.finish(66);
+	            case 69:
 	              (_logger$debug2 = logger.debug) === null || _logger$debug2 === void 0 || _logger$debug2.call(logger, "Added ".concat(featureCnt, " new feature(s) into database."));
-	            case 73:
+	            case 70:
 	            case "end":
 	              return _context.stop();
 	          }
-	        }, _callee, this, [[12, 66, 69, 72]]);
+	        }, _callee, this, [[12, 63, 66, 69]]);
 	      }));
 	      function executeOnServer(_x) {
 	        return _executeOnServer.apply(this, arguments);
@@ -17014,7 +17092,7 @@
 	    }
 	  }]);
 	  return AddFeatureChange;
-	}(common_1$d.FeatureChange);
+	}(common_1$h.FeatureChange);
 	AddFeatureChange$1.AddFeatureChange = AddFeatureChange;
 	function isAddFeatureChange(change) {
 	  return change.typeName === 'AddFeatureChange';
@@ -17269,7 +17347,7 @@
 	  value: true
 	});
 	AddRefSeqAliasesChange$1.AddRefSeqAliasesChange = void 0;
-	var common_1$c = dist$1;
+	var common_1$g = dist$1;
 	var util_1$2 = require$$1__default$1["default"];
 	var AddRefSeqAliasesChange = /*#__PURE__*/function (_common_1$AssemblySpe) {
 	  _inherits(AddRefSeqAliasesChange, _common_1$AssemblySpe);
@@ -17411,7 +17489,7 @@
 	    }
 	  }]);
 	  return AddRefSeqAliasesChange;
-	}(common_1$c.AssemblySpecificChange);
+	}(common_1$g.AssemblySpecificChange);
 	AddRefSeqAliasesChange$1.AddRefSeqAliasesChange = AddRefSeqAliasesChange;
 
 	var DeleteAssemblyChange$1 = {};
@@ -17424,7 +17502,7 @@
 	/* eslint-disable @typescript-eslint/require-await */
 	/* eslint-disable @typescript-eslint/no-unnecessary-condition */
 	/* eslint-disable @typescript-eslint/no-unsafe-call */
-	var common_1$b = dist$1;
+	var common_1$f = dist$1;
 	var util_1$1 = require$$1__default$1["default"];
 	var DeleteAssemblyChange = /*#__PURE__*/function (_common_1$AssemblySpe) {
 	  _inherits(DeleteAssemblyChange, _common_1$AssemblySpe);
@@ -17590,7 +17668,7 @@
 	    }
 	  }]);
 	  return DeleteAssemblyChange;
-	}(common_1$b.AssemblySpecificChange);
+	}(common_1$f.AssemblySpecificChange);
 	DeleteAssemblyChange$1.DeleteAssemblyChange = DeleteAssemblyChange;
 
 	var DeleteUserChange$1 = {};
@@ -17600,7 +17678,7 @@
 	});
 	DeleteUserChange$1.DeleteUserChange = void 0;
 	/* eslint-disable @typescript-eslint/require-await */
-	var common_1$a = dist$1;
+	var common_1$e = dist$1;
 	var DeleteUserChange = /*#__PURE__*/function (_common_1$Change) {
 	  _inherits(DeleteUserChange, _common_1$Change);
 	  var _super = /*#__PURE__*/_createSuper(DeleteUserChange);
@@ -17720,7 +17798,7 @@
 	    }
 	  }]);
 	  return DeleteUserChange;
-	}(common_1$a.Change);
+	}(common_1$e.Change);
 	DeleteUserChange$1.DeleteUserChange = DeleteUserChange;
 
 	var FeatureAttributeChange$1 = {};
@@ -17733,7 +17811,7 @@
 	/* eslint-disable @typescript-eslint/restrict-template-expressions */
 	/* eslint-disable @typescript-eslint/require-await */
 	/* eslint-disable @typescript-eslint/no-unnecessary-condition */
-	var common_1$9 = dist$1;
+	var common_1$d = dist$1;
 	var FeatureAttributeChange = /*#__PURE__*/function (_common_1$FeatureChan) {
 	  _inherits(FeatureAttributeChange, _common_1$FeatureChan);
 	  var _super = /*#__PURE__*/_createSuper(FeatureAttributeChange);
@@ -17757,19 +17835,13 @@
 	        var _changes = _slicedToArray(changes, 1),
 	          _changes$ = _changes[0],
 	          attributes = _changes$.attributes,
-	          featureId = _changes$.featureId,
-	          attributeAdded = _changes$.attributeAdded,
-	          attributeEdited = _changes$.attributeEdited,
-	          attributeDeleted = _changes$.attributeDeleted;
+	          featureId = _changes$.featureId;
 	        return {
 	          typeName: typeName,
 	          changedIds: changedIds,
 	          assembly: assembly,
 	          featureId: featureId,
-	          attributes: attributes,
-	          attributeAdded: attributeAdded,
-	          attributeEdited: attributeEdited,
-	          attributeDeleted: attributeDeleted
+	          attributes: attributes
 	        };
 	      }
 	      return {
@@ -18005,7 +18077,7 @@
 	    }
 	  }]);
 	  return FeatureAttributeChange;
-	}(common_1$9.FeatureChange);
+	}(common_1$d.FeatureChange);
 	FeatureAttributeChange$1.FeatureAttributeChange = FeatureAttributeChange;
 	function isFeatureAttributeChange(change) {
 	  return change.typeName === 'FeatureAttributeChange';
@@ -18020,7 +18092,7 @@
 	ImportJBrowseConfigChange$1.ImportJBrowseConfigChange = void 0;
 	ImportJBrowseConfigChange$1.filterJBrowseConfig = filterJBrowseConfig;
 	/* eslint-disable @typescript-eslint/require-await */
-	var common_1$8 = dist$1;
+	var common_1$c = dist$1;
 	function filterJBrowseConfig(config) {
 	  var assemblies = config.assemblies,
 	    internetAccounts = config.internetAccounts,
@@ -18168,7 +18240,7 @@
 	    }
 	  }]);
 	  return ImportJBrowseConfigChange;
-	}(common_1$8.Change);
+	}(common_1$c.Change);
 	ImportJBrowseConfigChange$1.ImportJBrowseConfigChange = ImportJBrowseConfigChange;
 
 	var LocationEndChange$1 = {};
@@ -18181,7 +18253,7 @@
 	/* eslint-disable @typescript-eslint/restrict-template-expressions */
 	/* eslint-disable @typescript-eslint/require-await */
 	/* eslint-disable @typescript-eslint/no-unnecessary-condition */
-	var common_1$7 = dist$1;
+	var common_1$b = dist$1;
 	var LocationEndChange = /*#__PURE__*/function (_common_1$FeatureChan) {
 	  _inherits(LocationEndChange, _common_1$FeatureChan);
 	  var _super = /*#__PURE__*/_createSuper(LocationEndChange);
@@ -18232,186 +18304,148 @@
 	    key: "executeOnServer",
 	    value: function () {
 	      var _executeOnServer = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(backend) {
-	        var featureModel, session, changes, logger, featuresForChanges, _iterator, _step, _logger$debug, _logger$debug2, change, featureId, oldEnd, topLevelFeature, errMsg, foundFeature, _errMsg, _iterator3, _step3, _step3$value, childFeature, _logger$debug3, _iterator2, _step2, _logger$debug4, _logger$debug6, _step2$value, _change, newEnd, _featureId, _topLevelFeature, _errMsg2, feature, _errMsg3, _logger$debug5;
+	        var featureModel, session, changes, logger, topLevelFeatures, _iterator, _step, _logger$debug2, _logger$debug3, change, featureId, oldEnd, newEnd, topLevelFeature, feature, _iterator2, _step2, _tlv, childFeature, errMsg, _errMsg, _errMsg2, _i, _topLevelFeatures, tlv, _logger$debug;
 	        return _regeneratorRuntime().wrap(function _callee$(_context) {
 	          while (1) switch (_context.prev = _context.next) {
 	            case 0:
 	              featureModel = backend.featureModel, session = backend.session;
-	              changes = this.changes, logger = this.logger;
-	              featuresForChanges = []; // Let's first check that all features are found and those old values match with expected ones. We do this just to be sure that all changes can be done.
+	              changes = this.changes, logger = this.logger; // Let's first check that all features are found and those old values match with expected ones. We do this just to be sure that all changes can be done.
+	              topLevelFeatures = [];
 	              _iterator = _createForOfIteratorHelper(changes);
 	              _context.prev = 4;
 	              _iterator.s();
 	            case 6:
 	              if ((_step = _iterator.n()).done) {
-	                _context.next = 49;
+	                _context.next = 55;
 	                break;
 	              }
 	              change = _step.value;
-	              featureId = change.featureId, oldEnd = change.oldEnd; // Search correct feature
-	              _context.next = 11;
+	              featureId = change.featureId, oldEnd = change.oldEnd, newEnd = change.newEnd; // See if we already have top-level feature for this feature
+	              topLevelFeature = void 0;
+	              feature = void 0;
+	              _iterator2 = _createForOfIteratorHelper(topLevelFeatures);
+	              _context.prev = 12;
+	              _iterator2.s();
+	            case 14:
+	              if ((_step2 = _iterator2.n()).done) {
+	                _context.next = 23;
+	                break;
+	              }
+	              _tlv = _step2.value;
+	              childFeature = this.getFeatureFromId(_tlv, featureId);
+	              if (!childFeature) {
+	                _context.next = 21;
+	                break;
+	              }
+	              topLevelFeature = _tlv;
+	              feature = childFeature;
+	              return _context.abrupt("break", 23);
+	            case 21:
+	              _context.next = 14;
+	              break;
+	            case 23:
+	              _context.next = 28;
+	              break;
+	            case 25:
+	              _context.prev = 25;
+	              _context.t0 = _context["catch"](12);
+	              _iterator2.e(_context.t0);
+	            case 28:
+	              _context.prev = 28;
+	              _iterator2.f();
+	              return _context.finish(28);
+	            case 31:
+	              if (topLevelFeature) {
+	                _context.next = 36;
+	                break;
+	              }
+	              _context.next = 34;
 	              return featureModel.findOne({
 	                allIds: featureId
 	              }).session(session).exec();
-	            case 11:
+	            case 34:
 	              topLevelFeature = _context.sent;
 	              if (topLevelFeature) {
-	                _context.next = 16;
+	                topLevelFeatures.push(topLevelFeature);
+	              }
+	            case 36:
+	              if (topLevelFeature) {
+	                _context.next = 40;
 	                break;
 	              }
 	              errMsg = "*** ERROR: The following featureId was not found in database ='".concat(featureId, "'");
 	              logger.error(errMsg);
 	              throw new Error(errMsg);
-	            case 16:
-	              (_logger$debug = logger.debug) === null || _logger$debug === void 0 || _logger$debug.call(logger, "*** TOP level feature found: ".concat(JSON.stringify(topLevelFeature)));
-	              foundFeature = this.getFeatureFromId(topLevelFeature, featureId);
-	              if (foundFeature) {
-	                _context.next = 22;
+	            case 40:
+	              (_logger$debug2 = logger.debug) === null || _logger$debug2 === void 0 || _logger$debug2.call(logger, "*** TOP level feature found: ".concat(JSON.stringify(topLevelFeature)));
+	              if (!feature) {
+	                feature = this.getFeatureFromId(topLevelFeature, featureId);
+	              }
+	              if (feature) {
+	                _context.next = 46;
 	                break;
 	              }
 	              _errMsg = 'ERROR when searching feature by featureId';
 	              logger.error(_errMsg);
 	              throw new Error(_errMsg);
-	            case 22:
-	              (_logger$debug2 = logger.debug) === null || _logger$debug2 === void 0 || _logger$debug2.call(logger, "*** Found feature: ".concat(JSON.stringify(foundFeature)));
-	              if (!(foundFeature.max === oldEnd)) {
-	                _context.next = 27;
+	            case 46:
+	              (_logger$debug3 = logger.debug) === null || _logger$debug3 === void 0 || _logger$debug3.call(logger, "*** Found feature: ".concat(JSON.stringify(feature)));
+	              if (!(feature.max !== oldEnd)) {
+	                _context.next = 51;
 	                break;
 	              }
-	              featuresForChanges.push({
-	                feature: foundFeature,
-	                topLevelFeature: topLevelFeature
-	              });
-	              _context.next = 47;
-	              break;
-	            case 27:
-	              if (!foundFeature.children) {
-	                _context.next = 47;
-	                break;
-	              }
-	              _iterator3 = _createForOfIteratorHelper(foundFeature.children);
-	              _context.prev = 29;
-	              _iterator3.s();
-	            case 31:
-	              if ((_step3 = _iterator3.n()).done) {
-	                _context.next = 39;
-	                break;
-	              }
-	              _step3$value = _slicedToArray(_step3.value, 2), childFeature = _step3$value[1];
-	              if (!(childFeature.max === oldEnd)) {
-	                _context.next = 37;
-	                break;
-	              }
-	              (_logger$debug3 = logger.debug) === null || _logger$debug3 === void 0 || _logger$debug3.call(logger, "*************** UPDATE CHILD FEATURE ID= ".concat(featureId, ", CHILD: ").concat(JSON.stringify(childFeature)));
-	              featuresForChanges.push({
-	                feature: childFeature,
-	                topLevelFeature: topLevelFeature
-	              });
-	              return _context.abrupt("break", 39);
-	            case 37:
-	              _context.next = 31;
-	              break;
-	            case 39:
-	              _context.next = 44;
-	              break;
-	            case 41:
-	              _context.prev = 41;
-	              _context.t0 = _context["catch"](29);
-	              _iterator3.e(_context.t0);
-	            case 44:
-	              _context.prev = 44;
-	              _iterator3.f();
-	              return _context.finish(44);
-	            case 47:
-	              _context.next = 6;
-	              break;
-	            case 49:
-	              _context.next = 54;
-	              break;
-	            case 51:
-	              _context.prev = 51;
-	              _context.t1 = _context["catch"](4);
-	              _iterator.e(_context.t1);
-	            case 54:
-	              _context.prev = 54;
-	              _iterator.f();
-	              return _context.finish(54);
-	            case 57:
-	              // Let's update objects.
-	              _iterator2 = _createForOfIteratorHelper(changes.entries());
-	              _context.prev = 58;
-	              _iterator2.s();
-	            case 60:
-	              if ((_step2 = _iterator2.n()).done) {
-	                _context.next = 90;
-	                break;
-	              }
-	              _step2$value = _slicedToArray(_step2.value, 2), _change = _step2$value[1];
-	              // const { newEnd } = change
-	              // const { feature, topLevelFeature } = featuresForChanges[idx]
-	              newEnd = _change.newEnd, _featureId = _change.featureId;
-	              _context.next = 65;
-	              return featureModel.findOne({
-	                allIds: _featureId
-	              }).session(session).exec();
-	            case 65:
-	              _topLevelFeature = _context.sent;
-	              if (_topLevelFeature) {
-	                _context.next = 70;
-	                break;
-	              }
-	              _errMsg2 = "*** ERROR: The following featureId was not found in database ='".concat(_featureId, "'");
+	              _errMsg2 = 'Expected previous max does not match';
 	              logger.error(_errMsg2);
 	              throw new Error(_errMsg2);
-	            case 70:
-	              (_logger$debug4 = logger.debug) === null || _logger$debug4 === void 0 || _logger$debug4.call(logger, "*** TOP level feature found: ".concat(JSON.stringify(_topLevelFeature)));
-	              feature = this.getFeatureFromId(_topLevelFeature, _featureId);
-	              if (feature) {
-	                _context.next = 76;
-	                break;
-	              }
-	              _errMsg3 = 'ERROR when searching feature by featureId';
-	              logger.error(_errMsg3);
-	              throw new Error(_errMsg3);
-	            case 76:
+	            case 51:
 	              feature.max = newEnd;
-	              if (_topLevelFeature._id.equals(feature._id)) {
-	                _topLevelFeature.markModified('end'); // Mark as modified. Without this save() -method is not updating data in database
+	              if (topLevelFeature._id.equals(feature._id)) {
+	                topLevelFeature.markModified('end'); // Mark as modified. Without this save() -method is not updating data in database
 	              } else {
-	                _topLevelFeature.markModified('children'); // Mark as modified. Without this save() -method is not updating data in database
+	                topLevelFeature.markModified('children'); // Mark as modified. Without this save() -method is not updating data in database
 	              }
-	              _context.prev = 78;
-	              _context.next = 81;
-	              return _topLevelFeature.save();
-	            case 81:
-	              _context.next = 87;
+	            case 53:
+	              _context.next = 6;
 	              break;
-	            case 83:
-	              _context.prev = 83;
-	              _context.t2 = _context["catch"](78);
-	              (_logger$debug5 = logger.debug) === null || _logger$debug5 === void 0 || _logger$debug5.call(logger, "*** FAILED: ".concat(_context.t2));
-	              throw _context.t2;
-	            case 87:
-	              (_logger$debug6 = logger.debug) === null || _logger$debug6 === void 0 || _logger$debug6.call(logger, "*** Object updated in Mongo. New object: ".concat(JSON.stringify(_topLevelFeature)));
-	            case 88:
+	            case 55:
 	              _context.next = 60;
 	              break;
-	            case 90:
-	              _context.next = 95;
+	            case 57:
+	              _context.prev = 57;
+	              _context.t1 = _context["catch"](4);
+	              _iterator.e(_context.t1);
+	            case 60:
+	              _context.prev = 60;
+	              _iterator.f();
+	              return _context.finish(60);
+	            case 63:
+	              _i = 0, _topLevelFeatures = topLevelFeatures;
+	            case 64:
+	              if (!(_i < _topLevelFeatures.length)) {
+	                _context.next = 78;
+	                break;
+	              }
+	              tlv = _topLevelFeatures[_i];
+	              _context.prev = 66;
+	              _context.next = 69;
+	              return tlv.save();
+	            case 69:
+	              _context.next = 75;
 	              break;
-	            case 92:
-	              _context.prev = 92;
-	              _context.t3 = _context["catch"](58);
-	              _iterator2.e(_context.t3);
-	            case 95:
-	              _context.prev = 95;
-	              _iterator2.f();
-	              return _context.finish(95);
-	            case 98:
+	            case 71:
+	              _context.prev = 71;
+	              _context.t2 = _context["catch"](66);
+	              (_logger$debug = logger.debug) === null || _logger$debug === void 0 || _logger$debug.call(logger, "*** FAILED: ".concat(_context.t2));
+	              throw _context.t2;
+	            case 75:
+	              _i++;
+	              _context.next = 64;
+	              break;
+	            case 78:
 	            case "end":
 	              return _context.stop();
 	          }
-	        }, _callee, this, [[4, 51, 54, 57], [29, 41, 44, 47], [58, 92, 95, 98], [78, 83]]);
+	        }, _callee, this, [[4, 57, 60, 63], [12, 25, 28, 31], [66, 71]]);
 	      }));
 	      function executeOnServer(_x) {
 	        return _executeOnServer.apply(this, arguments);
@@ -18441,7 +18475,7 @@
 	    key: "executeOnClient",
 	    value: function () {
 	      var _executeOnClient = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(dataStore) {
-	        var _iterator4, _step4, _step4$value, idx, changedId, feature;
+	        var _iterator3, _step3, change, featureId, newEnd, feature;
 	        return _regeneratorRuntime().wrap(function _callee3$(_context3) {
 	          while (1) switch (_context3.prev = _context3.next) {
 	            case 0:
@@ -18451,42 +18485,43 @@
 	              }
 	              throw new Error('No data store');
 	            case 2:
-	              _iterator4 = _createForOfIteratorHelper(this.changedIds.entries());
+	              _iterator3 = _createForOfIteratorHelper(this.changes);
 	              _context3.prev = 3;
-	              _iterator4.s();
+	              _iterator3.s();
 	            case 5:
-	              if ((_step4 = _iterator4.n()).done) {
-	                _context3.next = 13;
+	              if ((_step3 = _iterator3.n()).done) {
+	                _context3.next = 14;
 	                break;
 	              }
-	              _step4$value = _slicedToArray(_step4.value, 2), idx = _step4$value[0], changedId = _step4$value[1];
-	              feature = dataStore.getFeature(changedId);
+	              change = _step3.value;
+	              featureId = change.featureId, newEnd = change.newEnd;
+	              feature = dataStore.getFeature(featureId);
 	              if (feature) {
-	                _context3.next = 10;
+	                _context3.next = 11;
 	                break;
 	              }
-	              throw new Error("Could not find feature with identifier \"".concat(changedId, "\""));
-	            case 10:
-	              feature.setMax(this.changes[idx].newEnd);
+	              throw new Error("Could not find feature with identifier \"".concat(featureId, "\""));
 	            case 11:
+	              feature.setMax(newEnd);
+	            case 12:
 	              _context3.next = 5;
 	              break;
-	            case 13:
-	              _context3.next = 18;
+	            case 14:
+	              _context3.next = 19;
 	              break;
-	            case 15:
-	              _context3.prev = 15;
+	            case 16:
+	              _context3.prev = 16;
 	              _context3.t0 = _context3["catch"](3);
-	              _iterator4.e(_context3.t0);
-	            case 18:
-	              _context3.prev = 18;
-	              _iterator4.f();
-	              return _context3.finish(18);
-	            case 21:
+	              _iterator3.e(_context3.t0);
+	            case 19:
+	              _context3.prev = 19;
+	              _iterator3.f();
+	              return _context3.finish(19);
+	            case 22:
 	            case "end":
 	              return _context3.stop();
 	          }
-	        }, _callee3, this, [[3, 15, 18, 21]]);
+	        }, _callee3, this, [[3, 16, 19, 22]]);
 	      }));
 	      function executeOnClient(_x3) {
 	        return _executeOnClient.apply(this, arguments);
@@ -18520,7 +18555,7 @@
 	    }
 	  }]);
 	  return LocationEndChange;
-	}(common_1$7.FeatureChange);
+	}(common_1$b.FeatureChange);
 	LocationEndChange$1.LocationEndChange = LocationEndChange;
 	function isLocationEndChange(change) {
 	  return change.typeName === 'LocationEndChange';
@@ -18536,7 +18571,7 @@
 	/* eslint-disable @typescript-eslint/restrict-template-expressions */
 	/* eslint-disable @typescript-eslint/require-await */
 	/* eslint-disable @typescript-eslint/no-unnecessary-condition */
-	var common_1$6 = dist$1;
+	var common_1$a = dist$1;
 	var LocationStartChange = /*#__PURE__*/function (_common_1$FeatureChan) {
 	  _inherits(LocationStartChange, _common_1$FeatureChan);
 	  var _super = /*#__PURE__*/_createSuper(LocationStartChange);
@@ -18587,185 +18622,148 @@
 	    key: "executeOnServer",
 	    value: function () {
 	      var _executeOnServer = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(backend) {
-	        var featureModel, session, changes, logger, featuresForChanges, _iterator, _step, _logger$debug, _logger$debug2, change, featureId, oldStart, topLevelFeature, errMsg, foundFeature, _errMsg, _iterator3, _step3, _step3$value, childFeature, _logger$debug3, _iterator2, _step2, _logger$debug5, _step2$value, _change, newStart, _featureId, _topLevelFeature, _errMsg2, feature, _errMsg3, _logger$debug4;
+	        var featureModel, session, changes, logger, topLevelFeatures, _iterator, _step, _logger$debug2, _logger$debug3, change, featureId, oldStart, newStart, topLevelFeature, feature, _iterator2, _step2, _tlv, childFeature, errMsg, _errMsg, _errMsg2, _i, _topLevelFeatures, tlv, _logger$debug;
 	        return _regeneratorRuntime().wrap(function _callee$(_context) {
 	          while (1) switch (_context.prev = _context.next) {
 	            case 0:
 	              featureModel = backend.featureModel, session = backend.session;
-	              changes = this.changes, logger = this.logger;
-	              featuresForChanges = []; // Let's first check that all features are found and those old values match with expected ones. We do this just to be sure that all changes can be done.
+	              changes = this.changes, logger = this.logger; // Let's first check that all features are found and those old values match with expected ones. We do this just to be sure that all changes can be done.
+	              topLevelFeatures = [];
 	              _iterator = _createForOfIteratorHelper(changes);
 	              _context.prev = 4;
 	              _iterator.s();
 	            case 6:
 	              if ((_step = _iterator.n()).done) {
-	                _context.next = 49;
+	                _context.next = 55;
 	                break;
 	              }
 	              change = _step.value;
-	              featureId = change.featureId, oldStart = change.oldStart; // Search correct feature
-	              _context.next = 11;
+	              featureId = change.featureId, oldStart = change.oldStart, newStart = change.newStart; // See if we already have top-level feature for this feature
+	              topLevelFeature = void 0;
+	              feature = void 0;
+	              _iterator2 = _createForOfIteratorHelper(topLevelFeatures);
+	              _context.prev = 12;
+	              _iterator2.s();
+	            case 14:
+	              if ((_step2 = _iterator2.n()).done) {
+	                _context.next = 23;
+	                break;
+	              }
+	              _tlv = _step2.value;
+	              childFeature = this.getFeatureFromId(_tlv, featureId);
+	              if (!childFeature) {
+	                _context.next = 21;
+	                break;
+	              }
+	              topLevelFeature = _tlv;
+	              feature = childFeature;
+	              return _context.abrupt("break", 23);
+	            case 21:
+	              _context.next = 14;
+	              break;
+	            case 23:
+	              _context.next = 28;
+	              break;
+	            case 25:
+	              _context.prev = 25;
+	              _context.t0 = _context["catch"](12);
+	              _iterator2.e(_context.t0);
+	            case 28:
+	              _context.prev = 28;
+	              _iterator2.f();
+	              return _context.finish(28);
+	            case 31:
+	              if (topLevelFeature) {
+	                _context.next = 36;
+	                break;
+	              }
+	              _context.next = 34;
 	              return featureModel.findOne({
 	                allIds: featureId
 	              }).session(session).exec();
-	            case 11:
+	            case 34:
 	              topLevelFeature = _context.sent;
 	              if (topLevelFeature) {
-	                _context.next = 16;
+	                topLevelFeatures.push(topLevelFeature);
+	              }
+	            case 36:
+	              if (topLevelFeature) {
+	                _context.next = 40;
 	                break;
 	              }
 	              errMsg = "*** ERROR: The following featureId was not found in database ='".concat(featureId, "'");
 	              logger.error(errMsg);
 	              throw new Error(errMsg);
-	            case 16:
-	              (_logger$debug = logger.debug) === null || _logger$debug === void 0 || _logger$debug.call(logger, "*** TOP level feature found: ".concat(JSON.stringify(topLevelFeature)));
-	              foundFeature = this.getFeatureFromId(topLevelFeature, featureId);
-	              if (foundFeature) {
-	                _context.next = 22;
+	            case 40:
+	              (_logger$debug2 = logger.debug) === null || _logger$debug2 === void 0 || _logger$debug2.call(logger, "*** TOP level feature found: ".concat(JSON.stringify(topLevelFeature)));
+	              if (!feature) {
+	                feature = this.getFeatureFromId(topLevelFeature, featureId);
+	              }
+	              if (feature) {
+	                _context.next = 46;
 	                break;
 	              }
 	              _errMsg = 'ERROR when searching feature by featureId';
 	              logger.error(_errMsg);
 	              throw new Error(_errMsg);
-	            case 22:
-	              (_logger$debug2 = logger.debug) === null || _logger$debug2 === void 0 || _logger$debug2.call(logger, "*** Found feature: ".concat(JSON.stringify(foundFeature)));
-	              if (!(foundFeature.min === oldStart)) {
-	                _context.next = 27;
+	            case 46:
+	              (_logger$debug3 = logger.debug) === null || _logger$debug3 === void 0 || _logger$debug3.call(logger, "*** Found feature: ".concat(JSON.stringify(feature)));
+	              if (!(feature.min !== oldStart)) {
+	                _context.next = 51;
 	                break;
 	              }
-	              featuresForChanges.push({
-	                feature: foundFeature,
-	                topLevelFeature: topLevelFeature
-	              });
-	              _context.next = 47;
-	              break;
-	            case 27:
-	              if (!foundFeature.children) {
-	                _context.next = 47;
-	                break;
-	              }
-	              _iterator3 = _createForOfIteratorHelper(foundFeature.children);
-	              _context.prev = 29;
-	              _iterator3.s();
-	            case 31:
-	              if ((_step3 = _iterator3.n()).done) {
-	                _context.next = 39;
-	                break;
-	              }
-	              _step3$value = _slicedToArray(_step3.value, 2), childFeature = _step3$value[1];
-	              if (!(childFeature.min === oldStart)) {
-	                _context.next = 37;
-	                break;
-	              }
-	              (_logger$debug3 = logger.debug) === null || _logger$debug3 === void 0 || _logger$debug3.call(logger, "*** UPDATE CHILD FEATURE ID= ".concat(featureId, ", CHILD: ").concat(JSON.stringify(childFeature)));
-	              featuresForChanges.push({
-	                feature: childFeature,
-	                topLevelFeature: topLevelFeature
-	              });
-	              return _context.abrupt("break", 39);
-	            case 37:
-	              _context.next = 31;
-	              break;
-	            case 39:
-	              _context.next = 44;
-	              break;
-	            case 41:
-	              _context.prev = 41;
-	              _context.t0 = _context["catch"](29);
-	              _iterator3.e(_context.t0);
-	            case 44:
-	              _context.prev = 44;
-	              _iterator3.f();
-	              return _context.finish(44);
-	            case 47:
-	              _context.next = 6;
-	              break;
-	            case 49:
-	              _context.next = 54;
-	              break;
-	            case 51:
-	              _context.prev = 51;
-	              _context.t1 = _context["catch"](4);
-	              _iterator.e(_context.t1);
-	            case 54:
-	              _context.prev = 54;
-	              _iterator.f();
-	              return _context.finish(54);
-	            case 57:
-	              // Let's update objects.
-	              _iterator2 = _createForOfIteratorHelper(changes.entries());
-	              _context.prev = 58;
-	              _iterator2.s();
-	            case 60:
-	              if ((_step2 = _iterator2.n()).done) {
-	                _context.next = 89;
-	                break;
-	              }
-	              _step2$value = _slicedToArray(_step2.value, 2), _change = _step2$value[1];
-	              // const { newStart } = change
-	              // const { feature, topLevelFeature } = featuresForChanges[idx]
-	              newStart = _change.newStart, _featureId = _change.featureId;
-	              _context.next = 65;
-	              return featureModel.findOne({
-	                allIds: _featureId
-	              }).session(session).exec();
-	            case 65:
-	              _topLevelFeature = _context.sent;
-	              if (_topLevelFeature) {
-	                _context.next = 70;
-	                break;
-	              }
-	              _errMsg2 = "*** ERROR: The following featureId was not found in database ='".concat(_featureId, "'");
+	              _errMsg2 = 'Expected previous max does not match';
 	              logger.error(_errMsg2);
 	              throw new Error(_errMsg2);
-	            case 70:
-	              feature = this.getFeatureFromId(_topLevelFeature, _featureId);
-	              if (feature) {
-	                _context.next = 75;
-	                break;
-	              }
-	              _errMsg3 = 'ERROR when searching feature by featureId';
-	              logger.error(_errMsg3);
-	              throw new Error(_errMsg3);
-	            case 75:
+	            case 51:
 	              feature.min = newStart;
-	              if (_topLevelFeature._id.equals(feature._id)) {
-	                _topLevelFeature.markModified('start'); // Mark as modified. Without this save() -method is not updating data in database
+	              if (topLevelFeature._id.equals(feature._id)) {
+	                topLevelFeature.markModified('start'); // Mark as modified. Without this save() -method is not updating data in database
 	              } else {
-	                _topLevelFeature.markModified('children'); // Mark as modified. Without this save() -method is not updating data in database
+	                topLevelFeature.markModified('children'); // Mark as modified. Without this save() -method is not updating data in database
 	              }
-	              _context.prev = 77;
-	              _context.next = 80;
-	              return _topLevelFeature.save();
-	            case 80:
-	              _context.next = 86;
+	            case 53:
+	              _context.next = 6;
 	              break;
-	            case 82:
-	              _context.prev = 82;
-	              _context.t2 = _context["catch"](77);
-	              (_logger$debug4 = logger.debug) === null || _logger$debug4 === void 0 || _logger$debug4.call(logger, "*** FAILED: ".concat(_context.t2));
-	              throw _context.t2;
-	            case 86:
-	              (_logger$debug5 = logger.debug) === null || _logger$debug5 === void 0 || _logger$debug5.call(logger, "*** Object updated in Mongo. New object: ".concat(JSON.stringify(_topLevelFeature)));
-	            case 87:
+	            case 55:
 	              _context.next = 60;
 	              break;
-	            case 89:
-	              _context.next = 94;
+	            case 57:
+	              _context.prev = 57;
+	              _context.t1 = _context["catch"](4);
+	              _iterator.e(_context.t1);
+	            case 60:
+	              _context.prev = 60;
+	              _iterator.f();
+	              return _context.finish(60);
+	            case 63:
+	              _i = 0, _topLevelFeatures = topLevelFeatures;
+	            case 64:
+	              if (!(_i < _topLevelFeatures.length)) {
+	                _context.next = 78;
+	                break;
+	              }
+	              tlv = _topLevelFeatures[_i];
+	              _context.prev = 66;
+	              _context.next = 69;
+	              return tlv.save();
+	            case 69:
+	              _context.next = 75;
 	              break;
-	            case 91:
-	              _context.prev = 91;
-	              _context.t3 = _context["catch"](58);
-	              _iterator2.e(_context.t3);
-	            case 94:
-	              _context.prev = 94;
-	              _iterator2.f();
-	              return _context.finish(94);
-	            case 97:
+	            case 71:
+	              _context.prev = 71;
+	              _context.t2 = _context["catch"](66);
+	              (_logger$debug = logger.debug) === null || _logger$debug === void 0 || _logger$debug.call(logger, "*** FAILED: ".concat(_context.t2));
+	              throw _context.t2;
+	            case 75:
+	              _i++;
+	              _context.next = 64;
+	              break;
+	            case 78:
 	            case "end":
 	              return _context.stop();
 	          }
-	        }, _callee, this, [[4, 51, 54, 57], [29, 41, 44, 47], [58, 91, 94, 97], [77, 82]]);
+	        }, _callee, this, [[4, 57, 60, 63], [12, 25, 28, 31], [66, 71]]);
 	      }));
 	      function executeOnServer(_x) {
 	        return _executeOnServer.apply(this, arguments);
@@ -18795,7 +18793,7 @@
 	    key: "executeOnClient",
 	    value: function () {
 	      var _executeOnClient = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(dataStore) {
-	        var _iterator4, _step4, _step4$value, idx, changedId, feature;
+	        var _iterator3, _step3, change, featureId, newStart, feature;
 	        return _regeneratorRuntime().wrap(function _callee3$(_context3) {
 	          while (1) switch (_context3.prev = _context3.next) {
 	            case 0:
@@ -18805,42 +18803,43 @@
 	              }
 	              throw new Error('No data store');
 	            case 2:
-	              _iterator4 = _createForOfIteratorHelper(this.changedIds.entries());
+	              _iterator3 = _createForOfIteratorHelper(this.changes);
 	              _context3.prev = 3;
-	              _iterator4.s();
+	              _iterator3.s();
 	            case 5:
-	              if ((_step4 = _iterator4.n()).done) {
-	                _context3.next = 13;
+	              if ((_step3 = _iterator3.n()).done) {
+	                _context3.next = 14;
 	                break;
 	              }
-	              _step4$value = _slicedToArray(_step4.value, 2), idx = _step4$value[0], changedId = _step4$value[1];
-	              feature = dataStore.getFeature(changedId);
+	              change = _step3.value;
+	              featureId = change.featureId, newStart = change.newStart;
+	              feature = dataStore.getFeature(featureId);
 	              if (feature) {
-	                _context3.next = 10;
+	                _context3.next = 11;
 	                break;
 	              }
-	              throw new Error("Could not find feature with identifier \"".concat(changedId, "\""));
-	            case 10:
-	              feature.setMin(this.changes[idx].newStart);
+	              throw new Error("Could not find feature with identifier \"".concat(featureId, "\""));
 	            case 11:
+	              feature.setMin(newStart);
+	            case 12:
 	              _context3.next = 5;
 	              break;
-	            case 13:
-	              _context3.next = 18;
+	            case 14:
+	              _context3.next = 19;
 	              break;
-	            case 15:
-	              _context3.prev = 15;
+	            case 16:
+	              _context3.prev = 16;
 	              _context3.t0 = _context3["catch"](3);
-	              _iterator4.e(_context3.t0);
-	            case 18:
-	              _context3.prev = 18;
-	              _iterator4.f();
-	              return _context3.finish(18);
-	            case 21:
+	              _iterator3.e(_context3.t0);
+	            case 19:
+	              _context3.prev = 19;
+	              _iterator3.f();
+	              return _context3.finish(19);
+	            case 22:
 	            case "end":
 	              return _context3.stop();
 	          }
-	        }, _callee3, this, [[3, 15, 18, 21]]);
+	        }, _callee3, this, [[3, 16, 19, 22]]);
 	      }));
 	      function executeOnClient(_x3) {
 	        return _executeOnClient.apply(this, arguments);
@@ -18874,11 +18873,1146 @@
 	    }
 	  }]);
 	  return LocationStartChange;
-	}(common_1$6.FeatureChange);
+	}(common_1$a.FeatureChange);
 	LocationStartChange$1.LocationStartChange = LocationStartChange;
 	function isLocationStartChange(change) {
 	  return change.typeName === 'LocationStartChange';
 	}
+
+	var MergeExonsChange$1 = {};
+
+	var UndoMergeExonsChange$1 = {};
+
+	Object.defineProperty(UndoMergeExonsChange$1, "__esModule", {
+	  value: true
+	});
+	UndoMergeExonsChange$1.UndoMergeExonsChange = void 0;
+	/* eslint-disable @typescript-eslint/require-await */
+	var common_1$9 = dist$1;
+	var MergeExonsChange_1 = MergeExonsChange$1;
+	var UndoMergeExonsChange = /*#__PURE__*/function (_common_1$FeatureChan) {
+	  _inherits(UndoMergeExonsChange, _common_1$FeatureChan);
+	  var _super = /*#__PURE__*/_createSuper(UndoMergeExonsChange);
+	  function UndoMergeExonsChange(json, options) {
+	    var _this;
+	    _classCallCheck(this, UndoMergeExonsChange);
+	    _this = _super.call(this, json, options);
+	    _defineProperty(_assertThisInitialized(_this), "typeName", 'UndoMergeExonsChange');
+	    _defineProperty(_assertThisInitialized(_this), "changes", void 0);
+	    _this.changes = 'changes' in json ? json.changes : [json];
+	    return _this;
+	  }
+	  _createClass(UndoMergeExonsChange, [{
+	    key: "toJSON",
+	    value: function toJSON() {
+	      var assembly = this.assembly,
+	        changedIds = this.changedIds,
+	        changes = this.changes,
+	        typeName = this.typeName;
+	      if (changes.length === 1) {
+	        var _changes = _slicedToArray(changes, 1),
+	          _changes$ = _changes[0],
+	          exonsToRestore = _changes$.exonsToRestore,
+	          parentFeatureId = _changes$.parentFeatureId;
+	        return {
+	          typeName: typeName,
+	          changedIds: changedIds,
+	          assembly: assembly,
+	          exonsToRestore: exonsToRestore,
+	          parentFeatureId: parentFeatureId
+	        };
+	      }
+	      return {
+	        typeName: typeName,
+	        changedIds: changedIds,
+	        assembly: assembly,
+	        changes: changes
+	      };
+	    }
+	  }, {
+	    key: "executeOnServer",
+	    value: function () {
+	      var _executeOnServer = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(backend) {
+	        var featureModel, session, changes, _iterator, _step, change, exonsToRestore, parentFeatureId, topLevelFeature, parentFeature, _iterator2, _step2, _topLevelFeature$allI, exon, childIds;
+	        return _regeneratorRuntime().wrap(function _callee$(_context) {
+	          while (1) switch (_context.prev = _context.next) {
+	            case 0:
+	              featureModel = backend.featureModel, session = backend.session;
+	              changes = this.changes;
+	              _iterator = _createForOfIteratorHelper(changes);
+	              _context.prev = 3;
+	              _iterator.s();
+	            case 5:
+	              if ((_step = _iterator.n()).done) {
+	                _context.next = 25;
+	                break;
+	              }
+	              change = _step.value;
+	              exonsToRestore = change.exonsToRestore, parentFeatureId = change.parentFeatureId;
+	              if (!(exonsToRestore.length !== 2)) {
+	                _context.next = 10;
+	                break;
+	              }
+	              throw new Error("Expected exactly two exons to restore. Got :".concat(exonsToRestore.length));
+	            case 10:
+	              _context.next = 12;
+	              return featureModel.findOne({
+	                allIds: parentFeatureId
+	              }).session(session).exec();
+	            case 12:
+	              topLevelFeature = _context.sent;
+	              if (topLevelFeature) {
+	                _context.next = 15;
+	                break;
+	              }
+	              throw new Error("Could not find feature with ID \"".concat(parentFeatureId, "\""));
+	            case 15:
+	              parentFeature = this.getFeatureFromId(topLevelFeature, parentFeatureId);
+	              if (parentFeature) {
+	                _context.next = 18;
+	                break;
+	              }
+	              throw new Error("Could not find feature with ID \"".concat(parentFeatureId, "\" in feature \"").concat(topLevelFeature._id.toString(), "\""));
+	            case 18:
+	              if (!parentFeature.children) {
+	                parentFeature.children = new Map();
+	              }
+	              _iterator2 = _createForOfIteratorHelper(exonsToRestore);
+	              try {
+	                for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+	                  exon = _step2.value;
+	                  this.addChild(parentFeature, exon);
+	                  childIds = this.getChildFeatureIds(exon);
+	                  (_topLevelFeature$allI = topLevelFeature.allIds).push.apply(_topLevelFeature$allI, [exon._id].concat(_toConsumableArray(childIds)));
+	                }
+	              } catch (err) {
+	                _iterator2.e(err);
+	              } finally {
+	                _iterator2.f();
+	              }
+	              _context.next = 23;
+	              return topLevelFeature.save();
+	            case 23:
+	              _context.next = 5;
+	              break;
+	            case 25:
+	              _context.next = 30;
+	              break;
+	            case 27:
+	              _context.prev = 27;
+	              _context.t0 = _context["catch"](3);
+	              _iterator.e(_context.t0);
+	            case 30:
+	              _context.prev = 30;
+	              _iterator.f();
+	              return _context.finish(30);
+	            case 33:
+	            case "end":
+	              return _context.stop();
+	          }
+	        }, _callee, this, [[3, 27, 30, 33]]);
+	      }));
+	      function executeOnServer(_x) {
+	        return _executeOnServer.apply(this, arguments);
+	      }
+	      return executeOnServer;
+	    }()
+	  }, {
+	    key: "executeOnLocalGFF3",
+	    value: function () {
+	      var _executeOnLocalGFF = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(_backend) {
+	        return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+	          while (1) switch (_context2.prev = _context2.next) {
+	            case 0:
+	              throw new Error('executeOnLocalGFF3 not implemented');
+	            case 1:
+	            case "end":
+	              return _context2.stop();
+	          }
+	        }, _callee2);
+	      }));
+	      function executeOnLocalGFF3(_x2) {
+	        return _executeOnLocalGFF.apply(this, arguments);
+	      }
+	      return executeOnLocalGFF3;
+	    }()
+	  }, {
+	    key: "executeOnClient",
+	    value: function () {
+	      var _executeOnClient = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(dataStore) {
+	        var changes, _iterator3, _step3, change, exonsToRestore, parentFeatureId, parentFeature, _iterator4, _step4, exon;
+	        return _regeneratorRuntime().wrap(function _callee3$(_context3) {
+	          while (1) switch (_context3.prev = _context3.next) {
+	            case 0:
+	              if (dataStore) {
+	                _context3.next = 2;
+	                break;
+	              }
+	              throw new Error('No data store');
+	            case 2:
+	              changes = this.changes;
+	              _iterator3 = _createForOfIteratorHelper(changes);
+	              _context3.prev = 4;
+	              _iterator3.s();
+	            case 6:
+	              if ((_step3 = _iterator3.n()).done) {
+	                _context3.next = 19;
+	                break;
+	              }
+	              change = _step3.value;
+	              exonsToRestore = change.exonsToRestore, parentFeatureId = change.parentFeatureId;
+	              if (parentFeatureId) {
+	                _context3.next = 11;
+	                break;
+	              }
+	              throw new Error('Parent ID is missing');
+	            case 11:
+	              parentFeature = dataStore.getFeature(parentFeatureId);
+	              if (parentFeature) {
+	                _context3.next = 14;
+	                break;
+	              }
+	              throw new Error("Could not find parent feature \"".concat(parentFeatureId, "\""));
+	            case 14:
+	              // create an ID for the parent feature if it does not have one
+	              if (!parentFeature.attributes.get('_id')) {
+	                parentFeature.setAttribute('_id', [parentFeature._id]);
+	              }
+	              _iterator4 = _createForOfIteratorHelper(exonsToRestore);
+	              try {
+	                for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
+	                  exon = _step4.value;
+	                  parentFeature.addChild(exon);
+	                }
+	              } catch (err) {
+	                _iterator4.e(err);
+	              } finally {
+	                _iterator4.f();
+	              }
+	            case 17:
+	              _context3.next = 6;
+	              break;
+	            case 19:
+	              _context3.next = 24;
+	              break;
+	            case 21:
+	              _context3.prev = 21;
+	              _context3.t0 = _context3["catch"](4);
+	              _iterator3.e(_context3.t0);
+	            case 24:
+	              _context3.prev = 24;
+	              _iterator3.f();
+	              return _context3.finish(24);
+	            case 27:
+	            case "end":
+	              return _context3.stop();
+	          }
+	        }, _callee3, this, [[4, 21, 24, 27]]);
+	      }));
+	      function executeOnClient(_x3) {
+	        return _executeOnClient.apply(this, arguments);
+	      }
+	      return executeOnClient;
+	    }()
+	  }, {
+	    key: "getInverse",
+	    value: function getInverse() {
+	      var assembly = this.assembly,
+	        changedIds = this.changedIds,
+	        changes = this.changes,
+	        logger = this.logger;
+	      var inverseChangedIds = _toConsumableArray(changedIds).reverse();
+	      var inverseChanges = _toConsumableArray(changes).reverse().map(function (undoMergeExonsChange) {
+	        return {
+	          firstExon: undoMergeExonsChange.exonsToRestore[0],
+	          secondExon: undoMergeExonsChange.exonsToRestore[1],
+	          parentFeatureId: undoMergeExonsChange.parentFeatureId
+	        };
+	      });
+	      return new MergeExonsChange_1.MergeExonsChange({
+	        changedIds: inverseChangedIds,
+	        typeName: 'MergeExonsChange',
+	        changes: inverseChanges,
+	        assembly: assembly
+	      }, {
+	        logger: logger
+	      });
+	    }
+	  }]);
+	  return UndoMergeExonsChange;
+	}(common_1$9.FeatureChange);
+	UndoMergeExonsChange$1.UndoMergeExonsChange = UndoMergeExonsChange;
+
+	Object.defineProperty(MergeExonsChange$1, "__esModule", {
+	  value: true
+	});
+	MergeExonsChange$1.MergeExonsChange = void 0;
+	/* eslint-disable @typescript-eslint/require-await */
+	/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+	var common_1$8 = dist$1;
+	var UndoMergeExonsChange_1 = UndoMergeExonsChange$1;
+	var MergeExonsChange = /*#__PURE__*/function (_common_1$FeatureChan) {
+	  _inherits(MergeExonsChange, _common_1$FeatureChan);
+	  var _super = /*#__PURE__*/_createSuper(MergeExonsChange);
+	  function MergeExonsChange(json, options) {
+	    var _this;
+	    _classCallCheck(this, MergeExonsChange);
+	    _this = _super.call(this, json, options);
+	    _defineProperty(_assertThisInitialized(_this), "typeName", 'MergeExonsChange');
+	    _defineProperty(_assertThisInitialized(_this), "changes", void 0);
+	    _this.changes = 'changes' in json ? json.changes : [json];
+	    return _this;
+	  }
+	  _createClass(MergeExonsChange, [{
+	    key: "toJSON",
+	    value: function toJSON() {
+	      var assembly = this.assembly,
+	        changedIds = this.changedIds,
+	        changes = this.changes,
+	        typeName = this.typeName;
+	      if (changes.length === 1) {
+	        var _changes = _slicedToArray(changes, 1),
+	          _changes$ = _changes[0],
+	          firstExon = _changes$.firstExon,
+	          secondExon = _changes$.secondExon,
+	          parentFeatureId = _changes$.parentFeatureId;
+	        return {
+	          typeName: typeName,
+	          changedIds: changedIds,
+	          assembly: assembly,
+	          firstExon: firstExon,
+	          secondExon: secondExon,
+	          parentFeatureId: parentFeatureId
+	        };
+	      }
+	      return {
+	        typeName: typeName,
+	        changedIds: changedIds,
+	        assembly: assembly,
+	        changes: changes
+	      };
+	    }
+	  }, {
+	    key: "executeOnServer",
+	    value: function () {
+	      var _executeOnServer = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(backend) {
+	        var _this2 = this;
+	        var featureModel, session, changes, logger, _iterator, _step, _loop;
+	        return _regeneratorRuntime().wrap(function _callee$(_context2) {
+	          while (1) switch (_context2.prev = _context2.next) {
+	            case 0:
+	              featureModel = backend.featureModel, session = backend.session;
+	              changes = this.changes, logger = this.logger;
+	              _iterator = _createForOfIteratorHelper(changes);
+	              _context2.prev = 3;
+	              _loop = /*#__PURE__*/_regeneratorRuntime().mark(function _loop() {
+	                var change, firstExon, secondExon, topLevelFeature, errMsg, mergedExon, _errMsg, deletedIds;
+	                return _regeneratorRuntime().wrap(function _loop$(_context) {
+	                  while (1) switch (_context.prev = _context.next) {
+	                    case 0:
+	                      change = _step.value;
+	                      firstExon = change.firstExon, secondExon = change.secondExon;
+	                      _context.next = 4;
+	                      return featureModel.findOne({
+	                        allIds: firstExon._id
+	                      }).session(session).exec();
+	                    case 4:
+	                      topLevelFeature = _context.sent;
+	                      if (topLevelFeature) {
+	                        _context.next = 9;
+	                        break;
+	                      }
+	                      errMsg = "*** ERROR: The following featureId was not found in database ='".concat(firstExon._id, "'");
+	                      logger.error(errMsg);
+	                      throw new Error(errMsg);
+	                    case 9:
+	                      mergedExon = _this2.getFeatureFromId(topLevelFeature, firstExon._id);
+	                      if (mergedExon) {
+	                        _context.next = 14;
+	                        break;
+	                      }
+	                      _errMsg = 'ERROR when searching feature by featureId';
+	                      logger.error(_errMsg);
+	                      throw new Error(_errMsg);
+	                    case 14:
+	                      mergedExon.min = Math.min(firstExon.min, secondExon.min);
+	                      mergedExon.max = Math.max(firstExon.max, secondExon.max);
+	                      mergedExon.attributes = _this2.mergeAttributes(firstExon, secondExon);
+	                      deletedIds = _this2.findAndDeleteChildFeature(topLevelFeature, secondExon._id);
+	                      deletedIds.push(secondExon._id);
+	                      topLevelFeature.allIds = topLevelFeature.allIds.filter(function (id) {
+	                        return !deletedIds.includes(id);
+	                      });
+	                      _context.next = 22;
+	                      return topLevelFeature.save();
+	                    case 22:
+	                    case "end":
+	                      return _context.stop();
+	                  }
+	                }, _loop);
+	              });
+	              _iterator.s();
+	            case 6:
+	              if ((_step = _iterator.n()).done) {
+	                _context2.next = 10;
+	                break;
+	              }
+	              return _context2.delegateYield(_loop(), "t0", 8);
+	            case 8:
+	              _context2.next = 6;
+	              break;
+	            case 10:
+	              _context2.next = 15;
+	              break;
+	            case 12:
+	              _context2.prev = 12;
+	              _context2.t1 = _context2["catch"](3);
+	              _iterator.e(_context2.t1);
+	            case 15:
+	              _context2.prev = 15;
+	              _iterator.f();
+	              return _context2.finish(15);
+	            case 18:
+	            case "end":
+	              return _context2.stop();
+	          }
+	        }, _callee, this, [[3, 12, 15, 18]]);
+	      }));
+	      function executeOnServer(_x) {
+	        return _executeOnServer.apply(this, arguments);
+	      }
+	      return executeOnServer;
+	    }()
+	  }, {
+	    key: "executeOnLocalGFF3",
+	    value: function () {
+	      var _executeOnLocalGFF = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(_backend) {
+	        return _regeneratorRuntime().wrap(function _callee2$(_context3) {
+	          while (1) switch (_context3.prev = _context3.next) {
+	            case 0:
+	              throw new Error('executeOnLocalGFF3 not implemented');
+	            case 1:
+	            case "end":
+	              return _context3.stop();
+	          }
+	        }, _callee2);
+	      }));
+	      function executeOnLocalGFF3(_x2) {
+	        return _executeOnLocalGFF.apply(this, arguments);
+	      }
+	      return executeOnLocalGFF3;
+	    }()
+	  }, {
+	    key: "executeOnClient",
+	    value: function () {
+	      var _executeOnClient = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(dataStore) {
+	        var _iterator2, _step2, _mergedExon$parent, change, firstExon, secondExon, mergedExon, mergedAttrs, _i, _Object$keys, key;
+	        return _regeneratorRuntime().wrap(function _callee3$(_context4) {
+	          while (1) switch (_context4.prev = _context4.next) {
+	            case 0:
+	              if (dataStore) {
+	                _context4.next = 2;
+	                break;
+	              }
+	              throw new Error('No data store');
+	            case 2:
+	              _iterator2 = _createForOfIteratorHelper(this.changes);
+	              _context4.prev = 3;
+	              _iterator2.s();
+	            case 5:
+	              if ((_step2 = _iterator2.n()).done) {
+	                _context4.next = 19;
+	                break;
+	              }
+	              change = _step2.value;
+	              firstExon = change.firstExon, secondExon = change.secondExon;
+	              mergedExon = dataStore.getFeature(firstExon._id);
+	              if (mergedExon) {
+	                _context4.next = 11;
+	                break;
+	              }
+	              throw new Error("Could not find feature with identifier \"".concat(firstExon._id, "\""));
+	            case 11:
+	              mergedExon.setMin(Math.min(firstExon.min, secondExon.min));
+	              mergedExon.setMax(Math.max(firstExon.max, secondExon.max));
+	              mergedAttrs = this.mergeAttributes(firstExon, secondExon);
+	              mergedExon.setAttributes(new Map());
+	              for (_i = 0, _Object$keys = Object.keys(mergedAttrs); _i < _Object$keys.length; _i++) {
+	                key = _Object$keys[_i];
+	                mergedExon.setAttribute(key, mergedAttrs[key]);
+	              }
+	              (_mergedExon$parent = mergedExon.parent) === null || _mergedExon$parent === void 0 || _mergedExon$parent.deleteChild(secondExon._id);
+	            case 17:
+	              _context4.next = 5;
+	              break;
+	            case 19:
+	              _context4.next = 24;
+	              break;
+	            case 21:
+	              _context4.prev = 21;
+	              _context4.t0 = _context4["catch"](3);
+	              _iterator2.e(_context4.t0);
+	            case 24:
+	              _context4.prev = 24;
+	              _iterator2.f();
+	              return _context4.finish(24);
+	            case 27:
+	            case "end":
+	              return _context4.stop();
+	          }
+	        }, _callee3, this, [[3, 21, 24, 27]]);
+	      }));
+	      function executeOnClient(_x3) {
+	        return _executeOnClient.apply(this, arguments);
+	      }
+	      return executeOnClient;
+	    }()
+	  }, {
+	    key: "getInverse",
+	    value: function getInverse() {
+	      var _logger$debug;
+	      var assembly = this.assembly,
+	        changedIds = this.changedIds,
+	        changes = this.changes,
+	        logger = this.logger;
+	      var inverseChangedIds = _toConsumableArray(changedIds).reverse();
+	      var inverseChanges = _toConsumableArray(changes).reverse().map(function (mergeExonChange) {
+	        return {
+	          exonsToRestore: [mergeExonChange.firstExon, mergeExonChange.secondExon],
+	          parentFeatureId: mergeExonChange.parentFeatureId
+	        };
+	      });
+	      (_logger$debug = logger.debug) === null || _logger$debug === void 0 || _logger$debug.call(logger, "INVERSE CHANGE '".concat(JSON.stringify(inverseChanges), "'"));
+	      return new UndoMergeExonsChange_1.UndoMergeExonsChange({
+	        changedIds: inverseChangedIds,
+	        typeName: 'UndoMergeExonsChange',
+	        changes: inverseChanges,
+	        assembly: assembly
+	      }, {
+	        logger: logger
+	      });
+	    }
+	  }, {
+	    key: "mergeAttributes",
+	    value: function mergeAttributes(firstExon, secondExon) {
+	      var mergedAttrs = {};
+	      if (firstExon.attributes) {
+	        // eslint-disable-next-line unicorn/prefer-structured-clone
+	        mergedAttrs = JSON.parse(JSON.stringify(firstExon.attributes));
+	      }
+	      if (secondExon.attributes) {
+	        // eslint-disable-next-line unicorn/prefer-structured-clone
+	        var attrs = JSON.parse(JSON.stringify(secondExon.attributes));
+	        var _loop2 = function _loop2() {
+	          var key = _Object$keys2[_i2];
+	          if (key === '_id' || key === 'gff_id') {
+	            return 1; // continue
+	          }
+	          if (!Object.keys(mergedAttrs).includes(key)) {
+	            mergedAttrs[key] = [];
+	          }
+	          attrs[key].map(function (x) {
+	            if (!mergedAttrs[key].includes(x)) {
+	              mergedAttrs[key].push(x);
+	            }
+	          });
+	        };
+	        for (var _i2 = 0, _Object$keys2 = Object.keys(attrs); _i2 < _Object$keys2.length; _i2++) {
+	          if (_loop2()) continue;
+	        }
+	      }
+	      return mergedAttrs;
+	    }
+	  }]);
+	  return MergeExonsChange;
+	}(common_1$8.FeatureChange);
+	MergeExonsChange$1.MergeExonsChange = MergeExonsChange;
+
+	var SplitExonChange$1 = {};
+
+	var UndoSplitExonChange$1 = {};
+
+	Object.defineProperty(UndoSplitExonChange$1, "__esModule", {
+	  value: true
+	});
+	UndoSplitExonChange$1.UndoSplitExonChange = void 0;
+	/* eslint-disable @typescript-eslint/require-await */
+	var common_1$7 = dist$1;
+	var SplitExonChange_1 = SplitExonChange$1;
+	var UndoSplitExonChange = /*#__PURE__*/function (_common_1$FeatureChan) {
+	  _inherits(UndoSplitExonChange, _common_1$FeatureChan);
+	  var _super = /*#__PURE__*/_createSuper(UndoSplitExonChange);
+	  function UndoSplitExonChange(json, options) {
+	    var _this;
+	    _classCallCheck(this, UndoSplitExonChange);
+	    _this = _super.call(this, json, options);
+	    _defineProperty(_assertThisInitialized(_this), "typeName", 'UndoSplitExonChange');
+	    _defineProperty(_assertThisInitialized(_this), "changes", void 0);
+	    _this.changes = 'changes' in json ? json.changes : [json];
+	    return _this;
+	  }
+	  _createClass(UndoSplitExonChange, [{
+	    key: "toJSON",
+	    value: function toJSON() {
+	      var assembly = this.assembly,
+	        changedIds = this.changedIds,
+	        changes = this.changes,
+	        typeName = this.typeName;
+	      if (changes.length === 1) {
+	        var _changes = _slicedToArray(changes, 1),
+	          _changes$ = _changes[0],
+	          exonToRestore = _changes$.exonToRestore,
+	          parentFeatureId = _changes$.parentFeatureId,
+	          idsToDelete = _changes$.idsToDelete,
+	          upstreamCut = _changes$.upstreamCut,
+	          downstreamCut = _changes$.downstreamCut,
+	          leftExonId = _changes$.leftExonId,
+	          rightExonId = _changes$.rightExonId;
+	        return {
+	          typeName: typeName,
+	          changedIds: changedIds,
+	          assembly: assembly,
+	          exonToRestore: exonToRestore,
+	          parentFeatureId: parentFeatureId,
+	          idsToDelete: idsToDelete,
+	          upstreamCut: upstreamCut,
+	          downstreamCut: downstreamCut,
+	          leftExonId: leftExonId,
+	          rightExonId: rightExonId
+	        };
+	      }
+	      return {
+	        typeName: typeName,
+	        changedIds: changedIds,
+	        assembly: assembly,
+	        changes: changes
+	      };
+	    }
+	  }, {
+	    key: "executeOnServer",
+	    value: function () {
+	      var _executeOnServer = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(backend) {
+	        var _this2 = this;
+	        var featureModel, session, changes, _iterator, _step, _loop;
+	        return _regeneratorRuntime().wrap(function _callee$(_context2) {
+	          while (1) switch (_context2.prev = _context2.next) {
+	            case 0:
+	              featureModel = backend.featureModel, session = backend.session;
+	              changes = this.changes;
+	              _iterator = _createForOfIteratorHelper(changes);
+	              _context2.prev = 3;
+	              _loop = /*#__PURE__*/_regeneratorRuntime().mark(function _loop() {
+	                var _topLevelFeature$allI;
+	                var change, exonToRestore, parentFeatureId, idsToDelete, topLevelFeature, parentFeature, childIds;
+	                return _regeneratorRuntime().wrap(function _loop$(_context) {
+	                  while (1) switch (_context.prev = _context.next) {
+	                    case 0:
+	                      change = _step.value;
+	                      exonToRestore = change.exonToRestore, parentFeatureId = change.parentFeatureId, idsToDelete = change.idsToDelete;
+	                      _context.next = 4;
+	                      return featureModel.findOne({
+	                        allIds: parentFeatureId
+	                      }).session(session).exec();
+	                    case 4:
+	                      topLevelFeature = _context.sent;
+	                      if (topLevelFeature) {
+	                        _context.next = 7;
+	                        break;
+	                      }
+	                      throw new Error("Could not find feature with ID \"".concat(parentFeatureId, "\""));
+	                    case 7:
+	                      parentFeature = _this2.getFeatureFromId(topLevelFeature, parentFeatureId);
+	                      if (parentFeature) {
+	                        _context.next = 10;
+	                        break;
+	                      }
+	                      throw new Error("Could not find feature with ID \"".concat(parentFeatureId, "\" in feature \"").concat(topLevelFeature._id.toString(), "\""));
+	                    case 10:
+	                      if (!parentFeature.children) {
+	                        parentFeature.children = new Map();
+	                      }
+	                      _this2.addChild(parentFeature, exonToRestore);
+	                      childIds = _this2.getChildFeatureIds(exonToRestore);
+	                      (_topLevelFeature$allI = topLevelFeature.allIds).push.apply(_topLevelFeature$allI, [exonToRestore._id].concat(_toConsumableArray(childIds)));
+	                      topLevelFeature.allIds = topLevelFeature.allIds.filter(function (id) {
+	                        return !idsToDelete.includes(id);
+	                      });
+	                      idsToDelete.map(function (id) {
+	                        return _this2.findAndDeleteChildFeature(topLevelFeature, id);
+	                      });
+	                      _context.next = 18;
+	                      return topLevelFeature.save();
+	                    case 18:
+	                    case "end":
+	                      return _context.stop();
+	                  }
+	                }, _loop);
+	              });
+	              _iterator.s();
+	            case 6:
+	              if ((_step = _iterator.n()).done) {
+	                _context2.next = 10;
+	                break;
+	              }
+	              return _context2.delegateYield(_loop(), "t0", 8);
+	            case 8:
+	              _context2.next = 6;
+	              break;
+	            case 10:
+	              _context2.next = 15;
+	              break;
+	            case 12:
+	              _context2.prev = 12;
+	              _context2.t1 = _context2["catch"](3);
+	              _iterator.e(_context2.t1);
+	            case 15:
+	              _context2.prev = 15;
+	              _iterator.f();
+	              return _context2.finish(15);
+	            case 18:
+	            case "end":
+	              return _context2.stop();
+	          }
+	        }, _callee, this, [[3, 12, 15, 18]]);
+	      }));
+	      function executeOnServer(_x) {
+	        return _executeOnServer.apply(this, arguments);
+	      }
+	      return executeOnServer;
+	    }()
+	  }, {
+	    key: "executeOnLocalGFF3",
+	    value: function () {
+	      var _executeOnLocalGFF = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(_backend) {
+	        return _regeneratorRuntime().wrap(function _callee2$(_context3) {
+	          while (1) switch (_context3.prev = _context3.next) {
+	            case 0:
+	              throw new Error('executeOnLocalGFF3 not implemented');
+	            case 1:
+	            case "end":
+	              return _context3.stop();
+	          }
+	        }, _callee2);
+	      }));
+	      function executeOnLocalGFF3(_x2) {
+	        return _executeOnLocalGFF.apply(this, arguments);
+	      }
+	      return executeOnLocalGFF3;
+	    }()
+	  }, {
+	    key: "executeOnClient",
+	    value: function () {
+	      var _executeOnClient = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(dataStore) {
+	        var changes, _iterator2, _step2, _loop2;
+	        return _regeneratorRuntime().wrap(function _callee3$(_context5) {
+	          while (1) switch (_context5.prev = _context5.next) {
+	            case 0:
+	              if (dataStore) {
+	                _context5.next = 2;
+	                break;
+	              }
+	              throw new Error('No data store');
+	            case 2:
+	              changes = this.changes;
+	              _iterator2 = _createForOfIteratorHelper(changes);
+	              _context5.prev = 4;
+	              _loop2 = /*#__PURE__*/_regeneratorRuntime().mark(function _loop2() {
+	                var change, exonToRestore, parentFeatureId, idsToDelete, parentFeature;
+	                return _regeneratorRuntime().wrap(function _loop2$(_context4) {
+	                  while (1) switch (_context4.prev = _context4.next) {
+	                    case 0:
+	                      change = _step2.value;
+	                      exonToRestore = change.exonToRestore, parentFeatureId = change.parentFeatureId, idsToDelete = change.idsToDelete;
+	                      if (parentFeatureId) {
+	                        _context4.next = 4;
+	                        break;
+	                      }
+	                      throw new Error('Parent ID is missing');
+	                    case 4:
+	                      parentFeature = dataStore.getFeature(parentFeatureId);
+	                      if (parentFeature) {
+	                        _context4.next = 7;
+	                        break;
+	                      }
+	                      throw new Error("Could not find parent feature \"".concat(parentFeatureId, "\""));
+	                    case 7:
+	                      // create an ID for the parent feature if it does not have one
+	                      if (!parentFeature.attributes.get('_id')) {
+	                        parentFeature.setAttribute('_id', [parentFeature._id]);
+	                      }
+	                      parentFeature.addChild(exonToRestore);
+	                      idsToDelete.map(function (id) {
+	                        parentFeature.deleteChild(id);
+	                      });
+	                    case 10:
+	                    case "end":
+	                      return _context4.stop();
+	                  }
+	                }, _loop2);
+	              });
+	              _iterator2.s();
+	            case 7:
+	              if ((_step2 = _iterator2.n()).done) {
+	                _context5.next = 11;
+	                break;
+	              }
+	              return _context5.delegateYield(_loop2(), "t0", 9);
+	            case 9:
+	              _context5.next = 7;
+	              break;
+	            case 11:
+	              _context5.next = 16;
+	              break;
+	            case 13:
+	              _context5.prev = 13;
+	              _context5.t1 = _context5["catch"](4);
+	              _iterator2.e(_context5.t1);
+	            case 16:
+	              _context5.prev = 16;
+	              _iterator2.f();
+	              return _context5.finish(16);
+	            case 19:
+	            case "end":
+	              return _context5.stop();
+	          }
+	        }, _callee3, this, [[4, 13, 16, 19]]);
+	      }));
+	      function executeOnClient(_x3) {
+	        return _executeOnClient.apply(this, arguments);
+	      }
+	      return executeOnClient;
+	    }()
+	  }, {
+	    key: "getInverse",
+	    value: function getInverse() {
+	      var assembly = this.assembly,
+	        changedIds = this.changedIds,
+	        changes = this.changes,
+	        logger = this.logger;
+	      var inverseChangedIds = _toConsumableArray(changedIds).reverse();
+	      var inverseChanges = _toConsumableArray(changes).reverse().map(function (undoSplitExonChange) {
+	        return {
+	          parentFeatureId: undoSplitExonChange.parentFeatureId,
+	          exonToBeSplit: undoSplitExonChange.exonToRestore,
+	          upstreamCut: undoSplitExonChange.upstreamCut,
+	          downstreamCut: undoSplitExonChange.downstreamCut,
+	          leftExonId: undoSplitExonChange.leftExonId,
+	          rightExonId: undoSplitExonChange.rightExonId
+	        };
+	      });
+	      return new SplitExonChange_1.SplitExonChange({
+	        changedIds: inverseChangedIds,
+	        typeName: 'SplitExonChange',
+	        changes: inverseChanges,
+	        assembly: assembly
+	      }, {
+	        logger: logger
+	      });
+	    }
+	  }]);
+	  return UndoSplitExonChange;
+	}(common_1$7.FeatureChange);
+	UndoSplitExonChange$1.UndoSplitExonChange = UndoSplitExonChange;
+
+	Object.defineProperty(SplitExonChange$1, "__esModule", {
+	  value: true
+	});
+	SplitExonChange$1.SplitExonChange = void 0;
+	/* eslint-disable @typescript-eslint/require-await */
+	/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+	var common_1$6 = dist$1;
+	var UndoSplitExonChange_1 = UndoSplitExonChange$1;
+	var SplitExonChange = /*#__PURE__*/function (_common_1$FeatureChan) {
+	  _inherits(SplitExonChange, _common_1$FeatureChan);
+	  var _super = /*#__PURE__*/_createSuper(SplitExonChange);
+	  function SplitExonChange(json, options) {
+	    var _this;
+	    _classCallCheck(this, SplitExonChange);
+	    _this = _super.call(this, json, options);
+	    _defineProperty(_assertThisInitialized(_this), "typeName", 'SplitExonChange');
+	    _defineProperty(_assertThisInitialized(_this), "changes", void 0);
+	    _this.changes = 'changes' in json ? json.changes : [json];
+	    return _this;
+	  }
+	  _createClass(SplitExonChange, [{
+	    key: "toJSON",
+	    value: function toJSON() {
+	      var assembly = this.assembly,
+	        changedIds = this.changedIds,
+	        changes = this.changes,
+	        typeName = this.typeName;
+	      if (changes.length === 1) {
+	        var _changes = _slicedToArray(changes, 1),
+	          _changes$ = _changes[0],
+	          exonToBeSplit = _changes$.exonToBeSplit,
+	          parentFeatureId = _changes$.parentFeatureId,
+	          upstreamCut = _changes$.upstreamCut,
+	          downstreamCut = _changes$.downstreamCut,
+	          leftExonId = _changes$.leftExonId,
+	          rightExonId = _changes$.rightExonId;
+	        return {
+	          typeName: typeName,
+	          changedIds: changedIds,
+	          assembly: assembly,
+	          exonToBeSplit: exonToBeSplit,
+	          parentFeatureId: parentFeatureId,
+	          upstreamCut: upstreamCut,
+	          downstreamCut: downstreamCut,
+	          leftExonId: leftExonId,
+	          rightExonId: rightExonId
+	        };
+	      }
+	      return {
+	        typeName: typeName,
+	        changedIds: changedIds,
+	        assembly: assembly,
+	        changes: changes
+	      };
+	    }
+	  }, {
+	    key: "executeOnServer",
+	    value: function () {
+	      var _executeOnServer = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(backend) {
+	        var _this2 = this;
+	        var featureModel, session, changes, logger, _iterator, _step, _loop;
+	        return _regeneratorRuntime().wrap(function _callee$(_context2) {
+	          while (1) switch (_context2.prev = _context2.next) {
+	            case 0:
+	              featureModel = backend.featureModel, session = backend.session;
+	              changes = this.changes, logger = this.logger;
+	              _iterator = _createForOfIteratorHelper(changes);
+	              _context2.prev = 3;
+	              _loop = /*#__PURE__*/_regeneratorRuntime().mark(function _loop() {
+	                var change, exonToBeSplit, parentFeatureId, upstreamCut, downstreamCut, leftExonId, rightExonId, topLevelFeature, errMsg, tx, _this2$makeSplitExons, _this2$makeSplitExons2, leftExon, rightExon, deletedIds;
+	                return _regeneratorRuntime().wrap(function _loop$(_context) {
+	                  while (1) switch (_context.prev = _context.next) {
+	                    case 0:
+	                      change = _step.value;
+	                      exonToBeSplit = change.exonToBeSplit, parentFeatureId = change.parentFeatureId, upstreamCut = change.upstreamCut, downstreamCut = change.downstreamCut, leftExonId = change.leftExonId, rightExonId = change.rightExonId;
+	                      _context.next = 4;
+	                      return featureModel.findOne({
+	                        allIds: exonToBeSplit._id
+	                      }).session(session).exec();
+	                    case 4:
+	                      topLevelFeature = _context.sent;
+	                      if (topLevelFeature) {
+	                        _context.next = 9;
+	                        break;
+	                      }
+	                      errMsg = "*** ERROR: The following featureId was not found in database ='".concat(exonToBeSplit._id, "'");
+	                      logger.error(errMsg);
+	                      throw new Error(errMsg);
+	                    case 9:
+	                      tx = _this2.getFeatureFromId(topLevelFeature, parentFeatureId);
+	                      if (tx !== null && tx !== void 0 && tx.children) {
+	                        _context.next = 12;
+	                        break;
+	                      }
+	                      throw new Error('ERROR: There should be at least one child (i.e. the exon to be split)');
+	                    case 12:
+	                      _this2$makeSplitExons = _this2.makeSplitExons(exonToBeSplit, upstreamCut, downstreamCut, leftExonId, rightExonId), _this2$makeSplitExons2 = _slicedToArray(_this2$makeSplitExons, 2), leftExon = _this2$makeSplitExons2[0], rightExon = _this2$makeSplitExons2[1];
+	                      tx.children.set(leftExon._id, _objectSpread2(_objectSpread2({
+	                        allIds: []
+	                      }, leftExon), {}, {
+	                        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+	                        // @ts-expect-error
+	                        _id: leftExon._id
+	                      }));
+	                      tx.children.set(rightExon._id, _objectSpread2(_objectSpread2({
+	                        allIds: []
+	                      }, rightExon), {}, {
+	                        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+	                        // @ts-expect-error
+	                        _id: rightExon._id
+	                      }));
+	                      // Child features should be sorted for click and drag of gene glyphs to work properly
+	                      tx.children = new Map(_toConsumableArray(tx.children.entries()).sort(function (a, b) {
+	                        return a[1].min - b[1].min;
+	                      }));
+	                      deletedIds = _this2.findAndDeleteChildFeature(topLevelFeature, exonToBeSplit._id);
+	                      deletedIds.push(exonToBeSplit._id);
+	                      topLevelFeature.allIds = topLevelFeature.allIds.filter(function (id) {
+	                        return !deletedIds.includes(id);
+	                      });
+	                      topLevelFeature.allIds.push(leftExon._id, rightExon._id);
+	                      _context.next = 22;
+	                      return topLevelFeature.save();
+	                    case 22:
+	                    case "end":
+	                      return _context.stop();
+	                  }
+	                }, _loop);
+	              });
+	              _iterator.s();
+	            case 6:
+	              if ((_step = _iterator.n()).done) {
+	                _context2.next = 10;
+	                break;
+	              }
+	              return _context2.delegateYield(_loop(), "t0", 8);
+	            case 8:
+	              _context2.next = 6;
+	              break;
+	            case 10:
+	              _context2.next = 15;
+	              break;
+	            case 12:
+	              _context2.prev = 12;
+	              _context2.t1 = _context2["catch"](3);
+	              _iterator.e(_context2.t1);
+	            case 15:
+	              _context2.prev = 15;
+	              _iterator.f();
+	              return _context2.finish(15);
+	            case 18:
+	            case "end":
+	              return _context2.stop();
+	          }
+	        }, _callee, this, [[3, 12, 15, 18]]);
+	      }));
+	      function executeOnServer(_x) {
+	        return _executeOnServer.apply(this, arguments);
+	      }
+	      return executeOnServer;
+	    }()
+	  }, {
+	    key: "executeOnLocalGFF3",
+	    value: function () {
+	      var _executeOnLocalGFF = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(_backend) {
+	        return _regeneratorRuntime().wrap(function _callee2$(_context3) {
+	          while (1) switch (_context3.prev = _context3.next) {
+	            case 0:
+	              throw new Error('executeOnLocalGFF3 not implemented');
+	            case 1:
+	            case "end":
+	              return _context3.stop();
+	          }
+	        }, _callee2);
+	      }));
+	      function executeOnLocalGFF3(_x2) {
+	        return _executeOnLocalGFF.apply(this, arguments);
+	      }
+	      return executeOnLocalGFF3;
+	    }()
+	  }, {
+	    key: "executeOnClient",
+	    value: function () {
+	      var _executeOnClient = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(dataStore) {
+	        var _iterator2, _step2, change, exonToBeSplit, parentFeatureId, upstreamCut, downstreamCut, leftExonId, rightExonId, _this$makeSplitExons, _this$makeSplitExons2, leftExon, rightExon, parentFeature;
+	        return _regeneratorRuntime().wrap(function _callee3$(_context4) {
+	          while (1) switch (_context4.prev = _context4.next) {
+	            case 0:
+	              if (dataStore) {
+	                _context4.next = 2;
+	                break;
+	              }
+	              throw new Error('No data store');
+	            case 2:
+	              _iterator2 = _createForOfIteratorHelper(this.changes);
+	              _context4.prev = 3;
+	              _iterator2.s();
+	            case 5:
+	              if ((_step2 = _iterator2.n()).done) {
+	                _context4.next = 19;
+	                break;
+	              }
+	              change = _step2.value;
+	              exonToBeSplit = change.exonToBeSplit, parentFeatureId = change.parentFeatureId, upstreamCut = change.upstreamCut, downstreamCut = change.downstreamCut, leftExonId = change.leftExonId, rightExonId = change.rightExonId;
+	              if (parentFeatureId) {
+	                _context4.next = 10;
+	                break;
+	              }
+	              throw new Error('TODO: Split exon without parent');
+	            case 10:
+	              _this$makeSplitExons = this.makeSplitExons(exonToBeSplit, upstreamCut, downstreamCut, leftExonId, rightExonId), _this$makeSplitExons2 = _slicedToArray(_this$makeSplitExons, 2), leftExon = _this$makeSplitExons2[0], rightExon = _this$makeSplitExons2[1];
+	              parentFeature = dataStore.getFeature(parentFeatureId);
+	              if (parentFeature) {
+	                _context4.next = 14;
+	                break;
+	              }
+	              throw new Error("Could not find parent feature \"".concat(parentFeatureId, "\""));
+	            case 14:
+	              parentFeature.addChild(leftExon);
+	              parentFeature.addChild(rightExon);
+	              if (dataStore.getFeature(exonToBeSplit._id)) {
+	                dataStore.deleteFeature(exonToBeSplit._id);
+	              }
+	            case 17:
+	              _context4.next = 5;
+	              break;
+	            case 19:
+	              _context4.next = 24;
+	              break;
+	            case 21:
+	              _context4.prev = 21;
+	              _context4.t0 = _context4["catch"](3);
+	              _iterator2.e(_context4.t0);
+	            case 24:
+	              _context4.prev = 24;
+	              _iterator2.f();
+	              return _context4.finish(24);
+	            case 27:
+	            case "end":
+	              return _context4.stop();
+	          }
+	        }, _callee3, this, [[3, 21, 24, 27]]);
+	      }));
+	      function executeOnClient(_x3) {
+	        return _executeOnClient.apply(this, arguments);
+	      }
+	      return executeOnClient;
+	    }()
+	  }, {
+	    key: "getInverse",
+	    value: function getInverse() {
+	      var _logger$debug;
+	      var assembly = this.assembly,
+	        changedIds = this.changedIds,
+	        changes = this.changes,
+	        logger = this.logger;
+	      var inverseChangedIds = _toConsumableArray(changedIds).reverse();
+	      var inverseChanges = _toConsumableArray(changes).reverse().map(function (splitExonChange) {
+	        return {
+	          exonToRestore: splitExonChange.exonToBeSplit,
+	          parentFeatureId: splitExonChange.parentFeatureId,
+	          idsToDelete: [splitExonChange.leftExonId, splitExonChange.rightExonId],
+	          upstreamCut: splitExonChange.upstreamCut,
+	          downstreamCut: splitExonChange.downstreamCut,
+	          leftExonId: splitExonChange.leftExonId,
+	          rightExonId: splitExonChange.rightExonId
+	        };
+	      });
+	      (_logger$debug = logger.debug) === null || _logger$debug === void 0 || _logger$debug.call(logger, "INVERSE CHANGE '".concat(JSON.stringify(inverseChanges), "'"));
+	      return new UndoSplitExonChange_1.UndoSplitExonChange({
+	        changedIds: inverseChangedIds,
+	        typeName: 'UndoSplitExonChange',
+	        changes: inverseChanges,
+	        assembly: assembly
+	      }, {
+	        logger: logger
+	      });
+	    }
+	  }, {
+	    key: "makeSplitExons",
+	    value: function makeSplitExons(exonToBeSplit, upstreamCut, downstreamCut, leftExonId, rightExonId) {
+	      // eslint-disable-next-line unicorn/prefer-structured-clone
+	      var exon = JSON.parse(JSON.stringify(exonToBeSplit));
+	      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+	      delete exon.attributes._id;
+	      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+	      delete exon.attributes.gff_id;
+	      var leftExon = structuredClone(exon);
+	      leftExon._id = leftExonId;
+	      leftExon.max = upstreamCut;
+	      var rightExon = structuredClone(exon);
+	      rightExon.min = downstreamCut;
+	      rightExon._id = rightExonId;
+	      return [leftExon, rightExon];
+	    }
+	  }]);
+	  return SplitExonChange;
+	}(common_1$6.FeatureChange);
+	SplitExonChange$1.SplitExonChange = SplitExonChange;
 
 	var StrandChange$1 = {};
 
@@ -19638,8 +20772,12 @@
 	  var ImportJBrowseConfigChange_1 = ImportJBrowseConfigChange$1;
 	  var LocationEndChange_1 = LocationEndChange$1;
 	  var LocationStartChange_1 = LocationStartChange$1;
+	  var MergeExonsChange_1 = MergeExonsChange$1;
+	  var SplitExonChange_1 = SplitExonChange$1;
 	  var StrandChange_1 = StrandChange$1;
 	  var TypeChange_1 = TypeChange$1;
+	  var UndoMergeExonsChange_1 = UndoMergeExonsChange$1;
+	  var UndoSplitExonChange_1 = UndoSplitExonChange$1;
 	  var UserChange_1 = UserChange$1;
 	  exports.changes = {
 	    AddAssemblyAndFeaturesFromFileChange: AddAssemblyAndFeaturesFromFileChange_1.AddAssemblyAndFeaturesFromFileChange,
@@ -19654,6 +20792,10 @@
 	    ImportJBrowseConfigChange: ImportJBrowseConfigChange_1.ImportJBrowseConfigChange,
 	    LocationEndChange: LocationEndChange_1.LocationEndChange,
 	    LocationStartChange: LocationStartChange_1.LocationStartChange,
+	    MergeExonsChange: MergeExonsChange_1.MergeExonsChange,
+	    SplitExonChange: SplitExonChange_1.SplitExonChange,
+	    UndoMergeExonsChange: UndoMergeExonsChange_1.UndoMergeExonsChange,
+	    UndoSplitExonChange: UndoSplitExonChange_1.UndoSplitExonChange,
 	    StrandChange: StrandChange_1.StrandChange,
 	    TypeChange: TypeChange_1.TypeChange,
 	    UserChange: UserChange_1.UserChange,
@@ -19671,6 +20813,10 @@
 	  tslib_1.__exportStar(ImportJBrowseConfigChange$1, exports);
 	  tslib_1.__exportStar(LocationEndChange$1, exports);
 	  tslib_1.__exportStar(LocationStartChange$1, exports);
+	  tslib_1.__exportStar(MergeExonsChange$1, exports);
+	  tslib_1.__exportStar(SplitExonChange$1, exports);
+	  tslib_1.__exportStar(UndoMergeExonsChange$1, exports);
+	  tslib_1.__exportStar(UndoSplitExonChange$1, exports);
 	  tslib_1.__exportStar(StrandChange$1, exports);
 	  tslib_1.__exportStar(TypeChange$1, exports);
 	  tslib_1.__exportStar(UserChange$1, exports);
@@ -28762,39 +29908,29 @@
 
 	function getFeatureName$1(feature) {
 	    const { attributes } = feature;
-	    const keys = [
-	        'name',
-	        'gff_name',
-	        'gene_name',
-	        'transcript_name',
-	        'exon_name',
-	        'protein_name',
-	    ];
-	    for (const key of keys) {
-	        const value = attributes.get(key);
-	        if (value?.[0]) {
-	            return value[0];
-	        }
+	    const name = attributes.get('gff_name');
+	    if (name) {
+	        return name[0];
 	    }
 	    return '';
 	}
 	function getFeatureId$1(feature) {
 	    const { attributes } = feature;
-	    const keys = [
-	        'id',
-	        'gff_id',
-	        'gene_id',
-	        'stable_id',
-	        'gene_stable_id',
-	        'transcript_id',
-	        'exon_id',
-	        'protein_id',
-	    ];
-	    for (const key of keys) {
-	        const value = attributes.get(key);
-	        if (value?.[0]) {
-	            return value[0];
-	        }
+	    const id = attributes.get('gff_id');
+	    const transcript_id = attributes.get('transcript_id');
+	    const exon_id = attributes.get('exon_id');
+	    const protein_id = attributes.get('protein_id');
+	    if (id) {
+	        return id[0];
+	    }
+	    if (transcript_id) {
+	        return transcript_id[0];
+	    }
+	    if (exon_id) {
+	        return exon_id[0];
+	    }
+	    if (protein_id) {
+	        return protein_id[0];
 	    }
 	    return '';
 	}
@@ -48594,6 +49730,106 @@
 	            React__default["default"].createElement(material.DialogContentText, { color: "error" }, errorMessage))) : null));
 	}
 
+	function getNeighboringExons(referenceExon) {
+	    const neighboringExons = {};
+	    const tx = referenceExon.parent;
+	    if (!tx) {
+	        throw new Error('Unable to find parent of reference exon');
+	    }
+	    let exons = [];
+	    if (tx.children) {
+	        for (const [, feature] of tx.children) {
+	            if (feature.type === 'exon') {
+	                exons.push(feature);
+	            }
+	        }
+	    }
+	    exons = exons.sort((a, b) => {
+	        if (a.min === b.min) {
+	            return a.max - b.max;
+	        }
+	        return a.min - b.min;
+	    });
+	    if (tx.strand && tx.strand === -1) {
+	        exons = exons.reverse();
+	    }
+	    let i = 0;
+	    for (const x of exons) {
+	        if (x._id === referenceExon._id) {
+	            if (exons.length > i + 1) {
+	                neighboringExons.three_prime = exons[i + 1];
+	            }
+	            if (i > 0) {
+	                neighboringExons.five_prime = exons[i - 1];
+	            }
+	            break;
+	        }
+	        i++;
+	    }
+	    return neighboringExons;
+	}
+	function makeRadioButtonName(key, neighboringExons) {
+	    const neighboringExon = neighboringExons[key];
+	    let name;
+	    if (key === 'three_prime') {
+	        name = `3'end (coords: ${neighboringExon.min + 1}-${neighboringExon.max})`;
+	    }
+	    else if (key === 'five_prime') {
+	        name = `5'end (coords: ${neighboringExon.min + 1}-${neighboringExon.max})`;
+	    }
+	    else {
+	        throw new Error(`Unexpected direction: "${key}"`);
+	    }
+	    return name;
+	}
+	function MergeExons({ changeManager, handleClose, selectedFeature, session, setSelectedFeature, sourceAssemblyId, sourceFeature, }) {
+	    const { notify } = session;
+	    const [errorMessage, setErrorMessage] = React.useState('');
+	    const [selectedExon, setSelectedExon] = React.useState();
+	    async function onSubmit(event) {
+	        event.preventDefault();
+	        setErrorMessage('');
+	        if (!selectedExon) {
+	            return;
+	        }
+	        if (selectedFeature?._id === sourceFeature._id) {
+	            setSelectedFeature();
+	        }
+	        const change = new dist$2.MergeExonsChange({
+	            changedIds: [sourceFeature._id],
+	            typeName: 'MergeExonsChange',
+	            assembly: sourceAssemblyId,
+	            firstExon: require$$1$3.getSnapshot(sourceFeature),
+	            secondExon: require$$1$3.getSnapshot(selectedExon),
+	            parentFeatureId: sourceFeature.parent?._id,
+	        });
+	        await changeManager.submit(change);
+	        notify('Exons successfully merged', 'success');
+	        handleClose();
+	        event.preventDefault();
+	    }
+	    const handleTypeChange = (e) => {
+	        setErrorMessage('');
+	        const { value } = e.target;
+	        setSelectedExon(neighboringExons[value]);
+	    };
+	    const neighboringExons = getNeighboringExons(sourceFeature);
+	    return (React__default["default"].createElement(Dialog, { open: true, title: "Merge exons", handleClose: handleClose, maxWidth: false, "data-testid": "merge-exons" },
+	        React__default["default"].createElement("form", { onSubmit: onSubmit },
+	            React__default["default"].createElement(material.DialogContent, { style: { display: 'flex', flexDirection: 'column' } },
+	                Object.keys(neighboringExons).length === 0
+	                    ? 'There are no neighbouring exons to merge with'
+	                    : 'Merge with exon on:',
+	                React__default["default"].createElement(material.FormControl, { style: { marginTop: 5 } },
+	                    React__default["default"].createElement(material.RadioGroup, { "aria-labelledby": "demo-radio-buttons-group-label", name: "radio-buttons-group", value: selectedExon, onChange: handleTypeChange }, Object.keys(neighboringExons).map((key) => (React__default["default"].createElement(material.FormControlLabel, { value: key, key: key, control: React__default["default"].createElement(material.Radio, null), label: React__default["default"].createElement(material.Box, { display: "flex", alignItems: "center" }, makeRadioButtonName(key, neighboringExons)) })))))),
+	            React__default["default"].createElement(material.DialogActions, null,
+	                React__default["default"].createElement(material.Button, { variant: "contained", type: "submit", disabled: Object.keys(neighboringExons).length === 0 ||
+	                        selectedExon === undefined }, "Submit"),
+	                React__default["default"].createElement(material.Button, { variant: "outlined", type: "submit", onClick: handleClose }, "Cancel"))),
+	        errorMessage ? (React__default["default"].createElement(material.DialogContent, null,
+	            React__default["default"].createElement(material.DialogContentText, { color: "error" }, errorMessage))) : null));
+	}
+
 	var nanoid = function nanoid() {
 	  var size = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 21;
 	  return crypto.getRandomValues(new Uint8Array(size)).reduce(function (id, _byte) {
@@ -48830,7 +50066,7 @@
 	}
 
 	/* eslint-disable @typescript-eslint/unbound-method */
-	const columns$1 = [
+	const columns = [
 	    { field: 'refName', headerName: 'Ref Name' },
 	    { field: 'aliases', headerName: 'Aliases', editable: true },
 	];
@@ -48979,7 +50215,7 @@
 	                    React__default["default"].createElement("input", { type: "file", onChange: handleChangeFileHandler, ref: fileRef, disabled: (enableSubmit && !errorMessage) || !selectedAssembly }))),
 	            selectedAssembly && refNameAliasMap.size > 0 ? (React__default["default"].createElement("div", { style: { height: 200, width: '100%', marginTop: 20 } },
 	                React__default["default"].createElement(material.InputLabel, null, "Refname aliases found for selected assembly."),
-	                React__default["default"].createElement(xDataGrid.DataGrid, { rows: getTableRows(), columns: columns$1, initialState: {
+	                React__default["default"].createElement(xDataGrid.DataGrid, { rows: getTableRows(), columns: columns, initialState: {
 	                        pagination: {
 	                            paginationModel: { page: 0, pageSize: 5 },
 	                        },
@@ -49065,6 +50301,65 @@
 	                } })),
 	        React__default["default"].createElement(material.DialogActions, null,
 	            React__default["default"].createElement(material.Button, { variant: "outlined", type: "submit", onClick: handleClose }, "Close")),
+	        errorMessage ? (React__default["default"].createElement(material.DialogContent, null,
+	            React__default["default"].createElement(material.DialogContentText, { color: "error" }, errorMessage))) : null));
+	}
+
+	function exonIsSplittable(exonToBeSplit) {
+	    if (exonToBeSplit.max - exonToBeSplit.min < 2) {
+	        return {
+	            isSplittable: false,
+	            comment: 'This exon is too short to be split',
+	        };
+	    }
+	    return { isSplittable: true, comment: '' };
+	}
+	function makeDialogText(splitExon) {
+	    const splittable = exonIsSplittable(splitExon);
+	    if (splittable.isSplittable) {
+	        return 'Are you sure you want to split the selected exon?';
+	    }
+	    return splittable.comment;
+	}
+	function SplitExon({ changeManager, handleClose, selectedFeature, session, setSelectedFeature, sourceAssemblyId, sourceFeature, }) {
+	    const { notify } = session;
+	    const [errorMessage, setErrorMessage] = React.useState('');
+	    const exonToBeSplit = require$$1$3.getSnapshot(sourceFeature);
+	    async function onSubmit(event) {
+	        event.preventDefault();
+	        setErrorMessage('');
+	        if (selectedFeature?._id === sourceFeature._id) {
+	            setSelectedFeature();
+	        }
+	        const midpoint = exonToBeSplit.min + (exonToBeSplit.max - exonToBeSplit.min) / 2;
+	        const upstreamCut = Math.floor(midpoint);
+	        const downstreamCut = Math.ceil(midpoint);
+	        if (!sourceFeature.parent?._id) {
+	            throw new Error('Splitting an exon without parent is not possible yet');
+	        }
+	        const change = new dist$2.SplitExonChange({
+	            changedIds: [sourceFeature._id],
+	            typeName: 'SplitExonChange',
+	            assembly: sourceAssemblyId,
+	            exonToBeSplit,
+	            parentFeatureId: sourceFeature.parent._id,
+	            upstreamCut,
+	            downstreamCut,
+	            leftExonId: new objectid().toHexString(),
+	            rightExonId: new objectid().toHexString(),
+	        });
+	        await changeManager.submit(change);
+	        notify('Exon successfully split', 'success');
+	        handleClose();
+	        event.preventDefault();
+	    }
+	    return (React__default["default"].createElement(Dialog, { open: true, title: "Split exon", handleClose: handleClose, maxWidth: false, "data-testid": "split-exon" },
+	        React__default["default"].createElement("form", { onSubmit: onSubmit },
+	            React__default["default"].createElement(material.DialogContent, { style: { display: 'flex', flexDirection: 'column' } },
+	                React__default["default"].createElement(material.DialogContentText, null, makeDialogText(exonToBeSplit))),
+	            React__default["default"].createElement(material.DialogActions, null,
+	                React__default["default"].createElement(material.Button, { variant: "contained", type: "submit", disabled: !exonIsSplittable(exonToBeSplit).isSplittable }, "Yes"),
+	                React__default["default"].createElement(material.Button, { variant: "outlined", type: "submit", onClick: handleClose }, "Cancel"))),
 	        errorMessage ? (React__default["default"].createElement(material.DialogContent, null,
 	            React__default["default"].createElement(material.DialogContentText, { color: "error" }, errorMessage))) : null));
 	}
@@ -50414,7 +51709,6 @@
 	            assembly,
 	            featureId: _id,
 	            attributes: remainingAttributes,
-	            attributeDeleted: { [key]: deletedAttribute },
 	        });
 	        void changeManager.submit(change);
 	    }
@@ -50435,14 +51729,6 @@
 	            assembly,
 	            featureId: feature._id,
 	            attributes: serializedAttributes,
-	            attributeEdited: {
-	                old: {
-	                    [key]: oldAttribute,
-	                },
-	                new: {
-	                    [key]: attribute,
-	                },
-	            },
 	        });
 	        void changeManager.submit(change);
 	    }
@@ -50459,9 +51745,6 @@
 	            assembly,
 	            featureId: feature._id,
 	            attributes: serializedAttributes,
-	            attributeAdded: {
-	                [key]: attribute,
-	            },
 	        });
 	        void changeManager.submit(change);
 	    }
@@ -50782,6 +52065,9 @@
 	    value: true
 	  });
 	  exports.AnnotationFeatureModel = void 0;
+	  /* eslint-disable @typescript-eslint/no-unsafe-assignment */
+	  /* eslint-disable @typescript-eslint/no-unsafe-member-access */
+	  /* eslint-disable @typescript-eslint/no-unsafe-call */
 	  var util_1 = require$$1__default$1["default"];
 	  var mobx_state_tree_1 = require$$1__default$2["default"];
 	  var _1 = dist;
@@ -50910,22 +52196,18 @@
 	        return false;
 	      },
 	      get transcriptExonParts() {
-	        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-explicit-any
+	        // eslint-disable-next-line @typescript-eslint/no-explicit-any
 	        var session = (0, util_1.getSession)(self);
-	        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 	        var apolloDataStore = session.apolloDataStore;
-	        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
 	        var featureTypeOntology = apolloDataStore.ontologyManager.featureTypeOntology;
-	        // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
-	        if (!featureTypeOntology.isTypeOf(self.type, 'transcript')) {
+	        if (!featureTypeOntology.isTypeOf(self.type, 'transcript') && !featureTypeOntology.isTypeOf(self.type, 'pseudogenic_transcript')) {
 	          throw new Error('Feature is not a transcript or equivalent, cannot calculate exon locations');
 	        }
 	        var children = self.children;
 	        if (!children) {
 	          throw new Error('No exons in transcript');
 	        }
-	        var sortedChildren = _toConsumableArray(children.values()) // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
-	        .filter(function (child) {
+	        var sortedChildren = _toConsumableArray(children.values()).filter(function (child) {
 	          return featureTypeOntology.isTypeOf(child.type, 'exon');
 	        }).sort(function (a, b) {
 	          return a.min - b.min;
@@ -50969,23 +52251,18 @@
 	        return parts;
 	      },
 	      get transcriptParts() {
-	        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-explicit-any
+	        // eslint-disable-next-line @typescript-eslint/no-explicit-any
 	        var session = (0, util_1.getSession)(self);
-	        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 	        var apolloDataStore = session.apolloDataStore;
-	        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
 	        var featureTypeOntology = apolloDataStore.ontologyManager.featureTypeOntology;
-	        // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
-	        if (!featureTypeOntology.isTypeOf(self.type, 'transcript')) {
+	        if (!featureTypeOntology.isTypeOf(self.type, 'transcript') && !featureTypeOntology.isTypeOf(self.type, 'pseudogenic_transcript')) {
 	          throw new Error('Only features of type "transcript" or equivalent can calculate CDS locations');
 	        }
 	        var children = self.children;
 	        if (!children) {
 	          throw new Error('no CDS or exons in transcript');
 	        }
-	        var cdsChildren = _toConsumableArray(children.values()).filter(
-	        // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
-	        function (child) {
+	        var cdsChildren = _toConsumableArray(children.values()).filter(function (child) {
 	          return featureTypeOntology.isTypeOf(child.type, 'CDS');
 	        });
 	        var transcriptParts = [];
@@ -51009,7 +52286,6 @@
 	              for (_iterator6.s(); !(_step6 = _iterator6.n()).done;) {
 	                var _step6$value = _slicedToArray(_step6.value, 2),
 	                  _child = _step6$value[1];
-	                // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
 	                if (featureTypeOntology.isTypeOf(_child.type, 'exon')) {
 	                  exonLocations.push({
 	                    min: _child.min,
@@ -51145,11 +52421,9 @@
 	        });
 	      },
 	      get looksLikeGene() {
-	        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-explicit-any
+	        // eslint-disable-next-line @typescript-eslint/no-explicit-any
 	        var session = (0, util_1.getSession)(self);
-	        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 	        var apolloDataStore = session.apolloDataStore;
-	        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
 	        var featureTypeOntology = apolloDataStore.ontologyManager.featureTypeOntology;
 	        if (!featureTypeOntology) {
 	          return false;
@@ -51158,12 +52432,7 @@
 	        if (!(children !== null && children !== void 0 && children.size)) {
 	          return false;
 	        }
-	        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-	        var isGene =
-	        // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
-	        featureTypeOntology.isTypeOf(self.type, 'gene') ||
-	        // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
-	        featureTypeOntology.isTypeOf(self.type, 'pseudogene');
+	        var isGene = featureTypeOntology.isTypeOf(self.type, 'gene') || featureTypeOntology.isTypeOf(self.type, 'pseudogene');
 	        if (!isGene) {
 	          return false;
 	        }
@@ -51173,20 +52442,13 @@
 	          for (_iterator7.s(); !(_step7 = _iterator7.n()).done;) {
 	            var _step7$value = _slicedToArray(_step7.value, 2),
 	              child = _step7$value[1];
-	            if (
-	            // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
-	            featureTypeOntology.isTypeOf(child.type, 'transcript') ||
-	            // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
-	            featureTypeOntology.isTypeOf(child.type, 'pseudogenic_transcript')) {
+	            if (featureTypeOntology.isTypeOf(child.type, 'transcript') || featureTypeOntology.isTypeOf(child.type, 'pseudogenic_transcript')) {
 	              var grandChildren = child.children;
 	              if (!(grandChildren !== null && grandChildren !== void 0 && grandChildren.size)) {
 	                return false;
 	              }
 	              return _toConsumableArray(grandChildren.values()).some(function (grandchild) {
-	                return (
-	                  // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
-	                  featureTypeOntology.isTypeOf(grandchild.type, 'exon')
-	                );
+	                return featureTypeOntology.isTypeOf(grandchild.type, 'exon');
 	              });
 	            }
 	          }
@@ -51455,6 +52717,25 @@
 	          _iterator2.f();
 	        }
 	        return '';
+	      },
+	      getFeatures: function getFeatures(min, max) {
+	        var features = [];
+	        var _iterator3 = _createForOfIteratorHelper(self.features),
+	          _step3;
+	        try {
+	          for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+	            var _step3$value = _slicedToArray(_step3.value, 2),
+	              feature = _step3$value[1];
+	            if ((0, util_1.doesIntersect2)(feature.min, feature.max, min, max)) {
+	              features.push(feature);
+	            }
+	          }
+	        } catch (err) {
+	          _iterator3.e(err);
+	        } finally {
+	          _iterator3.f();
+	        }
+	        return features;
 	      }
 	    };
 	  });
@@ -53515,300 +54796,6 @@
 	  newStyled[tagName] = newStyled(tagName);
 	});
 
-	const StyledGridOverlay = newStyled('div')(() => ({
-	    display: 'flex',
-	    flexDirection: 'column',
-	    alignItems: 'center',
-	    justifyContent: 'center',
-	    height: '100%',
-	    '& .no-rows-primary': {
-	        fill: 'lightgray',
-	    },
-	    '& .no-rows-secondary': {
-	        fill: 'lightgray',
-	    },
-	}));
-	const CustomNoRowsOverlay = () => {
-	    return (React__default["default"].createElement(StyledGridOverlay, null,
-	        React__default["default"].createElement("svg", { xmlns: "http://www.w3.org/2000/svg", fill: "none", width: 96, viewBox: "0 0 452 257", "aria-hidden": true, focusable: "false" },
-	            React__default["default"].createElement("path", { className: "no-rows-primary", d: "M348 69c-46.392 0-84 37.608-84 84s37.608 84 84 84 84-37.608 84-84-37.608-84-84-84Zm-104 84c0-57.438 46.562-104 104-104s104 46.562 104 104-46.562 104-104 104-104-46.562-104-104Z" }),
-	            React__default["default"].createElement("path", { className: "no-rows-primary", d: "M308.929 113.929c3.905-3.905 10.237-3.905 14.142 0l63.64 63.64c3.905 3.905 3.905 10.236 0 14.142-3.906 3.905-10.237 3.905-14.142 0l-63.64-63.64c-3.905-3.905-3.905-10.237 0-14.142Z" }),
-	            React__default["default"].createElement("path", { className: "no-rows-primary", d: "M308.929 191.711c-3.905-3.906-3.905-10.237 0-14.142l63.64-63.64c3.905-3.905 10.236-3.905 14.142 0 3.905 3.905 3.905 10.237 0 14.142l-63.64 63.64c-3.905 3.905-10.237 3.905-14.142 0Z" }),
-	            React__default["default"].createElement("path", { className: "no-rows-secondary", d: "M0 10C0 4.477 4.477 0 10 0h380c5.523 0 10 4.477 10 10s-4.477 10-10 10H10C4.477 20 0 15.523 0 10ZM0 59c0-5.523 4.477-10 10-10h231c5.523 0 10 4.477 10 10s-4.477 10-10 10H10C4.477 69 0 64.523 0 59ZM0 106c0-5.523 4.477-10 10-10h203c5.523 0 10 4.477 10 10s-4.477 10-10 10H10c-5.523 0-10-4.477-10-10ZM0 153c0-5.523 4.477-10 10-10h195.5c5.523 0 10 4.477 10 10s-4.477 10-10 10H10c-5.523 0-10-4.477-10-10ZM0 200c0-5.523 4.477-10 10-10h203c5.523 0 10 4.477 10 10s-4.477 10-10 10H10c-5.523 0-10-4.477-10-10ZM0 247c0-5.523 4.477-10 10-10h231c5.523 0 10 4.477 10 10s-4.477 10-10 10H10c-5.523 0-10-4.477-10-10Z" })),
-	        React__default["default"].createElement(material.Box, { sx: { mt: 2 } }, "No rows")));
-	};
-	const columns = [
-	    { field: 'type', headerName: 'Type', width: 100 },
-	    { field: 'nameOrId', headerName: 'Name/ID', width: 200 },
-	    { field: 'status', headerName: 'Status', width: 150 },
-	    { field: 'changeType', headerName: 'Change Type', width: 200 },
-	    {
-	        field: 'change',
-	        headerName: 'Change',
-	        width: 300,
-	        renderCell: (params) => (React__default["default"].createElement("div", { style: { whiteSpace: 'pre-wrap' } }, params.value)),
-	    },
-	    { field: 'user', headerName: 'User', width: 150 },
-	    { field: 'createdAt', headerName: 'Created At', width: 150 },
-	];
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	const getChangeInfo = (c) => {
-	    if (c.typeName === 'FeatureAttributeChange') {
-	        if (c.attributeAdded) {
-	            const addedAttribute = c.attributeAdded;
-	            const [response] = Object.keys(addedAttribute).map((key) => `${key}: ${addedAttribute[key].join(',')}`);
-	            return `ADDED: \n${response}`;
-	        }
-	        if (c.attributeEdited) {
-	            const oldAttribute = (c.attributeEdited.old ?? {});
-	            const newAttribute = (c.attributeEdited.new ?? {});
-	            const [old] = Object.keys(oldAttribute).map((key) => `${key}: ${oldAttribute[key].join(',')}`);
-	            const [newAttr] = Object.keys(newAttribute).map((key) => `${key}: ${newAttribute[key].join(',')}`);
-	            return `BEFORE UPDATE: \n${old} \nAFTER UPDATE: \n${newAttr}`;
-	        }
-	        if (c.attributeDeleted) {
-	            const deletedAttribute = c.attributeDeleted;
-	            const [response] = Object.keys(deletedAttribute).map((key) => `${key}: ${deletedAttribute[key].join(',')}`);
-	            return `DELETED: \n${response}`;
-	        }
-	    }
-	    if (c.typeName === 'TypeChange') {
-	        return `OLD TYPE: \n${c.oldType} \nNEW TYPE: \n${c.newType}`;
-	    }
-	    if (c.typeName === 'LocationEndChange') {
-	        return `OLD END: \n${c.oldEnd} \nNEW END: \n${c.newEnd}`;
-	    }
-	    if (c.typeName === 'LocationStartChange') {
-	        return `OLD START: \n${c.oldStart} \nNEW START: \n${c.newStart}`;
-	    }
-	    return '';
-	};
-	const ChangeHistory = mobxReact.observer(function ChangeHistory(props) {
-	    const { feature, session, handleClose, assembly } = props;
-	    const { ontologyManager } = session.apolloDataStore;
-	    const { featureTypeOntology } = ontologyManager;
-	    const [menuItems, setMenuItems] = React__default["default"].useState();
-	    const [changesData, setChangesData] = React__default["default"].useState([]);
-	    const [changeHistoryData, setChangeHistoryData] = React__default["default"].useState([]);
-	    const initializeMenuItems = () => {
-	        if (!featureTypeOntology) {
-	            return;
-	        }
-	        let gene;
-	        let transcript;
-	        if (featureTypeOntology.isTypeOf(feature.type, 'gene')) {
-	            gene = feature;
-	        }
-	        if (featureTypeOntology.isTypeOf(feature.type, 'CDS') ||
-	            featureTypeOntology.isTypeOf(feature.type, 'exon')) {
-	            transcript = feature.parent;
-	            gene = transcript?.parent;
-	        }
-	        if (featureTypeOntology.isTypeOf(feature.type, 'transcript')) {
-	            transcript = feature;
-	            gene = feature.parent;
-	        }
-	        if (!gene) {
-	            return;
-	        }
-	        const changeHistoryMenus = {
-	            id: gene._id,
-	            label: getFeatureName$1(gene) || getFeatureId$1(gene) || gene.type,
-	            feature: gene,
-	            childrens: [],
-	            isSelected: feature._id === gene._id,
-	        };
-	        for (const [, child] of gene.children ?? []) {
-	            let isSelected = false;
-	            if (transcript && transcript._id === child._id) {
-	                isSelected = true;
-	            }
-	            changeHistoryMenus.childrens.push({
-	                id: child._id,
-	                label: getFeatureName$1(child) || getFeatureId$1(child) || child.type,
-	                feature: child,
-	                childrens: [],
-	                isSelected,
-	            });
-	        }
-	        setMenuItems(changeHistoryMenus);
-	    };
-	    const fetchChangeHistoryData = async (features) => {
-	        if (Array.isArray(changesData) && changesData.length > 0) {
-	            handleChangeHistoryData(changesData, features);
-	            return;
-	        }
-	        const { internetAccounts } = require$$1$3.getRoot(session);
-	        const apolloInternetAccount = internetAccounts.find((ia) => ia.type === 'ApolloInternetAccount');
-	        if (!apolloInternetAccount) {
-	            throw new Error('No Apollo internet account found');
-	        }
-	        const { baseURL } = apolloInternetAccount;
-	        const url = new URL('changes', baseURL);
-	        const searchParams = new URLSearchParams({ assembly });
-	        url.search = searchParams.toString();
-	        const uri = url.toString();
-	        const apolloFetch = apolloInternetAccount.getFetcher({
-	            locationType: 'UriLocation',
-	            uri,
-	        });
-	        const response = await apolloFetch(uri, {
-	            headers: new Headers({ 'Content-Type': 'application/json' }),
-	        });
-	        if (!response.ok) {
-	            return;
-	        }
-	        const changes = await response.json();
-	        setChangesData(changes);
-	        handleChangeHistoryData(changes, features);
-	    };
-	    const handleChangeHistoryData = (changes, features) => {
-	        if (!Array.isArray(changes)) {
-	            return;
-	        }
-	        const changeHistory = [];
-	        for (const ch of changes) {
-	            if (ch.changes && ch.changes.length > 0) {
-	                for (const c of ch.changes) {
-	                    for (const f of features) {
-	                        try {
-	                            const id = c.changedIds && c.changedIds.length > 0
-	                                ? c.changedIds[0]
-	                                : c.featureId;
-	                            if (id === f._id) {
-	                                const changeData = {
-	                                    id: String(ch._id) + String(id),
-	                                    type: f.type,
-	                                    nameOrId: getFeatureName$1(f) || getFeatureId$1(f) || '',
-	                                    status: ch.processed ? 'Processed' : 'Not processed',
-	                                    changeType: ch.typeName,
-	                                    change: getChangeInfo(c),
-	                                    user: ch.user,
-	                                    createdAt: ch.createdAt,
-	                                };
-	                                changeHistory.push(changeData);
-	                            }
-	                        }
-	                        catch {
-	                            // pass
-	                            console.error('Error in change history data', c);
-	                        }
-	                    }
-	                }
-	            }
-	        }
-	        setChangeHistoryData(changeHistory);
-	    };
-	    React.useEffect(() => {
-	        // Initialize the menu items when the component mounts or when the feature changes
-	        initializeMenuItems();
-	        // TODO: Note: If multiple changes are committed at once in a single API call, Will this work?
-	        // Now the changedIds in DB should be subset of the changedIds (below) passed as filter to the API
-	        const changedFeatures = [];
-	        let changedFeature = feature;
-	        if (featureTypeOntology &&
-	            (featureTypeOntology.isTypeOf(changedFeature.type, 'CDS') ||
-	                featureTypeOntology.isTypeOf(changedFeature.type, 'exon'))) {
-	            // transcript
-	            changedFeature = feature.parent;
-	        }
-	        if (!changedFeature) {
-	            return;
-	        }
-	        changedFeatures.push(changedFeature);
-	        for (const [, child] of changedFeature.children ?? []) {
-	            changedFeatures.push(child);
-	            if (featureTypeOntology &&
-	                featureTypeOntology.isTypeOf(changedFeature.type, 'gene')) {
-	                for (const [, grandChild] of child.children ?? []) {
-	                    changedFeatures.push(grandChild);
-	                }
-	            }
-	        }
-	        fetchChangeHistoryData(changedFeatures).catch(() => {
-	            setChangeHistoryData([]);
-	        });
-	        // eslint-disable-next-line react-hooks/exhaustive-deps
-	    }, [feature]);
-	    if (!menuItems) {
-	        return null;
-	    }
-	    const handleMenuItemClick = (item) => {
-	        if (item.id === menuItems.id) {
-	            setMenuItems({
-	                ...menuItems,
-	                isSelected: true,
-	                childrens: menuItems.childrens.map((child) => ({
-	                    ...child,
-	                    isSelected: false,
-	                })),
-	            });
-	            // fetch change history data for the gene
-	            const { feature } = item;
-	            const features = [];
-	            features.push(feature);
-	            for (const [, child] of feature.children ?? []) {
-	                features.push(child);
-	                for (const [, grandChild] of child.children ?? []) {
-	                    features.push(grandChild);
-	                }
-	            }
-	            handleChangeHistoryData(changesData, features);
-	        }
-	        else {
-	            setMenuItems({
-	                ...menuItems,
-	                isSelected: false,
-	                childrens: menuItems.childrens.map((child) => ({
-	                    ...child,
-	                    isSelected: child.id === item.id,
-	                })),
-	            });
-	            // fetch change history data for the transcript
-	            const { feature } = item;
-	            const features = [];
-	            features.push(feature);
-	            for (const [, child] of feature.children ?? []) {
-	                features.push(child);
-	            }
-	            handleChangeHistoryData(changesData, features);
-	        }
-	    };
-	    return (React__default["default"].createElement(Dialog, { open: true, handleClose: handleClose, "data-testid": "change-history-dialog", title: "Change History", maxWidth: "xl", fullWidth: true },
-	        React__default["default"].createElement(material.DialogContent, null,
-	            React__default["default"].createElement(material.Grid2, { container: true, spacing: 1, sx: { p: 1 } },
-	                React__default["default"].createElement(material.Grid2, { size: 2, sx: {
-	                        height: 'calc(80vh - 64px)',
-	                        overflowY: 'scroll',
-	                        border: '1px solid #ccc',
-	                        borderRadius: 1,
-	                    } },
-	                    React__default["default"].createElement(material.List, { sx: { ml: 2 } },
-	                        React__default["default"].createElement(material.ListItem, { style: {
-	                                backgroundColor: menuItems.isSelected
-	                                    ? '#f0f0f0'
-	                                    : 'transparent',
-	                                cursor: 'pointer',
-	                            }, onClick: () => {
-	                                handleMenuItemClick(menuItems);
-	                            }, disablePadding: true },
-	                            React__default["default"].createElement(material.ListItemText, { primary: React__default["default"].createElement(material.Typography, { fontWeight: "bold" },
-	                                    React__default["default"].createElement("small", null, menuItems.label)) })),
-	                        React__default["default"].createElement(material.Box, { sx: { borderLeft: '1px dashed #ccc' } }, menuItems.childrens.map((m) => (React__default["default"].createElement(material.Box, { key: m.id, sx: { mt: 1, ml: 2 } },
-	                            React__default["default"].createElement(material.ListItem, { style: {
-	                                    backgroundColor: m.isSelected
-	                                        ? '#f0f0f0'
-	                                        : 'transparent',
-	                                    cursor: 'pointer',
-	                                }, onClick: () => {
-	                                    handleMenuItemClick(m);
-	                                }, disablePadding: true },
-	                                React__default["default"].createElement(material.ListItemText, { primary: React__default["default"].createElement(material.Typography, null,
-	                                        React__default["default"].createElement("small", null, m.label)) })))))))),
-	                React__default["default"].createElement(material.Grid2, { size: 10, sx: { height: 'calc(80vh - 64px)', overflowY: 'scroll' } },
-	                    React__default["default"].createElement(xDataGrid.DataGrid, { rows: changeHistoryData, columns: columns, slots: { noRowsOverlay: CustomNoRowsOverlay }, getRowHeight: () => 'auto' }))))));
-	});
-
 	const SEQUENCE_WRAP_LENGTH = 60;
 	function getSequenceSegments(segmentType, feature, getSequence) {
 	    const segments = [];
@@ -54129,7 +55116,8 @@
 	    }
 	    const { apolloDataStore } = session;
 	    const { featureTypeOntology } = apolloDataStore.ontologyManager;
-	    if (!featureTypeOntology.isTypeOf(feature.type, 'transcript')) {
+	    if (!featureTypeOntology.isTypeOf(feature.type, 'transcript') &&
+	        !featureTypeOntology.isTypeOf(feature.type, 'pseudogenic_transcript')) {
 	        throw new Error('Feature is not a transcript or equivalent');
 	    }
 	    const { cdsLocations, transcriptExonParts, strand } = feature;
@@ -54798,6 +55786,7 @@
 	            }
 	        }
 	        if (strand === -1) {
+	            // reverse strand
 	            if (startCodonGenomicLoc < stopCodonGenomicLoc) {
 	                notify('Start codon genomic location should be less than stop codon genomic location', 'error');
 	                return;
@@ -54857,16 +55846,22 @@
 	                            React__default["default"].createElement(default_1$6, { style: { fontSize: 15, cursor: 'pointer' }, onClick: trimTranslationSequence }))))),
 	            React__default["default"].createElement(material.Grid2, { container: true, justifyContent: "center", alignItems: "center", style: { textAlign: 'center', marginTop: 10 } },
 	                React__default["default"].createElement(material.Grid2, { size: 1 }),
-	                React__default["default"].createElement(material.Grid2, { size: 4 },
+	                strand === 1 ? (React__default["default"].createElement(material.Grid2, { size: 4 },
 	                    React__default["default"].createElement(StyledTextField, { margin: "dense", variant: "outlined", value: cdsMin + 1, onChangeCommitted: (newLocation) => {
 	                            handleCDSLocationChange(cdsMin, newLocation - 1, feature, true);
-	                        } })),
-	                React__default["default"].createElement(material.Grid2, { size: 2 },
-	                    React__default["default"].createElement(material.Typography, { component: 'span' }, "CDS")),
-	                React__default["default"].createElement(material.Grid2, { size: 4 },
+	                        } }))) : (React__default["default"].createElement(material.Grid2, { size: 4 },
 	                    React__default["default"].createElement(StyledTextField, { margin: "dense", variant: "outlined", value: cdsMax, onChangeCommitted: (newLocation) => {
 	                            handleCDSLocationChange(cdsMax, newLocation, feature, false);
-	                        } })),
+	                        } }))),
+	                React__default["default"].createElement(material.Grid2, { size: 2 },
+	                    React__default["default"].createElement(material.Typography, { component: 'span' }, "CDS")),
+	                strand === 1 ? (React__default["default"].createElement(material.Grid2, { size: 4 },
+	                    React__default["default"].createElement(StyledTextField, { margin: "dense", variant: "outlined", value: cdsMax, onChangeCommitted: (newLocation) => {
+	                            handleCDSLocationChange(cdsMax, newLocation, feature, false);
+	                        } }))) : (React__default["default"].createElement(material.Grid2, { size: 4 },
+	                    React__default["default"].createElement(StyledTextField, { margin: "dense", variant: "outlined", value: cdsMin + 1, onChangeCommitted: (newLocation) => {
+	                            handleCDSLocationChange(cdsMin, newLocation - 1, feature, true);
+	                        } }))),
 	                React__default["default"].createElement(material.Grid2, { size: 1 })))),
 	        React__default["default"].createElement("div", { style: { marginTop: 5 } }, transcriptExonParts.map((loc, index) => {
 	            return (React__default["default"].createElement("div", { key: index }, loc.type === 'exon' && (React__default["default"].createElement(material.Grid2, { container: true, justifyContent: "center", alignItems: "center", style: { textAlign: 'center' } },
@@ -54994,19 +55989,6 @@
 	        assembly,
 	        FeatureAttributeChange: dist$2.FeatureAttributeChange,
 	    });
-	    const openChangeHistory = () => {
-	        session.queueDialog((doneCallback) => [
-	            ChangeHistory,
-	            {
-	                session: apolloSession,
-	                handleClose: () => {
-	                    doneCallback();
-	                },
-	                feature,
-	                assembly,
-	            },
-	        ]);
-	    };
 	    return (React__default["default"].createElement("div", { className: classes.root },
 	        React__default["default"].createElement(material.Accordion, { expanded: panelState.includes('summary'), onChange: (e, expanded) => {
 	                handlePanelChange(expanded, 'summary');
@@ -55023,8 +56005,7 @@
 	            React__default["default"].createElement(material.AccordionDetails, null,
 	                React__default["default"].createElement(TranscriptWidgetEditLocation, { feature: feature, refName: refName, session: apolloSession, assembly: currentAssembly._id || '' }),
 	                React__default["default"].createElement(BiotypesComponent, { feature: feature, session: session, assembly: assembly, TypeChange: dist$2.TypeChange, DeleteFeatureChange: dist$2.DeleteFeatureChange, AddFeatureChange: dist$2.AddFeatureChange, FeatureAttributeChange: dist$2.FeatureAttributeChange }),
-	                React__default["default"].createElement(HavanaAttributesComponent, { feature: feature, session: session, assembly: assembly, FeatureAttributeChange: dist$2.FeatureAttributeChange }),
-	                React__default["default"].createElement(material.Button, { variant: "outlined", color: "primary", style: { width: '100%', marginTop: 5 }, onClick: openChangeHistory }, "View Change History"))),
+	                React__default["default"].createElement(HavanaAttributesComponent, { feature: feature, session: session, assembly: assembly, FeatureAttributeChange: dist$2.FeatureAttributeChange }))),
 	        React__default["default"].createElement(material.Accordion, { style: { marginTop: 5 }, expanded: panelState.includes('attrs'), onChange: (e, expanded) => {
 	                handlePanelChange(expanded, 'attrs');
 	            } },
@@ -55187,13 +56168,14 @@
 	            } })));
 	});
 
-	function featureContextMenuItems(feature, region, getAssemblyId, selectedFeature, setSelectedFeature, session, changeManager) {
+	function featureContextMenuItems(feature, region, getAssemblyId, selectedFeature, setSelectedFeature, session, changeManager, filteredTranscripts, updateFilteredTranscripts) {
 	    const internetAccount = getApolloInternetAccount(session);
 	    const role = internetAccount ? internetAccount.role : 'admin';
 	    const admin = role === 'admin';
 	    const readOnly = !(role && ['admin', 'user'].includes(role));
 	    const menuItems = [];
 	    if (feature) {
+	        const featureID = feature.attributes.get('gff_id')?.toString();
 	        const sourceAssemblyId = getAssemblyId(region.assemblyName);
 	        const currentAssemblyId = getAssemblyId(region.assemblyName);
 	        menuItems.push({
@@ -55260,6 +56242,44 @@
 	                    },
 	                ]);
 	            },
+	        }, {
+	            label: 'Merge exons',
+	            disabled: !admin,
+	            onClick: () => {
+	                session.queueDialog((doneCallback) => [
+	                    MergeExons,
+	                    {
+	                        session,
+	                        handleClose: () => {
+	                            doneCallback();
+	                        },
+	                        changeManager,
+	                        sourceFeature: feature,
+	                        sourceAssemblyId: currentAssemblyId,
+	                        selectedFeature,
+	                        setSelectedFeature,
+	                    },
+	                ]);
+	            },
+	        }, {
+	            label: 'Split exon',
+	            disabled: !admin,
+	            onClick: () => {
+	                session.queueDialog((doneCallback) => [
+	                    SplitExon,
+	                    {
+	                        session,
+	                        handleClose: () => {
+	                            doneCallback();
+	                        },
+	                        changeManager,
+	                        sourceFeature: feature,
+	                        sourceAssemblyId: currentAssemblyId,
+	                        selectedFeature,
+	                        setSelectedFeature,
+	                    },
+	                ]);
+	            },
 	        });
 	        const { featureTypeOntology } = session.apolloDataStore.ontologyManager;
 	        if (!featureTypeOntology) {
@@ -55278,6 +56298,18 @@
 	                        refName: region.refName,
 	                    });
 	                    session.showWidget(apolloTranscriptWidget);
+	                },
+	            }, {
+	                label: 'Visible',
+	                type: 'checkbox',
+	                checked: featureID && filteredTranscripts.includes(featureID) ? false : true,
+	                onClick: () => {
+	                    if (featureID) {
+	                        const newForms = filteredTranscripts.includes(featureID)
+	                            ? filteredTranscripts.filter((form) => form !== featureID)
+	                            : [...filteredTranscripts, featureID];
+	                        updateFilteredTranscripts(newForms);
+	                    }
 	                },
 	            });
 	        }
@@ -55321,8 +56353,8 @@
 	    },
 	}));
 	function makeContextMenuItems(display, feature) {
-	    const { changeManager, getAssemblyId, regions, selectedFeature, session, setSelectedFeature, } = display;
-	    return featureContextMenuItems(feature, regions[0], getAssemblyId, selectedFeature, setSelectedFeature, session, changeManager);
+	    const { changeManager, getAssemblyId, regions, selectedFeature, session, setSelectedFeature, filteredTranscripts, updateFilteredTranscripts, } = display;
+	    return featureContextMenuItems(feature, regions[0], getAssemblyId, selectedFeature, setSelectedFeature, session, changeManager, filteredTranscripts, updateFilteredTranscripts);
 	}
 	function getTopLevelFeature(feature) {
 	    let cur = feature;
@@ -55652,7 +56684,7 @@
 	    const widthPx = feature.length / bpPerPx;
 	    const startPx = reversed ? minX - widthPx : minX;
 	    const top = row * heightPx;
-	    const isSelected = isSelectedFeature(feature, apolloSelectedFeature);
+	    const isSelected = isSelectedFeature$1(feature, apolloSelectedFeature);
 	    const backgroundColor = getBackgroundColor(theme, isSelected);
 	    const textColor = getTextColor(theme, isSelected);
 	    const featureBox = [
@@ -55771,7 +56803,7 @@
 	    textTop = textTop + 12;
 	    context.fillText(location, startPx + 2, textTop);
 	}
-	function isSelectedFeature(feature, selectedFeature) {
+	function isSelectedFeature$1(feature, selectedFeature) {
 	    return Boolean(selectedFeature && feature._id === selectedFeature._id);
 	}
 	function getBackgroundColor(theme, selected) {
@@ -55802,22 +56834,11 @@
 	    const [region] = regions;
 	    const sourceAssemblyId = display.getAssemblyId(region.assemblyName);
 	    const currentAssemblyId = display.getAssemblyId(region.assemblyName);
+	    const { featureTypeOntology } = session.apolloDataStore.ontologyManager;
+	    if (!featureTypeOntology) {
+	        throw new Error('featureTypeOntology is undefined');
+	    }
 	    menuItems.push({
-	        label: 'View change history',
-	        onClick: () => {
-	            session.queueDialog((doneCallback) => [
-	                ChangeHistory,
-	                {
-	                    session,
-	                    handleClose: () => {
-	                        doneCallback();
-	                    },
-	                    feature: sourceFeature,
-	                    assembly: currentAssemblyId,
-	                },
-	            ]);
-	        },
-	    }, {
 	        label: 'Add child feature',
 	        disabled: readOnly,
 	        onClick: () => {
@@ -55874,36 +56895,48 @@
 	            ]);
 	        },
 	    }, {
-	        label: 'Edit feature details',
+	        label: 'Merge exons',
+	        disabled: !admin || !featureTypeOntology.isTypeOf(sourceFeature.type, 'exon'),
 	        onClick: () => {
-	            const apolloFeatureWidget = session.addWidget('ApolloFeatureDetailsWidget', 'apolloFeatureDetailsWidget', {
-	                feature: sourceFeature,
-	                assembly: currentAssemblyId,
-	                refName: region.refName,
-	            });
-	            session.showWidget(apolloFeatureWidget);
+	            session.queueDialog((doneCallback) => [
+	                MergeExons,
+	                {
+	                    session,
+	                    handleClose: () => {
+	                        doneCallback();
+	                    },
+	                    changeManager,
+	                    sourceFeature,
+	                    sourceAssemblyId: currentAssemblyId,
+	                    selectedFeature,
+	                    setSelectedFeature: (feature) => {
+	                        display.setSelectedFeature(feature);
+	                    },
+	                },
+	            ]);
+	        },
+	    }, {
+	        label: 'Split exon',
+	        disabled: !admin || !featureTypeOntology.isTypeOf(sourceFeature.type, 'exon'),
+	        onClick: () => {
+	            session.queueDialog((doneCallback) => [
+	                SplitExon,
+	                {
+	                    session,
+	                    handleClose: () => {
+	                        doneCallback();
+	                    },
+	                    changeManager,
+	                    sourceFeature,
+	                    sourceAssemblyId: currentAssemblyId,
+	                    selectedFeature,
+	                    setSelectedFeature: (feature) => {
+	                        display.setSelectedFeature(feature);
+	                    },
+	                },
+	            ]);
 	        },
 	    });
-	    const { featureTypeOntology } = session.apolloDataStore.ontologyManager;
-	    if (!featureTypeOntology) {
-	        throw new Error('featureTypeOntology is undefined');
-	    }
-	    if ((featureTypeOntology.isTypeOf(sourceFeature.type, 'transcript') ||
-	        featureTypeOntology.isTypeOf(sourceFeature.type, 'pseudogenic_transcript')) &&
-	        require$$1$2.isSessionModelWithWidgets(session)) {
-	        menuItems.push({
-	            label: 'Edit transcript details',
-	            onClick: () => {
-	                const apolloTranscriptWidget = session.addWidget('ApolloTranscriptDetails', 'apolloTranscriptDetails', {
-	                    feature: sourceFeature,
-	                    assembly: currentAssemblyId,
-	                    changeManager,
-	                    refName: region.refName,
-	                });
-	                session.showWidget(apolloTranscriptWidget);
-	            },
-	        });
-	    }
 	    return menuItems;
 	}
 	function getFeatureFromLayout$2(feature, _bp, _row) {
@@ -56282,8 +57315,7 @@
 	    const featureInThisRow = featuresForRow$1(feature, featureTypeOntology)[row] || [];
 	    for (const f of featureInThisRow) {
 	        let featureObj;
-	        // f.min + 1 because the apollo track location is 1-based
-	        if (bp >= f.min + 1 && bp <= f.max && f.parent) {
+	        if (bp >= f.min && bp <= f.max && f.parent) {
 	            featureObj = f;
 	        }
 	        if (!featureObj) {
@@ -56296,8 +57328,7 @@
 	            const { cdsLocations } = featureObj.parent;
 	            for (const cdsLoc of cdsLocations) {
 	                for (const loc of cdsLoc) {
-	                    // loc.min + 1 because the apollo track location is 1-based
-	                    if (bp >= loc.min + 1 && bp <= loc.max) {
+	                    if (bp >= loc.min && bp <= loc.max) {
 	                        return featureObj;
 	                    }
 	                }
@@ -56410,7 +57441,7 @@
 	    const draggableFeature = getDraggableFeatureInfo$1(currentMousePosition, feature, stateModel);
 	    if (draggableFeature) {
 	        event.stopPropagation();
-	        stateModel.startDrag(currentMousePosition, draggableFeature.feature, draggableFeature.edge);
+	        stateModel.startDrag(currentMousePosition, draggableFeature.feature, draggableFeature.edge, true);
 	    }
 	}
 	function onMouseMove$2(stateModel, mousePosition) {
@@ -56436,7 +57467,64 @@
 	    }
 	    const { feature } = featureAndGlyphUnderMouse;
 	    stateModel.setSelectedFeature(feature);
-	    stateModel.showFeatureDetailsWidget(feature);
+	    const { session } = stateModel;
+	    const { apolloDataStore } = session;
+	    const { featureTypeOntology } = apolloDataStore.ontologyManager;
+	    if (!featureTypeOntology) {
+	        throw new Error('featureTypeOntology is undefined');
+	    }
+	    let containsCDSOrExon = false;
+	    for (const [, child] of feature.children ?? []) {
+	        if (featureTypeOntology.isTypeOf(child.type, 'CDS') ||
+	            featureTypeOntology.isTypeOf(child.type, 'exon')) {
+	            containsCDSOrExon = true;
+	            break;
+	        }
+	    }
+	    if ((featureTypeOntology.isTypeOf(feature.type, 'transcript') ||
+	        featureTypeOntology.isTypeOf(feature.type, 'pseudogenic_transcript')) &&
+	        containsCDSOrExon) {
+	        stateModel.showFeatureDetailsWidget(feature, [
+	            'ApolloTranscriptDetails',
+	            'apolloTranscriptDetails',
+	        ]);
+	    }
+	    else {
+	        stateModel.showFeatureDetailsWidget(feature);
+	    }
+	}
+	function getMinAndMaxPx(feature, refName, regionNumber, lgv) {
+	    const minPxInfo = lgv.bpToPx({
+	        refName,
+	        coord: feature.min,
+	        regionNumber,
+	    });
+	    const maxPxInfo = lgv.bpToPx({
+	        refName,
+	        coord: feature.max,
+	        regionNumber,
+	    });
+	    if (minPxInfo === undefined || maxPxInfo === undefined) {
+	        return;
+	    }
+	    const { offsetPx } = lgv;
+	    const minPx = minPxInfo.offsetPx - offsetPx;
+	    const maxPx = maxPxInfo.offsetPx - offsetPx;
+	    return [minPx, maxPx];
+	}
+	function getOverlappingEdge(feature, x, minMax) {
+	    const [minPx, maxPx] = minMax;
+	    // Feature is too small to tell if we're overlapping an edge
+	    if (Math.abs(maxPx - minPx) < 8) {
+	        return;
+	    }
+	    if (Math.abs(minPx - x) < 4) {
+	        return { feature, edge: 'min' };
+	    }
+	    if (Math.abs(maxPx - x) < 4) {
+	        return { feature, edge: 'max' };
+	    }
+	    return;
 	}
 	function getDraggableFeatureInfo$1(mousePosition, feature, stateModel) {
 	    const { session } = stateModel;
@@ -56449,30 +57537,18 @@
 	        featureTypeOntology.isTypeOf(feature.type, 'pseudogene');
 	    const isTranscript = featureTypeOntology.isTypeOf(feature.type, 'transcript') ||
 	        featureTypeOntology.isTypeOf(feature.type, 'pseudogenic_transcript');
-	    const isCds = featureTypeOntology.isTypeOf(feature.type, 'CDS');
+	    const isCDS = featureTypeOntology.isTypeOf(feature.type, 'CDS');
 	    if (isGene || isTranscript) {
+	        // For gene glyphs, the sizes of genes and transcripts are determined by
+	        // their child exons, so we don't make them draggable
 	        return;
 	    }
+	    // So now the type of feature is either CDS or exon. If an exon and CDS edge
+	    // are in the same place, we want to prioritize dragging the exon. If the
+	    // feature we're on is a CDS, let's find any exon it may overlap.
 	    const { bp, refName, regionNumber, x } = mousePosition;
 	    const { lgv } = stateModel;
-	    const { offsetPx } = lgv;
-	    const minPxInfo = lgv.bpToPx({ refName, coord: feature.min, regionNumber });
-	    const maxPxInfo = lgv.bpToPx({ refName, coord: feature.max, regionNumber });
-	    if (minPxInfo === undefined || maxPxInfo === undefined) {
-	        return;
-	    }
-	    const minPx = minPxInfo.offsetPx - offsetPx;
-	    const maxPx = maxPxInfo.offsetPx - offsetPx;
-	    if (Math.abs(maxPx - minPx) < 8) {
-	        return;
-	    }
-	    if (Math.abs(minPx - x) < 4) {
-	        return { feature, edge: 'min' };
-	    }
-	    if (Math.abs(maxPx - x) < 4) {
-	        return { feature, edge: 'max' };
-	    }
-	    if (isCds) {
+	    if (isCDS) {
 	        const transcript = feature.parent;
 	        if (!transcript?.children) {
 	            return;
@@ -56488,40 +57564,85 @@
 	            const [start, end] = require$$1$2.intersection2(bp - 1, bp, child.min, child.max);
 	            return start !== undefined && end !== undefined;
 	        });
-	        if (!overlappingExon) {
-	            return;
+	        if (overlappingExon) {
+	            // We are on an exon, are we on the edge of it?
+	            const minMax = getMinAndMaxPx(overlappingExon, refName, regionNumber, lgv);
+	            if (minMax) {
+	                const overlappingEdge = getOverlappingEdge(feature, x, minMax);
+	                if (overlappingEdge) {
+	                    return overlappingEdge;
+	                }
+	            }
 	        }
-	        const minPxInfo = lgv.bpToPx({
-	            refName,
-	            coord: overlappingExon.min,
-	            regionNumber,
-	        });
-	        const maxPxInfo = lgv.bpToPx({
-	            refName,
-	            coord: overlappingExon.max,
-	            regionNumber,
-	        });
-	        if (minPxInfo === undefined || maxPxInfo === undefined) {
-	            return;
-	        }
-	        const minPx = minPxInfo.offsetPx - offsetPx;
-	        const maxPx = maxPxInfo.offsetPx - offsetPx;
-	        if (Math.abs(maxPx - minPx) < 8) {
-	            return;
-	        }
-	        if (Math.abs(minPx - x) < 4) {
-	            return { feature: overlappingExon, edge: 'min' };
-	        }
-	        if (Math.abs(maxPx - x) < 4) {
-	            return { feature: overlappingExon, edge: 'max' };
+	    }
+	    // End of special cases, let's see if we're on the edge of this CDS or exon
+	    const minMax = getMinAndMaxPx(feature, refName, regionNumber, lgv);
+	    if (minMax) {
+	        const overlappingEdge = getOverlappingEdge(feature, x, minMax);
+	        if (overlappingEdge) {
+	            return overlappingEdge;
 	        }
 	    }
 	    return;
 	}
+	function isTranscriptFeature(feature, session) {
+	    const { featureTypeOntology } = session.apolloDataStore.ontologyManager;
+	    if (!featureTypeOntology) {
+	        throw new Error('featureTypeOntology is undefined');
+	    }
+	    return (featureTypeOntology.isTypeOf(feature.type, 'transcript') ||
+	        featureTypeOntology.isTypeOf(feature.type, 'pseudogenic_transcript'));
+	}
+	function isCdsOrExonFeature(feature, session) {
+	    const { featureTypeOntology } = session.apolloDataStore.ontologyManager;
+	    if (!featureTypeOntology) {
+	        throw new Error('featureTypeOntology is undefined');
+	    }
+	    return (featureTypeOntology.isTypeOf(feature.type, 'CDS') ||
+	        featureTypeOntology.isTypeOf(feature.type, 'exon'));
+	}
 	// False positive here, none of these functions use "this"
 	/* eslint-disable @typescript-eslint/unbound-method */
-	const { drawTooltip: drawTooltip$2, getContextMenuItems: getContextMenuItems$2, onMouseLeave: onMouseLeave$2 } = boxGlyph;
+	const { drawTooltip: drawTooltip$2, getContextMenuItems: boxGlyphContextMenuItems, onMouseLeave: onMouseLeave$2, } = boxGlyph;
 	/* eslint-enable @typescript-eslint/unbound-method */
+	function getContextMenuItems$2(display) {
+	    const { apolloHover, changeManager, regions, session } = display;
+	    const menuItems = [];
+	    if (!apolloHover) {
+	        return menuItems;
+	    }
+	    const { feature: sourceFeature } = apolloHover;
+	    const [region] = regions;
+	    const currentAssemblyId = display.getAssemblyId(region.assemblyName);
+	    const { featureTypeOntology } = session.apolloDataStore.ontologyManager;
+	    if (!featureTypeOntology) {
+	        throw new Error('featureTypeOntology is undefined');
+	    }
+	    for (const item of boxGlyphContextMenuItems(display)) {
+	        menuItems.push(item);
+	    }
+	    if (require$$1$2.isSessionModelWithWidgets(session) &&
+	        (isTranscriptFeature(sourceFeature, session) ||
+	            isCdsOrExonFeature(sourceFeature, session))) {
+	        let transcript = sourceFeature;
+	        if (sourceFeature.parent && isCdsOrExonFeature(sourceFeature, session)) {
+	            transcript = sourceFeature.parent;
+	        }
+	        menuItems.push({
+	            label: 'Open transcript details',
+	            onClick: () => {
+	                const apolloTranscriptWidget = session.addWidget('ApolloTranscriptDetails', 'apolloTranscriptDetails', {
+	                    feature: transcript,
+	                    assembly: currentAssemblyId,
+	                    changeManager,
+	                    refName: region.refName,
+	                });
+	                session.showWidget(apolloTranscriptWidget);
+	            },
+	        });
+	    }
+	    return menuItems;
+	}
 	const geneGlyph$1 = {
 	    draw: draw$2,
 	    drawDragPreview: drawDragPreview$2,
@@ -56575,7 +57696,7 @@
 	    const startPx = reversed ? minX - widthPx : minX;
 	    const top = row * heightPx;
 	    const rowCount = getRowCount(feature);
-	    const isSelected = isSelectedFeature(feature, apolloSelectedFeature);
+	    const isSelected = isSelectedFeature$1(feature, apolloSelectedFeature);
 	    const groupingColor = isSelected ? 'rgba(130,0,0,0.45)' : 'rgba(255,0,0,0.25)';
 	    if (rowCount > 1) {
 	        // draw background that encapsulates all child features
@@ -56917,48 +58038,26 @@
 	        setSelectedFeature(feature) {
 	            self.session.apolloSetSelectedFeature(feature);
 	        },
-	        showFeatureDetailsWidget(feature) {
-	            const { session } = self;
-	            const { changeManager } = session.apolloDataStore;
+	        showFeatureDetailsWidget(feature, customWidgetNameAndId) {
 	            const [region] = self.regions;
 	            const { assemblyName, refName } = region;
 	            const assembly = self.getAssemblyId(assemblyName);
 	            if (!assembly) {
 	                return;
 	            }
-	            const { apolloDataStore } = session;
-	            const { featureTypeOntology } = apolloDataStore.ontologyManager;
-	            if (!featureTypeOntology) {
-	                throw new Error('featureTypeOntology is undefined');
-	            }
-	            let containsCDSOrExon = false;
-	            for (const [, child] of feature.children ?? []) {
-	                if (featureTypeOntology.isTypeOf(child.type, 'CDS') ||
-	                    featureTypeOntology.isTypeOf(child.type, 'exon')) {
-	                    containsCDSOrExon = true;
-	                    break;
-	                }
-	            }
-	            if ((featureTypeOntology.isTypeOf(feature.type, 'transcript') ||
-	                featureTypeOntology.isTypeOf(feature.type, 'pseudogenic_transcript')) &&
-	                containsCDSOrExon) {
-	                const apolloTranscriptWidget = session.addWidget('ApolloTranscriptDetails', 'apolloTranscriptDetails', {
-	                    feature,
-	                    assembly,
-	                    refName,
-	                    changeManager,
-	                });
-	                session.showWidget(apolloTranscriptWidget);
-	            }
-	            else {
-	                const apolloFeatureWidget = session.addWidget('ApolloFeatureDetailsWidget', 'apolloFeatureDetailsWidget', {
-	                    feature,
-	                    assembly,
-	                    refName,
-	                    changeManager,
-	                });
-	                session.showWidget(apolloFeatureWidget);
-	            }
+	            const { session } = self;
+	            const { changeManager } = session.apolloDataStore;
+	            const [widgetName, widgetId] = customWidgetNameAndId ?? [
+	                'ApolloFeatureDetailsWidget',
+	                'apolloFeatureDetailsWidget',
+	            ];
+	            const apolloFeatureWidget = session.addWidget(widgetName, widgetId, {
+	                feature,
+	                assembly,
+	                refName,
+	                changeManager,
+	            });
+	            session.showWidget(apolloFeatureWidget);
 	        },
 	        afterAttach() {
 	            require$$1$3.addDisposer(self, mobx.autorun(() => {
@@ -57188,6 +58287,7 @@
 	        detailsHeight: 200,
 	        lastRowTooltipBufferHeight: 40,
 	        isShown: true,
+	        filteredTranscripts: require$$1$3.types.array(require$$1$3.types.string),
 	    })
 	        .volatile(() => ({
 	        canvas: null,
@@ -57513,6 +58613,74 @@
 	        seqTrackOverlayctx.fillRect(startPx, sequenceRowHeight * row, widthPx, sequenceRowHeight);
 	    }
 	}
+	function expandFeatures(feature, newLocation, edge) {
+	    const featureId = feature._id;
+	    const oldLocation = feature[edge];
+	    const changes = [{ featureId, oldLocation, newLocation }];
+	    const { parent } = feature;
+	    if (parent &&
+	        ((edge === 'min' && parent[edge] > newLocation) ||
+	            (edge === 'max' && parent[edge] < newLocation))) {
+	        changes.push(...expandFeatures(parent, newLocation, edge));
+	    }
+	    return changes;
+	}
+	function shrinkFeatures(feature, newLocation, edge, shrinkParent, childIdToSkip) {
+	    const featureId = feature._id;
+	    const oldLocation = feature[edge];
+	    const changes = [{ featureId, oldLocation, newLocation }];
+	    const { parent, children } = feature;
+	    if (children) {
+	        for (const [, child] of children) {
+	            if (child._id === childIdToSkip) {
+	                continue;
+	            }
+	            if ((edge === 'min' && child[edge] < newLocation) ||
+	                (edge === 'max' && child[edge] > newLocation)) {
+	                changes.push(...shrinkFeatures(child, newLocation, edge, shrinkParent));
+	            }
+	        }
+	    }
+	    if (parent && shrinkParent) {
+	        const siblings = [];
+	        if (parent.children) {
+	            for (const [, c] of parent.children) {
+	                if (c._id === featureId) {
+	                    continue;
+	                }
+	                siblings.push(c);
+	            }
+	        }
+	        if (siblings.length === 0) {
+	            changes.push(...shrinkFeatures(parent, newLocation, edge, shrinkParent, featureId));
+	        }
+	        else {
+	            const oldLocation = parent[edge];
+	            const boundedLocation = Math[edge](...siblings.map((s) => s[edge]), newLocation);
+	            if (boundedLocation !== oldLocation) {
+	                changes.push(...shrinkFeatures(parent, boundedLocation, edge, shrinkParent, featureId));
+	            }
+	        }
+	    }
+	    return changes;
+	}
+	function getPropagatedLocationChanges(feature, newLocation, edge, shrinkParent = false) {
+	    const oldLocation = feature[edge];
+	    if (newLocation === oldLocation) {
+	        throw new Error(`New and existing locations are the same: "${newLocation}"`);
+	    }
+	    if (edge === 'min') {
+	        if (newLocation > oldLocation) {
+	            // shrinking feature, may need to shrink children and/or parents
+	            return shrinkFeatures(feature, newLocation, edge, shrinkParent);
+	        }
+	        return expandFeatures(feature, newLocation, edge);
+	    }
+	    if (newLocation < oldLocation) {
+	        return shrinkFeatures(feature, newLocation, edge, shrinkParent);
+	    }
+	    return expandFeatures(feature, newLocation, edge);
+	}
 	function mouseEventsModelIntermediateFactory$1(pluginManager, configSchema) {
 	    const LinearApolloDisplayRendering = renderingModelFactory$1(pluginManager, configSchema);
 	    return LinearApolloDisplayRendering.named('LinearApolloDisplayMouseEvents')
@@ -57578,6 +58746,10 @@
 	            if (self.cursor !== cursor) {
 	                self.cursor = cursor;
 	            }
+	        },
+	        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+	        updateFilteredTranscripts(forms) {
+	            return;
 	        },
 	    }))
 	        .actions(() => ({
@@ -57671,19 +58843,20 @@
 	        .actions((self) => ({
 	        // explicitly pass in a feature in case it's not the same as the one in
 	        // mousePosition (e.g. if features are drawn overlapping).
-	        startDrag(mousePosition, feature, edge) {
+	        startDrag(mousePosition, feature, edge, shrinkParent = false) {
 	            self.apolloDragging = {
 	                start: mousePosition,
 	                current: mousePosition,
 	                feature,
 	                edge,
+	                shrinkParent,
 	            };
 	        },
-	        async endDrag() {
+	        endDrag() {
 	            if (!self.apolloDragging) {
 	                throw new Error('endDrag() called with no current drag in progress');
 	            }
-	            const { current, edge, feature, start } = self.apolloDragging;
+	            const { current, edge, feature, start, shrinkParent } = self.apolloDragging;
 	            // don't do anything if it was only dragged a tiny bit
 	            if (Math.abs(current.x - start.x) <= 4) {
 	                self.setDragging();
@@ -57693,175 +58866,29 @@
 	            const { displayedRegions } = self.lgv;
 	            const region = displayedRegions[start.regionNumber];
 	            const assembly = self.getAssemblyId(region.assemblyName);
-	            const { notify } = self.session;
-	            const { featureTypeOntology } = self.session.apolloDataStore.ontologyManager;
-	            if (!featureTypeOntology) {
-	                throw new Error('featureTypeOntology is undefined');
-	            }
-	            if (!featureTypeOntology.isTypeOf(feature.type, 'exon') &&
-	                !featureTypeOntology.isTypeOf(feature.type, 'CDS')) {
-	                notify(`Cannot drag feature type ${feature.type}`, 'error');
-	                return;
-	            }
-	            const { parent } = feature;
-	            if (!parent) {
-	                throw new Error('parent is undefined');
-	            }
-	            const { transcriptExonParts } = parent;
-	            const exonParts = transcriptExonParts
-	                .filter((part) => part.type === 'exon')
-	                .sort(({ min: a }, { min: b }) => a - b);
-	            if (featureTypeOntology.isTypeOf(feature.type, 'exon')) {
-	                let prevExon, nextExon;
-	                for (let i = 0; i < exonParts.length; i++) {
-	                    if (exonParts[i].min === feature.min &&
-	                        exonParts[i].max === feature.max) {
-	                        prevExon = i === 0 ? undefined : exonParts[i - 1];
-	                        nextExon =
-	                            i === exonParts.length - 1 ? undefined : exonParts[i + 1];
-	                        break;
-	                    }
-	                }
-	                if (!prevExon && !nextExon) {
-	                    return;
-	                }
-	                if (edge === 'min' && prevExon) {
-	                    const newStart = current.bp;
-	                    if (newStart < prevExon.max) {
-	                        notify('Cannot move start of exon because it overlaps with previous exon', 'error');
-	                        return;
-	                    }
-	                }
-	                if (edge === 'max' && nextExon) {
-	                    const newEnd = current.bp;
-	                    if (newEnd > nextExon.min) {
-	                        notify('Cannot move end of exon because it overlaps with next exon', 'error');
-	                        return;
-	                    }
-	                }
-	            }
-	            const locationStartChanges = [];
-	            const locationEndChanges = [];
-	            if (edge === 'max') {
-	                // PROCESS END
-	                const featureId = feature._id;
-	                const oldEnd = feature.max;
-	                const newEnd = current.bp;
-	                if (newEnd > parent.max) {
-	                    const gene = parent.parent;
-	                    if (gene && newEnd > gene.max) {
-	                        locationEndChanges.push(new dist$2.LocationEndChange({
-	                            typeName: 'LocationEndChange',
-	                            changedIds: [gene._id],
-	                            featureId: gene._id,
-	                            oldEnd: gene.max,
-	                            newEnd,
-	                            assembly,
-	                        }));
-	                    }
-	                    locationEndChanges.push(new dist$2.LocationEndChange({
-	                        typeName: 'LocationEndChange',
-	                        changedIds: [parent._id],
-	                        featureId: parent._id,
-	                        oldEnd: parent.max,
-	                        newEnd,
-	                        assembly,
-	                    }));
-	                }
-	                if (featureTypeOntology.isTypeOf(feature.type, 'CDS')) {
-	                    // get overlapping exon feature
-	                    const overlappingExonPart = exonParts.find((part) => {
-	                        return feature.max >= part.min && feature.max <= part.max;
-	                    });
-	                    if (overlappingExonPart && newEnd > overlappingExonPart.max) {
-	                        for (const child of parent.children?.values() ?? []) {
-	                            if (featureTypeOntology.isTypeOf(child.type, 'exon') &&
-	                                child.min === overlappingExonPart.min &&
-	                                child.max === overlappingExonPart.max) {
-	                                locationEndChanges.push(new dist$2.LocationEndChange({
-	                                    typeName: 'LocationEndChange',
-	                                    changedIds: [child._id],
-	                                    featureId: child._id,
-	                                    oldEnd: child.max,
-	                                    newEnd,
-	                                    assembly,
-	                                }));
-	                            }
-	                        }
-	                    }
-	                }
-	                locationEndChanges.push(new dist$2.LocationEndChange({
+	            const changes = getPropagatedLocationChanges(feature, current.bp, edge, shrinkParent);
+	            const change = edge === 'max'
+	                ? new dist$2.LocationEndChange({
 	                    typeName: 'LocationEndChange',
-	                    changedIds: [featureId],
-	                    featureId,
-	                    oldEnd,
-	                    newEnd,
+	                    changedIds: changes.map((c) => c.featureId),
+	                    changes: changes.map((c) => ({
+	                        featureId: c.featureId,
+	                        oldEnd: c.oldLocation,
+	                        newEnd: c.newLocation,
+	                    })),
 	                    assembly,
-	                }));
-	            }
-	            else {
-	                // PROCESS START
-	                const featureId = feature._id;
-	                const oldStart = feature.min;
-	                const newStart = current.bp;
-	                if (newStart < parent.min) {
-	                    const gene = parent.parent;
-	                    if (gene && newStart < gene.min) {
-	                        locationStartChanges.push(new dist$2.LocationStartChange({
-	                            typeName: 'LocationStartChange',
-	                            changedIds: [gene._id],
-	                            featureId: gene._id,
-	                            oldStart: gene.min,
-	                            newStart,
-	                            assembly,
-	                        }));
-	                    }
-	                    locationStartChanges.push(new dist$2.LocationStartChange({
-	                        typeName: 'LocationStartChange',
-	                        changedIds: [parent._id],
-	                        featureId: parent._id,
-	                        oldStart: parent.min,
-	                        newStart,
-	                        assembly,
-	                    }));
-	                }
-	                if (featureTypeOntology.isTypeOf(feature.type, 'CDS')) {
-	                    // get overlapping exon feature
-	                    const overlappingExonPart = exonParts.find((part) => {
-	                        return feature.min >= part.min && feature.min <= part.max;
-	                    });
-	                    if (overlappingExonPart && newStart < overlappingExonPart.min) {
-	                        for (const child of parent.children?.values() ?? []) {
-	                            if (featureTypeOntology.isTypeOf(child.type, 'exon') &&
-	                                child.min === overlappingExonPart.min &&
-	                                child.max === overlappingExonPart.max) {
-	                                locationStartChanges.push(new dist$2.LocationStartChange({
-	                                    typeName: 'LocationStartChange',
-	                                    changedIds: [child._id],
-	                                    featureId: child._id,
-	                                    oldStart: child.min,
-	                                    newStart,
-	                                    assembly,
-	                                }));
-	                            }
-	                        }
-	                    }
-	                }
-	                locationStartChanges.push(new dist$2.LocationStartChange({
+	                })
+	                : new dist$2.LocationStartChange({
 	                    typeName: 'LocationStartChange',
-	                    changedIds: [featureId],
-	                    featureId,
-	                    oldStart,
-	                    newStart,
+	                    changedIds: changes.map((c) => c.featureId),
+	                    changes: changes.map((c) => ({
+	                        featureId: c.featureId,
+	                        oldStart: c.oldLocation,
+	                        newStart: c.newLocation,
+	                    })),
 	                    assembly,
-	                }));
-	            }
-	            for (const change of locationStartChanges) {
-	                await self.changeManager.submit(change);
-	            }
-	            for (const change of locationEndChanges) {
-	                await self.changeManager.submit(change);
-	            }
+	                });
+	            void self.changeManager.submit(change);
 	            self.setDragging();
 	            self.setCursor();
 	        },
@@ -57901,8 +58928,11 @@
 	            if (isMousePositionWithFeatureAndGlyph$1(mousePosition)) {
 	                mousePosition.featureAndGlyphUnderMouse.glyph.onMouseUp(self, mousePosition, event);
 	            }
+	            else {
+	                self.setSelectedFeature();
+	            }
 	            if (self.apolloDragging) {
-	                void self.endDrag();
+	                self.endDrag();
 	            }
 	        },
 	    }))
@@ -57949,6 +58979,38 @@
 	}
 
 	const configSchema = configuration.ConfigurationSchema('LinearApolloSixFrameDisplay', {}, { explicitIdentifier: 'displayId', explicitlyTyped: true });
+
+	const FilterTranscripts = mobxReact.observer(function FilterTranscripts({ sourceFeature, filteredTranscripts, handleClose, onUpdate, }) {
+	    const allTranscripts = [];
+	    if (sourceFeature.children) {
+	        for (const [, child] of sourceFeature.children) {
+	            const childID = child.attributes
+	                .get('gff_id')
+	                ?.toString();
+	            if (childID) {
+	                allTranscripts.push(childID);
+	            }
+	        }
+	    }
+	    const [excludedTranscripts, setExcludedTranscripts] = React.useState(filteredTranscripts);
+	    const handleChange = (value) => {
+	        const newForms = excludedTranscripts.includes(value)
+	            ? excludedTranscripts.filter((form) => form !== value)
+	            : [...excludedTranscripts, value];
+	        onUpdate(newForms);
+	        setExcludedTranscripts(newForms);
+	    };
+	    return (React__default["default"].createElement(Dialog, { open: true, maxWidth: false, "data-testid": "filter-transcripts-dialog", title: "Filter transcripts by ID", handleClose: handleClose },
+	        React__default["default"].createElement(material.DialogContent, null,
+	            React__default["default"].createElement(material.DialogContentText, null, "Select the alternate transcripts you want to display in the apollo track"),
+	            React__default["default"].createElement(material.Grid2, { container: true, spacing: 2 },
+	                React__default["default"].createElement(material.Grid2, { size: 8 },
+	                    React__default["default"].createElement(material.FormGroup, null, allTranscripts.map((item) => (
+	                    // eslint-disable-next-line react/jsx-key
+	                    React__default["default"].createElement(material.FormControlLabel, { control: React__default["default"].createElement(material.Checkbox, { checked: !excludedTranscripts.includes(item), onChange: () => {
+	                                handleChange(item);
+	                            }, inputProps: { 'aria-label': 'controlled' } }), label: item })))))))));
+	});
 
 	let forwardFillLight = null;
 	let backwardFillLight = null;
@@ -58005,15 +59067,35 @@
 	    }
 	    return false;
 	}
+	function drawTextLabels(ctx, labelArray, font = '10px sans-serif') {
+	    for (let i = labelArray.length - 1; i >= 0; --i) {
+	        const label = labelArray[i];
+	        ctx.fillStyle = label.color;
+	        const labelRowX = Math.max(label.x + 1, 0);
+	        const labelRowY = label.y + label.h;
+	        const textWidth = require$$1$2.measureText(label.text, 10);
+	        if (label.isSelected) {
+	            ctx.clearRect(labelRowX - 5, labelRowY, textWidth + 10, label.h);
+	            ctx.font = 'bold '.concat(font);
+	        }
+	        if (label.text) {
+	            ctx.fillText(label.text, labelRowX, labelRowY + 11, textWidth);
+	            ctx.font = font;
+	        }
+	    }
+	}
 	function draw(ctx, topLevelFeature, _row, stateModel, displayedRegionIndex) {
-	    const { apolloRowHeight, lgv, session, theme, highestRow } = stateModel;
+	    const { apolloRowHeight, lgv, session, theme, highestRow, filteredTranscripts, showFeatureLabels, } = stateModel;
 	    const { bpPerPx, displayedRegions, offsetPx } = lgv;
 	    const displayedRegion = displayedRegions[displayedRegionIndex];
 	    const { refName, reversed } = displayedRegion;
 	    const rowHeight = apolloRowHeight;
-	    const exonHeight = Math.round(0.6 * rowHeight);
-	    const cdsHeight = Math.round(0.7 * rowHeight);
-	    const { children, min, strand, _id } = topLevelFeature;
+	    const exonHeight = rowHeight;
+	    const cdsHeight = rowHeight;
+	    const topLevelFeatureHeight = rowHeight;
+	    const featureLabelSpacer = showFeatureLabels ? 2 : 1;
+	    const textColor = theme?.palette.text.primary ?? 'black';
+	    const { attributes, children, min, strand } = topLevelFeature;
 	    if (!children) {
 	        return;
 	    }
@@ -58023,6 +59105,7 @@
 	    if (!featureTypeOntology) {
 	        throw new Error('featureTypeOntology is undefined');
 	    }
+	    const labelArray = [];
 	    // Draw background for gene
 	    const topLevelFeatureMinX = (lgv.bpToPx({
 	        refName,
@@ -58033,16 +59116,29 @@
 	    const topLevelFeatureStartPx = reversed
 	        ? topLevelFeatureMinX - topLevelFeatureWidthPx
 	        : topLevelFeatureMinX;
-	    const topLevelRow = strand == 1 ? 3 : 4;
+	    const topLevelRow = (strand == 1 ? 3 : 4) * featureLabelSpacer;
 	    const topLevelFeatureTop = topLevelRow * rowHeight;
-	    const topLevelFeatureHeight = Math.round(0.7 * rowHeight);
 	    ctx.fillStyle = theme?.palette.text.primary ?? 'black';
 	    ctx.fillRect(topLevelFeatureStartPx, topLevelFeatureTop, topLevelFeatureWidthPx, topLevelFeatureHeight);
-	    ctx.fillStyle =
-	        apolloSelectedFeature && _id === apolloSelectedFeature._id
-	            ? material.alpha('rgb(0,0,0)', 0.7)
-	            : material.alpha(theme?.palette.background.paper ?? '#ffffff', 0.7);
+	    ctx.fillStyle = isSelectedFeature(topLevelFeature, apolloSelectedFeature)
+	        ? material.alpha('rgb(0,0,0)', 0.7)
+	        : material.alpha(theme?.palette.background.paper ?? '#ffffff', 0.7);
 	    ctx.fillRect(topLevelFeatureStartPx + 1, topLevelFeatureTop + 1, topLevelFeatureWidthPx - 2, topLevelFeatureHeight - 2);
+	    const isSelected = isSelectedFeature(topLevelFeature, apolloSelectedFeature);
+	    const label = {
+	        x: topLevelFeatureStartPx,
+	        y: topLevelFeatureTop,
+	        h: topLevelFeatureHeight,
+	        text: attributes.get('gff_id')?.toString(),
+	        color: textColor,
+	        isSelected,
+	    };
+	    if (isSelected) {
+	        labelArray.unshift(label);
+	    }
+	    else {
+	        labelArray.push(label);
+	    }
 	    const forwardFill = theme?.palette.mode === 'dark' ? forwardFillDark : forwardFillLight;
 	    const backwardFill = theme?.palette.mode === 'dark' ? backwardFillDark : backwardFillLight;
 	    const reversal = reversed ? -1 : 1;
@@ -58066,8 +59162,14 @@
 	            featureTypeOntology.isTypeOf(child.type, 'pseudogenic_transcript'))) {
 	            continue;
 	        }
-	        const { children: childrenOfmRNA, cdsLocations, _id } = child;
+	        const { children: childrenOfmRNA, cdsLocations } = child;
 	        if (!childrenOfmRNA) {
+	            continue;
+	        }
+	        const childID = child.attributes
+	            .get('gff_id')
+	            ?.toString();
+	        if (childID && filteredTranscripts.includes(childID)) {
 	            continue;
 	        }
 	        for (const [, exon] of childrenOfmRNA) {
@@ -58082,14 +59184,12 @@
 	            const widthPx = exon.length / bpPerPx;
 	            const startPx = reversed ? minX - widthPx : minX;
 	            const exonTop = topLevelFeatureTop + (topLevelFeatureHeight - exonHeight) / 2;
+	            const isSelected = isSelectedFeature(exon, apolloSelectedFeature);
 	            ctx.fillStyle = theme?.palette.text.primary ?? 'black';
 	            ctx.fillRect(startPx, exonTop, widthPx, exonHeight);
 	            if (widthPx > 2) {
 	                ctx.clearRect(startPx + 1, exonTop + 1, widthPx - 2, exonHeight - 2);
-	                ctx.fillStyle =
-	                    apolloSelectedFeature && exon._id === apolloSelectedFeature._id
-	                        ? 'rgb(0,0,0)'
-	                        : material.alpha('#f5f500', 0.6);
+	                ctx.fillStyle = isSelected ? 'rgb(0,0,0)' : material.alpha('#f5f500', 0.6);
 	                ctx.fillRect(startPx + 1, exonTop + 1, widthPx - 2, exonHeight - 2);
 	                if (topFill && bottomFill) {
 	                    ctx.fillStyle = topFill;
@@ -58097,16 +59197,33 @@
 	                    ctx.fillStyle = bottomFill;
 	                    ctx.fillRect(startPx + 1, exonTop + 1 + (exonHeight - 2) / 2, widthPx - 2, (exonHeight - 2) / 2);
 	                }
+	                const label = {
+	                    x: startPx,
+	                    y: exonTop,
+	                    h: exonHeight,
+	                    text: exon.attributes.get('gff_id')?.toString(),
+	                    color: textColor,
+	                    isSelected,
+	                };
+	                if (isSelected) {
+	                    labelArray.unshift(label);
+	                }
+	                else {
+	                    labelArray.push(label);
+	                }
 	            }
 	        }
+	        const isSelected = isSelectedFeature(child, apolloSelectedFeature?.parent);
+	        let cdsStartPx = 0;
+	        let cdsTop = 0;
 	        for (const cdsRow of cdsLocations) {
 	            let prevCDSTop = 0;
 	            let prevCDSEndPx = 0;
 	            let counter = 1;
 	            for (const cds of cdsRow.sort((a, b) => a.max - b.max)) {
 	                if ((apolloSelectedFeature &&
-	                    featureTypeOntology.isTypeOf(apolloSelectedFeature.type, 'CDS') &&
-	                    _id === apolloSelectedFeature.parent?._id) ||
+	                    isSelected &&
+	                    featureTypeOntology.isTypeOf(apolloSelectedFeature.type, 'CDS')) ||
 	                    !deepSetHas(renderedCDS, cds)) {
 	                    const cdsWidthPx = (cds.max - cds.min) / bpPerPx;
 	                    const minX = (lgv.bpToPx({
@@ -58114,11 +59231,11 @@
 	                        coord: cds.min,
 	                        regionNumber: displayedRegionIndex,
 	                    })?.offsetPx ?? 0) - offsetPx;
-	                    const cdsStartPx = reversed ? minX - cdsWidthPx : minX;
+	                    cdsStartPx = reversed ? minX - cdsWidthPx : minX;
 	                    ctx.fillStyle = theme?.palette.text.primary ?? 'black';
 	                    const frame = require$$1$2.getFrame(cds.min, cds.max, child.strand ?? 1, cds.phase);
-	                    const frameAdjust = frame < 0 ? -1 * frame + 5 : frame;
-	                    const cdsTop = (frameAdjust - 1) * rowHeight + (rowHeight - cdsHeight) / 2;
+	                    const frameAdjust = (frame < 0 ? -1 * frame + 5 : frame) * featureLabelSpacer;
+	                    cdsTop = (frameAdjust - featureLabelSpacer) * rowHeight;
 	                    ctx.fillRect(cdsStartPx, cdsTop, cdsWidthPx, cdsHeight);
 	                    if (cdsWidthPx > 2) {
 	                        ctx.clearRect(cdsStartPx + 1, cdsTop + 1, cdsWidthPx - 2, cdsHeight - 2);
@@ -58127,8 +59244,8 @@
 	                        ctx.fillStyle = cdsColorCode;
 	                        ctx.fillStyle =
 	                            apolloSelectedFeature &&
-	                                featureTypeOntology.isTypeOf(apolloSelectedFeature.type, 'CDS') &&
-	                                _id === apolloSelectedFeature.parent?._id
+	                                isSelected &&
+	                                featureTypeOntology.isTypeOf(apolloSelectedFeature.type, 'CDS')
 	                                ? 'rgb(0,0,0)'
 	                                : cdsColorCode;
 	                        ctx.fillRect(cdsStartPx + 1, cdsTop + 1, cdsWidthPx - 2, cdsHeight - 2);
@@ -58137,7 +59254,9 @@
 	                            // Mid-point for intron line "hat"
 	                            const midPoint = [
 	                                (cdsStartPx - prevCDSEndPx) / 2 + prevCDSEndPx,
-	                                Math.max(frame < 0 ? rowHeight * highestRow + 1 : 1, // Avoid render ceiling
+	                                Math.max(frame < 0
+	                                    ? rowHeight * featureLabelSpacer * highestRow + 1
+	                                    : 1, // Avoid render ceiling
 	                                Math.min(prevCDSTop, cdsTop) - rowHeight / 2),
 	                            ];
 	                            ctx.strokeStyle = 'rgb(0, 128, 128)';
@@ -58163,6 +59282,23 @@
 	                }
 	            }
 	        }
+	        const label = {
+	            x: cdsStartPx,
+	            y: cdsTop,
+	            h: cdsHeight,
+	            text: child.attributes.get('gff_id')?.toString(),
+	            color: textColor,
+	            isSelected,
+	        };
+	        if (isSelected) {
+	            labelArray.unshift(label);
+	        }
+	        else {
+	            labelArray.push(label);
+	        }
+	    }
+	    if (showFeatureLabels) {
+	        drawTextLabels(ctx, labelArray);
 	    }
 	}
 	function drawDragPreview(stateModel, overlayCtx) {
@@ -58190,7 +59326,7 @@
 	    overlayCtx.fillRect(rectX, rectY, rectWidth, rectHeight);
 	}
 	function drawHover(stateModel, ctx) {
-	    const { apolloHover, apolloRowHeight, lgv, highestRow, session } = stateModel;
+	    const { apolloHover, apolloRowHeight, filteredTranscripts, lgv, highestRow, session, showFeatureLabels, } = stateModel;
 	    if (!apolloHover) {
 	        return;
 	    }
@@ -58203,6 +59339,12 @@
 	    if (!featureTypeOntology.isTypeOf(feature.type, 'transcript')) {
 	        return;
 	    }
+	    const featureID = feature.attributes
+	        .get('gff_id')
+	        ?.toString();
+	    if (featureID && filteredTranscripts.includes(featureID)) {
+	        return;
+	    }
 	    const position = stateModel.getFeatureLayoutPosition(feature);
 	    if (!position) {
 	        return;
@@ -58212,7 +59354,8 @@
 	    const displayedRegion = displayedRegions[layoutIndex];
 	    const { refName, reversed } = displayedRegion;
 	    const rowHeight = apolloRowHeight;
-	    const cdsHeight = Math.round(0.7 * rowHeight);
+	    const cdsHeight = rowHeight;
+	    const featureLabelSpacer = showFeatureLabels ? 2 : 1;
 	    const { cdsLocations, strand } = feature;
 	    for (const cdsRow of cdsLocations) {
 	        let prevCDSTop = 0;
@@ -58228,15 +59371,15 @@
 	                })?.offsetPx ?? 0) - offsetPx;
 	                const cdsStartPx = reversed ? minX - cdsWidthPx : minX;
 	                const frame = require$$1$2.getFrame(cds.min, cds.max, strand ?? 1, cds.phase);
-	                const frameAdjust = frame < 0 ? -1 * frame + 5 : frame;
-	                const cdsTop = (frameAdjust - 1) * rowHeight + (rowHeight - cdsHeight) / 2;
+	                const frameAdjust = (frame < 0 ? -1 * frame + 5 : frame) * featureLabelSpacer;
+	                const cdsTop = (frameAdjust - featureLabelSpacer) * rowHeight;
 	                ctx.fillStyle = 'rgba(255,0,0,0.6)';
 	                ctx.fillRect(cdsStartPx, cdsTop, cdsWidthPx, cdsHeight);
 	                if (counter > 1) {
 	                    // Mid-point for intron line "hat"
 	                    const midPoint = [
 	                        (cdsStartPx - prevCDSEndPx) / 2 + prevCDSEndPx,
-	                        Math.max(frame < 0 ? rowHeight * highestRow + 1 : 1, // Avoid render ceiling
+	                        Math.max(frame < 0 ? rowHeight * featureLabelSpacer * highestRow + 1 : 1, // Avoid render ceiling
 	                        Math.min(prevCDSTop, cdsTop) - rowHeight / 2),
 	                    ];
 	                    ctx.strokeStyle = 'rgb(0, 0, 0)';
@@ -58288,28 +59431,39 @@
 	    const { session } = stateModel;
 	    const { apolloDataStore } = session;
 	    const { featureTypeOntology } = apolloDataStore.ontologyManager;
-	    if (featureAndGlyphUnderMouse?.cds) {
-	        const { cds, feature } = featureAndGlyphUnderMouse;
-	        if (!featureTypeOntology) {
-	            throw new Error('featureTypeOntology is undefined');
-	        }
-	        if (!feature.children) {
-	            return;
-	        }
-	        for (const child of feature.children.values()) {
-	            const childIsCDS = featureTypeOntology.isTypeOf(child.type, 'CDS');
-	            if (childIsCDS && cds.max <= child.max && cds.min >= child.min) {
-	                stateModel.setSelectedFeature(child);
-	                break;
-	            }
+	    if (!featureAndGlyphUnderMouse) {
+	        return;
+	    }
+	    const { feature } = featureAndGlyphUnderMouse;
+	    stateModel.setSelectedFeature(feature);
+	    if (!featureTypeOntology) {
+	        throw new Error('featureTypeOntology is undefined');
+	    }
+	    let containsCDSOrExon = false;
+	    for (const [, child] of feature.children ?? []) {
+	        if (featureTypeOntology.isTypeOf(child.type, 'CDS') ||
+	            featureTypeOntology.isTypeOf(child.type, 'exon')) {
+	            containsCDSOrExon = true;
+	            break;
 	        }
 	    }
-	    else if (featureAndGlyphUnderMouse?.feature) {
-	        stateModel.setSelectedFeature(featureAndGlyphUnderMouse.feature);
+	    if ((featureTypeOntology.isTypeOf(feature.type, 'transcript') ||
+	        featureTypeOntology.isTypeOf(feature.type, 'pseudogenic_transcript')) &&
+	        containsCDSOrExon) {
+	        stateModel.showFeatureDetailsWidget(feature, [
+	            'ApolloTranscriptDetails',
+	            'apolloTranscriptDetails',
+	        ]);
+	    }
+	    else {
+	        stateModel.showFeatureDetailsWidget(feature);
 	    }
 	}
+	function isSelectedFeature(feature, selectedFeature) {
+	    return Boolean(selectedFeature && feature._id === selectedFeature._id);
+	}
 	function getDraggableFeatureInfo(mousePosition, cds, feature, stateModel) {
-	    const { session } = stateModel;
+	    const { filteredTranscripts, session } = stateModel;
 	    const { apolloDataStore } = session;
 	    const { featureTypeOntology } = apolloDataStore.ontologyManager;
 	    if (!featureTypeOntology) {
@@ -58317,6 +59471,12 @@
 	    }
 	    const isTranscript = featureTypeOntology.isTypeOf(feature.type, 'transcript');
 	    if (cds === null) {
+	        return;
+	    }
+	    const featureID = feature.attributes
+	        .get('gff_id')
+	        ?.toString();
+	    if (featureID && filteredTranscripts.includes(featureID)) {
 	        return;
 	    }
 	    const { bp, refName, regionNumber, x } = mousePosition;
@@ -58379,7 +59539,7 @@
 	    return;
 	}
 	function drawTooltip(display, context) {
-	    const { apolloHover, apolloRowHeight, lgv, theme } = display;
+	    const { apolloHover, apolloRowHeight, filteredTranscripts, lgv, theme } = display;
 	    if (!apolloHover) {
 	        return;
 	    }
@@ -58389,6 +59549,12 @@
 	    }
 	    const position = display.getFeatureLayoutPosition(feature);
 	    if (!position) {
+	        return;
+	    }
+	    const featureID = feature.attributes
+	        .get('gff_id')
+	        ?.toString();
+	    if (featureID && filteredTranscripts.includes(featureID)) {
 	        return;
 	    }
 	    const { layoutIndex } = position;
@@ -58442,7 +59608,7 @@
 	    context.fillText(location, startPx + 2, textTop);
 	}
 	function getContextMenuItems(display) {
-	    const { apolloHover, apolloInternetAccount: internetAccount, changeManager, regions, selectedFeature, session, } = display;
+	    const { apolloHover, apolloInternetAccount: internetAccount, changeManager, filteredTranscripts, regions, selectedFeature, session, } = display;
 	    const menuItems = [];
 	    if (!apolloHover) {
 	        return menuItems;
@@ -58510,33 +59676,28 @@
 	                },
 	            ]);
 	        },
-	    }, {
-	        label: 'Edit feature details',
-	        onClick: () => {
-	            const apolloFeatureWidget = session.addWidget('ApolloFeatureDetailsWidget', 'apolloFeatureDetailsWidget', {
-	                feature: sourceFeature,
-	                assembly: currentAssemblyId,
-	                refName: region.refName,
-	            });
-	            session.showWidget(apolloFeatureWidget);
-	        },
 	    });
 	    const { featureTypeOntology } = session.apolloDataStore.ontologyManager;
 	    if (!featureTypeOntology) {
 	        throw new Error('featureTypeOntology is undefined');
 	    }
-	    if (featureTypeOntology.isTypeOf(sourceFeature.type, 'transcript') &&
-	        require$$1$2.isSessionModelWithWidgets(session)) {
+	    if (featureTypeOntology.isTypeOf(sourceFeature.type, 'gene')) {
 	        menuItems.push({
-	            label: 'Edit transcript details',
+	            label: 'Filter alternate transcripts',
 	            onClick: () => {
-	                const apolloTranscriptWidget = session.addWidget('ApolloTranscriptDetails', 'apolloTranscriptDetails', {
-	                    feature: sourceFeature,
-	                    assembly: currentAssemblyId,
-	                    changeManager,
-	                    refName: region.refName,
-	                });
-	                session.showWidget(apolloTranscriptWidget);
+	                session.queueDialog((doneCallback) => [
+	                    FilterTranscripts,
+	                    {
+	                        handleClose: () => {
+	                            doneCallback();
+	                        },
+	                        sourceFeature,
+	                        filteredTranscripts: require$$1$3.getSnapshot(filteredTranscripts),
+	                        onUpdate: (forms) => {
+	                            display.updateFilteredTranscripts(forms);
+	                        },
+	                    },
+	                ]);
 	            },
 	        });
 	    }
@@ -58565,6 +59726,7 @@
 	        configuration: configuration.ConfigurationReference(configSchema),
 	        graphical: true,
 	        table: false,
+	        showFeatureLabels: true,
 	        heightPreConfig: require$$1$3.types.maybe(require$$1$3.types.refinement('displayHeight', require$$1$3.types.number, (n) => n >= minDisplayHeight)),
 	        filteredFeatureTypes: require$$1$3.types.array(require$$1$3.types.string),
 	    })
@@ -58681,6 +59843,9 @@
 	            self.graphical = true;
 	            self.table = true;
 	        },
+	        toggleShowFeatureLabels() {
+	            self.showFeatureLabels = !self.showFeatureLabels;
+	        },
 	        updateFilteredFeatureTypes(types) {
 	            self.filteredFeatureTypes = require$$1$3.cast(types);
 	        },
@@ -58689,7 +59854,7 @@
 	        const { filteredFeatureTypes, trackMenuItems: superTrackMenuItems } = self;
 	        return {
 	            trackMenuItems() {
-	                const { graphical, table } = self;
+	                const { graphical, table, showFeatureLabels } = self;
 	                return [
 	                    ...superTrackMenuItems(),
 	                    {
@@ -58720,6 +59885,14 @@
 	                                    self.showGraphicalAndTable();
 	                                },
 	                            },
+	                            {
+	                                label: 'Feature Labels',
+	                                type: 'checkbox',
+	                                checked: showFeatureLabels,
+	                                onClick: () => {
+	                                    self.toggleShowFeatureLabels();
+	                                },
+	                            },
 	                        ],
 	                    },
 	                    {
@@ -58748,6 +59921,27 @@
 	        .actions((self) => ({
 	        setSelectedFeature(feature) {
 	            self.session.apolloSetSelectedFeature(feature);
+	        },
+	        showFeatureDetailsWidget(feature, customWidgetNameAndId) {
+	            const [region] = self.regions;
+	            const { assemblyName, refName } = region;
+	            const assembly = self.getAssemblyId(assemblyName);
+	            if (!assembly) {
+	                return;
+	            }
+	            const { session } = self;
+	            const { changeManager } = session.apolloDataStore;
+	            const [widgetName, widgetId] = customWidgetNameAndId ?? [
+	                'ApolloFeatureDetailsWidget',
+	                'apolloFeatureDetailsWidget',
+	            ];
+	            const apolloFeatureWidget = session.addWidget(widgetName, widgetId, {
+	                feature,
+	                assembly,
+	                refName,
+	                changeManager,
+	            });
+	            session.showWidget(apolloFeatureWidget);
 	        },
 	        afterAttach() {
 	            require$$1$3.addDisposer(self, mobx.autorun(() => {
@@ -58809,6 +60003,9 @@
 	        getGlyph(_feature) {
 	            return geneGlyph;
 	        },
+	        featureLabelSpacer(elem) {
+	            return self.showFeatureLabels ? elem * 2 - 1 : elem;
+	        },
 	    }))
 	        .actions((self) => ({
 	        addSeenFeature(feature) {
@@ -58816,6 +60013,11 @@
 	        },
 	        deleteSeenFeature(featureId) {
 	            self.seenFeatures.delete(featureId);
+	        },
+	    }))
+	        .views((self) => ({
+	        get geneTrackRowNums() {
+	            return [4, 5].map((elem) => self.featureLabelSpacer(elem));
 	        },
 	    }))
 	        .views((self) => ({
@@ -58843,7 +60045,9 @@
 	                        throw new Error('featureTypeOntology is undefined');
 	                    }
 	                    if (feature.looksLikeGene) {
-	                        const rowNum = feature.strand == 1 ? 4 : 5;
+	                        const rowNum = feature.strand == 1
+	                            ? self.geneTrackRowNums[0]
+	                            : self.geneTrackRowNums[1];
 	                        if (!featureLayout.get(rowNum)) {
 	                            featureLayout.set(rowNum, []);
 	                        }
@@ -58861,7 +60065,9 @@
 	                                        if (!featureTypeOntology.isTypeOf(exon.type, 'exon')) {
 	                                            continue;
 	                                        }
-	                                        const rowNum = exon.strand == 1 ? 4 : 5;
+	                                        const rowNum = exon.strand == 1
+	                                            ? self.geneTrackRowNums[0]
+	                                            : self.geneTrackRowNums[1];
 	                                        const layoutRow = featureLayout.get(rowNum);
 	                                        layoutRow?.push({ rowNum, feature: exon, cds: null });
 	                                    }
@@ -58869,7 +60075,7 @@
 	                                for (const cdsRow of cdsLocations) {
 	                                    for (const cds of cdsRow) {
 	                                        let rowNum = require$$1$2.getFrame(cds.min, cds.max, strand ?? 1, cds.phase);
-	                                        rowNum = rowNum < 0 ? -1 * rowNum + 5 : rowNum;
+	                                        rowNum = self.featureLabelSpacer(rowNum < 0 ? -1 * rowNum + 5 : rowNum);
 	                                        if (!featureLayout.get(rowNum)) {
 	                                            featureLayout.set(rowNum, []);
 	                                        }
@@ -58945,6 +60151,7 @@
 	        detailsHeight: 200,
 	        lastRowTooltipBufferHeight: 80,
 	        isShown: true,
+	        filteredTranscripts: require$$1$3.types.array(require$$1$3.types.string),
 	    })
 	        .volatile(() => ({
 	        canvas: null,
@@ -58954,7 +60161,8 @@
 	    }))
 	        .views((self) => ({
 	        get featuresHeight() {
-	            return ((self.highestRow + 1) * self.apolloRowHeight +
+	            const featureLabelSpacer = self.showFeatureLabels ? 2 : 1;
+	            return (featureLabelSpacer * ((self.highestRow + 1) * self.apolloRowHeight) +
 	                self.lastRowTooltipBufferHeight);
 	        },
 	    }))
@@ -59092,7 +60300,7 @@
 	                return mousePosition;
 	            }
 	            let foundFeature;
-	            if ([4, 5].includes(row)) {
+	            if (self.geneTrackRowNums.includes(row)) {
 	                foundFeature = layoutRow.find((f) => f.feature.type == 'exon' &&
 	                    bp >= f.feature.min &&
 	                    bp <= f.feature.max);
@@ -59101,7 +60309,14 @@
 	                }
 	            }
 	            else {
-	                foundFeature = layoutRow.find((f) => f.cds != null && bp >= f.cds.min && bp <= f.cds.max);
+	                foundFeature = layoutRow.find((f) => {
+	                    const featureID = f.feature.attributes.get('gff_id')?.toString();
+	                    return (f.cds != null &&
+	                        bp >= f.cds.min &&
+	                        bp <= f.cds.max &&
+	                        (featureID === undefined ||
+	                            !self.filteredTranscripts.includes(featureID)));
+	                });
 	            }
 	            if (!foundFeature) {
 	                return mousePosition;
@@ -59135,6 +60350,9 @@
 	            if (self.cursor !== cursor) {
 	                self.cursor = cursor;
 	            }
+	        },
+	        updateFilteredTranscripts(forms) {
+	            self.filteredTranscripts = require$$1$3.cast(forms);
 	        },
 	    }))
 	        .actions(() => ({
@@ -59305,180 +60523,6 @@
 	    },
 	});
 
-	function parseCigar(cigar) {
-	    return (cigar.toUpperCase().match(/\d+\D/g) ?? []).map((op) => {
-	        return [(/\D/.exec(op) ?? [])[0], Number.parseInt(op, 10)];
-	    });
-	}
-	function annotationFromPileup(pluggableElement) {
-	    if (pluggableElement.name !== 'LinearPileupDisplay') {
-	        return pluggableElement;
-	    }
-	    const { stateModel } = pluggableElement;
-	    const newStateModel = stateModel
-	        .views((self) => ({
-	        getFirstRegion() {
-	            const lgv = require$$1$2.getContainingView(self);
-	            return lgv.dynamicBlocks.contentBlocks[0];
-	        },
-	        getAssembly() {
-	            const firstRegion = self.getFirstRegion();
-	            const session = require$$1$2.getSession(self);
-	            const { assemblyManager } = session;
-	            const { assemblyName } = firstRegion;
-	            const assembly = assemblyManager.get(assemblyName);
-	            if (!assembly) {
-	                throw new Error(`Could not find assembly named ${assemblyName}`);
-	            }
-	            return assembly;
-	        },
-	        getRefSeqId(assembly) {
-	            const firstRegion = self.getFirstRegion();
-	            const { refName } = firstRegion;
-	            const { refNameAliases } = assembly;
-	            if (!refNameAliases) {
-	                throw new Error(`Could not find aliases for ${assembly.name}`);
-	            }
-	            const newRefNames = [...Object.entries(refNameAliases)]
-	                .filter(([id, refName]) => id !== refName)
-	                .map(([id, refName]) => ({
-	                _id: id,
-	                name: refName,
-	            }));
-	            const refSeqId = newRefNames.find((item) => item.name === refName)?._id;
-	            if (!refSeqId) {
-	                throw new Error(`Could not find refSeqId named ${refName}`);
-	            }
-	            return refSeqId;
-	        },
-	        createFeature() {
-	            const feature = self.contextMenuFeature;
-	            const assembly = self.getAssembly();
-	            const refSeqId = self.getRefSeqId(assembly);
-	            const cigarData = feature.get('CIGAR');
-	            const ops = parseCigar(cigarData);
-	            let currOffset = 0;
-	            const start = feature.get('start');
-	            let openStart;
-	            const exons = [];
-	            for (const [op, len] of ops) {
-	                // open or continue open
-	                if (op === 'M' || op === '=') {
-	                    // if it was closed, then open with start, strand, type
-	                    if (openStart === undefined) {
-	                        // add subfeature
-	                        openStart = currOffset + start;
-	                    }
-	                }
-	                else if (op === 'N' && openStart !== undefined) {
-	                    // if it was open, then close and add the subfeature
-	                    exons.push({
-	                        start: openStart,
-	                        end: currOffset + openStart,
-	                    });
-	                    openStart = undefined;
-	                }
-	                if (op !== 'I') {
-	                    // we ignore insertions when calculating potential exon length
-	                    currOffset += len;
-	                }
-	            }
-	            // if we are still open, then close with the final length and add subfeature
-	            if (openStart !== undefined) {
-	                exons.push({
-	                    start: openStart,
-	                    end: currOffset + start,
-	                });
-	            }
-	            const newFeature = {
-	                _id: objectid().toHexString(),
-	                refSeq: refSeqId,
-	                min: feature.get('start'),
-	                max: feature.get('end'),
-	                type: 'mRNA',
-	                strand: feature.get('strand'),
-	            };
-	            if (exons.length === 0) {
-	                return newFeature;
-	            }
-	            const children = {};
-	            newFeature.children = children;
-	            const [firstExon] = exons;
-	            const cdsFeature = {
-	                _id: objectid().toHexString(),
-	                refSeq: refSeqId,
-	                min: firstExon.start,
-	                max: firstExon.end,
-	                type: 'CDS',
-	                strand: feature.get('strand'),
-	            };
-	            newFeature.children[cdsFeature._id] = cdsFeature;
-	            if (exons.length === 1) {
-	                const exon = {
-	                    _id: objectid().toHexString(),
-	                    refSeq: refSeqId,
-	                    min: firstExon.start,
-	                    max: firstExon.end,
-	                    type: 'exon',
-	                    strand: feature.get('strand'),
-	                };
-	                newFeature.children[exon._id] = exon;
-	                return newFeature;
-	            }
-	            for (const exon of exons) {
-	                cdsFeature.min = Math.min(cdsFeature.min, exon.start);
-	                cdsFeature.max = Math.max(cdsFeature.max, exon.end);
-	                const { end, start } = exon;
-	                const newExon = {
-	                    _id: objectid().toHexString(),
-	                    refSeq: refSeqId,
-	                    min: start,
-	                    max: end,
-	                    type: 'exon',
-	                    strand: feature.get('strand'),
-	                };
-	                newFeature.children[newExon._id] = newExon;
-	            }
-	            return newFeature;
-	        },
-	        async onPileupFeatureContext() {
-	            const newFeature = self.createFeature();
-	            const assembly = self.getAssembly();
-	            const assemblyId = assembly.name;
-	            const change = new dist$2.AddFeatureChange({
-	                changedIds: [newFeature._id],
-	                typeName: 'AddFeatureChange',
-	                assembly: assemblyId,
-	                addedFeature: newFeature,
-	            });
-	            const session = require$$1$2.getSession(self);
-	            await session.apolloDataStore.changeManager.submit(change);
-	            session.notify('Annotation added successfully', 'success');
-	        },
-	    }))
-	        .views((self) => {
-	        const superContextMenuItems = self.contextMenuItems;
-	        return {
-	            contextMenuItems() {
-	                const feature = self.contextMenuFeature;
-	                if (!feature) {
-	                    return superContextMenuItems();
-	                }
-	                return [
-	                    ...superContextMenuItems(),
-	                    {
-	                        label: 'Create Apollo annotation',
-	                        icon: default_1$j,
-	                        onClick: self.onPileupFeatureContext,
-	                    },
-	                ];
-	            },
-	        };
-	    });
-	    pluggableElement.stateModel = newStateModel;
-	    return pluggableElement;
-	}
-
 	/* eslint-disable react-hooks/exhaustive-deps */
 	const isGeneOrTranscript = (annotationFeature, apolloSessionModel) => {
 	    const { featureTypeOntology } = apolloSessionModel.apolloDataStore.ontologyManager;
@@ -59561,31 +60605,24 @@
 	    const apolloSessionModel = session;
 	    const { featureTypeOntology } = apolloSessionModel.apolloDataStore.ontologyManager;
 	    const childIds = React.useMemo(() => Object.keys(annotationFeature.children ?? {}), [annotationFeature]);
-	    const features = React.useMemo(() => {
-	        for (const [, asm] of apolloSessionModel.apolloDataStore.assemblies) {
-	            if (asm._id === assembly.name) {
-	                for (const [, refSeq] of asm.refSeqs) {
-	                    if (refSeq._id === refSeqId) {
-	                        return refSeq.features;
-	                    }
-	                }
-	            }
-	        }
-	        return [];
-	    }, []);
 	    const [parentFeatureChecked, setParentFeatureChecked] = React.useState(true);
 	    const [checkedChildrens, setCheckedChildrens] = React.useState(childIds);
 	    const [errorMessage, setErrorMessage] = React.useState('');
 	    const [destinationFeatures, setDestinationFeatures] = React.useState([]);
 	    const [createNewGene, setCreateNewGene] = React.useState(false);
 	    const [selectedDestinationFeature, setSelectedDestinationFeature] = React.useState();
+	    const apolloAssembly = apolloSessionModel.apolloDataStore.assemblies.get(assembly.name);
+	    const refSeq = apolloAssembly?.refSeqs.get(refSeqId);
+	    const features = refSeq?.getFeatures(region.start, region.end);
 	    const getDestinationFeatures = () => {
 	        const filteredFeatures = [];
-	        for (const [, f] of features) {
+	        for (const f of features ?? []) {
 	            if (f.min > region.end || f.max < region.start) {
 	                continue;
 	            }
-	            if (featureTypeOntology?.isTypeOf(f.type, 'gene')) {
+	            // Destination feature should be of type gene amd should be on the same strand as the source feature
+	            if (featureTypeOntology?.isTypeOf(f.type, 'gene') &&
+	                f.strand === annotationFeature.strand) {
 	                const featureSnapshot = require$$1$3.getSnapshot(f);
 	                filteredFeatures.push(featureSnapshot);
 	            }
@@ -59827,6 +60864,189 @@
 	            React__default["default"].createElement(material.Button, { variant: "outlined", type: "submit", onClick: handleClose }, "Cancel")),
 	        errorMessage ? (React__default["default"].createElement(material.DialogContent, null,
 	            React__default["default"].createElement(material.DialogContentText, { color: "error" }, errorMessage))) : null));
+	}
+
+	function parseCigar(cigar) {
+	    const regex = /(\d+)([MIDNSHPX=])/g;
+	    const result = [];
+	    let match;
+	    while ((match = regex.exec(cigar)) !== null) {
+	        result.push([match[2], Number.parseInt(match[1], 10)]);
+	    }
+	    return result;
+	}
+	function annotationFromPileup(pluggableElement) {
+	    if (pluggableElement.name !== 'LinearPileupDisplay') {
+	        return pluggableElement;
+	    }
+	    const { stateModel } = pluggableElement;
+	    const newStateModel = stateModel
+	        .views((self) => ({
+	        getFirstRegion() {
+	            const lgv = require$$1$2.getContainingView(self);
+	            return lgv.dynamicBlocks.contentBlocks[0];
+	        },
+	        getAssembly() {
+	            const firstRegion = self.getFirstRegion();
+	            const session = require$$1$2.getSession(self);
+	            const { assemblyManager } = session;
+	            const { assemblyName } = firstRegion;
+	            const assembly = assemblyManager.get(assemblyName);
+	            if (!assembly) {
+	                throw new Error(`Could not find assembly named ${assemblyName}`);
+	            }
+	            return assembly;
+	        },
+	        getRefSeqId(assembly) {
+	            const firstRegion = self.getFirstRegion();
+	            const { refName } = firstRegion;
+	            const { refNameAliases } = assembly;
+	            if (!refNameAliases) {
+	                throw new Error(`Could not find aliases for ${assembly.name}`);
+	            }
+	            const newRefNames = [...Object.entries(refNameAliases)]
+	                .filter(([id, refName]) => id !== refName)
+	                .map(([id, refName]) => ({
+	                _id: id,
+	                name: refName,
+	            }));
+	            const refSeqId = newRefNames.find((item) => item.name === refName)?._id;
+	            if (!refSeqId) {
+	                throw new Error(`Could not find refSeqId named ${refName}`);
+	            }
+	            return refSeqId;
+	        },
+	        getAnnotationFeature() {
+	            const feature = self.contextMenuFeature;
+	            const assembly = self.getAssembly();
+	            const refSeqId = self.getRefSeqId(assembly);
+	            const start = feature.get('start');
+	            const end = feature.get('end');
+	            const strand = feature.get('strand');
+	            const name = feature.get('name');
+	            const cigarData = feature.get('CIGAR');
+	            const ops = parseCigar(cigarData);
+	            let position = start;
+	            let currentExonStart;
+	            const exons = [];
+	            // Example: [[96,S], [4,M], [4216,N], [357,M], [1,I], [628,M], [94,S]]
+	            // Results in 2 exons
+	            // M, = and X are matches -> exon
+	            // N is a gap in the reference sequence -> intron
+	            // I, S, H and P -> not counted in reference position
+	            for (const [op, len] of ops) {
+	                switch (op) {
+	                    case 'M':
+	                    case '=':
+	                    case 'X': {
+	                        if (currentExonStart === undefined) {
+	                            currentExonStart = position;
+	                        }
+	                        position += len;
+	                        break;
+	                    }
+	                    case 'N': {
+	                        if (currentExonStart !== undefined) {
+	                            exons.push({
+	                                start: currentExonStart,
+	                                end: position,
+	                            });
+	                            currentExonStart = undefined;
+	                        }
+	                        position += len;
+	                        break;
+	                    }
+	                    case 'D': {
+	                        position += len;
+	                        break;
+	                    }
+	                    case 'I':
+	                    case 'S':
+	                    case 'H':
+	                    case 'P': {
+	                        // These operations do not affect the position in the reference sequence
+	                        break;
+	                    }
+	                    default: {
+	                        throw new Error(`Unknown CIGAR operation: ${op}`);
+	                    }
+	                }
+	            }
+	            // If still in exon at end
+	            if (currentExonStart !== undefined) {
+	                exons.push({
+	                    start: currentExonStart,
+	                    end: position,
+	                });
+	            }
+	            const newFeature = {
+	                _id: objectid().toHexString(),
+	                refSeq: refSeqId,
+	                min: start,
+	                max: end,
+	                type: 'mRNA',
+	                strand,
+	                attributes: {
+	                    name: [name],
+	                },
+	            };
+	            if (exons.length === 0) {
+	                return newFeature;
+	            }
+	            const children = {};
+	            newFeature.children = children;
+	            for (const exon of exons) {
+	                const newExon = {
+	                    _id: objectid().toHexString(),
+	                    refSeq: refSeqId,
+	                    min: exon.start,
+	                    max: exon.end,
+	                    type: 'exon',
+	                    strand,
+	                };
+	                newFeature.children[newExon._id] = newExon;
+	            }
+	            return newFeature;
+	        },
+	    }))
+	        .views((self) => {
+	        const superContextMenuItems = self.contextMenuItems;
+	        return {
+	            contextMenuItems() {
+	                const session = require$$1$2.getSession(self);
+	                const assembly = self.getAssembly();
+	                const region = self.getFirstRegion();
+	                const feature = self.contextMenuFeature;
+	                if (!feature) {
+	                    return superContextMenuItems();
+	                }
+	                return [
+	                    ...superContextMenuItems(),
+	                    {
+	                        label: 'Create Apollo annotation',
+	                        icon: default_1$j,
+	                        onClick: () => {
+	                            session.queueDialog((doneCallback) => [
+	                                CreateApolloAnnotation,
+	                                {
+	                                    session,
+	                                    handleClose: () => {
+	                                        doneCallback();
+	                                    },
+	                                    annotationFeature: self.getAnnotationFeature(assembly),
+	                                    assembly,
+	                                    refSeqId: self.getRefSeqId(assembly),
+	                                    region,
+	                                },
+	                            ]);
+	                        },
+	                    },
+	                ];
+	            },
+	        };
+	    });
+	    pluggableElement.stateModel = newStateModel;
+	    return pluggableElement;
 	}
 
 	function simpleFeatureToGFF3Feature(feature, refSeqId) {
@@ -60134,23 +61354,17 @@
 	                        : undefined, style: { zIndex: theme.zIndex.tooltip }, menuItems: contextMenuItems }))))));
 	});
 
-	const TrackLines = mobxReact.observer(function TrackLines({ model, strand, }) {
-	    const { apolloRowHeight, highestRow, lastRowTooltipBufferHeight } = model;
-	    return strand == 1 ? (React__default["default"].createElement("div", { style: {
+	const TrackLines = mobxReact.observer(function TrackLines({ model, hrStyle = { margin: 0, top: 0, color: 'black' }, idx = 0, }) {
+	    const { apolloRowHeight, highestRow, showFeatureLabels } = model;
+	    const featureLabelSpacer = showFeatureLabels ? 2 : 1;
+	    return (React__default["default"].createElement("div", { style: {
 	            position: 'absolute',
 	            left: 0,
-	            top: (apolloRowHeight * (highestRow + 1)) / 2 - 2,
+	            top: (apolloRowHeight * featureLabelSpacer * (highestRow + 1)) / 2 +
+	                idx * featureLabelSpacer * apolloRowHeight,
 	            width: '100%',
 	        } },
-	        React__default["default"].createElement("hr", { style: { margin: 0, top: 0, color: 'black' } }))) : (React__default["default"].createElement("div", { style: {
-	            position: 'absolute',
-	            left: 0,
-	            bottom: (apolloRowHeight * (highestRow + 1) + lastRowTooltipBufferHeight) /
-	                2 +
-	                3,
-	            width: '100%',
-	        } },
-	        React__default["default"].createElement("hr", { style: { margin: 0, top: 0, color: 'black' } })));
+	        React__default["default"].createElement("hr", { style: hrStyle })));
 	});
 
 	/* eslint-disable @typescript-eslint/unbound-method */
@@ -60210,8 +61424,9 @@
 	        // Promise.resolve() in these 3 callbacks is to avoid infinite rendering loop
 	        // https://github.com/mobxjs/mobx/issues/3728#issuecomment-1715400931
 	        React__default["default"].createElement(React__default["default"].Fragment, null,
-	            React__default["default"].createElement(TrackLines, { model: model, strand: 1 }),
-	            React__default["default"].createElement(TrackLines, { model: model, strand: -1 }),
+	            React__default["default"].createElement(TrackLines, { model: model, idx: 0 }),
+	            React__default["default"].createElement(TrackLines, { model: model, hrStyle: { margin: 0, top: 0, color: 'grey', opacity: 0.4 }, idx: 1 }),
+	            React__default["default"].createElement(TrackLines, { model: model, idx: 2 }),
 	            React__default["default"].createElement("canvas", { ref: async (node) => {
 	                    await Promise.resolve();
 	                    setCollaboratorCanvas(node);
@@ -60574,6 +61789,7 @@
 	            }
 	            console.error(error);
 	            session.notify(String(error), 'error');
+	            await this.revert(change);
 	            return;
 	        }
 	        // post-validate
@@ -61757,6 +62973,17 @@
 	                trackType: 'ApolloTrack',
 	                viewType: 'LinearGenomeView',
 	                ReactComponent: LinearApolloDisplayComponent,
+	            });
+	        });
+	        pluginManager.addDisplayType(() => {
+	            const configSchema$1 = configSchema;
+	            return new pluggableElementTypes.DisplayType({
+	                name: 'LinearApolloSixFrameDisplay',
+	                configSchema: configSchema$1,
+	                stateModel: stateModelFactory(pluginManager, configSchema$1),
+	                trackType: 'ApolloTrack',
+	                viewType: 'LinearGenomeView',
+	                ReactComponent: LinearApolloSixFrameDisplayComponent,
 	            });
 	        });
 	        pluginManager.addDisplayType(() => {
