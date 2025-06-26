@@ -61789,7 +61789,7 @@
 	            }
 	            console.error(error);
 	            session.notify(String(error), 'error');
-	            await this.revert(change);
+	            // await this.revert(change)
 	            return;
 	        }
 	        // post-validate
