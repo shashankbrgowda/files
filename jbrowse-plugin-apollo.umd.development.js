@@ -51951,7 +51951,7 @@
 	            console.error('Error fetching feature by ID:', error);
 	            setFeature(undefined);
 	        });
-	        const diffAttrs = getDiffAttributes(row.changes?.[0].oldAttributes, row.changes?.[0].newAttributes);
+	        const diffAttrs = getDiffAttributes((row.changes?.[0].oldAttributes ?? {}), (row.changes?.[0].newAttributes ?? {}));
 	        setDiffAttributes(diffAttrs);
 	        // eslint-disable-next-line react-hooks/exhaustive-deps
 	    }, [featureId, assemblyId]);
