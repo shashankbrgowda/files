@@ -51751,6 +51751,14 @@
 	                setCollapsedContent(React__default["default"].createElement(CollapsedTypeChangeContent, { row: row, session: session, assemblyId: assemblyId }));
 	                break;
 	            }
+	            case 'AddFeatureChange': {
+	                setCollapsedContent(React__default["default"].createElement(CollapsedAddFeatureContent, { row: row, session: session, assemblyId: assemblyId }));
+	                break;
+	            }
+	            case 'DeleteFeatureChange': {
+	                setCollapsedContent(React__default["default"].createElement(CollapsedDeleteFeatureContent, { row: row }));
+	                break;
+	            }
 	            default: {
 	                setCollapsedContent(React__default["default"].createElement(CollapsedJsonContent, { row: row }));
 	            }
@@ -51771,6 +51779,123 @@
 	            React__default["default"].createElement(TableCell__default["default"], { style: { paddingBottom: 0, paddingTop: 0 }, colSpan: 6 },
 	                React__default["default"].createElement(Collapse__default["default"], { in: open, timeout: "auto", unmountOnExit: true },
 	                    React__default["default"].createElement(Box__default["default"], { sx: { margin: 1 } }, collapsedContent)))))));
+	}
+	function CollapsedAddFeatureContent(props) {
+	    const { row, session, assemblyId } = props;
+	    const { changes } = row;
+	    const { addedFeature } = changes?.[0] || {};
+	    const feature = addedFeature;
+	    const [addedFeatureRows, setAddedFeatureRows] = React.useState([]);
+	    const [gene, setGene] = React.useState();
+	    React.useEffect(() => {
+	        const fetchGeneFeature = async (featureId) => {
+	            if (!featureId) {
+	                return;
+	            }
+	            const driver = session.apolloDataStore.collaborationServerDriver;
+	            const fetchedFeature = await driver.getFeatureById(featureId, assemblyId, true);
+	            if (!fetchedFeature) {
+	                return;
+	            }
+	            setGene(fetchedFeature);
+	        };
+	        if (feature.type === 'gene') {
+	            setGene(feature);
+	        }
+	        else {
+	            const featureId = feature._id;
+	            fetchGeneFeature(featureId).catch((error) => {
+	                console.error('Error fetching feature by ID:', error);
+	                setGene(undefined);
+	            });
+	        }
+	        const rows = [];
+	        rows.push({
+	            id: feature._id,
+	            type: feature.type,
+	        });
+	        if (feature.children) {
+	            for (const [, child] of Object.entries(feature.children)) {
+	                rows.push({
+	                    id: child._id,
+	                    type: child.type,
+	                });
+	                if (child.children) {
+	                    for (const [, grandChild] of Object.entries(child.children)) {
+	                        rows.push({
+	                            id: grandChild._id,
+	                            type: grandChild.type,
+	                        });
+	                    }
+	                }
+	            }
+	        }
+	        setAddedFeatureRows(rows);
+	        // eslint-disable-next-line react-hooks/exhaustive-deps
+	    }, [row]);
+	    if (!addedFeature) {
+	        return React__default["default"].createElement(CollapsedJsonContent, { row: row });
+	    }
+	    return (React__default["default"].createElement(TableContainer__default["default"], { component: Paper__default["default"], style: { margin: 10, maxHeight: '300px', overflow: 'auto' } },
+	        React__default["default"].createElement(Table__default["default"], { size: "small" },
+	            React__default["default"].createElement(TableBody__default["default"], null,
+	                React__default["default"].createElement(TableRow__default["default"], { style: { borderTop: '1px solid #e0e0e0' } },
+	                    React__default["default"].createElement(TableCell__default["default"], null,
+	                        React__default["default"].createElement("small", null, "Feature ID")),
+	                    React__default["default"].createElement(TableCell__default["default"], null,
+	                        React__default["default"].createElement("small", null, "Type")),
+	                    React__default["default"].createElement(TableCell__default["default"], null,
+	                        React__default["default"].createElement("small", null, "Status"))),
+	                addedFeatureRows.map((r) => (React__default["default"].createElement(TableRow__default["default"], { key: r.id },
+	                    React__default["default"].createElement(TableCell__default["default"], null,
+	                        React__default["default"].createElement("small", null, r.id)),
+	                    React__default["default"].createElement(TableCell__default["default"], null,
+	                        React__default["default"].createElement("small", null, r.type)),
+	                    React__default["default"].createElement(TableCell__default["default"], null,
+	                        React__default["default"].createElement("small", null, getFeatureStatus(gene, row))))))))));
+	}
+	function CollapsedDeleteFeatureContent(props) {
+	    const { row } = props;
+	    const { changes } = row;
+	    const { deletedFeature } = changes?.[0] || {};
+	    if (!deletedFeature) {
+	        return React__default["default"].createElement(CollapsedJsonContent, { row: row });
+	    }
+	    const feature = deletedFeature;
+	    const deletedFeatureRows = [];
+	    deletedFeatureRows.push({
+	        id: feature._id,
+	        type: feature.type,
+	    });
+	    if (feature.children) {
+	        for (const [, child] of Object.entries(feature.children)) {
+	            deletedFeatureRows.push({
+	                id: child._id,
+	                type: child.type,
+	            });
+	            if (child.children) {
+	                for (const [, grandChild] of Object.entries(child.children)) {
+	                    deletedFeatureRows.push({
+	                        id: grandChild._id,
+	                        type: grandChild.type,
+	                    });
+	                }
+	            }
+	        }
+	    }
+	    return (React__default["default"].createElement(TableContainer__default["default"], { component: Paper__default["default"], style: { margin: 10, maxHeight: '300px', overflow: 'auto' } },
+	        React__default["default"].createElement(Table__default["default"], { size: "small" },
+	            React__default["default"].createElement(TableBody__default["default"], null,
+	                React__default["default"].createElement(TableRow__default["default"], { style: { borderTop: '1px solid #e0e0e0' } },
+	                    React__default["default"].createElement(TableCell__default["default"], null,
+	                        React__default["default"].createElement("small", null, "Feature ID")),
+	                    React__default["default"].createElement(TableCell__default["default"], null,
+	                        React__default["default"].createElement("small", null, "Type"))),
+	                deletedFeatureRows.map((row) => (React__default["default"].createElement(TableRow__default["default"], { key: row.id },
+	                    React__default["default"].createElement(TableCell__default["default"], null,
+	                        React__default["default"].createElement("small", null, row.id)),
+	                    React__default["default"].createElement(TableCell__default["default"], null,
+	                        React__default["default"].createElement("small", null, row.type)))))))));
 	}
 	function CollapsedTypeChangeContent(props) {
 	    const { row, session, assemblyId } = props;
@@ -51980,22 +52105,22 @@
 	                    React__default["default"].createElement(TableCell__default["default"], null, attr.old.length > 0 ? (React__default["default"].createElement("ul", null, attr.old.map((value, i) => (React__default["default"].createElement("li", { key: i }, value))))) : (React__default["default"].createElement("small", null, "N/A"))),
 	                    React__default["default"].createElement(TableCell__default["default"], { align: "left" }, attr.new.length > 0 ? (React__default["default"].createElement("ul", null, attr.new.map((value, i) => (React__default["default"].createElement("li", { key: i }, value))))) : (React__default["default"].createElement("small", null, "N/A"))))))))))));
 	}
+	const getFeatureStatus = (gene, row) => {
+	    if (!gene) {
+	        return 'Unknown';
+	    }
+	    const savedAt = gene.attributes?.savedAt?.[0];
+	    if (savedAt && row.updatedAt) {
+	        const havanaSavedAtDate = new Date(savedAt);
+	        const geneUpdatedAtDate = new Date(row.updatedAt);
+	        if (havanaSavedAtDate >= geneUpdatedAtDate) {
+	            return 'Done';
+	        }
+	    }
+	    return 'Pending';
+	};
 	function CollapsedInfoContent(props) {
 	    const { feature, gene, row } = props;
-	    const getFeatureStatus = () => {
-	        if (!gene) {
-	            return 'Unknown';
-	        }
-	        const savedAt = gene.attributes?.savedAt?.[0];
-	        if (savedAt && row.updatedAt) {
-	            const havanaSavedAtDate = new Date(savedAt);
-	            const geneUpdatedAtDate = new Date(row.updatedAt);
-	            if (havanaSavedAtDate >= geneUpdatedAtDate) {
-	                return 'Done';
-	            }
-	        }
-	        return 'Pending';
-	    };
 	    return (React__default["default"].createElement(TableContainer__default["default"], { component: Paper__default["default"], style: { margin: 10 } },
 	        React__default["default"].createElement(Table__default["default"], { size: "small" },
 	            React__default["default"].createElement(TableBody__default["default"], null,
@@ -52016,7 +52141,7 @@
 	                    gene?.type !== feature.type && (React__default["default"].createElement(TableCell__default["default"], null,
 	                        React__default["default"].createElement("small", null, getFeatureId$1(gene)))),
 	                    React__default["default"].createElement(TableCell__default["default"], null,
-	                        React__default["default"].createElement("small", null, getFeatureStatus())))))));
+	                        React__default["default"].createElement("small", null, getFeatureStatus(gene, row))))))));
 	}
 	function CollapsedJsonContent(props) {
 	    const { row } = props;
