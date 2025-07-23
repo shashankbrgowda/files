@@ -18301,7 +18301,7 @@
 	    });
 	  }
 	  if (tracks) {
-	    filteredConfig.trackss = tracks.filter(function (t) {
+	    filteredConfig.tracks = tracks.filter(function (t) {
 	      return t.type !== 'ApolloTrack';
 	    });
 	  }
