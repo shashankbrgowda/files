@@ -57128,6 +57128,13 @@
 	    locIntervals.push(previous);
 	    return locIntervals;
 	}
+	function getSequenceLength(locationIntervals) {
+	    let length = 0;
+	    for (const loc of locationIntervals) {
+	        length += loc.max - loc.min;
+	    }
+	    return length;
+	}
 	const TranscriptSequence = mobxReact.observer(function TranscriptSequence({ assembly, feature, refName, session, }) {
 	    const currentAssembly = session.apolloDataStore.assemblies.get(assembly);
 	    const refData = currentAssembly?.getByRefName(refName);
@@ -57203,8 +57210,10 @@
 	                ? `${interval.min + 1}-${interval.max}`
 	                : `${interval.max}-${interval.min + 1}`)
 	                .join(';'),
-	            "(",
+	            "(strand=",
 	            feature.strand === 1 ? '+' : '-',
+	            ";length=",
+	            getSequenceLength(locationIntervals),
 	            ")",
 	            React__default["default"].createElement("br", null),
 	            sequenceSegments.map((segment, index) => (React__default["default"].createElement("span", { key: `${segment.type}-${index}`, style: {
@@ -62813,8 +62822,8 @@
 	                continue;
 	            }
 	            // Destination feature should be of type gene amd should be on the same strand as the source feature
-	            if (featureTypeOntology?.isTypeOf(f.type, 'gene') &&
-	                f.strand === annotationFeature.strand) {
+	            // featureTypeOntology?.isTypeOf(f.type, 'gene') && f.strand === annotationFeature.strand
+	            if (featureTypeOntology?.isTypeOf(f.type, 'gene')) {
 	                const featureSnapshot = require$$1$3.getSnapshot(f);
 	                filteredFeatures.push(featureSnapshot);
 	            }
@@ -62953,6 +62962,14 @@
 	        }
 	        for (const transcriptId of Object.keys(transcripts)) {
 	            const transcript = transcripts[transcriptId];
+	            transcript.strand = selectedDestinationFeature.strand;
+	            // update strand of transcript children if they exist
+	            if (transcript.children) {
+	                for (const childId of Object.keys(transcript.children)) {
+	                    transcript.children[childId].strand =
+	                        selectedDestinationFeature.strand;
+	                }
+	            }
 	            const change = new dist$2.AddFeatureChange({
 	                parentFeatureId: selectedDestinationFeature._id,
 	                changedIds: [selectedDestinationFeature._id],
