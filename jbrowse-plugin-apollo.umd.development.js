@@ -1,8 +1,8 @@
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@jbrowse/core/Plugin'), require('@jbrowse/core/util'), require('@jbrowse/core/configuration'), require('@jbrowse/core/pluggableElementTypes'), require('@mui/material/utils'), require('react/jsx-runtime'), require('mobx'), require('mobx-state-tree'), require('@mui/material'), require('react'), require('tss-react/mui'), require('@jbrowse/core/ui'), require('mobx-react'), require('@jbrowse/core/util/types/mst'), require('@jbrowse/core/util/io'), require('@mui/material/Checkbox'), require('@mui/material/FormControlLabel'), require('@mui/material/LinearProgress'), require('@mui/x-data-grid'), require('@jbrowse/core/pluggableElementTypes/AdapterType'), require('@jbrowse/core/data_adapters/BaseAdapter'), require('@jbrowse/core/util/rxjs'), require('@jbrowse/core/util/tracks')) :
-	typeof define === 'function' && define.amd ? define(['exports', '@jbrowse/core/Plugin', '@jbrowse/core/util', '@jbrowse/core/configuration', '@jbrowse/core/pluggableElementTypes', '@mui/material/utils', 'react/jsx-runtime', 'mobx', 'mobx-state-tree', '@mui/material', 'react', 'tss-react/mui', '@jbrowse/core/ui', 'mobx-react', '@jbrowse/core/util/types/mst', '@jbrowse/core/util/io', '@mui/material/Checkbox', '@mui/material/FormControlLabel', '@mui/material/LinearProgress', '@mui/x-data-grid', '@jbrowse/core/pluggableElementTypes/AdapterType', '@jbrowse/core/data_adapters/BaseAdapter', '@jbrowse/core/util/rxjs', '@jbrowse/core/util/tracks'], factory) :
-	(global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.JBrowsePluginApollo = {}, global.JBrowseExports["@jbrowse/core/Plugin"], global.JBrowseExports["@jbrowse/core/util"], global.JBrowseExports["@jbrowse/core/configuration"], global.JBrowseExports["@jbrowse/core/pluggableElementTypes"], global.JBrowseExports["@mui/material/utils"], global.JBrowseExports["react/jsx-runtime"], global.JBrowseExports.mobx, global.JBrowseExports["mobx-state-tree"], global.JBrowseExports["@mui/material"], global.JBrowseExports.react, global.JBrowseExports["tss-react/mui"], global.JBrowseExports["@jbrowse/core/ui"], global.JBrowseExports["mobx-react"], global.JBrowseExports["@jbrowse/core/util/types/mst"], global.JBrowseExports["@jbrowse/core/util/io"], global.JBrowseExports["@mui/material/Checkbox"], global.JBrowseExports["@mui/material/FormControlLabel"], global.JBrowseExports["@mui/material/LinearProgress"], global.JBrowseExports["@mui/x-data-grid"], global.JBrowseExports["@jbrowse/core/pluggableElementTypes/AdapterType"], global.JBrowseExports["@jbrowse/core/data_adapters/BaseAdapter"], global.JBrowseExports["@jbrowse/core/util/rxjs"], global.JBrowseExports["@jbrowse/core/util/tracks"]));
-})(this, (function (exports, require$$1$1, require$$1$2, configuration, pluggableElementTypes, require$$0$2, require$$2$1, mobx, require$$1$3, material, React, mui, ui, mobxReact, mst, io, Checkbox, FormControlLabel, LinearProgress, xDataGrid, AdapterType, BaseAdapter, rxjs, tracks) { 'use strict';
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@jbrowse/core/Plugin'), require('@jbrowse/core/util'), require('@jbrowse/core/configuration'), require('@jbrowse/core/pluggableElementTypes'), require('@mui/material/utils'), require('react/jsx-runtime'), require('mobx'), require('mobx-state-tree'), require('@mui/material'), require('react'), require('tss-react/mui'), require('@jbrowse/core/ui'), require('mobx-react'), require('@jbrowse/core/util/types/mst'), require('@jbrowse/core/util/io'), require('@mui/material/Checkbox'), require('@mui/material/FormControlLabel'), require('@mui/material/LinearProgress'), require('@mui/x-data-grid'), require('@mui/material/Box'), require('@mui/material/Collapse'), require('@mui/material/IconButton'), require('@mui/material/Paper'), require('@mui/material/Table'), require('@mui/material/TableBody'), require('@mui/material/TableCell'), require('@mui/material/TableContainer'), require('@mui/material/TableFooter'), require('@mui/material/TableHead'), require('@mui/material/TablePagination'), require('@mui/material/TableRow'), require('@mui/material/Typography'), require('@mui/material/styles'), require('@jbrowse/core/pluggableElementTypes/AdapterType'), require('@jbrowse/core/data_adapters/BaseAdapter'), require('@jbrowse/core/util/rxjs'), require('@jbrowse/core/util/tracks')) :
+	typeof define === 'function' && define.amd ? define(['exports', '@jbrowse/core/Plugin', '@jbrowse/core/util', '@jbrowse/core/configuration', '@jbrowse/core/pluggableElementTypes', '@mui/material/utils', 'react/jsx-runtime', 'mobx', 'mobx-state-tree', '@mui/material', 'react', 'tss-react/mui', '@jbrowse/core/ui', 'mobx-react', '@jbrowse/core/util/types/mst', '@jbrowse/core/util/io', '@mui/material/Checkbox', '@mui/material/FormControlLabel', '@mui/material/LinearProgress', '@mui/x-data-grid', '@mui/material/Box', '@mui/material/Collapse', '@mui/material/IconButton', '@mui/material/Paper', '@mui/material/Table', '@mui/material/TableBody', '@mui/material/TableCell', '@mui/material/TableContainer', '@mui/material/TableFooter', '@mui/material/TableHead', '@mui/material/TablePagination', '@mui/material/TableRow', '@mui/material/Typography', '@mui/material/styles', '@jbrowse/core/pluggableElementTypes/AdapterType', '@jbrowse/core/data_adapters/BaseAdapter', '@jbrowse/core/util/rxjs', '@jbrowse/core/util/tracks'], factory) :
+	(global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.JBrowsePluginApollo = {}, global.JBrowseExports["@jbrowse/core/Plugin"], global.JBrowseExports["@jbrowse/core/util"], global.JBrowseExports["@jbrowse/core/configuration"], global.JBrowseExports["@jbrowse/core/pluggableElementTypes"], global.JBrowseExports["@mui/material/utils"], global.JBrowseExports["react/jsx-runtime"], global.JBrowseExports.mobx, global.JBrowseExports["mobx-state-tree"], global.JBrowseExports["@mui/material"], global.JBrowseExports.react, global.JBrowseExports["tss-react/mui"], global.JBrowseExports["@jbrowse/core/ui"], global.JBrowseExports["mobx-react"], global.JBrowseExports["@jbrowse/core/util/types/mst"], global.JBrowseExports["@jbrowse/core/util/io"], global.JBrowseExports["@mui/material/Checkbox"], global.JBrowseExports["@mui/material/FormControlLabel"], global.JBrowseExports["@mui/material/LinearProgress"], global.JBrowseExports["@mui/x-data-grid"], global.JBrowseExports["@mui/material/Box"], global.JBrowseExports["@mui/material/Collapse"], global.JBrowseExports["@mui/material/IconButton"], global.JBrowseExports["@mui/material/Paper"], global.JBrowseExports["@mui/material/Table"], global.JBrowseExports["@mui/material/TableBody"], global.JBrowseExports["@mui/material/TableCell"], global.JBrowseExports["@mui/material/TableContainer"], global.JBrowseExports["@mui/material/TableFooter"], global.JBrowseExports["@mui/material/TableHead"], global.JBrowseExports["@mui/material/TablePagination"], global.JBrowseExports["@mui/material/TableRow"], global.JBrowseExports["@mui/material/Typography"], global.JBrowseExports["@mui/material/styles"], global.JBrowseExports["@jbrowse/core/pluggableElementTypes/AdapterType"], global.JBrowseExports["@jbrowse/core/data_adapters/BaseAdapter"], global.JBrowseExports["@jbrowse/core/util/rxjs"], global.JBrowseExports["@jbrowse/core/util/tracks"]));
+})(this, (function (exports, require$$1$1, require$$1$2, configuration, pluggableElementTypes, require$$0$2, require$$2$1, mobx, require$$1$3, material, React, mui, ui, mobxReact, mst, io, Checkbox, FormControlLabel, LinearProgress, xDataGrid, Box, Collapse, IconButton, Paper, Table, TableBody, TableCell, TableContainer, TableFooter, TableHead, TablePagination, TableRow, Typography, styles, AdapterType, BaseAdapter, rxjs, tracks) { 'use strict';
 
 	function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -34,6 +34,19 @@
 	var Checkbox__default = /*#__PURE__*/_interopDefaultLegacy(Checkbox);
 	var FormControlLabel__default = /*#__PURE__*/_interopDefaultLegacy(FormControlLabel);
 	var LinearProgress__default = /*#__PURE__*/_interopDefaultLegacy(LinearProgress);
+	var Box__default = /*#__PURE__*/_interopDefaultLegacy(Box);
+	var Collapse__default = /*#__PURE__*/_interopDefaultLegacy(Collapse);
+	var IconButton__default = /*#__PURE__*/_interopDefaultLegacy(IconButton);
+	var Paper__default = /*#__PURE__*/_interopDefaultLegacy(Paper);
+	var Table__default = /*#__PURE__*/_interopDefaultLegacy(Table);
+	var TableBody__default = /*#__PURE__*/_interopDefaultLegacy(TableBody);
+	var TableCell__default = /*#__PURE__*/_interopDefaultLegacy(TableCell);
+	var TableContainer__default = /*#__PURE__*/_interopDefaultLegacy(TableContainer);
+	var TableFooter__default = /*#__PURE__*/_interopDefaultLegacy(TableFooter);
+	var TableHead__default = /*#__PURE__*/_interopDefaultLegacy(TableHead);
+	var TablePagination__default = /*#__PURE__*/_interopDefaultLegacy(TablePagination);
+	var TableRow__default = /*#__PURE__*/_interopDefaultLegacy(TableRow);
+	var Typography__default = /*#__PURE__*/_interopDefaultLegacy(Typography);
 	var AdapterType__default = /*#__PURE__*/_interopDefaultLegacy(AdapterType);
 
 	var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
@@ -4834,8 +4847,8 @@
 	  value: true
 	});
 	AddAssemblyAliasesChange$1.AddAssemblyAliasesChange = void 0;
-	var common_1$l = dist$1;
-	var util_1$5 = require$$1__default$1["default"];
+	var common_1$n = dist$1;
+	var util_1$7 = require$$1__default$1["default"];
 	var AddAssemblyAliasesChange = /*#__PURE__*/function (_common_1$AssemblySpe) {
 	  _inherits(AddAssemblyAliasesChange, _common_1$AssemblySpe);
 	  var _super = /*#__PURE__*/_createSuper(AddAssemblyAliasesChange);
@@ -4851,7 +4864,7 @@
 	  _createClass(AddAssemblyAliasesChange, [{
 	    key: "executeOnClient",
 	    value: function executeOnClient(clientDataStore) {
-	      var _ref = (0, util_1$5.getSession)(clientDataStore),
+	      var _ref = (0, util_1$7.getSession)(clientDataStore),
 	        assemblyManager = _ref.assemblyManager;
 	      var assembly = assemblyManager.get(this.assembly);
 	      if (!assembly) {
@@ -4927,7 +4940,7 @@
 	    }
 	  }]);
 	  return AddAssemblyAliasesChange;
-	}(common_1$l.AssemblySpecificChange);
+	}(common_1$n.AssemblySpecificChange);
 	AddAssemblyAliasesChange$1.AddAssemblyAliasesChange = AddAssemblyAliasesChange;
 
 	var AddAssemblyAndFeaturesFromFileChange$1 = {};
@@ -4943,7 +4956,7 @@
 	  value: true
 	});
 	annotationFeatureToGFF3$1.annotationFeatureToGFF3 = annotationFeatureToGFF3;
-	var util_1$4 = require$$1__default$1["default"];
+	var util_1$6 = require$$1__default$1["default"];
 	function annotationFeatureToGFF3(feature, parentId, refSeqNames) {
 	  var _feature$attributes, _feature$attributes$g, _feature$attributes2, _feature$attributes3;
 	  // eslint-disable-next-line unicorn/prefer-structured-clone
@@ -5134,7 +5147,7 @@
 	            type: 'intron'
 	          });
 	        }
-	        var _ref3 = (0, util_1$4.intersection2)(cdsMin, cdsMax, _child.min, _child.max),
+	        var _ref3 = (0, util_1$6.intersection2)(cdsMin, cdsMax, _child.min, _child.max),
 	          _ref4 = _slicedToArray(_ref3, 2),
 	          start = _ref4[0],
 	          end = _ref4[1];
@@ -5231,7 +5244,12 @@
 	  return transcriptParts;
 	}
 	function getCdsLocations(feature) {
-	  var transcriptParts = getTranscriptParts(feature);
+	  var transcriptParts = [];
+	  try {
+	    transcriptParts = getTranscriptParts(feature);
+	  } catch (_unused) {
+	    return [];
+	  }
 	  return transcriptParts.map(function (transcript) {
 	    return transcript.filter(function (transcriptPart) {
 	      return transcriptPart.type === 'CDS';
@@ -5306,7 +5324,7 @@
 	});
 	gff3ToAnnotationFeature$1.gff3ToAnnotationFeature = gff3ToAnnotationFeature;
 	var tslib_1$3 = require$$0$1;
-	var util_1$3 = require$$1__default$1["default"];
+	var util_1$5 = require$$1__default$1["default"];
 	var bson_objectid_1$1 = /*#__PURE__*/tslib_1$3.__importDefault(objectid);
 	var gffReservedKeys_1 = gffReservedKeys;
 	function gff3ToAnnotationFeature(gff3Feature, refSeq, featureIds) {
@@ -5768,7 +5786,7 @@
 	      return false;
 	    }
 	    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-	    return (0, util_1$3.doesIntersect2)(loc.start, loc.end, nextLoc.start, nextLoc.end);
+	    return (0, util_1$5.doesIntersect2)(loc.start, loc.end, nextLoc.start, nextLoc.end);
 	  });
 	  // If no overlaps, assume it's a single CDS feature
 	  if (!overlapping) {
@@ -5791,7 +5809,7 @@
 	        return 1; // continue
 	      }
 	      var overlaps = lastGroup.some(function (lastGroupLoc) {
-	        return (0, util_1$3.doesIntersect2)( /* eslint-disable @typescript-eslint/no-non-null-assertion */
+	        return (0, util_1$5.doesIntersect2)( /* eslint-disable @typescript-eslint/no-non-null-assertion */
 	        lastGroupLoc.start, lastGroupLoc.end, location.start, location.end);
 	      });
 	      if (overlaps) {
@@ -5833,7 +5851,7 @@
 	/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 	/* eslint-disable @typescript-eslint/no-unsafe-call */
 	/* eslint-disable @typescript-eslint/no-unsafe-argument */
-	var common_1$k = dist$1;
+	var common_1$m = dist$1;
 	var GFF3_1 = GFF3;
 	var FromFileBaseChange = /*#__PURE__*/function (_common_1$AssemblySpe) {
 	  _inherits(FromFileBaseChange, _common_1$AssemblySpe);
@@ -6269,7 +6287,7 @@
 	    }()
 	  }]);
 	  return FromFileBaseChange;
-	}(common_1$k.AssemblySpecificChange);
+	}(common_1$m.AssemblySpecificChange);
 	FromFileBaseChange$1.FromFileBaseChange = FromFileBaseChange;
 
 	/* eslint-disable @typescript-eslint/require-await */
@@ -15975,7 +15993,7 @@
 	});
 	AddAssemblyFromExternalChange$1.AddAssemblyFromExternalChange = void 0;
 	/* eslint-disable @typescript-eslint/require-await */
-	var common_1$j = dist$1;
+	var common_1$l = dist$1;
 	var indexedfasta_1$1 = require$$0;
 	var generic_filehandle_1 = require$$2;
 	var AddAssemblyFromExternalChange = /*#__PURE__*/function (_common_1$AssemblySpe) {
@@ -16213,7 +16231,7 @@
 	    }
 	  }]);
 	  return AddAssemblyFromExternalChange;
-	}(common_1$j.AssemblySpecificChange);
+	}(common_1$l.AssemblySpecificChange);
 	AddAssemblyFromExternalChange$1.AddAssemblyFromExternalChange = AddAssemblyFromExternalChange;
 
 	var AddAssemblyFromFileChange$1 = {};
@@ -16594,11 +16612,12 @@
 	  value: true
 	});
 	DeleteFeatureChange$1.DeleteFeatureChange = void 0;
+	DeleteFeatureChange$1.findAndDeleteChildFeature = findAndDeleteChildFeature;
 	DeleteFeatureChange$1.isDeleteFeatureChange = isDeleteFeatureChange;
 	/* eslint-disable @typescript-eslint/restrict-template-expressions */
 	/* eslint-disable @typescript-eslint/require-await */
 	/* eslint-disable @typescript-eslint/no-unnecessary-condition */
-	var common_1$i = dist$1;
+	var common_1$k = dist$1;
 	var AddFeatureChange_1 = AddFeatureChange$1;
 	var DeleteFeatureChange = /*#__PURE__*/function (_common_1$FeatureChan) {
 	  _inherits(DeleteFeatureChange, _common_1$FeatureChan);
@@ -16612,7 +16631,13 @@
 	    _this.changes = 'changes' in json ? json.changes : [json];
 	    return _this;
 	  }
+	  // eslint-disable-next-line @typescript-eslint/class-literal-property-style
 	  _createClass(DeleteFeatureChange, [{
+	    key: "notification",
+	    get: function get() {
+	      return 'Feature deleted successfully';
+	    }
+	  }, {
 	    key: "toJSON",
 	    value: function toJSON() {
 	      var assembly = this.assembly,
@@ -16695,7 +16720,7 @@
 	                      (_logger$debug = logger.debug) === null || _logger$debug === void 0 || _logger$debug.call(logger, "Feature \"".concat(deletedFeature._id, "\" deleted from document \"").concat(featureDoc._id, "\". Whole document deleted."));
 	                      return _context.abrupt("return", 1);
 	                    case 16:
-	                      deletedIds = _this2.findAndDeleteChildFeature(featureDoc, deletedFeature._id);
+	                      deletedIds = findAndDeleteChildFeature(featureDoc, deletedFeature._id, _this2);
 	                      deletedIds.push(deletedFeature._id);
 	                      featureDoc.allIds = featureDoc.allIds.filter(function (id) {
 	                        return !deletedIds.includes(id);
@@ -16872,8 +16897,46 @@
 	    }
 	  }]);
 	  return DeleteFeatureChange;
-	}(common_1$i.FeatureChange);
+	}(common_1$k.FeatureChange);
 	DeleteFeatureChange$1.DeleteFeatureChange = DeleteFeatureChange;
+	/**
+	 * Delete feature's subfeatures that match an ID and return the IDs of any
+	 * sub-subfeatures that were deleted
+	 * @param feature -
+	 * @param featureIdToDelete -
+	 * @returns - list of deleted feature IDs
+	 */
+	function findAndDeleteChildFeature(feature, featureIdToDelete, change) {
+	  if (!feature.children) {
+	    throw new Error("Feature ".concat(feature._id, " has no children"));
+	  }
+	  var _id = feature._id,
+	    children = feature.children;
+	  var child = children.get(featureIdToDelete);
+	  if (child) {
+	    var deletedIds = change.getChildFeatureIds(child);
+	    children["delete"](featureIdToDelete);
+	    return deletedIds;
+	  }
+	  var _iterator3 = _createForOfIteratorHelper(children),
+	    _step3;
+	  try {
+	    for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+	      var _step3$value = _slicedToArray(_step3.value, 2),
+	        childFeature = _step3$value[1];
+	      try {
+	        return findAndDeleteChildFeature(childFeature, featureIdToDelete, change);
+	      } catch (_unused) {
+	        // pass
+	      }
+	    }
+	  } catch (err) {
+	    _iterator3.e(err);
+	  } finally {
+	    _iterator3.f();
+	  }
+	  throw new Error("Feature \"".concat(featureIdToDelete, "\" not found in ").concat(_id));
+	}
 	function isDeleteFeatureChange(change) {
 	  return change.typeName === 'DeleteFeatureChange';
 	}
@@ -16886,8 +16949,8 @@
 	/* eslint-disable @typescript-eslint/restrict-template-expressions */
 	/* eslint-disable @typescript-eslint/require-await */
 	/* eslint-disable @typescript-eslint/no-unnecessary-condition */
-	var common_1$h = dist$1;
-	var DeleteFeatureChange_1 = DeleteFeatureChange$1;
+	var common_1$j = dist$1;
+	var DeleteFeatureChange_1$4 = DeleteFeatureChange$1;
 	var AddFeatureChange = /*#__PURE__*/function (_common_1$FeatureChan) {
 	  _inherits(AddFeatureChange, _common_1$FeatureChan);
 	  var _super = /*#__PURE__*/_createSuper(AddFeatureChange);
@@ -16900,7 +16963,13 @@
 	    _this.changes = 'changes' in json ? json.changes : [json];
 	    return _this;
 	  }
+	  // eslint-disable-next-line @typescript-eslint/class-literal-property-style
 	  _createClass(AddFeatureChange, [{
+	    key: "notification",
+	    get: function get() {
+	      return 'Feature added successfully';
+	    }
+	  }, {
 	    key: "toJSON",
 	    value: function toJSON() {
 	      var assembly = this.assembly,
@@ -17183,7 +17252,7 @@
 	          parentFeatureId: addFeatureChange.parentFeatureId
 	        };
 	      });
-	      return new DeleteFeatureChange_1.DeleteFeatureChange({
+	      return new DeleteFeatureChange_1$4.DeleteFeatureChange({
 	        changedIds: inverseChangedIds,
 	        typeName: 'DeleteFeatureChange',
 	        changes: inverseChanges,
@@ -17194,7 +17263,7 @@
 	    }
 	  }]);
 	  return AddFeatureChange;
-	}(common_1$h.FeatureChange);
+	}(common_1$j.FeatureChange);
 	AddFeatureChange$1.AddFeatureChange = AddFeatureChange;
 	function isAddFeatureChange(change) {
 	  return change.typeName === 'AddFeatureChange';
@@ -17449,8 +17518,8 @@
 	  value: true
 	});
 	AddRefSeqAliasesChange$1.AddRefSeqAliasesChange = void 0;
-	var common_1$g = dist$1;
-	var util_1$2 = require$$1__default$1["default"];
+	var common_1$i = dist$1;
+	var util_1$4 = require$$1__default$1["default"];
 	var AddRefSeqAliasesChange = /*#__PURE__*/function (_common_1$AssemblySpe) {
 	  _inherits(AddRefSeqAliasesChange, _common_1$AssemblySpe);
 	  var _super = /*#__PURE__*/_createSuper(AddRefSeqAliasesChange);
@@ -17466,7 +17535,7 @@
 	  _createClass(AddRefSeqAliasesChange, [{
 	    key: "executeOnClient",
 	    value: function executeOnClient(clientDataStore) {
-	      var _ref = (0, util_1$2.getSession)(clientDataStore),
+	      var _ref = (0, util_1$4.getSession)(clientDataStore),
 	        assemblyManager = _ref.assemblyManager;
 	      var assembly = assemblyManager.get(this.assembly);
 	      if (!assembly) {
@@ -17591,7 +17660,7 @@
 	    }
 	  }]);
 	  return AddRefSeqAliasesChange;
-	}(common_1$g.AssemblySpecificChange);
+	}(common_1$i.AssemblySpecificChange);
 	AddRefSeqAliasesChange$1.AddRefSeqAliasesChange = AddRefSeqAliasesChange;
 
 	var DeleteAssemblyChange$1 = {};
@@ -17604,8 +17673,8 @@
 	/* eslint-disable @typescript-eslint/require-await */
 	/* eslint-disable @typescript-eslint/no-unnecessary-condition */
 	/* eslint-disable @typescript-eslint/no-unsafe-call */
-	var common_1$f = dist$1;
-	var util_1$1 = require$$1__default$1["default"];
+	var common_1$h = dist$1;
+	var util_1$3 = require$$1__default$1["default"];
 	var DeleteAssemblyChange = /*#__PURE__*/function (_common_1$AssemblySpe) {
 	  _inherits(DeleteAssemblyChange, _common_1$AssemblySpe);
 	  var _super = /*#__PURE__*/_createSuper(DeleteAssemblyChange);
@@ -17736,7 +17805,7 @@
 	              }
 	              throw new Error('No data store');
 	            case 3:
-	              session = (0, util_1$1.getSession)(dataStore); // If assemblyId is not present in client data store
+	              session = (0, util_1$3.getSession)(dataStore); // If assemblyId is not present in client data store
 	              if (dataStore.assemblies.has(assembly)) {
 	                dataStore.deleteAssembly(assembly);
 	              }
@@ -17770,7 +17839,7 @@
 	    }
 	  }]);
 	  return DeleteAssemblyChange;
-	}(common_1$f.AssemblySpecificChange);
+	}(common_1$h.AssemblySpecificChange);
 	DeleteAssemblyChange$1.DeleteAssemblyChange = DeleteAssemblyChange;
 
 	var DeleteUserChange$1 = {};
@@ -17780,7 +17849,7 @@
 	});
 	DeleteUserChange$1.DeleteUserChange = void 0;
 	/* eslint-disable @typescript-eslint/require-await */
-	var common_1$e = dist$1;
+	var common_1$g = dist$1;
 	var DeleteUserChange = /*#__PURE__*/function (_common_1$Change) {
 	  _inherits(DeleteUserChange, _common_1$Change);
 	  var _super = /*#__PURE__*/_createSuper(DeleteUserChange);
@@ -17900,7 +17969,7 @@
 	    }
 	  }]);
 	  return DeleteUserChange;
-	}(common_1$e.Change);
+	}(common_1$g.Change);
 	DeleteUserChange$1.DeleteUserChange = DeleteUserChange;
 
 	var FeatureAttributeChange$1 = {};
@@ -17913,7 +17982,7 @@
 	/* eslint-disable @typescript-eslint/restrict-template-expressions */
 	/* eslint-disable @typescript-eslint/require-await */
 	/* eslint-disable @typescript-eslint/no-unnecessary-condition */
-	var common_1$d = dist$1;
+	var common_1$f = dist$1;
 	var FeatureAttributeChange = /*#__PURE__*/function (_common_1$FeatureChan) {
 	  _inherits(FeatureAttributeChange, _common_1$FeatureChan);
 	  var _super = /*#__PURE__*/_createSuper(FeatureAttributeChange);
@@ -17936,14 +18005,16 @@
 	      if (changes.length === 1) {
 	        var _changes = _slicedToArray(changes, 1),
 	          _changes$ = _changes[0],
-	          attributes = _changes$.attributes,
+	          oldAttributes = _changes$.oldAttributes,
+	          newAttributes = _changes$.newAttributes,
 	          featureId = _changes$.featureId;
 	        return {
 	          typeName: typeName,
 	          changedIds: changedIds,
 	          assembly: assembly,
 	          featureId: featureId,
-	          attributes: attributes
+	          oldAttributes: oldAttributes,
+	          newAttributes: newAttributes
 	        };
 	      }
 	      return {
@@ -17962,7 +18033,7 @@
 	    key: "executeOnServer",
 	    value: function () {
 	      var _executeOnServer = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(backend) {
-	        var featureModel, session, changes, logger, featuresForChanges, _iterator, _step, _logger$debug, _logger$debug2, change, featureId, topLevelFeature, errMsg, foundFeature, _errMsg, _iterator2, _step2, _logger$debug4, _step2$value, idx, _change, attributes, _featuresForChanges$i, feature, _topLevelFeature, _logger$debug3;
+	        var featureModel, session, changes, logger, featuresForChanges, _iterator, _step, _logger$debug, _logger$debug2, change, featureId, topLevelFeature, errMsg, foundFeature, _errMsg, _iterator2, _step2, _logger$debug4, _step2$value, idx, _change, newAttributes, _featuresForChanges$i, feature, _topLevelFeature, _logger$debug3;
 	        return _regeneratorRuntime().wrap(function _callee$(_context) {
 	          while (1) switch (_context.prev = _context.next) {
 	            case 0:
@@ -18033,9 +18104,9 @@
 	                break;
 	              }
 	              _step2$value = _slicedToArray(_step2.value, 2), idx = _step2$value[0], _change = _step2$value[1];
-	              attributes = _change.attributes;
+	              newAttributes = _change.newAttributes;
 	              _featuresForChanges$i = featuresForChanges[idx], feature = _featuresForChanges$i.feature, _topLevelFeature = _featuresForChanges$i.topLevelFeature;
-	              feature.attributes = attributes;
+	              feature.attributes = newAttributes;
 	              if (_topLevelFeature._id.equals(feature._id)) {
 	                _topLevelFeature.markModified('attributes'); // Mark as modified. Without this save() -method is not updating data in database
 	              } else {
@@ -18128,7 +18199,7 @@
 	              }
 	              throw new Error("Could not find feature with identifier \"".concat(changedId, "\""));
 	            case 10:
-	              feature.setAttributes(new Map(Object.entries(this.changes[idx].attributes)));
+	              feature.setAttributes(new Map(Object.entries(this.changes[idx].newAttributes)));
 	            case 11:
 	              _context3.next = 5;
 	              break;
@@ -18165,7 +18236,8 @@
 	      var inverseChanges = _toConsumableArray(changes).reverse().map(function (oneChange) {
 	        return {
 	          featureId: oneChange.featureId,
-	          attributes: oneChange.attributes
+	          oldAttributes: oneChange.newAttributes,
+	          newAttributes: oneChange.oldAttributes
 	        };
 	      });
 	      return new FeatureAttributeChange({
@@ -18179,7 +18251,7 @@
 	    }
 	  }]);
 	  return FeatureAttributeChange;
-	}(common_1$d.FeatureChange);
+	}(common_1$f.FeatureChange);
 	FeatureAttributeChange$1.FeatureAttributeChange = FeatureAttributeChange;
 	function isFeatureAttributeChange(change) {
 	  return change.typeName === 'FeatureAttributeChange';
@@ -18187,44 +18259,51 @@
 
 	var ImportJBrowseConfigChange$1 = {};
 
-	var _excluded = ["__v", "_id", "assemblies", "internetAccounts", "plugins", "tracks"];
+	var _excluded = ["__v", "_id", "assemblies", "configuration", "internetAccounts", "plugins", "tracks"],
+	  _excluded2 = ["hasRole"];
 	Object.defineProperty(ImportJBrowseConfigChange$1, "__esModule", {
 	  value: true
 	});
 	ImportJBrowseConfigChange$1.ImportJBrowseConfigChange = void 0;
 	ImportJBrowseConfigChange$1.filterJBrowseConfig = filterJBrowseConfig;
 	/* eslint-disable @typescript-eslint/require-await */
-	var common_1$c = dist$1;
+	var common_1$e = dist$1;
 	function filterJBrowseConfig(config) {
+	  var _configuration$Apollo;
 	  var assemblies = config.assemblies,
+	    configuration = config.configuration,
 	    internetAccounts = config.internetAccounts,
 	    plugins = config.plugins,
 	    tracks = config.tracks,
 	    rest = _objectWithoutProperties(config, _excluded);
-	  var filteredAssemblies = assemblies === null || assemblies === void 0 ? void 0 : assemblies.filter(function (a) {
-	    return a.sequence.adapter.type !== 'ApolloSequenceAdapter';
-	  });
-	  var filteredTracks = tracks === null || tracks === void 0 ? void 0 : tracks.filter(function (t) {
-	    return t.type !== 'ApolloTrack';
-	  });
-	  var filteredPlugins = plugins === null || plugins === void 0 ? void 0 : plugins.filter(function (p) {
-	    return p.name !== 'Apollo';
-	  });
-	  var filteredInternetAccounts = internetAccounts === null || internetAccounts === void 0 ? void 0 : internetAccounts.filter(function (i) {
-	    return i.type !== 'ApolloInternetAccount';
-	  });
+	  // Need to make sure that configuration.ApolloPlugin.hasRole isn't set
 	  var filteredConfig = rest;
-	  if (filteredAssemblies) {
-	    filteredConfig.assemblies = filteredAssemblies;
+	  if (assemblies) {
+	    filteredConfig.assemblies = assemblies.filter(function (a) {
+	      return a.sequence.adapter.type !== 'ApolloSequenceAdapter';
+	    });
 	  }
-	  if (filteredTracks) {
-	    filteredConfig.tracks = filteredTracks;
+	  if (configuration !== null && configuration !== void 0 && (_configuration$Apollo = configuration.ApolloPlugin) !== null && _configuration$Apollo !== void 0 && _configuration$Apollo.hasRole) {
+	    var _configuration$Apollo2 = configuration.ApolloPlugin,
+	      apolloPluginRest = _objectWithoutProperties(_configuration$Apollo2, _excluded2);
+	    filteredConfig.configuration = _objectSpread2(_objectSpread2({}, configuration), {}, {
+	      ApolloPlugin: apolloPluginRest
+	    });
 	  }
-	  if (filteredPlugins) {
-	    filteredConfig.plugins = filteredPlugins;
+	  if (internetAccounts) {
+	    filteredConfig.internetAccounts = internetAccounts.filter(function (i) {
+	      return i.type !== 'ApolloInternetAccount';
+	    });
 	  }
-	  if (filteredInternetAccounts) {
-	    filteredConfig.internetAccounts = filteredInternetAccounts;
+	  if (plugins) {
+	    filteredConfig.plugins = plugins.filter(function (p) {
+	      return p.name !== 'Apollo';
+	    });
+	  }
+	  if (tracks) {
+	    filteredConfig.trackss = tracks.filter(function (t) {
+	      return t.type !== 'ApolloTrack';
+	    });
 	  }
 	  return filteredConfig;
 	}
@@ -18342,7 +18421,7 @@
 	    }
 	  }]);
 	  return ImportJBrowseConfigChange;
-	}(common_1$c.Change);
+	}(common_1$e.Change);
 	ImportJBrowseConfigChange$1.ImportJBrowseConfigChange = ImportJBrowseConfigChange;
 
 	var LocationEndChange$1 = {};
@@ -18355,7 +18434,7 @@
 	/* eslint-disable @typescript-eslint/restrict-template-expressions */
 	/* eslint-disable @typescript-eslint/require-await */
 	/* eslint-disable @typescript-eslint/no-unnecessary-condition */
-	var common_1$b = dist$1;
+	var common_1$d = dist$1;
 	var LocationEndChange = /*#__PURE__*/function (_common_1$FeatureChan) {
 	  _inherits(LocationEndChange, _common_1$FeatureChan);
 	  var _super = /*#__PURE__*/_createSuper(LocationEndChange);
@@ -18657,7 +18736,7 @@
 	    }
 	  }]);
 	  return LocationEndChange;
-	}(common_1$b.FeatureChange);
+	}(common_1$d.FeatureChange);
 	LocationEndChange$1.LocationEndChange = LocationEndChange;
 	function isLocationEndChange(change) {
 	  return change.typeName === 'LocationEndChange';
@@ -18673,7 +18752,7 @@
 	/* eslint-disable @typescript-eslint/restrict-template-expressions */
 	/* eslint-disable @typescript-eslint/require-await */
 	/* eslint-disable @typescript-eslint/no-unnecessary-condition */
-	var common_1$a = dist$1;
+	var common_1$c = dist$1;
 	var LocationStartChange = /*#__PURE__*/function (_common_1$FeatureChan) {
 	  _inherits(LocationStartChange, _common_1$FeatureChan);
 	  var _super = /*#__PURE__*/_createSuper(LocationStartChange);
@@ -18975,7 +19054,7 @@
 	    }
 	  }]);
 	  return LocationStartChange;
-	}(common_1$a.FeatureChange);
+	}(common_1$c.FeatureChange);
 	LocationStartChange$1.LocationStartChange = LocationStartChange;
 	function isLocationStartChange(change) {
 	  return change.typeName === 'LocationStartChange';
@@ -18985,12 +19064,12 @@
 
 	var UndoMergeExonsChange$1 = {};
 
+	/* eslint-disable @typescript-eslint/require-await */
 	Object.defineProperty(UndoMergeExonsChange$1, "__esModule", {
 	  value: true
 	});
 	UndoMergeExonsChange$1.UndoMergeExonsChange = void 0;
-	/* eslint-disable @typescript-eslint/require-await */
-	var common_1$9 = dist$1;
+	var common_1$b = dist$1;
 	var MergeExonsChange_1 = MergeExonsChange$1;
 	var UndoMergeExonsChange = /*#__PURE__*/function (_common_1$FeatureChan) {
 	  _inherits(UndoMergeExonsChange, _common_1$FeatureChan);
@@ -19242,16 +19321,17 @@
 	    }
 	  }]);
 	  return UndoMergeExonsChange;
-	}(common_1$9.FeatureChange);
+	}(common_1$b.FeatureChange);
 	UndoMergeExonsChange$1.UndoMergeExonsChange = UndoMergeExonsChange;
 
+	/* eslint-disable @typescript-eslint/require-await */
+	/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 	Object.defineProperty(MergeExonsChange$1, "__esModule", {
 	  value: true
 	});
 	MergeExonsChange$1.MergeExonsChange = void 0;
-	/* eslint-disable @typescript-eslint/require-await */
-	/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-	var common_1$8 = dist$1;
+	var common_1$a = dist$1;
+	var DeleteFeatureChange_1$3 = DeleteFeatureChange$1;
 	var UndoMergeExonsChange_1 = UndoMergeExonsChange$1;
 	var MergeExonsChange = /*#__PURE__*/function (_common_1$FeatureChan) {
 	  _inherits(MergeExonsChange, _common_1$FeatureChan);
@@ -19265,7 +19345,13 @@
 	    _this.changes = 'changes' in json ? json.changes : [json];
 	    return _this;
 	  }
+	  // eslint-disable-next-line @typescript-eslint/class-literal-property-style
 	  _createClass(MergeExonsChange, [{
+	    key: "notification",
+	    get: function get() {
+	      return 'Exons successfully merged';
+	    }
+	  }, {
 	    key: "toJSON",
 	    value: function toJSON() {
 	      var assembly = this.assembly,
@@ -19340,7 +19426,7 @@
 	                      mergedExon.min = Math.min(firstExon.min, secondExon.min);
 	                      mergedExon.max = Math.max(firstExon.max, secondExon.max);
 	                      mergedExon.attributes = _this2.mergeAttributes(firstExon, secondExon);
-	                      deletedIds = _this2.findAndDeleteChildFeature(topLevelFeature, secondExon._id);
+	                      deletedIds = (0, DeleteFeatureChange_1$3.findAndDeleteChildFeature)(topLevelFeature, secondExon._id, _this2);
 	                      deletedIds.push(secondExon._id);
 	                      topLevelFeature.allIds = topLevelFeature.allIds.filter(function (id) {
 	                        return !deletedIds.includes(id);
@@ -19527,19 +19613,720 @@
 	    }
 	  }]);
 	  return MergeExonsChange;
-	}(common_1$8.FeatureChange);
+	}(common_1$a.FeatureChange);
 	MergeExonsChange$1.MergeExonsChange = MergeExonsChange;
+
+	var MergeTranscriptsChange$1 = {};
+
+	var UndoMergeTranscriptsChange$1 = {};
+
+	/* eslint-disable @typescript-eslint/require-await */
+	Object.defineProperty(UndoMergeTranscriptsChange$1, "__esModule", {
+	  value: true
+	});
+	UndoMergeTranscriptsChange$1.UndoMergeTranscriptsChange = void 0;
+	var common_1$9 = dist$1;
+	var MergeTranscriptsChange_1 = MergeTranscriptsChange$1;
+	var UndoMergeTranscriptsChange = /*#__PURE__*/function (_common_1$FeatureChan) {
+	  _inherits(UndoMergeTranscriptsChange, _common_1$FeatureChan);
+	  var _super = /*#__PURE__*/_createSuper(UndoMergeTranscriptsChange);
+	  function UndoMergeTranscriptsChange(json, options) {
+	    var _this;
+	    _classCallCheck(this, UndoMergeTranscriptsChange);
+	    _this = _super.call(this, json, options);
+	    _defineProperty(_assertThisInitialized(_this), "typeName", 'UndoMergeTranscriptsChange');
+	    _defineProperty(_assertThisInitialized(_this), "changes", void 0);
+	    _this.changes = 'changes' in json ? json.changes : [json];
+	    return _this;
+	  }
+	  _createClass(UndoMergeTranscriptsChange, [{
+	    key: "toJSON",
+	    value: function toJSON() {
+	      var assembly = this.assembly,
+	        changedIds = this.changedIds,
+	        changes = this.changes,
+	        typeName = this.typeName;
+	      if (changes.length === 1) {
+	        var _changes = _slicedToArray(changes, 1),
+	          _changes$ = _changes[0],
+	          transcriptsToRestore = _changes$.transcriptsToRestore,
+	          parentFeatureId = _changes$.parentFeatureId;
+	        return {
+	          typeName: typeName,
+	          changedIds: changedIds,
+	          assembly: assembly,
+	          transcriptsToRestore: transcriptsToRestore,
+	          parentFeatureId: parentFeatureId
+	        };
+	      }
+	      return {
+	        typeName: typeName,
+	        changedIds: changedIds,
+	        assembly: assembly,
+	        changes: changes
+	      };
+	    }
+	  }, {
+	    key: "executeOnServer",
+	    value: function () {
+	      var _executeOnServer = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(backend) {
+	        var featureModel, session, changes, _iterator, _step, change, transcriptsToRestore, parentFeatureId, topLevelFeature, parentFeature, _iterator2, _step2, _topLevelFeature$allI, transcript, childIds;
+	        return _regeneratorRuntime().wrap(function _callee$(_context) {
+	          while (1) switch (_context.prev = _context.next) {
+	            case 0:
+	              featureModel = backend.featureModel, session = backend.session;
+	              changes = this.changes;
+	              _iterator = _createForOfIteratorHelper(changes);
+	              _context.prev = 3;
+	              _iterator.s();
+	            case 5:
+	              if ((_step = _iterator.n()).done) {
+	                _context.next = 25;
+	                break;
+	              }
+	              change = _step.value;
+	              transcriptsToRestore = change.transcriptsToRestore, parentFeatureId = change.parentFeatureId;
+	              if (!(transcriptsToRestore.length !== 2)) {
+	                _context.next = 10;
+	                break;
+	              }
+	              throw new Error("Expected exactly two transcripts to restore. Got :".concat(transcriptsToRestore.length));
+	            case 10:
+	              _context.next = 12;
+	              return featureModel.findOne({
+	                allIds: parentFeatureId
+	              }).session(session).exec();
+	            case 12:
+	              topLevelFeature = _context.sent;
+	              if (topLevelFeature) {
+	                _context.next = 15;
+	                break;
+	              }
+	              throw new Error("Could not find feature with ID \"".concat(parentFeatureId, "\""));
+	            case 15:
+	              parentFeature = this.getFeatureFromId(topLevelFeature, parentFeatureId);
+	              if (parentFeature) {
+	                _context.next = 18;
+	                break;
+	              }
+	              throw new Error("Could not find feature with ID \"".concat(parentFeatureId, "\" in feature \"").concat(topLevelFeature._id.toString(), "\""));
+	            case 18:
+	              if (!parentFeature.children) {
+	                parentFeature.children = new Map();
+	              }
+	              _iterator2 = _createForOfIteratorHelper(transcriptsToRestore);
+	              try {
+	                for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+	                  transcript = _step2.value;
+	                  this.addChild(parentFeature, transcript);
+	                  childIds = this.getChildFeatureIds(transcript);
+	                  (_topLevelFeature$allI = topLevelFeature.allIds).push.apply(_topLevelFeature$allI, [transcript._id].concat(_toConsumableArray(childIds)));
+	                }
+	              } catch (err) {
+	                _iterator2.e(err);
+	              } finally {
+	                _iterator2.f();
+	              }
+	              _context.next = 23;
+	              return topLevelFeature.save();
+	            case 23:
+	              _context.next = 5;
+	              break;
+	            case 25:
+	              _context.next = 30;
+	              break;
+	            case 27:
+	              _context.prev = 27;
+	              _context.t0 = _context["catch"](3);
+	              _iterator.e(_context.t0);
+	            case 30:
+	              _context.prev = 30;
+	              _iterator.f();
+	              return _context.finish(30);
+	            case 33:
+	            case "end":
+	              return _context.stop();
+	          }
+	        }, _callee, this, [[3, 27, 30, 33]]);
+	      }));
+	      function executeOnServer(_x) {
+	        return _executeOnServer.apply(this, arguments);
+	      }
+	      return executeOnServer;
+	    }()
+	  }, {
+	    key: "executeOnLocalGFF3",
+	    value: function () {
+	      var _executeOnLocalGFF = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(_backend) {
+	        return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+	          while (1) switch (_context2.prev = _context2.next) {
+	            case 0:
+	              throw new Error('executeOnLocalGFF3 not implemented');
+	            case 1:
+	            case "end":
+	              return _context2.stop();
+	          }
+	        }, _callee2);
+	      }));
+	      function executeOnLocalGFF3(_x2) {
+	        return _executeOnLocalGFF.apply(this, arguments);
+	      }
+	      return executeOnLocalGFF3;
+	    }()
+	  }, {
+	    key: "executeOnClient",
+	    value: function () {
+	      var _executeOnClient = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(dataStore) {
+	        var changes, _iterator3, _step3, change, transcriptsToRestore, parentFeatureId, parentFeature, _iterator4, _step4, transcript;
+	        return _regeneratorRuntime().wrap(function _callee3$(_context3) {
+	          while (1) switch (_context3.prev = _context3.next) {
+	            case 0:
+	              if (dataStore) {
+	                _context3.next = 2;
+	                break;
+	              }
+	              throw new Error('No data store');
+	            case 2:
+	              changes = this.changes;
+	              _iterator3 = _createForOfIteratorHelper(changes);
+	              _context3.prev = 4;
+	              _iterator3.s();
+	            case 6:
+	              if ((_step3 = _iterator3.n()).done) {
+	                _context3.next = 19;
+	                break;
+	              }
+	              change = _step3.value;
+	              transcriptsToRestore = change.transcriptsToRestore, parentFeatureId = change.parentFeatureId;
+	              if (parentFeatureId) {
+	                _context3.next = 11;
+	                break;
+	              }
+	              throw new Error('Parent ID is missing');
+	            case 11:
+	              parentFeature = dataStore.getFeature(parentFeatureId);
+	              if (parentFeature) {
+	                _context3.next = 14;
+	                break;
+	              }
+	              throw new Error("Could not find parent feature \"".concat(parentFeatureId, "\""));
+	            case 14:
+	              // create an ID for the parent feature if it does not have one
+	              if (!parentFeature.attributes.get('_id')) {
+	                parentFeature.setAttribute('_id', [parentFeature._id]);
+	              }
+	              _iterator4 = _createForOfIteratorHelper(transcriptsToRestore);
+	              try {
+	                for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
+	                  transcript = _step4.value;
+	                  parentFeature.addChild(transcript);
+	                }
+	              } catch (err) {
+	                _iterator4.e(err);
+	              } finally {
+	                _iterator4.f();
+	              }
+	            case 17:
+	              _context3.next = 6;
+	              break;
+	            case 19:
+	              _context3.next = 24;
+	              break;
+	            case 21:
+	              _context3.prev = 21;
+	              _context3.t0 = _context3["catch"](4);
+	              _iterator3.e(_context3.t0);
+	            case 24:
+	              _context3.prev = 24;
+	              _iterator3.f();
+	              return _context3.finish(24);
+	            case 27:
+	            case "end":
+	              return _context3.stop();
+	          }
+	        }, _callee3, this, [[4, 21, 24, 27]]);
+	      }));
+	      function executeOnClient(_x3) {
+	        return _executeOnClient.apply(this, arguments);
+	      }
+	      return executeOnClient;
+	    }()
+	  }, {
+	    key: "getInverse",
+	    value: function getInverse() {
+	      var assembly = this.assembly,
+	        changedIds = this.changedIds,
+	        changes = this.changes,
+	        logger = this.logger;
+	      var inverseChangedIds = _toConsumableArray(changedIds).reverse();
+	      var inverseChanges = _toConsumableArray(changes).reverse().map(function (undoMergeTranscriptsChange) {
+	        return {
+	          firstTranscript: undoMergeTranscriptsChange.transcriptsToRestore[0],
+	          secondTranscript: undoMergeTranscriptsChange.transcriptsToRestore[1],
+	          parentFeatureId: undoMergeTranscriptsChange.parentFeatureId
+	        };
+	      });
+	      return new MergeTranscriptsChange_1.MergeTranscriptsChange({
+	        changedIds: inverseChangedIds,
+	        typeName: 'MergeTranscriptsChange',
+	        changes: inverseChanges,
+	        assembly: assembly
+	      }, {
+	        logger: logger
+	      });
+	    }
+	  }]);
+	  return UndoMergeTranscriptsChange;
+	}(common_1$9.FeatureChange);
+	UndoMergeTranscriptsChange$1.UndoMergeTranscriptsChange = UndoMergeTranscriptsChange;
+
+	/* eslint-disable unicorn/prefer-structured-clone */
+	/* eslint-disable @typescript-eslint/require-await */
+	/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+	Object.defineProperty(MergeTranscriptsChange$1, "__esModule", {
+	  value: true
+	});
+	MergeTranscriptsChange$1.MergeTranscriptsChange = void 0;
+	var common_1$8 = dist$1;
+	var util_1$2 = require$$1__default$1["default"];
+	var DeleteFeatureChange_1$2 = DeleteFeatureChange$1;
+	var UndoMergeTranscriptsChange_1 = UndoMergeTranscriptsChange$1;
+	var MergeTranscriptsChange = /*#__PURE__*/function (_common_1$FeatureChan) {
+	  _inherits(MergeTranscriptsChange, _common_1$FeatureChan);
+	  var _super = /*#__PURE__*/_createSuper(MergeTranscriptsChange);
+	  function MergeTranscriptsChange(json, options) {
+	    var _this;
+	    _classCallCheck(this, MergeTranscriptsChange);
+	    _this = _super.call(this, json, options);
+	    _defineProperty(_assertThisInitialized(_this), "typeName", 'MergeTranscriptsChange');
+	    _defineProperty(_assertThisInitialized(_this), "changes", void 0);
+	    _this.changes = 'changes' in json ? json.changes : [json];
+	    return _this;
+	  }
+	  _createClass(MergeTranscriptsChange, [{
+	    key: "toJSON",
+	    value: function toJSON() {
+	      var assembly = this.assembly,
+	        changedIds = this.changedIds,
+	        changes = this.changes,
+	        typeName = this.typeName;
+	      if (changes.length === 1) {
+	        var _changes = _slicedToArray(changes, 1),
+	          _changes$ = _changes[0],
+	          firstTranscript = _changes$.firstTranscript,
+	          secondTranscript = _changes$.secondTranscript,
+	          parentFeatureId = _changes$.parentFeatureId;
+	        return {
+	          typeName: typeName,
+	          changedIds: changedIds,
+	          assembly: assembly,
+	          firstTranscript: firstTranscript,
+	          secondTranscript: secondTranscript,
+	          parentFeatureId: parentFeatureId
+	        };
+	      }
+	      return {
+	        typeName: typeName,
+	        changedIds: changedIds,
+	        assembly: assembly,
+	        changes: changes
+	      };
+	    }
+	  }, {
+	    key: "executeOnServer",
+	    value: function () {
+	      var _executeOnServer = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(backend) {
+	        var _this2 = this;
+	        var featureModel, session, changes, logger, _iterator, _step, _loop;
+	        return _regeneratorRuntime().wrap(function _callee$(_context2) {
+	          while (1) switch (_context2.prev = _context2.next) {
+	            case 0:
+	              featureModel = backend.featureModel, session = backend.session;
+	              changes = this.changes, logger = this.logger;
+	              _iterator = _createForOfIteratorHelper(changes);
+	              _context2.prev = 3;
+	              _loop = /*#__PURE__*/_regeneratorRuntime().mark(function _loop() {
+	                var change, firstTranscript, secondTranscript, topLevelFeature, errMsg, mergedTranscript, _errMsg, deletedIds;
+	                return _regeneratorRuntime().wrap(function _loop$(_context) {
+	                  while (1) switch (_context.prev = _context.next) {
+	                    case 0:
+	                      change = _step.value;
+	                      firstTranscript = change.firstTranscript, secondTranscript = change.secondTranscript;
+	                      _context.next = 4;
+	                      return featureModel.findOne({
+	                        allIds: firstTranscript._id
+	                      }).session(session).exec();
+	                    case 4:
+	                      topLevelFeature = _context.sent;
+	                      if (topLevelFeature) {
+	                        _context.next = 9;
+	                        break;
+	                      }
+	                      errMsg = "*** ERROR: The following featureId was not found in database ='".concat(firstTranscript._id, "'");
+	                      logger.error(errMsg);
+	                      throw new Error(errMsg);
+	                    case 9:
+	                      mergedTranscript = _this2.getFeatureFromId(topLevelFeature, firstTranscript._id);
+	                      if (mergedTranscript) {
+	                        _context.next = 14;
+	                        break;
+	                      }
+	                      _errMsg = 'ERROR when searching feature by featureId';
+	                      logger.error(_errMsg);
+	                      throw new Error(_errMsg);
+	                    case 14:
+	                      _this2.mergeTranscriptsOnServer(mergedTranscript, secondTranscript);
+	                      deletedIds = (0, DeleteFeatureChange_1$2.findAndDeleteChildFeature)(topLevelFeature, secondTranscript._id, _this2);
+	                      deletedIds.push(secondTranscript._id);
+	                      topLevelFeature.allIds = topLevelFeature.allIds.filter(function (id) {
+	                        return !deletedIds.includes(id);
+	                      });
+	                      _context.next = 20;
+	                      return topLevelFeature.save();
+	                    case 20:
+	                    case "end":
+	                      return _context.stop();
+	                  }
+	                }, _loop);
+	              });
+	              _iterator.s();
+	            case 6:
+	              if ((_step = _iterator.n()).done) {
+	                _context2.next = 10;
+	                break;
+	              }
+	              return _context2.delegateYield(_loop(), "t0", 8);
+	            case 8:
+	              _context2.next = 6;
+	              break;
+	            case 10:
+	              _context2.next = 15;
+	              break;
+	            case 12:
+	              _context2.prev = 12;
+	              _context2.t1 = _context2["catch"](3);
+	              _iterator.e(_context2.t1);
+	            case 15:
+	              _context2.prev = 15;
+	              _iterator.f();
+	              return _context2.finish(15);
+	            case 18:
+	            case "end":
+	              return _context2.stop();
+	          }
+	        }, _callee, this, [[3, 12, 15, 18]]);
+	      }));
+	      function executeOnServer(_x) {
+	        return _executeOnServer.apply(this, arguments);
+	      }
+	      return executeOnServer;
+	    }()
+	  }, {
+	    key: "mergeTranscriptsOnServer",
+	    value: function mergeTranscriptsOnServer(firstTranscript, secondTranscript) {
+	      firstTranscript.min = Math.min(firstTranscript.min, secondTranscript.min);
+	      firstTranscript.max = Math.max(firstTranscript.max, secondTranscript.max);
+	      this.mergeTranscriptAttributes(firstTranscript, secondTranscript);
+	      if (secondTranscript.children) {
+	        for (var _i = 0, _Object$entries = Object.entries(secondTranscript.children); _i < _Object$entries.length; _i++) {
+	          var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
+	            secondFeatureChild = _Object$entries$_i[1];
+	          this.mergeFeatureIntoTranscriptOnServer(secondFeatureChild, firstTranscript);
+	        }
+	      }
+	    }
+	  }, {
+	    key: "mergeFeatureIntoTranscriptOnServer",
+	    value: function mergeFeatureIntoTranscriptOnServer(secondFeatureChild, firstTranscript) {
+	      var _this3 = this;
+	      if (!firstTranscript.children) {
+	        firstTranscript.children = new Map();
+	      }
+	      var merged = false;
+	      var mrgChild;
+	      var _iterator2 = _createForOfIteratorHelper(firstTranscript.children),
+	        _step2;
+	      try {
+	        for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+	          var _step2$value = _slicedToArray(_step2.value, 2),
+	            fKey = _step2$value[0],
+	            firstFeatureChild = _step2$value[1];
+	          if (!merged || !mrgChild) {
+	            mrgChild = firstFeatureChild;
+	          }
+	          if (mrgChild.type === secondFeatureChild.type && mrgChild.type === firstFeatureChild.type && (0, util_1$2.doesIntersect2)(secondFeatureChild.min, secondFeatureChild.max, mrgChild.min, mrgChild.max) && (0, util_1$2.doesIntersect2)(firstFeatureChild.min, firstFeatureChild.max, mrgChild.min, mrgChild.max)) {
+	            mrgChild.min = Math.min(secondFeatureChild.min, mrgChild.min, firstFeatureChild.min);
+	            mrgChild.max = Math.max(secondFeatureChild.max, mrgChild.max, firstFeatureChild.max);
+	            var mergedAttrs = this.mergeAttributes(mrgChild, secondFeatureChild);
+	            mrgChild.attributes = mergedAttrs;
+	            firstTranscript.children["delete"](fKey);
+	            merged = true;
+	          }
+	        }
+	      } catch (err) {
+	        _iterator2.e(err);
+	      } finally {
+	        _iterator2.f();
+	      }
+	      if (merged && mrgChild && secondFeatureChild.children) {
+	        // Add the children of the source feature
+	        // (secondFeatureChild.children) to the merged feature (mrgChild)
+	        Object.entries(secondFeatureChild.children).map(function (_ref) {
+	          var _ref2 = _slicedToArray(_ref, 2),
+	            child = _ref2[1];
+	          _this3.addChild(mrgChild, child);
+	        });
+	      }
+	      if (merged && mrgChild) {
+	        this.addChild(firstTranscript, mrgChild);
+	      } else {
+	        // This secondFeatureChild has no overlap with any feature in the
+	        // receiving transcript so we add it as it is to the receiving transcript
+	        this.addChild(firstTranscript, secondFeatureChild);
+	      }
+	    }
+	    /* --------------------------------- */
+	  }, {
+	    key: "executeOnClient",
+	    value: function () {
+	      var _executeOnClient = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(dataStore) {
+	        var _iterator3, _step3, _mergedTranscript$par, _step3$value, idx, changedId, _this$changes$idx, firstTranscript, secondTranscript, mergedTranscript;
+	        return _regeneratorRuntime().wrap(function _callee2$(_context3) {
+	          while (1) switch (_context3.prev = _context3.next) {
+	            case 0:
+	              if (dataStore) {
+	                _context3.next = 2;
+	                break;
+	              }
+	              throw new Error('No data store');
+	            case 2:
+	              _iterator3 = _createForOfIteratorHelper(this.changedIds.entries());
+	              _context3.prev = 3;
+	              _iterator3.s();
+	            case 5:
+	              if ((_step3 = _iterator3.n()).done) {
+	                _context3.next = 15;
+	                break;
+	              }
+	              _step3$value = _slicedToArray(_step3.value, 2), idx = _step3$value[0], changedId = _step3$value[1];
+	              _this$changes$idx = this.changes[idx], firstTranscript = _this$changes$idx.firstTranscript, secondTranscript = _this$changes$idx.secondTranscript;
+	              mergedTranscript = dataStore.getFeature(firstTranscript._id);
+	              if (mergedTranscript) {
+	                _context3.next = 11;
+	                break;
+	              }
+	              throw new Error("Could not find feature with identifier \"".concat(changedId, "\""));
+	            case 11:
+	              this.mergeTranscriptsOnClient(mergedTranscript, secondTranscript);
+	              (_mergedTranscript$par = mergedTranscript.parent) === null || _mergedTranscript$par === void 0 || _mergedTranscript$par.deleteChild(secondTranscript._id);
+	            case 13:
+	              _context3.next = 5;
+	              break;
+	            case 15:
+	              _context3.next = 20;
+	              break;
+	            case 17:
+	              _context3.prev = 17;
+	              _context3.t0 = _context3["catch"](3);
+	              _iterator3.e(_context3.t0);
+	            case 20:
+	              _context3.prev = 20;
+	              _iterator3.f();
+	              return _context3.finish(20);
+	            case 23:
+	            case "end":
+	              return _context3.stop();
+	          }
+	        }, _callee2, this, [[3, 17, 20, 23]]);
+	      }));
+	      function executeOnClient(_x2) {
+	        return _executeOnClient.apply(this, arguments);
+	      }
+	      return executeOnClient;
+	    }()
+	  }, {
+	    key: "mergeTranscriptsOnClient",
+	    value: function mergeTranscriptsOnClient(firstTranscript, secondTranscript) {
+	      firstTranscript.setMin(Math.min(firstTranscript.min, secondTranscript.min));
+	      firstTranscript.setMax(Math.max(firstTranscript.max, secondTranscript.max));
+	      this.mergeTranscriptAttributes(firstTranscript, secondTranscript);
+	      if (secondTranscript.children) {
+	        for (var _i2 = 0, _Object$entries2 = Object.entries(secondTranscript.children); _i2 < _Object$entries2.length; _i2++) {
+	          var _Object$entries2$_i = _slicedToArray(_Object$entries2[_i2], 2),
+	            secondFeatureChild = _Object$entries2$_i[1];
+	          this.mergeFeatureIntoTranscriptOnClient(secondFeatureChild, firstTranscript);
+	        }
+	      }
+	    }
+	  }, {
+	    key: "mergeFeatureIntoTranscriptOnClient",
+	    value: function mergeFeatureIntoTranscriptOnClient(secondFeatureChild, firstTranscript) {
+	      if (!firstTranscript.children) {
+	        firstTranscript.children = new Map();
+	      }
+	      var merged = false;
+	      var mrgChild;
+	      var toDelete;
+	      var _iterator4 = _createForOfIteratorHelper(firstTranscript.children),
+	        _step4;
+	      try {
+	        for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
+	          var _step4$value = _slicedToArray(_step4.value, 2),
+	            firstFeatureChild = _step4$value[1];
+	          if (!merged || !mrgChild) {
+	            toDelete = false;
+	            mrgChild = firstFeatureChild;
+	          } else {
+	            toDelete = true;
+	          }
+	          if (mrgChild.type === secondFeatureChild.type && mrgChild.type === firstFeatureChild.type && (0, util_1$2.doesIntersect2)(secondFeatureChild.min, secondFeatureChild.max, mrgChild.min, mrgChild.max) && (0, util_1$2.doesIntersect2)(firstFeatureChild.min, firstFeatureChild.max, mrgChild.min, mrgChild.max)) {
+	            mrgChild.setMin(Math.min(secondFeatureChild.min, mrgChild.min, firstFeatureChild.min));
+	            mrgChild.setMax(Math.max(secondFeatureChild.max, mrgChild.max, firstFeatureChild.max));
+	            var mergedAttrs = this.mergeAttributes(mrgChild, secondFeatureChild);
+	            Object.entries(mergedAttrs).map(function (_ref5) {
+	              var _ref6 = _slicedToArray(_ref5, 2),
+	                key = _ref6[0],
+	                value = _ref6[1];
+	              if (mrgChild) {
+	                mrgChild.setAttribute(key, value);
+	              }
+	            });
+	            if (toDelete) {
+	              firstTranscript.deleteChild(firstFeatureChild._id);
+	            }
+	            merged = true;
+	          }
+	        }
+	      } catch (err) {
+	        _iterator4.e(err);
+	      } finally {
+	        _iterator4.f();
+	      }
+	      if (merged && mrgChild && secondFeatureChild.children) {
+	        Object.entries(secondFeatureChild.children).map(function (_ref3) {
+	          var _ref4 = _slicedToArray(_ref3, 2),
+	            child = _ref4[1];
+	          mrgChild.addChild(child);
+	        });
+	      }
+	      if (!(merged && mrgChild)) {
+	        // This secondFeatureChild has no overlap with any feature in the
+	        // receiving transcript so we add it as it is to the receiving transcript
+	        firstTranscript.addChild(secondFeatureChild);
+	      }
+	    }
+	    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+	  }, {
+	    key: "isAnnotationFeature",
+	    value: function isAnnotationFeature(obj) {
+	      return (
+	        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+	        typeof obj.setMin === 'function' &&
+	        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+	        typeof obj.setMax === 'function' &&
+	        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+	        typeof obj.addChild === 'function' &&
+	        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+	        typeof obj.deleteChild === 'function'
+	      );
+	    }
+	  }, {
+	    key: "executeOnLocalGFF3",
+	    value: function () {
+	      var _executeOnLocalGFF = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(_backend) {
+	        return _regeneratorRuntime().wrap(function _callee3$(_context4) {
+	          while (1) switch (_context4.prev = _context4.next) {
+	            case 0:
+	              throw new Error('executeOnLocalGFF3 not implemented');
+	            case 1:
+	            case "end":
+	              return _context4.stop();
+	          }
+	        }, _callee3);
+	      }));
+	      function executeOnLocalGFF3(_x3) {
+	        return _executeOnLocalGFF.apply(this, arguments);
+	      }
+	      return executeOnLocalGFF3;
+	    }() /* Merge attributes from source into destination */
+	  }, {
+	    key: "mergeAttributes",
+	    value: function mergeAttributes(destination, source) {
+	      var destAttrs = destination.attributes ? JSON.parse(JSON.stringify(destination.attributes)) : {};
+	      if (source.attributes) {
+	        var sourceAttrs = JSON.parse(JSON.stringify(source.attributes));
+	        Object.entries(sourceAttrs).map(function (_ref7) {
+	          var _ref8 = _slicedToArray(_ref7, 2),
+	            key = _ref8[0],
+	            value = _ref8[1];
+	          if (!(key in destAttrs)) {
+	            destAttrs[key] = [];
+	          }
+	          value.map(function (x) {
+	            if (!destAttrs[key].includes(x)) {
+	              destAttrs[key].push(x);
+	            }
+	          });
+	        });
+	      }
+	      return destAttrs;
+	    }
+	  }, {
+	    key: "mergeTranscriptAttributes",
+	    value: function mergeTranscriptAttributes(firstTranscript, secondTranscript) {
+	      var txAttrs = this.mergeAttributes(firstTranscript, secondTranscript);
+	      if (this.isAnnotationFeature(firstTranscript)) {
+	        Object.entries(txAttrs).map(function (_ref9) {
+	          var _ref10 = _slicedToArray(_ref9, 2),
+	            key = _ref10[0],
+	            value = _ref10[1];
+	          firstTranscript.setAttribute(key, value);
+	        });
+	      } else {
+	        firstTranscript.attributes = txAttrs;
+	      }
+	    }
+	  }, {
+	    key: "getInverse",
+	    value: function getInverse() {
+	      var _logger$debug;
+	      var assembly = this.assembly,
+	        changedIds = this.changedIds,
+	        changes = this.changes,
+	        logger = this.logger;
+	      var inverseChangedIds = _toConsumableArray(changedIds).reverse();
+	      var inverseChanges = _toConsumableArray(changes).reverse().map(function (mergeTranscriptChange) {
+	        return {
+	          transcriptsToRestore: [mergeTranscriptChange.firstTranscript, mergeTranscriptChange.secondTranscript],
+	          parentFeatureId: mergeTranscriptChange.parentFeatureId
+	        };
+	      });
+	      (_logger$debug = logger.debug) === null || _logger$debug === void 0 || _logger$debug.call(logger, "INVERSE CHANGE '".concat(JSON.stringify(inverseChanges), "'"));
+	      return new UndoMergeTranscriptsChange_1.UndoMergeTranscriptsChange({
+	        changedIds: inverseChangedIds,
+	        typeName: 'UndoMergeTranscriptsChange',
+	        changes: inverseChanges,
+	        assembly: assembly
+	      }, {
+	        logger: logger
+	      });
+	    }
+	  }]);
+	  return MergeTranscriptsChange;
+	}(common_1$8.FeatureChange);
+	MergeTranscriptsChange$1.MergeTranscriptsChange = MergeTranscriptsChange;
 
 	var SplitExonChange$1 = {};
 
 	var UndoSplitExonChange$1 = {};
 
+	/* eslint-disable @typescript-eslint/require-await */
 	Object.defineProperty(UndoSplitExonChange$1, "__esModule", {
 	  value: true
 	});
 	UndoSplitExonChange$1.UndoSplitExonChange = void 0;
-	/* eslint-disable @typescript-eslint/require-await */
 	var common_1$7 = dist$1;
+	var DeleteFeatureChange_1$1 = DeleteFeatureChange$1;
 	var SplitExonChange_1 = SplitExonChange$1;
 	var UndoSplitExonChange = /*#__PURE__*/function (_common_1$FeatureChan) {
 	  _inherits(UndoSplitExonChange, _common_1$FeatureChan);
@@ -19640,7 +20427,7 @@
 	                        return !idsToDelete.includes(id);
 	                      });
 	                      idsToDelete.map(function (id) {
-	                        return _this2.findAndDeleteChildFeature(topLevelFeature, id);
+	                        return (0, DeleteFeatureChange_1$1.findAndDeleteChildFeature)(topLevelFeature, id, _this2);
 	                      });
 	                      _context.next = 18;
 	                      return topLevelFeature.save();
@@ -19816,13 +20603,14 @@
 	}(common_1$7.FeatureChange);
 	UndoSplitExonChange$1.UndoSplitExonChange = UndoSplitExonChange;
 
+	/* eslint-disable @typescript-eslint/require-await */
+	/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 	Object.defineProperty(SplitExonChange$1, "__esModule", {
 	  value: true
 	});
 	SplitExonChange$1.SplitExonChange = void 0;
-	/* eslint-disable @typescript-eslint/require-await */
-	/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 	var common_1$6 = dist$1;
+	var DeleteFeatureChange_1 = DeleteFeatureChange$1;
 	var UndoSplitExonChange_1 = UndoSplitExonChange$1;
 	var SplitExonChange = /*#__PURE__*/function (_common_1$FeatureChan) {
 	  _inherits(SplitExonChange, _common_1$FeatureChan);
@@ -19836,7 +20624,13 @@
 	    _this.changes = 'changes' in json ? json.changes : [json];
 	    return _this;
 	  }
+	  // eslint-disable-next-line @typescript-eslint/class-literal-property-style
 	  _createClass(SplitExonChange, [{
+	    key: "notification",
+	    get: function get() {
+	      return 'Exon successfully split';
+	    }
+	  }, {
 	    key: "toJSON",
 	    value: function toJSON() {
 	      var assembly = this.assembly,
@@ -19931,7 +20725,7 @@
 	                      tx.children = new Map(_toConsumableArray(tx.children.entries()).sort(function (a, b) {
 	                        return a[1].min - b[1].min;
 	                      }));
-	                      deletedIds = _this2.findAndDeleteChildFeature(topLevelFeature, exonToBeSplit._id);
+	                      deletedIds = (0, DeleteFeatureChange_1.findAndDeleteChildFeature)(topLevelFeature, exonToBeSplit._id, _this2);
 	                      deletedIds.push(exonToBeSplit._id);
 	                      topLevelFeature.allIds = topLevelFeature.allIds.filter(function (id) {
 	                        return !deletedIds.includes(id);
@@ -20000,7 +20794,7 @@
 	    key: "executeOnClient",
 	    value: function () {
 	      var _executeOnClient = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(dataStore) {
-	        var _iterator2, _step2, change, exonToBeSplit, parentFeatureId, upstreamCut, downstreamCut, leftExonId, rightExonId, _this$makeSplitExons, _this$makeSplitExons2, leftExon, rightExon, parentFeature;
+	        var _iterator2, _step2, _step2$value, idx, _this$changes$idx, exonToBeSplit, parentFeatureId, upstreamCut, downstreamCut, leftExonId, rightExonId, _this$makeSplitExons, _this$makeSplitExons2, leftExon, rightExon, parentFeature;
 	        return _regeneratorRuntime().wrap(function _callee3$(_context4) {
 	          while (1) switch (_context4.prev = _context4.next) {
 	            case 0:
@@ -20010,7 +20804,7 @@
 	              }
 	              throw new Error('No data store');
 	            case 2:
-	              _iterator2 = _createForOfIteratorHelper(this.changes);
+	              _iterator2 = _createForOfIteratorHelper(this.changedIds.entries());
 	              _context4.prev = 3;
 	              _iterator2.s();
 	            case 5:
@@ -20018,8 +20812,8 @@
 	                _context4.next = 19;
 	                break;
 	              }
-	              change = _step2.value;
-	              exonToBeSplit = change.exonToBeSplit, parentFeatureId = change.parentFeatureId, upstreamCut = change.upstreamCut, downstreamCut = change.downstreamCut, leftExonId = change.leftExonId, rightExonId = change.rightExonId;
+	              _step2$value = _slicedToArray(_step2.value, 1), idx = _step2$value[0];
+	              _this$changes$idx = this.changes[idx], exonToBeSplit = _this$changes$idx.exonToBeSplit, parentFeatureId = _this$changes$idx.parentFeatureId, upstreamCut = _this$changes$idx.upstreamCut, downstreamCut = _this$changes$idx.downstreamCut, leftExonId = _this$changes$idx.leftExonId, rightExonId = _this$changes$idx.rightExonId;
 	              if (parentFeatureId) {
 	                _context4.next = 10;
 	                break;
@@ -20876,10 +21670,12 @@
 	  var LocationEndChange_1 = LocationEndChange$1;
 	  var LocationStartChange_1 = LocationStartChange$1;
 	  var MergeExonsChange_1 = MergeExonsChange$1;
+	  var MergeTranscriptsChange_1 = MergeTranscriptsChange$1;
 	  var SplitExonChange_1 = SplitExonChange$1;
 	  var StrandChange_1 = StrandChange$1;
 	  var TypeChange_1 = TypeChange$1;
 	  var UndoMergeExonsChange_1 = UndoMergeExonsChange$1;
+	  var UndoMergeTranscriptsChange_1 = UndoMergeTranscriptsChange$1;
 	  var UndoSplitExonChange_1 = UndoSplitExonChange$1;
 	  var UserChange_1 = UserChange$1;
 	  exports.changes = {
@@ -20897,8 +21693,10 @@
 	    LocationStartChange: LocationStartChange_1.LocationStartChange,
 	    MergeExonsChange: MergeExonsChange_1.MergeExonsChange,
 	    SplitExonChange: SplitExonChange_1.SplitExonChange,
+	    MergeTranscriptsChange: MergeTranscriptsChange_1.MergeTranscriptsChange,
 	    UndoMergeExonsChange: UndoMergeExonsChange_1.UndoMergeExonsChange,
 	    UndoSplitExonChange: UndoSplitExonChange_1.UndoSplitExonChange,
+	    UndoMergeTranscriptsChange: UndoMergeTranscriptsChange_1.UndoMergeTranscriptsChange,
 	    StrandChange: StrandChange_1.StrandChange,
 	    TypeChange: TypeChange_1.TypeChange,
 	    UserChange: UserChange_1.UserChange,
@@ -20919,8 +21717,10 @@
 	  tslib_1.__exportStar(LocationStartChange$1, exports);
 	  tslib_1.__exportStar(MergeExonsChange$1, exports);
 	  tslib_1.__exportStar(SplitExonChange$1, exports);
+	  tslib_1.__exportStar(MergeTranscriptsChange$1, exports);
 	  tslib_1.__exportStar(UndoMergeExonsChange$1, exports);
 	  tslib_1.__exportStar(UndoSplitExonChange$1, exports);
+	  tslib_1.__exportStar(UndoMergeTranscriptsChange$1, exports);
 	  tslib_1.__exportStar(StrandChange$1, exports);
 	  tslib_1.__exportStar(TypeChange$1, exports);
 	  tslib_1.__exportStar(UserChange$1, exports);
@@ -21665,11 +22465,42 @@
 
 	var ParentChildValidation$1 = {};
 
+	var util$1 = {};
+
+	Object.defineProperty(util$1, "__esModule", {
+	  value: true
+	});
+	util$1.splitStringIntoChunks = splitStringIntoChunks;
+	util$1.getPrintableId = getPrintableId;
+	function splitStringIntoChunks(input, chunkSize) {
+	  var chunks = [];
+	  for (var i = 0; i < input.length; i += chunkSize) {
+	    var chunk = input.slice(i, i + chunkSize);
+	    chunks.push(chunk);
+	  }
+	  return chunks;
+	}
+	function getPrintableId(feature) {
+	  var _ff$attributes$get, _ff$attributes$get2;
+	  var ff = feature;
+	  var gff_id = (_ff$attributes$get = ff.attributes.get('gff_id')) === null || _ff$attributes$get === void 0 ? void 0 : _ff$attributes$get.join(',');
+	  if (gff_id) {
+	    return "ID=".concat(gff_id, " (_id: ").concat(feature._id.toString(), ")");
+	  }
+	  var gff_name = (_ff$attributes$get2 = ff.attributes.get('gff_name')) === null || _ff$attributes$get2 === void 0 ? void 0 : _ff$attributes$get2.join(',');
+	  if (gff_name) {
+	    return "Name=".concat(gff_name, " (_id: ").concat(feature._id.toString(), ")");
+	  }
+	  return "_id: ".concat(feature._id.toString());
+	}
+
+	/* eslint-disable @typescript-eslint/no-unnecessary-condition */
 	Object.defineProperty(ParentChildValidation$1, "__esModule", {
 	  value: true
 	});
 	ParentChildValidation$1.ParentChildValidation = void 0;
 	var Changes_1 = Changes;
+	var util_1$1 = util$1;
 	var Validation_1 = Validation$1;
 	var ParentChildValidation = /*#__PURE__*/function (_Validation_1$Validat) {
 	  _inherits(ParentChildValidation, _Validation_1$Validat);
@@ -21833,7 +22664,7 @@
 	          var _step2$value = _slicedToArray(_step2.value, 2),
 	            childFeature = _step2$value[1];
 	          if (feature.min !== null && feature.max !== null && childFeature.min !== null && childFeature.max !== null && (childFeature.max > feature.max || childFeature.min < feature.min)) {
-	            throw new Error("Feature \"".concat(childFeature._id, "\" exceeds the bounds of its parent, \"").concat(feature._id, "\""));
+	            throw new Error("Feature ".concat((0, util_1$1.getPrintableId)(childFeature), " exceeds the bounds of its parent, ").concat((0, util_1$1.getPrintableId)(feature)));
 	          }
 	          this.checkChildFeatureBoundaries(childFeature);
 	        }
@@ -22406,21 +23237,6 @@
 	  tslib_1.__exportStar(CDSCheck$1, exports);
 	})(Checks);
 
-	var util$1 = {};
-
-	Object.defineProperty(util$1, "__esModule", {
-	  value: true
-	});
-	util$1.splitStringIntoChunks = splitStringIntoChunks;
-	function splitStringIntoChunks(input, chunkSize) {
-	  var chunks = [];
-	  for (var i = 0; i < input.length; i += chunkSize) {
-	    var chunk = input.slice(i, i + chunkSize);
-	    chunks.push(chunk);
-	  }
-	  return chunks;
-	}
-
 	var Messages = {};
 
 	Object.defineProperty(Messages, "__esModule", {
@@ -22473,19 +23289,19 @@
 	  var _utils = require$$0__default["default"];
 	})(createSvgIcon);
 
-	var _interopRequireDefault$j = interopRequireDefault.exports;
+	var _interopRequireDefault$p = interopRequireDefault.exports;
 	Object.defineProperty(Add, "__esModule", {
 	  value: true
 	});
-	var default_1$j = Add["default"] = void 0;
-	var _createSvgIcon$j = /*#__PURE__*/_interopRequireDefault$j(createSvgIcon);
-	var _jsxRuntime$j = require$$2__default["default"];
-	var _default$l = /*#__PURE__*/(0, _createSvgIcon$j["default"])( /*#__PURE__*/(0, _jsxRuntime$j.jsx)("path", {
+	var default_1$p = Add["default"] = void 0;
+	var _createSvgIcon$p = /*#__PURE__*/_interopRequireDefault$p(createSvgIcon);
+	var _jsxRuntime$p = require$$2__default["default"];
+	var _default$r = /*#__PURE__*/(0, _createSvgIcon$p["default"])( /*#__PURE__*/(0, _jsxRuntime$p.jsx)("path", {
 	  d: "M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
 	}), 'Add');
-	default_1$j = Add["default"] = _default$l;
+	default_1$p = Add["default"] = _default$r;
 
-	var version = "0.3.6";
+	var version = "0.3.7";
 
 	const ApolloConfigSchema = configuration.ConfigurationSchema('ApolloInternetAccount', {
 	    baseURL: {
@@ -30019,7 +30835,7 @@
 	    }
 	    return '';
 	}
-	function getFeatureId$1(feature) {
+	function getFeatureId$2(feature) {
 	    const { attributes } = feature;
 	    const id = attributes.get('gff_id');
 	    const transcript_id = attributes.get('transcript_id');
@@ -30041,7 +30857,7 @@
 	}
 	function getFeatureNameOrId$1(feature) {
 	    const name = getFeatureName$1(feature);
-	    const id = getFeatureId$1(feature);
+	    const id = getFeatureId$2(feature);
 	    if (name) {
 	        return `: ${name}`;
 	    }
@@ -30058,6 +30874,164 @@
 	        return 'Reverse';
 	    }
 	    return '';
+	}
+	function getChildren(feature) {
+	    const children = [];
+	    //
+	    if (feature.children) {
+	        for (const [, ff] of feature.children) {
+	            children.push(ff);
+	        }
+	    }
+	    return children;
+	}
+	function getParents(feature) {
+	    const parents = [];
+	    let { parent } = feature;
+	    while (parent) {
+	        parents.push(parent);
+	        ({ parent } = parent);
+	    }
+	    return parents;
+	}
+	function getFeaturesUnderClick(mousePosition, includeSiblings = false) {
+	    const clickedFeatures = [];
+	    if (!mousePosition.featureAndGlyphUnderMouse) {
+	        return clickedFeatures;
+	    }
+	    clickedFeatures.push(mousePosition.featureAndGlyphUnderMouse.feature);
+	    for (const x of getParents(mousePosition.featureAndGlyphUnderMouse.feature)) {
+	        clickedFeatures.push(x);
+	    }
+	    const { bp } = mousePosition;
+	    const children = getChildren(mousePosition.featureAndGlyphUnderMouse.feature);
+	    for (const child of children) {
+	        if (child.min < bp && child.max >= bp) {
+	            clickedFeatures.push(child);
+	        }
+	    }
+	    if (!includeSiblings) {
+	        return clickedFeatures;
+	    }
+	    // Also add siblings , i.e. features having the same parent as the clicked
+	    // one and intersecting the click position
+	    if (mousePosition.featureAndGlyphUnderMouse.feature.parent) {
+	        const siblings = mousePosition.featureAndGlyphUnderMouse.feature.parent.children;
+	        if (siblings) {
+	            for (const [, sib] of siblings) {
+	                if (sib._id == mousePosition.featureAndGlyphUnderMouse.feature._id) {
+	                    continue;
+	                }
+	                if (sib.min < bp && sib.max >= bp) {
+	                    clickedFeatures.push(sib);
+	                }
+	            }
+	        }
+	    }
+	    return clickedFeatures;
+	}
+
+	function getMinAndMaxPx(feature, refName, regionNumber, lgv) {
+	    const minPxInfo = lgv.bpToPx({
+	        refName,
+	        coord: feature.min,
+	        regionNumber,
+	    });
+	    const maxPxInfo = lgv.bpToPx({
+	        refName,
+	        coord: feature.max,
+	        regionNumber,
+	    });
+	    if (minPxInfo === undefined || maxPxInfo === undefined) {
+	        return;
+	    }
+	    const { offsetPx } = lgv;
+	    const minPx = minPxInfo.offsetPx - offsetPx;
+	    const maxPx = maxPxInfo.offsetPx - offsetPx;
+	    return [minPx, maxPx];
+	}
+	function getOverlappingEdge(feature, x, minMax) {
+	    const [minPx, maxPx] = minMax;
+	    // Feature is too small to tell if we're overlapping an edge
+	    if (Math.abs(maxPx - minPx) < 8) {
+	        return;
+	    }
+	    if (Math.abs(minPx - x) < 4) {
+	        return { feature, edge: 'min' };
+	    }
+	    if (Math.abs(maxPx - x) < 4) {
+	        return { feature, edge: 'max' };
+	    }
+	    return;
+	}
+
+	function expandFeatures(feature, newLocation, edge) {
+	    const featureId = feature._id;
+	    const oldLocation = feature[edge];
+	    const changes = [{ featureId, oldLocation, newLocation }];
+	    const { parent } = feature;
+	    if (parent &&
+	        ((edge === 'min' && parent[edge] > newLocation) ||
+	            (edge === 'max' && parent[edge] < newLocation))) {
+	        changes.push(...expandFeatures(parent, newLocation, edge));
+	    }
+	    return changes;
+	}
+	function shrinkFeatures(feature, newLocation, edge, shrinkParent, childIdToSkip) {
+	    const featureId = feature._id;
+	    const oldLocation = feature[edge];
+	    const changes = [{ featureId, oldLocation, newLocation }];
+	    const { parent, children } = feature;
+	    if (children) {
+	        for (const [, child] of children) {
+	            if (child._id === childIdToSkip) {
+	                continue;
+	            }
+	            if ((edge === 'min' && child[edge] < newLocation) ||
+	                (edge === 'max' && child[edge] > newLocation)) {
+	                changes.push(...shrinkFeatures(child, newLocation, edge, shrinkParent));
+	            }
+	        }
+	    }
+	    if (parent && shrinkParent) {
+	        const siblings = [];
+	        if (parent.children) {
+	            for (const [, c] of parent.children) {
+	                if (c._id === featureId) {
+	                    continue;
+	                }
+	                siblings.push(c);
+	            }
+	        }
+	        if (siblings.length === 0) {
+	            changes.push(...shrinkFeatures(parent, newLocation, edge, shrinkParent, featureId));
+	        }
+	        else {
+	            const oldLocation = parent[edge];
+	            const boundedLocation = Math[edge](...siblings.map((s) => s[edge]), newLocation);
+	            if (boundedLocation !== oldLocation) {
+	                changes.push(...shrinkFeatures(parent, boundedLocation, edge, shrinkParent, featureId));
+	            }
+	        }
+	    }
+	    return changes;
+	}
+	function getPropagatedLocationChanges(feature, newLocation, edge, shrinkParent = false) {
+	    const oldLocation = feature[edge];
+	    if (newLocation === oldLocation) {
+	        throw new Error(`New and existing locations are the same: "${newLocation}"`);
+	    }
+	    if (edge === 'min') {
+	        if (newLocation > oldLocation) {
+	            // shrinking feature, may need to shrink children and/or parents
+	            return shrinkFeatures(feature, newLocation, edge, shrinkParent);
+	        }
+	        return expandFeatures(feature, newLocation, edge);
+	    }
+	    if (newLocation < oldLocation) {
+	        return shrinkFeatures(feature, newLocation, edge, shrinkParent);
+	    }
+	    return expandFeatures(feature, newLocation, edge);
 	}
 
 	async function createFetchErrorMessage(response, additionalText) {
@@ -30079,76 +31053,76 @@
 
 	var Info = {};
 
-	var _interopRequireDefault$i = interopRequireDefault.exports;
+	var _interopRequireDefault$o = interopRequireDefault.exports;
 	Object.defineProperty(Info, "__esModule", {
 	  value: true
 	});
-	var default_1$i = Info["default"] = void 0;
-	var _createSvgIcon$i = /*#__PURE__*/_interopRequireDefault$i(createSvgIcon);
-	var _jsxRuntime$i = require$$2__default["default"];
-	var _default$k = /*#__PURE__*/(0, _createSvgIcon$i["default"])( /*#__PURE__*/(0, _jsxRuntime$i.jsx)("path", {
+	var default_1$o = Info["default"] = void 0;
+	var _createSvgIcon$o = /*#__PURE__*/_interopRequireDefault$o(createSvgIcon);
+	var _jsxRuntime$o = require$$2__default["default"];
+	var _default$q = /*#__PURE__*/(0, _createSvgIcon$o["default"])( /*#__PURE__*/(0, _jsxRuntime$o.jsx)("path", {
 	  d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
 	}), 'Info');
-	default_1$i = Info["default"] = _default$k;
+	default_1$o = Info["default"] = _default$q;
 
 	var Link = {};
 
-	var _interopRequireDefault$h = interopRequireDefault.exports;
+	var _interopRequireDefault$n = interopRequireDefault.exports;
 	Object.defineProperty(Link, "__esModule", {
 	  value: true
 	});
-	var default_1$h = Link["default"] = void 0;
-	var _createSvgIcon$h = /*#__PURE__*/_interopRequireDefault$h(createSvgIcon);
-	var _jsxRuntime$h = require$$2__default["default"];
-	var _default$j = /*#__PURE__*/(0, _createSvgIcon$h["default"])( /*#__PURE__*/(0, _jsxRuntime$h.jsx)("path", {
+	var default_1$n = Link["default"] = void 0;
+	var _createSvgIcon$n = /*#__PURE__*/_interopRequireDefault$n(createSvgIcon);
+	var _jsxRuntime$n = require$$2__default["default"];
+	var _default$p = /*#__PURE__*/(0, _createSvgIcon$n["default"])( /*#__PURE__*/(0, _jsxRuntime$n.jsx)("path", {
 	  d: "M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"
 	}), 'Link');
-	default_1$h = Link["default"] = _default$j;
+	default_1$n = Link["default"] = _default$p;
 
 	var RadioButtonChecked = {};
 
-	var _interopRequireDefault$g = interopRequireDefault.exports;
+	var _interopRequireDefault$m = interopRequireDefault.exports;
 	Object.defineProperty(RadioButtonChecked, "__esModule", {
 	  value: true
 	});
-	var default_1$g = RadioButtonChecked["default"] = void 0;
-	var _createSvgIcon$g = /*#__PURE__*/_interopRequireDefault$g(createSvgIcon);
-	var _jsxRuntime$g = require$$2__default["default"];
-	var _default$i = /*#__PURE__*/(0, _createSvgIcon$g["default"])( /*#__PURE__*/(0, _jsxRuntime$g.jsx)("path", {
+	var default_1$m = RadioButtonChecked["default"] = void 0;
+	var _createSvgIcon$m = /*#__PURE__*/_interopRequireDefault$m(createSvgIcon);
+	var _jsxRuntime$m = require$$2__default["default"];
+	var _default$o = /*#__PURE__*/(0, _createSvgIcon$m["default"])( /*#__PURE__*/(0, _jsxRuntime$m.jsx)("path", {
 	  d: "M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
 	}), 'RadioButtonChecked');
-	default_1$g = RadioButtonChecked["default"] = _default$i;
+	default_1$m = RadioButtonChecked["default"] = _default$o;
 
 	var RadioButtonUnchecked = {};
 
-	var _interopRequireDefault$f = interopRequireDefault.exports;
+	var _interopRequireDefault$l = interopRequireDefault.exports;
 	Object.defineProperty(RadioButtonUnchecked, "__esModule", {
 	  value: true
 	});
-	var default_1$f = RadioButtonUnchecked["default"] = void 0;
-	var _createSvgIcon$f = /*#__PURE__*/_interopRequireDefault$f(createSvgIcon);
-	var _jsxRuntime$f = require$$2__default["default"];
-	var _default$h = /*#__PURE__*/(0, _createSvgIcon$f["default"])( /*#__PURE__*/(0, _jsxRuntime$f.jsx)("path", {
+	var default_1$l = RadioButtonUnchecked["default"] = void 0;
+	var _createSvgIcon$l = /*#__PURE__*/_interopRequireDefault$l(createSvgIcon);
+	var _jsxRuntime$l = require$$2__default["default"];
+	var _default$n = /*#__PURE__*/(0, _createSvgIcon$l["default"])( /*#__PURE__*/(0, _jsxRuntime$l.jsx)("path", {
 	  d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
 	}), 'RadioButtonUnchecked');
-	default_1$f = RadioButtonUnchecked["default"] = _default$h;
+	default_1$l = RadioButtonUnchecked["default"] = _default$n;
 
 	var Close = {};
 
-	var _interopRequireDefault$e = interopRequireDefault.exports;
+	var _interopRequireDefault$k = interopRequireDefault.exports;
 	Object.defineProperty(Close, "__esModule", {
 	  value: true
 	});
-	var default_1$e = Close["default"] = void 0;
-	var _createSvgIcon$e = /*#__PURE__*/_interopRequireDefault$e(createSvgIcon);
-	var _jsxRuntime$e = require$$2__default["default"];
-	var _default$g = /*#__PURE__*/(0, _createSvgIcon$e["default"])( /*#__PURE__*/(0, _jsxRuntime$e.jsx)("path", {
+	var default_1$k = Close["default"] = void 0;
+	var _createSvgIcon$k = /*#__PURE__*/_interopRequireDefault$k(createSvgIcon);
+	var _jsxRuntime$k = require$$2__default["default"];
+	var _default$m = /*#__PURE__*/(0, _createSvgIcon$k["default"])( /*#__PURE__*/(0, _jsxRuntime$k.jsx)("path", {
 	  d: "M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
 	}), 'Close');
-	default_1$e = Close["default"] = _default$g;
+	default_1$k = Close["default"] = _default$m;
 
 	/* eslint-disable @typescript-eslint/unbound-method */
-	const useStyles$h = mui.makeStyles()((theme) => ({
+	const useStyles$g = mui.makeStyles()((theme) => ({
 	    dialogTitle: {
 	        background: theme.palette.primary.main,
 	        color: theme.palette.primary.contrastText,
@@ -30162,12 +31136,12 @@
 	    },
 	}));
 	const Dialog = mobxReact.observer(function JBrowseDialog(props) {
-	    const { classes } = useStyles$h();
+	    const { classes } = useStyles$g();
 	    const { handleClose, title, ...other } = props;
 	    return (React__default["default"].createElement(ui.Dialog, { ...other, header: React__default["default"].createElement(React__default["default"].Fragment, null,
 	            React__default["default"].createElement(material.DialogTitle, { className: classes.dialogTitle }, title),
 	            React__default["default"].createElement(material.IconButton, { "aria-label": "close", onClick: handleClose, className: classes.closeButton },
-	                React__default["default"].createElement(default_1$e, null))) }));
+	                React__default["default"].createElement(default_1$k, null))) }));
 	});
 
 	/* eslint-disable @typescript-eslint/unbound-method */
@@ -30180,7 +31154,7 @@
 	    FileType["GZI"] = "application/x-gzi";
 	    FileType["EXTERNAL"] = "text/x-external";
 	})(FileType || (FileType = {}));
-	const useStyles$g = mui.makeStyles()((theme) => ({
+	const useStyles$f = mui.makeStyles()((theme) => ({
 	    accordion: {
 	        border: `1px solid ${theme.palette.divider}`,
 	        '&:not(:last-child)': {
@@ -30222,7 +31196,7 @@
 	    return false;
 	}
 	function AddAssembly({ changeManager, handleClose, session, }) {
-	    const { classes } = useStyles$g();
+	    const { classes } = useStyles$f();
 	    const { internetAccounts } = require$$1$3.getRoot(session);
 	    const { notify } = session;
 	    const apolloInternetAccounts = internetAccounts.filter((ia) => ia.type === 'ApolloInternetAccount');
@@ -30460,7 +31434,7 @@
 	                        checkAssemblyName(e.target.value);
 	                    }, disabled: submitted && !errorMessage }),
 	                React__default["default"].createElement(material.Accordion, { disableGutters: true, elevation: 0, square: true, className: classes.accordion, expanded: expanded === 'panelFastaInput', onChange: handleAccordionChange('panelFastaInput') },
-	                    React__default["default"].createElement(material.AccordionSummary, { className: classes.accordionSummary, expandIcon: expanded === 'panelFastaInput' ? (React__default["default"].createElement(default_1$g, { className: classes.radioIcon, sx: { fontSize: '1.2rem', ml: 5 } })) : (React__default["default"].createElement(default_1$f, { className: classes.radioIcon, sx: { fontSize: '1.2rem', mr: 5 } })), "aria-controls": "panelFastaInputd-content", id: "panelFastaInputd-header" },
+	                    React__default["default"].createElement(material.AccordionSummary, { className: classes.accordionSummary, expandIcon: expanded === 'panelFastaInput' ? (React__default["default"].createElement(default_1$m, { className: classes.radioIcon, sx: { fontSize: '1.2rem', ml: 5 } })) : (React__default["default"].createElement(default_1$l, { className: classes.radioIcon, sx: { fontSize: '1.2rem', mr: 5 } })), "aria-controls": "panelFastaInputd-content", id: "panelFastaInputd-header" },
 	                        React__default["default"].createElement(material.Typography, { component: "span" }, "FASTA input")),
 	                    React__default["default"].createElement(material.AccordionDetails, { className: classes.accordionDetails },
 	                        React__default["default"].createElement(material.FormGroup, null,
@@ -30475,14 +31449,14 @@
 	                                    "Use external URLs",
 	                                    React__default["default"].createElement(material.Tooltip, { title: "Use external URLs to provide FASTA and index files. Does not copy the files to the Apollo collaboration server, so ensure the URLs are stable.", placement: "top-start" },
 	                                        React__default["default"].createElement(material.IconButton, { size: "small" },
-	                                            React__default["default"].createElement(default_1$i, { sx: { fontSize: 18 } })))) }),
+	                                            React__default["default"].createElement(default_1$o, { sx: { fontSize: 18 } })))) }),
 	                            React__default["default"].createElement(material.FormControlLabel, { "data-testid": "sequence-is-editable-checkbox", control: React__default["default"].createElement(material.Checkbox, { onChange: () => {
 	                                        setSequenceIsEditable(!sequenceIsEditable);
 	                                    } }), checked: sequenceIsEditable, disabled: fileType === FileType.EXTERNAL, label: React__default["default"].createElement(material.Box, { display: "flex", alignItems: "center" },
 	                                    "Store sequence in database",
 	                                    React__default["default"].createElement(material.Tooltip, { title: "Enables users to edit the genomic sequence, but comes with performance impacts. Use with care.", placement: "top-start" },
 	                                        React__default["default"].createElement(material.IconButton, { size: "small" },
-	                                            React__default["default"].createElement(default_1$i, { sx: { fontSize: 18 } })))) }),
+	                                            React__default["default"].createElement(default_1$o, { sx: { fontSize: 18 } })))) }),
 	                            React__default["default"].createElement(material.FormControlLabel, { "data-testid": "fasta-is-gzip-checkbox", control: React__default["default"].createElement(material.Checkbox, { checked: isGzip, onChange: () => {
 	                                        if (sequenceIsEditable) {
 	                                            setIsGzip(!isGzip);
@@ -30500,7 +31474,7 @@
 	                                                React__default["default"].createElement("span", null, "FASTA"),
 	                                                React__default["default"].createElement(material.Tooltip, { title: 'Unless "Store sequence in database" enabled, FASTA input must be compressed with bgzip and indexed with samtools faidx (or equivalent). Compression is optional for sequences stored in the database.' },
 	                                                    React__default["default"].createElement(material.IconButton, { size: "small" },
-	                                                        React__default["default"].createElement(default_1$i, { sx: { fontSize: 18 } }))))),
+	                                                        React__default["default"].createElement(default_1$o, { sx: { fontSize: 18 } }))))),
 	                                        React__default["default"].createElement(material.TableCell, { style: { borderBottomWidth: 0 } },
 	                                            React__default["default"].createElement("input", { "data-testid": "fasta-input-file", type: "file", onChange: (e) => {
 	                                                    setFastaFile(e.target.files?.item(0) ?? null);
@@ -30524,14 +31498,14 @@
 	                                                React__default["default"].createElement("span", null, "FASTA"),
 	                                                React__default["default"].createElement(material.Tooltip, { title: "Remote FASTA input must be compressed with bgzip and indexed with samtools faidx (or equivalent)" },
 	                                                    React__default["default"].createElement(material.IconButton, { size: "small" },
-	                                                        React__default["default"].createElement(default_1$i, { sx: { fontSize: 18 } }))))),
+	                                                        React__default["default"].createElement(default_1$o, { sx: { fontSize: 18 } }))))),
 	                                        React__default["default"].createElement(material.TableCell, { style: { borderBottomWidth: 0 } },
 	                                            React__default["default"].createElement(material.TextField, { "data-testid": "fasta-input-url", variant: "outlined", value: fastaUrl, error: !validFastaUrl, onChange: (e) => {
 	                                                    setFastaUrl(e.target.value);
 	                                                }, disabled: submitted && !errorMessage, slotProps: {
 	                                                    input: {
 	                                                        startAdornment: (React__default["default"].createElement(material.InputAdornment, { position: "start" },
-	                                                            React__default["default"].createElement(default_1$h, null))),
+	                                                            React__default["default"].createElement(default_1$n, null))),
 	                                                    },
 	                                                } }))),
 	                                    React__default["default"].createElement(material.TableRow, null,
@@ -30542,7 +31516,7 @@
 	                                                }, disabled: submitted && !errorMessage, slotProps: {
 	                                                    input: {
 	                                                        startAdornment: (React__default["default"].createElement(material.InputAdornment, { position: "start" },
-	                                                            React__default["default"].createElement(default_1$h, null))),
+	                                                            React__default["default"].createElement(default_1$n, null))),
 	                                                    },
 	                                                } }))),
 	                                    React__default["default"].createElement(material.TableRow, null,
@@ -30553,15 +31527,15 @@
 	                                                }, disabled: submitted && !errorMessage, slotProps: {
 	                                                    input: {
 	                                                        startAdornment: (React__default["default"].createElement(material.InputAdornment, { position: "start" },
-	                                                            React__default["default"].createElement(default_1$h, null))),
+	                                                            React__default["default"].createElement(default_1$n, null))),
 	                                                    },
 	                                                } }))))))))),
 	                React__default["default"].createElement(material.Accordion, { disableGutters: true, elevation: 0, square: true, className: classes.accordion, expanded: expanded === 'panelGffInput', onChange: handleAccordionChange('panelGffInput') },
-	                    React__default["default"].createElement(material.AccordionSummary, { className: classes.accordionSummary, expandIcon: expanded === 'panelGffInput' ? (React__default["default"].createElement(default_1$g, { className: classes.radioIcon, sx: { fontSize: '1.2rem', ml: 5 } })) : (React__default["default"].createElement(default_1$f, { className: classes.radioIcon, sx: { fontSize: '1.2rem', mr: 5 } })), "aria-controls": "panelGffInputd-content" },
+	                    React__default["default"].createElement(material.AccordionSummary, { className: classes.accordionSummary, expandIcon: expanded === 'panelGffInput' ? (React__default["default"].createElement(default_1$m, { className: classes.radioIcon, sx: { fontSize: '1.2rem', ml: 5 } })) : (React__default["default"].createElement(default_1$l, { className: classes.radioIcon, sx: { fontSize: '1.2rem', mr: 5 } })), "aria-controls": "panelGffInputd-content" },
 	                        React__default["default"].createElement(material.Typography, { component: "span" },
 	                            "GFF3 input",
 	                            React__default["default"].createElement(material.Tooltip, { title: "GFF3 must includes FASTA sequences. File can be gzip compressed." },
-	                                React__default["default"].createElement(default_1$i, { className: classes.radioIcon, sx: { fontSize: 18 } })))),
+	                                React__default["default"].createElement(default_1$o, { className: classes.radioIcon, sx: { fontSize: 18 } })))),
 	                    React__default["default"].createElement(material.AccordionDetails, { className: classes.accordionDetails },
 	                        React__default["default"].createElement(material.Box, { style: { marginTop: 20 } },
 	                            React__default["default"].createElement("input", { "data-testid": "gff3-input-file", type: "file", disabled: submitted && !errorMessage, onChange: (e) => {
@@ -48328,7 +49302,9 @@
 	        const equivalents = terms
 	            .map((term) => term.lbl)
 	            .filter((term) => term != undefined);
-	        self.setEquivalentTypes(type, equivalents);
+	        if (require$$1$3.isAlive(self)) {
+	            self.setEquivalentTypes(type, equivalents);
+	        }
 	    }),
 	}))
 	    .actions((self) => ({
@@ -48609,8 +49585,8 @@
 	    return filterTerms ? result.filter((element) => filterTerms(element)) : result;
 	}
 
+	/* eslint-disable @typescript-eslint/unbound-method */
 	function AddChildFeature({ changeManager, handleClose, session, sourceAssemblyId, sourceFeature, }) {
-	    const { notify } = session;
 	    const [end, setEnd] = React.useState(String(sourceFeature.max));
 	    const [start, setStart] = React.useState(String(sourceFeature.min + 1));
 	    const [type, setType] = React.useState('');
@@ -48624,7 +49600,7 @@
 	        }
 	        return terms;
 	    }
-	    async function onSubmit(event) {
+	    function onSubmit(event) {
 	        event.preventDefault();
 	        setErrorMessage('');
 	        const change = new dist$2.AddFeatureChange({
@@ -48640,8 +49616,7 @@
 	            },
 	            parentFeatureId: sourceFeature._id,
 	        });
-	        await changeManager.submit(change);
-	        notify('Feature added successfully', 'success');
+	        void changeManager.submit(change);
 	        handleClose();
 	        event.preventDefault();
 	    }
@@ -48671,6 +49646,7 @@
 	            React__default["default"].createElement(material.DialogContentText, { color: "error" }, errorMessage))) : null));
 	}
 
+	/* eslint-disable @typescript-eslint/unbound-method */
 	var NewFeature;
 	(function (NewFeature) {
 	    NewFeature["GENE_AND_SUBFEATURES"] = "GENE_AND_SUBFEATURES";
@@ -48709,14 +49685,13 @@
 	    return mRNA;
 	}
 	function AddFeature({ changeManager, handleClose, region, session, }) {
-	    const { notify } = session;
 	    const [end, setEnd] = React.useState(String(region.end));
 	    const [start, setStart] = React.useState(String(region.start + 1));
 	    const [type, setType] = React.useState(NewFeature.GENE_AND_SUBFEATURES);
 	    const [customType, setCustomType] = React.useState();
 	    const [strand, setStrand] = React.useState();
 	    const [errorMessage, setErrorMessage] = React.useState('');
-	    async function onSubmit(event) {
+	    function onSubmit(event) {
 	        event.preventDefault();
 	        setErrorMessage('');
 	        let refSeqId;
@@ -48730,7 +49705,7 @@
 	            }
 	        }
 	        if (!refSeqId) {
-	            setErrorMessage('Invalid refseq id');
+	            setErrorMessage('Invalid refseq id. Make sure you have the Apollo annotation track open');
 	            return;
 	        }
 	        if (type === NewFeature.GENE_AND_SUBFEATURES) {
@@ -48752,8 +49727,7 @@
 	                    children,
 	                },
 	            });
-	            await changeManager.submit(change);
-	            notify('Feature added successfully', 'success');
+	            void changeManager.submit(change);
 	            handleClose();
 	            return;
 	        }
@@ -48765,8 +49739,7 @@
 	                assembly: region.assemblyName,
 	                addedFeature: mRNA,
 	            });
-	            await changeManager.submit(change);
-	            notify('Feature added successfully', 'success');
+	            void changeManager.submit(change);
 	            handleClose();
 	            return;
 	        }
@@ -48788,8 +49761,7 @@
 	                strand,
 	            },
 	        });
-	        await changeManager.submit(change);
-	        notify('Feature added successfully', 'success');
+	        void changeManager.submit(change);
 	        handleClose();
 	        return;
 	    }
@@ -48822,7 +49794,9 @@
 	        }
 	    };
 	    let submitDisabled = Boolean(error) || !(start && end && type);
-	    if (type === NewFeature.CUSTOM && !customType) {
+	    if ((type === NewFeature.CUSTOM && !customType) ||
+	        (!strand && type === NewFeature.GENE_AND_SUBFEATURES) ||
+	        (!strand && type === NewFeature.TRANSCRIPT_AND_SUBFEATURES)) {
 	        submitDisabled = true;
 	    }
 	    return (React__default["default"].createElement(Dialog, { open: true, title: "Add new feature", handleClose: handleClose, maxWidth: false, "data-testid": "add-feature-dialog" },
@@ -48846,12 +49820,12 @@
 	                                "Add gene and sub-features",
 	                                React__default["default"].createElement(material.Tooltip, { title: "This is a shortcut to create a gene with a single mRNA, exon, and CDS" },
 	                                    React__default["default"].createElement(material.IconButton, { size: "small" },
-	                                        React__default["default"].createElement(default_1$i, { sx: { fontSize: 18 } })))) }),
+	                                        React__default["default"].createElement(default_1$o, { sx: { fontSize: 18 } })))) }),
 	                        React__default["default"].createElement(material.FormControlLabel, { value: NewFeature.TRANSCRIPT_AND_SUBFEATURES, control: React__default["default"].createElement(material.Radio, null), label: React__default["default"].createElement(material.Box, { display: "flex", alignItems: "center" },
 	                                "Add transcript and sub-features",
 	                                React__default["default"].createElement(material.Tooltip, { title: "This is a shortcut to create a single mRNA with exon and CDS, but without a parent gene" },
 	                                    React__default["default"].createElement(material.IconButton, { size: "small" },
-	                                        React__default["default"].createElement(default_1$i, { sx: { fontSize: 18 } })))) }),
+	                                        React__default["default"].createElement(default_1$o, { sx: { fontSize: 18 } })))) }),
 	                        React__default["default"].createElement(material.FormControlLabel, { value: NewFeature.CUSTOM, checked: type !== NewFeature.GENE_AND_SUBFEATURES &&
 	                                type !== NewFeature.TRANSCRIPT_AND_SUBFEATURES, control: React__default["default"].createElement(material.Radio, null), label: "Add feature with a sequence ontology type" }))),
 	                type === NewFeature.CUSTOM ? (React__default["default"].createElement(OntologyTermAutocomplete, { session: session, ontologyName: "Sequence Ontology", style: { width: 170 }, value: "", filterTerms: isOntologyClass, renderInput: (params) => (React__default["default"].createElement(material.TextField, { ...params, label: "Type", variant: "outlined", fullWidth: true })), onChange: (_oldValue, newValue) => {
@@ -48894,7 +49868,7 @@
 	    };
 	}
 	function CopyFeature({ changeManager, handleClose, session, sourceAssemblyId, sourceFeature, }) {
-	    const { assemblyManager, notify } = session;
+	    const { assemblyManager } = session;
 	    const assemblies = assemblyManager.assemblyList;
 	    const [selectedAssemblyId, setSelectedAssemblyId] = React.useState(assemblies.find((a) => a.name !== sourceAssemblyId)?.name);
 	    const [refNames, setRefNames] = React.useState([]);
@@ -48993,8 +49967,7 @@
 	            copyFeature: true,
 	            allIds: featureIds,
 	        });
-	        await changeManager.submit(change);
-	        notify('Feature copied successfully', 'success');
+	        void changeManager.submit(change);
 	        handleClose();
 	        event.preventDefault();
 	    }
@@ -49118,30 +50091,318 @@
 	            React__default["default"].createElement(material.DialogContentText, { color: "error" }, errorMessage))) : null));
 	}
 
+	/* eslint-disable @typescript-eslint/unbound-method */
+	function lumpLocationChanges(changes, assembly) {
+	    if (changes.length === 0) {
+	        return;
+	    }
+	    const locationStartChange = new dist$2.LocationStartChange({
+	        typeName: 'LocationStartChange',
+	        changedIds: [],
+	        changes: [],
+	        assembly,
+	    });
+	    const locationEndChange = new dist$2.LocationEndChange({
+	        typeName: 'LocationEndChange',
+	        changedIds: [],
+	        changes: [],
+	        assembly,
+	    });
+	    for (const change of changes) {
+	        if (change.typeName === 'LocationStartChange') {
+	            locationStartChange.changedIds.push(change.changedId);
+	            const cc = {
+	                featureId: change.featureId,
+	                oldStart: change.oldLocation,
+	                newStart: change.newLocation,
+	            };
+	            locationStartChange.changes.push(cc);
+	        }
+	        if (change.typeName === 'LocationEndChange') {
+	            locationEndChange.changedIds.push(change.changedId);
+	            const cc = {
+	                featureId: change.featureId,
+	                oldEnd: change.oldLocation,
+	                newEnd: change.newLocation,
+	            };
+	            locationEndChange.changes.push(cc);
+	        }
+	    }
+	    if (locationStartChange.changedIds.length > 0 &&
+	        locationEndChange.changedIds.length === 0) {
+	        return locationStartChange;
+	    }
+	    if (locationEndChange.changedIds.length > 0 &&
+	        locationStartChange.changedIds.length === 0) {
+	        return locationEndChange;
+	    }
+	    throw new Error('Unexpected list of changes');
+	}
 	function DeleteFeature({ changeManager, handleClose, selectedFeature, session, setSelectedFeature, sourceAssemblyId, sourceFeature, }) {
-	    const { notify } = session;
 	    const [errorMessage, setErrorMessage] = React.useState('');
+	    const { ontologyManager } = session.apolloDataStore;
+	    const { featureTypeOntology } = ontologyManager;
+	    function trimCDS(sourceFeature) {
+	        if (!featureTypeOntology) {
+	            return;
+	        }
+	        if (!featureTypeOntology.isTypeOf(sourceFeature.type, 'exon')) {
+	            return;
+	        }
+	        if (!sourceFeature.parent?.cdsLocations ||
+	            sourceFeature.parent.cdsLocations.length === 0 ||
+	            sourceFeature.parent.cdsLocations[0].length === 0) {
+	            // No CDS - parent of this exon is a non-coding transcript
+	            return;
+	        }
+	        if (!sourceFeature.parent.children) {
+	            throw new Error('Unable to find parent of CDS');
+	        }
+	        if (sourceFeature.parent.cdsLocations.length != 1) {
+	            throw new Error('Unable to handle a transcript with multiple CDSs');
+	        }
+	        const _cdsLocations = sourceFeature.parent.cdsLocations.at(0) ?? [];
+	        const cdsLocations = _cdsLocations.sort(({ min: a }, { min: b }) => a - b);
+	        let cdsFeature;
+	        for (const child of sourceFeature.parent.children.values()) {
+	            if (child.type === cdsLocations[0].type) {
+	                cdsFeature = child;
+	                break;
+	            }
+	        }
+	        if (!cdsFeature) {
+	            throw new Error('Unable to find CDS');
+	        }
+	        const cdsStart = cdsLocations[0].min;
+	        // eslint-disable-next-line unicorn/prefer-at
+	        const cdsEnd = cdsLocations[cdsLocations.length - 1].max;
+	        if ((sourceFeature.min > cdsStart && sourceFeature.max < cdsEnd) ||
+	            sourceFeature.max < cdsStart ||
+	            sourceFeature.min > cdsEnd) {
+	            // No adjustment if the exon being deleted is fully contained in the CDS
+	            // or completely outside of the CDS
+	            return;
+	        }
+	        if (sourceFeature.min <= cdsStart && sourceFeature.max >= cdsEnd) {
+	            // CDS is fully contained in the exon, delete CDS
+	            return new dist$2.DeleteFeatureChange({
+	                changedIds: [cdsFeature._id],
+	                typeName: 'DeleteFeatureChange',
+	                assembly: sourceAssemblyId,
+	                changes: [
+	                    {
+	                        deletedFeature: require$$1$3.getSnapshot(cdsFeature),
+	                        parentFeatureId: cdsFeature.parent?._id,
+	                    },
+	                ],
+	            });
+	        }
+	        if (sourceFeature.min <= cdsStart && sourceFeature.max > cdsStart) {
+	            // Exon overlaps the start of the CDS so we need to move the CDS start
+	            let newCdsStart;
+	            for (const cdsLocation of cdsLocations) {
+	                if (cdsLocation.min > sourceFeature.max) {
+	                    newCdsStart = cdsLocation.min;
+	                    break;
+	                }
+	            }
+	            if (!newCdsStart) {
+	                throw new Error('Error setting new CDS start');
+	            }
+	            return {
+	                typeName: 'LocationStartChange',
+	                changedId: cdsFeature._id,
+	                featureId: cdsFeature._id,
+	                oldLocation: cdsFeature.min,
+	                newLocation: newCdsStart,
+	            };
+	        }
+	        if (sourceFeature.min < cdsEnd && sourceFeature.max >= cdsEnd) {
+	            // Exon overlaps the end of the CDS so we need to move the CDS end
+	            let newCdsEnd;
+	            for (const cdsLocation of cdsLocations.reverse()) {
+	                if (cdsLocation.max < sourceFeature.min) {
+	                    newCdsEnd = cdsLocation.max;
+	                    break;
+	                }
+	            }
+	            if (!newCdsEnd) {
+	                throw new Error('Error setting new CDS end');
+	            }
+	            return {
+	                typeName: 'LocationEndChange',
+	                changedId: cdsFeature._id,
+	                featureId: cdsFeature._id,
+	                oldLocation: cdsFeature.max,
+	                newLocation: newCdsEnd,
+	            };
+	        }
+	        throw new Error('Unexpected relationship between exon and CDS');
+	    }
+	    function trimParent(featureToDelete) {
+	        if (!featureToDelete.parent?.children ||
+	            featureToDelete.parent.children.size === 1) {
+	            // Do not resize if this parent has only one child (i.e. the feature being deleted)
+	            return;
+	        }
+	        const childrenByStart = [];
+	        for (const x of featureToDelete.parent.children.values()) {
+	            if (!featureTypeOntology?.isTypeOf(x.type, 'CDS')) {
+	                // CDS has been already handled so don't use it to resize parent
+	                childrenByStart.push(x);
+	            }
+	        }
+	        childrenByStart.sort((a, b) => a.min - b.min);
+	        const childrenByEnd = [];
+	        for (const x of featureToDelete.parent.children.values()) {
+	            if (!featureTypeOntology?.isTypeOf(x.type, 'CDS')) {
+	                // CDS has been already handled so don't use it to resize parent
+	                childrenByEnd.push(x);
+	            }
+	        }
+	        childrenByEnd.sort((a, b) => b.max - a.max);
+	        if (featureToDelete.min === childrenByStart[0].min) {
+	            // The feature to delete has the lowest start coordinate of all children
+	            // Find the next lowest coordinate and reset parent to this new start
+	            let newParentFeatureStart;
+	            for (const child of childrenByStart) {
+	                if (child._id !== featureToDelete._id &&
+	                    child.min >= featureToDelete.min) {
+	                    newParentFeatureStart = child.min;
+	                    break;
+	                }
+	            }
+	            if (newParentFeatureStart &&
+	                newParentFeatureStart != featureToDelete.parent.min) {
+	                return {
+	                    typeName: 'LocationStartChange',
+	                    changedId: featureToDelete.parent._id,
+	                    featureId: featureToDelete.parent._id,
+	                    oldLocation: featureToDelete.parent.min,
+	                    newLocation: newParentFeatureStart,
+	                };
+	            }
+	        }
+	        if (featureToDelete.max === childrenByEnd[0].max) {
+	            // The feature to delete has the highest end coordinate of all children
+	            // Find the next highest coordinate and reset parent to this new end
+	            let newParentFeatureEnd;
+	            for (const child of childrenByEnd) {
+	                if (child._id != featureToDelete._id &&
+	                    child.max <= featureToDelete.max) {
+	                    newParentFeatureEnd = child.max;
+	                    break;
+	                }
+	            }
+	            if (newParentFeatureEnd &&
+	                newParentFeatureEnd != featureToDelete.parent.max) {
+	                return {
+	                    typeName: 'LocationEndChange',
+	                    changedId: featureToDelete.parent._id,
+	                    featureId: featureToDelete.parent._id,
+	                    oldLocation: featureToDelete.parent.max,
+	                    newLocation: newParentFeatureEnd,
+	                };
+	            }
+	        }
+	        return;
+	    }
 	    async function onSubmit(event) {
 	        event.preventDefault();
 	        setErrorMessage('');
 	        if (selectedFeature?._id === sourceFeature._id) {
 	            setSelectedFeature();
 	        }
-	        // Delete features
-	        const change = new dist$2.DeleteFeatureChange({
+	        const locationChanges = [];
+	        // const deleteChanges: DeleteFeatureChange = []
+	        const deleteChanges = new dist$2.DeleteFeatureChange({
 	            changedIds: [sourceFeature._id],
 	            typeName: 'DeleteFeatureChange',
 	            assembly: sourceAssemblyId,
-	            deletedFeature: require$$1$3.getSnapshot(sourceFeature),
-	            parentFeatureId: sourceFeature.parent?._id,
+	            changes: [
+	                {
+	                    deletedFeature: require$$1$3.getSnapshot(sourceFeature),
+	                    parentFeatureId: sourceFeature.parent?._id,
+	                },
+	            ],
 	        });
-	        await changeManager.submit(change);
-	        notify('Feature deleted successfully', 'success');
+	        if (featureTypeOntology &&
+	            (featureTypeOntology.isTypeOf(sourceFeature.type, 'transcript') ||
+	                featureTypeOntology.isTypeOf(sourceFeature.type, 'pseudogenic_transcript'))) {
+	            const geneChange = trimParent(sourceFeature);
+	            if (geneChange) {
+	                locationChanges.push(geneChange);
+	            }
+	        }
+	        if (featureTypeOntology &&
+	            featureTypeOntology.isTypeOf(sourceFeature.type, 'exon')) {
+	            const cdsChange = trimCDS(sourceFeature);
+	            if (cdsChange) {
+	                if (cdsChange.typeName === 'DeleteFeatureChange') {
+	                    deleteChanges.changedIds.push(...cdsChange.changedIds);
+	                    deleteChanges.changes.push(...cdsChange.changes);
+	                }
+	                else {
+	                    locationChanges.push(cdsChange);
+	                }
+	            }
+	            const txChange = trimParent(sourceFeature);
+	            if (txChange) {
+	                locationChanges.push(txChange);
+	                // Parent transcript has changed. See if we need to resize the parent gene
+	                const gene = sourceFeature.parent?.parent;
+	                if (gene?.children) {
+	                    if (txChange.typeName === 'LocationStartChange') {
+	                        let newGeneStart = txChange.newLocation;
+	                        for (const [, tx] of gene.children) {
+	                            if (tx._id != txChange.featureId && tx.min < newGeneStart) {
+	                                // Reset to longest child (tx)
+	                                newGeneStart = tx.min;
+	                            }
+	                        }
+	                        if (newGeneStart != gene.min) {
+	                            locationChanges.push({
+	                                typeName: txChange.typeName,
+	                                changedId: gene._id,
+	                                featureId: gene._id,
+	                                oldLocation: gene.min,
+	                                newLocation: newGeneStart,
+	                            });
+	                        }
+	                    }
+	                    else {
+	                        let newGeneEnd = txChange.newLocation;
+	                        for (const [, tx] of gene.children) {
+	                            if (tx._id != txChange.featureId && tx.max > newGeneEnd) {
+	                                // Reset to longest child (tx)
+	                                newGeneEnd = tx.max;
+	                            }
+	                        }
+	                        if (newGeneEnd != gene.max) {
+	                            locationChanges.push({
+	                                typeName: txChange.typeName,
+	                                changedId: gene._id,
+	                                featureId: gene._id,
+	                                oldLocation: gene.max,
+	                                newLocation: newGeneEnd,
+	                            });
+	                        }
+	                    }
+	                }
+	            }
+	        }
+	        const lumpedLocChanges = lumpLocationChanges(locationChanges, sourceAssemblyId);
+	        await changeManager.submit(deleteChanges);
+	        if (lumpedLocChanges) {
+	            await changeManager.submit(lumpedLocChanges);
+	        }
 	        handleClose();
 	        event.preventDefault();
 	    }
 	    return (React__default["default"].createElement(Dialog, { open: true, title: "Delete feature", handleClose: handleClose, maxWidth: false, "data-testid": "delete-feature" },
-	        React__default["default"].createElement("form", { onSubmit: onSubmit },
+	        React__default["default"].createElement("form", { onSubmit: (event) => {
+	                void onSubmit(event);
+	            } },
 	            React__default["default"].createElement(material.DialogContent, { style: { display: 'flex', flexDirection: 'column' } },
 	                React__default["default"].createElement(material.DialogContentText, null, "Are you sure you want to delete the selected feature?")),
 	            React__default["default"].createElement(material.DialogActions, null,
@@ -49232,6 +50493,7 @@
 	})(FileSaver_min);
 
 	function DownloadGFF3({ handleClose, session }) {
+	    const [includeFASTA, setincludeFASTA] = React.useState(false);
 	    const [selectedAssembly, setSelectedAssembly] = React.useState();
 	    const [errorMessage, setErrorMessage] = React.useState('');
 	    const { collaborationServerDriver, getInternetAccount, inMemoryFileDriver } = session.apolloDataStore;
@@ -49288,7 +50550,7 @@
 	        const exportURL = new URL('export', internetAccount.baseURL);
 	        const params = {
 	            exportID,
-	            includeFASTA: 'true',
+	            includeFASTA: includeFASTA ? 'true' : 'false',
 	        };
 	        const exportSearchParams = new URLSearchParams(params);
 	        exportURL.search = exportSearchParams.toString();
@@ -49342,7 +50604,11 @@
 	            React__default["default"].createElement(material.DialogContent, { style: { display: 'flex', flexDirection: 'column' } },
 	                React__default["default"].createElement(material.DialogContentText, null, "Select assembly"),
 	                React__default["default"].createElement(material.Select, { labelId: "label", value: selectedAssembly?.name ?? '', onChange: handleChangeAssembly, disabled: assemblies.length === 0 }, assemblies.map((option) => (React__default["default"].createElement(material.MenuItem, { key: option.name, value: option.name }, option.displayName ?? option.name)))),
-	                React__default["default"].createElement(material.DialogContentText, null, "Select assembly to export to GFF3")),
+	                React__default["default"].createElement(material.DialogContentText, null, "Select assembly to export to GFF3"),
+	                React__default["default"].createElement(material.FormGroup, null,
+	                    React__default["default"].createElement(material.FormControlLabel, { "data-testid": "include-fasta-checkbox", control: React__default["default"].createElement(material.Checkbox, { checked: includeFASTA, onChange: () => {
+	                                setincludeFASTA(!includeFASTA);
+	                            } }), label: "Include fasta sequence in GFF output" }))),
 	            React__default["default"].createElement(material.DialogActions, null,
 	                React__default["default"].createElement(material.Button, { disabled: !selectedAssembly, variant: "contained", type: "submit" }, "Download"),
 	                React__default["default"].createElement(material.Button, { variant: "outlined", type: "submit", onClick: handleClose }, "Cancel"))),
@@ -49699,17 +50965,17 @@
 
 	var Delete = {};
 
-	var _interopRequireDefault$d = interopRequireDefault.exports;
+	var _interopRequireDefault$j = interopRequireDefault.exports;
 	Object.defineProperty(Delete, "__esModule", {
 	  value: true
 	});
-	var default_1$d = Delete["default"] = void 0;
-	var _createSvgIcon$d = /*#__PURE__*/_interopRequireDefault$d(createSvgIcon);
-	var _jsxRuntime$d = require$$2__default["default"];
-	var _default$f = /*#__PURE__*/(0, _createSvgIcon$d["default"])( /*#__PURE__*/(0, _jsxRuntime$d.jsx)("path", {
+	var default_1$j = Delete["default"] = void 0;
+	var _createSvgIcon$j = /*#__PURE__*/_interopRequireDefault$j(createSvgIcon);
+	var _jsxRuntime$j = require$$2__default["default"];
+	var _default$l = /*#__PURE__*/(0, _createSvgIcon$j["default"])( /*#__PURE__*/(0, _jsxRuntime$j.jsx)("path", {
 	  d: "M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
 	}), 'Delete');
-	default_1$d = Delete["default"] = _default$f;
+	default_1$j = Delete["default"] = _default$l;
 
 	/* eslint-disable @typescript-eslint/unbound-method */
 	function ManageUsers({ changeManager, handleClose, session, }) {
@@ -49794,7 +51060,7 @@
 	            field: 'actions',
 	            type: 'actions',
 	            getActions: (params) => [
-	                React__default["default"].createElement(xDataGrid.GridActionsCellItem, { key: `delete-${params.id}`, icon: React__default["default"].createElement(default_1$d, null), onClick: async () => {
+	                React__default["default"].createElement(xDataGrid.GridActionsCellItem, { key: `delete-${params.id}`, icon: React__default["default"].createElement(default_1$j, null), onClick: async () => {
 	                        if (globalThis.confirm('Delete this user?')) {
 	                            await deleteUser(params.id);
 	                        }
@@ -49835,6 +51101,7 @@
 	            React__default["default"].createElement(material.DialogContentText, { color: "error" }, errorMessage))) : null));
 	}
 
+	/* eslint-disable @typescript-eslint/unbound-method */
 	function getNeighboringExons(referenceExon) {
 	    const neighboringExons = {};
 	    const tx = referenceExon.parent;
@@ -49873,7 +51140,7 @@
 	    }
 	    return neighboringExons;
 	}
-	function makeRadioButtonName(key, neighboringExons) {
+	function makeRadioButtonName$1(key, neighboringExons) {
 	    const neighboringExon = neighboringExons[key];
 	    let name;
 	    if (key === 'three_prime') {
@@ -49887,11 +51154,10 @@
 	    }
 	    return name;
 	}
-	function MergeExons({ changeManager, handleClose, selectedFeature, session, setSelectedFeature, sourceAssemblyId, sourceFeature, }) {
-	    const { notify } = session;
+	function MergeExons({ changeManager, handleClose, selectedFeature, setSelectedFeature, sourceAssemblyId, sourceFeature, }) {
 	    const [errorMessage, setErrorMessage] = React.useState('');
 	    const [selectedExon, setSelectedExon] = React.useState();
-	    async function onSubmit(event) {
+	    function onSubmit(event) {
 	        event.preventDefault();
 	        setErrorMessage('');
 	        const { parent } = sourceFeature;
@@ -49909,8 +51175,7 @@
 	            secondExon: require$$1$3.getSnapshot(selectedExon),
 	            parentFeatureId: parent._id,
 	        });
-	        await changeManager.submit(change);
-	        notify('Exons successfully merged', 'success');
+	        void changeManager.submit(change);
 	        handleClose();
 	        event.preventDefault();
 	    }
@@ -49927,10 +51192,94 @@
 	                    ? 'There are no neighbouring exons to merge with'
 	                    : 'Merge with exon on:',
 	                React__default["default"].createElement(material.FormControl, { style: { marginTop: 5 } },
-	                    React__default["default"].createElement(material.RadioGroup, { "aria-labelledby": "demo-radio-buttons-group-label", name: "radio-buttons-group", value: selectedExon, onChange: handleTypeChange }, Object.keys(neighboringExons).map((key) => (React__default["default"].createElement(material.FormControlLabel, { value: key, key: key, control: React__default["default"].createElement(material.Radio, null), label: React__default["default"].createElement(material.Box, { display: "flex", alignItems: "center" }, makeRadioButtonName(key, neighboringExons)) })))))),
+	                    React__default["default"].createElement(material.RadioGroup, { "aria-labelledby": "demo-radio-buttons-group-label", name: "radio-buttons-group", value: selectedExon, onChange: handleTypeChange }, Object.keys(neighboringExons).map((key) => (React__default["default"].createElement(material.FormControlLabel, { value: key, key: key, control: React__default["default"].createElement(material.Radio, null), label: React__default["default"].createElement(material.Box, { display: "flex", alignItems: "center" }, makeRadioButtonName$1(key, neighboringExons)) })))))),
 	            React__default["default"].createElement(material.DialogActions, null,
 	                React__default["default"].createElement(material.Button, { variant: "contained", type: "submit", disabled: Object.keys(neighboringExons).length === 0 ||
 	                        selectedExon === undefined }, "Submit"),
+	                React__default["default"].createElement(material.Button, { variant: "outlined", type: "submit", onClick: handleClose }, "Cancel"))),
+	        errorMessage ? (React__default["default"].createElement(material.DialogContent, null,
+	            React__default["default"].createElement(material.DialogContentText, { color: "error" }, errorMessage))) : null));
+	}
+
+	function getTranscripts(referenceTranscript, session) {
+	    const gene = referenceTranscript.parent;
+	    if (!gene) {
+	        throw new Error('Unable to find parent of reference transcript');
+	    }
+	    const { featureTypeOntology } = session.apolloDataStore.ontologyManager;
+	    if (!featureTypeOntology) {
+	        throw new Error('featureTypeOntology is undefined');
+	    }
+	    const transcripts = {};
+	    if (gene.children) {
+	        for (const [, feature] of gene.children) {
+	            if (featureTypeOntology.isTypeOf(feature.type, 'transcript') &&
+	                feature._id !== referenceTranscript._id) {
+	                transcripts[feature._id] = feature;
+	            }
+	        }
+	    }
+	    return transcripts;
+	}
+	function makeRadioButtonName(transcript) {
+	    let id;
+	    if (transcript.attributes.get('gff_name')) {
+	        id = transcript.attributes.get('gff_name')?.join(',');
+	    }
+	    else if (transcript.attributes.get('gff_id')) {
+	        id = transcript.attributes.get('gff_id')?.join(',');
+	    }
+	    else {
+	        id = transcript._id;
+	    }
+	    return `${id} [${transcript.min + 1}-${transcript.max}]`;
+	}
+	function MergeTranscripts({ changeManager, handleClose, selectedFeature, session, setSelectedFeature, sourceAssemblyId, sourceFeature, }) {
+	    const { notify } = session;
+	    const [errorMessage, setErrorMessage] = React.useState('');
+	    const [selectedTranscript, setSelectedTranscript] = React.useState();
+	    async function onSubmit(event) {
+	        event.preventDefault();
+	        setErrorMessage('');
+	        if (!selectedTranscript) {
+	            return;
+	        }
+	        if (selectedFeature?._id === sourceFeature._id) {
+	            setSelectedFeature();
+	        }
+	        if (!sourceFeature.parent) {
+	            throw new Error('Cannot find parent');
+	        }
+	        const change = new dist$2.MergeTranscriptsChange({
+	            changedIds: [sourceFeature._id],
+	            typeName: 'MergeTranscriptsChange',
+	            assembly: sourceAssemblyId,
+	            firstTranscript: require$$1$3.getSnapshot(sourceFeature),
+	            secondTranscript: require$$1$3.getSnapshot(selectedTranscript),
+	            parentFeatureId: sourceFeature.parent._id,
+	        });
+	        await changeManager.submit(change);
+	        notify('Transcripts successfully merged', 'success');
+	        handleClose();
+	        event.preventDefault();
+	    }
+	    const handleTypeChange = (e) => {
+	        setErrorMessage('');
+	        const { value } = e.target;
+	        setSelectedTranscript(transcripts[value]);
+	    };
+	    const transcripts = getTranscripts(sourceFeature, session);
+	    return (React__default["default"].createElement(Dialog, { open: true, title: "Merge transcripts", handleClose: handleClose, maxWidth: false, "data-testid": "merge-transcripts" },
+	        React__default["default"].createElement("form", { onSubmit: onSubmit },
+	            React__default["default"].createElement(material.DialogContent, { style: { display: 'flex', flexDirection: 'column' } },
+	                Object.keys(transcripts).length === 0
+	                    ? 'There are no transcripts to merge with'
+	                    : 'Merge with transcript:',
+	                React__default["default"].createElement(material.FormControl, { style: { marginTop: 5 } },
+	                    React__default["default"].createElement(material.RadioGroup, { "aria-labelledby": "demo-radio-buttons-group-label", name: "radio-buttons-group", value: selectedTranscript, onChange: handleTypeChange }, Object.keys(transcripts).map((key) => (React__default["default"].createElement(material.FormControlLabel, { value: key, key: key, control: React__default["default"].createElement(material.Radio, null), label: React__default["default"].createElement(material.Box, { display: "flex", alignItems: "center" }, makeRadioButtonName(transcripts[key])) })))))),
+	            React__default["default"].createElement(material.DialogActions, null,
+	                React__default["default"].createElement(material.Button, { variant: "contained", type: "submit", disabled: Object.keys(transcripts).length === 0 ||
+	                        selectedTranscript === undefined }, "Submit"),
 	                React__default["default"].createElement(material.Button, { variant: "outlined", type: "submit", onClick: handleClose }, "Cancel"))),
 	        errorMessage ? (React__default["default"].createElement(material.DialogContent, null,
 	            React__default["default"].createElement(material.DialogContentText, { color: "error" }, errorMessage))) : null));
@@ -50049,16 +51398,158 @@
 	            React__default["default"].createElement(material.DialogContentText, { color: "error" }, errorMessage))) : null));
 	}
 
-	/* eslint-disable @typescript-eslint/unbound-method */
-	const useStyles$f = mui.makeStyles()((theme) => ({
-	    changeTextarea: {
-	        fontFamily: 'monospace',
-	        width: 600,
-	        resize: 'none',
-	        border: `1px solid ${theme.palette.divider}`,
-	        borderRadius: theme.shape.borderRadius,
-	    },
-	}));
+	var ContentCopy = {};
+
+	var _interopRequireDefault$i = interopRequireDefault.exports;
+	Object.defineProperty(ContentCopy, "__esModule", {
+	  value: true
+	});
+	var default_1$i = ContentCopy["default"] = void 0;
+	var _createSvgIcon$i = /*#__PURE__*/_interopRequireDefault$i(createSvgIcon);
+	var _jsxRuntime$i = require$$2__default["default"];
+	var _default$k = /*#__PURE__*/(0, _createSvgIcon$i["default"])( /*#__PURE__*/(0, _jsxRuntime$i.jsx)("path", {
+	  d: "M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"
+	}), 'ContentCopy');
+	default_1$i = ContentCopy["default"] = _default$k;
+
+	var FirstPage = {};
+
+	var _interopRequireDefault$h = interopRequireDefault.exports;
+	Object.defineProperty(FirstPage, "__esModule", {
+	  value: true
+	});
+	var default_1$h = FirstPage["default"] = void 0;
+	var _createSvgIcon$h = /*#__PURE__*/_interopRequireDefault$h(createSvgIcon);
+	var _jsxRuntime$h = require$$2__default["default"];
+	var _default$j = /*#__PURE__*/(0, _createSvgIcon$h["default"])( /*#__PURE__*/(0, _jsxRuntime$h.jsx)("path", {
+	  d: "M18.41 16.59 13.82 12l4.59-4.59L17 6l-6 6 6 6zM6 6h2v12H6z"
+	}), 'FirstPage');
+	default_1$h = FirstPage["default"] = _default$j;
+
+	var KeyboardArrowDown = {};
+
+	var _interopRequireDefault$g = interopRequireDefault.exports;
+	Object.defineProperty(KeyboardArrowDown, "__esModule", {
+	  value: true
+	});
+	var default_1$g = KeyboardArrowDown["default"] = void 0;
+	var _createSvgIcon$g = /*#__PURE__*/_interopRequireDefault$g(createSvgIcon);
+	var _jsxRuntime$g = require$$2__default["default"];
+	var _default$i = /*#__PURE__*/(0, _createSvgIcon$g["default"])( /*#__PURE__*/(0, _jsxRuntime$g.jsx)("path", {
+	  d: "M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
+	}), 'KeyboardArrowDown');
+	default_1$g = KeyboardArrowDown["default"] = _default$i;
+
+	var KeyboardArrowLeft = {};
+
+	var _interopRequireDefault$f = interopRequireDefault.exports;
+	Object.defineProperty(KeyboardArrowLeft, "__esModule", {
+	  value: true
+	});
+	var default_1$f = KeyboardArrowLeft["default"] = void 0;
+	var _createSvgIcon$f = /*#__PURE__*/_interopRequireDefault$f(createSvgIcon);
+	var _jsxRuntime$f = require$$2__default["default"];
+	var _default$h = /*#__PURE__*/(0, _createSvgIcon$f["default"])( /*#__PURE__*/(0, _jsxRuntime$f.jsx)("path", {
+	  d: "M15.41 16.59 10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"
+	}), 'KeyboardArrowLeft');
+	default_1$f = KeyboardArrowLeft["default"] = _default$h;
+
+	var KeyboardArrowRight = {};
+
+	var _interopRequireDefault$e = interopRequireDefault.exports;
+	Object.defineProperty(KeyboardArrowRight, "__esModule", {
+	  value: true
+	});
+	var default_1$e = KeyboardArrowRight["default"] = void 0;
+	var _createSvgIcon$e = /*#__PURE__*/_interopRequireDefault$e(createSvgIcon);
+	var _jsxRuntime$e = require$$2__default["default"];
+	var _default$g = /*#__PURE__*/(0, _createSvgIcon$e["default"])( /*#__PURE__*/(0, _jsxRuntime$e.jsx)("path", {
+	  d: "M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+	}), 'KeyboardArrowRight');
+	default_1$e = KeyboardArrowRight["default"] = _default$g;
+
+	var KeyboardArrowUp = {};
+
+	var _interopRequireDefault$d = interopRequireDefault.exports;
+	Object.defineProperty(KeyboardArrowUp, "__esModule", {
+	  value: true
+	});
+	var default_1$d = KeyboardArrowUp["default"] = void 0;
+	var _createSvgIcon$d = /*#__PURE__*/_interopRequireDefault$d(createSvgIcon);
+	var _jsxRuntime$d = require$$2__default["default"];
+	var _default$f = /*#__PURE__*/(0, _createSvgIcon$d["default"])( /*#__PURE__*/(0, _jsxRuntime$d.jsx)("path", {
+	  d: "M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6z"
+	}), 'KeyboardArrowUp');
+	default_1$d = KeyboardArrowUp["default"] = _default$f;
+
+	var LastPage = {};
+
+	var _interopRequireDefault$c = interopRequireDefault.exports;
+	Object.defineProperty(LastPage, "__esModule", {
+	  value: true
+	});
+	var default_1$c = LastPage["default"] = void 0;
+	var _createSvgIcon$c = /*#__PURE__*/_interopRequireDefault$c(createSvgIcon);
+	var _jsxRuntime$c = require$$2__default["default"];
+	var _default$e = /*#__PURE__*/(0, _createSvgIcon$c["default"])( /*#__PURE__*/(0, _jsxRuntime$c.jsx)("path", {
+	  d: "M5.59 7.41 10.18 12l-4.59 4.59L7 18l6-6-6-6zM16 6h2v12h-2z"
+	}), 'LastPage');
+	default_1$c = LastPage["default"] = _default$e;
+
+	async function copyToClipboard(element) {
+	    if (isSecureContext) {
+	        const textBlob = new Blob([element.outerText], { type: 'text/plain' });
+	        const htmlBlob = new Blob([element.outerHTML], { type: 'text/html' });
+	        const clipboardItem = new ClipboardItem({
+	            [textBlob.type]: textBlob,
+	            [htmlBlob.type]: htmlBlob,
+	        });
+	        return navigator.clipboard.write([clipboardItem]);
+	    }
+	    const copyCallback = (event) => {
+	        event.clipboardData?.setData('text/plain', element.outerText);
+	        event.clipboardData?.setData('text/html', element.outerHTML);
+	        event.preventDefault();
+	    };
+	    document.addEventListener('copy', copyCallback);
+	    // fall back to deprecated only in non-secure contexts
+	    // eslint-disable-next-line @typescript-eslint/no-deprecated
+	    document.execCommand('copy');
+	    document.removeEventListener('copy', copyCallback);
+	}
+
+	/* eslint-disable @typescript-eslint/no-explicit-any */
+	const changeTypeMapping = {
+	    FeatureAttributeChange: 'Attribute Change',
+	    UserChange: 'User Change',
+	    UndoSplitExonChange: 'Undo Split Exon',
+	    UndoMergeTranscriptsChange: 'Undo Merge Transcripts',
+	    UndoMergeExonsChange: 'Undo Merge Exons',
+	    TypeChange: 'Type Change',
+	    StrandChange: 'Strand Change',
+	    SplitExonChange: 'Split Exon',
+	    MergeTranscriptsChange: 'Merge Transcripts',
+	    MergeExonsChange: 'Merge Exons',
+	    LocationStartChange: 'Location Start Change',
+	    LocationEndChange: 'Location End Change',
+	    DeleteUserChange: 'Delete User',
+	    DeleteFeatureChange: 'Delete Feature',
+	    DeleteAssemblyChange: 'Delete Assembly',
+	    AddFeatureChange: 'Add Feature',
+	};
+	function getFeatureId$1(feature) {
+	    if (!feature) {
+	        return '';
+	    }
+	    const keys = ['gene_id', 'transcript_id', 'exon_id', 'protein_id'];
+	    for (const key of keys) {
+	        const value = feature.attributes?.[key];
+	        if (value && Array.isArray(value) && value.length > 0) {
+	            return value[0];
+	        }
+	    }
+	    return feature._id || '';
+	}
 	function ViewChangeLog({ handleClose, session }) {
 	    const { internetAccounts } = require$$1$3.getRoot(session);
 	    const apolloInternetAccount = internetAccounts.find((ia) => ia.type === 'ApolloInternetAccount');
@@ -50066,37 +51557,13 @@
 	        throw new Error('No Apollo internet account found');
 	    }
 	    const { baseURL } = apolloInternetAccount;
-	    const { classes } = useStyles$f();
 	    const [errorMessage, setErrorMessage] = React.useState();
 	    const [assemblyCollection, setAssemblyCollection] = React.useState([]);
 	    const [assemblyId, setAssemblyId] = React.useState('');
-	    const [displayGridData, setDisplayGridData] = React.useState([]);
-	    const gridColumns = [
-	        { field: 'sequence' },
-	        {
-	            field: 'typeName',
-	            headerName: 'Change type',
-	            width: 200,
-	            type: 'singleSelect',
-	            // TODO: Get these from change manager once it's on the session
-	            valueOptions: [...dist$3.changeRegistry.changes.keys()],
-	        },
-	        {
-	            field: 'changes',
-	            headerName: 'Change JSON',
-	            width: 600,
-	            renderCell: ({ value }) => (React__default["default"].createElement("textarea", { className: classes.changeTextarea, value: JSON.stringify(value), readOnly: true })),
-	            valueFormatter: ({ value }) => JSON.stringify(value),
-	        },
-	        { field: 'user', headerName: 'User', width: 140 },
-	        {
-	            field: 'createdAt',
-	            headerName: 'Time',
-	            width: 160,
-	            type: 'dateTime',
-	            valueGetter: (value) => value && new Date(value),
-	        },
-	    ];
+	    const [tableData, setTableData] = React.useState([]);
+	    const [page, setPage] = React__default["default"].useState(0);
+	    const [rowsPerPage, setRowsPerPage] = React__default["default"].useState(5);
+	    const [searchText, setSearchText] = React.useState('');
 	    React.useEffect(() => {
 	        async function getAssemblies() {
 	            const uri = new URL('assemblies', baseURL).href;
@@ -50148,7 +51615,30 @@
 	                    return;
 	                }
 	                const data = await response.json();
-	                setDisplayGridData(data);
+	                const changes = data;
+	                const changesData = [];
+	                for (const change of changes) {
+	                    const { changedIds } = change;
+	                    const changesArray = Array.isArray(change.changes)
+	                        ? change.changes
+	                        : [];
+	                    let i = 0;
+	                    for (const c of changesArray) {
+	                        const newChange = {
+	                            ...change,
+	                            changes: [c],
+	                            _id: `${change._id}-${i}`,
+	                        };
+	                        if ('featureId' in c &&
+	                            changedIds.includes(c.featureId)) {
+	                            newChange.changedIds = [c.featureId];
+	                            newChange._id = `${change._id}-${c.featureId}`;
+	                        }
+	                        changesData.push(newChange);
+	                        i++;
+	                    }
+	                }
+	                setTableData(changesData);
 	            }
 	        }
 	        getGridData().catch((error) => {
@@ -50158,17 +51648,425 @@
 	    function handleChangeAssembly(e) {
 	        setAssemblyId(e.target.value);
 	    }
-	    return (React__default["default"].createElement(Dialog, { open: true, fullScreen: true, title: "View change log", handleClose: handleClose, "data-testid": "view-changelog" },
-	        React__default["default"].createElement(material.Select, { style: { width: 200, marginLeft: 40 }, value: assemblyId, onChange: handleChangeAssembly }, assemblyCollection.map((option) => (React__default["default"].createElement(material.MenuItem, { key: option._id, value: option._id }, option.name)))),
+	    const handleChangePage = (event, newPage) => {
+	        setPage(newPage);
+	    };
+	    const handleChangeRowsPerPage = (event) => {
+	        setRowsPerPage(Number.parseInt(event.target.value, 10));
+	        setPage(0);
+	    };
+	    const getRowsForPage = () => {
+	        const rows = rowsPerPage > 0
+	            ? getFilteredRows().slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+	            : getFilteredRows();
+	        return rows;
+	    };
+	    const getFilteredRows = () => {
+	        if (!searchText || searchText.trim() === '') {
+	            return tableData;
+	        }
+	        const lower = searchText.toLowerCase();
+	        return tableData.filter((row) => {
+	            const { _id = '', typeName = '', user = '', createdAt = '', updatedAt = '', changedIds = [], changes = [], } = row;
+	            const content = [
+	                _id,
+	                typeName,
+	                user,
+	                createdAt,
+	                updatedAt,
+	                ...changedIds,
+	                JSON.stringify(changes),
+	            ]
+	                .join(' ')
+	                .toLowerCase();
+	            return content.includes(lower);
+	        });
+	    };
+	    return (React__default["default"].createElement(Dialog, { open: true, title: "Change history", handleClose: handleClose, "data-testid": "view-changelog", maxWidth: "xl", fullWidth: true },
 	        React__default["default"].createElement(material.DialogContent, null,
-	            React__default["default"].createElement(xDataGrid.DataGrid, { pagination: true, rows: displayGridData, columns: gridColumns, getRowId: (row) => row._id, slots: { toolbar: xDataGrid.GridToolbar }, initialState: {
-	                    sorting: { sortModel: [{ field: 'sequence', sort: 'desc' }] },
-	                    columns: { columnVisibilityModel: { sequence: false } },
-	                } })),
-	        React__default["default"].createElement(material.DialogActions, null,
-	            React__default["default"].createElement(material.Button, { variant: "outlined", type: "submit", onClick: handleClose }, "Close")),
+	            React__default["default"].createElement(material.Grid2, { container: true, spacing: 2 },
+	                React__default["default"].createElement(material.Grid2, { size: 6 },
+	                    React__default["default"].createElement(material.Select, { value: assemblyId, onChange: handleChangeAssembly, size: "small", style: {
+	                            width: 300,
+	                            margin: 0,
+	                        } }, assemblyCollection.map((option) => (React__default["default"].createElement(material.MenuItem, { key: option._id, value: option._id }, option.name))))),
+	                React__default["default"].createElement(material.Grid2, { size: 6 },
+	                    React__default["default"].createElement(material.TextField, { id: "outlined-basic", label: "Filter", size: "small", variant: "outlined", style: {
+	                            float: 'right',
+	                            width: 300,
+	                            margin: 0,
+	                        }, value: searchText, onChange: (e) => {
+	                            setSearchText(e.target.value);
+	                        } })),
+	                React__default["default"].createElement(material.Grid2, { size: 12, sx: { height: '70vh', overflowY: 'scroll' } },
+	                    React__default["default"].createElement(TableContainer__default["default"], { component: Paper__default["default"] },
+	                        React__default["default"].createElement(Table__default["default"], { "aria-label": "collapsible table" },
+	                            React__default["default"].createElement(TableHead__default["default"], null,
+	                                React__default["default"].createElement(TableRow__default["default"], null,
+	                                    React__default["default"].createElement(TableCell__default["default"], null),
+	                                    React__default["default"].createElement(TableCell__default["default"], null, "Change type"),
+	                                    React__default["default"].createElement(TableCell__default["default"], null, "Feature ID"),
+	                                    React__default["default"].createElement(TableCell__default["default"], { align: "right" }, "User"),
+	                                    React__default["default"].createElement(TableCell__default["default"], { align: "right" }, "Created At"))),
+	                            React__default["default"].createElement(TableBody__default["default"], null,
+	                                getRowsForPage().map((row) => (React__default["default"].createElement(Row, { key: row._id, row: row, session: session, assemblyId: assemblyId }))),
+	                                getRowsForPage().length === 0 && (React__default["default"].createElement(TableRow__default["default"], null,
+	                                    React__default["default"].createElement(TableCell__default["default"], { colSpan: 6, align: "center" }, "No changes found")))),
+	                            React__default["default"].createElement(TableFooter__default["default"], null,
+	                                React__default["default"].createElement(TableRow__default["default"], null,
+	                                    React__default["default"].createElement(TableCell__default["default"], { colSpan: 6, align: "left" },
+	                                        React__default["default"].createElement(TablePagination__default["default"], { rowsPerPageOptions: [
+	                                                5,
+	                                                10,
+	                                                25,
+	                                                { label: 'All', value: -1 },
+	                                            ], colSpan: 3, count: getFilteredRows().length, rowsPerPage: rowsPerPage, page: page, slotProps: {
+	                                                select: {
+	                                                    inputProps: {
+	                                                        'aria-label': 'rows per page',
+	                                                    },
+	                                                    native: true,
+	                                                },
+	                                            }, onPageChange: handleChangePage, onRowsPerPageChange: handleChangeRowsPerPage, ActionsComponent: TablePaginationActions }))))))))),
 	        errorMessage ? (React__default["default"].createElement(material.DialogContent, null,
 	            React__default["default"].createElement(material.DialogContentText, { color: "error" }, errorMessage))) : null));
+	}
+	function Row(props) {
+	    const { row, key, session, assemblyId } = props;
+	    const [open, setOpen] = React__default["default"].useState(false);
+	    const [collapsedContent, setCollapsedContent] = React.useState(null);
+	    // TODO: Refactor
+	    React.useEffect(() => {
+	        switch (row.typeName) {
+	            case 'LocationStartChange':
+	            case 'LocationEndChange': {
+	                setCollapsedContent(React__default["default"].createElement(CollapsedLocationChangeContent, { row: row, session: session, assemblyId: assemblyId }));
+	                break;
+	            }
+	            case 'FeatureAttributeChange': {
+	                setCollapsedContent(React__default["default"].createElement(CollapsedFeatureAttributeContent, { row: row, session: session, assemblyId: assemblyId }));
+	                break;
+	            }
+	            case 'TypeChange': {
+	                setCollapsedContent(React__default["default"].createElement(CollapsedTypeChangeContent, { row: row, session: session, assemblyId: assemblyId }));
+	                break;
+	            }
+	            default: {
+	                setCollapsedContent(React__default["default"].createElement(CollapsedJsonContent, { row: row }));
+	            }
+	        }
+	        // eslint-disable-next-line react-hooks/exhaustive-deps
+	    }, [row]);
+	    return (React__default["default"].createElement(React__default["default"].Fragment, null,
+	        React__default["default"].createElement(TableRow__default["default"], { key: key, sx: { borderBottom: '1px solid #e0e0e0' } },
+	            React__default["default"].createElement(TableCell__default["default"], { sx: { borderBottom: 'none', width: '40px', maxWidth: '40px' } },
+	                React__default["default"].createElement(IconButton__default["default"], { "aria-label": "expand row", size: "small", onClick: () => {
+	                        setOpen(!open);
+	                    } }, open ? React__default["default"].createElement(default_1$d, null) : React__default["default"].createElement(default_1$g, null))),
+	            React__default["default"].createElement(TableCell__default["default"], { component: "th", scope: "row", sx: { borderBottom: 'none' } }, changeTypeMapping[row.typeName] || row.typeName),
+	            React__default["default"].createElement(TableCell__default["default"], { sx: { borderBottom: 'none' } }, row.changedIds.length > 0 ? row.changedIds.join(', ') : '-'),
+	            React__default["default"].createElement(TableCell__default["default"], { align: "right", sx: { borderBottom: 'none' } }, row.user),
+	            React__default["default"].createElement(TableCell__default["default"], { align: "right", sx: { borderBottom: 'none' } }, row.createdAt)),
+	        open && (React__default["default"].createElement(TableRow__default["default"], null,
+	            React__default["default"].createElement(TableCell__default["default"], { style: { paddingBottom: 0, paddingTop: 0 }, colSpan: 6 },
+	                React__default["default"].createElement(Collapse__default["default"], { in: open, timeout: "auto", unmountOnExit: true },
+	                    React__default["default"].createElement(Box__default["default"], { sx: { margin: 1 } }, collapsedContent)))))));
+	}
+	function CollapsedTypeChangeContent(props) {
+	    const { row, session, assemblyId } = props;
+	    const [featureId] = row.changedIds;
+	    const [gene, setGene] = React.useState();
+	    const [feature, setFeature] = React.useState();
+	    const [diffAttributes, setDiffAttributes] = React.useState([]);
+	    React.useEffect(() => {
+	        const fetchFeature = async () => {
+	            if (!featureId) {
+	                return;
+	            }
+	            const driver = session.apolloDataStore.collaborationServerDriver;
+	            const fetchedFeature = await driver.getFeatureById(featureId, assemblyId, true);
+	            setGene(fetchedFeature);
+	            if (!fetchedFeature) {
+	                return;
+	            }
+	            if (featureId === fetchedFeature._id) {
+	                setFeature(fetchedFeature);
+	                return;
+	            }
+	            for (const [k, t] of new Map(Object.entries(fetchedFeature.children ?? {}))) {
+	                if (k === featureId) {
+	                    setFeature(t);
+	                    return;
+	                }
+	                for (const [tk, c] of new Map(Object.entries(t.children ?? {}))) {
+	                    if (tk === featureId) {
+	                        setFeature(c);
+	                        return;
+	                    }
+	                }
+	            }
+	        };
+	        fetchFeature().catch((error) => {
+	            console.error('Error fetching feature by ID:', error);
+	            setFeature(undefined);
+	        });
+	        const diffAttrs = [];
+	        diffAttrs.push({
+	            attribute: '',
+	            old: [String(row.changes?.[0].oldType)],
+	            new: [String(row.changes?.[0].newType)],
+	        });
+	        setDiffAttributes(diffAttrs);
+	        // eslint-disable-next-line react-hooks/exhaustive-deps
+	    }, [featureId, assemblyId]);
+	    if (!feature) {
+	        return React__default["default"].createElement(CollapsedJsonContent, { ...props });
+	    }
+	    return (React__default["default"].createElement("div", null,
+	        React__default["default"].createElement(CollapsedInfoContent, { feature: feature, gene: gene, row: row }),
+	        React__default["default"].createElement(CollapsedDiffAttributesContent, { diffAttributes: diffAttributes })));
+	}
+	function CollapsedLocationChangeContent(props) {
+	    const { row, session, assemblyId } = props;
+	    const [featureId] = row.changedIds;
+	    const [gene, setGene] = React.useState();
+	    const [feature, setFeature] = React.useState();
+	    const [diffAttributes, setDiffAttributes] = React.useState([]);
+	    React.useEffect(() => {
+	        const fetchFeature = async () => {
+	            if (!featureId) {
+	                return;
+	            }
+	            const driver = session.apolloDataStore.collaborationServerDriver;
+	            const fetchedFeature = await driver.getFeatureById(featureId, assemblyId, true);
+	            setGene(fetchedFeature);
+	            if (!fetchedFeature) {
+	                return;
+	            }
+	            if (featureId === fetchedFeature._id) {
+	                setFeature(fetchedFeature);
+	                return;
+	            }
+	            for (const [k, t] of new Map(Object.entries(fetchedFeature.children ?? {}))) {
+	                if (k === featureId) {
+	                    setFeature(t);
+	                    return;
+	                }
+	                for (const [tk, c] of new Map(Object.entries(t.children ?? {}))) {
+	                    if (tk === featureId) {
+	                        setFeature(c);
+	                        return;
+	                    }
+	                }
+	            }
+	        };
+	        fetchFeature().catch((error) => {
+	            console.error('Error fetching feature by ID:', error);
+	            setFeature(undefined);
+	        });
+	        const diffAttrs = [];
+	        if (row.typeName === 'LocationStartChange') {
+	            diffAttrs.push({
+	                attribute: '',
+	                old: [String(row.changes?.[0].oldStart)],
+	                new: [String(row.changes?.[0].newStart)],
+	            });
+	        }
+	        if (row.typeName === 'LocationEndChange') {
+	            diffAttrs.push({
+	                attribute: '',
+	                old: [String(row.changes?.[0].oldEnd)],
+	                new: [String(row.changes?.[0].newEnd)],
+	            });
+	        }
+	        setDiffAttributes(diffAttrs);
+	        // eslint-disable-next-line react-hooks/exhaustive-deps
+	    }, [featureId, assemblyId]);
+	    if (!feature) {
+	        return React__default["default"].createElement(CollapsedJsonContent, { ...props });
+	    }
+	    return (React__default["default"].createElement("div", null,
+	        React__default["default"].createElement(CollapsedInfoContent, { feature: feature, gene: gene, row: row }),
+	        React__default["default"].createElement(CollapsedDiffAttributesContent, { diffAttributes: diffAttributes })));
+	}
+	function CollapsedFeatureAttributeContent(props) {
+	    const { row, session, assemblyId } = props;
+	    const [featureId] = row.changedIds;
+	    const [gene, setGene] = React.useState();
+	    const [feature, setFeature] = React.useState();
+	    const [diffAttributes, setDiffAttributes] = React.useState([]);
+	    const getDiffAttributes = (oldAttrs, newAttrs) => {
+	        const allKeys = new Set([
+	            ...Object.keys(oldAttrs),
+	            ...Object.keys(newAttrs),
+	        ]);
+	        const diff = [];
+	        for (const key of allKeys) {
+	            const oldValues = oldAttrs[key] ?? [];
+	            const newValues = newAttrs[key] ?? [];
+	            const oldSet = new Set(oldValues);
+	            const newSet = new Set(newValues);
+	            const isEqual = oldValues.length === newValues.length &&
+	                oldSet.size === newSet.size &&
+	                [...oldSet].every((value) => newSet.has(value));
+	            if (!isEqual) {
+	                diff.push({
+	                    attribute: key,
+	                    old: oldValues,
+	                    new: newValues,
+	                });
+	            }
+	        }
+	        return diff;
+	    };
+	    React.useEffect(() => {
+	        const fetchFeature = async () => {
+	            if (!featureId) {
+	                return;
+	            }
+	            const driver = session.apolloDataStore.collaborationServerDriver;
+	            const fetchedFeature = await driver.getFeatureById(featureId, assemblyId, true);
+	            setGene(fetchedFeature);
+	            if (!fetchedFeature) {
+	                return;
+	            }
+	            if (featureId === fetchedFeature._id) {
+	                setFeature(fetchedFeature);
+	                return;
+	            }
+	            for (const [k, t] of new Map(Object.entries(fetchedFeature.children ?? {}))) {
+	                if (k === featureId) {
+	                    setFeature(t);
+	                    return;
+	                }
+	                for (const [tk, c] of new Map(Object.entries(t.children ?? {}))) {
+	                    if (tk === featureId) {
+	                        setFeature(c);
+	                        return;
+	                    }
+	                }
+	            }
+	        };
+	        fetchFeature().catch((error) => {
+	            console.error('Error fetching feature by ID:', error);
+	            setFeature(undefined);
+	        });
+	        const diffAttrs = getDiffAttributes(row.changes?.[0].oldAttributes, row.changes?.[0].newAttributes);
+	        setDiffAttributes(diffAttrs);
+	        // eslint-disable-next-line react-hooks/exhaustive-deps
+	    }, [featureId, assemblyId]);
+	    if (!feature) {
+	        return React__default["default"].createElement(CollapsedJsonContent, { ...props });
+	    }
+	    return (React__default["default"].createElement("div", null,
+	        React__default["default"].createElement(CollapsedInfoContent, { feature: feature, gene: gene, row: row }),
+	        React__default["default"].createElement(CollapsedDiffAttributesContent, { diffAttributes: diffAttributes })));
+	}
+	function CollapsedDiffAttributesContent(props) {
+	    const { diffAttributes } = props;
+	    return (React__default["default"].createElement("div", null, diffAttributes.length > 0 && (React__default["default"].createElement(TableContainer__default["default"], { component: Paper__default["default"], style: { margin: 10 } },
+	        React__default["default"].createElement(Table__default["default"], { size: "small" },
+	            React__default["default"].createElement(TableBody__default["default"], null,
+	                React__default["default"].createElement(TableRow__default["default"], { style: { borderTop: '1px solid #e0e0e0' } },
+	                    React__default["default"].createElement(TableCell__default["default"], { align: "left" },
+	                        React__default["default"].createElement("small", null, "Attribute")),
+	                    React__default["default"].createElement(TableCell__default["default"], { align: "left" },
+	                        React__default["default"].createElement("small", null, "Old")),
+	                    React__default["default"].createElement(TableCell__default["default"], { align: "left" },
+	                        React__default["default"].createElement("small", null, "New"))),
+	                diffAttributes.map((attr, index) => (React__default["default"].createElement(TableRow__default["default"], { key: index },
+	                    React__default["default"].createElement(TableCell__default["default"], { align: "left" },
+	                        React__default["default"].createElement("small", null, attr.attribute)),
+	                    React__default["default"].createElement(TableCell__default["default"], null, attr.old.length > 0 ? (React__default["default"].createElement("ul", null, attr.old.map((value, i) => (React__default["default"].createElement("li", { key: i }, value))))) : (React__default["default"].createElement("small", null, "N/A"))),
+	                    React__default["default"].createElement(TableCell__default["default"], { align: "left" }, attr.new.length > 0 ? (React__default["default"].createElement("ul", null, attr.new.map((value, i) => (React__default["default"].createElement("li", { key: i }, value))))) : (React__default["default"].createElement("small", null, "N/A"))))))))))));
+	}
+	function CollapsedInfoContent(props) {
+	    const { feature, gene, row } = props;
+	    const getFeatureStatus = () => {
+	        if (!gene) {
+	            return 'Unknown';
+	        }
+	        const savedAt = gene.attributes?.savedAt?.[0];
+	        if (savedAt && row.updatedAt) {
+	            const havanaSavedAtDate = new Date(savedAt);
+	            const geneUpdatedAtDate = new Date(row.updatedAt);
+	            if (havanaSavedAtDate >= geneUpdatedAtDate) {
+	                return 'Done';
+	            }
+	        }
+	        return 'Pending';
+	    };
+	    return (React__default["default"].createElement(TableContainer__default["default"], { component: Paper__default["default"], style: { margin: 10 } },
+	        React__default["default"].createElement(Table__default["default"], { size: "small" },
+	            React__default["default"].createElement(TableBody__default["default"], null,
+	                React__default["default"].createElement(TableRow__default["default"], { style: { borderTop: '1px solid #e0e0e0' } },
+	                    React__default["default"].createElement(TableCell__default["default"], null,
+	                        React__default["default"].createElement("small", null, "Type")),
+	                    React__default["default"].createElement(TableCell__default["default"], null,
+	                        React__default["default"].createElement("small", null, "Feature ID")),
+	                    gene?.type !== feature.type && (React__default["default"].createElement(TableCell__default["default"], null,
+	                        React__default["default"].createElement("small", null, "Gene ID"))),
+	                    React__default["default"].createElement(TableCell__default["default"], null,
+	                        React__default["default"].createElement("small", null, "Status"))),
+	                React__default["default"].createElement(TableRow__default["default"], null,
+	                    React__default["default"].createElement(TableCell__default["default"], null,
+	                        React__default["default"].createElement("small", null, feature.type)),
+	                    React__default["default"].createElement(TableCell__default["default"], null,
+	                        React__default["default"].createElement("small", null, getFeatureId$1(feature))),
+	                    gene?.type !== feature.type && (React__default["default"].createElement(TableCell__default["default"], null,
+	                        React__default["default"].createElement("small", null, getFeatureId$1(gene)))),
+	                    React__default["default"].createElement(TableCell__default["default"], null,
+	                        React__default["default"].createElement("small", null, getFeatureStatus())))))));
+	}
+	function CollapsedJsonContent(props) {
+	    const { row } = props;
+	    const objectRef = React.useRef(null);
+	    const onCopyClick = () => {
+	        const objectDiv = objectRef.current;
+	        if (!objectDiv) {
+	            return;
+	        }
+	        void copyToClipboard(objectDiv);
+	    };
+	    return (React__default["default"].createElement("div", null,
+	        React__default["default"].createElement("div", { style: {
+	                marginTop: 10,
+	                display: 'flex',
+	                flexDirection: 'row',
+	                alignItems: 'center',
+	                gap: 10,
+	            } },
+	            React__default["default"].createElement(Typography__default["default"], null, "Change Object"),
+	            React__default["default"].createElement(material.Tooltip, { title: "Copy" },
+	                React__default["default"].createElement(default_1$i, { style: { fontSize: 15, cursor: 'pointer' }, onClick: onCopyClick }))),
+	        React__default["default"].createElement("div", { style: {
+	                height: '100px',
+	                overflowY: 'scroll',
+	                border: '1px solid #e0e0e0',
+	                borderRadius: 5,
+	            }, ref: objectRef },
+	            React__default["default"].createElement("pre", null, JSON.stringify(row.changes, null, 2)))));
+	}
+	function TablePaginationActions(props) {
+	    const theme = styles.useTheme();
+	    const { count, page, rowsPerPage, onPageChange } = props;
+	    const handleFirstPageButtonClick = (event) => {
+	        onPageChange(event, 0);
+	    };
+	    const handleBackButtonClick = (event) => {
+	        onPageChange(event, page - 1);
+	    };
+	    const handleNextButtonClick = (event) => {
+	        onPageChange(event, page + 1);
+	    };
+	    const handleLastPageButtonClick = (event) => {
+	        onPageChange(event, Math.max(0, Math.ceil(count / rowsPerPage) - 1));
+	    };
+	    return (React__default["default"].createElement(Box__default["default"], { sx: { flexShrink: 0, ml: 2.5 } },
+	        React__default["default"].createElement(IconButton__default["default"], { onClick: handleFirstPageButtonClick, disabled: page === 0, "aria-label": "first page" }, theme.direction === 'rtl' ? React__default["default"].createElement(default_1$c, null) : React__default["default"].createElement(default_1$h, null)),
+	        React__default["default"].createElement(IconButton__default["default"], { onClick: handleBackButtonClick, disabled: page === 0, "aria-label": "previous page" }, theme.direction === 'rtl' ? (React__default["default"].createElement(default_1$e, null)) : (React__default["default"].createElement(default_1$f, null))),
+	        React__default["default"].createElement(IconButton__default["default"], { onClick: handleNextButtonClick, disabled: page >= Math.ceil(count / rowsPerPage) - 1, "aria-label": "next page" }, theme.direction === 'rtl' ? (React__default["default"].createElement(default_1$f, null)) : (React__default["default"].createElement(default_1$e, null))),
+	        React__default["default"].createElement(IconButton__default["default"], { onClick: handleLastPageButtonClick, disabled: page >= Math.ceil(count / rowsPerPage) - 1, "aria-label": "last page" }, theme.direction === 'rtl' ? React__default["default"].createElement(default_1$h, null) : React__default["default"].createElement(default_1$c, null))));
 	}
 
 	/* eslint-disable @typescript-eslint/unbound-method */
@@ -50411,6 +52309,7 @@
 	            React__default["default"].createElement(material.DialogContentText, { color: "error" }, errorMessage))) : null));
 	}
 
+	/* eslint-disable @typescript-eslint/unbound-method */
 	function exonIsSplittable(exonToBeSplit) {
 	    if (exonToBeSplit.max - exonToBeSplit.min < 2) {
 	        return {
@@ -50427,11 +52326,10 @@
 	    }
 	    return splittable.comment;
 	}
-	function SplitExon({ changeManager, handleClose, selectedFeature, session, setSelectedFeature, sourceAssemblyId, sourceFeature, }) {
-	    const { notify } = session;
+	function SplitExon({ changeManager, handleClose, selectedFeature, setSelectedFeature, sourceAssemblyId, sourceFeature, }) {
 	    const [errorMessage, setErrorMessage] = React.useState('');
 	    const exonToBeSplit = require$$1$3.getSnapshot(sourceFeature);
-	    async function onSubmit(event) {
+	    function onSubmit(event) {
 	        event.preventDefault();
 	        setErrorMessage('');
 	        if (selectedFeature?._id === sourceFeature._id) {
@@ -50454,8 +52352,7 @@
 	            leftExonId: new objectid().toHexString(),
 	            rightExonId: new objectid().toHexString(),
 	        });
-	        await changeManager.submit(change);
-	        notify('Exon successfully split', 'success');
+	        void changeManager.submit(change);
 	        handleClose();
 	        event.preventDefault();
 	    }
@@ -50630,17 +52527,17 @@
 
 	var AccountCircle = {};
 
-	var _interopRequireDefault$c = interopRequireDefault.exports;
+	var _interopRequireDefault$b = interopRequireDefault.exports;
 	Object.defineProperty(AccountCircle, "__esModule", {
 	  value: true
 	});
-	var default_1$c = AccountCircle["default"] = void 0;
-	var _createSvgIcon$c = /*#__PURE__*/_interopRequireDefault$c(createSvgIcon);
-	var _jsxRuntime$c = require$$2__default["default"];
-	var _default$e = /*#__PURE__*/(0, _createSvgIcon$c["default"])( /*#__PURE__*/(0, _jsxRuntime$c.jsx)("path", {
+	var default_1$b = AccountCircle["default"] = void 0;
+	var _createSvgIcon$b = /*#__PURE__*/_interopRequireDefault$b(createSvgIcon);
+	var _jsxRuntime$b = require$$2__default["default"];
+	var _default$d = /*#__PURE__*/(0, _createSvgIcon$b["default"])( /*#__PURE__*/(0, _jsxRuntime$b.jsx)("path", {
 	  d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 4c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm0 14c-2.03 0-4.43-.82-6.14-2.88C7.55 15.8 9.68 15 12 15s4.45.8 6.14 2.12C16.43 19.18 14.03 20 12 20z"
 	}), 'AccountCircle');
-	default_1$c = AccountCircle["default"] = _default$e;
+	default_1$b = AccountCircle["default"] = _default$d;
 
 	// Icon source: https://developers.google.com/identity/branding-guidelines
 	function Google(props) {
@@ -50684,7 +52581,7 @@
 	}
 	function GuestButton(props) {
 	    const { classes } = useStyles$e();
-	    return (React__default["default"].createElement(material.Button, { className: classes.loginButton, variant: "outlined", startIcon: React__default["default"].createElement(default_1$c, { fontSize: "small" }), ...props }, "Continue as Guest"));
+	    return (React__default["default"].createElement(material.Button, { className: classes.loginButton, variant: "outlined", startIcon: React__default["default"].createElement(default_1$b, { fontSize: "small" }), ...props }, "Continue as Guest"));
 	}
 
 	/* eslint-disable @typescript-eslint/use-unknown-in-catch-callback-variable */
@@ -51294,7 +53191,7 @@
 	  }]);
 	  return SimpleFeature;
 	}();
-	var _default$d = simpleFeature["default"] = SimpleFeature;
+	var _default$c = simpleFeature["default"] = SimpleFeature;
 
 	/* eslint-disable @typescript-eslint/prefer-promise-reject-errors */
 	function isApolloMessageData$1(data) {
@@ -51381,7 +53278,7 @@
 	                    regionWithAssemblyName.end = region.end;
 	                }
 	                const { seq } = await backendDriver.getSequence(regionWithAssemblyName);
-	                observer.next(new _default$d({
+	                observer.next(new _default$c({
 	                    id: `${refName} ${start}-${end}`,
 	                    data: { refName, start, end, seq },
 	                }));
@@ -51414,7 +53311,7 @@
 	                    messageId,
 	                });
 	            });
-	            observer.next(new _default$d({
+	            observer.next(new _default$c({
 	                id: `${refName} ${start}-${end}`,
 	                data: { refName, start, end, seq },
 	            }));
@@ -51525,7 +53422,7 @@
 	  }]);
 	  return BaseResult;
 	}();
-	var _default$c = BaseResults["default"] = BaseResult;
+	var _default$b = BaseResults["default"] = BaseResult;
 	var RefSequenceResult = /*#__PURE__*/function (_BaseResult) {
 	  _inherits(RefSequenceResult, _BaseResult);
 	  var _super = /*#__PURE__*/_createSuper(RefSequenceResult);
@@ -51560,7 +53457,7 @@
 	    mapBaseResult(features, assembly, query) {
 	        return features.map((feature) => {
 	            const refName = assembly.getCanonicalRefName(feature.refSeq);
-	            return new _default$c({
+	            return new _default$b({
 	                label: query,
 	                trackId: this.trackId,
 	                locString: `${refName}:${feature.min + 1}..${feature.max}`,
@@ -51624,45 +53521,45 @@
 
 	var ExpandMore = {};
 
-	var _interopRequireDefault$b = interopRequireDefault.exports;
+	var _interopRequireDefault$a = interopRequireDefault.exports;
 	Object.defineProperty(ExpandMore, "__esModule", {
 	  value: true
 	});
-	var default_1$b = ExpandMore["default"] = void 0;
-	var _createSvgIcon$b = /*#__PURE__*/_interopRequireDefault$b(createSvgIcon);
-	var _jsxRuntime$b = require$$2__default["default"];
-	var _default$b = /*#__PURE__*/(0, _createSvgIcon$b["default"])( /*#__PURE__*/(0, _jsxRuntime$b.jsx)("path", {
-	  d: "M16.59 8.59 12 13.17 7.41 8.59 6 10l6 6 6-6z"
-	}), 'ExpandMore');
-	default_1$b = ExpandMore["default"] = _default$b;
-
-	var Edit = {};
-
-	var _interopRequireDefault$a = interopRequireDefault.exports;
-	Object.defineProperty(Edit, "__esModule", {
-	  value: true
-	});
-	var default_1$a = Edit["default"] = void 0;
+	var default_1$a = ExpandMore["default"] = void 0;
 	var _createSvgIcon$a = /*#__PURE__*/_interopRequireDefault$a(createSvgIcon);
 	var _jsxRuntime$a = require$$2__default["default"];
 	var _default$a = /*#__PURE__*/(0, _createSvgIcon$a["default"])( /*#__PURE__*/(0, _jsxRuntime$a.jsx)("path", {
-	  d: "M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
-	}), 'Edit');
-	default_1$a = Edit["default"] = _default$a;
+	  d: "M16.59 8.59 12 13.17 7.41 8.59 6 10l6 6 6-6z"
+	}), 'ExpandMore');
+	default_1$a = ExpandMore["default"] = _default$a;
 
-	var MoreHoriz = {};
+	var Edit = {};
 
 	var _interopRequireDefault$9 = interopRequireDefault.exports;
-	Object.defineProperty(MoreHoriz, "__esModule", {
+	Object.defineProperty(Edit, "__esModule", {
 	  value: true
 	});
-	var default_1$9 = MoreHoriz["default"] = void 0;
+	var default_1$9 = Edit["default"] = void 0;
 	var _createSvgIcon$9 = /*#__PURE__*/_interopRequireDefault$9(createSvgIcon);
 	var _jsxRuntime$9 = require$$2__default["default"];
 	var _default$9 = /*#__PURE__*/(0, _createSvgIcon$9["default"])( /*#__PURE__*/(0, _jsxRuntime$9.jsx)("path", {
+	  d: "M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+	}), 'Edit');
+	default_1$9 = Edit["default"] = _default$9;
+
+	var MoreHoriz = {};
+
+	var _interopRequireDefault$8 = interopRequireDefault.exports;
+	Object.defineProperty(MoreHoriz, "__esModule", {
+	  value: true
+	});
+	var default_1$8 = MoreHoriz["default"] = void 0;
+	var _createSvgIcon$8 = /*#__PURE__*/_interopRequireDefault$8(createSvgIcon);
+	var _jsxRuntime$8 = require$$2__default["default"];
+	var _default$8 = /*#__PURE__*/(0, _createSvgIcon$8["default"])( /*#__PURE__*/(0, _jsxRuntime$8.jsx)("path", {
 	  d: "M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
 	}), 'MoreHoriz');
-	default_1$9 = MoreHoriz["default"] = _default$9;
+	default_1$8 = MoreHoriz["default"] = _default$8;
 
 	const useStyles$c = mui.makeStyles()((theme) => ({
 	    attributeKey: {
@@ -51690,7 +53587,7 @@
 	    return (React__default["default"].createElement("div", { style: { display: 'flex' } },
 	        React__default["default"].createElement(material.Typography, { className: classes.attributeKey }, displayKey),
 	        titleText ? (React__default["default"].createElement(material.Tooltip, { title: titleText },
-	            React__default["default"].createElement(material.Chip, { icon: React__default["default"].createElement(default_1$i, null), label: "GFF3", size: "small", variant: "outlined" }))) : null));
+	            React__default["default"].createElement(material.Chip, { icon: React__default["default"].createElement(default_1$o, null), label: "GFF3", size: "small", variant: "outlined" }))) : null));
 	}
 
 	const customKeyName = 'Custom';
@@ -51738,17 +53635,17 @@
 
 	var AddBox = {};
 
-	var _interopRequireDefault$8 = interopRequireDefault.exports;
+	var _interopRequireDefault$7 = interopRequireDefault.exports;
 	Object.defineProperty(AddBox, "__esModule", {
 	  value: true
 	});
-	var default_1$8 = AddBox["default"] = void 0;
-	var _createSvgIcon$8 = /*#__PURE__*/_interopRequireDefault$8(createSvgIcon);
-	var _jsxRuntime$8 = require$$2__default["default"];
-	var _default$8 = /*#__PURE__*/(0, _createSvgIcon$8["default"])( /*#__PURE__*/(0, _jsxRuntime$8.jsx)("path", {
+	var default_1$7 = AddBox["default"] = void 0;
+	var _createSvgIcon$7 = /*#__PURE__*/_interopRequireDefault$7(createSvgIcon);
+	var _jsxRuntime$7 = require$$2__default["default"];
+	var _default$7 = /*#__PURE__*/(0, _createSvgIcon$7["default"])( /*#__PURE__*/(0, _jsxRuntime$7.jsx)("path", {
 	  d: "M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"
 	}), 'AddBox');
-	default_1$8 = AddBox["default"] = _default$8;
+	default_1$7 = AddBox["default"] = _default$7;
 
 	/* eslint-disable @typescript-eslint/unbound-method */
 	const StringTextField = mobxReact.observer(function StringTextField({ onChangeCommitted, value: initialValue, ...props }) {
@@ -51815,9 +53712,9 @@
 	            React__default["default"].createElement(material.IconButton, { "aria-label": "delete", size: "medium", edge: "end", onClick: () => {
 	                    deleteValue(idx);
 	                } },
-	                React__default["default"].createElement(default_1$d, { fontSize: "inherit" }))))),
+	                React__default["default"].createElement(default_1$j, { fontSize: "inherit" }))))),
 	        React__default["default"].createElement(material.IconButton, { "aria-label": "add", size: "medium", color: "secondary", edge: "start", onClick: addValue },
-	            React__default["default"].createElement(default_1$8, { fontSize: "inherit" })),
+	            React__default["default"].createElement(default_1$7, { fontSize: "inherit" })),
 	        React__default["default"].createElement(material.DialogActions, null,
 	            React__default["default"].createElement(material.Button, { color: "primary", variant: "contained", onClick: () => {
 	                    setAttribute(newValues.filter(Boolean));
@@ -51881,12 +53778,14 @@
 	            typeName: 'FeatureAttributeChange',
 	            assembly,
 	            featureId: _id,
-	            attributes: remainingAttributes,
+	            oldAttributes: attributesSerialized,
+	            newAttributes: remainingAttributes,
 	        });
 	        void changeManager.submit(change);
 	    }
 	    function modifyFeatureAttribute(key, attribute) {
 	        const serializedAttributes = { ...require$$1$3.getSnapshot(attributes) };
+	        const oldAttributes = structuredClone(serializedAttributes);
 	        if (!(key in serializedAttributes)) {
 	            notify(`"${key}" not found in feature attributes`, 'error');
 	            return;
@@ -51901,12 +53800,14 @@
 	            typeName: 'FeatureAttributeChange',
 	            assembly,
 	            featureId: feature._id,
-	            attributes: serializedAttributes,
+	            oldAttributes,
+	            newAttributes: serializedAttributes,
 	        });
 	        void changeManager.submit(change);
 	    }
 	    function addFeatureAttribute(key, attribute) {
 	        const serializedAttributes = { ...require$$1$3.getSnapshot(attributes) };
+	        const oldAttributes = structuredClone(serializedAttributes);
 	        if (key in serializedAttributes) {
 	            notify(`Feature already has attribute "${key}"`, 'error');
 	            return;
@@ -51917,7 +53818,8 @@
 	            typeName: 'FeatureAttributeChange',
 	            assembly,
 	            featureId: feature._id,
-	            attributes: serializedAttributes,
+	            oldAttributes,
+	            newAttributes: serializedAttributes,
 	        });
 	        void changeManager.submit(change);
 	    }
@@ -51930,7 +53832,7 @@
 	                return (React__default["default"].createElement(material.ListItem, { key: key, secondaryAction: editable && !editingKey ? (React__default["default"].createElement(material.IconButton, { edge: "end", onClick: (event) => {
 	                            handleListMenuClick(event, key);
 	                        } },
-	                        React__default["default"].createElement(default_1$9, null))) : null },
+	                        React__default["default"].createElement(default_1$8, null))) : null },
 	                    React__default["default"].createElement(material.ListItemText, { disableTypography: true, primary: React__default["default"].createElement(AttributeKey, { attributeKey: key }), secondary: editingKey === key ? (React__default["default"].createElement(AttributeEditor, { session: session, attributeValues: values, setAttribute: (newValues) => {
 	                                setEditingKey(null);
 	                                if (newValues) {
@@ -51956,11 +53858,11 @@
 	        React__default["default"].createElement(material.Menu, { anchorEl: anchorEl, open: open, onClose: handleClose },
 	            React__default["default"].createElement(material.MenuItem, { onClick: handleDelete },
 	                React__default["default"].createElement(material.ListItemIcon, null,
-	                    React__default["default"].createElement(default_1$d, { fontSize: "small" })),
+	                    React__default["default"].createElement(default_1$j, { fontSize: "small" })),
 	                React__default["default"].createElement(material.Typography, { variant: "inherit" }, "Delete")),
 	            React__default["default"].createElement(material.MenuItem, { onClick: handleEdit },
 	                React__default["default"].createElement(material.ListItemIcon, null,
-	                    React__default["default"].createElement(default_1$a, { fontSize: "small" })),
+	                    React__default["default"].createElement(default_1$9, { fontSize: "small" })),
 	                React__default["default"].createElement(material.Typography, { variant: "inherit" }, "Edit")))));
 	});
 
@@ -52209,20 +54111,20 @@
 	        React__default["default"].createElement(material.Accordion, { style: { marginTop: 10 }, expanded: panelState.includes('attributes'), onChange: (e, expanded) => {
 	                handlePanelChange(expanded, 'attributes');
 	            } },
-	            React__default["default"].createElement(material.AccordionSummary, { expandIcon: React__default["default"].createElement(default_1$b, { style: { color: 'white' } }), "aria-controls": "panel1-content", id: "panel1-header" },
+	            React__default["default"].createElement(material.AccordionSummary, { expandIcon: React__default["default"].createElement(default_1$a, { style: { color: 'white' } }), "aria-controls": "panel1-content", id: "panel1-header" },
 	                React__default["default"].createElement(material.Typography, { component: "span" }, "Attributes")),
 	            React__default["default"].createElement(material.AccordionDetails, null,
 	                React__default["default"].createElement(Attributes, { feature: feature, session: session, assembly: currentAssembly._id, editable: true }))),
 	        React__default["default"].createElement(material.Accordion, { style: { marginTop: 10 }, expanded: panelState.includes('sequence'), onChange: (e, expanded) => {
 	                handlePanelChange(expanded, 'sequence');
 	            } },
-	            React__default["default"].createElement(material.AccordionSummary, { expandIcon: React__default["default"].createElement(default_1$b, { style: { color: 'white' } }), "aria-controls": "panel2-content", id: "panel2-header" },
+	            React__default["default"].createElement(material.AccordionSummary, { expandIcon: React__default["default"].createElement(default_1$a, { style: { color: 'white' } }), "aria-controls": "panel2-content", id: "panel2-header" },
 	                React__default["default"].createElement(material.Typography, { component: "span" }, "Sequence")),
 	            React__default["default"].createElement(material.AccordionDetails, null, panelState.includes('sequence') && (React__default["default"].createElement(Sequence, { feature: feature, session: session, assembly: currentAssembly._id, refName: refName })))),
 	        React__default["default"].createElement(material.Accordion, { style: { marginTop: 10 }, expanded: panelState.includes('related_features'), onChange: (e, expanded) => {
 	                handlePanelChange(expanded, 'related_features');
 	            } },
-	            React__default["default"].createElement(material.AccordionSummary, { expandIcon: React__default["default"].createElement(default_1$b, { style: { color: 'white' } }), "aria-controls": "panel3-content", id: "panel3-header" },
+	            React__default["default"].createElement(material.AccordionSummary, { expandIcon: React__default["default"].createElement(default_1$a, { style: { color: 'white' } }), "aria-controls": "panel3-content", id: "panel3-header" },
 	                React__default["default"].createElement(material.Typography, { component: "span" }, "Related features")),
 	            React__default["default"].createElement(material.AccordionDetails, null,
 	                React__default["default"].createElement(FeatureDetailsNavigation, { model: model, feature: feature })))));
@@ -52281,7 +54183,8 @@
 	     * Additional attributes of the feature. This could include name, source,
 	     * note, dbxref, etc.
 	     */
-	    attributes: mobx_state_tree_1.types.map(mobx_state_tree_1.types.array(mobx_state_tree_1.types.string))
+	    attributes: mobx_state_tree_1.types.map(mobx_state_tree_1.types.array(mobx_state_tree_1.types.string)),
+	    updatedAt: mobx_state_tree_1.types.maybe(mobx_state_tree_1.types.string)
 	  }).views(function (self) {
 	    return {
 	      get length() {
@@ -52663,7 +54566,7 @@
 	      },
 	      setMin: function setMin(min) {
 	        if (min > self.max) {
-	          throw new Error("Min \"".concat(min, "\" is greater than max \"").concat(self.max, "\""));
+	          throw new Error("Min \"".concat(min + 1, "\" is greater than max \"").concat(self.max, "\""));
 	        }
 	        if (self.min !== min) {
 	          self.min = min;
@@ -55152,34 +57055,16 @@
 	        setSequenceSegments(seqSegments);
 	        setLocationIntervals(locIntervals);
 	    }
-	    // Function to copy text to clipboard
-	    const copyToClipboard = () => {
+	    const onCopyClick = () => {
 	        const seqDiv = seqRef.current;
 	        if (!seqDiv) {
 	            return;
 	        }
-	        if (typeof ClipboardItem === 'undefined') {
-	            try {
-	                // eslint-disable-next-line unicorn/prefer-dom-node-text-content
-	                void navigator.clipboard.writeText(seqDiv.innerText);
-	            }
-	            catch (error) {
-	                console.error('Clipboard writeText failed', error);
-	            }
-	        }
-	        else {
-	            const textBlob = new Blob([seqDiv.outerText], { type: 'text/plain' });
-	            const htmlBlob = new Blob([seqDiv.outerHTML], { type: 'text/html' });
-	            const clipboardItem = new ClipboardItem({
-	                [textBlob.type]: textBlob,
-	                [htmlBlob.type]: htmlBlob,
-	            });
-	            void navigator.clipboard.write([clipboardItem]);
-	        }
+	        void copyToClipboard(seqDiv);
 	    };
 	    return (React__default["default"].createElement(React__default["default"].Fragment, null,
 	        React__default["default"].createElement(material.Select, { defaultValue: "genomic", value: selectedOption, onChange: handleChangeSeqOption, size: "small" }, sequenceOptions.map((option) => (React__default["default"].createElement(material.MenuItem, { key: option, value: option }, option)))),
-	        React__default["default"].createElement(material.Button, { variant: "contained", onClick: copyToClipboard, style: { marginLeft: 10 }, size: "medium" }, "Copy sequence"),
+	        React__default["default"].createElement(material.Button, { variant: "contained", onClick: onCopyClick, style: { marginLeft: 10 }, size: "medium" }, "Copy sequence"),
 	        React__default["default"].createElement(material.Paper, { style: {
 	                fontFamily: 'monospace',
 	                padding: theme.spacing(),
@@ -55205,20 +57090,6 @@
 	                idx === segment.sequenceLines.length - 1 &&
 	                    sequenceLine.length !== SEQUENCE_WRAP_LENGTH ? null : (React__default["default"].createElement("br", null)))))))))));
 	});
-
-	var ContentCopy = {};
-
-	var _interopRequireDefault$7 = interopRequireDefault.exports;
-	Object.defineProperty(ContentCopy, "__esModule", {
-	  value: true
-	});
-	var default_1$7 = ContentCopy["default"] = void 0;
-	var _createSvgIcon$7 = /*#__PURE__*/_interopRequireDefault$7(createSvgIcon);
-	var _jsxRuntime$7 = require$$2__default["default"];
-	var _default$7 = /*#__PURE__*/(0, _createSvgIcon$7["default"])( /*#__PURE__*/(0, _jsxRuntime$7.jsx)("path", {
-	  d: "M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"
-	}), 'ContentCopy');
-	default_1$7 = ContentCopy["default"] = _default$7;
 
 	var ContentCut = {};
 
@@ -55276,7 +57147,7 @@
 	});
 	const Strand = (props) => {
 	    const { strand } = props;
-	    return (React__default["default"].createElement("div", null, strand === 1 ? (React__default["default"].createElement(default_1$j, null)) : strand === -1 ? (React__default["default"].createElement(default_1$5, null)) : (React__default["default"].createElement(material.Typography, { component: 'span' }, "N/A"))));
+	    return (React__default["default"].createElement("div", null, strand === 1 ? (React__default["default"].createElement(default_1$p, null)) : strand === -1 ? (React__default["default"].createElement(default_1$5, null)) : (React__default["default"].createElement(material.Typography, { component: 'span' }, "N/A"))));
 	};
 	const minMaxExonTranscriptLocation = (transcript, featureTypeOntology) => {
 	    const { transcriptExonParts } = transcript;
@@ -55309,7 +57180,7 @@
 	    let cdsMax = exonMax;
 	    const cdsPresent = firstCDSLocation.length > 0;
 	    if (cdsPresent) {
-	        const sortedCDSLocations = firstCDSLocation.sort(({ min: a }, { min: b }) => a - b);
+	        const sortedCDSLocations = firstCDSLocation.toSorted(({ min: a }, { min: b }) => a - b);
 	        cdsMin = sortedCDSLocations[0].min;
 	        cdsMax = sortedCDSLocations[sortedCDSLocations.length - 1].max;
 	    }
@@ -55831,7 +57702,8 @@
 	    const getTranslationSequence = () => {
 	        let wholeSequence = '';
 	        const [firstLocation] = cdsLocations;
-	        for (const loc of firstLocation) {
+	        const sortedCDSLocations = firstLocation.toSorted(({ min: a }, { min: b }) => a - b);
+	        for (const loc of sortedCDSLocations) {
 	            wholeSequence += refData.getSequence(loc.min, loc.max);
 	        }
 	        if (strand === -1) {
@@ -55883,13 +57755,14 @@
 	    const getCodonGenomicLocation = (codonGenomicPosition) => {
 	        const [firstLocation] = cdsLocations;
 	        let cdsLen = 0;
+	        const sortedCDSLocations = firstLocation.toSorted(({ min: a }, { min: b }) => a - b);
 	        // Suppose CDS locations are [{min: 0, max: 10}, {min: 20, max: 30}, {min: 40, max: 50}]
 	        // and codonGenomicPosition is 25
 	        // ((10 - 0) + (30 - 20) + (50 - 40)) > 25
 	        // So, start codon is in (40, 50)
 	        // 40 + (25-20) = 45 is the genomic location of the start codon
 	        if (strand === 1) {
-	            for (const loc of firstLocation) {
+	            for (const loc of sortedCDSLocations) {
 	                const locLength = loc.max - loc.min;
 	                if (cdsLen + locLength > codonGenomicPosition) {
 	                    return loc.min + (codonGenomicPosition - cdsLen);
@@ -55898,8 +57771,8 @@
 	            }
 	        }
 	        else if (strand === -1) {
-	            for (let i = firstLocation.length - 1; i >= 0; i--) {
-	                const loc = firstLocation[i];
+	            for (let i = sortedCDSLocations.length - 1; i >= 0; i--) {
+	                const loc = sortedCDSLocations[i];
 	                const locLength = loc.max - loc.min;
 	                if (cdsLen + locLength > codonGenomicPosition) {
 	                    return loc.max - (codonGenomicPosition - cdsLen);
@@ -55994,34 +57867,17 @@
 	        }
 	        notify('Translation sequence trimmed to start and stop codons', 'success');
 	    };
-	    const copyToClipboard = () => {
+	    const onCopyClick = () => {
 	        const seqDiv = seqRef.current;
 	        if (!seqDiv) {
 	            return;
 	        }
-	        if (typeof ClipboardItem === 'undefined') {
-	            try {
-	                // eslint-disable-next-line unicorn/prefer-dom-node-text-content
-	                void navigator.clipboard.writeText(seqDiv.innerText);
-	            }
-	            catch (error) {
-	                console.error('Clipboard writeText failed', error);
-	            }
-	        }
-	        else {
-	            const textBlob = new Blob([seqDiv.outerText], { type: 'text/plain' });
-	            const htmlBlob = new Blob([seqDiv.outerHTML], { type: 'text/html' });
-	            const clipboardItem = new ClipboardItem({
-	                [textBlob.type]: textBlob,
-	                [htmlBlob.type]: htmlBlob,
-	            });
-	            void navigator.clipboard.write([clipboardItem]);
-	        }
+	        void copyToClipboard(seqDiv);
 	    };
 	    return (React__default["default"].createElement("div", null,
 	        cdsPresent && (React__default["default"].createElement("div", null,
 	            React__default["default"].createElement(material.Accordion, null,
-	                React__default["default"].createElement(StyledAccordionSummary, { expandIcon: React__default["default"].createElement(default_1$b, { style: { color: 'white' } }), "aria-controls": "panel1-content", id: "panel1-header" },
+	                React__default["default"].createElement(StyledAccordionSummary, { expandIcon: React__default["default"].createElement(default_1$a, { style: { color: 'white' } }), "aria-controls": "panel1-content", id: "panel1-header" },
 	                    React__default["default"].createElement(material.Typography, { component: "span", fontWeight: 'bold' }, "Translation")),
 	                React__default["default"].createElement(material.AccordionDetails, null,
 	                    React__default["default"].createElement(SequenceContainer, null,
@@ -56034,7 +57890,7 @@
 	                            gap: 10,
 	                        } },
 	                        React__default["default"].createElement(material.Tooltip, { title: "Copy" },
-	                            React__default["default"].createElement(default_1$7, { style: { fontSize: 15, cursor: 'pointer' }, onClick: copyToClipboard })),
+	                            React__default["default"].createElement(default_1$i, { style: { fontSize: 15, cursor: 'pointer' }, onClick: onCopyClick })),
 	                        React__default["default"].createElement(material.Tooltip, { title: "Trim" },
 	                            React__default["default"].createElement(default_1$6, { style: { fontSize: 15, cursor: 'pointer' }, onClick: trimTranslationSequence }))))),
 	            React__default["default"].createElement(material.Grid2, { container: true, justifyContent: "center", alignItems: "center", style: { textAlign: 'center', marginTop: 10 } },
@@ -56087,7 +57943,7 @@
 	const TranscriptWidgetSummary = mobxReact.observer(function TranscriptWidgetSummary(props) {
 	    const { feature } = props;
 	    const name = getFeatureName$1(feature);
-	    const id = getFeatureId$1(feature);
+	    const id = getFeatureId$2(feature);
 	    return (React__default["default"].createElement(material.Table, { size: "small", sx: { fontSize: '0.75rem', '& .MuiTableCell-root': { padding: '4px' } } },
 	        React__default["default"].createElement(material.TableBody, null,
 	            name !== '' && (React__default["default"].createElement(material.TableRow, null,
@@ -56095,7 +57951,10 @@
 	                React__default["default"].createElement(material.TableCell, null, getFeatureName$1(feature)))),
 	            id !== '' && (React__default["default"].createElement(material.TableRow, null,
 	                React__default["default"].createElement(HeaderTableCell, null, "ID"),
-	                React__default["default"].createElement(material.TableCell, null, getFeatureId$1(feature)))),
+	                React__default["default"].createElement(material.TableCell, null, getFeatureId$2(feature)))),
+	            React__default["default"].createElement(material.TableRow, null,
+	                React__default["default"].createElement(HeaderTableCell, null, "Apollo ID"),
+	                React__default["default"].createElement(material.TableCell, null, feature._id)),
 	            React__default["default"].createElement(material.TableRow, null,
 	                React__default["default"].createElement(HeaderTableCell, null, "Type"),
 	                React__default["default"].createElement(material.TableCell, null, feature.type)),
@@ -56125,6 +57984,9 @@
 	        maxHeight: 30,
 	    },
 	}));
+	function NoOpCustomComponent(_props) {
+	    return null;
+	}
 	const ApolloTranscriptDetailsWidget = mobxReact.observer(function ApolloTranscriptDetails(props) {
 	    const { classes } = useStyles$8();
 	    const DEFAULT_PANELS = ['summary', 'location'];
@@ -56166,66 +58028,57 @@
 	            setPanelState(panelState.filter((p) => p !== panel));
 	        }
 	    }
-	    const BiotypesComponent = pluginManager.evaluateExtensionPoint('Apollo-BiotypesComponent', () => null, {
-	        key: 'status',
+	    const CustomComponent = pluginManager.evaluateExtensionPoint('Apollo-TranscriptDetailsCustomComponent', NoOpCustomComponent, props);
+	    const CustomTypesComponent = pluginManager.evaluateExtensionPoint('Apollo-TranscriptDetailsCustomTypesComponent', () => null, {
 	        feature,
 	        session,
-	        assembly,
-	        TypeChange: dist$2.TypeChange,
-	        DeleteFeatureChange: dist$2.DeleteFeatureChange,
-	        AddFeatureChange: dist$2.AddFeatureChange,
-	        FeatureAttributeChange: dist$2.FeatureAttributeChange,
 	    });
-	    const SaveComponent = pluginManager.evaluateExtensionPoint('Apollo-HavanaSaveComponent', () => null, {
-	        key: 'status',
+	    const CustomSaveComponent = pluginManager.evaluateExtensionPoint('Apollo-TranscriptDetailsCustomSaveComponent', () => null, {
 	        feature,
 	        session,
-	        assembly,
 	        token,
 	    });
-	    const HavanaAttributesComponent = pluginManager.evaluateExtensionPoint('Apollo-HavanaAttributes', () => null, {
-	        key: 'status',
+	    const CustomAttributesComponent = pluginManager.evaluateExtensionPoint('Apollo-TranscriptDetailsCustomAttributesComponent', () => null, {
 	        feature,
 	        session,
-	        assembly,
-	        FeatureAttributeChange: dist$2.FeatureAttributeChange,
 	    });
 	    return (React__default["default"].createElement("div", { className: classes.root },
 	        React__default["default"].createElement(material.Accordion, { expanded: panelState.includes('summary'), onChange: (e, expanded) => {
 	                handlePanelChange(expanded, 'summary');
 	            } },
-	            React__default["default"].createElement(StyledAccordionSummary, { expandIcon: React__default["default"].createElement(default_1$b, { style: { color: 'white' } }), "aria-controls": "panel1-content", id: "panel1-header" },
+	            React__default["default"].createElement(StyledAccordionSummary, { expandIcon: React__default["default"].createElement(default_1$a, { style: { color: 'white' } }), "aria-controls": "panel1-content", id: "panel1-header" },
 	                React__default["default"].createElement(material.Typography, { component: "span", fontWeight: 'bold' }, "Summary")),
 	            React__default["default"].createElement(material.AccordionDetails, null,
 	                React__default["default"].createElement(TranscriptWidgetSummary, { feature: feature, refName: refName }))),
+	        React__default["default"].createElement(CustomComponent, { session: session, feature: feature }),
 	        React__default["default"].createElement(material.Accordion, { style: { marginTop: 5 }, expanded: panelState.includes('location'), onChange: (e, expanded) => {
 	                handlePanelChange(expanded, 'location');
 	            } },
-	            React__default["default"].createElement(StyledAccordionSummary, { expandIcon: React__default["default"].createElement(default_1$b, { style: { color: 'white' } }), "aria-controls": "panel2-content", id: "panel2-header" },
+	            React__default["default"].createElement(StyledAccordionSummary, { expandIcon: React__default["default"].createElement(default_1$a, { style: { color: 'white' } }), "aria-controls": "panel2-content", id: "panel2-header" },
 	                React__default["default"].createElement(material.Typography, { component: "span", fontWeight: 'bold' }, "Location")),
 	            React__default["default"].createElement(material.AccordionDetails, null,
 	                React__default["default"].createElement(TranscriptWidgetEditLocation, { feature: feature, refName: refName, session: apolloSession, assembly: currentAssembly._id || '' }),
-	                React__default["default"].createElement(BiotypesComponent, { feature: feature, session: session, assembly: assembly, TypeChange: dist$2.TypeChange, DeleteFeatureChange: dist$2.DeleteFeatureChange, AddFeatureChange: dist$2.AddFeatureChange, FeatureAttributeChange: dist$2.FeatureAttributeChange }),
-	                React__default["default"].createElement(HavanaAttributesComponent, { feature: feature, session: session, assembly: assembly, FeatureAttributeChange: dist$2.FeatureAttributeChange }))),
+	                React__default["default"].createElement(CustomTypesComponent, { feature: feature, session: session }),
+	                React__default["default"].createElement(CustomAttributesComponent, { feature: feature, session: session }))),
 	        React__default["default"].createElement(material.Accordion, { style: { marginTop: 5 }, expanded: panelState.includes('attrs'), onChange: (e, expanded) => {
 	                handlePanelChange(expanded, 'attrs');
 	            } },
-	            React__default["default"].createElement(StyledAccordionSummary, { expandIcon: React__default["default"].createElement(default_1$b, { style: { color: 'white' } }), "aria-controls": "panel3-content", id: "panel3-header" },
+	            React__default["default"].createElement(StyledAccordionSummary, { expandIcon: React__default["default"].createElement(default_1$a, { style: { color: 'white' } }), "aria-controls": "panel3-content", id: "panel3-header" },
 	                React__default["default"].createElement("div", { style: { display: 'flex', alignItems: 'center' } },
 	                    React__default["default"].createElement(material.Typography, { component: "span", fontWeight: 'bold' },
 	                        "Attributes",
 	                        ' '),
 	                    React__default["default"].createElement(material.Tooltip, { title: "Separate multiple values for the attribute with commas" },
-	                        React__default["default"].createElement(default_1$i, { style: { color: 'white', fontSize: 15, marginLeft: 10 } })))),
+	                        React__default["default"].createElement(default_1$o, { style: { color: 'white', fontSize: 15, marginLeft: 10 } })))),
 	            React__default["default"].createElement(material.AccordionDetails, null,
 	                React__default["default"].createElement(Attributes, { feature: feature, session: apolloSession, assembly: currentAssembly._id || '', editable: editable }))),
 	        React__default["default"].createElement(material.Accordion, { style: { marginTop: 5 }, expanded: panelState.includes('sequence'), onChange: (e, expanded) => {
 	                handlePanelChange(expanded, 'sequence');
 	            } },
-	            React__default["default"].createElement(StyledAccordionSummary, { expandIcon: React__default["default"].createElement(default_1$b, { style: { color: 'white' } }), "aria-controls": "panel4-content", id: "panel4-header" },
+	            React__default["default"].createElement(StyledAccordionSummary, { expandIcon: React__default["default"].createElement(default_1$a, { style: { color: 'white' } }), "aria-controls": "panel4-content", id: "panel4-header" },
 	                React__default["default"].createElement(material.Typography, { component: "span", fontWeight: 'bold' }, "Sequence")),
 	            React__default["default"].createElement(material.AccordionDetails, null, panelState.includes('sequence') && (React__default["default"].createElement(TranscriptSequence, { feature: feature, session: apolloSession, assembly: currentAssembly._id || '', refName: refName })))),
-	        React__default["default"].createElement(SaveComponent, { feature: feature, session: session, assembly: assembly, token: token })));
+	        React__default["default"].createElement(CustomSaveComponent, { feature: feature, session: session, token: token })));
 	});
 
 	const configSchema$1 = configuration.ConfigurationSchema('LinearApolloDisplay', {}, { explicitIdentifier: 'displayId', explicitlyTyped: true });
@@ -56430,6 +58283,25 @@
 	            onClick: () => {
 	                session.queueDialog((doneCallback) => [
 	                    DeleteFeature,
+	                    {
+	                        session,
+	                        handleClose: () => {
+	                            doneCallback();
+	                        },
+	                        changeManager,
+	                        sourceFeature: feature,
+	                        sourceAssemblyId: currentAssemblyId,
+	                        selectedFeature,
+	                        setSelectedFeature,
+	                    },
+	                ]);
+	            },
+	        }, {
+	            label: 'Merge transcripts',
+	            disabled: !admin,
+	            onClick: () => {
+	                session.queueDialog((doneCallback) => [
+	                    MergeTranscripts,
 	                    {
 	                        session,
 	                        handleClose: () => {
@@ -57023,12 +58895,36 @@
 	    ctx.fillRect(x, y, width, height);
 	}
 	function getContextMenuItems$3(display) {
-	    const { apolloHover, apolloInternetAccount: internetAccount, changeManager, regions, selectedFeature, session, } = display;
-	    const menuItems = [];
+	    const { apolloHover } = display;
 	    if (!apolloHover) {
-	        return menuItems;
+	        return [];
 	    }
 	    const { feature: sourceFeature } = apolloHover;
+	    return getContextMenuItemsForFeature$2(display, sourceFeature);
+	}
+	function makeFeatureLabel(feature) {
+	    let name;
+	    if (feature.attributes.get('gff_name')) {
+	        name = feature.attributes.get('gff_name')?.join(',');
+	    }
+	    else if (feature.attributes.get('gff_id')) {
+	        name = feature.attributes.get('gff_id')?.join(',');
+	    }
+	    else {
+	        name = feature._id;
+	    }
+	    const coords = `(${(feature.min + 1).toLocaleString('en')}..${feature.max.toLocaleString('en')})`;
+	    const maxLen = 60;
+	    if (name && name.length + coords.length > maxLen + 5) {
+	        const trim = maxLen - coords.length;
+	        name = trim > 0 ? name.slice(0, trim) : '';
+	        name = `${name}[...]`;
+	    }
+	    return `${name} ${coords}`;
+	}
+	function getContextMenuItemsForFeature$2(display, sourceFeature) {
+	    const { apolloInternetAccount: internetAccount, changeManager, regions, selectedFeature, session, } = display;
+	    const menuItems = [];
 	    const role = internetAccount ? internetAccount.role : 'admin';
 	    const admin = role === 'admin';
 	    const readOnly = !(role && ['admin', 'user'].includes(role));
@@ -57039,7 +58935,11 @@
 	    if (!featureTypeOntology) {
 	        throw new Error('featureTypeOntology is undefined');
 	    }
+	    // Add only relevant options
 	    menuItems.push({
+	        label: makeFeatureLabel(sourceFeature),
+	        type: 'subHeader',
+	    }, {
 	        label: 'Add child feature',
 	        disabled: readOnly,
 	        onClick: () => {
@@ -57080,48 +58980,6 @@
 	        onClick: () => {
 	            session.queueDialog((doneCallback) => [
 	                DeleteFeature,
-	                {
-	                    session,
-	                    handleClose: () => {
-	                        doneCallback();
-	                    },
-	                    changeManager,
-	                    sourceFeature,
-	                    sourceAssemblyId: currentAssemblyId,
-	                    selectedFeature,
-	                    setSelectedFeature: (feature) => {
-	                        display.setSelectedFeature(feature);
-	                    },
-	                },
-	            ]);
-	        },
-	    }, {
-	        label: 'Merge exons',
-	        disabled: !admin || !featureTypeOntology.isTypeOf(sourceFeature.type, 'exon'),
-	        onClick: () => {
-	            session.queueDialog((doneCallback) => [
-	                MergeExons,
-	                {
-	                    session,
-	                    handleClose: () => {
-	                        doneCallback();
-	                    },
-	                    changeManager,
-	                    sourceFeature,
-	                    sourceAssemblyId: currentAssemblyId,
-	                    selectedFeature,
-	                    setSelectedFeature: (feature) => {
-	                        display.setSelectedFeature(feature);
-	                    },
-	                },
-	            ]);
-	        },
-	    }, {
-	        label: 'Split exon',
-	        disabled: !admin || !featureTypeOntology.isTypeOf(sourceFeature.type, 'exon'),
-	        onClick: () => {
-	            session.queueDialog((doneCallback) => [
-	                SplitExon,
 	                {
 	                    session,
 	                    handleClose: () => {
@@ -57215,6 +59073,7 @@
 	    drawDragPreview: drawDragPreview$3,
 	    drawHover: drawHover$3,
 	    drawTooltip: drawTooltip$3,
+	    getContextMenuItemsForFeature: getContextMenuItemsForFeature$2,
 	    getContextMenuItems: getContextMenuItems$3,
 	    getFeatureFromLayout: getFeatureFromLayout$2,
 	    getRowCount: getRowCount$2,
@@ -57229,7 +59088,10 @@
 	let backwardFillLight$1 = null;
 	let forwardFillDark$1 = null;
 	let backwardFillDark$1 = null;
-	if ('document' in globalThis) {
+	const canvas$1 = globalThis.document.createElement('canvas');
+	// @ts-expect-error getContext is undefined in the web worker
+	// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+	if (canvas$1?.getContext) {
 	    for (const direction of ['forward', 'backward']) {
 	        for (const themeMode of ['light', 'dark']) {
 	            const canvas = document.createElement('canvas');
@@ -57694,39 +59556,6 @@
 	        stateModel.showFeatureDetailsWidget(feature);
 	    }
 	}
-	function getMinAndMaxPx(feature, refName, regionNumber, lgv) {
-	    const minPxInfo = lgv.bpToPx({
-	        refName,
-	        coord: feature.min,
-	        regionNumber,
-	    });
-	    const maxPxInfo = lgv.bpToPx({
-	        refName,
-	        coord: feature.max,
-	        regionNumber,
-	    });
-	    if (minPxInfo === undefined || maxPxInfo === undefined) {
-	        return;
-	    }
-	    const { offsetPx } = lgv;
-	    const minPx = minPxInfo.offsetPx - offsetPx;
-	    const maxPx = maxPxInfo.offsetPx - offsetPx;
-	    return [minPx, maxPx];
-	}
-	function getOverlappingEdge(feature, x, minMax) {
-	    const [minPx, maxPx] = minMax;
-	    // Feature is too small to tell if we're overlapping an edge
-	    if (Math.abs(maxPx - minPx) < 8) {
-	        return;
-	    }
-	    if (Math.abs(minPx - x) < 4) {
-	        return { feature, edge: 'min' };
-	    }
-	    if (Math.abs(maxPx - x) < 4) {
-	        return { feature, edge: 'max' };
-	    }
-	    return;
-	}
 	function getDraggableFeatureInfo$1(mousePosition, feature, stateModel) {
 	    const { session } = stateModel;
 	    const { apolloDataStore } = session;
@@ -57769,7 +59598,7 @@
 	            // We are on an exon, are we on the edge of it?
 	            const minMax = getMinAndMaxPx(overlappingExon, refName, regionNumber, lgv);
 	            if (minMax) {
-	                const overlappingEdge = getOverlappingEdge(feature, x, minMax);
+	                const overlappingEdge = getOverlappingEdge(overlappingExon, x, minMax);
 	                if (overlappingEdge) {
 	                    return overlappingEdge;
 	                }
@@ -57794,62 +59623,136 @@
 	    return (featureTypeOntology.isTypeOf(feature.type, 'transcript') ||
 	        featureTypeOntology.isTypeOf(feature.type, 'pseudogenic_transcript'));
 	}
-	function isCdsOrExonFeature(feature, session) {
+	function isExonFeature(feature, session) {
 	    const { featureTypeOntology } = session.apolloDataStore.ontologyManager;
 	    if (!featureTypeOntology) {
 	        throw new Error('featureTypeOntology is undefined');
 	    }
-	    return (featureTypeOntology.isTypeOf(feature.type, 'CDS') ||
-	        featureTypeOntology.isTypeOf(feature.type, 'exon'));
+	    return featureTypeOntology.isTypeOf(feature.type, 'exon');
 	}
-	// False positive here, none of these functions use "this"
-	/* eslint-disable @typescript-eslint/unbound-method */
-	const { drawTooltip: drawTooltip$2, getContextMenuItems: boxGlyphContextMenuItems, onMouseLeave: onMouseLeave$2, } = boxGlyph;
-	/* eslint-enable @typescript-eslint/unbound-method */
-	function getContextMenuItems$2(display) {
-	    const { apolloHover, changeManager, regions, session } = display;
+	function isCDSFeature(feature, session) {
+	    const { featureTypeOntology } = session.apolloDataStore.ontologyManager;
+	    if (!featureTypeOntology) {
+	        throw new Error('featureTypeOntology is undefined');
+	    }
+	    return featureTypeOntology.isTypeOf(feature.type, 'CDS');
+	}
+	function getContextMenuItems$2(display, mousePosition) {
+	    const { apolloInternetAccount: internetAccount, apolloHover, changeManager, regions, selectedFeature, session, } = display;
+	    const [region] = regions;
+	    const currentAssemblyId = display.getAssemblyId(region.assemblyName);
 	    const menuItems = [];
+	    const role = internetAccount ? internetAccount.role : 'admin';
+	    const admin = role === 'admin';
 	    if (!apolloHover) {
 	        return menuItems;
 	    }
-	    const { feature: sourceFeature } = apolloHover;
-	    const [region] = regions;
-	    const currentAssemblyId = display.getAssemblyId(region.assemblyName);
-	    const { featureTypeOntology } = session.apolloDataStore.ontologyManager;
-	    if (!featureTypeOntology) {
-	        throw new Error('featureTypeOntology is undefined');
+	    let featuresUnderClick = getFeaturesUnderClick(mousePosition);
+	    if (isCDSFeature(mousePosition.featureAndGlyphUnderMouse.feature, session)) {
+	        featuresUnderClick = getFeaturesUnderClick(mousePosition, true);
 	    }
-	    for (const item of boxGlyphContextMenuItems(display)) {
-	        menuItems.push(item);
-	    }
-	    if (require$$1$2.isSessionModelWithWidgets(session) &&
-	        (isTranscriptFeature(sourceFeature, session) ||
-	            isCdsOrExonFeature(sourceFeature, session))) {
-	        let transcript = sourceFeature;
-	        if (sourceFeature.parent && isCdsOrExonFeature(sourceFeature, session)) {
-	            transcript = sourceFeature.parent;
+	    for (const feature of featuresUnderClick) {
+	        const contextMenuItemsForFeature = boxGlyph.getContextMenuItemsForFeature(display, feature);
+	        if (isExonFeature(feature, session)) {
+	            contextMenuItemsForFeature.push({
+	                label: 'Merge exons',
+	                disabled: !admin,
+	                onClick: () => {
+	                    session.queueDialog((doneCallback) => [
+	                        MergeExons,
+	                        {
+	                            session,
+	                            handleClose: () => {
+	                                doneCallback();
+	                            },
+	                            changeManager,
+	                            sourceFeature: feature,
+	                            sourceAssemblyId: currentAssemblyId,
+	                            selectedFeature,
+	                            setSelectedFeature: (feature) => {
+	                                display.setSelectedFeature(feature);
+	                            },
+	                        },
+	                    ]);
+	                },
+	            }, {
+	                label: 'Split exon',
+	                disabled: !admin,
+	                onClick: () => {
+	                    session.queueDialog((doneCallback) => [
+	                        SplitExon,
+	                        {
+	                            session,
+	                            handleClose: () => {
+	                                doneCallback();
+	                            },
+	                            changeManager,
+	                            sourceFeature: feature,
+	                            sourceAssemblyId: currentAssemblyId,
+	                            selectedFeature,
+	                            setSelectedFeature: (feature) => {
+	                                display.setSelectedFeature(feature);
+	                            },
+	                        },
+	                    ]);
+	                },
+	            });
+	        }
+	        if (isTranscriptFeature(feature, session)) {
+	            contextMenuItemsForFeature.push({
+	                label: 'Merge transcript',
+	                onClick: () => {
+	                    session.queueDialog((doneCallback) => [
+	                        MergeTranscripts,
+	                        {
+	                            session,
+	                            handleClose: () => {
+	                                doneCallback();
+	                            },
+	                            changeManager,
+	                            sourceFeature: feature,
+	                            sourceAssemblyId: currentAssemblyId,
+	                            selectedFeature,
+	                            setSelectedFeature: (feature) => {
+	                                display.setSelectedFeature(feature);
+	                            },
+	                        },
+	                    ]);
+	                },
+	            });
+	            if (require$$1$2.isSessionModelWithWidgets(session)) {
+	                contextMenuItemsForFeature.push({
+	                    label: 'Open transcript details',
+	                    onClick: () => {
+	                        const apolloTranscriptWidget = session.addWidget('ApolloTranscriptDetails', 'apolloTranscriptDetails', {
+	                            feature,
+	                            assembly: currentAssemblyId,
+	                            changeManager,
+	                            refName: region.refName,
+	                        });
+	                        session.showWidget(apolloTranscriptWidget);
+	                    },
+	                });
+	            }
 	        }
 	        menuItems.push({
-	            label: 'Open transcript details',
-	            onClick: () => {
-	                const apolloTranscriptWidget = session.addWidget('ApolloTranscriptDetails', 'apolloTranscriptDetails', {
-	                    feature: transcript,
-	                    assembly: currentAssemblyId,
-	                    changeManager,
-	                    refName: region.refName,
-	                });
-	                session.showWidget(apolloTranscriptWidget);
-	            },
+	            label: feature.type,
+	            subMenu: contextMenuItemsForFeature,
 	        });
 	    }
 	    return menuItems;
 	}
+	// False positive here, none of these functions use "this"
+	/* eslint-disable @typescript-eslint/unbound-method */
+	const { drawTooltip: drawTooltip$2, getContextMenuItemsForFeature: getContextMenuItemsForFeature$1, onMouseLeave: onMouseLeave$2 } = boxGlyph;
+	/* eslint-enable @typescript-eslint/unbound-method */
 	const geneGlyph$1 = {
 	    draw: draw$2,
 	    drawDragPreview: drawDragPreview$2,
 	    drawHover: drawHover$2,
 	    drawTooltip: drawTooltip$2,
 	    getContextMenuItems: getContextMenuItems$2,
+	    getContextMenuItemsForFeature: getContextMenuItemsForFeature$1,
 	    getFeatureFromLayout: getFeatureFromLayout$1,
 	    getRowCount: getRowCount$1,
 	    getRowForFeature: getRowForFeature$1,
@@ -57944,15 +59847,44 @@
 	    }
 	    return;
 	}
+	function getContextMenuItems$1(display, mousePosition) {
+	    const { apolloHover, session } = display;
+	    const menuItems = [];
+	    if (!apolloHover) {
+	        return menuItems;
+	    }
+	    const { feature: sourceFeature } = apolloHover;
+	    const { featureTypeOntology } = session.apolloDataStore.ontologyManager;
+	    if (!featureTypeOntology) {
+	        throw new Error('featureTypeOntology is undefined');
+	    }
+	    const sourceFeatureMenuItems = boxGlyph.getContextMenuItems(display, mousePosition);
+	    menuItems.push({
+	        label: sourceFeature.type,
+	        subMenu: sourceFeatureMenuItems,
+	    });
+	    for (const relative of getFeaturesUnderClick(mousePosition)) {
+	        if (relative._id === sourceFeature._id) {
+	            continue;
+	        }
+	        const contextMenuItemsForFeature = boxGlyph.getContextMenuItemsForFeature(display, relative);
+	        menuItems.push({
+	            label: relative.type,
+	            subMenu: contextMenuItemsForFeature,
+	        });
+	    }
+	    return menuItems;
+	}
 	// False positive here, none of these functions use "this"
 	/* eslint-disable @typescript-eslint/unbound-method */
-	const { drawDragPreview: drawDragPreview$1, drawTooltip: drawTooltip$1, getContextMenuItems: getContextMenuItems$1, onMouseDown: onMouseDown$1, onMouseLeave: onMouseLeave$1, onMouseMove: onMouseMove$1, onMouseUp: onMouseUp$1, } = boxGlyph;
+	const { drawDragPreview: drawDragPreview$1, drawTooltip: drawTooltip$1, getContextMenuItemsForFeature, onMouseDown: onMouseDown$1, onMouseLeave: onMouseLeave$1, onMouseMove: onMouseMove$1, onMouseUp: onMouseUp$1, } = boxGlyph;
 	/* eslint-enable @typescript-eslint/unbound-method */
 	const genericChildGlyph = {
 	    draw: draw$1,
 	    drawDragPreview: drawDragPreview$1,
 	    drawHover: drawHover$1,
 	    drawTooltip: drawTooltip$1,
+	    getContextMenuItemsForFeature,
 	    getContextMenuItems: getContextMenuItems$1,
 	    getFeatureFromLayout,
 	    getRowCount,
@@ -58814,74 +60746,6 @@
 	        seqTrackOverlayctx.fillRect(startPx, sequenceRowHeight * row, widthPx, sequenceRowHeight);
 	    }
 	}
-	function expandFeatures(feature, newLocation, edge) {
-	    const featureId = feature._id;
-	    const oldLocation = feature[edge];
-	    const changes = [{ featureId, oldLocation, newLocation }];
-	    const { parent } = feature;
-	    if (parent &&
-	        ((edge === 'min' && parent[edge] > newLocation) ||
-	            (edge === 'max' && parent[edge] < newLocation))) {
-	        changes.push(...expandFeatures(parent, newLocation, edge));
-	    }
-	    return changes;
-	}
-	function shrinkFeatures(feature, newLocation, edge, shrinkParent, childIdToSkip) {
-	    const featureId = feature._id;
-	    const oldLocation = feature[edge];
-	    const changes = [{ featureId, oldLocation, newLocation }];
-	    const { parent, children } = feature;
-	    if (children) {
-	        for (const [, child] of children) {
-	            if (child._id === childIdToSkip) {
-	                continue;
-	            }
-	            if ((edge === 'min' && child[edge] < newLocation) ||
-	                (edge === 'max' && child[edge] > newLocation)) {
-	                changes.push(...shrinkFeatures(child, newLocation, edge, shrinkParent));
-	            }
-	        }
-	    }
-	    if (parent && shrinkParent) {
-	        const siblings = [];
-	        if (parent.children) {
-	            for (const [, c] of parent.children) {
-	                if (c._id === featureId) {
-	                    continue;
-	                }
-	                siblings.push(c);
-	            }
-	        }
-	        if (siblings.length === 0) {
-	            changes.push(...shrinkFeatures(parent, newLocation, edge, shrinkParent, featureId));
-	        }
-	        else {
-	            const oldLocation = parent[edge];
-	            const boundedLocation = Math[edge](...siblings.map((s) => s[edge]), newLocation);
-	            if (boundedLocation !== oldLocation) {
-	                changes.push(...shrinkFeatures(parent, boundedLocation, edge, shrinkParent, featureId));
-	            }
-	        }
-	    }
-	    return changes;
-	}
-	function getPropagatedLocationChanges(feature, newLocation, edge, shrinkParent = false) {
-	    const oldLocation = feature[edge];
-	    if (newLocation === oldLocation) {
-	        throw new Error(`New and existing locations are the same: "${newLocation}"`);
-	    }
-	    if (edge === 'min') {
-	        if (newLocation > oldLocation) {
-	            // shrinking feature, may need to shrink children and/or parents
-	            return shrinkFeatures(feature, newLocation, edge, shrinkParent);
-	        }
-	        return expandFeatures(feature, newLocation, edge);
-	    }
-	    if (newLocation < oldLocation) {
-	        return shrinkFeatures(feature, newLocation, edge, shrinkParent);
-	    }
-	    return expandFeatures(feature, newLocation, edge);
-	}
 	function mouseEventsModelIntermediateFactory$1(pluginManager, configSchema) {
 	    const LinearApolloDisplayRendering = renderingModelFactory$1(pluginManager, configSchema);
 	    return LinearApolloDisplayRendering.named('LinearApolloDisplayMouseEvents')
@@ -59031,14 +60895,18 @@
 	function mouseEventsModelFactory$1(pluginManager, configSchema) {
 	    const LinearApolloDisplayMouseEvents = mouseEventsSeqHightlightModelFactory(pluginManager, configSchema);
 	    return LinearApolloDisplayMouseEvents.views((self) => ({
-	        contextMenuItems(contextCoord) {
+	        contextMenuItems(event) {
 	            const { apolloHover } = self;
-	            if (!(apolloHover && contextCoord)) {
+	            if (!apolloHover) {
 	                return [];
 	            }
+	            const mousePosition = self.getMousePosition(event);
 	            const { topLevelFeature } = apolloHover;
 	            const glyph = self.getGlyph(topLevelFeature);
-	            return glyph.getContextMenuItems(self);
+	            if (isMousePositionWithFeatureAndGlyph$1(mousePosition)) {
+	                return glyph.getContextMenuItems(self, mousePosition);
+	            }
+	            return [];
 	        },
 	    }))
 	        .actions((self) => ({
@@ -59217,7 +61085,10 @@
 	let backwardFillLight = null;
 	let forwardFillDark = null;
 	let backwardFillDark = null;
-	if ('document' in globalThis) {
+	const canvas = globalThis.document.createElement('canvas');
+	// @ts-expect-error getContext is undefined in the web worker
+	// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+	if (canvas?.getContext) {
 	    for (const direction of ['forward', 'backward']) {
 	        for (const themeMode of ['light', 'dark']) {
 	            const canvas = document.createElement('canvas');
@@ -59608,7 +61479,7 @@
 	    const draggableFeature = getDraggableFeatureInfo(currentMousePosition, cds, feature, stateModel);
 	    if (draggableFeature) {
 	        event.stopPropagation();
-	        stateModel.startDrag(currentMousePosition, draggableFeature.feature, draggableFeature.edge);
+	        stateModel.startDrag(currentMousePosition, draggableFeature.feature, draggableFeature.edge, true);
 	    }
 	}
 	function onMouseMove(stateModel, mousePosition) {
@@ -59682,59 +61553,50 @@
 	    }
 	    const { bp, refName, regionNumber, x } = mousePosition;
 	    const { lgv } = stateModel;
-	    const { offsetPx } = lgv;
-	    const minPxInfo = lgv.bpToPx({ refName, coord: cds.min, regionNumber });
-	    const maxPxInfo = lgv.bpToPx({ refName, coord: cds.max, regionNumber });
-	    if (minPxInfo === undefined || maxPxInfo === undefined) {
-	        return;
-	    }
-	    const minPx = minPxInfo.offsetPx - offsetPx;
-	    const maxPx = maxPxInfo.offsetPx - offsetPx;
-	    if (Math.abs(maxPx - minPx) < 8) {
-	        return;
-	    }
 	    if (isTranscript) {
 	        const transcript = feature;
 	        if (!transcript.children) {
 	            return;
 	        }
 	        const exonChildren = [];
+	        const cdsChildren = [];
 	        for (const child of transcript.children.values()) {
 	            const childIsExon = featureTypeOntology.isTypeOf(child.type, 'exon');
+	            const childIsCDS = featureTypeOntology.isTypeOf(child.type, 'CDS');
 	            if (childIsExon) {
 	                exonChildren.push(child);
+	            }
+	            else if (childIsCDS) {
+	                cdsChildren.push(child);
 	            }
 	        }
 	        const overlappingExon = exonChildren.find((child) => {
 	            const [start, end] = require$$1$2.intersection2(bp, bp + 1, child.min, child.max);
 	            return start !== undefined && end !== undefined;
 	        });
-	        if (!overlappingExon) {
-	            return;
+	        if (overlappingExon) {
+	            // We are on an exon, are we on the edge of it?
+	            const minMax = getMinAndMaxPx(overlappingExon, refName, regionNumber, lgv);
+	            if (minMax) {
+	                const overlappingEdge = getOverlappingEdge(overlappingExon, x, minMax);
+	                if (overlappingEdge) {
+	                    return overlappingEdge;
+	                }
+	            }
 	        }
-	        const minPxInfo = lgv.bpToPx({
-	            refName,
-	            coord: overlappingExon.min,
-	            regionNumber,
-	        });
-	        const maxPxInfo = lgv.bpToPx({
-	            refName,
-	            coord: overlappingExon.max,
-	            regionNumber,
-	        });
-	        if (minPxInfo === undefined || maxPxInfo === undefined) {
-	            return;
-	        }
-	        const minPx = minPxInfo.offsetPx - offsetPx;
-	        const maxPx = maxPxInfo.offsetPx - offsetPx;
-	        if (Math.abs(maxPx - minPx) < 8) {
-	            return;
-	        }
-	        if (Math.abs(minPx - x) < 4) {
-	            return { feature: overlappingExon, edge: 'min' };
-	        }
-	        if (Math.abs(maxPx - x) < 4) {
-	            return { feature: overlappingExon, edge: 'max' };
+	        // End of special cases, let's see if we're on the edge of this CDS or exon
+	        const minMax = getMinAndMaxPx(cds, refName, regionNumber, lgv);
+	        if (minMax) {
+	            const overlappingCDS = cdsChildren.find((child) => {
+	                const [start, end] = require$$1$2.intersection2(bp, bp + 1, child.min, child.max);
+	                return start !== undefined && end !== undefined;
+	            });
+	            if (overlappingCDS) {
+	                const overlappingEdge = getOverlappingEdge(overlappingCDS, x, minMax);
+	                if (overlappingEdge) {
+	                    return overlappingEdge;
+	                }
+	            }
 	        }
 	    }
 	    return;
@@ -60579,19 +62441,20 @@
 	        .actions((self) => ({
 	        // explicitly pass in a feature in case it's not the same as the one in
 	        // mousePosition (e.g. if features are drawn overlapping).
-	        startDrag(mousePosition, feature, edge) {
+	        startDrag(mousePosition, feature, edge, shrinkParent = false) {
 	            self.apolloDragging = {
 	                start: mousePosition,
 	                current: mousePosition,
 	                feature,
 	                edge,
+	                shrinkParent,
 	            };
 	        },
 	        endDrag() {
 	            if (!self.apolloDragging) {
 	                throw new Error('endDrag() called with no current drag in progress');
 	            }
-	            const { current, edge, feature, start } = self.apolloDragging;
+	            const { current, edge, feature, start, shrinkParent } = self.apolloDragging;
 	            // don't do anything if it was only dragged a tiny bit
 	            if (Math.abs(current.x - start.x) <= 4) {
 	                self.setDragging();
@@ -60601,33 +62464,28 @@
 	            const { displayedRegions } = self.lgv;
 	            const region = displayedRegions[start.regionNumber];
 	            const assembly = self.getAssemblyId(region.assemblyName);
-	            let change;
-	            if (edge === 'max') {
-	                const featureId = feature._id;
-	                const oldEnd = feature.max;
-	                const newEnd = current.bp;
-	                change = new dist$2.LocationEndChange({
+	            const changes = getPropagatedLocationChanges(feature, current.bp, edge, shrinkParent);
+	            const change = edge === 'max'
+	                ? new dist$2.LocationEndChange({
 	                    typeName: 'LocationEndChange',
-	                    changedIds: [featureId],
-	                    featureId,
-	                    oldEnd,
-	                    newEnd,
+	                    changedIds: changes.map((c) => c.featureId),
+	                    changes: changes.map((c) => ({
+	                        featureId: c.featureId,
+	                        oldEnd: c.oldLocation,
+	                        newEnd: c.newLocation,
+	                    })),
 	                    assembly,
-	                });
-	            }
-	            else {
-	                const featureId = feature._id;
-	                const oldStart = feature.min;
-	                const newStart = current.bp;
-	                change = new dist$2.LocationStartChange({
+	                })
+	                : new dist$2.LocationStartChange({
 	                    typeName: 'LocationStartChange',
-	                    changedIds: [featureId],
-	                    featureId,
-	                    oldStart,
-	                    newStart,
+	                    changedIds: changes.map((c) => c.featureId),
+	                    changes: changes.map((c) => ({
+	                        featureId: c.featureId,
+	                        oldStart: c.oldLocation,
+	                        newStart: c.newLocation,
+	                    })),
 	                    assembly,
 	                });
-	            }
 	            void self.changeManager.submit(change);
 	            self.setDragging();
 	            self.setCursor();
@@ -60667,6 +62525,9 @@
 	            const mousePosition = self.getMousePosition(event);
 	            if (isMousePositionWithFeatureAndGlyph(mousePosition)) {
 	                mousePosition.featureAndGlyphUnderMouse.glyph.onMouseUp(self, mousePosition, event);
+	            }
+	            else {
+	                self.setSelectedFeature();
 	            }
 	            if (self.apolloDragging) {
 	                self.endDrag();
@@ -60721,6 +62582,11 @@
 	        description: 'Name of the feature type ontology',
 	        type: 'string',
 	        defaultValue: 'Sequence Ontology',
+	    },
+	    hasRole: {
+	        description: 'Flag used internally by jbrowse-plugin-apollo',
+	        type: 'boolean',
+	        defaultValue: false,
 	    },
 	});
 
@@ -61225,7 +63091,7 @@
 	                    ...superContextMenuItems(),
 	                    {
 	                        label: 'Create Apollo annotation',
-	                        icon: default_1$j,
+	                        icon: default_1$p,
 	                        onClick: () => {
 	                            session.queueDialog((doneCallback) => [
 	                                CreateApolloAnnotation,
@@ -61362,7 +63228,7 @@
 	                    ...superContextMenuItems(),
 	                    {
 	                        label: 'Create Apollo annotation',
-	                        icon: default_1$j,
+	                        icon: default_1$p,
 	                        onClick: () => {
 	                            session.queueDialog((doneCallback) => [
 	                                CreateApolloAnnotation,
@@ -61483,7 +63349,7 @@
 	                else {
 	                    const coord = [event.clientX, event.clientY];
 	                    setContextCoord(coord);
-	                    setContextMenuItems(getContextMenuItems(coord));
+	                    setContextMenuItems(getContextMenuItems(event));
 	                }
 	            } },
 	            loading ? (React__default["default"].createElement("div", { className: classes.loading },
@@ -61765,7 +63631,7 @@
 	    return (React__default["default"].createElement("div", { className: classes.accordionRoot },
 	        open && onResize ? React__default["default"].createElement(ResizeHandle, { onResize: onResize }) : null,
 	        React__default["default"].createElement("div", { className: classes.accordionControl, onClick: onClick },
-	            open ? (React__default["default"].createElement(default_1$2, { className: classes.expandIcon })) : (React__default["default"].createElement(default_1$b, { className: classes.expandIcon })),
+	            open ? (React__default["default"].createElement(default_1$2, { className: classes.expandIcon })) : (React__default["default"].createElement(default_1$a, { className: classes.expandIcon })),
 	            title ? (React__default["default"].createElement(material.Typography, { className: classes.title, variant: "caption", component: "span" }, title)) : null)));
 	});
 	const LinearApolloDisplayComponent = mobxReact.observer(function DisplayComponent({ model, ...other }) {
@@ -61989,8 +63855,7 @@
 	                jobsManager.abortJob(job.name, String(error));
 	            }
 	            console.error(error);
-	            session.notify(String(error), 'error');
-	            // await this.revert(change)
+	            session.notify(`Error encountered in client: ${String(error)}. Data may be out of sync, please refresh the page`, 'error');
 	            return;
 	        }
 	        // post-validate
@@ -62033,10 +63898,10 @@
 	            if (change.notification) {
 	                session.notify(change.notification, 'success');
 	            }
-	        }
-	        if (addToRecents) {
-	            // Push the change into array
-	            this.recentChanges.push(change);
+	            if (addToRecents) {
+	                // Push the change into array
+	                this.recentChanges.push(change);
+	            }
 	        }
 	        if (updateJobsManager) {
 	            jobsManager.done(job);
@@ -62044,7 +63909,8 @@
 	    }
 	    async revert(change, submitToBackend = true) {
 	        const inverseChange = change.getInverse();
-	        return this.submit(inverseChange, { submitToBackend, addToRecents: false });
+	        const opts = { submitToBackend, addToRecents: false };
+	        return this.submit(inverseChange, opts);
 	    }
 	    /**
 	     * Undo the last change
@@ -62120,6 +63986,21 @@
 	            throw new Error(errorMessage);
 	        }
 	        this.checkSocket(assemblyName, refName, internetAccount);
+	        return response.json();
+	    }
+	    async getFeatureById(featureId, assemblyName, topLevel) {
+	        const internetAccount = this.clientStore.getInternetAccount(assemblyName);
+	        const { baseURL } = internetAccount;
+	        const url = new URL(`features/${featureId}`, baseURL);
+	        const searchParams = new URLSearchParams({
+	            topLevel: String(topLevel),
+	        });
+	        url.search = searchParams.toString();
+	        const response = await this.fetch(internetAccount, url.toString());
+	        if (!response.ok) {
+	            const errorMessage = await createFetchErrorMessage(response, 'getFeatureById failed');
+	            throw new Error(errorMessage);
+	        }
 	        return response.json();
 	    }
 	    /**
@@ -62312,6 +64193,9 @@
 	}
 
 	class InMemoryFileDriver extends BackendDriver {
+	    getFeatureById(_featureId, _assemblyName, _topLevel) {
+	        throw new Error('Method not implemented.');
+	    }
 	    async getFeatures() {
 	        return [[], []];
 	    }
@@ -62388,6 +64272,9 @@
 
 	/* eslint-disable @typescript-eslint/require-await */
 	class DesktopFileDriver extends BackendDriver {
+	    getFeatureById(_featureId, _assemblyName, _topLevel) {
+	        throw new Error('Method not implemented.');
+	    }
 	    async loadAssembly(assemblyName) {
 	        const { assemblyManager } = require$$1$2.getSession(this.clientStore);
 	        const assembly = assemblyManager.get(assemblyName);
@@ -62870,15 +64757,6 @@
 	    }))
 	        .actions((self) => ({
 	        afterCreate: require$$1$3.flow(function* afterCreate() {
-	            // When the initial config.json loads, it doesn't include the Apollo
-	            // tracks, which would result in a potentially invalid session snapshot
-	            // if any tracks are open. Here we copy the session snapshot, apply an
-	            // empty session snapshot, and then restore the original session
-	            // snapshot after the updated config.json loads.
-	            const sessionSnapshot = require$$1$3.getSnapshot(self);
-	            const { id, name } = sessionSnapshot;
-	            require$$1$3.applySnapshot(self, { name, id });
-	            const { internetAccounts, jbrowse } = require$$1$3.getRoot(self);
 	            mobx.autorun(() => {
 	                // broadcastLocations() // **** This is not working and therefore we need to duplicate broadcastLocations() -method code here because autorun() does not observe changes otherwise
 	                const locations = [];
@@ -62927,7 +64805,23 @@
 	                    }
 	                }
 	            }, { name: 'ApolloSession' });
-	            // END AUTORUN
+	            // When the initial config.json loads, it doesn't include the Apollo
+	            // tracks, which would result in a potentially invalid session snapshot
+	            // if any tracks are open. Here we copy the session snapshot, apply an
+	            // empty session snapshot, and then restore the original session
+	            // snapshot after the updated config.json loads.
+	            // @ts-expect-error type is missing on ApolloRootModel
+	            const { internetAccounts, jbrowse, reloadPluginManagerCallback } = require$$1$3.getRoot(self);
+	            const pluginConfiguration = 
+	            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+	            jbrowse.configuration.ApolloPlugin;
+	            const hasRole = configuration.readConfObject(pluginConfiguration, 'hasRole');
+	            if (hasRole) {
+	                return;
+	            }
+	            const sessionSnapshot = require$$1$3.getSnapshot(self);
+	            const { id, name } = sessionSnapshot;
+	            require$$1$3.applySnapshot(self, { name, id });
 	            // fetch and initialize assemblies for each of our Apollo internet accounts
 	            for (const internetAccount of internetAccounts) {
 	                if (internetAccount.type !== 'ApolloInternetAccount') {
@@ -62960,9 +64854,8 @@
 	                    console.error(error);
 	                    continue;
 	                }
-	                require$$1$3.applySnapshot(jbrowse, jbrowseConfig);
-	                // @ts-expect-error snapshot seems to get wrong type?
-	                require$$1$3.applySnapshot(self, sessionSnapshot);
+	                // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+	                reloadPluginManagerCallback(jbrowseConfig, sessionSnapshot);
 	            }
 	        }),
 	        beforeDestroy() {
@@ -63187,17 +65080,6 @@
 	                ReactComponent: LinearApolloSixFrameDisplayComponent,
 	            });
 	        });
-	        pluginManager.addDisplayType(() => {
-	            const configSchema$1 = configSchema;
-	            return new pluggableElementTypes.DisplayType({
-	                name: 'LinearApolloSixFrameDisplay',
-	                configSchema: configSchema$1,
-	                stateModel: stateModelFactory(pluginManager, configSchema$1),
-	                trackType: 'ApolloTrack',
-	                viewType: 'LinearGenomeView',
-	                ReactComponent: LinearApolloSixFrameDisplayComponent,
-	            });
-	        });
 	        pluginManager.addToExtensionPoint('Core-extendSession', 
 	        // @ts-expect-error not sure how to deal with snapshot model types
 	        extendSession.bind(this, pluginManager));
@@ -63213,7 +65095,7 @@
 	                                ...superRubberBandMenuItems(),
 	                                {
 	                                    label: 'Add new feature',
-	                                    icon: default_1$j,
+	                                    icon: default_1$p,
 	                                    onClick: () => {
 	                                        const session = require$$1$2.getSession(self);
 	                                        const { leftOffset, rightOffset } = self;
