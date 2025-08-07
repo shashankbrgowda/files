@@ -57318,134 +57318,6 @@
 	        cdsMin = sortedCDSLocations[0].min;
 	        cdsMax = sortedCDSLocations[sortedCDSLocations.length - 1].max;
 	    }
-	    function handleCDSLocationChange(oldLocation, newLocation, feature, isMin) {
-	        if (!feature.children) {
-	            throw new Error('Transcript should have child features');
-	        }
-	        const overlappingExon = getOverlappingExonForCDS(feature, featureTypeOntology, oldLocation, isMin);
-	        if (!overlappingExon) {
-	            notify('No matching exon found', 'error');
-	            return;
-	        }
-	        const oldExonLocation = isMin ? overlappingExon.min : overlappingExon.max;
-	        const { prevExon, nextExon } = getNeighboringExonParts(feature, featureTypeOntology, oldExonLocation, isMin);
-	        // Start location should be less than end location
-	        if (isMin && newLocation >= overlappingExon.max) {
-	            notify('Start location should be less than overlapping exon end location', 'error');
-	            return;
-	        }
-	        // End location should be greater than start location
-	        if (!isMin && newLocation <= overlappingExon.min) {
-	            notify('End location should be greater than overlapping exon start location', 'error');
-	            return;
-	        }
-	        // Changed location should be greater than end location of previous exon - give 2bp buffer
-	        if (prevExon && prevExon.max + 2 > newLocation) {
-	            notify('Start location should be greater than previous exon end location', 'error');
-	            return;
-	        }
-	        // Changed location should be less than start location of next exon
-	        if (nextExon && nextExon.min - 2 < newLocation) {
-	            notify('End location should be less than next exon start location', 'error');
-	            return;
-	        }
-	        const cdsFeature = getMatchingCDSFeature(feature, featureTypeOntology, oldLocation, isMin);
-	        if (!cdsFeature) {
-	            notify('No matching CDS feature found', 'error');
-	            return;
-	        }
-	        if (!isMin && newLocation <= cdsFeature.min) {
-	            notify('End location should be greater than CDS start location', 'error');
-	            return;
-	        }
-	        if (isMin && newLocation >= cdsFeature.max) {
-	            notify('Start location should be less than CDS end location', 'error');
-	            return;
-	        }
-	        const overlappingExonFeature = getExonFeature(feature, overlappingExon.min, overlappingExon.max, featureTypeOntology);
-	        if (!overlappingExonFeature) {
-	            notify('No matching exon feature found', 'error');
-	            return;
-	        }
-	        if (isMin && newLocation !== cdsFeature.min) {
-	            const startChange = new dist$2.LocationStartChange({
-	                typeName: 'LocationStartChange',
-	                changedIds: [],
-	                changes: [],
-	                assembly,
-	            });
-	            if (newLocation < overlappingExon.min) {
-	                if (prevExon) {
-	                    // update exon start location
-	                    appendStartLocationChange(overlappingExonFeature, startChange, newLocation);
-	                    // update CDS start location
-	                    appendStartLocationChange(cdsFeature, startChange, newLocation);
-	                }
-	                else {
-	                    const transcriptStart = feature.min;
-	                    const gene = feature.parent;
-	                    if (newLocation < transcriptStart) {
-	                        if (gene && newLocation < gene.min) {
-	                            // update gene start location
-	                            appendStartLocationChange(gene, startChange, newLocation);
-	                        }
-	                        // update transcript start location
-	                        appendStartLocationChange(feature, startChange, newLocation);
-	                        // update exon start location
-	                        appendStartLocationChange(overlappingExonFeature, startChange, newLocation);
-	                        // update CDS start location
-	                        appendStartLocationChange(cdsFeature, startChange, newLocation);
-	                    }
-	                }
-	            }
-	            else {
-	                // update CDS start location
-	                appendStartLocationChange(cdsFeature, startChange, newLocation);
-	            }
-	            void changeManager.submit(startChange).catch(() => {
-	                notify('Error updating feature CDS start position', 'error');
-	            });
-	        }
-	        if (!isMin && newLocation !== cdsFeature.max) {
-	            const endChange = new dist$2.LocationEndChange({
-	                typeName: 'LocationEndChange',
-	                changedIds: [],
-	                changes: [],
-	                assembly,
-	            });
-	            if (newLocation > overlappingExon.max) {
-	                if (nextExon) {
-	                    // update exon end location
-	                    appendEndLocationChange(overlappingExonFeature, endChange, newLocation);
-	                    // update CDS end location
-	                    appendEndLocationChange(cdsFeature, endChange, newLocation);
-	                }
-	                else {
-	                    const transcriptEnd = feature.max;
-	                    const gene = feature.parent;
-	                    if (newLocation > transcriptEnd) {
-	                        if (gene && newLocation > gene.max) {
-	                            // update gene end location
-	                            appendEndLocationChange(gene, endChange, newLocation);
-	                        }
-	                        // update transcript end location
-	                        appendEndLocationChange(feature, endChange, newLocation);
-	                        // update exon end location
-	                        appendEndLocationChange(overlappingExonFeature, endChange, newLocation);
-	                        // update CDS end location
-	                        appendEndLocationChange(cdsFeature, endChange, newLocation);
-	                    }
-	                }
-	            }
-	            else {
-	                // update CDS end location
-	                appendEndLocationChange(cdsFeature, endChange, newLocation);
-	            }
-	            void changeManager.submit(endChange).catch(() => {
-	                notify('Error updating feature CDS end position', 'error');
-	            });
-	        }
-	    }
 	    const updateCDSLocation = (oldLocation, newLocation, feature, isMin, onComplete) => {
 	        if (!feature.children) {
 	            throw new Error('Transcript should have child features');
@@ -57456,6 +57328,20 @@
 	        const cdsFeature = getMatchingCDSFeature(feature, featureTypeOntology, oldLocation, isMin);
 	        if (!cdsFeature) {
 	            notify('No matching CDS feature found', 'error');
+	            return;
+	        }
+	        if (isMin && newLocation >= cdsFeature.max) {
+	            notify('Start location should be less than CDS end location', 'error');
+	            return;
+	        }
+	        if (!isMin && newLocation <= cdsFeature.min) {
+	            notify('End location should be greater than CDS start location', 'error');
+	            return;
+	        }
+	        // overlapping exon of new CDS location
+	        const overlappingExon = getOverlappingExonForCDS(feature, featureTypeOntology, newLocation, isMin);
+	        if (!overlappingExon) {
+	            notify('There should be an overlapping exon for the new CDS location', 'error');
 	            return;
 	        }
 	        const change = isMin
@@ -58031,19 +57917,19 @@
 	                React__default["default"].createElement(material.Grid2, { size: 1 }),
 	                strand === 1 ? (React__default["default"].createElement(material.Grid2, { size: 4 },
 	                    React__default["default"].createElement(StyledTextField, { margin: "dense", variant: "outlined", value: cdsMin + 1, onChangeCommitted: (newLocation) => {
-	                            handleCDSLocationChange(cdsMin, newLocation - 1, feature, true);
+	                            updateCDSLocation(cdsMin, newLocation - 1, feature, true);
 	                        }, style: { border: '1px solid black', borderRadius: 5 } }))) : (React__default["default"].createElement(material.Grid2, { size: 4 },
 	                    React__default["default"].createElement(StyledTextField, { margin: "dense", variant: "outlined", value: cdsMax, onChangeCommitted: (newLocation) => {
-	                            handleCDSLocationChange(cdsMax, newLocation, feature, false);
+	                            updateCDSLocation(cdsMax, newLocation, feature, false);
 	                        }, style: { border: '1px solid black', borderRadius: 5 } }))),
 	                React__default["default"].createElement(material.Grid2, { size: 2 },
 	                    React__default["default"].createElement(material.Typography, { component: 'span' }, "CDS")),
 	                strand === 1 ? (React__default["default"].createElement(material.Grid2, { size: 4 },
 	                    React__default["default"].createElement(StyledTextField, { margin: "dense", variant: "outlined", value: cdsMax, onChangeCommitted: (newLocation) => {
-	                            handleCDSLocationChange(cdsMax, newLocation, feature, false);
+	                            updateCDSLocation(cdsMax, newLocation, feature, false);
 	                        }, style: { border: '1px solid black', borderRadius: 5 } }))) : (React__default["default"].createElement(material.Grid2, { size: 4 },
 	                    React__default["default"].createElement(StyledTextField, { margin: "dense", variant: "outlined", value: cdsMin + 1, onChangeCommitted: (newLocation) => {
-	                            handleCDSLocationChange(cdsMin, newLocation - 1, feature, true);
+	                            updateCDSLocation(cdsMin, newLocation - 1, feature, true);
 	                        }, style: { border: '1px solid black', borderRadius: 5 } }))),
 	                React__default["default"].createElement(material.Grid2, { size: 1 })))),
 	        React__default["default"].createElement("div", { style: { marginTop: 5 } }, transcriptExonParts.map((loc, index) => {
@@ -63409,20 +63295,6 @@
 	}), 'ExpandLess');
 	default_1$2 = ExpandLess["default"] = _default$2;
 
-	var _Error = {};
-
-	var _interopRequireDefault$1 = interopRequireDefault.exports;
-	Object.defineProperty(_Error, "__esModule", {
-	  value: true
-	});
-	var default_1$1 = _Error["default"] = void 0;
-	var _createSvgIcon$1 = /*#__PURE__*/_interopRequireDefault$1(createSvgIcon);
-	var _jsxRuntime$1 = require$$2__default["default"];
-	var _default$1 = /*#__PURE__*/(0, _createSvgIcon$1["default"])( /*#__PURE__*/(0, _jsxRuntime$1.jsx)("path", {
-	  d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"
-	}), 'Error');
-	default_1$1 = _Error["default"] = _default$1;
-
 	/* eslint-disable @typescript-eslint/unbound-method */
 	const useStyles$2 = mui.makeStyles()((theme) => ({
 	    canvasContainer: {
@@ -63453,7 +63325,7 @@
 	const LinearApolloDisplay = mobxReact.observer(function LinearApolloDisplay(props) {
 	    const theme = material.useTheme();
 	    const { model } = props;
-	    const { loading, apolloDragging, apolloRowHeight, contextMenuItems: getContextMenuItems, cursor, featuresHeight, isShown, onMouseDown, onMouseLeave, onMouseMove, onMouseUp, regionCannotBeRendered, session, setCanvas, setCollaboratorCanvas, setOverlayCanvas, setSeqTrackCanvas, setSeqTrackOverlayCanvas, setTheme, } = model;
+	    const { loading, contextMenuItems: getContextMenuItems, cursor, featuresHeight, isShown, onMouseDown, onMouseLeave, onMouseMove, onMouseUp, regionCannotBeRendered, setCanvas, setCollaboratorCanvas, setOverlayCanvas, setSeqTrackCanvas, setSeqTrackOverlayCanvas, setTheme, } = model;
 	    const { classes } = useStyles$2();
 	    const lgv = require$$1$2.getContainingView(model);
 	    React.useEffect(() => {
@@ -63465,7 +63337,6 @@
 	    if (!isShown) {
 	        return null;
 	    }
-	    const { assemblyManager } = session;
 	    return (React__default["default"].createElement(React__default["default"].Fragment, null,
 	        3 / lgv.bpPerPx >= 1 ? (React__default["default"].createElement("div", { className: classes.canvasContainer, style: {
 	                width: lgv.dynamicBlocks.totalWidthPx,
@@ -63514,41 +63385,6 @@
 	                        await Promise.resolve();
 	                        setOverlayCanvas(node);
 	                    }, width: lgv.dynamicBlocks.totalWidthPx, height: featuresHeight, onMouseMove: onMouseMove, onMouseLeave: onMouseLeave, onMouseDown: onMouseDown, onMouseUp: onMouseUp, className: classes.canvas, style: { cursor: cursor ?? 'default' }, "data-testid": "overlayCanvas" }),
-	                lgv.displayedRegions.flatMap((region, idx) => {
-	                    const assembly = assemblyManager.get(region.assemblyName);
-	                    return [...session.apolloDataStore.checkResults.values()]
-	                        .filter((checkResult) => assembly?.isValidRefName(checkResult.refSeq) &&
-	                        assembly.getCanonicalRefName(checkResult.refSeq) ===
-	                            region.refName &&
-	                        require$$1$2.doesIntersect2(region.start, region.end, checkResult.start, checkResult.end))
-	                        .map((checkResult) => {
-	                        const left = (lgv.bpToPx({
-	                            refName: region.refName,
-	                            coord: checkResult.start,
-	                            regionNumber: idx,
-	                        })?.offsetPx ?? 0) - lgv.offsetPx;
-	                        const [feature] = checkResult.ids;
-	                        if (!feature) {
-	                            return null;
-	                        }
-	                        let row = 0;
-	                        const featureLayout = model.getFeatureLayoutPosition(feature);
-	                        if (featureLayout) {
-	                            row = featureLayout.layoutRow + featureLayout.featureRow;
-	                        }
-	                        const top = row * apolloRowHeight;
-	                        const height = apolloRowHeight;
-	                        return (React__default["default"].createElement(material.Tooltip, { key: checkResult._id, title: checkResult.message },
-	                            React__default["default"].createElement(material.Avatar, { className: classes.avatar, style: {
-	                                    top,
-	                                    left,
-	                                    height,
-	                                    width: height,
-	                                    pointerEvents: apolloDragging ? 'none' : 'auto',
-	                                } },
-	                                React__default["default"].createElement(default_1$1, { "data-testid": "ErrorIcon" }))));
-	                    });
-	                }),
 	                React__default["default"].createElement(ui.Menu, { open: contextMenuItems.length > 0, onMenuItemClick: (_, callback) => {
 	                        callback();
 	                        setContextMenuItems([]);
@@ -63562,6 +63398,20 @@
 	                        ? { top: contextCoord[1], left: contextCoord[0] }
 	                        : undefined, style: { zIndex: theme.zIndex.tooltip }, menuItems: contextMenuItems }))))));
 	});
+
+	var _Error = {};
+
+	var _interopRequireDefault$1 = interopRequireDefault.exports;
+	Object.defineProperty(_Error, "__esModule", {
+	  value: true
+	});
+	var default_1$1 = _Error["default"] = void 0;
+	var _createSvgIcon$1 = /*#__PURE__*/_interopRequireDefault$1(createSvgIcon);
+	var _jsxRuntime$1 = require$$2__default["default"];
+	var _default$1 = /*#__PURE__*/(0, _createSvgIcon$1["default"])( /*#__PURE__*/(0, _jsxRuntime$1.jsx)("path", {
+	  d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"
+	}), 'Error');
+	default_1$1 = _Error["default"] = _default$1;
 
 	const TrackLines = mobxReact.observer(function TrackLines({ model, hrStyle = { margin: 0, top: 0, color: 'black' }, idx = 0, }) {
 	    const { apolloRowHeight, highestRow, showFeatureLabels } = model;
