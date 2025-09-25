@@ -1,8 +1,8 @@
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@jbrowse/core/Plugin'), require('@jbrowse/core/util'), require('@jbrowse/core/configuration'), require('@jbrowse/core/pluggableElementTypes'), require('@mui/material/utils'), require('react/jsx-runtime'), require('mobx'), require('mobx-state-tree'), require('@mui/material'), require('react'), require('tss-react/mui'), require('@jbrowse/core/ui'), require('mobx-react'), require('@jbrowse/core/util/types/mst'), require('@jbrowse/core/util/io'), require('@mui/material/Checkbox'), require('@mui/material/FormControlLabel'), require('@mui/material/LinearProgress'), require('@mui/x-data-grid'), require('@mui/material/Box'), require('@mui/material/Collapse'), require('@mui/material/IconButton'), require('@mui/material/Paper'), require('@mui/material/Table'), require('@mui/material/TableBody'), require('@mui/material/TableCell'), require('@mui/material/TableContainer'), require('@mui/material/TableFooter'), require('@mui/material/TableHead'), require('@mui/material/TablePagination'), require('@mui/material/TableRow'), require('@mui/material/Typography'), require('@mui/material/styles'), require('@jbrowse/core/pluggableElementTypes/AdapterType'), require('@jbrowse/core/data_adapters/BaseAdapter'), require('@jbrowse/core/util/rxjs'), require('@jbrowse/core/util/tracks')) :
-	typeof define === 'function' && define.amd ? define(['exports', '@jbrowse/core/Plugin', '@jbrowse/core/util', '@jbrowse/core/configuration', '@jbrowse/core/pluggableElementTypes', '@mui/material/utils', 'react/jsx-runtime', 'mobx', 'mobx-state-tree', '@mui/material', 'react', 'tss-react/mui', '@jbrowse/core/ui', 'mobx-react', '@jbrowse/core/util/types/mst', '@jbrowse/core/util/io', '@mui/material/Checkbox', '@mui/material/FormControlLabel', '@mui/material/LinearProgress', '@mui/x-data-grid', '@mui/material/Box', '@mui/material/Collapse', '@mui/material/IconButton', '@mui/material/Paper', '@mui/material/Table', '@mui/material/TableBody', '@mui/material/TableCell', '@mui/material/TableContainer', '@mui/material/TableFooter', '@mui/material/TableHead', '@mui/material/TablePagination', '@mui/material/TableRow', '@mui/material/Typography', '@mui/material/styles', '@jbrowse/core/pluggableElementTypes/AdapterType', '@jbrowse/core/data_adapters/BaseAdapter', '@jbrowse/core/util/rxjs', '@jbrowse/core/util/tracks'], factory) :
-	(global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.JBrowsePluginApollo = {}, global.JBrowseExports["@jbrowse/core/Plugin"], global.JBrowseExports["@jbrowse/core/util"], global.JBrowseExports["@jbrowse/core/configuration"], global.JBrowseExports["@jbrowse/core/pluggableElementTypes"], global.JBrowseExports["@mui/material/utils"], global.JBrowseExports["react/jsx-runtime"], global.JBrowseExports.mobx, global.JBrowseExports["mobx-state-tree"], global.JBrowseExports["@mui/material"], global.JBrowseExports.react, global.JBrowseExports["tss-react/mui"], global.JBrowseExports["@jbrowse/core/ui"], global.JBrowseExports["mobx-react"], global.JBrowseExports["@jbrowse/core/util/types/mst"], global.JBrowseExports["@jbrowse/core/util/io"], global.JBrowseExports["@mui/material/Checkbox"], global.JBrowseExports["@mui/material/FormControlLabel"], global.JBrowseExports["@mui/material/LinearProgress"], global.JBrowseExports["@mui/x-data-grid"], global.JBrowseExports["@mui/material/Box"], global.JBrowseExports["@mui/material/Collapse"], global.JBrowseExports["@mui/material/IconButton"], global.JBrowseExports["@mui/material/Paper"], global.JBrowseExports["@mui/material/Table"], global.JBrowseExports["@mui/material/TableBody"], global.JBrowseExports["@mui/material/TableCell"], global.JBrowseExports["@mui/material/TableContainer"], global.JBrowseExports["@mui/material/TableFooter"], global.JBrowseExports["@mui/material/TableHead"], global.JBrowseExports["@mui/material/TablePagination"], global.JBrowseExports["@mui/material/TableRow"], global.JBrowseExports["@mui/material/Typography"], global.JBrowseExports["@mui/material/styles"], global.JBrowseExports["@jbrowse/core/pluggableElementTypes/AdapterType"], global.JBrowseExports["@jbrowse/core/data_adapters/BaseAdapter"], global.JBrowseExports["@jbrowse/core/util/rxjs"], global.JBrowseExports["@jbrowse/core/util/tracks"]));
-})(this, (function (exports, require$$1$1, require$$1$2, configuration, pluggableElementTypes, require$$0$2, require$$2$1, mobx, require$$1$3, material, React, mui, ui, mobxReact, mst, io, Checkbox, FormControlLabel, LinearProgress, xDataGrid, Box, Collapse, IconButton, Paper, Table, TableBody, TableCell, TableContainer, TableFooter, TableHead, TablePagination, TableRow, Typography, styles, AdapterType, BaseAdapter, rxjs, tracks) { 'use strict';
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@jbrowse/core/Plugin'), require('@jbrowse/core/util'), require('mobx-state-tree'), require('@jbrowse/core/configuration'), require('@jbrowse/core/pluggableElementTypes'), require('react/jsx-runtime'), require('@mui/material/utils'), require('@mui/material'), require('mobx'), require('react'), require('tss-react/mui'), require('@mui/x-data-grid'), require('@jbrowse/core/ui'), require('mobx-react'), require('@jbrowse/core/util/types/mst'), require('@jbrowse/core/util/io'), require('@mui/material/Checkbox'), require('@mui/material/FormControlLabel'), require('@mui/material/LinearProgress'), require('@jbrowse/core/pluggableElementTypes/AdapterType'), require('@jbrowse/core/data_adapters/BaseAdapter'), require('@jbrowse/core/util/rxjs'), require('@jbrowse/core/util/tracks')) :
+	typeof define === 'function' && define.amd ? define(['exports', '@jbrowse/core/Plugin', '@jbrowse/core/util', 'mobx-state-tree', '@jbrowse/core/configuration', '@jbrowse/core/pluggableElementTypes', 'react/jsx-runtime', '@mui/material/utils', '@mui/material', 'mobx', 'react', 'tss-react/mui', '@mui/x-data-grid', '@jbrowse/core/ui', 'mobx-react', '@jbrowse/core/util/types/mst', '@jbrowse/core/util/io', '@mui/material/Checkbox', '@mui/material/FormControlLabel', '@mui/material/LinearProgress', '@jbrowse/core/pluggableElementTypes/AdapterType', '@jbrowse/core/data_adapters/BaseAdapter', '@jbrowse/core/util/rxjs', '@jbrowse/core/util/tracks'], factory) :
+	(global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.JBrowsePluginApollo = {}, global.JBrowseExports["@jbrowse/core/Plugin"], global.JBrowseExports["@jbrowse/core/util"], global.JBrowseExports["mobx-state-tree"], global.JBrowseExports["@jbrowse/core/configuration"], global.JBrowseExports["@jbrowse/core/pluggableElementTypes"], global.JBrowseExports["react/jsx-runtime"], global.JBrowseExports["@mui/material/utils"], global.JBrowseExports["@mui/material"], global.JBrowseExports.mobx, global.JBrowseExports.react, global.JBrowseExports["tss-react/mui"], global.JBrowseExports["@mui/x-data-grid"], global.JBrowseExports["@jbrowse/core/ui"], global.JBrowseExports["mobx-react"], global.JBrowseExports["@jbrowse/core/util/types/mst"], global.JBrowseExports["@jbrowse/core/util/io"], global.JBrowseExports["@mui/material/Checkbox"], global.JBrowseExports["@mui/material/FormControlLabel"], global.JBrowseExports["@mui/material/LinearProgress"], global.JBrowseExports["@jbrowse/core/pluggableElementTypes/AdapterType"], global.JBrowseExports["@jbrowse/core/data_adapters/BaseAdapter"], global.JBrowseExports["@jbrowse/core/util/rxjs"], global.JBrowseExports["@jbrowse/core/util/tracks"]));
+})(this, (function (exports, require$$1$1, require$$1$2, require$$1$3, configuration, pluggableElementTypes, jsxRuntime, utils$7, material, mobx, React, mui, xDataGrid, ui, mobxReact, mst, io, Checkbox, FormControlLabel, LinearProgress, AdapterType, BaseAdapter, rxjs, tracks) { 'use strict';
 
 	function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -26,27 +26,12 @@
 
 	var require$$1__default = /*#__PURE__*/_interopDefaultLegacy(require$$1$1);
 	var require$$1__default$1 = /*#__PURE__*/_interopDefaultLegacy(require$$1$2);
-	var require$$0__default = /*#__PURE__*/_interopDefaultLegacy(require$$0$2);
-	var require$$2__default = /*#__PURE__*/_interopDefaultLegacy(require$$2$1);
 	var require$$1__default$2 = /*#__PURE__*/_interopDefaultLegacy(require$$1$3);
 	var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 	var React__namespace = /*#__PURE__*/_interopNamespace(React);
 	var Checkbox__default = /*#__PURE__*/_interopDefaultLegacy(Checkbox);
 	var FormControlLabel__default = /*#__PURE__*/_interopDefaultLegacy(FormControlLabel);
 	var LinearProgress__default = /*#__PURE__*/_interopDefaultLegacy(LinearProgress);
-	var Box__default = /*#__PURE__*/_interopDefaultLegacy(Box);
-	var Collapse__default = /*#__PURE__*/_interopDefaultLegacy(Collapse);
-	var IconButton__default = /*#__PURE__*/_interopDefaultLegacy(IconButton);
-	var Paper__default = /*#__PURE__*/_interopDefaultLegacy(Paper);
-	var Table__default = /*#__PURE__*/_interopDefaultLegacy(Table);
-	var TableBody__default = /*#__PURE__*/_interopDefaultLegacy(TableBody);
-	var TableCell__default = /*#__PURE__*/_interopDefaultLegacy(TableCell);
-	var TableContainer__default = /*#__PURE__*/_interopDefaultLegacy(TableContainer);
-	var TableFooter__default = /*#__PURE__*/_interopDefaultLegacy(TableFooter);
-	var TableHead__default = /*#__PURE__*/_interopDefaultLegacy(TableHead);
-	var TablePagination__default = /*#__PURE__*/_interopDefaultLegacy(TablePagination);
-	var TableRow__default = /*#__PURE__*/_interopDefaultLegacy(TableRow);
-	var Typography__default = /*#__PURE__*/_interopDefaultLegacy(Typography);
 	var AdapterType__default = /*#__PURE__*/_interopDefaultLegacy(AdapterType);
 
 	var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
@@ -1439,8 +1424,8 @@
 	  value: true
 	});
 	ApolloPlugin$4.ApolloPlugin = void 0;
-	var tslib_1$7 = require$$0$1;
-	var Plugin_1$1 = /*#__PURE__*/tslib_1$7.__importDefault(require$$1__default["default"]);
+	var tslib_1$8 = require$$0$1;
+	var Plugin_1$1 = /*#__PURE__*/tslib_1$8.__importDefault(require$$1__default["default"]);
 	var ApolloPlugin$3 = /*#__PURE__*/function (_Plugin_1$default) {
 	  _inherits(ApolloPlugin, _Plugin_1$default);
 	  var _super = /*#__PURE__*/_createSuper(ApolloPlugin);
@@ -1703,131 +1688,142 @@
 
 	var FeatureChange$3 = {};
 
-	var global$1 = typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {};
+	var global$1 = (typeof global !== "undefined" ? global :
+	  typeof self !== "undefined" ? self :
+	  typeof window !== "undefined" ? window : {});
 
 	// shim for using process in browser
 	// based off https://github.com/defunctzombie/node-process/blob/master/browser.js
 
 	function defaultSetTimout() {
-	  throw new Error('setTimeout has not been defined');
+	    throw new Error('setTimeout has not been defined');
 	}
-	function defaultClearTimeout() {
-	  throw new Error('clearTimeout has not been defined');
+	function defaultClearTimeout () {
+	    throw new Error('clearTimeout has not been defined');
 	}
 	var cachedSetTimeout = defaultSetTimout;
 	var cachedClearTimeout = defaultClearTimeout;
 	if (typeof global$1.setTimeout === 'function') {
-	  cachedSetTimeout = setTimeout;
+	    cachedSetTimeout = setTimeout;
 	}
 	if (typeof global$1.clearTimeout === 'function') {
-	  cachedClearTimeout = clearTimeout;
+	    cachedClearTimeout = clearTimeout;
 	}
+
 	function runTimeout(fun) {
-	  if (cachedSetTimeout === setTimeout) {
-	    //normal enviroments in sane situations
-	    return setTimeout(fun, 0);
-	  }
-	  // if setTimeout wasn't available but was latter defined
-	  if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
-	    cachedSetTimeout = setTimeout;
-	    return setTimeout(fun, 0);
-	  }
-	  try {
-	    // when when somebody has screwed with setTimeout but no I.E. maddness
-	    return cachedSetTimeout(fun, 0);
-	  } catch (e) {
-	    try {
-	      // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
-	      return cachedSetTimeout.call(null, fun, 0);
-	    } catch (e) {
-	      // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
-	      return cachedSetTimeout.call(this, fun, 0);
+	    if (cachedSetTimeout === setTimeout) {
+	        //normal enviroments in sane situations
+	        return setTimeout(fun, 0);
 	    }
-	  }
+	    // if setTimeout wasn't available but was latter defined
+	    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
+	        cachedSetTimeout = setTimeout;
+	        return setTimeout(fun, 0);
+	    }
+	    try {
+	        // when when somebody has screwed with setTimeout but no I.E. maddness
+	        return cachedSetTimeout(fun, 0);
+	    } catch(e){
+	        try {
+	            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
+	            return cachedSetTimeout.call(null, fun, 0);
+	        } catch(e){
+	            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+	            return cachedSetTimeout.call(this, fun, 0);
+	        }
+	    }
+
+
 	}
 	function runClearTimeout(marker) {
-	  if (cachedClearTimeout === clearTimeout) {
-	    //normal enviroments in sane situations
-	    return clearTimeout(marker);
-	  }
-	  // if clearTimeout wasn't available but was latter defined
-	  if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
-	    cachedClearTimeout = clearTimeout;
-	    return clearTimeout(marker);
-	  }
-	  try {
-	    // when when somebody has screwed with setTimeout but no I.E. maddness
-	    return cachedClearTimeout(marker);
-	  } catch (e) {
-	    try {
-	      // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
-	      return cachedClearTimeout.call(null, marker);
-	    } catch (e) {
-	      // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
-	      // Some versions of I.E. have different rules for clearTimeout vs setTimeout
-	      return cachedClearTimeout.call(this, marker);
+	    if (cachedClearTimeout === clearTimeout) {
+	        //normal enviroments in sane situations
+	        return clearTimeout(marker);
 	    }
-	  }
+	    // if clearTimeout wasn't available but was latter defined
+	    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
+	        cachedClearTimeout = clearTimeout;
+	        return clearTimeout(marker);
+	    }
+	    try {
+	        // when when somebody has screwed with setTimeout but no I.E. maddness
+	        return cachedClearTimeout(marker);
+	    } catch (e){
+	        try {
+	            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
+	            return cachedClearTimeout.call(null, marker);
+	        } catch (e){
+	            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+	            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
+	            return cachedClearTimeout.call(this, marker);
+	        }
+	    }
+
+
+
 	}
 	var queue$1 = [];
 	var draining = false;
 	var currentQueue;
 	var queueIndex = -1;
+
 	function cleanUpNextTick() {
-	  if (!draining || !currentQueue) {
-	    return;
-	  }
-	  draining = false;
-	  if (currentQueue.length) {
-	    queue$1 = currentQueue.concat(queue$1);
-	  } else {
-	    queueIndex = -1;
-	  }
-	  if (queue$1.length) {
-	    drainQueue();
-	  }
-	}
-	function drainQueue() {
-	  if (draining) {
-	    return;
-	  }
-	  var timeout = runTimeout(cleanUpNextTick);
-	  draining = true;
-	  var len = queue$1.length;
-	  while (len) {
-	    currentQueue = queue$1;
-	    queue$1 = [];
-	    while (++queueIndex < len) {
-	      if (currentQueue) {
-	        currentQueue[queueIndex].run();
-	      }
+	    if (!draining || !currentQueue) {
+	        return;
 	    }
-	    queueIndex = -1;
-	    len = queue$1.length;
-	  }
-	  currentQueue = null;
-	  draining = false;
-	  runClearTimeout(timeout);
+	    draining = false;
+	    if (currentQueue.length) {
+	        queue$1 = currentQueue.concat(queue$1);
+	    } else {
+	        queueIndex = -1;
+	    }
+	    if (queue$1.length) {
+	        drainQueue();
+	    }
+	}
+
+	function drainQueue() {
+	    if (draining) {
+	        return;
+	    }
+	    var timeout = runTimeout(cleanUpNextTick);
+	    draining = true;
+
+	    var len = queue$1.length;
+	    while(len) {
+	        currentQueue = queue$1;
+	        queue$1 = [];
+	        while (++queueIndex < len) {
+	            if (currentQueue) {
+	                currentQueue[queueIndex].run();
+	            }
+	        }
+	        queueIndex = -1;
+	        len = queue$1.length;
+	    }
+	    currentQueue = null;
+	    draining = false;
+	    runClearTimeout(timeout);
 	}
 	function nextTick$1(fun) {
-	  var args = new Array(arguments.length - 1);
-	  if (arguments.length > 1) {
-	    for (var i = 1; i < arguments.length; i++) {
-	      args[i - 1] = arguments[i];
+	    var args = new Array(arguments.length - 1);
+	    if (arguments.length > 1) {
+	        for (var i = 1; i < arguments.length; i++) {
+	            args[i - 1] = arguments[i];
+	        }
 	    }
-	  }
-	  queue$1.push(new Item(fun, args));
-	  if (queue$1.length === 1 && !draining) {
-	    runTimeout(drainQueue);
-	  }
+	    queue$1.push(new Item(fun, args));
+	    if (queue$1.length === 1 && !draining) {
+	        runTimeout(drainQueue);
+	    }
 	}
 	// v8 likes predictible objects
 	function Item(fun, array) {
-	  this.fun = fun;
-	  this.array = array;
+	    this.fun = fun;
+	    this.array = array;
 	}
 	Item.prototype.run = function () {
-	  this.fun.apply(null, this.array);
+	    this.fun.apply(null, this.array);
 	};
 	var title = 'browser';
 	var platform = 'browser';
@@ -1838,7 +1834,9 @@
 	var versions = {};
 	var release = {};
 	var config$1 = {};
+
 	function noop$2() {}
+
 	var on$1 = noop$2;
 	var addListener = noop$2;
 	var once = noop$2;
@@ -1846,48 +1844,51 @@
 	var removeListener = noop$2;
 	var removeAllListeners = noop$2;
 	var emit = noop$2;
+
 	function binding(name) {
-	  throw new Error('process.binding is not supported');
+	    throw new Error('process.binding is not supported');
 	}
-	function cwd() {
-	  return '/';
-	}
-	function chdir(dir) {
-	  throw new Error('process.chdir is not supported');
-	}
-	function umask() {
-	  return 0;
-	}
+
+	function cwd () { return '/' }
+	function chdir (dir) {
+	    throw new Error('process.chdir is not supported');
+	}function umask() { return 0; }
 
 	// from https://github.com/kumavis/browser-process-hrtime/blob/master/index.js
 	var performance$1 = global$1.performance || {};
-	var performanceNow = performance$1.now || performance$1.mozNow || performance$1.msNow || performance$1.oNow || performance$1.webkitNow || function () {
-	  return new Date().getTime();
-	};
+	var performanceNow =
+	  performance$1.now        ||
+	  performance$1.mozNow     ||
+	  performance$1.msNow      ||
+	  performance$1.oNow       ||
+	  performance$1.webkitNow  ||
+	  function(){ return (new Date()).getTime() };
 
 	// generate timestamp or delta
 	// see http://nodejs.org/api/process.html#process_process_hrtime
-	function hrtime(previousTimestamp) {
-	  var clocktime = performanceNow.call(performance$1) * 1e-3;
+	function hrtime(previousTimestamp){
+	  var clocktime = performanceNow.call(performance$1)*1e-3;
 	  var seconds = Math.floor(clocktime);
-	  var nanoseconds = Math.floor(clocktime % 1 * 1e9);
+	  var nanoseconds = Math.floor((clocktime%1)*1e9);
 	  if (previousTimestamp) {
 	    seconds = seconds - previousTimestamp[0];
 	    nanoseconds = nanoseconds - previousTimestamp[1];
-	    if (nanoseconds < 0) {
+	    if (nanoseconds<0) {
 	      seconds--;
 	      nanoseconds += 1e9;
 	    }
 	  }
-	  return [seconds, nanoseconds];
+	  return [seconds,nanoseconds]
 	}
-	var startTime = /*#__PURE__*/new Date();
+
+	var startTime = new Date();
 	function uptime() {
 	  var currentTime = new Date();
 	  var dif = currentTime - startTime;
 	  return dif / 1000;
 	}
-	var process$1 = {
+
+	var browser$1 = {
 	  nextTick: nextTick$1,
 	  title: title,
 	  browser: browser,
@@ -1917,24 +1918,27 @@
 	var revLookup = [];
 	var Arr = typeof Uint8Array !== 'undefined' ? Uint8Array : Array;
 	var inited = false;
-	function init() {
+	function init () {
 	  inited = true;
 	  var code = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
 	  for (var i = 0, len = code.length; i < len; ++i) {
 	    lookup$2[i] = code[i];
 	    revLookup[code.charCodeAt(i)] = i;
 	  }
+
 	  revLookup['-'.charCodeAt(0)] = 62;
 	  revLookup['_'.charCodeAt(0)] = 63;
 	}
-	function toByteArray(b64) {
+
+	function toByteArray (b64) {
 	  if (!inited) {
 	    init();
 	  }
 	  var i, j, l, tmp, placeHolders, arr;
 	  var len = b64.length;
+
 	  if (len % 4 > 0) {
-	    throw new Error('Invalid string. Length must be a multiple of 4');
+	    throw new Error('Invalid string. Length must be a multiple of 4')
 	  }
 
 	  // the number of equal signs (place holders)
@@ -1949,36 +1953,43 @@
 
 	  // if there are placeholders, only get up to the last complete 4 chars
 	  l = placeHolders > 0 ? len - 4 : len;
+
 	  var L = 0;
+
 	  for (i = 0, j = 0; i < l; i += 4, j += 3) {
-	    tmp = revLookup[b64.charCodeAt(i)] << 18 | revLookup[b64.charCodeAt(i + 1)] << 12 | revLookup[b64.charCodeAt(i + 2)] << 6 | revLookup[b64.charCodeAt(i + 3)];
-	    arr[L++] = tmp >> 16 & 0xFF;
-	    arr[L++] = tmp >> 8 & 0xFF;
+	    tmp = (revLookup[b64.charCodeAt(i)] << 18) | (revLookup[b64.charCodeAt(i + 1)] << 12) | (revLookup[b64.charCodeAt(i + 2)] << 6) | revLookup[b64.charCodeAt(i + 3)];
+	    arr[L++] = (tmp >> 16) & 0xFF;
+	    arr[L++] = (tmp >> 8) & 0xFF;
 	    arr[L++] = tmp & 0xFF;
 	  }
+
 	  if (placeHolders === 2) {
-	    tmp = revLookup[b64.charCodeAt(i)] << 2 | revLookup[b64.charCodeAt(i + 1)] >> 4;
+	    tmp = (revLookup[b64.charCodeAt(i)] << 2) | (revLookup[b64.charCodeAt(i + 1)] >> 4);
 	    arr[L++] = tmp & 0xFF;
 	  } else if (placeHolders === 1) {
-	    tmp = revLookup[b64.charCodeAt(i)] << 10 | revLookup[b64.charCodeAt(i + 1)] << 4 | revLookup[b64.charCodeAt(i + 2)] >> 2;
-	    arr[L++] = tmp >> 8 & 0xFF;
+	    tmp = (revLookup[b64.charCodeAt(i)] << 10) | (revLookup[b64.charCodeAt(i + 1)] << 4) | (revLookup[b64.charCodeAt(i + 2)] >> 2);
+	    arr[L++] = (tmp >> 8) & 0xFF;
 	    arr[L++] = tmp & 0xFF;
 	  }
-	  return arr;
+
+	  return arr
 	}
-	function tripletToBase64(num) {
-	  return lookup$2[num >> 18 & 0x3F] + lookup$2[num >> 12 & 0x3F] + lookup$2[num >> 6 & 0x3F] + lookup$2[num & 0x3F];
+
+	function tripletToBase64 (num) {
+	  return lookup$2[num >> 18 & 0x3F] + lookup$2[num >> 12 & 0x3F] + lookup$2[num >> 6 & 0x3F] + lookup$2[num & 0x3F]
 	}
-	function encodeChunk(uint8, start, end) {
+
+	function encodeChunk (uint8, start, end) {
 	  var tmp;
 	  var output = [];
 	  for (var i = start; i < end; i += 3) {
-	    tmp = (uint8[i] << 16) + (uint8[i + 1] << 8) + uint8[i + 2];
+	    tmp = (uint8[i] << 16) + (uint8[i + 1] << 8) + (uint8[i + 2]);
 	    output.push(tripletToBase64(tmp));
 	  }
-	  return output.join('');
+	  return output.join('')
 	}
-	function fromByteArray(uint8) {
+
+	function fromByteArray (uint8) {
 	  if (!inited) {
 	    init();
 	  }
@@ -1991,64 +2002,73 @@
 
 	  // go through the array every three bytes, we'll deal with trailing stuff later
 	  for (var i = 0, len2 = len - extraBytes; i < len2; i += maxChunkLength) {
-	    parts.push(encodeChunk(uint8, i, i + maxChunkLength > len2 ? len2 : i + maxChunkLength));
+	    parts.push(encodeChunk(uint8, i, (i + maxChunkLength) > len2 ? len2 : (i + maxChunkLength)));
 	  }
 
 	  // pad the end with zeros, but make sure to not forget the extra bytes
 	  if (extraBytes === 1) {
 	    tmp = uint8[len - 1];
 	    output += lookup$2[tmp >> 2];
-	    output += lookup$2[tmp << 4 & 0x3F];
+	    output += lookup$2[(tmp << 4) & 0x3F];
 	    output += '==';
 	  } else if (extraBytes === 2) {
-	    tmp = (uint8[len - 2] << 8) + uint8[len - 1];
+	    tmp = (uint8[len - 2] << 8) + (uint8[len - 1]);
 	    output += lookup$2[tmp >> 10];
-	    output += lookup$2[tmp >> 4 & 0x3F];
-	    output += lookup$2[tmp << 2 & 0x3F];
+	    output += lookup$2[(tmp >> 4) & 0x3F];
+	    output += lookup$2[(tmp << 2) & 0x3F];
 	    output += '=';
 	  }
+
 	  parts.push(output);
-	  return parts.join('');
+
+	  return parts.join('')
 	}
 
-	function read(buffer, offset, isLE, mLen, nBytes) {
+	function read (buffer, offset, isLE, mLen, nBytes) {
 	  var e, m;
 	  var eLen = nBytes * 8 - mLen - 1;
 	  var eMax = (1 << eLen) - 1;
 	  var eBias = eMax >> 1;
 	  var nBits = -7;
-	  var i = isLE ? nBytes - 1 : 0;
+	  var i = isLE ? (nBytes - 1) : 0;
 	  var d = isLE ? -1 : 1;
 	  var s = buffer[offset + i];
+
 	  i += d;
-	  e = s & (1 << -nBits) - 1;
-	  s >>= -nBits;
+
+	  e = s & ((1 << (-nBits)) - 1);
+	  s >>= (-nBits);
 	  nBits += eLen;
 	  for (; nBits > 0; e = e * 256 + buffer[offset + i], i += d, nBits -= 8) {}
-	  m = e & (1 << -nBits) - 1;
-	  e >>= -nBits;
+
+	  m = e & ((1 << (-nBits)) - 1);
+	  e >>= (-nBits);
 	  nBits += mLen;
 	  for (; nBits > 0; m = m * 256 + buffer[offset + i], i += d, nBits -= 8) {}
+
 	  if (e === 0) {
 	    e = 1 - eBias;
 	  } else if (e === eMax) {
-	    return m ? NaN : (s ? -1 : 1) * Infinity;
+	    return m ? NaN : ((s ? -1 : 1) * Infinity)
 	  } else {
 	    m = m + Math.pow(2, mLen);
 	    e = e - eBias;
 	  }
-	  return (s ? -1 : 1) * m * Math.pow(2, e - mLen);
+	  return (s ? -1 : 1) * m * Math.pow(2, e - mLen)
 	}
-	function write(buffer, value, offset, isLE, mLen, nBytes) {
+
+	function write (buffer, value, offset, isLE, mLen, nBytes) {
 	  var e, m, c;
 	  var eLen = nBytes * 8 - mLen - 1;
 	  var eMax = (1 << eLen) - 1;
 	  var eBias = eMax >> 1;
-	  var rt = mLen === 23 ? Math.pow(2, -24) - Math.pow(2, -77) : 0;
-	  var i = isLE ? 0 : nBytes - 1;
+	  var rt = (mLen === 23 ? Math.pow(2, -24) - Math.pow(2, -77) : 0);
+	  var i = isLE ? 0 : (nBytes - 1);
 	  var d = isLE ? 1 : -1;
-	  var s = value < 0 || value === 0 && 1 / value < 0 ? 1 : 0;
+	  var s = value < 0 || (value === 0 && 1 / value < 0) ? 1 : 0;
+
 	  value = Math.abs(value);
+
 	  if (isNaN(value) || value === Infinity) {
 	    m = isNaN(value) ? 1 : 0;
 	    e = eMax;
@@ -2067,6 +2087,7 @@
 	      e++;
 	      c /= 2;
 	    }
+
 	    if (e + eBias >= eMax) {
 	      m = 0;
 	      e = eMax;
@@ -2078,17 +2099,28 @@
 	      e = 0;
 	    }
 	  }
+
 	  for (; mLen >= 8; buffer[offset + i] = m & 0xff, i += d, m /= 256, mLen -= 8) {}
-	  e = e << mLen | m;
+
+	  e = (e << mLen) | m;
 	  eLen += mLen;
 	  for (; eLen > 0; buffer[offset + i] = e & 0xff, i += d, e /= 256, eLen -= 8) {}
+
 	  buffer[offset + i - d] |= s * 128;
 	}
 
 	var toString$3 = {}.toString;
+
 	var isArray$4 = Array.isArray || function (arr) {
 	  return toString$3.call(arr) == '[object Array]';
 	};
+
+	/*!
+	 * The buffer module from node.js, for the browser.
+	 *
+	 * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
+	 * @license  MIT
+	 */
 
 	var INSPECT_MAX_BYTES = 50;
 
@@ -2116,14 +2148,19 @@
 	 * We detect these buggy browsers and set `Buffer.TYPED_ARRAY_SUPPORT` to `false` so they
 	 * get the Object implementation, which is slower but behaves correctly.
 	 */
-	Buffer.TYPED_ARRAY_SUPPORT = global$1.TYPED_ARRAY_SUPPORT !== undefined ? global$1.TYPED_ARRAY_SUPPORT : true;
+	Buffer.TYPED_ARRAY_SUPPORT = global$1.TYPED_ARRAY_SUPPORT !== undefined
+	  ? global$1.TYPED_ARRAY_SUPPORT
+	  : true;
 
-	function kMaxLength() {
-	  return Buffer.TYPED_ARRAY_SUPPORT ? 0x7fffffff : 0x3fffffff;
+	function kMaxLength () {
+	  return Buffer.TYPED_ARRAY_SUPPORT
+	    ? 0x7fffffff
+	    : 0x3fffffff
 	}
-	function createBuffer(that, length) {
+
+	function createBuffer (that, length) {
 	  if (kMaxLength() < length) {
-	    throw new RangeError('Invalid typed array length');
+	    throw new RangeError('Invalid typed array length')
 	  }
 	  if (Buffer.TYPED_ARRAY_SUPPORT) {
 	    // Return an augmented `Uint8Array` instance, for best performance
@@ -2136,7 +2173,8 @@
 	    }
 	    that.length = length;
 	  }
-	  return that;
+
+	  return that
 	}
 
 	/**
@@ -2149,38 +2187,45 @@
 	 * The `Uint8Array` prototype remains unmodified.
 	 */
 
-	function Buffer(arg, encodingOrOffset, length) {
+	function Buffer (arg, encodingOrOffset, length) {
 	  if (!Buffer.TYPED_ARRAY_SUPPORT && !(this instanceof Buffer)) {
-	    return new Buffer(arg, encodingOrOffset, length);
+	    return new Buffer(arg, encodingOrOffset, length)
 	  }
 
 	  // Common case.
 	  if (typeof arg === 'number') {
 	    if (typeof encodingOrOffset === 'string') {
-	      throw new Error('If encoding is specified then the first argument must be a string');
+	      throw new Error(
+	        'If encoding is specified then the first argument must be a string'
+	      )
 	    }
-	    return allocUnsafe(this, arg);
+	    return allocUnsafe(this, arg)
 	  }
-	  return from$3(this, arg, encodingOrOffset, length);
+	  return from$3(this, arg, encodingOrOffset, length)
 	}
+
 	Buffer.poolSize = 8192; // not used by this implementation
 
 	// TODO: Legacy, not needed anymore. Remove in next major version.
 	Buffer._augment = function (arr) {
 	  arr.__proto__ = Buffer.prototype;
-	  return arr;
+	  return arr
 	};
-	function from$3(that, value, encodingOrOffset, length) {
+
+	function from$3 (that, value, encodingOrOffset, length) {
 	  if (typeof value === 'number') {
-	    throw new TypeError('"value" argument must not be a number');
+	    throw new TypeError('"value" argument must not be a number')
 	  }
+
 	  if (typeof ArrayBuffer !== 'undefined' && value instanceof ArrayBuffer) {
-	    return fromArrayBuffer(that, value, encodingOrOffset, length);
+	    return fromArrayBuffer(that, value, encodingOrOffset, length)
 	  }
+
 	  if (typeof value === 'string') {
-	    return fromString$1(that, value, encodingOrOffset);
+	    return fromString$1(that, value, encodingOrOffset)
 	  }
-	  return fromObject(that, value);
+
+	  return fromObject(that, value)
 	}
 
 	/**
@@ -2192,31 +2237,36 @@
 	 * Buffer.from(arrayBuffer[, byteOffset[, length]])
 	 **/
 	Buffer.from = function (value, encodingOrOffset, length) {
-	  return from$3(null, value, encodingOrOffset, length);
+	  return from$3(null, value, encodingOrOffset, length)
 	};
+
 	if (Buffer.TYPED_ARRAY_SUPPORT) {
 	  Buffer.prototype.__proto__ = Uint8Array.prototype;
 	  Buffer.__proto__ = Uint8Array;
 	}
-	function assertSize(size) {
+
+	function assertSize (size) {
 	  if (typeof size !== 'number') {
-	    throw new TypeError('"size" argument must be a number');
+	    throw new TypeError('"size" argument must be a number')
 	  } else if (size < 0) {
-	    throw new RangeError('"size" argument must not be negative');
+	    throw new RangeError('"size" argument must not be negative')
 	  }
 	}
-	function alloc$1(that, size, fill, encoding) {
+
+	function alloc$1 (that, size, fill, encoding) {
 	  assertSize(size);
 	  if (size <= 0) {
-	    return createBuffer(that, size);
+	    return createBuffer(that, size)
 	  }
 	  if (fill !== undefined) {
 	    // Only pay attention to encoding if it's a string. This
 	    // prevents accidentally sending in a number that would
 	    // be interpretted as a start offset.
-	    return typeof encoding === 'string' ? createBuffer(that, size).fill(fill, encoding) : createBuffer(that, size).fill(fill);
+	    return typeof encoding === 'string'
+	      ? createBuffer(that, size).fill(fill, encoding)
+	      : createBuffer(that, size).fill(fill)
 	  }
-	  return createBuffer(that, size);
+	  return createBuffer(that, size)
 	}
 
 	/**
@@ -2224,9 +2274,10 @@
 	 * alloc(size[, fill[, encoding]])
 	 **/
 	Buffer.alloc = function (size, fill, encoding) {
-	  return alloc$1(null, size, fill, encoding);
+	  return alloc$1(null, size, fill, encoding)
 	};
-	function allocUnsafe(that, size) {
+
+	function allocUnsafe (that, size) {
 	  assertSize(size);
 	  that = createBuffer(that, size < 0 ? 0 : checked(size) | 0);
 	  if (!Buffer.TYPED_ARRAY_SUPPORT) {
@@ -2234,55 +2285,65 @@
 	      that[i] = 0;
 	    }
 	  }
-	  return that;
+	  return that
 	}
 
 	/**
 	 * Equivalent to Buffer(num), by default creates a non-zero-filled Buffer instance.
 	 * */
 	Buffer.allocUnsafe = function (size) {
-	  return allocUnsafe(null, size);
+	  return allocUnsafe(null, size)
 	};
 	/**
 	 * Equivalent to SlowBuffer(num), by default creates a non-zero-filled Buffer instance.
 	 */
 	Buffer.allocUnsafeSlow = function (size) {
-	  return allocUnsafe(null, size);
+	  return allocUnsafe(null, size)
 	};
-	function fromString$1(that, string, encoding) {
+
+	function fromString$1 (that, string, encoding) {
 	  if (typeof encoding !== 'string' || encoding === '') {
 	    encoding = 'utf8';
 	  }
+
 	  if (!Buffer.isEncoding(encoding)) {
-	    throw new TypeError('"encoding" must be a valid string encoding');
+	    throw new TypeError('"encoding" must be a valid string encoding')
 	  }
+
 	  var length = byteLength$1(string, encoding) | 0;
 	  that = createBuffer(that, length);
+
 	  var actual = that.write(string, encoding);
+
 	  if (actual !== length) {
 	    // Writing a hex string, for example, that contains invalid characters will
 	    // cause everything after the first invalid character to be ignored. (e.g.
 	    // 'abxxcd' will be treated as 'ab')
 	    that = that.slice(0, actual);
 	  }
-	  return that;
+
+	  return that
 	}
-	function fromArrayLike$1(that, array) {
+
+	function fromArrayLike$1 (that, array) {
 	  var length = array.length < 0 ? 0 : checked(array.length) | 0;
 	  that = createBuffer(that, length);
 	  for (var i = 0; i < length; i += 1) {
 	    that[i] = array[i] & 255;
 	  }
-	  return that;
+	  return that
 	}
-	function fromArrayBuffer(that, array, byteOffset, length) {
+
+	function fromArrayBuffer (that, array, byteOffset, length) {
 
 	  if (byteOffset < 0 || array.byteLength < byteOffset) {
-	    throw new RangeError('\'offset\' is out of bounds');
+	    throw new RangeError('\'offset\' is out of bounds')
 	  }
+
 	  if (array.byteLength < byteOffset + (length || 0)) {
-	    throw new RangeError('\'length\' is out of bounds');
+	    throw new RangeError('\'length\' is out of bounds')
 	  }
+
 	  if (byteOffset === undefined && length === undefined) {
 	    array = new Uint8Array(array);
 	  } else if (length === undefined) {
@@ -2290,6 +2351,7 @@
 	  } else {
 	    array = new Uint8Array(array, byteOffset, length);
 	  }
+
 	  if (Buffer.TYPED_ARRAY_SUPPORT) {
 	    // Return an augmented `Uint8Array` instance, for best performance
 	    that = array;
@@ -2298,62 +2360,77 @@
 	    // Fallback: Return an object instance of the Buffer class
 	    that = fromArrayLike$1(that, array);
 	  }
-	  return that;
+	  return that
 	}
-	function fromObject(that, obj) {
+
+	function fromObject (that, obj) {
 	  if (internalIsBuffer(obj)) {
 	    var len = checked(obj.length) | 0;
 	    that = createBuffer(that, len);
+
 	    if (that.length === 0) {
-	      return that;
+	      return that
 	    }
+
 	    obj.copy(that, 0, 0, len);
-	    return that;
+	    return that
 	  }
+
 	  if (obj) {
-	    if (typeof ArrayBuffer !== 'undefined' && obj.buffer instanceof ArrayBuffer || 'length' in obj) {
+	    if ((typeof ArrayBuffer !== 'undefined' &&
+	        obj.buffer instanceof ArrayBuffer) || 'length' in obj) {
 	      if (typeof obj.length !== 'number' || isnan(obj.length)) {
-	        return createBuffer(that, 0);
+	        return createBuffer(that, 0)
 	      }
-	      return fromArrayLike$1(that, obj);
+	      return fromArrayLike$1(that, obj)
 	    }
+
 	    if (obj.type === 'Buffer' && isArray$4(obj.data)) {
-	      return fromArrayLike$1(that, obj.data);
+	      return fromArrayLike$1(that, obj.data)
 	    }
 	  }
-	  throw new TypeError('First argument must be a string, Buffer, ArrayBuffer, Array, or array-like object.');
+
+	  throw new TypeError('First argument must be a string, Buffer, ArrayBuffer, Array, or array-like object.')
 	}
-	function checked(length) {
+
+	function checked (length) {
 	  // Note: cannot use `length < kMaxLength()` here because that fails when
 	  // length is NaN (which is otherwise coerced to zero.)
 	  if (length >= kMaxLength()) {
-	    throw new RangeError('Attempt to allocate Buffer larger than maximum ' + 'size: 0x' + kMaxLength().toString(16) + ' bytes');
+	    throw new RangeError('Attempt to allocate Buffer larger than maximum ' +
+	                         'size: 0x' + kMaxLength().toString(16) + ' bytes')
 	  }
-	  return length | 0;
+	  return length | 0
 	}
 	Buffer.isBuffer = isBuffer$1;
-	function internalIsBuffer(b) {
-	  return !!(b != null && b._isBuffer);
+	function internalIsBuffer (b) {
+	  return !!(b != null && b._isBuffer)
 	}
-	Buffer.compare = function compare(a, b) {
+
+	Buffer.compare = function compare (a, b) {
 	  if (!internalIsBuffer(a) || !internalIsBuffer(b)) {
-	    throw new TypeError('Arguments must be Buffers');
+	    throw new TypeError('Arguments must be Buffers')
 	  }
-	  if (a === b) return 0;
+
+	  if (a === b) return 0
+
 	  var x = a.length;
 	  var y = b.length;
+
 	  for (var i = 0, len = Math.min(x, y); i < len; ++i) {
 	    if (a[i] !== b[i]) {
 	      x = a[i];
 	      y = b[i];
-	      break;
+	      break
 	    }
 	  }
-	  if (x < y) return -1;
-	  if (y < x) return 1;
-	  return 0;
+
+	  if (x < y) return -1
+	  if (y < x) return 1
+	  return 0
 	};
-	Buffer.isEncoding = function isEncoding(encoding) {
+
+	Buffer.isEncoding = function isEncoding (encoding) {
 	  switch (String(encoding).toLowerCase()) {
 	    case 'hex':
 	    case 'utf8':
@@ -2366,18 +2443,21 @@
 	    case 'ucs-2':
 	    case 'utf16le':
 	    case 'utf-16le':
-	      return true;
+	      return true
 	    default:
-	      return false;
+	      return false
 	  }
 	};
-	Buffer.concat = function concat(list, length) {
+
+	Buffer.concat = function concat (list, length) {
 	  if (!isArray$4(list)) {
-	    throw new TypeError('"list" argument must be an Array of Buffers');
+	    throw new TypeError('"list" argument must be an Array of Buffers')
 	  }
+
 	  if (list.length === 0) {
-	    return Buffer.alloc(0);
+	    return Buffer.alloc(0)
 	  }
+
 	  var i;
 	  if (length === undefined) {
 	    length = 0;
@@ -2385,30 +2465,34 @@
 	      length += list[i].length;
 	    }
 	  }
+
 	  var buffer = Buffer.allocUnsafe(length);
 	  var pos = 0;
 	  for (i = 0; i < list.length; ++i) {
 	    var buf = list[i];
 	    if (!internalIsBuffer(buf)) {
-	      throw new TypeError('"list" argument must be an Array of Buffers');
+	      throw new TypeError('"list" argument must be an Array of Buffers')
 	    }
 	    buf.copy(buffer, pos);
 	    pos += buf.length;
 	  }
-	  return buffer;
+	  return buffer
 	};
-	function byteLength$1(string, encoding) {
+
+	function byteLength$1 (string, encoding) {
 	  if (internalIsBuffer(string)) {
-	    return string.length;
+	    return string.length
 	  }
-	  if (typeof ArrayBuffer !== 'undefined' && typeof ArrayBuffer.isView === 'function' && (ArrayBuffer.isView(string) || string instanceof ArrayBuffer)) {
-	    return string.byteLength;
+	  if (typeof ArrayBuffer !== 'undefined' && typeof ArrayBuffer.isView === 'function' &&
+	      (ArrayBuffer.isView(string) || string instanceof ArrayBuffer)) {
+	    return string.byteLength
 	  }
 	  if (typeof string !== 'string') {
 	    string = '' + string;
 	  }
+
 	  var len = string.length;
-	  if (len === 0) return 0;
+	  if (len === 0) return 0
 
 	  // Use a for loop to avoid recursion
 	  var loweredCase = false;
@@ -2417,29 +2501,30 @@
 	      case 'ascii':
 	      case 'latin1':
 	      case 'binary':
-	        return len;
+	        return len
 	      case 'utf8':
 	      case 'utf-8':
 	      case undefined:
-	        return utf8ToBytes(string).length;
+	        return utf8ToBytes(string).length
 	      case 'ucs2':
 	      case 'ucs-2':
 	      case 'utf16le':
 	      case 'utf-16le':
-	        return len * 2;
+	        return len * 2
 	      case 'hex':
-	        return len >>> 1;
+	        return len >>> 1
 	      case 'base64':
-	        return base64ToBytes(string).length;
+	        return base64ToBytes(string).length
 	      default:
-	        if (loweredCase) return utf8ToBytes(string).length; // assume utf8
+	        if (loweredCase) return utf8ToBytes(string).length // assume utf8
 	        encoding = ('' + encoding).toLowerCase();
 	        loweredCase = true;
 	    }
 	  }
 	}
 	Buffer.byteLength = byteLength$1;
-	function slowToString(encoding, start, end) {
+
+	function slowToString (encoding, start, end) {
 	  var loweredCase = false;
 
 	  // No need to verify that "this.length <= MAX_UINT32" since it's a read-only
@@ -2455,43 +2540,54 @@
 	  // Return early if start > this.length. Done here to prevent potential uint32
 	  // coercion fail below.
 	  if (start > this.length) {
-	    return '';
+	    return ''
 	  }
+
 	  if (end === undefined || end > this.length) {
 	    end = this.length;
 	  }
+
 	  if (end <= 0) {
-	    return '';
+	    return ''
 	  }
 
 	  // Force coersion to uint32. This will also coerce falsey/NaN values to 0.
 	  end >>>= 0;
 	  start >>>= 0;
+
 	  if (end <= start) {
-	    return '';
+	    return ''
 	  }
+
 	  if (!encoding) encoding = 'utf8';
+
 	  while (true) {
 	    switch (encoding) {
 	      case 'hex':
-	        return hexSlice(this, start, end);
+	        return hexSlice(this, start, end)
+
 	      case 'utf8':
 	      case 'utf-8':
-	        return utf8Slice(this, start, end);
+	        return utf8Slice(this, start, end)
+
 	      case 'ascii':
-	        return asciiSlice(this, start, end);
+	        return asciiSlice(this, start, end)
+
 	      case 'latin1':
 	      case 'binary':
-	        return latin1Slice(this, start, end);
+	        return latin1Slice(this, start, end)
+
 	      case 'base64':
-	        return base64Slice(this, start, end);
+	        return base64Slice(this, start, end)
+
 	      case 'ucs2':
 	      case 'ucs-2':
 	      case 'utf16le':
 	      case 'utf-16le':
-	        return utf16leSlice(this, start, end);
+	        return utf16leSlice(this, start, end)
+
 	      default:
-	        if (loweredCase) throw new TypeError('Unknown encoding: ' + encoding);
+	        if (loweredCase) throw new TypeError('Unknown encoding: ' + encoding)
 	        encoding = (encoding + '').toLowerCase();
 	        loweredCase = true;
 	    }
@@ -2501,36 +2597,40 @@
 	// The property is used by `Buffer.isBuffer` and `is-buffer` (in Safari 5-7) to detect
 	// Buffer instances.
 	Buffer.prototype._isBuffer = true;
-	function swap(b, n, m) {
+
+	function swap (b, n, m) {
 	  var i = b[n];
 	  b[n] = b[m];
 	  b[m] = i;
 	}
-	Buffer.prototype.swap16 = function swap16() {
+
+	Buffer.prototype.swap16 = function swap16 () {
 	  var len = this.length;
 	  if (len % 2 !== 0) {
-	    throw new RangeError('Buffer size must be a multiple of 16-bits');
+	    throw new RangeError('Buffer size must be a multiple of 16-bits')
 	  }
 	  for (var i = 0; i < len; i += 2) {
 	    swap(this, i, i + 1);
 	  }
-	  return this;
+	  return this
 	};
-	Buffer.prototype.swap32 = function swap32() {
+
+	Buffer.prototype.swap32 = function swap32 () {
 	  var len = this.length;
 	  if (len % 4 !== 0) {
-	    throw new RangeError('Buffer size must be a multiple of 32-bits');
+	    throw new RangeError('Buffer size must be a multiple of 32-bits')
 	  }
 	  for (var i = 0; i < len; i += 4) {
 	    swap(this, i, i + 3);
 	    swap(this, i + 1, i + 2);
 	  }
-	  return this;
+	  return this
 	};
-	Buffer.prototype.swap64 = function swap64() {
+
+	Buffer.prototype.swap64 = function swap64 () {
 	  var len = this.length;
 	  if (len % 8 !== 0) {
-	    throw new RangeError('Buffer size must be a multiple of 64-bits');
+	    throw new RangeError('Buffer size must be a multiple of 64-bits')
 	  }
 	  for (var i = 0; i < len; i += 8) {
 	    swap(this, i, i + 7);
@@ -2538,32 +2638,37 @@
 	    swap(this, i + 2, i + 5);
 	    swap(this, i + 3, i + 4);
 	  }
-	  return this;
+	  return this
 	};
-	Buffer.prototype.toString = function toString() {
+
+	Buffer.prototype.toString = function toString () {
 	  var length = this.length | 0;
-	  if (length === 0) return '';
-	  if (arguments.length === 0) return utf8Slice(this, 0, length);
-	  return slowToString.apply(this, arguments);
+	  if (length === 0) return ''
+	  if (arguments.length === 0) return utf8Slice(this, 0, length)
+	  return slowToString.apply(this, arguments)
 	};
-	Buffer.prototype.equals = function equals(b) {
-	  if (!internalIsBuffer(b)) throw new TypeError('Argument must be a Buffer');
-	  if (this === b) return true;
-	  return Buffer.compare(this, b) === 0;
+
+	Buffer.prototype.equals = function equals (b) {
+	  if (!internalIsBuffer(b)) throw new TypeError('Argument must be a Buffer')
+	  if (this === b) return true
+	  return Buffer.compare(this, b) === 0
 	};
-	Buffer.prototype.inspect = function inspect() {
+
+	Buffer.prototype.inspect = function inspect () {
 	  var str = '';
 	  var max = INSPECT_MAX_BYTES;
 	  if (this.length > 0) {
 	    str = this.toString('hex', 0, max).match(/.{2}/g).join(' ');
 	    if (this.length > max) str += ' ... ';
 	  }
-	  return '<Buffer ' + str + '>';
+	  return '<Buffer ' + str + '>'
 	};
-	Buffer.prototype.compare = function compare(target, start, end, thisStart, thisEnd) {
+
+	Buffer.prototype.compare = function compare (target, start, end, thisStart, thisEnd) {
 	  if (!internalIsBuffer(target)) {
-	    throw new TypeError('Argument must be a Buffer');
+	    throw new TypeError('Argument must be a Buffer')
 	  }
+
 	  if (start === undefined) {
 	    start = 0;
 	  }
@@ -2576,38 +2681,46 @@
 	  if (thisEnd === undefined) {
 	    thisEnd = this.length;
 	  }
+
 	  if (start < 0 || end > target.length || thisStart < 0 || thisEnd > this.length) {
-	    throw new RangeError('out of range index');
+	    throw new RangeError('out of range index')
 	  }
+
 	  if (thisStart >= thisEnd && start >= end) {
-	    return 0;
+	    return 0
 	  }
 	  if (thisStart >= thisEnd) {
-	    return -1;
+	    return -1
 	  }
 	  if (start >= end) {
-	    return 1;
+	    return 1
 	  }
+
 	  start >>>= 0;
 	  end >>>= 0;
 	  thisStart >>>= 0;
 	  thisEnd >>>= 0;
-	  if (this === target) return 0;
+
+	  if (this === target) return 0
+
 	  var x = thisEnd - thisStart;
 	  var y = end - start;
 	  var len = Math.min(x, y);
+
 	  var thisCopy = this.slice(thisStart, thisEnd);
 	  var targetCopy = target.slice(start, end);
+
 	  for (var i = 0; i < len; ++i) {
 	    if (thisCopy[i] !== targetCopy[i]) {
 	      x = thisCopy[i];
 	      y = targetCopy[i];
-	      break;
+	      break
 	    }
 	  }
-	  if (x < y) return -1;
-	  if (y < x) return 1;
-	  return 0;
+
+	  if (x < y) return -1
+	  if (y < x) return 1
+	  return 0
 	};
 
 	// Finds either the first index of `val` in `buffer` at offset >= `byteOffset`,
@@ -2619,9 +2732,9 @@
 	// - byteOffset - an index into `buffer`; will be clamped to an int32
 	// - encoding - an optional encoding, relevant is val is a string
 	// - dir - true for indexOf, false for lastIndexOf
-	function bidirectionalIndexOf(buffer, val, byteOffset, encoding, dir) {
+	function bidirectionalIndexOf (buffer, val, byteOffset, encoding, dir) {
 	  // Empty buffer means no match
-	  if (buffer.length === 0) return -1;
+	  if (buffer.length === 0) return -1
 
 	  // Normalize byteOffset
 	  if (typeof byteOffset === 'string') {
@@ -2632,18 +2745,20 @@
 	  } else if (byteOffset < -0x80000000) {
 	    byteOffset = -0x80000000;
 	  }
-	  byteOffset = +byteOffset; // Coerce to Number.
+	  byteOffset = +byteOffset;  // Coerce to Number.
 	  if (isNaN(byteOffset)) {
 	    // byteOffset: it it's undefined, null, NaN, "foo", etc, search whole buffer
-	    byteOffset = dir ? 0 : buffer.length - 1;
+	    byteOffset = dir ? 0 : (buffer.length - 1);
 	  }
 
 	  // Normalize byteOffset: negative offsets start from the end of the buffer
 	  if (byteOffset < 0) byteOffset = buffer.length + byteOffset;
 	  if (byteOffset >= buffer.length) {
-	    if (dir) return -1;else byteOffset = buffer.length - 1;
+	    if (dir) return -1
+	    else byteOffset = buffer.length - 1;
 	  } else if (byteOffset < 0) {
-	    if (dir) byteOffset = 0;else return -1;
+	    if (dir) byteOffset = 0;
+	    else return -1
 	  }
 
 	  // Normalize val
@@ -2655,31 +2770,36 @@
 	  if (internalIsBuffer(val)) {
 	    // Special case: looking for empty string/buffer always fails
 	    if (val.length === 0) {
-	      return -1;
+	      return -1
 	    }
-	    return arrayIndexOf(buffer, val, byteOffset, encoding, dir);
+	    return arrayIndexOf(buffer, val, byteOffset, encoding, dir)
 	  } else if (typeof val === 'number') {
 	    val = val & 0xFF; // Search for a byte value [0-255]
-	    if (Buffer.TYPED_ARRAY_SUPPORT && typeof Uint8Array.prototype.indexOf === 'function') {
+	    if (Buffer.TYPED_ARRAY_SUPPORT &&
+	        typeof Uint8Array.prototype.indexOf === 'function') {
 	      if (dir) {
-	        return Uint8Array.prototype.indexOf.call(buffer, val, byteOffset);
+	        return Uint8Array.prototype.indexOf.call(buffer, val, byteOffset)
 	      } else {
-	        return Uint8Array.prototype.lastIndexOf.call(buffer, val, byteOffset);
+	        return Uint8Array.prototype.lastIndexOf.call(buffer, val, byteOffset)
 	      }
 	    }
-	    return arrayIndexOf(buffer, [val], byteOffset, encoding, dir);
+	    return arrayIndexOf(buffer, [ val ], byteOffset, encoding, dir)
 	  }
-	  throw new TypeError('val must be string, number or Buffer');
+
+	  throw new TypeError('val must be string, number or Buffer')
 	}
-	function arrayIndexOf(arr, val, byteOffset, encoding, dir) {
+
+	function arrayIndexOf (arr, val, byteOffset, encoding, dir) {
 	  var indexSize = 1;
 	  var arrLength = arr.length;
 	  var valLength = val.length;
+
 	  if (encoding !== undefined) {
 	    encoding = String(encoding).toLowerCase();
-	    if (encoding === 'ucs2' || encoding === 'ucs-2' || encoding === 'utf16le' || encoding === 'utf-16le') {
+	    if (encoding === 'ucs2' || encoding === 'ucs-2' ||
+	        encoding === 'utf16le' || encoding === 'utf-16le') {
 	      if (arr.length < 2 || val.length < 2) {
-	        return -1;
+	        return -1
 	      }
 	      indexSize = 2;
 	      arrLength /= 2;
@@ -2687,20 +2807,22 @@
 	      byteOffset /= 2;
 	    }
 	  }
-	  function read(buf, i) {
+
+	  function read (buf, i) {
 	    if (indexSize === 1) {
-	      return buf[i];
+	      return buf[i]
 	    } else {
-	      return buf.readUInt16BE(i * indexSize);
+	      return buf.readUInt16BE(i * indexSize)
 	    }
 	  }
+
 	  var i;
 	  if (dir) {
 	    var foundIndex = -1;
 	    for (i = byteOffset; i < arrLength; i++) {
 	      if (read(arr, i) === read(val, foundIndex === -1 ? 0 : i - foundIndex)) {
 	        if (foundIndex === -1) foundIndex = i;
-	        if (i - foundIndex + 1 === valLength) return foundIndex * indexSize;
+	        if (i - foundIndex + 1 === valLength) return foundIndex * indexSize
 	      } else {
 	        if (foundIndex !== -1) i -= i - foundIndex;
 	        foundIndex = -1;
@@ -2713,24 +2835,29 @@
 	      for (var j = 0; j < valLength; j++) {
 	        if (read(arr, i + j) !== read(val, j)) {
 	          found = false;
-	          break;
+	          break
 	        }
 	      }
-	      if (found) return i;
+	      if (found) return i
 	    }
 	  }
-	  return -1;
+
+	  return -1
 	}
-	Buffer.prototype.includes = function includes(val, byteOffset, encoding) {
-	  return this.indexOf(val, byteOffset, encoding) !== -1;
+
+	Buffer.prototype.includes = function includes (val, byteOffset, encoding) {
+	  return this.indexOf(val, byteOffset, encoding) !== -1
 	};
-	Buffer.prototype.indexOf = function indexOf(val, byteOffset, encoding) {
-	  return bidirectionalIndexOf(this, val, byteOffset, encoding, true);
+
+	Buffer.prototype.indexOf = function indexOf (val, byteOffset, encoding) {
+	  return bidirectionalIndexOf(this, val, byteOffset, encoding, true)
 	};
-	Buffer.prototype.lastIndexOf = function lastIndexOf(val, byteOffset, encoding) {
-	  return bidirectionalIndexOf(this, val, byteOffset, encoding, false);
+
+	Buffer.prototype.lastIndexOf = function lastIndexOf (val, byteOffset, encoding) {
+	  return bidirectionalIndexOf(this, val, byteOffset, encoding, false)
 	};
-	function hexWrite(buf, string, offset, length) {
+
+	function hexWrite (buf, string, offset, length) {
 	  offset = Number(offset) || 0;
 	  var remaining = buf.length - offset;
 	  if (!length) {
@@ -2744,44 +2871,51 @@
 
 	  // must be an even number of digits
 	  var strLen = string.length;
-	  if (strLen % 2 !== 0) throw new TypeError('Invalid hex string');
+	  if (strLen % 2 !== 0) throw new TypeError('Invalid hex string')
+
 	  if (length > strLen / 2) {
 	    length = strLen / 2;
 	  }
 	  for (var i = 0; i < length; ++i) {
 	    var parsed = parseInt(string.substr(i * 2, 2), 16);
-	    if (isNaN(parsed)) return i;
+	    if (isNaN(parsed)) return i
 	    buf[offset + i] = parsed;
 	  }
-	  return i;
+	  return i
 	}
-	function utf8Write(buf, string, offset, length) {
-	  return blitBuffer(utf8ToBytes(string, buf.length - offset), buf, offset, length);
+
+	function utf8Write (buf, string, offset, length) {
+	  return blitBuffer(utf8ToBytes(string, buf.length - offset), buf, offset, length)
 	}
-	function asciiWrite(buf, string, offset, length) {
-	  return blitBuffer(asciiToBytes(string), buf, offset, length);
+
+	function asciiWrite (buf, string, offset, length) {
+	  return blitBuffer(asciiToBytes(string), buf, offset, length)
 	}
-	function latin1Write(buf, string, offset, length) {
-	  return asciiWrite(buf, string, offset, length);
+
+	function latin1Write (buf, string, offset, length) {
+	  return asciiWrite(buf, string, offset, length)
 	}
-	function base64Write(buf, string, offset, length) {
-	  return blitBuffer(base64ToBytes(string), buf, offset, length);
+
+	function base64Write (buf, string, offset, length) {
+	  return blitBuffer(base64ToBytes(string), buf, offset, length)
 	}
-	function ucs2Write(buf, string, offset, length) {
-	  return blitBuffer(utf16leToBytes(string, buf.length - offset), buf, offset, length);
+
+	function ucs2Write (buf, string, offset, length) {
+	  return blitBuffer(utf16leToBytes(string, buf.length - offset), buf, offset, length)
 	}
-	Buffer.prototype.write = function write(string, offset, length, encoding) {
+
+	Buffer.prototype.write = function write (string, offset, length, encoding) {
 	  // Buffer#write(string)
 	  if (offset === undefined) {
 	    encoding = 'utf8';
 	    length = this.length;
 	    offset = 0;
-	    // Buffer#write(string, encoding)
+	  // Buffer#write(string, encoding)
 	  } else if (length === undefined && typeof offset === 'string') {
 	    encoding = offset;
 	    length = this.length;
 	    offset = 0;
-	    // Buffer#write(string, offset[, length][, encoding])
+	  // Buffer#write(string, offset[, length][, encoding])
 	  } else if (isFinite(offset)) {
 	    offset = offset | 0;
 	    if (isFinite(length)) {
@@ -2791,104 +2925,126 @@
 	      encoding = length;
 	      length = undefined;
 	    }
-	    // legacy write(string, encoding, offset, length) - remove in v0.13
+	  // legacy write(string, encoding, offset, length) - remove in v0.13
 	  } else {
-	    throw new Error('Buffer.write(string, encoding, offset[, length]) is no longer supported');
+	    throw new Error(
+	      'Buffer.write(string, encoding, offset[, length]) is no longer supported'
+	    )
 	  }
+
 	  var remaining = this.length - offset;
 	  if (length === undefined || length > remaining) length = remaining;
-	  if (string.length > 0 && (length < 0 || offset < 0) || offset > this.length) {
-	    throw new RangeError('Attempt to write outside buffer bounds');
+
+	  if ((string.length > 0 && (length < 0 || offset < 0)) || offset > this.length) {
+	    throw new RangeError('Attempt to write outside buffer bounds')
 	  }
+
 	  if (!encoding) encoding = 'utf8';
+
 	  var loweredCase = false;
 	  for (;;) {
 	    switch (encoding) {
 	      case 'hex':
-	        return hexWrite(this, string, offset, length);
+	        return hexWrite(this, string, offset, length)
+
 	      case 'utf8':
 	      case 'utf-8':
-	        return utf8Write(this, string, offset, length);
+	        return utf8Write(this, string, offset, length)
+
 	      case 'ascii':
-	        return asciiWrite(this, string, offset, length);
+	        return asciiWrite(this, string, offset, length)
+
 	      case 'latin1':
 	      case 'binary':
-	        return latin1Write(this, string, offset, length);
+	        return latin1Write(this, string, offset, length)
+
 	      case 'base64':
 	        // Warning: maxLength not taken into account in base64Write
-	        return base64Write(this, string, offset, length);
+	        return base64Write(this, string, offset, length)
+
 	      case 'ucs2':
 	      case 'ucs-2':
 	      case 'utf16le':
 	      case 'utf-16le':
-	        return ucs2Write(this, string, offset, length);
+	        return ucs2Write(this, string, offset, length)
+
 	      default:
-	        if (loweredCase) throw new TypeError('Unknown encoding: ' + encoding);
+	        if (loweredCase) throw new TypeError('Unknown encoding: ' + encoding)
 	        encoding = ('' + encoding).toLowerCase();
 	        loweredCase = true;
 	    }
 	  }
 	};
-	Buffer.prototype.toJSON = function toJSON() {
+
+	Buffer.prototype.toJSON = function toJSON () {
 	  return {
 	    type: 'Buffer',
 	    data: Array.prototype.slice.call(this._arr || this, 0)
-	  };
+	  }
 	};
-	function base64Slice(buf, start, end) {
+
+	function base64Slice (buf, start, end) {
 	  if (start === 0 && end === buf.length) {
-	    return fromByteArray(buf);
+	    return fromByteArray(buf)
 	  } else {
-	    return fromByteArray(buf.slice(start, end));
+	    return fromByteArray(buf.slice(start, end))
 	  }
 	}
-	function utf8Slice(buf, start, end) {
+
+	function utf8Slice (buf, start, end) {
 	  end = Math.min(buf.length, end);
 	  var res = [];
+
 	  var i = start;
 	  while (i < end) {
 	    var firstByte = buf[i];
 	    var codePoint = null;
-	    var bytesPerSequence = firstByte > 0xEF ? 4 : firstByte > 0xDF ? 3 : firstByte > 0xBF ? 2 : 1;
+	    var bytesPerSequence = (firstByte > 0xEF) ? 4
+	      : (firstByte > 0xDF) ? 3
+	      : (firstByte > 0xBF) ? 2
+	      : 1;
+
 	    if (i + bytesPerSequence <= end) {
 	      var secondByte, thirdByte, fourthByte, tempCodePoint;
+
 	      switch (bytesPerSequence) {
 	        case 1:
 	          if (firstByte < 0x80) {
 	            codePoint = firstByte;
 	          }
-	          break;
+	          break
 	        case 2:
 	          secondByte = buf[i + 1];
 	          if ((secondByte & 0xC0) === 0x80) {
-	            tempCodePoint = (firstByte & 0x1F) << 0x6 | secondByte & 0x3F;
+	            tempCodePoint = (firstByte & 0x1F) << 0x6 | (secondByte & 0x3F);
 	            if (tempCodePoint > 0x7F) {
 	              codePoint = tempCodePoint;
 	            }
 	          }
-	          break;
+	          break
 	        case 3:
 	          secondByte = buf[i + 1];
 	          thirdByte = buf[i + 2];
 	          if ((secondByte & 0xC0) === 0x80 && (thirdByte & 0xC0) === 0x80) {
-	            tempCodePoint = (firstByte & 0xF) << 0xC | (secondByte & 0x3F) << 0x6 | thirdByte & 0x3F;
+	            tempCodePoint = (firstByte & 0xF) << 0xC | (secondByte & 0x3F) << 0x6 | (thirdByte & 0x3F);
 	            if (tempCodePoint > 0x7FF && (tempCodePoint < 0xD800 || tempCodePoint > 0xDFFF)) {
 	              codePoint = tempCodePoint;
 	            }
 	          }
-	          break;
+	          break
 	        case 4:
 	          secondByte = buf[i + 1];
 	          thirdByte = buf[i + 2];
 	          fourthByte = buf[i + 3];
 	          if ((secondByte & 0xC0) === 0x80 && (thirdByte & 0xC0) === 0x80 && (fourthByte & 0xC0) === 0x80) {
-	            tempCodePoint = (firstByte & 0xF) << 0x12 | (secondByte & 0x3F) << 0xC | (thirdByte & 0x3F) << 0x6 | fourthByte & 0x3F;
+	            tempCodePoint = (firstByte & 0xF) << 0x12 | (secondByte & 0x3F) << 0xC | (thirdByte & 0x3F) << 0x6 | (fourthByte & 0x3F);
 	            if (tempCodePoint > 0xFFFF && tempCodePoint < 0x110000) {
 	              codePoint = tempCodePoint;
 	            }
 	          }
 	      }
 	    }
+
 	    if (codePoint === null) {
 	      // we did not generate a valid codePoint so insert a
 	      // replacement char (U+FFFD) and advance only 1 byte
@@ -2900,81 +3056,100 @@
 	      res.push(codePoint >>> 10 & 0x3FF | 0xD800);
 	      codePoint = 0xDC00 | codePoint & 0x3FF;
 	    }
+
 	    res.push(codePoint);
 	    i += bytesPerSequence;
 	  }
-	  return decodeCodePointsArray(res);
+
+	  return decodeCodePointsArray(res)
 	}
 
 	// Based on http://stackoverflow.com/a/22747272/680742, the browser with
 	// the lowest limit is Chrome, with 0x10000 args.
 	// We go 1 magnitude less, for safety
 	var MAX_ARGUMENTS_LENGTH = 0x1000;
-	function decodeCodePointsArray(codePoints) {
+
+	function decodeCodePointsArray (codePoints) {
 	  var len = codePoints.length;
 	  if (len <= MAX_ARGUMENTS_LENGTH) {
-	    return String.fromCharCode.apply(String, codePoints); // avoid extra slice()
+	    return String.fromCharCode.apply(String, codePoints) // avoid extra slice()
 	  }
 
 	  // Decode in chunks to avoid "call stack size exceeded".
 	  var res = '';
 	  var i = 0;
 	  while (i < len) {
-	    res += String.fromCharCode.apply(String, codePoints.slice(i, i += MAX_ARGUMENTS_LENGTH));
+	    res += String.fromCharCode.apply(
+	      String,
+	      codePoints.slice(i, i += MAX_ARGUMENTS_LENGTH)
+	    );
 	  }
-	  return res;
+	  return res
 	}
-	function asciiSlice(buf, start, end) {
+
+	function asciiSlice (buf, start, end) {
 	  var ret = '';
 	  end = Math.min(buf.length, end);
+
 	  for (var i = start; i < end; ++i) {
 	    ret += String.fromCharCode(buf[i] & 0x7F);
 	  }
-	  return ret;
+	  return ret
 	}
-	function latin1Slice(buf, start, end) {
+
+	function latin1Slice (buf, start, end) {
 	  var ret = '';
 	  end = Math.min(buf.length, end);
+
 	  for (var i = start; i < end; ++i) {
 	    ret += String.fromCharCode(buf[i]);
 	  }
-	  return ret;
+	  return ret
 	}
-	function hexSlice(buf, start, end) {
+
+	function hexSlice (buf, start, end) {
 	  var len = buf.length;
+
 	  if (!start || start < 0) start = 0;
 	  if (!end || end < 0 || end > len) end = len;
+
 	  var out = '';
 	  for (var i = start; i < end; ++i) {
 	    out += toHex(buf[i]);
 	  }
-	  return out;
+	  return out
 	}
-	function utf16leSlice(buf, start, end) {
+
+	function utf16leSlice (buf, start, end) {
 	  var bytes = buf.slice(start, end);
 	  var res = '';
 	  for (var i = 0; i < bytes.length; i += 2) {
 	    res += String.fromCharCode(bytes[i] + bytes[i + 1] * 256);
 	  }
-	  return res;
+	  return res
 	}
-	Buffer.prototype.slice = function slice(start, end) {
+
+	Buffer.prototype.slice = function slice (start, end) {
 	  var len = this.length;
 	  start = ~~start;
 	  end = end === undefined ? len : ~~end;
+
 	  if (start < 0) {
 	    start += len;
 	    if (start < 0) start = 0;
 	  } else if (start > len) {
 	    start = len;
 	  }
+
 	  if (end < 0) {
 	    end += len;
 	    if (end < 0) end = 0;
 	  } else if (end > len) {
 	    end = len;
 	  }
+
 	  if (end < start) end = start;
+
 	  var newBuf;
 	  if (Buffer.TYPED_ARRAY_SUPPORT) {
 	    newBuf = this.subarray(start, end);
@@ -2986,65 +3161,87 @@
 	      newBuf[i] = this[i + start];
 	    }
 	  }
-	  return newBuf;
+
+	  return newBuf
 	};
 
 	/*
 	 * Need to make sure that buffer isn't trying to write out of bounds.
 	 */
-	function checkOffset(offset, ext, length) {
-	  if (offset % 1 !== 0 || offset < 0) throw new RangeError('offset is not uint');
-	  if (offset + ext > length) throw new RangeError('Trying to access beyond buffer length');
+	function checkOffset (offset, ext, length) {
+	  if ((offset % 1) !== 0 || offset < 0) throw new RangeError('offset is not uint')
+	  if (offset + ext > length) throw new RangeError('Trying to access beyond buffer length')
 	}
-	Buffer.prototype.readUIntLE = function readUIntLE(offset, byteLength, noAssert) {
+
+	Buffer.prototype.readUIntLE = function readUIntLE (offset, byteLength, noAssert) {
 	  offset = offset | 0;
 	  byteLength = byteLength | 0;
 	  if (!noAssert) checkOffset(offset, byteLength, this.length);
+
 	  var val = this[offset];
 	  var mul = 1;
 	  var i = 0;
 	  while (++i < byteLength && (mul *= 0x100)) {
 	    val += this[offset + i] * mul;
 	  }
-	  return val;
+
+	  return val
 	};
-	Buffer.prototype.readUIntBE = function readUIntBE(offset, byteLength, noAssert) {
+
+	Buffer.prototype.readUIntBE = function readUIntBE (offset, byteLength, noAssert) {
 	  offset = offset | 0;
 	  byteLength = byteLength | 0;
 	  if (!noAssert) {
 	    checkOffset(offset, byteLength, this.length);
 	  }
+
 	  var val = this[offset + --byteLength];
 	  var mul = 1;
 	  while (byteLength > 0 && (mul *= 0x100)) {
 	    val += this[offset + --byteLength] * mul;
 	  }
-	  return val;
+
+	  return val
 	};
-	Buffer.prototype.readUInt8 = function readUInt8(offset, noAssert) {
+
+	Buffer.prototype.readUInt8 = function readUInt8 (offset, noAssert) {
 	  if (!noAssert) checkOffset(offset, 1, this.length);
-	  return this[offset];
+	  return this[offset]
 	};
-	Buffer.prototype.readUInt16LE = function readUInt16LE(offset, noAssert) {
+
+	Buffer.prototype.readUInt16LE = function readUInt16LE (offset, noAssert) {
 	  if (!noAssert) checkOffset(offset, 2, this.length);
-	  return this[offset] | this[offset + 1] << 8;
+	  return this[offset] | (this[offset + 1] << 8)
 	};
-	Buffer.prototype.readUInt16BE = function readUInt16BE(offset, noAssert) {
+
+	Buffer.prototype.readUInt16BE = function readUInt16BE (offset, noAssert) {
 	  if (!noAssert) checkOffset(offset, 2, this.length);
-	  return this[offset] << 8 | this[offset + 1];
+	  return (this[offset] << 8) | this[offset + 1]
 	};
-	Buffer.prototype.readUInt32LE = function readUInt32LE(offset, noAssert) {
+
+	Buffer.prototype.readUInt32LE = function readUInt32LE (offset, noAssert) {
 	  if (!noAssert) checkOffset(offset, 4, this.length);
-	  return (this[offset] | this[offset + 1] << 8 | this[offset + 2] << 16) + this[offset + 3] * 0x1000000;
+
+	  return ((this[offset]) |
+	      (this[offset + 1] << 8) |
+	      (this[offset + 2] << 16)) +
+	      (this[offset + 3] * 0x1000000)
 	};
-	Buffer.prototype.readUInt32BE = function readUInt32BE(offset, noAssert) {
+
+	Buffer.prototype.readUInt32BE = function readUInt32BE (offset, noAssert) {
 	  if (!noAssert) checkOffset(offset, 4, this.length);
-	  return this[offset] * 0x1000000 + (this[offset + 1] << 16 | this[offset + 2] << 8 | this[offset + 3]);
+
+	  return (this[offset] * 0x1000000) +
+	    ((this[offset + 1] << 16) |
+	    (this[offset + 2] << 8) |
+	    this[offset + 3])
 	};
-	Buffer.prototype.readIntLE = function readIntLE(offset, byteLength, noAssert) {
+
+	Buffer.prototype.readIntLE = function readIntLE (offset, byteLength, noAssert) {
 	  offset = offset | 0;
 	  byteLength = byteLength | 0;
 	  if (!noAssert) checkOffset(offset, byteLength, this.length);
+
 	  var val = this[offset];
 	  var mul = 1;
 	  var i = 0;
@@ -3052,13 +3249,17 @@
 	    val += this[offset + i] * mul;
 	  }
 	  mul *= 0x80;
+
 	  if (val >= mul) val -= Math.pow(2, 8 * byteLength);
-	  return val;
+
+	  return val
 	};
-	Buffer.prototype.readIntBE = function readIntBE(offset, byteLength, noAssert) {
+
+	Buffer.prototype.readIntBE = function readIntBE (offset, byteLength, noAssert) {
 	  offset = offset | 0;
 	  byteLength = byteLength | 0;
 	  if (!noAssert) checkOffset(offset, byteLength, this.length);
+
 	  var i = byteLength;
 	  var mul = 1;
 	  var val = this[offset + --i];
@@ -3066,54 +3267,75 @@
 	    val += this[offset + --i] * mul;
 	  }
 	  mul *= 0x80;
+
 	  if (val >= mul) val -= Math.pow(2, 8 * byteLength);
-	  return val;
+
+	  return val
 	};
-	Buffer.prototype.readInt8 = function readInt8(offset, noAssert) {
+
+	Buffer.prototype.readInt8 = function readInt8 (offset, noAssert) {
 	  if (!noAssert) checkOffset(offset, 1, this.length);
-	  if (!(this[offset] & 0x80)) return this[offset];
-	  return (0xff - this[offset] + 1) * -1;
+	  if (!(this[offset] & 0x80)) return (this[offset])
+	  return ((0xff - this[offset] + 1) * -1)
 	};
-	Buffer.prototype.readInt16LE = function readInt16LE(offset, noAssert) {
+
+	Buffer.prototype.readInt16LE = function readInt16LE (offset, noAssert) {
 	  if (!noAssert) checkOffset(offset, 2, this.length);
-	  var val = this[offset] | this[offset + 1] << 8;
-	  return val & 0x8000 ? val | 0xFFFF0000 : val;
+	  var val = this[offset] | (this[offset + 1] << 8);
+	  return (val & 0x8000) ? val | 0xFFFF0000 : val
 	};
-	Buffer.prototype.readInt16BE = function readInt16BE(offset, noAssert) {
+
+	Buffer.prototype.readInt16BE = function readInt16BE (offset, noAssert) {
 	  if (!noAssert) checkOffset(offset, 2, this.length);
-	  var val = this[offset + 1] | this[offset] << 8;
-	  return val & 0x8000 ? val | 0xFFFF0000 : val;
+	  var val = this[offset + 1] | (this[offset] << 8);
+	  return (val & 0x8000) ? val | 0xFFFF0000 : val
 	};
-	Buffer.prototype.readInt32LE = function readInt32LE(offset, noAssert) {
+
+	Buffer.prototype.readInt32LE = function readInt32LE (offset, noAssert) {
 	  if (!noAssert) checkOffset(offset, 4, this.length);
-	  return this[offset] | this[offset + 1] << 8 | this[offset + 2] << 16 | this[offset + 3] << 24;
+
+	  return (this[offset]) |
+	    (this[offset + 1] << 8) |
+	    (this[offset + 2] << 16) |
+	    (this[offset + 3] << 24)
 	};
-	Buffer.prototype.readInt32BE = function readInt32BE(offset, noAssert) {
+
+	Buffer.prototype.readInt32BE = function readInt32BE (offset, noAssert) {
 	  if (!noAssert) checkOffset(offset, 4, this.length);
-	  return this[offset] << 24 | this[offset + 1] << 16 | this[offset + 2] << 8 | this[offset + 3];
+
+	  return (this[offset] << 24) |
+	    (this[offset + 1] << 16) |
+	    (this[offset + 2] << 8) |
+	    (this[offset + 3])
 	};
-	Buffer.prototype.readFloatLE = function readFloatLE(offset, noAssert) {
+
+	Buffer.prototype.readFloatLE = function readFloatLE (offset, noAssert) {
 	  if (!noAssert) checkOffset(offset, 4, this.length);
-	  return read(this, offset, true, 23, 4);
+	  return read(this, offset, true, 23, 4)
 	};
-	Buffer.prototype.readFloatBE = function readFloatBE(offset, noAssert) {
+
+	Buffer.prototype.readFloatBE = function readFloatBE (offset, noAssert) {
 	  if (!noAssert) checkOffset(offset, 4, this.length);
-	  return read(this, offset, false, 23, 4);
+	  return read(this, offset, false, 23, 4)
 	};
-	Buffer.prototype.readDoubleLE = function readDoubleLE(offset, noAssert) {
+
+	Buffer.prototype.readDoubleLE = function readDoubleLE (offset, noAssert) {
 	  if (!noAssert) checkOffset(offset, 8, this.length);
-	  return read(this, offset, true, 52, 8);
+	  return read(this, offset, true, 52, 8)
 	};
-	Buffer.prototype.readDoubleBE = function readDoubleBE(offset, noAssert) {
+
+	Buffer.prototype.readDoubleBE = function readDoubleBE (offset, noAssert) {
 	  if (!noAssert) checkOffset(offset, 8, this.length);
-	  return read(this, offset, false, 52, 8);
+	  return read(this, offset, false, 52, 8)
 	};
-	function checkInt(buf, value, offset, ext, max, min) {
-	  if (!internalIsBuffer(buf)) throw new TypeError('"buffer" argument must be a Buffer instance');
-	  if (value > max || value < min) throw new RangeError('"value" argument is out of bounds');
-	  if (offset + ext > buf.length) throw new RangeError('Index out of range');
+
+	function checkInt (buf, value, offset, ext, max, min) {
+	  if (!internalIsBuffer(buf)) throw new TypeError('"buffer" argument must be a Buffer instance')
+	  if (value > max || value < min) throw new RangeError('"value" argument is out of bounds')
+	  if (offset + ext > buf.length) throw new RangeError('Index out of range')
 	}
-	Buffer.prototype.writeUIntLE = function writeUIntLE(value, offset, byteLength, noAssert) {
+
+	Buffer.prototype.writeUIntLE = function writeUIntLE (value, offset, byteLength, noAssert) {
 	  value = +value;
 	  offset = offset | 0;
 	  byteLength = byteLength | 0;
@@ -3121,15 +3343,18 @@
 	    var maxBytes = Math.pow(2, 8 * byteLength) - 1;
 	    checkInt(this, value, offset, byteLength, maxBytes, 0);
 	  }
+
 	  var mul = 1;
 	  var i = 0;
 	  this[offset] = value & 0xFF;
 	  while (++i < byteLength && (mul *= 0x100)) {
-	    this[offset + i] = value / mul & 0xFF;
+	    this[offset + i] = (value / mul) & 0xFF;
 	  }
-	  return offset + byteLength;
+
+	  return offset + byteLength
 	};
-	Buffer.prototype.writeUIntBE = function writeUIntBE(value, offset, byteLength, noAssert) {
+
+	Buffer.prototype.writeUIntBE = function writeUIntBE (value, offset, byteLength, noAssert) {
 	  value = +value;
 	  offset = offset | 0;
 	  byteLength = byteLength | 0;
@@ -3137,93 +3362,106 @@
 	    var maxBytes = Math.pow(2, 8 * byteLength) - 1;
 	    checkInt(this, value, offset, byteLength, maxBytes, 0);
 	  }
+
 	  var i = byteLength - 1;
 	  var mul = 1;
 	  this[offset + i] = value & 0xFF;
 	  while (--i >= 0 && (mul *= 0x100)) {
-	    this[offset + i] = value / mul & 0xFF;
+	    this[offset + i] = (value / mul) & 0xFF;
 	  }
-	  return offset + byteLength;
+
+	  return offset + byteLength
 	};
-	Buffer.prototype.writeUInt8 = function writeUInt8(value, offset, noAssert) {
+
+	Buffer.prototype.writeUInt8 = function writeUInt8 (value, offset, noAssert) {
 	  value = +value;
 	  offset = offset | 0;
 	  if (!noAssert) checkInt(this, value, offset, 1, 0xff, 0);
 	  if (!Buffer.TYPED_ARRAY_SUPPORT) value = Math.floor(value);
-	  this[offset] = value & 0xff;
-	  return offset + 1;
+	  this[offset] = (value & 0xff);
+	  return offset + 1
 	};
-	function objectWriteUInt16(buf, value, offset, littleEndian) {
+
+	function objectWriteUInt16 (buf, value, offset, littleEndian) {
 	  if (value < 0) value = 0xffff + value + 1;
 	  for (var i = 0, j = Math.min(buf.length - offset, 2); i < j; ++i) {
-	    buf[offset + i] = (value & 0xff << 8 * (littleEndian ? i : 1 - i)) >>> (littleEndian ? i : 1 - i) * 8;
+	    buf[offset + i] = (value & (0xff << (8 * (littleEndian ? i : 1 - i)))) >>>
+	      (littleEndian ? i : 1 - i) * 8;
 	  }
 	}
-	Buffer.prototype.writeUInt16LE = function writeUInt16LE(value, offset, noAssert) {
+
+	Buffer.prototype.writeUInt16LE = function writeUInt16LE (value, offset, noAssert) {
 	  value = +value;
 	  offset = offset | 0;
 	  if (!noAssert) checkInt(this, value, offset, 2, 0xffff, 0);
 	  if (Buffer.TYPED_ARRAY_SUPPORT) {
-	    this[offset] = value & 0xff;
-	    this[offset + 1] = value >>> 8;
+	    this[offset] = (value & 0xff);
+	    this[offset + 1] = (value >>> 8);
 	  } else {
 	    objectWriteUInt16(this, value, offset, true);
 	  }
-	  return offset + 2;
+	  return offset + 2
 	};
-	Buffer.prototype.writeUInt16BE = function writeUInt16BE(value, offset, noAssert) {
+
+	Buffer.prototype.writeUInt16BE = function writeUInt16BE (value, offset, noAssert) {
 	  value = +value;
 	  offset = offset | 0;
 	  if (!noAssert) checkInt(this, value, offset, 2, 0xffff, 0);
 	  if (Buffer.TYPED_ARRAY_SUPPORT) {
-	    this[offset] = value >>> 8;
-	    this[offset + 1] = value & 0xff;
+	    this[offset] = (value >>> 8);
+	    this[offset + 1] = (value & 0xff);
 	  } else {
 	    objectWriteUInt16(this, value, offset, false);
 	  }
-	  return offset + 2;
+	  return offset + 2
 	};
-	function objectWriteUInt32(buf, value, offset, littleEndian) {
+
+	function objectWriteUInt32 (buf, value, offset, littleEndian) {
 	  if (value < 0) value = 0xffffffff + value + 1;
 	  for (var i = 0, j = Math.min(buf.length - offset, 4); i < j; ++i) {
-	    buf[offset + i] = value >>> (littleEndian ? i : 3 - i) * 8 & 0xff;
+	    buf[offset + i] = (value >>> (littleEndian ? i : 3 - i) * 8) & 0xff;
 	  }
 	}
-	Buffer.prototype.writeUInt32LE = function writeUInt32LE(value, offset, noAssert) {
+
+	Buffer.prototype.writeUInt32LE = function writeUInt32LE (value, offset, noAssert) {
 	  value = +value;
 	  offset = offset | 0;
 	  if (!noAssert) checkInt(this, value, offset, 4, 0xffffffff, 0);
 	  if (Buffer.TYPED_ARRAY_SUPPORT) {
-	    this[offset + 3] = value >>> 24;
-	    this[offset + 2] = value >>> 16;
-	    this[offset + 1] = value >>> 8;
-	    this[offset] = value & 0xff;
+	    this[offset + 3] = (value >>> 24);
+	    this[offset + 2] = (value >>> 16);
+	    this[offset + 1] = (value >>> 8);
+	    this[offset] = (value & 0xff);
 	  } else {
 	    objectWriteUInt32(this, value, offset, true);
 	  }
-	  return offset + 4;
+	  return offset + 4
 	};
-	Buffer.prototype.writeUInt32BE = function writeUInt32BE(value, offset, noAssert) {
+
+	Buffer.prototype.writeUInt32BE = function writeUInt32BE (value, offset, noAssert) {
 	  value = +value;
 	  offset = offset | 0;
 	  if (!noAssert) checkInt(this, value, offset, 4, 0xffffffff, 0);
 	  if (Buffer.TYPED_ARRAY_SUPPORT) {
-	    this[offset] = value >>> 24;
-	    this[offset + 1] = value >>> 16;
-	    this[offset + 2] = value >>> 8;
-	    this[offset + 3] = value & 0xff;
+	    this[offset] = (value >>> 24);
+	    this[offset + 1] = (value >>> 16);
+	    this[offset + 2] = (value >>> 8);
+	    this[offset + 3] = (value & 0xff);
 	  } else {
 	    objectWriteUInt32(this, value, offset, false);
 	  }
-	  return offset + 4;
+	  return offset + 4
 	};
-	Buffer.prototype.writeIntLE = function writeIntLE(value, offset, byteLength, noAssert) {
+
+	Buffer.prototype.writeIntLE = function writeIntLE (value, offset, byteLength, noAssert) {
 	  value = +value;
 	  offset = offset | 0;
 	  if (!noAssert) {
 	    var limit = Math.pow(2, 8 * byteLength - 1);
+
 	    checkInt(this, value, offset, byteLength, limit - 1, -limit);
 	  }
+
 	  var i = 0;
 	  var mul = 1;
 	  var sub = 0;
@@ -3232,17 +3470,21 @@
 	    if (value < 0 && sub === 0 && this[offset + i - 1] !== 0) {
 	      sub = 1;
 	    }
-	    this[offset + i] = (value / mul >> 0) - sub & 0xFF;
+	    this[offset + i] = ((value / mul) >> 0) - sub & 0xFF;
 	  }
-	  return offset + byteLength;
+
+	  return offset + byteLength
 	};
-	Buffer.prototype.writeIntBE = function writeIntBE(value, offset, byteLength, noAssert) {
+
+	Buffer.prototype.writeIntBE = function writeIntBE (value, offset, byteLength, noAssert) {
 	  value = +value;
 	  offset = offset | 0;
 	  if (!noAssert) {
 	    var limit = Math.pow(2, 8 * byteLength - 1);
+
 	    checkInt(this, value, offset, byteLength, limit - 1, -limit);
 	  }
+
 	  var i = byteLength - 1;
 	  var mul = 1;
 	  var sub = 0;
@@ -3251,105 +3493,118 @@
 	    if (value < 0 && sub === 0 && this[offset + i + 1] !== 0) {
 	      sub = 1;
 	    }
-	    this[offset + i] = (value / mul >> 0) - sub & 0xFF;
+	    this[offset + i] = ((value / mul) >> 0) - sub & 0xFF;
 	  }
-	  return offset + byteLength;
+
+	  return offset + byteLength
 	};
-	Buffer.prototype.writeInt8 = function writeInt8(value, offset, noAssert) {
+
+	Buffer.prototype.writeInt8 = function writeInt8 (value, offset, noAssert) {
 	  value = +value;
 	  offset = offset | 0;
 	  if (!noAssert) checkInt(this, value, offset, 1, 0x7f, -0x80);
 	  if (!Buffer.TYPED_ARRAY_SUPPORT) value = Math.floor(value);
 	  if (value < 0) value = 0xff + value + 1;
-	  this[offset] = value & 0xff;
-	  return offset + 1;
+	  this[offset] = (value & 0xff);
+	  return offset + 1
 	};
-	Buffer.prototype.writeInt16LE = function writeInt16LE(value, offset, noAssert) {
+
+	Buffer.prototype.writeInt16LE = function writeInt16LE (value, offset, noAssert) {
 	  value = +value;
 	  offset = offset | 0;
 	  if (!noAssert) checkInt(this, value, offset, 2, 0x7fff, -0x8000);
 	  if (Buffer.TYPED_ARRAY_SUPPORT) {
-	    this[offset] = value & 0xff;
-	    this[offset + 1] = value >>> 8;
+	    this[offset] = (value & 0xff);
+	    this[offset + 1] = (value >>> 8);
 	  } else {
 	    objectWriteUInt16(this, value, offset, true);
 	  }
-	  return offset + 2;
+	  return offset + 2
 	};
-	Buffer.prototype.writeInt16BE = function writeInt16BE(value, offset, noAssert) {
+
+	Buffer.prototype.writeInt16BE = function writeInt16BE (value, offset, noAssert) {
 	  value = +value;
 	  offset = offset | 0;
 	  if (!noAssert) checkInt(this, value, offset, 2, 0x7fff, -0x8000);
 	  if (Buffer.TYPED_ARRAY_SUPPORT) {
-	    this[offset] = value >>> 8;
-	    this[offset + 1] = value & 0xff;
+	    this[offset] = (value >>> 8);
+	    this[offset + 1] = (value & 0xff);
 	  } else {
 	    objectWriteUInt16(this, value, offset, false);
 	  }
-	  return offset + 2;
+	  return offset + 2
 	};
-	Buffer.prototype.writeInt32LE = function writeInt32LE(value, offset, noAssert) {
+
+	Buffer.prototype.writeInt32LE = function writeInt32LE (value, offset, noAssert) {
 	  value = +value;
 	  offset = offset | 0;
 	  if (!noAssert) checkInt(this, value, offset, 4, 0x7fffffff, -0x80000000);
 	  if (Buffer.TYPED_ARRAY_SUPPORT) {
-	    this[offset] = value & 0xff;
-	    this[offset + 1] = value >>> 8;
-	    this[offset + 2] = value >>> 16;
-	    this[offset + 3] = value >>> 24;
+	    this[offset] = (value & 0xff);
+	    this[offset + 1] = (value >>> 8);
+	    this[offset + 2] = (value >>> 16);
+	    this[offset + 3] = (value >>> 24);
 	  } else {
 	    objectWriteUInt32(this, value, offset, true);
 	  }
-	  return offset + 4;
+	  return offset + 4
 	};
-	Buffer.prototype.writeInt32BE = function writeInt32BE(value, offset, noAssert) {
+
+	Buffer.prototype.writeInt32BE = function writeInt32BE (value, offset, noAssert) {
 	  value = +value;
 	  offset = offset | 0;
 	  if (!noAssert) checkInt(this, value, offset, 4, 0x7fffffff, -0x80000000);
 	  if (value < 0) value = 0xffffffff + value + 1;
 	  if (Buffer.TYPED_ARRAY_SUPPORT) {
-	    this[offset] = value >>> 24;
-	    this[offset + 1] = value >>> 16;
-	    this[offset + 2] = value >>> 8;
-	    this[offset + 3] = value & 0xff;
+	    this[offset] = (value >>> 24);
+	    this[offset + 1] = (value >>> 16);
+	    this[offset + 2] = (value >>> 8);
+	    this[offset + 3] = (value & 0xff);
 	  } else {
 	    objectWriteUInt32(this, value, offset, false);
 	  }
-	  return offset + 4;
+	  return offset + 4
 	};
-	function checkIEEE754(buf, value, offset, ext, max, min) {
-	  if (offset + ext > buf.length) throw new RangeError('Index out of range');
-	  if (offset < 0) throw new RangeError('Index out of range');
+
+	function checkIEEE754 (buf, value, offset, ext, max, min) {
+	  if (offset + ext > buf.length) throw new RangeError('Index out of range')
+	  if (offset < 0) throw new RangeError('Index out of range')
 	}
-	function writeFloat(buf, value, offset, littleEndian, noAssert) {
+
+	function writeFloat (buf, value, offset, littleEndian, noAssert) {
 	  if (!noAssert) {
 	    checkIEEE754(buf, value, offset, 4);
 	  }
 	  write(buf, value, offset, littleEndian, 23, 4);
-	  return offset + 4;
+	  return offset + 4
 	}
-	Buffer.prototype.writeFloatLE = function writeFloatLE(value, offset, noAssert) {
-	  return writeFloat(this, value, offset, true, noAssert);
+
+	Buffer.prototype.writeFloatLE = function writeFloatLE (value, offset, noAssert) {
+	  return writeFloat(this, value, offset, true, noAssert)
 	};
-	Buffer.prototype.writeFloatBE = function writeFloatBE(value, offset, noAssert) {
-	  return writeFloat(this, value, offset, false, noAssert);
+
+	Buffer.prototype.writeFloatBE = function writeFloatBE (value, offset, noAssert) {
+	  return writeFloat(this, value, offset, false, noAssert)
 	};
-	function writeDouble(buf, value, offset, littleEndian, noAssert) {
+
+	function writeDouble (buf, value, offset, littleEndian, noAssert) {
 	  if (!noAssert) {
 	    checkIEEE754(buf, value, offset, 8);
 	  }
 	  write(buf, value, offset, littleEndian, 52, 8);
-	  return offset + 8;
+	  return offset + 8
 	}
-	Buffer.prototype.writeDoubleLE = function writeDoubleLE(value, offset, noAssert) {
-	  return writeDouble(this, value, offset, true, noAssert);
+
+	Buffer.prototype.writeDoubleLE = function writeDoubleLE (value, offset, noAssert) {
+	  return writeDouble(this, value, offset, true, noAssert)
 	};
-	Buffer.prototype.writeDoubleBE = function writeDoubleBE(value, offset, noAssert) {
-	  return writeDouble(this, value, offset, false, noAssert);
+
+	Buffer.prototype.writeDoubleBE = function writeDoubleBE (value, offset, noAssert) {
+	  return writeDouble(this, value, offset, false, noAssert)
 	};
 
 	// copy(targetBuffer, targetStart=0, sourceStart=0, sourceEnd=buffer.length)
-	Buffer.prototype.copy = function copy(target, targetStart, start, end) {
+	Buffer.prototype.copy = function copy (target, targetStart, start, end) {
 	  if (!start) start = 0;
 	  if (!end && end !== 0) end = this.length;
 	  if (targetStart >= target.length) targetStart = target.length;
@@ -3357,23 +3612,25 @@
 	  if (end > 0 && end < start) end = start;
 
 	  // Copy 0 bytes; we're done
-	  if (end === start) return 0;
-	  if (target.length === 0 || this.length === 0) return 0;
+	  if (end === start) return 0
+	  if (target.length === 0 || this.length === 0) return 0
 
 	  // Fatal error conditions
 	  if (targetStart < 0) {
-	    throw new RangeError('targetStart out of bounds');
+	    throw new RangeError('targetStart out of bounds')
 	  }
-	  if (start < 0 || start >= this.length) throw new RangeError('sourceStart out of bounds');
-	  if (end < 0) throw new RangeError('sourceEnd out of bounds');
+	  if (start < 0 || start >= this.length) throw new RangeError('sourceStart out of bounds')
+	  if (end < 0) throw new RangeError('sourceEnd out of bounds')
 
 	  // Are we oob?
 	  if (end > this.length) end = this.length;
 	  if (target.length - targetStart < end - start) {
 	    end = target.length - targetStart + start;
 	  }
+
 	  var len = end - start;
 	  var i;
+
 	  if (this === target && start < targetStart && targetStart < end) {
 	    // descending copy from end
 	    for (i = len - 1; i >= 0; --i) {
@@ -3385,16 +3642,21 @@
 	      target[i + targetStart] = this[i + start];
 	    }
 	  } else {
-	    Uint8Array.prototype.set.call(target, this.subarray(start, start + len), targetStart);
+	    Uint8Array.prototype.set.call(
+	      target,
+	      this.subarray(start, start + len),
+	      targetStart
+	    );
 	  }
-	  return len;
+
+	  return len
 	};
 
 	// Usage:
 	//    buffer.fill(number[, offset[, end]])
 	//    buffer.fill(buffer[, offset[, end]])
 	//    buffer.fill(string[, offset[, end]][, encoding])
-	Buffer.prototype.fill = function fill(val, start, end, encoding) {
+	Buffer.prototype.fill = function fill (val, start, end, encoding) {
 	  // Handle string cases:
 	  if (typeof val === 'string') {
 	    if (typeof start === 'string') {
@@ -3412,10 +3674,10 @@
 	      }
 	    }
 	    if (encoding !== undefined && typeof encoding !== 'string') {
-	      throw new TypeError('encoding must be a string');
+	      throw new TypeError('encoding must be a string')
 	    }
 	    if (typeof encoding === 'string' && !Buffer.isEncoding(encoding)) {
-	      throw new TypeError('Unknown encoding: ' + encoding);
+	      throw new TypeError('Unknown encoding: ' + encoding)
 	    }
 	  } else if (typeof val === 'number') {
 	    val = val & 255;
@@ -3423,58 +3685,70 @@
 
 	  // Invalid ranges are not set to a default, so can range check early.
 	  if (start < 0 || this.length < start || this.length < end) {
-	    throw new RangeError('Out of range index');
+	    throw new RangeError('Out of range index')
 	  }
+
 	  if (end <= start) {
-	    return this;
+	    return this
 	  }
+
 	  start = start >>> 0;
 	  end = end === undefined ? this.length : end >>> 0;
+
 	  if (!val) val = 0;
+
 	  var i;
 	  if (typeof val === 'number') {
 	    for (i = start; i < end; ++i) {
 	      this[i] = val;
 	    }
 	  } else {
-	    var bytes = internalIsBuffer(val) ? val : utf8ToBytes(new Buffer(val, encoding).toString());
+	    var bytes = internalIsBuffer(val)
+	      ? val
+	      : utf8ToBytes(new Buffer(val, encoding).toString());
 	    var len = bytes.length;
 	    for (i = 0; i < end - start; ++i) {
 	      this[i + start] = bytes[i % len];
 	    }
 	  }
-	  return this;
+
+	  return this
 	};
 
 	// HELPER FUNCTIONS
 	// ================
 
 	var INVALID_BASE64_RE = /[^+\/0-9A-Za-z-_]/g;
-	function base64clean(str) {
+
+	function base64clean (str) {
 	  // Node strips out invalid characters like \n and \t from the string, base64-js does not
 	  str = stringtrim(str).replace(INVALID_BASE64_RE, '');
 	  // Node converts strings with length < 2 to ''
-	  if (str.length < 2) return '';
+	  if (str.length < 2) return ''
 	  // Node allows for non-padded base64 strings (missing trailing ===), base64-js does not
 	  while (str.length % 4 !== 0) {
 	    str = str + '=';
 	  }
-	  return str;
+	  return str
 	}
-	function stringtrim(str) {
-	  if (str.trim) return str.trim();
-	  return str.replace(/^\s+|\s+$/g, '');
+
+	function stringtrim (str) {
+	  if (str.trim) return str.trim()
+	  return str.replace(/^\s+|\s+$/g, '')
 	}
-	function toHex(n) {
-	  if (n < 16) return '0' + n.toString(16);
-	  return n.toString(16);
+
+	function toHex (n) {
+	  if (n < 16) return '0' + n.toString(16)
+	  return n.toString(16)
 	}
-	function utf8ToBytes(string, units) {
+
+	function utf8ToBytes (string, units) {
 	  units = units || Infinity;
 	  var codePoint;
 	  var length = string.length;
 	  var leadSurrogate = null;
 	  var bytes = [];
+
 	  for (var i = 0; i < length; ++i) {
 	    codePoint = string.charCodeAt(i);
 
@@ -3486,23 +3760,24 @@
 	        if (codePoint > 0xDBFF) {
 	          // unexpected trail
 	          if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD);
-	          continue;
+	          continue
 	        } else if (i + 1 === length) {
 	          // unpaired lead
 	          if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD);
-	          continue;
+	          continue
 	        }
 
 	        // valid lead
 	        leadSurrogate = codePoint;
-	        continue;
+
+	        continue
 	      }
 
 	      // 2 leads in a row
 	      if (codePoint < 0xDC00) {
 	        if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD);
 	        leadSurrogate = codePoint;
-	        continue;
+	        continue
 	      }
 
 	      // valid surrogate pair
@@ -3511,80 +3786,104 @@
 	      // valid bmp char, but last char was a lead
 	      if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD);
 	    }
+
 	    leadSurrogate = null;
 
 	    // encode utf8
 	    if (codePoint < 0x80) {
-	      if ((units -= 1) < 0) break;
+	      if ((units -= 1) < 0) break
 	      bytes.push(codePoint);
 	    } else if (codePoint < 0x800) {
-	      if ((units -= 2) < 0) break;
-	      bytes.push(codePoint >> 0x6 | 0xC0, codePoint & 0x3F | 0x80);
+	      if ((units -= 2) < 0) break
+	      bytes.push(
+	        codePoint >> 0x6 | 0xC0,
+	        codePoint & 0x3F | 0x80
+	      );
 	    } else if (codePoint < 0x10000) {
-	      if ((units -= 3) < 0) break;
-	      bytes.push(codePoint >> 0xC | 0xE0, codePoint >> 0x6 & 0x3F | 0x80, codePoint & 0x3F | 0x80);
+	      if ((units -= 3) < 0) break
+	      bytes.push(
+	        codePoint >> 0xC | 0xE0,
+	        codePoint >> 0x6 & 0x3F | 0x80,
+	        codePoint & 0x3F | 0x80
+	      );
 	    } else if (codePoint < 0x110000) {
-	      if ((units -= 4) < 0) break;
-	      bytes.push(codePoint >> 0x12 | 0xF0, codePoint >> 0xC & 0x3F | 0x80, codePoint >> 0x6 & 0x3F | 0x80, codePoint & 0x3F | 0x80);
+	      if ((units -= 4) < 0) break
+	      bytes.push(
+	        codePoint >> 0x12 | 0xF0,
+	        codePoint >> 0xC & 0x3F | 0x80,
+	        codePoint >> 0x6 & 0x3F | 0x80,
+	        codePoint & 0x3F | 0x80
+	      );
 	    } else {
-	      throw new Error('Invalid code point');
+	      throw new Error('Invalid code point')
 	    }
 	  }
-	  return bytes;
+
+	  return bytes
 	}
-	function asciiToBytes(str) {
+
+	function asciiToBytes (str) {
 	  var byteArray = [];
 	  for (var i = 0; i < str.length; ++i) {
 	    // Node's code seems to be doing this and not & 0x7F..
 	    byteArray.push(str.charCodeAt(i) & 0xFF);
 	  }
-	  return byteArray;
+	  return byteArray
 	}
-	function utf16leToBytes(str, units) {
+
+	function utf16leToBytes (str, units) {
 	  var c, hi, lo;
 	  var byteArray = [];
 	  for (var i = 0; i < str.length; ++i) {
-	    if ((units -= 2) < 0) break;
+	    if ((units -= 2) < 0) break
+
 	    c = str.charCodeAt(i);
 	    hi = c >> 8;
 	    lo = c % 256;
 	    byteArray.push(lo);
 	    byteArray.push(hi);
 	  }
-	  return byteArray;
+
+	  return byteArray
 	}
-	function base64ToBytes(str) {
-	  return toByteArray(base64clean(str));
+
+
+	function base64ToBytes (str) {
+	  return toByteArray(base64clean(str))
 	}
-	function blitBuffer(src, dst, offset, length) {
+
+	function blitBuffer (src, dst, offset, length) {
 	  for (var i = 0; i < length; ++i) {
-	    if (i + offset >= dst.length || i >= src.length) break;
+	    if ((i + offset >= dst.length) || (i >= src.length)) break
 	    dst[i + offset] = src[i];
 	  }
-	  return i;
+	  return i
 	}
-	function isnan(val) {
-	  return val !== val; // eslint-disable-line no-self-compare
+
+	function isnan (val) {
+	  return val !== val // eslint-disable-line no-self-compare
 	}
+
 
 	// the following is from is-buffer, also by Feross Aboukhadijeh and with same lisence
 	// The _isBuffer check is for Safari 5-7 support, because it's missing
 	// Object.prototype.constructor. Remove this eventually
 	function isBuffer$1(obj) {
-	  return obj != null && (!!obj._isBuffer || isFastBuffer(obj) || isSlowBuffer(obj));
+	  return obj != null && (!!obj._isBuffer || isFastBuffer(obj) || isSlowBuffer(obj))
 	}
-	function isFastBuffer(obj) {
-	  return !!obj.constructor && typeof obj.constructor.isBuffer === 'function' && obj.constructor.isBuffer(obj);
+
+	function isFastBuffer (obj) {
+	  return !!obj.constructor && typeof obj.constructor.isBuffer === 'function' && obj.constructor.isBuffer(obj)
 	}
 
 	// For Node v0.10 support. Remove this eventually.
-	function isSlowBuffer(obj) {
-	  return typeof obj.readFloatLE === 'function' && typeof obj.slice === 'function' && isFastBuffer(obj.slice(0, 0));
+	function isSlowBuffer (obj) {
+	  return typeof obj.readFloatLE === 'function' && typeof obj.slice === 'function' && isFastBuffer(obj.slice(0, 0))
 	}
 
 	var MACHINE_ID = /*#__PURE__*/Math.floor( /*#__PURE__*/Math.random() * 0xFFFFFF);
 	var index = ObjectID.index = /*#__PURE__*/parseInt( /*#__PURE__*/Math.random() * 0xFFFFFF, 10);
-	var pid = (typeof process$1 === 'undefined' || typeof process$1.pid !== 'number' ? /*#__PURE__*/Math.floor( /*#__PURE__*/Math.random() * 100000) : process$1.pid) % 0xFFFF;
+	var pid = (typeof browser$1 === 'undefined' || typeof browser$1.pid !== 'number' ? /*#__PURE__*/Math.floor( /*#__PURE__*/Math.random() * 100000) : browser$1.pid) % 0xFFFF;
 	// <https://github.com/williamkapke/bson-objectid/pull/51>
 	// Attempt to fallback Buffer if _Buffer is undefined (e.g. for Node.js).
 	// Worst case fallback to null and handle with null checking before using.
@@ -3844,8 +4143,8 @@
 	});
 	FeatureChange$3.FeatureChange = void 0;
 	FeatureChange$3.isFeatureChange = isFeatureChange$1;
-	var tslib_1$6 = require$$0$1;
-	var bson_objectid_1$3 = /*#__PURE__*/tslib_1$6.__importDefault(objectid);
+	var tslib_1$7 = require$$0$1;
+	var bson_objectid_1$4 = /*#__PURE__*/tslib_1$7.__importDefault(objectid);
 	var AssemblySpecificChange_1$1 = AssemblySpecificChange$3;
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	function isFeatureChange$1(thing) {
@@ -3935,7 +4234,7 @@
 	  }, {
 	    key: "generateNewIds",
 	    value: function generateNewIds(feature, featureIds) {
-	      var newId = new bson_objectid_1$3["default"]().toHexString();
+	      var newId = new bson_objectid_1$4["default"]().toHexString();
 	      featureIds.push(newId);
 	      var children = {};
 	      if (feature.children) {
@@ -4216,8 +4515,8 @@
 	  value: true
 	});
 	ApolloPlugin$2.ApolloPlugin = void 0;
-	var tslib_1$5 = require$$0$1;
-	var Plugin_1 = /*#__PURE__*/tslib_1$5.__importDefault(require$$1__default["default"]);
+	var tslib_1$6 = require$$0$1;
+	var Plugin_1 = /*#__PURE__*/tslib_1$6.__importDefault(require$$1__default["default"]);
 	var ApolloPlugin$1 = /*#__PURE__*/function (_Plugin_1$default) {
 	  _inherits(ApolloPlugin, _Plugin_1$default);
 	  var _super = /*#__PURE__*/_createSuper(ApolloPlugin);
@@ -4485,8 +4784,8 @@
 	});
 	FeatureChange$1.FeatureChange = void 0;
 	FeatureChange$1.isFeatureChange = isFeatureChange;
-	var tslib_1$4 = require$$0$1;
-	var bson_objectid_1$2 = /*#__PURE__*/tslib_1$4.__importDefault(objectid);
+	var tslib_1$5 = require$$0$1;
+	var bson_objectid_1$3 = /*#__PURE__*/tslib_1$5.__importDefault(objectid);
 	var AssemblySpecificChange_1 = AssemblySpecificChange$1;
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	function isFeatureChange(thing) {
@@ -4576,7 +4875,7 @@
 	  }, {
 	    key: "generateNewIds",
 	    value: function generateNewIds(feature, featureIds) {
-	      var newId = new bson_objectid_1$2["default"]().toHexString();
+	      var newId = new bson_objectid_1$3["default"]().toHexString();
 	      featureIds.push(newId);
 	      var children = {};
 	      if (feature.children) {
@@ -4847,8 +5146,8 @@
 	  value: true
 	});
 	AddAssemblyAliasesChange$1.AddAssemblyAliasesChange = void 0;
-	var common_1$n = dist$1;
-	var util_1$7 = require$$1__default$1["default"];
+	var common_1$o = dist$1;
+	var util_1$9 = require$$1__default$1["default"];
 	var AddAssemblyAliasesChange = /*#__PURE__*/function (_common_1$AssemblySpe) {
 	  _inherits(AddAssemblyAliasesChange, _common_1$AssemblySpe);
 	  var _super = /*#__PURE__*/_createSuper(AddAssemblyAliasesChange);
@@ -4864,7 +5163,7 @@
 	  _createClass(AddAssemblyAliasesChange, [{
 	    key: "executeOnClient",
 	    value: function executeOnClient(clientDataStore) {
-	      var _ref = (0, util_1$7.getSession)(clientDataStore),
+	      var _ref = (0, util_1$9.getSession)(clientDataStore),
 	        assemblyManager = _ref.assemblyManager;
 	      var assembly = assemblyManager.get(this.assembly);
 	      if (!assembly) {
@@ -4940,7 +5239,7 @@
 	    }
 	  }]);
 	  return AddAssemblyAliasesChange;
-	}(common_1$n.AssemblySpecificChange);
+	}(common_1$o.AssemblySpecificChange);
 	AddAssemblyAliasesChange$1.AddAssemblyAliasesChange = AddAssemblyAliasesChange;
 
 	var AddAssemblyAndFeaturesFromFileChange$1 = {};
@@ -4956,7 +5255,7 @@
 	  value: true
 	});
 	annotationFeatureToGFF3$1.annotationFeatureToGFF3 = annotationFeatureToGFF3;
-	var util_1$6 = require$$1__default$1["default"];
+	var util_1$8 = require$$1__default$1["default"];
 	function annotationFeatureToGFF3(feature, parentId, refSeqNames) {
 	  var _feature$attributes, _feature$attributes$g, _feature$attributes2, _feature$attributes3;
 	  // eslint-disable-next-line unicorn/prefer-structured-clone
@@ -5147,7 +5446,7 @@
 	            type: 'intron'
 	          });
 	        }
-	        var _ref3 = (0, util_1$6.intersection2)(cdsMin, cdsMax, _child.min, _child.max),
+	        var _ref3 = (0, util_1$8.intersection2)(cdsMin, cdsMax, _child.min, _child.max),
 	          _ref4 = _slicedToArray(_ref3, 2),
 	          start = _ref4[0],
 	          end = _ref4[1];
@@ -5323,9 +5622,9 @@
 	  value: true
 	});
 	gff3ToAnnotationFeature$1.gff3ToAnnotationFeature = gff3ToAnnotationFeature;
-	var tslib_1$3 = require$$0$1;
-	var util_1$5 = require$$1__default$1["default"];
-	var bson_objectid_1$1 = /*#__PURE__*/tslib_1$3.__importDefault(objectid);
+	var tslib_1$4 = require$$0$1;
+	var util_1$7 = require$$1__default$1["default"];
+	var bson_objectid_1$2 = /*#__PURE__*/tslib_1$4.__importDefault(objectid);
 	var gffReservedKeys_1 = gffReservedKeys;
 	function gff3ToAnnotationFeature(gff3Feature, refSeq, featureIds) {
 	  var _gff3Feature = _slicedToArray(gff3Feature, 1),
@@ -5354,7 +5653,7 @@
 	  var convertedChildren = convertChildren(gff3Feature, refSeq, featureIds);
 	  var convertedAttributes = convertFeatureAttributes$1(gff3Feature);
 	  var feature = {
-	    _id: new bson_objectid_1$1["default"]().toHexString(),
+	    _id: new bson_objectid_1$2["default"]().toHexString(),
 	    refSeq: refSeq !== null && refSeq !== void 0 ? refSeq : refName,
 	    type: type,
 	    min: min,
@@ -5576,7 +5875,7 @@
 	            strand = -1;
 	          }
 	          utrExons.push({
-	            _id: new bson_objectid_1$1["default"]().toHexString(),
+	            _id: new bson_objectid_1$2["default"]().toHexString(),
 	            refSeq: refSeq,
 	            type: 'exon',
 	            min: utr.start - 1,
@@ -5645,7 +5944,7 @@
 	            _strand = -1;
 	          }
 	          var newExon = {
-	            _id: new bson_objectid_1$1["default"]().toHexString(),
+	            _id: new bson_objectid_1$2["default"]().toHexString(),
 	            refSeq: refSeq,
 	            type: 'exon',
 	            min: cds.start - 1,
@@ -5786,7 +6085,7 @@
 	      return false;
 	    }
 	    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-	    return (0, util_1$5.doesIntersect2)(loc.start, loc.end, nextLoc.start, nextLoc.end);
+	    return (0, util_1$7.doesIntersect2)(loc.start, loc.end, nextLoc.start, nextLoc.end);
 	  });
 	  // If no overlaps, assume it's a single CDS feature
 	  if (!overlapping) {
@@ -5809,7 +6108,7 @@
 	        return 1; // continue
 	      }
 	      var overlaps = lastGroup.some(function (lastGroupLoc) {
-	        return (0, util_1$5.doesIntersect2)( /* eslint-disable @typescript-eslint/no-non-null-assertion */
+	        return (0, util_1$7.doesIntersect2)( /* eslint-disable @typescript-eslint/no-non-null-assertion */
 	        lastGroupLoc.start, lastGroupLoc.end, location.start, location.end);
 	      });
 	      if (overlaps) {
@@ -5851,7 +6150,7 @@
 	/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 	/* eslint-disable @typescript-eslint/no-unsafe-call */
 	/* eslint-disable @typescript-eslint/no-unsafe-argument */
-	var common_1$m = dist$1;
+	var common_1$n = dist$1;
 	var GFF3_1 = GFF3;
 	var FromFileBaseChange = /*#__PURE__*/function (_common_1$AssemblySpe) {
 	  _inherits(FromFileBaseChange, _common_1$AssemblySpe);
@@ -5877,7 +6176,7 @@
 	            case 0:
 	              logger = this.logger;
 	              filesService = backend.filesService, refSeqChunkModel = backend.refSeqChunkModel, refSeqModel = backend.refSeqModel, user = backend.user;
-	              CHUNK_SIZE = process$1.env.CHUNK_SIZE;
+	              CHUNK_SIZE = browser$1.env.CHUNK_SIZE;
 	              customChunkSize = CHUNK_SIZE && Number(CHUNK_SIZE);
 	              chunkIndex = 0;
 	              refSeqLen = 0;
@@ -6287,7 +6586,7 @@
 	    }()
 	  }]);
 	  return FromFileBaseChange;
-	}(common_1$m.AssemblySpecificChange);
+	}(common_1$n.AssemblySpecificChange);
 	FromFileBaseChange$1.FromFileBaseChange = FromFileBaseChange;
 
 	/* eslint-disable @typescript-eslint/require-await */
@@ -6363,7 +6662,7 @@
 	              change = _step2.value;
 	              assemblyName = change.assemblyName, fileIds = change.fileIds;
 	              fileId = fileIds.fa;
-	              FILE_UPLOAD_FOLDER = process$1.env.FILE_UPLOAD_FOLDER;
+	              FILE_UPLOAD_FOLDER = browser$1.env.FILE_UPLOAD_FOLDER;
 	              if (FILE_UPLOAD_FOLDER) {
 	                _context.next = 12;
 	                break;
@@ -6396,7 +6695,7 @@
 	            case 23:
 	              _context.next = 25;
 	              return checkModel.find({
-	                "default": true
+	                isDefault: true
 	              }).exec();
 	            case 25:
 	              checkDocs = _context.sent;
@@ -15993,7 +16292,7 @@
 	});
 	AddAssemblyFromExternalChange$1.AddAssemblyFromExternalChange = void 0;
 	/* eslint-disable @typescript-eslint/require-await */
-	var common_1$l = dist$1;
+	var common_1$m = dist$1;
 	var indexedfasta_1$1 = require$$0;
 	var generic_filehandle_1 = require$$2;
 	var AddAssemblyFromExternalChange = /*#__PURE__*/function (_common_1$AssemblySpe) {
@@ -16052,7 +16351,7 @@
 	            case 0:
 	              assemblyModel = backend.assemblyModel, checkModel = backend.checkModel, refSeqModel = backend.refSeqModel, user = backend.user;
 	              assembly = this.assembly, changes = this.changes, logger = this.logger;
-	              CHUNK_SIZE = process$1.env.CHUNK_SIZE;
+	              CHUNK_SIZE = browser$1.env.CHUNK_SIZE;
 	              customChunkSize = CHUNK_SIZE && Number(CHUNK_SIZE);
 	              _iterator = _createForOfIteratorHelper(changes);
 	              _context.prev = 5;
@@ -16231,7 +16530,7 @@
 	    }
 	  }]);
 	  return AddAssemblyFromExternalChange;
-	}(common_1$l.AssemblySpecificChange);
+	}(common_1$m.AssemblySpecificChange);
 	AddAssemblyFromExternalChange$1.AddAssemblyFromExternalChange = AddAssemblyFromExternalChange;
 
 	var AddAssemblyFromFileChange$1 = {};
@@ -16343,9 +16642,9 @@
 	        return _regeneratorRuntime().wrap(function _callee2$(_context2) {
 	          while (1) switch (_context2.prev = _context2.next) {
 	            case 0:
-	              CHUNK_SIZE = process$1.env.CHUNK_SIZE;
+	              CHUNK_SIZE = browser$1.env.CHUNK_SIZE;
 	              customChunkSize = CHUNK_SIZE && Number(CHUNK_SIZE);
-	              FILE_UPLOAD_FOLDER = process$1.env.FILE_UPLOAD_FOLDER;
+	              FILE_UPLOAD_FOLDER = browser$1.env.FILE_UPLOAD_FOLDER;
 	              if (FILE_UPLOAD_FOLDER) {
 	                _context2.next = 5;
 	                break;
@@ -16416,7 +16715,7 @@
 	            case 39:
 	              _context2.next = 41;
 	              return checkModel.find({
-	                "default": true
+	                isDefault: true
 	              }).exec();
 	            case 41:
 	              checkDocs = _context2.sent;
@@ -16617,7 +16916,7 @@
 	/* eslint-disable @typescript-eslint/restrict-template-expressions */
 	/* eslint-disable @typescript-eslint/require-await */
 	/* eslint-disable @typescript-eslint/no-unnecessary-condition */
-	var common_1$k = dist$1;
+	var common_1$l = dist$1;
 	var AddFeatureChange_1 = AddFeatureChange$1;
 	var DeleteFeatureChange = /*#__PURE__*/function (_common_1$FeatureChan) {
 	  _inherits(DeleteFeatureChange, _common_1$FeatureChan);
@@ -16897,7 +17196,7 @@
 	    }
 	  }]);
 	  return DeleteFeatureChange;
-	}(common_1$k.FeatureChange);
+	}(common_1$l.FeatureChange);
 	DeleteFeatureChange$1.DeleteFeatureChange = DeleteFeatureChange;
 	/**
 	 * Delete feature's subfeatures that match an ID and return the IDs of any
@@ -16949,7 +17248,7 @@
 	/* eslint-disable @typescript-eslint/restrict-template-expressions */
 	/* eslint-disable @typescript-eslint/require-await */
 	/* eslint-disable @typescript-eslint/no-unnecessary-condition */
-	var common_1$j = dist$1;
+	var common_1$k = dist$1;
 	var DeleteFeatureChange_1$4 = DeleteFeatureChange$1;
 	var AddFeatureChange = /*#__PURE__*/function (_common_1$FeatureChan) {
 	  _inherits(AddFeatureChange, _common_1$FeatureChan);
@@ -17263,7 +17562,7 @@
 	    }
 	  }]);
 	  return AddFeatureChange;
-	}(common_1$j.FeatureChange);
+	}(common_1$k.FeatureChange);
 	AddFeatureChange$1.AddFeatureChange = AddFeatureChange;
 	function isAddFeatureChange(change) {
 	  return change.typeName === 'AddFeatureChange';
@@ -17354,7 +17653,7 @@
 	              }
 	              change = _step2.value;
 	              fileId = change.fileId;
-	              FILE_UPLOAD_FOLDER = process$1.env.FILE_UPLOAD_FOLDER;
+	              FILE_UPLOAD_FOLDER = browser$1.env.FILE_UPLOAD_FOLDER;
 	              if (FILE_UPLOAD_FOLDER) {
 	                _context.next = 14;
 	                break;
@@ -17518,8 +17817,8 @@
 	  value: true
 	});
 	AddRefSeqAliasesChange$1.AddRefSeqAliasesChange = void 0;
-	var common_1$i = dist$1;
-	var util_1$4 = require$$1__default$1["default"];
+	var common_1$j = dist$1;
+	var util_1$6 = require$$1__default$1["default"];
 	var AddRefSeqAliasesChange = /*#__PURE__*/function (_common_1$AssemblySpe) {
 	  _inherits(AddRefSeqAliasesChange, _common_1$AssemblySpe);
 	  var _super = /*#__PURE__*/_createSuper(AddRefSeqAliasesChange);
@@ -17535,17 +17834,14 @@
 	  _createClass(AddRefSeqAliasesChange, [{
 	    key: "executeOnClient",
 	    value: function executeOnClient(clientDataStore) {
-	      var _ref = (0, util_1$4.getSession)(clientDataStore),
+	      var _assembly$refNameAlia;
+	      var _ref = (0, util_1$6.getSession)(clientDataStore),
 	        assemblyManager = _ref.assemblyManager;
 	      var assembly = assemblyManager.get(this.assembly);
 	      if (!assembly) {
 	        throw new Error("assembly ".concat(this.assembly, " not found"));
 	      }
-	      var sessionAliases = assembly.refNameAliases;
-	      var sessionLCAliases = assembly.lowerCaseRefNameAliases;
-	      if (!sessionAliases || !sessionLCAliases) {
-	        throw new Error('Session refNameAliases not found in assembly');
-	      }
+	      var sessionAliases = (_assembly$refNameAlia = assembly.refNameAliases) !== null && _assembly$refNameAlia !== void 0 ? _assembly$refNameAlia : {};
 	      var _iterator = _createForOfIteratorHelper(this.refSeqAliases),
 	        _step;
 	      try {
@@ -17559,7 +17855,6 @@
 	            for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
 	              var alias = _step2.value;
 	              sessionAliases[alias] = refName;
-	              sessionLCAliases[alias.toLowerCase()] = refName;
 	            }
 	          } catch (err) {
 	            _iterator2.e(err);
@@ -17572,7 +17867,7 @@
 	      } finally {
 	        _iterator.f();
 	      }
-	      assembly.setRefNameAliases(sessionAliases, sessionLCAliases);
+	      assembly.setRefNameAliases(sessionAliases);
 	      return Promise.resolve();
 	    }
 	  }, {
@@ -17660,7 +17955,7 @@
 	    }
 	  }]);
 	  return AddRefSeqAliasesChange;
-	}(common_1$i.AssemblySpecificChange);
+	}(common_1$j.AssemblySpecificChange);
 	AddRefSeqAliasesChange$1.AddRefSeqAliasesChange = AddRefSeqAliasesChange;
 
 	var DeleteAssemblyChange$1 = {};
@@ -17673,8 +17968,8 @@
 	/* eslint-disable @typescript-eslint/require-await */
 	/* eslint-disable @typescript-eslint/no-unnecessary-condition */
 	/* eslint-disable @typescript-eslint/no-unsafe-call */
-	var common_1$h = dist$1;
-	var util_1$3 = require$$1__default$1["default"];
+	var common_1$i = dist$1;
+	var util_1$5 = require$$1__default$1["default"];
 	var DeleteAssemblyChange = /*#__PURE__*/function (_common_1$AssemblySpe) {
 	  _inherits(DeleteAssemblyChange, _common_1$AssemblySpe);
 	  var _super = /*#__PURE__*/_createSuper(DeleteAssemblyChange);
@@ -17805,7 +18100,7 @@
 	              }
 	              throw new Error('No data store');
 	            case 3:
-	              session = (0, util_1$3.getSession)(dataStore); // If assemblyId is not present in client data store
+	              session = (0, util_1$5.getSession)(dataStore); // If assemblyId is not present in client data store
 	              if (dataStore.assemblies.has(assembly)) {
 	                dataStore.deleteAssembly(assembly);
 	              }
@@ -17839,7 +18134,7 @@
 	    }
 	  }]);
 	  return DeleteAssemblyChange;
-	}(common_1$h.AssemblySpecificChange);
+	}(common_1$i.AssemblySpecificChange);
 	DeleteAssemblyChange$1.DeleteAssemblyChange = DeleteAssemblyChange;
 
 	var DeleteUserChange$1 = {};
@@ -17849,7 +18144,7 @@
 	});
 	DeleteUserChange$1.DeleteUserChange = void 0;
 	/* eslint-disable @typescript-eslint/require-await */
-	var common_1$g = dist$1;
+	var common_1$h = dist$1;
 	var DeleteUserChange = /*#__PURE__*/function (_common_1$Change) {
 	  _inherits(DeleteUserChange, _common_1$Change);
 	  var _super = /*#__PURE__*/_createSuper(DeleteUserChange);
@@ -17969,7 +18264,7 @@
 	    }
 	  }]);
 	  return DeleteUserChange;
-	}(common_1$g.Change);
+	}(common_1$h.Change);
 	DeleteUserChange$1.DeleteUserChange = DeleteUserChange;
 
 	var FeatureAttributeChange$1 = {};
@@ -17982,7 +18277,7 @@
 	/* eslint-disable @typescript-eslint/restrict-template-expressions */
 	/* eslint-disable @typescript-eslint/require-await */
 	/* eslint-disable @typescript-eslint/no-unnecessary-condition */
-	var common_1$f = dist$1;
+	var common_1$g = dist$1;
 	var FeatureAttributeChange = /*#__PURE__*/function (_common_1$FeatureChan) {
 	  _inherits(FeatureAttributeChange, _common_1$FeatureChan);
 	  var _super = /*#__PURE__*/_createSuper(FeatureAttributeChange);
@@ -18251,7 +18546,7 @@
 	    }
 	  }]);
 	  return FeatureAttributeChange;
-	}(common_1$f.FeatureChange);
+	}(common_1$g.FeatureChange);
 	FeatureAttributeChange$1.FeatureAttributeChange = FeatureAttributeChange;
 	function isFeatureAttributeChange(change) {
 	  return change.typeName === 'FeatureAttributeChange';
@@ -18267,7 +18562,7 @@
 	ImportJBrowseConfigChange$1.ImportJBrowseConfigChange = void 0;
 	ImportJBrowseConfigChange$1.filterJBrowseConfig = filterJBrowseConfig;
 	/* eslint-disable @typescript-eslint/require-await */
-	var common_1$e = dist$1;
+	var common_1$f = dist$1;
 	function filterJBrowseConfig(config) {
 	  var _configuration$Apollo;
 	  var assemblies = config.assemblies,
@@ -18421,7 +18716,7 @@
 	    }
 	  }]);
 	  return ImportJBrowseConfigChange;
-	}(common_1$e.Change);
+	}(common_1$f.Change);
 	ImportJBrowseConfigChange$1.ImportJBrowseConfigChange = ImportJBrowseConfigChange;
 
 	var LocationEndChange$1 = {};
@@ -18434,7 +18729,7 @@
 	/* eslint-disable @typescript-eslint/restrict-template-expressions */
 	/* eslint-disable @typescript-eslint/require-await */
 	/* eslint-disable @typescript-eslint/no-unnecessary-condition */
-	var common_1$d = dist$1;
+	var common_1$e = dist$1;
 	var LocationEndChange = /*#__PURE__*/function (_common_1$FeatureChan) {
 	  _inherits(LocationEndChange, _common_1$FeatureChan);
 	  var _super = /*#__PURE__*/_createSuper(LocationEndChange);
@@ -18736,7 +19031,7 @@
 	    }
 	  }]);
 	  return LocationEndChange;
-	}(common_1$d.FeatureChange);
+	}(common_1$e.FeatureChange);
 	LocationEndChange$1.LocationEndChange = LocationEndChange;
 	function isLocationEndChange(change) {
 	  return change.typeName === 'LocationEndChange';
@@ -18752,7 +19047,7 @@
 	/* eslint-disable @typescript-eslint/restrict-template-expressions */
 	/* eslint-disable @typescript-eslint/require-await */
 	/* eslint-disable @typescript-eslint/no-unnecessary-condition */
-	var common_1$c = dist$1;
+	var common_1$d = dist$1;
 	var LocationStartChange = /*#__PURE__*/function (_common_1$FeatureChan) {
 	  _inherits(LocationStartChange, _common_1$FeatureChan);
 	  var _super = /*#__PURE__*/_createSuper(LocationStartChange);
@@ -19054,13 +19349,79 @@
 	    }
 	  }]);
 	  return LocationStartChange;
-	}(common_1$c.FeatureChange);
+	}(common_1$d.FeatureChange);
 	LocationStartChange$1.LocationStartChange = LocationStartChange;
 	function isLocationStartChange(change) {
 	  return change.typeName === 'LocationStartChange';
 	}
 
 	var MergeExonsChange$1 = {};
+
+	var util$1 = {};
+
+	Object.defineProperty(util$1, "__esModule", {
+	  value: true
+	});
+	util$1.splitStringIntoChunks = splitStringIntoChunks;
+	util$1.getPrintableId = getPrintableId;
+	util$1.attributesToRecords = attributesToRecords;
+	util$1.stringifyAttributes = stringifyAttributes;
+	function splitStringIntoChunks(input, chunkSize) {
+	  var chunks = [];
+	  for (var i = 0; i < input.length; i += chunkSize) {
+	    var chunk = input.slice(i, i + chunkSize);
+	    chunks.push(chunk);
+	  }
+	  return chunks;
+	}
+	function getPrintableId(feature) {
+	  var _ff$attributes$get, _ff$attributes$get2;
+	  var ff = feature;
+	  var gff_id = (_ff$attributes$get = ff.attributes.get('gff_id')) === null || _ff$attributes$get === void 0 ? void 0 : _ff$attributes$get.join(',');
+	  if (gff_id) {
+	    return "ID=".concat(gff_id, " (_id: ").concat(feature._id.toString(), ")");
+	  }
+	  var gff_name = (_ff$attributes$get2 = ff.attributes.get('gff_name')) === null || _ff$attributes$get2 === void 0 ? void 0 : _ff$attributes$get2.join(',');
+	  if (gff_name) {
+	    return "Name=".concat(gff_name, " (_id: ").concat(feature._id.toString(), ")");
+	  }
+	  return "_id: ".concat(feature._id.toString());
+	}
+	function attributesToRecords(attributes) {
+	  var records = {};
+	  if (!attributes) {
+	    return records;
+	  }
+	  for (var _i = 0, _Object$entries = Object.entries(attributes); _i < _Object$entries.length; _i++) {
+	    var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
+	      key = _Object$entries$_i[0],
+	      value = _Object$entries$_i[1];
+	    records[key] = value === null || value === void 0 ? void 0 : value.slice();
+	  }
+	  return records;
+	}
+	function stringifyAttributes(attributes) {
+	  if (!attributes) {
+	    return '';
+	  }
+	  var str = [];
+	  for (var _i2 = 0, _Object$entries2 = Object.entries(attributes); _i2 < _Object$entries2.length; _i2++) {
+	    var _Object$entries2$_i = _slicedToArray(_Object$entries2[_i2], 2),
+	      key = _Object$entries2$_i[0],
+	      value = _Object$entries2$_i[1];
+	    var attributeName = key;
+	    if (attributeName.startsWith('gff_')) {
+	      attributeName = attributeName.slice(4);
+	      attributeName = attributeName.charAt(0).toUpperCase() + attributeName.slice(1);
+	    }
+	    if (value) {
+	      str.push("".concat(attributeName, "=").concat(value.join(',')));
+	    } else {
+	      str.push(attributeName);
+	    }
+	  }
+	  return encodeURIComponent(str.join(';'));
+	}
 
 	var UndoMergeExonsChange$1 = {};
 
@@ -19069,7 +19430,7 @@
 	  value: true
 	});
 	UndoMergeExonsChange$1.UndoMergeExonsChange = void 0;
-	var common_1$b = dist$1;
+	var common_1$c = dist$1;
 	var MergeExonsChange_1 = MergeExonsChange$1;
 	var UndoMergeExonsChange = /*#__PURE__*/function (_common_1$FeatureChan) {
 	  _inherits(UndoMergeExonsChange, _common_1$FeatureChan);
@@ -19321,16 +19682,18 @@
 	    }
 	  }]);
 	  return UndoMergeExonsChange;
-	}(common_1$b.FeatureChange);
+	}(common_1$c.FeatureChange);
 	UndoMergeExonsChange$1.UndoMergeExonsChange = UndoMergeExonsChange;
 
+	/* eslint-disable unicorn/prefer-structured-clone */
 	/* eslint-disable @typescript-eslint/require-await */
 	/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 	Object.defineProperty(MergeExonsChange$1, "__esModule", {
 	  value: true
 	});
 	MergeExonsChange$1.MergeExonsChange = void 0;
-	var common_1$a = dist$1;
+	var common_1$b = dist$1;
+	var util_1$4 = util$1;
 	var DeleteFeatureChange_1$3 = DeleteFeatureChange$1;
 	var UndoMergeExonsChange_1 = UndoMergeExonsChange$1;
 	var MergeExonsChange = /*#__PURE__*/function (_common_1$FeatureChan) {
@@ -19394,7 +19757,7 @@
 	              _iterator = _createForOfIteratorHelper(changes);
 	              _context2.prev = 3;
 	              _loop = /*#__PURE__*/_regeneratorRuntime().mark(function _loop() {
-	                var change, firstExon, secondExon, topLevelFeature, errMsg, mergedExon, _errMsg, deletedIds;
+	                var change, firstExon, secondExon, topLevelFeature, errMsg, mergedExon, _errMsg, mergedAttributes, deletedIds;
 	                return _regeneratorRuntime().wrap(function _loop$(_context) {
 	                  while (1) switch (_context.prev = _context.next) {
 	                    case 0:
@@ -19425,15 +19788,17 @@
 	                    case 14:
 	                      mergedExon.min = Math.min(firstExon.min, secondExon.min);
 	                      mergedExon.max = Math.max(firstExon.max, secondExon.max);
-	                      mergedExon.attributes = _this2.mergeAttributes(firstExon, secondExon);
+	                      mergedAttributes = mergedExon.attributes ? JSON.parse(JSON.stringify(mergedExon.attributes)) : {};
+	                      mergedAttributes.merged_with = [(0, util_1$4.stringifyAttributes)((0, util_1$4.attributesToRecords)(secondExon.attributes))];
+	                      mergedExon.attributes = mergedAttributes;
 	                      deletedIds = (0, DeleteFeatureChange_1$3.findAndDeleteChildFeature)(topLevelFeature, secondExon._id, _this2);
 	                      deletedIds.push(secondExon._id);
 	                      topLevelFeature.allIds = topLevelFeature.allIds.filter(function (id) {
 	                        return !deletedIds.includes(id);
 	                      });
-	                      _context.next = 22;
+	                      _context.next = 24;
 	                      return topLevelFeature.save();
-	                    case 22:
+	                    case 24:
 	                    case "end":
 	                      return _context.stop();
 	                  }
@@ -19494,7 +19859,7 @@
 	    key: "executeOnClient",
 	    value: function () {
 	      var _executeOnClient = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(dataStore) {
-	        var _iterator2, _step2, _mergedExon$parent, change, firstExon, secondExon, mergedExon, mergedAttrs, _i, _Object$keys, key;
+	        var _iterator2, _step2, _mergedExon$attribute, _mergedExon$attribute2, _mergedExon$parent, change, firstExon, secondExon, mergedExon, mrg, mergedWith;
 	        return _regeneratorRuntime().wrap(function _callee3$(_context4) {
 	          while (1) switch (_context4.prev = _context4.next) {
 	            case 0:
@@ -19509,7 +19874,7 @@
 	              _iterator2.s();
 	            case 5:
 	              if ((_step2 = _iterator2.n()).done) {
-	                _context4.next = 19;
+	                _context4.next = 20;
 	                break;
 	              }
 	              change = _step2.value;
@@ -19523,32 +19888,32 @@
 	            case 11:
 	              mergedExon.setMin(Math.min(firstExon.min, secondExon.min));
 	              mergedExon.setMax(Math.max(firstExon.max, secondExon.max));
-	              mergedAttrs = this.mergeAttributes(firstExon, secondExon);
-	              mergedExon.setAttributes(new Map());
-	              for (_i = 0, _Object$keys = Object.keys(mergedAttrs); _i < _Object$keys.length; _i++) {
-	                key = _Object$keys[_i];
-	                mergedExon.setAttribute(key, mergedAttrs[key]);
+	              mrg = (_mergedExon$attribute = (_mergedExon$attribute2 = mergedExon.attributes.get('merged_with')) === null || _mergedExon$attribute2 === void 0 ? void 0 : _mergedExon$attribute2.slice()) !== null && _mergedExon$attribute !== void 0 ? _mergedExon$attribute : [];
+	              mergedWith = (0, util_1$4.stringifyAttributes)((0, util_1$4.attributesToRecords)(secondExon.attributes));
+	              if (!mrg.includes(mergedWith)) {
+	                mrg.push(mergedWith);
 	              }
+	              mergedExon.setAttribute('merged_with', mrg);
 	              (_mergedExon$parent = mergedExon.parent) === null || _mergedExon$parent === void 0 || _mergedExon$parent.deleteChild(secondExon._id);
-	            case 17:
+	            case 18:
 	              _context4.next = 5;
 	              break;
-	            case 19:
-	              _context4.next = 24;
+	            case 20:
+	              _context4.next = 25;
 	              break;
-	            case 21:
-	              _context4.prev = 21;
+	            case 22:
+	              _context4.prev = 22;
 	              _context4.t0 = _context4["catch"](3);
 	              _iterator2.e(_context4.t0);
-	            case 24:
-	              _context4.prev = 24;
+	            case 25:
+	              _context4.prev = 25;
 	              _iterator2.f();
-	              return _context4.finish(24);
-	            case 27:
+	              return _context4.finish(25);
+	            case 28:
 	            case "end":
 	              return _context4.stop();
 	          }
-	        }, _callee3, this, [[3, 21, 24, 27]]);
+	        }, _callee3, this, [[3, 22, 25, 28]]);
 	      }));
 	      function executeOnClient(_x3) {
 	        return _executeOnClient.apply(this, arguments);
@@ -19580,40 +19945,9 @@
 	        logger: logger
 	      });
 	    }
-	  }, {
-	    key: "mergeAttributes",
-	    value: function mergeAttributes(firstExon, secondExon) {
-	      var mergedAttrs = {};
-	      if (firstExon.attributes) {
-	        // eslint-disable-next-line unicorn/prefer-structured-clone
-	        mergedAttrs = JSON.parse(JSON.stringify(firstExon.attributes));
-	      }
-	      if (secondExon.attributes) {
-	        // eslint-disable-next-line unicorn/prefer-structured-clone
-	        var attrs = JSON.parse(JSON.stringify(secondExon.attributes));
-	        var _loop2 = function _loop2() {
-	          var key = _Object$keys2[_i2];
-	          if (key === '_id' || key === 'gff_id') {
-	            return 1; // continue
-	          }
-	          if (!Object.keys(mergedAttrs).includes(key)) {
-	            mergedAttrs[key] = [];
-	          }
-	          attrs[key].map(function (x) {
-	            if (!mergedAttrs[key].includes(x)) {
-	              mergedAttrs[key].push(x);
-	            }
-	          });
-	        };
-	        for (var _i2 = 0, _Object$keys2 = Object.keys(attrs); _i2 < _Object$keys2.length; _i2++) {
-	          if (_loop2()) continue;
-	        }
-	      }
-	      return mergedAttrs;
-	    }
 	  }]);
 	  return MergeExonsChange;
-	}(common_1$a.FeatureChange);
+	}(common_1$b.FeatureChange);
 	MergeExonsChange$1.MergeExonsChange = MergeExonsChange;
 
 	var MergeTranscriptsChange$1 = {};
@@ -19625,7 +19959,7 @@
 	  value: true
 	});
 	UndoMergeTranscriptsChange$1.UndoMergeTranscriptsChange = void 0;
-	var common_1$9 = dist$1;
+	var common_1$a = dist$1;
 	var MergeTranscriptsChange_1 = MergeTranscriptsChange$1;
 	var UndoMergeTranscriptsChange = /*#__PURE__*/function (_common_1$FeatureChan) {
 	  _inherits(UndoMergeTranscriptsChange, _common_1$FeatureChan);
@@ -19877,7 +20211,7 @@
 	    }
 	  }]);
 	  return UndoMergeTranscriptsChange;
-	}(common_1$9.FeatureChange);
+	}(common_1$a.FeatureChange);
 	UndoMergeTranscriptsChange$1.UndoMergeTranscriptsChange = UndoMergeTranscriptsChange;
 
 	/* eslint-disable unicorn/prefer-structured-clone */
@@ -19887,8 +20221,10 @@
 	  value: true
 	});
 	MergeTranscriptsChange$1.MergeTranscriptsChange = void 0;
-	var common_1$8 = dist$1;
-	var util_1$2 = require$$1__default$1["default"];
+	var common_1$9 = dist$1;
+	var util_1$3 = require$$1__default$1["default"];
+	var mobx_state_tree_1$2 = require$$1__default$2["default"];
+	var util_2 = util$1;
 	var DeleteFeatureChange_1$2 = DeleteFeatureChange$1;
 	var UndoMergeTranscriptsChange_1 = UndoMergeTranscriptsChange$1;
 	var MergeTranscriptsChange = /*#__PURE__*/function (_common_1$FeatureChan) {
@@ -19903,7 +20239,13 @@
 	    _this.changes = 'changes' in json ? json.changes : [json];
 	    return _this;
 	  }
+	  // eslint-disable-next-line @typescript-eslint/class-literal-property-style
 	  _createClass(MergeTranscriptsChange, [{
+	    key: "notification",
+	    get: function get() {
+	      return 'Transcripts successfully merged';
+	    }
+	  }, {
 	    key: "toJSON",
 	    value: function toJSON() {
 	      var assembly = this.assembly,
@@ -20026,7 +20368,14 @@
 	    value: function mergeTranscriptsOnServer(firstTranscript, secondTranscript) {
 	      firstTranscript.min = Math.min(firstTranscript.min, secondTranscript.min);
 	      firstTranscript.max = Math.max(firstTranscript.max, secondTranscript.max);
-	      this.mergeTranscriptAttributes(firstTranscript, secondTranscript);
+	      var mergedAttributes = firstTranscript.attributes ? JSON.parse(JSON.stringify(firstTranscript.attributes)) : {};
+	      if (secondTranscript.attributes) {
+	        if (!Object.keys(mergedAttributes).includes('merged_with')) {
+	          mergedAttributes.merged_with = [];
+	        }
+	        mergedAttributes.merged_with.push((0, util_2.stringifyAttributes)((0, util_2.attributesToRecords)(secondTranscript.attributes)));
+	      }
+	      firstTranscript.attributes = mergedAttributes;
 	      if (secondTranscript.children) {
 	        for (var _i = 0, _Object$entries = Object.entries(secondTranscript.children); _i < _Object$entries.length; _i++) {
 	          var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
@@ -20044,22 +20393,38 @@
 	      }
 	      var merged = false;
 	      var mrgChild;
+	      var toDelete;
 	      var _iterator2 = _createForOfIteratorHelper(firstTranscript.children),
 	        _step2;
 	      try {
 	        for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
 	          var _step2$value = _slicedToArray(_step2.value, 2),
-	            fKey = _step2$value[0],
 	            firstFeatureChild = _step2$value[1];
 	          if (!merged || !mrgChild) {
+	            toDelete = false;
 	            mrgChild = firstFeatureChild;
+	          } else {
+	            toDelete = true;
 	          }
-	          if (mrgChild.type === secondFeatureChild.type && mrgChild.type === firstFeatureChild.type && (0, util_1$2.doesIntersect2)(secondFeatureChild.min, secondFeatureChild.max, mrgChild.min, mrgChild.max) && (0, util_1$2.doesIntersect2)(firstFeatureChild.min, firstFeatureChild.max, mrgChild.min, mrgChild.max)) {
+	          if (mrgChild.type === secondFeatureChild.type && mrgChild.type === firstFeatureChild.type && (0, util_1$3.doesIntersect2)(secondFeatureChild.min, secondFeatureChild.max, mrgChild.min, mrgChild.max) && (0, util_1$3.doesIntersect2)(firstFeatureChild.min, firstFeatureChild.max, mrgChild.min, mrgChild.max)) {
 	            mrgChild.min = Math.min(secondFeatureChild.min, mrgChild.min, firstFeatureChild.min);
 	            mrgChild.max = Math.max(secondFeatureChild.max, mrgChild.max, firstFeatureChild.max);
-	            var mergedAttrs = this.mergeAttributes(mrgChild, secondFeatureChild);
-	            mrgChild.attributes = mergedAttrs;
-	            firstTranscript.children["delete"](fKey);
+	            if (!mrgChild.attributes) {
+	              mrgChild.attributes = {};
+	            }
+	            var mrgChildAttr = JSON.parse(JSON.stringify(mrgChild.attributes));
+	            if (!Object.keys(mrgChildAttr).includes('merged_with')) {
+	              mrgChildAttr.merged_with = [];
+	            }
+	            var mergedWithAttributes = mrgChildAttr.merged_with;
+	            mergedWithAttributes.push((0, util_2.stringifyAttributes)((0, util_2.attributesToRecords)(secondFeatureChild.attributes)));
+	            if (toDelete) {
+	              var recs = firstFeatureChild.attributes ? JSON.parse(JSON.stringify(firstFeatureChild.attributes)) : undefined;
+	              mergedWithAttributes.push((0, util_2.stringifyAttributes)(recs));
+	              firstTranscript.children["delete"](firstFeatureChild._id.toString());
+	            }
+	            mrgChildAttr.merged_with = _toConsumableArray(new Set(mergedWithAttributes));
+	            mrgChild.attributes = mrgChildAttr;
 	            merged = true;
 	          }
 	        }
@@ -20147,9 +20512,16 @@
 	  }, {
 	    key: "mergeTranscriptsOnClient",
 	    value: function mergeTranscriptsOnClient(firstTranscript, secondTranscript) {
+	      var _firstTranscript$attr, _firstTranscript$attr2;
 	      firstTranscript.setMin(Math.min(firstTranscript.min, secondTranscript.min));
 	      firstTranscript.setMax(Math.max(firstTranscript.max, secondTranscript.max));
-	      this.mergeTranscriptAttributes(firstTranscript, secondTranscript);
+	      var mrg = (_firstTranscript$attr = (_firstTranscript$attr2 = firstTranscript.attributes.get('merged_with')) === null || _firstTranscript$attr2 === void 0 ? void 0 : _firstTranscript$attr2.slice()) !== null && _firstTranscript$attr !== void 0 ? _firstTranscript$attr : [];
+	      var mergedWith = (0, util_2.stringifyAttributes)((0, util_2.attributesToRecords)(secondTranscript.attributes));
+	      if (!mrg.includes(mergedWith)) {
+	        // executeOnClient runs twice (?!) so avoid adding this key again
+	        mrg.push(mergedWith);
+	      }
+	      firstTranscript.setAttribute('merged_with', mrg);
 	      if (secondTranscript.children) {
 	        for (var _i2 = 0, _Object$entries2 = Object.entries(secondTranscript.children); _i2 < _Object$entries2.length; _i2++) {
 	          var _Object$entries2$_i = _slicedToArray(_Object$entries2[_i2], 2),
@@ -20179,21 +20551,17 @@
 	          } else {
 	            toDelete = true;
 	          }
-	          if (mrgChild.type === secondFeatureChild.type && mrgChild.type === firstFeatureChild.type && (0, util_1$2.doesIntersect2)(secondFeatureChild.min, secondFeatureChild.max, mrgChild.min, mrgChild.max) && (0, util_1$2.doesIntersect2)(firstFeatureChild.min, firstFeatureChild.max, mrgChild.min, mrgChild.max)) {
+	          if (mrgChild.type === secondFeatureChild.type && mrgChild.type === firstFeatureChild.type && (0, util_1$3.doesIntersect2)(secondFeatureChild.min, secondFeatureChild.max, mrgChild.min, mrgChild.max) && (0, util_1$3.doesIntersect2)(firstFeatureChild.min, firstFeatureChild.max, mrgChild.min, mrgChild.max)) {
+	            var _mrgChild$attributes$, _mrgChild$attributes$2;
 	            mrgChild.setMin(Math.min(secondFeatureChild.min, mrgChild.min, firstFeatureChild.min));
 	            mrgChild.setMax(Math.max(secondFeatureChild.max, mrgChild.max, firstFeatureChild.max));
-	            var mergedAttrs = this.mergeAttributes(mrgChild, secondFeatureChild);
-	            Object.entries(mergedAttrs).map(function (_ref5) {
-	              var _ref6 = _slicedToArray(_ref5, 2),
-	                key = _ref6[0],
-	                value = _ref6[1];
-	              if (mrgChild) {
-	                mrgChild.setAttribute(key, value);
-	              }
-	            });
+	            var mergedWithAttributes = (_mrgChild$attributes$ = (_mrgChild$attributes$2 = mrgChild.attributes.get('merged_with')) === null || _mrgChild$attributes$2 === void 0 ? void 0 : _mrgChild$attributes$2.slice()) !== null && _mrgChild$attributes$ !== void 0 ? _mrgChild$attributes$ : [];
+	            mergedWithAttributes.push((0, util_2.stringifyAttributes)((0, util_2.attributesToRecords)(secondFeatureChild.attributes)));
 	            if (toDelete) {
+	              mergedWithAttributes.push((0, util_2.stringifyAttributes)((0, mobx_state_tree_1$2.getSnapshot)(firstFeatureChild).attributes));
 	              firstTranscript.deleteChild(firstFeatureChild._id);
 	            }
+	            mrgChild.setAttribute('merged_with', _toConsumableArray(new Set(mergedWithAttributes)));
 	            merged = true;
 	          }
 	        }
@@ -20209,26 +20577,13 @@
 	          mrgChild.addChild(child);
 	        });
 	      }
-	      if (!(merged && mrgChild)) {
+	      if (merged && mrgChild) {
+	        firstTranscript.addChild((0, mobx_state_tree_1$2.getSnapshot)(mrgChild));
+	      } else {
 	        // This secondFeatureChild has no overlap with any feature in the
 	        // receiving transcript so we add it as it is to the receiving transcript
 	        firstTranscript.addChild(secondFeatureChild);
 	      }
-	    }
-	    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-	  }, {
-	    key: "isAnnotationFeature",
-	    value: function isAnnotationFeature(obj) {
-	      return (
-	        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-	        typeof obj.setMin === 'function' &&
-	        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-	        typeof obj.setMax === 'function' &&
-	        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-	        typeof obj.addChild === 'function' &&
-	        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-	        typeof obj.deleteChild === 'function'
-	      );
 	    }
 	  }, {
 	    key: "executeOnLocalGFF3",
@@ -20248,44 +20603,7 @@
 	        return _executeOnLocalGFF.apply(this, arguments);
 	      }
 	      return executeOnLocalGFF3;
-	    }() /* Merge attributes from source into destination */
-	  }, {
-	    key: "mergeAttributes",
-	    value: function mergeAttributes(destination, source) {
-	      var destAttrs = destination.attributes ? JSON.parse(JSON.stringify(destination.attributes)) : {};
-	      if (source.attributes) {
-	        var sourceAttrs = JSON.parse(JSON.stringify(source.attributes));
-	        Object.entries(sourceAttrs).map(function (_ref7) {
-	          var _ref8 = _slicedToArray(_ref7, 2),
-	            key = _ref8[0],
-	            value = _ref8[1];
-	          if (!(key in destAttrs)) {
-	            destAttrs[key] = [];
-	          }
-	          value.map(function (x) {
-	            if (!destAttrs[key].includes(x)) {
-	              destAttrs[key].push(x);
-	            }
-	          });
-	        });
-	      }
-	      return destAttrs;
-	    }
-	  }, {
-	    key: "mergeTranscriptAttributes",
-	    value: function mergeTranscriptAttributes(firstTranscript, secondTranscript) {
-	      var txAttrs = this.mergeAttributes(firstTranscript, secondTranscript);
-	      if (this.isAnnotationFeature(firstTranscript)) {
-	        Object.entries(txAttrs).map(function (_ref9) {
-	          var _ref10 = _slicedToArray(_ref9, 2),
-	            key = _ref10[0],
-	            value = _ref10[1];
-	          firstTranscript.setAttribute(key, value);
-	        });
-	      } else {
-	        firstTranscript.attributes = txAttrs;
-	      }
-	    }
+	    }()
 	  }, {
 	    key: "getInverse",
 	    value: function getInverse() {
@@ -20313,7 +20631,7 @@
 	    }
 	  }]);
 	  return MergeTranscriptsChange;
-	}(common_1$8.FeatureChange);
+	}(common_1$9.FeatureChange);
 	MergeTranscriptsChange$1.MergeTranscriptsChange = MergeTranscriptsChange;
 
 	var SplitExonChange$1 = {};
@@ -20325,7 +20643,7 @@
 	  value: true
 	});
 	UndoSplitExonChange$1.UndoSplitExonChange = void 0;
-	var common_1$7 = dist$1;
+	var common_1$8 = dist$1;
 	var DeleteFeatureChange_1$1 = DeleteFeatureChange$1;
 	var SplitExonChange_1 = SplitExonChange$1;
 	var UndoSplitExonChange = /*#__PURE__*/function (_common_1$FeatureChan) {
@@ -20600,7 +20918,7 @@
 	    }
 	  }]);
 	  return UndoSplitExonChange;
-	}(common_1$7.FeatureChange);
+	}(common_1$8.FeatureChange);
 	UndoSplitExonChange$1.UndoSplitExonChange = UndoSplitExonChange;
 
 	/* eslint-disable @typescript-eslint/require-await */
@@ -20609,7 +20927,7 @@
 	  value: true
 	});
 	SplitExonChange$1.SplitExonChange = void 0;
-	var common_1$6 = dist$1;
+	var common_1$7 = dist$1;
 	var DeleteFeatureChange_1 = DeleteFeatureChange$1;
 	var UndoSplitExonChange_1 = UndoSplitExonChange$1;
 	var SplitExonChange = /*#__PURE__*/function (_common_1$FeatureChan) {
@@ -20907,7 +21225,7 @@
 	    }
 	  }]);
 	  return SplitExonChange;
-	}(common_1$6.FeatureChange);
+	}(common_1$7.FeatureChange);
 	SplitExonChange$1.SplitExonChange = SplitExonChange;
 
 	var StrandChange$1 = {};
@@ -20919,7 +21237,7 @@
 	/* eslint-disable @typescript-eslint/restrict-template-expressions */
 	/* eslint-disable @typescript-eslint/require-await */
 	/* eslint-disable @typescript-eslint/no-unnecessary-condition */
-	var common_1$5 = dist$1;
+	var common_1$6 = dist$1;
 	var StrandChange = /*#__PURE__*/function (_common_1$FeatureChan) {
 	  _inherits(StrandChange, _common_1$FeatureChan);
 	  var _super = /*#__PURE__*/_createSuper(StrandChange);
@@ -21197,7 +21515,7 @@
 	    }
 	  }]);
 	  return StrandChange;
-	}(common_1$5.FeatureChange);
+	}(common_1$6.FeatureChange);
 	StrandChange$1.StrandChange = StrandChange;
 
 	var TypeChange$1 = {};
@@ -21209,7 +21527,7 @@
 	/* eslint-disable @typescript-eslint/restrict-template-expressions */
 	/* eslint-disable @typescript-eslint/require-await */
 	/* eslint-disable @typescript-eslint/no-unnecessary-condition */
-	var common_1$4 = dist$1;
+	var common_1$5 = dist$1;
 	var TypeChange = /*#__PURE__*/function (_common_1$FeatureChan) {
 	  _inherits(TypeChange, _common_1$FeatureChan);
 	  var _super = /*#__PURE__*/_createSuper(TypeChange);
@@ -21487,7 +21805,7 @@
 	    }
 	  }]);
 	  return TypeChange;
-	}(common_1$4.FeatureChange);
+	}(common_1$5.FeatureChange);
 	TypeChange$1.TypeChange = TypeChange;
 
 	var UserChange$1 = {};
@@ -21497,7 +21815,7 @@
 	});
 	UserChange$1.UserChange = void 0;
 	/* eslint-disable @typescript-eslint/require-await */
-	var common_1$3 = dist$1;
+	var common_1$4 = dist$1;
 	var UserChange = /*#__PURE__*/function (_common_1$Change) {
 	  _inherits(UserChange, _common_1$Change);
 	  var _super = /*#__PURE__*/_createSuper(UserChange);
@@ -21645,7 +21963,7 @@
 	    }
 	  }]);
 	  return UserChange;
-	}(common_1$3.Change);
+	}(common_1$4.Change);
 	UserChange$1.UserChange = UserChange;
 
 	(function (exports) {
@@ -21737,7 +22055,7 @@
 	});
 	GetAssembliesOperation$1.GetAssembliesOperation = void 0;
 	/* eslint-disable @typescript-eslint/require-await */
-	var common_1$2 = dist$1;
+	var common_1$3 = dist$1;
 	var GetAssembliesOperation = /*#__PURE__*/function (_common_1$Operation) {
 	  _inherits(GetAssembliesOperation, _common_1$Operation);
 	  var _super = /*#__PURE__*/_createSuper(GetAssembliesOperation);
@@ -21787,7 +22105,7 @@
 	    }()
 	  }]);
 	  return GetAssembliesOperation;
-	}(common_1$2.Operation);
+	}(common_1$3.Operation);
 	GetAssembliesOperation$1.GetAssembliesOperation = GetAssembliesOperation;
 
 	var GetFeaturesOperation$1 = {};
@@ -21797,7 +22115,7 @@
 	});
 	GetFeaturesOperation$1.GetFeaturesOperation = void 0;
 	/* eslint-disable @typescript-eslint/require-await */
-	var common_1$1 = dist$1;
+	var common_1$2 = dist$1;
 	var GetFeaturesOperation = /*#__PURE__*/function (_common_1$Operation) {
 	  _inherits(GetFeaturesOperation, _common_1$Operation);
 	  var _super = /*#__PURE__*/_createSuper(GetFeaturesOperation);
@@ -21869,7 +22187,7 @@
 	    }()
 	  }]);
 	  return GetFeaturesOperation;
-	}(common_1$1.Operation);
+	}(common_1$2.Operation);
 	GetFeaturesOperation$1.GetFeaturesOperation = GetFeaturesOperation;
 
 	(function (exports) {
@@ -22354,9 +22672,9 @@
 	});
 	CoreValidation$1.CoreValidation = void 0;
 	CoreValidation$1.isTypeChange = isTypeChange;
-	var tslib_1$2 = require$$0$1;
+	var tslib_1$3 = require$$0$1;
 	var Validation_1$1 = Validation$1;
-	var soSequenceTypes_1 = /*#__PURE__*/tslib_1$2.__importDefault(soSequenceTypes$1);
+	var soSequenceTypes_1 = /*#__PURE__*/tslib_1$3.__importDefault(soSequenceTypes$1);
 	function isTypeChange(thing) {
 	  return 'oldType' in thing && 'newType' in thing;
 	}
@@ -22465,42 +22783,13 @@
 
 	var ParentChildValidation$1 = {};
 
-	var util$1 = {};
-
-	Object.defineProperty(util$1, "__esModule", {
-	  value: true
-	});
-	util$1.splitStringIntoChunks = splitStringIntoChunks;
-	util$1.getPrintableId = getPrintableId;
-	function splitStringIntoChunks(input, chunkSize) {
-	  var chunks = [];
-	  for (var i = 0; i < input.length; i += chunkSize) {
-	    var chunk = input.slice(i, i + chunkSize);
-	    chunks.push(chunk);
-	  }
-	  return chunks;
-	}
-	function getPrintableId(feature) {
-	  var _ff$attributes$get, _ff$attributes$get2;
-	  var ff = feature;
-	  var gff_id = (_ff$attributes$get = ff.attributes.get('gff_id')) === null || _ff$attributes$get === void 0 ? void 0 : _ff$attributes$get.join(',');
-	  if (gff_id) {
-	    return "ID=".concat(gff_id, " (_id: ").concat(feature._id.toString(), ")");
-	  }
-	  var gff_name = (_ff$attributes$get2 = ff.attributes.get('gff_name')) === null || _ff$attributes$get2 === void 0 ? void 0 : _ff$attributes$get2.join(',');
-	  if (gff_name) {
-	    return "Name=".concat(gff_name, " (_id: ").concat(feature._id.toString(), ")");
-	  }
-	  return "_id: ".concat(feature._id.toString());
-	}
-
 	/* eslint-disable @typescript-eslint/no-unnecessary-condition */
 	Object.defineProperty(ParentChildValidation$1, "__esModule", {
 	  value: true
 	});
 	ParentChildValidation$1.ParentChildValidation = void 0;
 	var Changes_1 = Changes;
-	var util_1$1 = util$1;
+	var util_1$2 = util$1;
 	var Validation_1 = Validation$1;
 	var ParentChildValidation = /*#__PURE__*/function (_Validation_1$Validat) {
 	  _inherits(ParentChildValidation, _Validation_1$Validat);
@@ -22664,7 +22953,7 @@
 	          var _step2$value = _slicedToArray(_step2.value, 2),
 	            childFeature = _step2$value[1];
 	          if (feature.min !== null && feature.max !== null && childFeature.min !== null && childFeature.max !== null && (childFeature.max > feature.max || childFeature.min < feature.min)) {
-	            throw new Error("Feature ".concat((0, util_1$1.getPrintableId)(childFeature), " exceeds the bounds of its parent, ").concat((0, util_1$1.getPrintableId)(feature)));
+	            throw new Error("Feature ".concat((0, util_1$2.getPrintableId)(childFeature), " exceeds the bounds of its parent, ").concat((0, util_1$2.getPrintableId)(feature)));
 	          }
 	          this.checkChildFeatureBoundaries(childFeature);
 	        }
@@ -22757,8 +23046,8 @@
 	});
 	jwtPayload.makeUserSessionId = makeUserSessionId;
 	jwtPayload.getDecodedToken = getDecodedToken;
-	var tslib_1$1 = require$$0$1;
-	var jwt_decode_1 = /*#__PURE__*/tslib_1$1.__importDefault(require$$1);
+	var tslib_1$2 = require$$0$1;
+	var jwt_decode_1 = /*#__PURE__*/tslib_1$2.__importDefault(require$$1);
 	function makeUserSessionId(userOrToken) {
 	  var user = typeof userOrToken === 'string' ? (0, jwt_decode_1["default"])(userOrToken) : userOrToken;
 	  return "".concat(user.id, "-").concat(user.iat);
@@ -22784,10 +23073,10 @@
 	  value: true
 	});
 	CDSCheck$1.CDSCheck = void 0;
-	var tslib_1 = require$$0$1;
-	var common_1 = dist$1;
-	var util_1 = require$$1__default$1["default"];
-	var bson_objectid_1 = /*#__PURE__*/tslib_1.__importDefault(objectid);
+	var tslib_1$1 = require$$0$1;
+	var common_1$1 = dist$1;
+	var util_1$1 = require$$1__default$1["default"];
+	var bson_objectid_1$1 = /*#__PURE__*/tslib_1$1.__importDefault(objectid);
 	var STOP_CODONS;
 	(function (STOP_CODONS) {
 	  STOP_CODONS[STOP_CODONS["TAG"] = 0] = "TAG";
@@ -22798,14 +23087,13 @@
 	(function (START_CODONS) {
 	  START_CODONS[START_CODONS["ATG"] = 0] = "ATG";
 	})(START_CODONS || (START_CODONS = {}));
-	var CHECK_NAME = 'CDSCheck';
-	var CAUSES;
+	var CHECK_NAME$1 = 'CDSCheck';
+	var CAUSES$1;
 	(function (CAUSES) {
 	  CAUSES[CAUSES["InternalStopCodon"] = 0] = "InternalStopCodon";
 	  CAUSES[CAUSES["MissingStartCodon"] = 1] = "MissingStartCodon";
 	  CAUSES[CAUSES["MissingStopCodon"] = 2] = "MissingStopCodon";
-	  CAUSES[CAUSES["MultipleOfThree"] = 3] = "MultipleOfThree";
-	})(CAUSES || (CAUSES = {}));
+	})(CAUSES$1 || (CAUSES$1 = {}));
 	var iupacComplements = {
 	  G: 'C',
 	  A: 'T',
@@ -22935,7 +23223,7 @@
 	}
 	function _checkMRNA() {
 	  _checkMRNA = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(feature, getSequence) {
-	    var checkResults, _id, max, min, refSeq, strand, cdsLocations, ids, _iterator3, _step3, cdsLocation, sequence, codons, start_codon, _cdsLocation$at$max, _cdsLocation$at, _cdsLocation$at$min, _cdsLocation$at2, cdsStart, lastCodon, _cdsLocation$at$min2, _cdsLocation$at3, _cdsLocation$at$max2, _cdsLocation$at4, cdsEnd, _iterator4, _step4, _step4$value, idx, codon, location, _location, codonStart, codonEnd;
+	    var checkResults, _id, max, min, refSeq, strand, cdsLocations, ids, _iterator3, _step3, _cdsLocation$at$min, _cdsLocation$at, _cdsLocation$at$max, _cdsLocation$at2, cdsLocation, sequence, codons, cdsEnd, start_codon, _cdsLocation$at$max2, _cdsLocation$at3, _cdsLocation$at$min2, _cdsLocation$at4, cdsStart, lastCodon, _iterator4, _step4, _step4$value, idx, codon, location, _location, codonStart, codonEnd;
 	    return _regeneratorRuntime().wrap(function _callee3$(_context3) {
 	      while (1) switch (_context3.prev = _context3.next) {
 	        case 0:
@@ -22954,7 +23242,7 @@
 	          _iterator3.s();
 	        case 9:
 	          if ((_step3 = _iterator3.n()).done) {
-	            _context3.next = 37;
+	            _context3.next = 38;
 	            break;
 	          }
 	          cdsLocation = _step3.value;
@@ -22963,15 +23251,16 @@
 	        case 13:
 	          sequence = _context3.sent;
 	          codons = splitSequenceInCodons(sequence);
+	          cdsEnd = strand === -1 ? (_cdsLocation$at$min = (_cdsLocation$at = cdsLocation.at(0)) === null || _cdsLocation$at === void 0 ? void 0 : _cdsLocation$at.min) !== null && _cdsLocation$at$min !== void 0 ? _cdsLocation$at$min : min : (_cdsLocation$at$max = (_cdsLocation$at2 = cdsLocation.at(-1)) === null || _cdsLocation$at2 === void 0 ? void 0 : _cdsLocation$at2.max) !== null && _cdsLocation$at$max !== void 0 ? _cdsLocation$at$max : max;
 	          if (sequence.length % 3 === 0) {
 	            start_codon = codons.at(0);
 	            if (start_codon && !(start_codon.toUpperCase() in START_CODONS)) {
-	              cdsStart = strand === -1 ? (_cdsLocation$at$max = (_cdsLocation$at = cdsLocation.at(-1)) === null || _cdsLocation$at === void 0 ? void 0 : _cdsLocation$at.max) !== null && _cdsLocation$at$max !== void 0 ? _cdsLocation$at$max : max : (_cdsLocation$at$min = (_cdsLocation$at2 = cdsLocation.at(0)) === null || _cdsLocation$at2 === void 0 ? void 0 : _cdsLocation$at2.min) !== null && _cdsLocation$at$min !== void 0 ? _cdsLocation$at$min : min;
+	              cdsStart = strand === -1 ? (_cdsLocation$at$max2 = (_cdsLocation$at3 = cdsLocation.at(-1)) === null || _cdsLocation$at3 === void 0 ? void 0 : _cdsLocation$at3.max) !== null && _cdsLocation$at$max2 !== void 0 ? _cdsLocation$at$max2 : max : (_cdsLocation$at$min2 = (_cdsLocation$at4 = cdsLocation.at(0)) === null || _cdsLocation$at4 === void 0 ? void 0 : _cdsLocation$at4.min) !== null && _cdsLocation$at$min2 !== void 0 ? _cdsLocation$at$min2 : min;
 	              cdsStart = strand === -1 ? cdsStart - 3 : cdsStart;
 	              checkResults.push({
-	                _id: new bson_objectid_1["default"]().toHexString(),
-	                name: CHECK_NAME,
-	                cause: CAUSES[CAUSES.MissingStartCodon],
+	                _id: new bson_objectid_1$1["default"]().toHexString(),
+	                name: CHECK_NAME$1,
+	                cause: CAUSES$1[CAUSES$1.MissingStartCodon],
 	                ids: ids,
 	                refSeq: refSeq.toString(),
 	                start: cdsStart,
@@ -22981,94 +23270,93 @@
 	            }
 	            lastCodon = codons.at(-1); // Last codon is supposed to be a stop
 	            if (lastCodon && !(lastCodon.toUpperCase() in STOP_CODONS)) {
-	              cdsEnd = strand === -1 ? (_cdsLocation$at$min2 = (_cdsLocation$at3 = cdsLocation.at(0)) === null || _cdsLocation$at3 === void 0 ? void 0 : _cdsLocation$at3.min) !== null && _cdsLocation$at$min2 !== void 0 ? _cdsLocation$at$min2 : min : (_cdsLocation$at$max2 = (_cdsLocation$at4 = cdsLocation.at(-1)) === null || _cdsLocation$at4 === void 0 ? void 0 : _cdsLocation$at4.max) !== null && _cdsLocation$at$max2 !== void 0 ? _cdsLocation$at$max2 : max;
 	              checkResults.push({
-	                _id: new bson_objectid_1["default"]().toHexString(),
-	                name: CHECK_NAME,
-	                cause: CAUSES[CAUSES.MissingStopCodon],
+	                _id: new bson_objectid_1$1["default"]().toHexString(),
+	                name: CHECK_NAME$1,
+	                cause: CAUSES$1[CAUSES$1.MissingStopCodon],
 	                ids: ids,
 	                refSeq: refSeq.toString(),
 	                start: cdsEnd,
 	                end: cdsEnd,
-	                message: "Missing stop codon for feature \"".concat(_id, "\"")
+	                message: "Missing stop codon in feature \"".concat(_id, "\"")
 	              });
 	            }
 	          } else {
 	            checkResults.push({
-	              _id: new bson_objectid_1["default"]().toHexString(),
-	              name: CHECK_NAME,
-	              cause: CAUSES[CAUSES.MultipleOfThree],
+	              _id: new bson_objectid_1$1["default"]().toHexString(),
+	              name: CHECK_NAME$1,
+	              cause: CAUSES$1[CAUSES$1.MissingStopCodon],
 	              ids: ids,
 	              refSeq: refSeq.toString(),
-	              start: min,
-	              end: max,
-	              message: "The coding sequence for feature \"".concat(_id, "\" is not a multiple of three")
+	              start: cdsEnd,
+	              end: cdsEnd,
+	              message: "Missing stop codon in feature \"".concat(_id, "\"")
 	            });
 	          }
 	          _iterator4 = _createForOfIteratorHelper(codons.entries());
-	          _context3.prev = 17;
+	          _context3.prev = 18;
 	          _iterator4.s();
-	        case 19:
+	        case 20:
 	          if ((_step4 = _iterator4.n()).done) {
-	            _context3.next = 27;
+	            _context3.next = 28;
 	            break;
 	          }
 	          _step4$value = _slicedToArray(_step4.value, 2), idx = _step4$value[0], codon = _step4$value[1];
 	          if (!(idx === codons.length - 1)) {
-	            _context3.next = 23;
+	            _context3.next = 24;
 	            break;
 	          }
-	          return _context3.abrupt("break", 27);
-	        case 23:
+	          return _context3.abrupt("break", 28);
+	        case 24:
 	          location = getOriginalCodonLocation(cdsLocation, strand, idx);
 	          if (location && codon.toUpperCase() in STOP_CODONS) {
 	            _location = _slicedToArray(location, 2), codonStart = _location[0], codonEnd = _location[1];
 	            checkResults.push({
-	              _id: new bson_objectid_1["default"]().toHexString(),
-	              name: CHECK_NAME,
-	              cause: CAUSES[CAUSES.InternalStopCodon],
+	              _id: new bson_objectid_1$1["default"]().toHexString(),
+	              name: CHECK_NAME$1,
+	              cause: CAUSES$1[CAUSES$1.InternalStopCodon],
 	              ids: ids,
 	              refSeq: refSeq.toString(),
 	              start: codonStart,
 	              end: codonEnd,
-	              message: "The coding sequence for feature \"".concat(_id, "\" has an internal stop codon")
+	              message: "Internal stop codon in feature \"".concat(_id, "\"")
 	            });
 	          }
-	        case 25:
-	          _context3.next = 19;
+	        case 26:
+	          _context3.next = 20;
 	          break;
-	        case 27:
-	          _context3.next = 32;
+	        case 28:
+	          _context3.next = 33;
 	          break;
-	        case 29:
-	          _context3.prev = 29;
-	          _context3.t0 = _context3["catch"](17);
+	        case 30:
+	          _context3.prev = 30;
+	          _context3.t0 = _context3["catch"](18);
 	          _iterator4.e(_context3.t0);
-	        case 32:
-	          _context3.prev = 32;
+	        case 33:
+	          _context3.prev = 33;
 	          _iterator4.f();
-	          return _context3.finish(32);
-	        case 35:
+	          return _context3.finish(33);
+	        case 36:
 	          _context3.next = 9;
 	          break;
-	        case 37:
-	          _context3.next = 42;
+	        case 38:
+	          _context3.next = 43;
 	          break;
-	        case 39:
-	          _context3.prev = 39;
+	        case 40:
+	          _context3.prev = 40;
 	          _context3.t1 = _context3["catch"](7);
 	          _iterator3.e(_context3.t1);
-	        case 42:
-	          _context3.prev = 42;
+	        case 43:
+	          _context3.prev = 43;
 	          _iterator3.f();
-	          return _context3.finish(42);
-	        case 45:
-	          return _context3.abrupt("return", checkResults);
+	          return _context3.finish(43);
 	        case 46:
+	          return _context3.abrupt("return", checkResults);
+	        case 47:
 	        case "end":
 	          return _context3.stop();
 	      }
-	    }, _callee3, null, [[7, 39, 42, 45], [17, 29, 32, 35]]);
+	    }, _callee3, null, [[7, 40, 43, 46], [18, 30, 33, 36]]);
 	  }));
 	  return _checkMRNA.apply(this, arguments);
 	}
@@ -23101,7 +23389,7 @@
 	        if (child.type !== 'exon') {
 	          continue;
 	        }
-	        var _ref = (0, util_1.intersection2)(cdsMin, cdsMax, child.min, child.max),
+	        var _ref = (0, util_1$1.intersection2)(cdsMin, cdsMax, child.min, child.max),
 	          _ref2 = _slicedToArray(_ref, 2),
 	          start = _ref2[0],
 	          end = _ref2[1];
@@ -23148,8 +23436,8 @@
 	  }
 	  return cdsLocations;
 	}
-	function getCauses() {
-	  return Object.values(CAUSES).filter(function (x) {
+	function getCauses$1() {
+	  return Object.values(CAUSES$1).filter(function (x) {
 	    return Number.isNaN(Number(x));
 	  });
 	}
@@ -23163,10 +23451,10 @@
 	      args[_key] = arguments[_key];
 	    }
 	    _this = _super.call.apply(_super, [this].concat(args));
-	    _defineProperty(_assertThisInitialized(_this), "name", CHECK_NAME);
-	    _defineProperty(_assertThisInitialized(_this), "causes", getCauses());
+	    _defineProperty(_assertThisInitialized(_this), "name", CHECK_NAME$1);
+	    _defineProperty(_assertThisInitialized(_this), "causes", getCauses$1());
 	    _defineProperty(_assertThisInitialized(_this), "version", 1);
-	    _defineProperty(_assertThisInitialized(_this), "default", true);
+	    _defineProperty(_assertThisInitialized(_this), "isDefault", true);
 	    return _this;
 	  }
 	  _createClass(CDSCheck, [{
@@ -23225,8 +23513,237 @@
 	    }()
 	  }]);
 	  return CDSCheck;
-	}(common_1.Check);
+	}(common_1$1.Check);
 	CDSCheck$1.CDSCheck = CDSCheck;
+
+	var TranscriptCheck$1 = {};
+
+	Object.defineProperty(TranscriptCheck$1, "__esModule", {
+	  value: true
+	});
+	TranscriptCheck$1.TranscriptCheck = void 0;
+	var tslib_1 = require$$0$1;
+	var common_1 = dist$1;
+	var util_1 = require$$1__default$1["default"];
+	var bson_objectid_1 = /*#__PURE__*/tslib_1.__importDefault(objectid);
+	var CAUSES;
+	(function (CAUSES) {
+	  CAUSES[CAUSES["NonCanonicalSpliceSiteAtFivePrime"] = 0] = "NonCanonicalSpliceSiteAtFivePrime";
+	  CAUSES[CAUSES["NonCanonicalSpliceSiteAtThreePrime"] = 1] = "NonCanonicalSpliceSiteAtThreePrime";
+	})(CAUSES || (CAUSES = {}));
+	var CHECK_NAME = 'TranscriptCheck';
+	function getSpliceSequences(_x, _x2) {
+	  return _getSpliceSequences.apply(this, arguments);
+	}
+	function _getSpliceSequences() {
+	  _getSpliceSequences = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(transcript, getSequence) {
+	    var exons, _i2, _Object$entries, _Object$entries$_i, child, spliceSeq, i, fivePrimeMin, threePrimeMin, _fivePrimeMin, fivePrimeSeq, threePrimeSeq;
+	    return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+	      while (1) switch (_context2.prev = _context2.next) {
+	        case 0:
+	          if (transcript.children) {
+	            _context2.next = 2;
+	            break;
+	          }
+	          return _context2.abrupt("return", []);
+	        case 2:
+	          exons = [];
+	          for (_i2 = 0, _Object$entries = Object.entries(transcript.children); _i2 < _Object$entries.length; _i2++) {
+	            _Object$entries$_i = _slicedToArray(_Object$entries[_i2], 2), child = _Object$entries$_i[1];
+	            if (child.type === 'exon') {
+	              exons.push(child);
+	            }
+	          }
+	          if (!(exons.length < 2)) {
+	            _context2.next = 6;
+	            break;
+	          }
+	          return _context2.abrupt("return", []);
+	        case 6:
+	          spliceSeq = [];
+	          i = 0;
+	        case 8:
+	          if (!(i < exons.length - 1)) {
+	            _context2.next = 23;
+	            break;
+	          }
+	          fivePrimeMin = exons[i].max;
+	          threePrimeMin = exons[i + 1].min - 2;
+	          if (transcript.strand === -1) {
+	            _fivePrimeMin = fivePrimeMin;
+	            fivePrimeMin = threePrimeMin;
+	            threePrimeMin = _fivePrimeMin;
+	          }
+	          _context2.next = 14;
+	          return getSequence(fivePrimeMin, fivePrimeMin + 2);
+	        case 14:
+	          fivePrimeSeq = _context2.sent;
+	          _context2.next = 17;
+	          return getSequence(threePrimeMin, threePrimeMin + 2);
+	        case 17:
+	          threePrimeSeq = _context2.sent;
+	          if (transcript.strand === -1) {
+	            threePrimeSeq = (0, util_1.revcom)(threePrimeSeq);
+	            fivePrimeSeq = (0, util_1.revcom)(fivePrimeSeq);
+	          }
+	          spliceSeq.push({
+	            fivePrimeSeq: fivePrimeSeq,
+	            fivePrimeMin: fivePrimeMin,
+	            threePrimeSeq: threePrimeSeq,
+	            threePrimeMin: threePrimeMin
+	          });
+	        case 20:
+	          i++;
+	          _context2.next = 8;
+	          break;
+	        case 23:
+	          return _context2.abrupt("return", spliceSeq);
+	        case 24:
+	        case "end":
+	          return _context2.stop();
+	      }
+	    }, _callee2);
+	  }));
+	  return _getSpliceSequences.apply(this, arguments);
+	}
+	function checkTranscript(_x3, _x4) {
+	  return _checkTranscript.apply(this, arguments);
+	}
+	function _checkTranscript() {
+	  _checkTranscript = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(feature, getSequence) {
+	    var checkResults, VALID_FIVE_PRIME_SEQ, VALID_THREE_PRIME_SEQ, spliceSequences, _iterator, _step, spliceSequence;
+	    return _regeneratorRuntime().wrap(function _callee3$(_context3) {
+	      while (1) switch (_context3.prev = _context3.next) {
+	        case 0:
+	          checkResults = [];
+	          VALID_FIVE_PRIME_SEQ = new Set(['GT']);
+	          VALID_THREE_PRIME_SEQ = new Set(['AG']);
+	          _context3.next = 5;
+	          return getSpliceSequences(feature, getSequence);
+	        case 5:
+	          spliceSequences = _context3.sent;
+	          _iterator = _createForOfIteratorHelper(spliceSequences);
+	          try {
+	            for (_iterator.s(); !(_step = _iterator.n()).done;) {
+	              spliceSequence = _step.value;
+	              if (!VALID_FIVE_PRIME_SEQ.has(spliceSequence.fivePrimeSeq.toUpperCase())) {
+	                checkResults.push({
+	                  _id: new bson_objectid_1["default"]().toHexString(),
+	                  name: CHECK_NAME,
+	                  cause: CAUSES[CAUSES.NonCanonicalSpliceSiteAtFivePrime],
+	                  ids: [feature._id],
+	                  refSeq: feature.refSeq.toString(),
+	                  start: spliceSequence.fivePrimeMin,
+	                  end: spliceSequence.fivePrimeMin + 2,
+	                  message: "Unexpected 5' splice site in \"".concat(feature._id, "\". Expected: ").concat(_toConsumableArray(VALID_FIVE_PRIME_SEQ).join('|'), ", got: ").concat(spliceSequence.fivePrimeSeq)
+	                });
+	              }
+	              if (!VALID_THREE_PRIME_SEQ.has(spliceSequence.threePrimeSeq.toUpperCase())) {
+	                checkResults.push({
+	                  _id: new bson_objectid_1["default"]().toHexString(),
+	                  name: CHECK_NAME,
+	                  cause: CAUSES[CAUSES.NonCanonicalSpliceSiteAtThreePrime],
+	                  ids: [feature._id],
+	                  refSeq: feature.refSeq.toString(),
+	                  start: spliceSequence.threePrimeMin,
+	                  end: spliceSequence.threePrimeMin + 2,
+	                  message: "Unexpected 3' splice site in \"".concat(feature._id, "\". Expected: ").concat(_toConsumableArray(VALID_THREE_PRIME_SEQ).join('|'), ", got: ").concat(spliceSequence.threePrimeSeq)
+	                });
+	              }
+	            }
+	          } catch (err) {
+	            _iterator.e(err);
+	          } finally {
+	            _iterator.f();
+	          }
+	          return _context3.abrupt("return", checkResults);
+	        case 9:
+	        case "end":
+	          return _context3.stop();
+	      }
+	    }, _callee3);
+	  }));
+	  return _checkTranscript.apply(this, arguments);
+	}
+	function getCauses() {
+	  return Object.values(CAUSES).filter(function (x) {
+	    return Number.isNaN(Number(x));
+	  });
+	}
+	var TranscriptCheck = /*#__PURE__*/function (_common_1$Check) {
+	  _inherits(TranscriptCheck, _common_1$Check);
+	  var _super = /*#__PURE__*/_createSuper(TranscriptCheck);
+	  function TranscriptCheck() {
+	    var _this;
+	    _classCallCheck(this, TranscriptCheck);
+	    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+	    _this = _super.call.apply(_super, [this].concat(args));
+	    _defineProperty(_assertThisInitialized(_this), "name", 'TranscriptCheck');
+	    _defineProperty(_assertThisInitialized(_this), "causes", getCauses());
+	    _defineProperty(_assertThisInitialized(_this), "version", 1);
+	    _defineProperty(_assertThisInitialized(_this), "isDefault", true);
+	    return _this;
+	  }
+	  _createClass(TranscriptCheck, [{
+	    key: "checkFeature",
+	    value: function () {
+	      var _checkFeature = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(feature, getSequence) {
+	        var checkResults, _i, _Object$values, child;
+	        return _regeneratorRuntime().wrap(function _callee$(_context) {
+	          while (1) switch (_context.prev = _context.next) {
+	            case 0:
+	              if (!(feature.type === 'mRNA' || feature.type === 'transcript' || feature.type === 'pseudogenic_transcript')) {
+	                _context.next = 2;
+	                break;
+	              }
+	              return _context.abrupt("return", checkTranscript(feature, getSequence));
+	            case 2:
+	              if (feature.children) {
+	                _context.next = 4;
+	                break;
+	              }
+	              return _context.abrupt("return", []);
+	            case 4:
+	              checkResults = [];
+	              _i = 0, _Object$values = Object.values(feature.children);
+	            case 6:
+	              if (!(_i < _Object$values.length)) {
+	                _context.next = 19;
+	                break;
+	              }
+	              child = _Object$values[_i];
+	              _context.t0 = checkResults.push;
+	              _context.t1 = checkResults;
+	              _context.t2 = _toConsumableArray;
+	              _context.next = 13;
+	              return this.checkFeature(child, getSequence);
+	            case 13:
+	              _context.t3 = _context.sent;
+	              _context.t4 = (0, _context.t2)(_context.t3);
+	              _context.t0.apply.call(_context.t0, _context.t1, _context.t4);
+	            case 16:
+	              _i++;
+	              _context.next = 6;
+	              break;
+	            case 19:
+	              return _context.abrupt("return", checkResults);
+	            case 20:
+	            case "end":
+	              return _context.stop();
+	          }
+	        }, _callee, this);
+	      }));
+	      function checkFeature(_x5, _x6) {
+	        return _checkFeature.apply(this, arguments);
+	      }
+	      return checkFeature;
+	    }()
+	  }]);
+	  return TranscriptCheck;
+	}(common_1.Check);
+	TranscriptCheck$1.TranscriptCheck = TranscriptCheck;
 
 	(function (exports) {
 
@@ -23235,6 +23752,7 @@
 	  });
 	  var tslib_1 = require$$0$1;
 	  tslib_1.__exportStar(CDSCheck$1, exports);
+	  tslib_1.__exportStar(TranscriptCheck$1, exports);
 	})(Checks);
 
 	var Messages = {};
@@ -23259,49 +23777,11 @@
 	  tslib_1.__exportStar(GFF3, exports);
 	})(dist$2);
 
-	var Add = {};
-
-	var interopRequireDefault = {exports: {}};
-
-	(function (module) {
-	  function _interopRequireDefault(obj) {
-	    return obj && obj.__esModule ? obj : {
-	      "default": obj
-	    };
-	  }
-	  module.exports = _interopRequireDefault, module.exports.__esModule = true, module.exports["default"] = module.exports;
-	})(interopRequireDefault);
-
-	var createSvgIcon = {};
-
-	(function (exports) {
-	  'use client';
-
-	  Object.defineProperty(exports, "__esModule", {
-	    value: true
-	  });
-	  Object.defineProperty(exports, "default", {
-	    enumerable: true,
-	    get: function get() {
-	      return _utils.createSvgIcon;
-	    }
-	  });
-	  var _utils = require$$0__default["default"];
-	})(createSvgIcon);
-
-	var _interopRequireDefault$p = interopRequireDefault.exports;
-	Object.defineProperty(Add, "__esModule", {
-	  value: true
-	});
-	var default_1$p = Add["default"] = void 0;
-	var _createSvgIcon$p = /*#__PURE__*/_interopRequireDefault$p(createSvgIcon);
-	var _jsxRuntime$p = require$$2__default["default"];
-	var _default$r = /*#__PURE__*/(0, _createSvgIcon$p["default"])( /*#__PURE__*/(0, _jsxRuntime$p.jsx)("path", {
-	  d: "M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+	var AddIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
+	  d: "M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6z"
 	}), 'Add');
-	default_1$p = Add["default"] = _default$r;
 
-	var version = "0.3.7";
+	var version = "0.3.8";
 
 	const ApolloConfigSchema = configuration.ConfigurationSchema('ApolloInternetAccount', {
 	    baseURL: {
@@ -27419,11 +27899,50 @@
 	  connect: lookup
 	});
 
+	var AdminPanelSettingsIcon = /*#__PURE__*/utils$7.createSvgIcon([/*#__PURE__*/jsxRuntime.jsx("path", {
+	  d: "M17 11c.34 0 .67.04 1 .09V6.27L10.5 3 3 6.27v4.91c0 4.54 3.2 8.79 7.5 9.82.55-.13 1.08-.32 1.6-.55-.69-.98-1.1-2.17-1.1-3.45 0-3.31 2.69-6 6-6"
+	}, "0"), /*#__PURE__*/jsxRuntime.jsx("path", {
+	  d: "M17 13c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4m0 1.38c.62 0 1.12.51 1.12 1.12s-.51 1.12-1.12 1.12-1.12-.51-1.12-1.12.5-1.12 1.12-1.12m0 5.37c-.93 0-1.74-.46-2.24-1.17.05-.72 1.51-1.08 2.24-1.08s2.19.36 2.24 1.08c-.5.71-1.31 1.17-2.24 1.17"
+	}, "1")], 'AdminPanelSettings');
+
+	var DeleteIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
+	  d: "M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6zM19 4h-3.5l-1-1h-5l-1 1H5v2h14z"
+	}), 'Delete');
+
+	var InputIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
+	  d: "M21 3.01H3c-1.1 0-2 .9-2 2V9h2V4.99h18v14.03H3V15H1v4.01c0 1.1.9 1.98 2 1.98h18c1.1 0 2-.88 2-1.98v-14c0-1.11-.9-2-2-2M11 16l4-4-4-4v3H1v2h10z"
+	}), 'Input');
+
+	var PersonIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
+	  d: "M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4m0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4"
+	}), 'Person');
+
+	var RuleIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
+	  d: "M16.54 11 13 7.46l1.41-1.41 2.12 2.12 4.24-4.24 1.41 1.41zM11 7H2v2h9zm10 6.41L19.59 12 17 14.59 14.41 12 13 13.41 15.59 16 13 18.59 14.41 20 17 17.41 19.59 20 21 18.59 18.41 16zM11 15H2v2h9z"
+	}), 'Rule');
+
+	var InfoIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
+	  d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m1 15h-2v-6h2zm0-8h-2V7h2z"
+	}), 'Info');
+
+	var LinkIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
+	  d: "M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5"
+	}), 'Link');
+
+	var RadioButtonCheckedIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
+	  d: "M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5m0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8"
+	}), 'RadioButtonChecked');
+
+	var RadioButtonUncheckedIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
+	  d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8"
+	}), 'RadioButtonUnchecked');
+
 	// This constructor is used to store event handlers. Instantiating this is
 	// faster than explicitly calling `Object.create(null)` to get a "clean" empty
 	// object (tested with v8 v4.9).
 	function EventHandlers() {}
-	EventHandlers.prototype = /*#__PURE__*/Object.create(null);
+	EventHandlers.prototype = Object.create(null);
+
 	function EventEmitter() {
 	  EventEmitter.init.call(this);
 	}
@@ -27431,7 +27950,9 @@
 	// nodejs oddity
 	// require('events') === require('events').EventEmitter
 	EventEmitter.EventEmitter = EventEmitter;
+
 	EventEmitter.usingDomains = false;
+
 	EventEmitter.prototype.domain = undefined;
 	EventEmitter.prototype._events = undefined;
 	EventEmitter.prototype._maxListeners = undefined;
@@ -27439,26 +27960,33 @@
 	// By default EventEmitters will print a warning if more than 10 listeners are
 	// added to it. This is a useful default which helps finding memory leaks.
 	EventEmitter.defaultMaxListeners = 10;
-	EventEmitter.init = function () {
+
+	EventEmitter.init = function() {
 	  this.domain = null;
+
 	  if (!this._events || this._events === Object.getPrototypeOf(this)._events) {
 	    this._events = new EventHandlers();
 	    this._eventsCount = 0;
 	  }
+
 	  this._maxListeners = this._maxListeners || undefined;
 	};
 
 	// Obviously not all Emitters should be limited to 10. This function allows
 	// that to be increased. Set to zero for unlimited.
 	EventEmitter.prototype.setMaxListeners = function setMaxListeners(n) {
-	  if (typeof n !== 'number' || n < 0 || isNaN(n)) throw new TypeError('"n" argument must be a positive number');
+	  if (typeof n !== 'number' || n < 0 || isNaN(n))
+	    throw new TypeError('"n" argument must be a positive number');
 	  this._maxListeners = n;
 	  return this;
 	};
+
 	function $getMaxListeners(that) {
-	  if (that._maxListeners === undefined) return EventEmitter.defaultMaxListeners;
+	  if (that._maxListeners === undefined)
+	    return EventEmitter.defaultMaxListeners;
 	  return that._maxListeners;
 	}
+
 	EventEmitter.prototype.getMaxListeners = function getMaxListeners() {
 	  return $getMaxListeners(this);
 	};
@@ -27469,52 +27997,75 @@
 	// the same number of arguments and thus do not get deoptimized, so the code
 	// inside them can execute faster.
 	function emitNone(handler, isFn, self) {
-	  if (isFn) handler.call(self);else {
+	  if (isFn)
+	    handler.call(self);
+	  else {
 	    var len = handler.length;
 	    var listeners = arrayClone(handler, len);
-	    for (var i = 0; i < len; ++i) listeners[i].call(self);
+	    for (var i = 0; i < len; ++i)
+	      listeners[i].call(self);
 	  }
 	}
 	function emitOne(handler, isFn, self, arg1) {
-	  if (isFn) handler.call(self, arg1);else {
+	  if (isFn)
+	    handler.call(self, arg1);
+	  else {
 	    var len = handler.length;
 	    var listeners = arrayClone(handler, len);
-	    for (var i = 0; i < len; ++i) listeners[i].call(self, arg1);
+	    for (var i = 0; i < len; ++i)
+	      listeners[i].call(self, arg1);
 	  }
 	}
 	function emitTwo(handler, isFn, self, arg1, arg2) {
-	  if (isFn) handler.call(self, arg1, arg2);else {
+	  if (isFn)
+	    handler.call(self, arg1, arg2);
+	  else {
 	    var len = handler.length;
 	    var listeners = arrayClone(handler, len);
-	    for (var i = 0; i < len; ++i) listeners[i].call(self, arg1, arg2);
+	    for (var i = 0; i < len; ++i)
+	      listeners[i].call(self, arg1, arg2);
 	  }
 	}
 	function emitThree(handler, isFn, self, arg1, arg2, arg3) {
-	  if (isFn) handler.call(self, arg1, arg2, arg3);else {
+	  if (isFn)
+	    handler.call(self, arg1, arg2, arg3);
+	  else {
 	    var len = handler.length;
 	    var listeners = arrayClone(handler, len);
-	    for (var i = 0; i < len; ++i) listeners[i].call(self, arg1, arg2, arg3);
+	    for (var i = 0; i < len; ++i)
+	      listeners[i].call(self, arg1, arg2, arg3);
 	  }
 	}
+
 	function emitMany(handler, isFn, self, args) {
-	  if (isFn) handler.apply(self, args);else {
+	  if (isFn)
+	    handler.apply(self, args);
+	  else {
 	    var len = handler.length;
 	    var listeners = arrayClone(handler, len);
-	    for (var i = 0; i < len; ++i) listeners[i].apply(self, args);
+	    for (var i = 0; i < len; ++i)
+	      listeners[i].apply(self, args);
 	  }
 	}
+
 	EventEmitter.prototype.emit = function emit(type) {
 	  var er, handler, len, args, i, events, domain;
-	  var doError = type === 'error';
+	  var doError = (type === 'error');
+
 	  events = this._events;
-	  if (events) doError = doError && events.error == null;else if (!doError) return false;
+	  if (events)
+	    doError = (doError && events.error == null);
+	  else if (!doError)
+	    return false;
+
 	  domain = this.domain;
 
 	  // If there is no 'error' event listener then throw.
 	  if (doError) {
 	    er = arguments[1];
 	    if (domain) {
-	      if (!er) er = new Error('Uncaught, unspecified "error" event');
+	      if (!er)
+	        er = new Error('Uncaught, unspecified "error" event');
 	      er.domainEmitter = this;
 	      er.domain = domain;
 	      er.domainThrown = false;
@@ -27529,8 +28080,12 @@
 	    }
 	    return false;
 	  }
+
 	  handler = events[type];
-	  if (!handler) return false;
+
+	  if (!handler)
+	    return false;
+
 	  var isFn = typeof handler === 'function';
 	  len = arguments.length;
 	  switch (len) {
@@ -27550,16 +28105,22 @@
 	    // slower
 	    default:
 	      args = new Array(len - 1);
-	      for (i = 1; i < len; i++) args[i - 1] = arguments[i];
+	      for (i = 1; i < len; i++)
+	        args[i - 1] = arguments[i];
 	      emitMany(handler, isFn, this, args);
 	  }
+
 	  return true;
 	};
+
 	function _addListener(target, type, listener, prepend) {
 	  var m;
 	  var events;
 	  var existing;
-	  if (typeof listener !== 'function') throw new TypeError('"listener" argument must be a function');
+
+	  if (typeof listener !== 'function')
+	    throw new TypeError('"listener" argument must be a function');
+
 	  events = target._events;
 	  if (!events) {
 	    events = target._events = new EventHandlers();
@@ -27568,7 +28129,8 @@
 	    // To avoid recursion in the case that type === "newListener"! Before
 	    // adding it to the listeners, first emit "newListener".
 	    if (events.newListener) {
-	      target.emit('newListener', type, listener.listener ? listener.listener : listener);
+	      target.emit('newListener', type,
+	                  listener.listener ? listener.listener : listener);
 
 	      // Re-assign `events` because a newListener handler could have caused the
 	      // this._events to be assigned to a new object
@@ -27576,6 +28138,7 @@
 	    }
 	    existing = events[type];
 	  }
+
 	  if (!existing) {
 	    // Optimize the case of one listener. Don't need the extra array object.
 	    existing = events[type] = listener;
@@ -27583,7 +28146,8 @@
 	  } else {
 	    if (typeof existing === 'function') {
 	      // Adding the second element, need to change to array.
-	      existing = events[type] = prepend ? [listener, existing] : [existing, listener];
+	      existing = events[type] = prepend ? [listener, existing] :
+	                                          [existing, listener];
 	    } else {
 	      // If we've already got an array, just append.
 	      if (prepend) {
@@ -27598,7 +28162,9 @@
 	      m = $getMaxListeners(target);
 	      if (m && m > 0 && existing.length > m) {
 	        existing.warned = true;
-	        var w = new Error('Possible EventEmitter memory leak detected. ' + existing.length + ' ' + type + ' listeners added. ' + 'Use emitter.setMaxListeners() to increase limit');
+	        var w = new Error('Possible EventEmitter memory leak detected. ' +
+	                            existing.length + ' ' + type + ' listeners added. ' +
+	                            'Use emitter.setMaxListeners() to increase limit');
 	        w.name = 'MaxListenersExceededWarning';
 	        w.emitter = target;
 	        w.type = type;
@@ -27607,6 +28173,7 @@
 	      }
 	    }
 	  }
+
 	  return target;
 	}
 	function emitWarning(e) {
@@ -27615,10 +28182,14 @@
 	EventEmitter.prototype.addListener = function addListener(type, listener) {
 	  return _addListener(this, type, listener, false);
 	};
+
 	EventEmitter.prototype.on = EventEmitter.prototype.addListener;
-	EventEmitter.prototype.prependListener = function prependListener(type, listener) {
-	  return _addListener(this, type, listener, true);
-	};
+
+	EventEmitter.prototype.prependListener =
+	    function prependListener(type, listener) {
+	      return _addListener(this, type, listener, true);
+	    };
+
 	function _onceWrap(target, type, listener) {
 	  var fired = false;
 	  function g() {
@@ -27631,139 +28202,199 @@
 	  g.listener = listener;
 	  return g;
 	}
+
 	EventEmitter.prototype.once = function once(type, listener) {
-	  if (typeof listener !== 'function') throw new TypeError('"listener" argument must be a function');
+	  if (typeof listener !== 'function')
+	    throw new TypeError('"listener" argument must be a function');
 	  this.on(type, _onceWrap(this, type, listener));
 	  return this;
 	};
-	EventEmitter.prototype.prependOnceListener = function prependOnceListener(type, listener) {
-	  if (typeof listener !== 'function') throw new TypeError('"listener" argument must be a function');
-	  this.prependListener(type, _onceWrap(this, type, listener));
-	  return this;
-	};
+
+	EventEmitter.prototype.prependOnceListener =
+	    function prependOnceListener(type, listener) {
+	      if (typeof listener !== 'function')
+	        throw new TypeError('"listener" argument must be a function');
+	      this.prependListener(type, _onceWrap(this, type, listener));
+	      return this;
+	    };
 
 	// emits a 'removeListener' event iff the listener was removed
-	EventEmitter.prototype.removeListener = function removeListener(type, listener) {
-	  var list, events, position, i, originalListener;
-	  if (typeof listener !== 'function') throw new TypeError('"listener" argument must be a function');
-	  events = this._events;
-	  if (!events) return this;
-	  list = events[type];
-	  if (!list) return this;
-	  if (list === listener || list.listener && list.listener === listener) {
-	    if (--this._eventsCount === 0) this._events = new EventHandlers();else {
-	      delete events[type];
-	      if (events.removeListener) this.emit('removeListener', type, list.listener || listener);
-	    }
-	  } else if (typeof list !== 'function') {
-	    position = -1;
-	    for (i = list.length; i-- > 0;) {
-	      if (list[i] === listener || list[i].listener && list[i].listener === listener) {
-	        originalListener = list[i].listener;
-	        position = i;
-	        break;
-	      }
-	    }
-	    if (position < 0) return this;
-	    if (list.length === 1) {
-	      list[0] = undefined;
-	      if (--this._eventsCount === 0) {
-	        this._events = new EventHandlers();
+	EventEmitter.prototype.removeListener =
+	    function removeListener(type, listener) {
+	      var list, events, position, i, originalListener;
+
+	      if (typeof listener !== 'function')
+	        throw new TypeError('"listener" argument must be a function');
+
+	      events = this._events;
+	      if (!events)
 	        return this;
-	      } else {
-	        delete events[type];
+
+	      list = events[type];
+	      if (!list)
+	        return this;
+
+	      if (list === listener || (list.listener && list.listener === listener)) {
+	        if (--this._eventsCount === 0)
+	          this._events = new EventHandlers();
+	        else {
+	          delete events[type];
+	          if (events.removeListener)
+	            this.emit('removeListener', type, list.listener || listener);
+	        }
+	      } else if (typeof list !== 'function') {
+	        position = -1;
+
+	        for (i = list.length; i-- > 0;) {
+	          if (list[i] === listener ||
+	              (list[i].listener && list[i].listener === listener)) {
+	            originalListener = list[i].listener;
+	            position = i;
+	            break;
+	          }
+	        }
+
+	        if (position < 0)
+	          return this;
+
+	        if (list.length === 1) {
+	          list[0] = undefined;
+	          if (--this._eventsCount === 0) {
+	            this._events = new EventHandlers();
+	            return this;
+	          } else {
+	            delete events[type];
+	          }
+	        } else {
+	          spliceOne(list, position);
+	        }
+
+	        if (events.removeListener)
+	          this.emit('removeListener', type, originalListener || listener);
 	      }
-	    } else {
-	      spliceOne(list, position);
-	    }
-	    if (events.removeListener) this.emit('removeListener', type, originalListener || listener);
-	  }
-	  return this;
-	};
-	EventEmitter.prototype.removeAllListeners = function removeAllListeners(type) {
-	  var listeners, events;
-	  events = this._events;
-	  if (!events) return this;
 
-	  // not listening for removeListener, no need to emit
-	  if (!events.removeListener) {
-	    if (arguments.length === 0) {
-	      this._events = new EventHandlers();
-	      this._eventsCount = 0;
-	    } else if (events[type]) {
-	      if (--this._eventsCount === 0) this._events = new EventHandlers();else delete events[type];
-	    }
-	    return this;
-	  }
-
-	  // emit removeListener for all listeners on all events
-	  if (arguments.length === 0) {
-	    var keys = Object.keys(events);
-	    for (var i = 0, key; i < keys.length; ++i) {
-	      key = keys[i];
-	      if (key === 'removeListener') continue;
-	      this.removeAllListeners(key);
-	    }
-	    this.removeAllListeners('removeListener');
-	    this._events = new EventHandlers();
-	    this._eventsCount = 0;
-	    return this;
-	  }
-	  listeners = events[type];
-	  if (typeof listeners === 'function') {
-	    this.removeListener(type, listeners);
-	  } else if (listeners) {
-	    // LIFO order
-	    do {
-	      this.removeListener(type, listeners[listeners.length - 1]);
-	    } while (listeners[0]);
-	  }
-	  return this;
+	      return this;
+	    };
+	    
+	// Alias for removeListener added in NodeJS 10.0
+	// https://nodejs.org/api/events.html#events_emitter_off_eventname_listener
+	EventEmitter.prototype.off = function(type, listener){
+	    return this.removeListener(type, listener);
 	};
+
+	EventEmitter.prototype.removeAllListeners =
+	    function removeAllListeners(type) {
+	      var listeners, events;
+
+	      events = this._events;
+	      if (!events)
+	        return this;
+
+	      // not listening for removeListener, no need to emit
+	      if (!events.removeListener) {
+	        if (arguments.length === 0) {
+	          this._events = new EventHandlers();
+	          this._eventsCount = 0;
+	        } else if (events[type]) {
+	          if (--this._eventsCount === 0)
+	            this._events = new EventHandlers();
+	          else
+	            delete events[type];
+	        }
+	        return this;
+	      }
+
+	      // emit removeListener for all listeners on all events
+	      if (arguments.length === 0) {
+	        var keys = Object.keys(events);
+	        for (var i = 0, key; i < keys.length; ++i) {
+	          key = keys[i];
+	          if (key === 'removeListener') continue;
+	          this.removeAllListeners(key);
+	        }
+	        this.removeAllListeners('removeListener');
+	        this._events = new EventHandlers();
+	        this._eventsCount = 0;
+	        return this;
+	      }
+
+	      listeners = events[type];
+
+	      if (typeof listeners === 'function') {
+	        this.removeListener(type, listeners);
+	      } else if (listeners) {
+	        // LIFO order
+	        do {
+	          this.removeListener(type, listeners[listeners.length - 1]);
+	        } while (listeners[0]);
+	      }
+
+	      return this;
+	    };
+
 	EventEmitter.prototype.listeners = function listeners(type) {
 	  var evlistener;
 	  var ret;
 	  var events = this._events;
-	  if (!events) ret = [];else {
+
+	  if (!events)
+	    ret = [];
+	  else {
 	    evlistener = events[type];
-	    if (!evlistener) ret = [];else if (typeof evlistener === 'function') ret = [evlistener.listener || evlistener];else ret = unwrapListeners(evlistener);
+	    if (!evlistener)
+	      ret = [];
+	    else if (typeof evlistener === 'function')
+	      ret = [evlistener.listener || evlistener];
+	    else
+	      ret = unwrapListeners(evlistener);
 	  }
+
 	  return ret;
 	};
-	EventEmitter.listenerCount = function (emitter, type) {
+
+	EventEmitter.listenerCount = function(emitter, type) {
 	  if (typeof emitter.listenerCount === 'function') {
 	    return emitter.listenerCount(type);
 	  } else {
 	    return listenerCount$1.call(emitter, type);
 	  }
 	};
+
 	EventEmitter.prototype.listenerCount = listenerCount$1;
 	function listenerCount$1(type) {
 	  var events = this._events;
+
 	  if (events) {
 	    var evlistener = events[type];
+
 	    if (typeof evlistener === 'function') {
 	      return 1;
 	    } else if (evlistener) {
 	      return evlistener.length;
 	    }
 	  }
+
 	  return 0;
 	}
+
 	EventEmitter.prototype.eventNames = function eventNames() {
 	  return this._eventsCount > 0 ? Reflect.ownKeys(this._events) : [];
 	};
 
 	// About 1.5x faster than the two-arg version of Array#splice().
 	function spliceOne(list, index) {
-	  for (var i = index, k = i + 1, n = list.length; k < n; i += 1, k += 1) list[i] = list[k];
+	  for (var i = index, k = i + 1, n = list.length; k < n; i += 1, k += 1)
+	    list[i] = list[k];
 	  list.pop();
 	}
+
 	function arrayClone(arr, i) {
 	  var copy = new Array(i);
-	  while (i--) copy[i] = arr[i];
+	  while (i--)
+	    copy[i] = arr[i];
 	  return copy;
 	}
+
 	function unwrapListeners(arr) {
 	  var ret = new Array(arr.length);
 	  for (var i = 0; i < ret.length; ++i) {
@@ -27773,7 +28404,7 @@
 	}
 
 	var inherits;
-	if (typeof Object.create === 'function') {
+	if (typeof Object.create === 'function'){
 	  inherits = function inherits(ctor, superCtor) {
 	    // implementation from standard node.js 'util' module
 	    ctor.super_ = superCtor;
@@ -27789,7 +28420,7 @@
 	} else {
 	  inherits = function inherits(ctor, superCtor) {
 	    ctor.super_ = superCtor;
-	    var TempCtor = function TempCtor() {};
+	    var TempCtor = function () {};
 	    TempCtor.prototype = superCtor.prototype;
 	    ctor.prototype = new TempCtor();
 	    ctor.prototype.constructor = ctor;
@@ -27806,17 +28437,16 @@
 	    }
 	    return objects.join(' ');
 	  }
+
 	  var i = 1;
 	  var args = arguments;
 	  var len = args.length;
-	  var str = String(f).replace(formatRegExp, function (x) {
+	  var str = String(f).replace(formatRegExp, function(x) {
 	    if (x === '%%') return '%';
 	    if (i >= len) return x;
 	    switch (x) {
-	      case '%s':
-	        return String(args[i++]);
-	      case '%d':
-	        return Number(args[i++]);
+	      case '%s': return String(args[i++]);
+	      case '%d': return Number(args[i++]);
 	      case '%j':
 	        try {
 	          return JSON.stringify(args[i++]);
@@ -27843,19 +28473,21 @@
 	function deprecate(fn, msg) {
 	  // Allow for deprecating things in the process of starting up.
 	  if (isUndefined(global$1.process)) {
-	    return function () {
+	    return function() {
 	      return deprecate(fn, msg).apply(this, arguments);
 	    };
 	  }
-	  if (process$1.noDeprecation === true) {
+
+	  if (browser$1.noDeprecation === true) {
 	    return fn;
 	  }
+
 	  var warned = false;
 	  function deprecated() {
 	    if (!warned) {
-	      if (process$1.throwDeprecation) {
+	      if (browser$1.throwDeprecation) {
 	        throw new Error(msg);
-	      } else if (process$1.traceDeprecation) {
+	      } else if (browser$1.traceDeprecation) {
 	        console.trace(msg);
 	      } else {
 	        console.error(msg);
@@ -27864,22 +28496,25 @@
 	    }
 	    return fn.apply(this, arguments);
 	  }
+
 	  return deprecated;
 	}
+
 	var debugs = {};
 	var debugEnviron;
 	function debuglog(set) {
-	  if (isUndefined(debugEnviron)) debugEnviron = process$1.env.NODE_DEBUG || '';
+	  if (isUndefined(debugEnviron))
+	    debugEnviron = browser$1.env.NODE_DEBUG || '';
 	  set = set.toUpperCase();
 	  if (!debugs[set]) {
 	    if (new RegExp('\\b' + set + '\\b', 'i').test(debugEnviron)) {
 	      var pid = 0;
-	      debugs[set] = function () {
+	      debugs[set] = function() {
 	        var msg = format.apply(null, arguments);
 	        console.error('%s %d: %s', set, pid, msg);
 	      };
 	    } else {
-	      debugs[set] = function () {};
+	      debugs[set] = function() {};
 	    }
 	  }
 	  return debugs[set];
@@ -27920,19 +28555,19 @@
 
 	// http://en.wikipedia.org/wiki/ANSI_escape_code#graphics
 	inspect.colors = {
-	  'bold': [1, 22],
-	  'italic': [3, 23],
-	  'underline': [4, 24],
-	  'inverse': [7, 27],
-	  'white': [37, 39],
-	  'grey': [90, 39],
-	  'black': [30, 39],
-	  'blue': [34, 39],
-	  'cyan': [36, 39],
-	  'green': [32, 39],
-	  'magenta': [35, 39],
-	  'red': [31, 39],
-	  'yellow': [33, 39]
+	  'bold' : [1, 22],
+	  'italic' : [3, 23],
+	  'underline' : [4, 24],
+	  'inverse' : [7, 27],
+	  'white' : [37, 39],
+	  'grey' : [90, 39],
+	  'black' : [30, 39],
+	  'blue' : [34, 39],
+	  'cyan' : [36, 39],
+	  'green' : [32, 39],
+	  'magenta' : [35, 39],
+	  'red' : [31, 39],
+	  'yellow' : [33, 39]
 	};
 
 	// Don't use 'blue' not visible on cmd.exe
@@ -27947,32 +28582,46 @@
 	  // "name": intentionally not styling
 	  'regexp': 'red'
 	};
+
+
 	function stylizeWithColor(str, styleType) {
 	  var style = inspect.styles[styleType];
+
 	  if (style) {
-	    return "\x1B[" + inspect.colors[style][0] + 'm' + str + "\x1B[" + inspect.colors[style][1] + 'm';
+	    return '\u001b[' + inspect.colors[style][0] + 'm' + str +
+	           '\u001b[' + inspect.colors[style][1] + 'm';
 	  } else {
 	    return str;
 	  }
 	}
+
+
 	function stylizeNoColor(str, styleType) {
 	  return str;
 	}
+
+
 	function arrayToHash(array) {
 	  var hash = {};
-	  array.forEach(function (val, idx) {
+
+	  array.forEach(function(val, idx) {
 	    hash[val] = true;
 	  });
+
 	  return hash;
 	}
+
+
 	function formatValue(ctx, value, recurseTimes) {
 	  // Provide a hook for user-specified inspect functions.
 	  // Check that value is an object with an inspect function on it
-	  if (ctx.customInspect && value && isFunction$2(value.inspect) &&
-	  // Filter out the util module, it's inspect function is special
-	  value.inspect !== inspect &&
-	  // Also filter out any prototype objects using the circular check.
-	  !(value.constructor && value.constructor.prototype === value)) {
+	  if (ctx.customInspect &&
+	      value &&
+	      isFunction$2(value.inspect) &&
+	      // Filter out the util module, it's inspect function is special
+	      value.inspect !== inspect &&
+	      // Also filter out any prototype objects using the circular check.
+	      !(value.constructor && value.constructor.prototype === value)) {
 	    var ret = value.inspect(recurseTimes, ctx);
 	    if (!isString(ret)) {
 	      ret = formatValue(ctx, ret, recurseTimes);
@@ -27989,13 +28638,15 @@
 	  // Look up the keys of the object.
 	  var keys = Object.keys(value);
 	  var visibleKeys = arrayToHash(keys);
+
 	  if (ctx.showHidden) {
 	    keys = Object.getOwnPropertyNames(value);
 	  }
 
 	  // IE doesn't make error fields non-enumerable
 	  // http://msdn.microsoft.com/en-us/library/ie/dww52sbt(v=vs.94).aspx
-	  if (isError(value) && (keys.indexOf('message') >= 0 || keys.indexOf('description') >= 0)) {
+	  if (isError(value)
+	      && (keys.indexOf('message') >= 0 || keys.indexOf('description') >= 0)) {
 	    return formatError(value);
 	  }
 
@@ -28015,9 +28666,8 @@
 	      return formatError(value);
 	    }
 	  }
-	  var base = '',
-	    array = false,
-	    braces = ['{', '}'];
+
+	  var base = '', array = false, braces = ['{', '}'];
 
 	  // Make Array say that they are Array
 	  if (isArray$3(value)) {
@@ -28045,9 +28695,11 @@
 	  if (isError(value)) {
 	    base = ' ' + formatError(value);
 	  }
+
 	  if (keys.length === 0 && (!array || value.length == 0)) {
 	    return braces[0] + base + braces[1];
 	  }
+
 	  if (recurseTimes < 0) {
 	    if (isRegExp(value)) {
 	      return ctx.stylize(RegExp.prototype.toString.call(value), 'regexp');
@@ -28055,53 +28707,71 @@
 	      return ctx.stylize('[Object]', 'special');
 	    }
 	  }
+
 	  ctx.seen.push(value);
+
 	  var output;
 	  if (array) {
 	    output = formatArray(ctx, value, recurseTimes, visibleKeys, keys);
 	  } else {
-	    output = keys.map(function (key) {
+	    output = keys.map(function(key) {
 	      return formatProperty(ctx, value, recurseTimes, visibleKeys, key, array);
 	    });
 	  }
+
 	  ctx.seen.pop();
+
 	  return reduceToSingleString(output, base, braces);
 	}
+
+
 	function formatPrimitive(ctx, value) {
-	  if (isUndefined(value)) return ctx.stylize('undefined', 'undefined');
+	  if (isUndefined(value))
+	    return ctx.stylize('undefined', 'undefined');
 	  if (isString(value)) {
-	    var simple = '\'' + JSON.stringify(value).replace(/^"|"$/g, '').replace(/'/g, "\\'").replace(/\\"/g, '"') + '\'';
+	    var simple = '\'' + JSON.stringify(value).replace(/^"|"$/g, '')
+	                                             .replace(/'/g, "\\'")
+	                                             .replace(/\\"/g, '"') + '\'';
 	    return ctx.stylize(simple, 'string');
 	  }
-	  if (isNumber(value)) return ctx.stylize('' + value, 'number');
-	  if (isBoolean(value)) return ctx.stylize('' + value, 'boolean');
+	  if (isNumber(value))
+	    return ctx.stylize('' + value, 'number');
+	  if (isBoolean(value))
+	    return ctx.stylize('' + value, 'boolean');
 	  // For some reason typeof null is "object", so special case here.
-	  if (isNull(value)) return ctx.stylize('null', 'null');
+	  if (isNull(value))
+	    return ctx.stylize('null', 'null');
 	}
+
+
 	function formatError(value) {
 	  return '[' + Error.prototype.toString.call(value) + ']';
 	}
+
+
 	function formatArray(ctx, value, recurseTimes, visibleKeys, keys) {
 	  var output = [];
 	  for (var i = 0, l = value.length; i < l; ++i) {
 	    if (hasOwnProperty$1(value, String(i))) {
-	      output.push(formatProperty(ctx, value, recurseTimes, visibleKeys, String(i), true));
+	      output.push(formatProperty(ctx, value, recurseTimes, visibleKeys,
+	          String(i), true));
 	    } else {
 	      output.push('');
 	    }
 	  }
-	  keys.forEach(function (key) {
+	  keys.forEach(function(key) {
 	    if (!key.match(/^\d+$/)) {
-	      output.push(formatProperty(ctx, value, recurseTimes, visibleKeys, key, true));
+	      output.push(formatProperty(ctx, value, recurseTimes, visibleKeys,
+	          key, true));
 	    }
 	  });
 	  return output;
 	}
+
+
 	function formatProperty(ctx, value, recurseTimes, visibleKeys, key, array) {
 	  var name, str, desc;
-	  desc = Object.getOwnPropertyDescriptor(value, key) || {
-	    value: value[key]
-	  };
+	  desc = Object.getOwnPropertyDescriptor(value, key) || { value: value[key] };
 	  if (desc.get) {
 	    if (desc.set) {
 	      str = ctx.stylize('[Getter/Setter]', 'special');
@@ -28125,11 +28795,11 @@
 	      }
 	      if (str.indexOf('\n') > -1) {
 	        if (array) {
-	          str = str.split('\n').map(function (line) {
+	          str = str.split('\n').map(function(line) {
 	            return '  ' + line;
 	          }).join('\n').substr(2);
 	        } else {
-	          str = '\n' + str.split('\n').map(function (line) {
+	          str = '\n' + str.split('\n').map(function(line) {
 	            return '   ' + line;
 	          }).join('\n');
 	        }
@@ -28147,64 +28817,91 @@
 	      name = name.substr(1, name.length - 2);
 	      name = ctx.stylize(name, 'name');
 	    } else {
-	      name = name.replace(/'/g, "\\'").replace(/\\"/g, '"').replace(/(^"|"$)/g, "'");
+	      name = name.replace(/'/g, "\\'")
+	                 .replace(/\\"/g, '"')
+	                 .replace(/(^"|"$)/g, "'");
 	      name = ctx.stylize(name, 'string');
 	    }
 	  }
+
 	  return name + ': ' + str;
 	}
+
+
 	function reduceToSingleString(output, base, braces) {
-	  var length = output.reduce(function (prev, cur) {
+	  var length = output.reduce(function(prev, cur) {
 	    if (cur.indexOf('\n') >= 0) ;
 	    return prev + cur.replace(/\u001b\[\d\d?m/g, '').length + 1;
 	  }, 0);
+
 	  if (length > 60) {
-	    return braces[0] + (base === '' ? '' : base + '\n ') + ' ' + output.join(',\n  ') + ' ' + braces[1];
+	    return braces[0] +
+	           (base === '' ? '' : base + '\n ') +
+	           ' ' +
+	           output.join(',\n  ') +
+	           ' ' +
+	           braces[1];
 	  }
+
 	  return braces[0] + base + ' ' + output.join(', ') + ' ' + braces[1];
 	}
+
 
 	// NOTE: These type checking functions intentionally don't use `instanceof`
 	// because it is fragile and can be easily faked with `Object.create()`.
 	function isArray$3(ar) {
 	  return Array.isArray(ar);
 	}
+
 	function isBoolean(arg) {
 	  return typeof arg === 'boolean';
 	}
+
 	function isNull(arg) {
 	  return arg === null;
 	}
+
 	function isNumber(arg) {
 	  return typeof arg === 'number';
 	}
+
 	function isString(arg) {
 	  return typeof arg === 'string';
 	}
+
 	function isUndefined(arg) {
 	  return arg === void 0;
 	}
+
 	function isRegExp(re) {
 	  return isObject(re) && objectToString(re) === '[object RegExp]';
 	}
+
 	function isObject(arg) {
-	  return _typeof(arg) === 'object' && arg !== null;
+	  return typeof arg === 'object' && arg !== null;
 	}
+
 	function isDate$1(d) {
 	  return isObject(d) && objectToString(d) === '[object Date]';
 	}
+
 	function isError(e) {
-	  return isObject(e) && (objectToString(e) === '[object Error]' || e instanceof Error);
+	  return isObject(e) &&
+	      (objectToString(e) === '[object Error]' || e instanceof Error);
 	}
+
 	function isFunction$2(arg) {
 	  return typeof arg === 'function';
 	}
+
 	function objectToString(o) {
 	  return Object.prototype.toString.call(o);
 	}
+
 	function _extend(origin, add) {
 	  // Don't do anything if add isn't an object
 	  if (!add || !isObject(add)) return origin;
+
 	  var keys = Object.keys(add);
 	  var i = keys.length;
 	  while (i--) {
@@ -28221,24 +28918,21 @@
 	  this.tail = null;
 	  this.length = 0;
 	}
+
 	BufferList.prototype.push = function (v) {
-	  var entry = {
-	    data: v,
-	    next: null
-	  };
+	  var entry = { data: v, next: null };
 	  if (this.length > 0) this.tail.next = entry;else this.head = entry;
 	  this.tail = entry;
 	  ++this.length;
 	};
+
 	BufferList.prototype.unshift = function (v) {
-	  var entry = {
-	    data: v,
-	    next: this.head
-	  };
+	  var entry = { data: v, next: this.head };
 	  if (this.length === 0) this.tail = entry;
 	  this.head = entry;
 	  ++this.length;
 	};
+
 	BufferList.prototype.shift = function () {
 	  if (this.length === 0) return;
 	  var ret = this.head.data;
@@ -28246,19 +28940,21 @@
 	  --this.length;
 	  return ret;
 	};
+
 	BufferList.prototype.clear = function () {
 	  this.head = this.tail = null;
 	  this.length = 0;
 	};
+
 	BufferList.prototype.join = function (s) {
 	  if (this.length === 0) return '';
 	  var p = this.head;
 	  var ret = '' + p.data;
 	  while (p = p.next) {
 	    ret += s + p.data;
-	  }
-	  return ret;
+	  }return ret;
 	};
+
 	BufferList.prototype.concat = function (n) {
 	  if (this.length === 0) return Buffer.alloc(0);
 	  if (this.length === 1) return this.head.data;
@@ -28274,24 +28970,15 @@
 	};
 
 	// Copyright Joyent, Inc. and other Node contributors.
-	var isBufferEncoding = Buffer.isEncoding || function (encoding) {
-	  switch (encoding && encoding.toLowerCase()) {
-	    case 'hex':
-	    case 'utf8':
-	    case 'utf-8':
-	    case 'ascii':
-	    case 'binary':
-	    case 'base64':
-	    case 'ucs2':
-	    case 'ucs-2':
-	    case 'utf16le':
-	    case 'utf-16le':
-	    case 'raw':
-	      return true;
-	    default:
-	      return false;
-	  }
-	};
+	var isBufferEncoding = Buffer.isEncoding
+	  || function(encoding) {
+	       switch (encoding && encoding.toLowerCase()) {
+	         case 'hex': case 'utf8': case 'utf-8': case 'ascii': case 'binary': case 'base64': case 'ucs2': case 'ucs-2': case 'utf16le': case 'utf-16le': case 'raw': return true;
+	         default: return false;
+	       }
+	     };
+
+
 	function assertEncoding(encoding) {
 	  if (encoding && !isBufferEncoding(encoding)) {
 	    throw new Error('Unknown encoding: ' + encoding);
@@ -28348,16 +29035,19 @@
 	// currently works, but converting a String to a Buffer (via `new Buffer`, or
 	// Buffer#write) will replace incomplete surrogates with the unicode
 	// replacement character. See https://codereview.chromium.org/121173009/ .
-	StringDecoder.prototype.write = function (buffer) {
+	StringDecoder.prototype.write = function(buffer) {
 	  var charStr = '';
 	  // if our last write ended with an incomplete multibyte character
 	  while (this.charLength) {
 	    // determine how many remaining bytes this buffer has to offer for this char
-	    var available = buffer.length >= this.charLength - this.charReceived ? this.charLength - this.charReceived : buffer.length;
+	    var available = (buffer.length >= this.charLength - this.charReceived) ?
+	        this.charLength - this.charReceived :
+	        buffer.length;
 
 	    // add the new bytes to the char buffer
 	    buffer.copy(this.charBuffer, this.charReceived, 0, available);
 	    this.charReceived += available;
+
 	    if (this.charReceived < this.charLength) {
 	      // still not enough chars in this buffer? wait for more ...
 	      return '';
@@ -28387,13 +29077,16 @@
 
 	  // determine and set charLength / charReceived
 	  this.detectIncompleteChar(buffer);
+
 	  var end = buffer.length;
 	  if (this.charLength) {
 	    // buffer the incomplete character bytes we got
 	    buffer.copy(this.charBuffer, 0, buffer.length - this.charReceived, end);
 	    end -= this.charReceived;
 	  }
+
 	  charStr += buffer.toString(this.encoding, 0, end);
+
 	  var end = charStr.length - 1;
 	  var charCode = charStr.charCodeAt(end);
 	  // CESU-8: lead surrogate (D800-DBFF) is also the incomplete character
@@ -28414,9 +29107,9 @@
 	// the end of the given buffer. If so, it sets this.charLength to the byte
 	// length that character, and sets this.charReceived to the number of bytes
 	// that are available for this character.
-	StringDecoder.prototype.detectIncompleteChar = function (buffer) {
+	StringDecoder.prototype.detectIncompleteChar = function(buffer) {
 	  // determine how many bytes we have to check at the end of this buffer
-	  var i = buffer.length >= 3 ? 3 : buffer.length;
+	  var i = (buffer.length >= 3) ? 3 : buffer.length;
 
 	  // Figure out if one of the last i bytes of our buffer announces an
 	  // incomplete char.
@@ -28445,32 +29138,41 @@
 	  }
 	  this.charReceived = i;
 	};
-	StringDecoder.prototype.end = function (buffer) {
+
+	StringDecoder.prototype.end = function(buffer) {
 	  var res = '';
-	  if (buffer && buffer.length) res = this.write(buffer);
+	  if (buffer && buffer.length)
+	    res = this.write(buffer);
+
 	  if (this.charReceived) {
 	    var cr = this.charReceived;
 	    var buf = this.charBuffer;
 	    var enc = this.encoding;
 	    res += buf.slice(0, cr).toString(enc);
 	  }
+
 	  return res;
 	};
+
 	function passThroughWrite(buffer) {
 	  return buffer.toString(this.encoding);
 	}
+
 	function utf16DetectIncompleteChar(buffer) {
 	  this.charReceived = buffer.length % 2;
 	  this.charLength = this.charReceived ? 2 : 0;
 	}
+
 	function base64DetectIncompleteChar(buffer) {
 	  this.charReceived = buffer.length % 3;
 	  this.charLength = this.charReceived ? 3 : 0;
 	}
 
 	Readable.ReadableState = ReadableState;
-	var debug = /*#__PURE__*/debuglog('stream');
+
+	var debug = debuglog('stream');
 	inherits$1(Readable, EventEmitter);
+
 	function prependListener(emitter, event, fn) {
 	  // Sadly this is not cacheable as some libraries bundle their own
 	  // event emitter implementation with them.
@@ -28481,18 +29183,25 @@
 	    // userland ones.  NEVER DO THIS. This is here only because this code needs
 	    // to continue to work with older versions of Node.js that do not include
 	    // the prependListener() method. The goal is to eventually remove this hack.
-	    if (!emitter._events || !emitter._events[event]) emitter.on(event, fn);else if (Array.isArray(emitter._events[event])) emitter._events[event].unshift(fn);else emitter._events[event] = [fn, emitter._events[event]];
+	    if (!emitter._events || !emitter._events[event])
+	      emitter.on(event, fn);
+	    else if (Array.isArray(emitter._events[event]))
+	      emitter._events[event].unshift(fn);
+	    else
+	      emitter._events[event] = [fn, emitter._events[event]];
 	  }
 	}
-	function listenerCount(emitter, type) {
+	function listenerCount (emitter, type) {
 	  return emitter.listeners(type).length;
 	}
 	function ReadableState(options, stream) {
+
 	  options = options || {};
 
 	  // object stream flag. Used to make read(n) ignore n and to
 	  // make all the buffer merging and length checks go away
 	  this.objectMode = !!options.objectMode;
+
 	  if (stream instanceof Duplex) this.objectMode = this.objectMode || !!options.readableObjectMode;
 
 	  // the point at which it stops calling _read() to fill the buffer
@@ -28502,7 +29211,7 @@
 	  this.highWaterMark = hwm || hwm === 0 ? hwm : defaultHwm;
 
 	  // cast to ints.
-	  this.highWaterMark = ~~this.highWaterMark;
+	  this.highWaterMark = ~ ~this.highWaterMark;
 
 	  // A linked list is used to store data chunks instead of an array because the
 	  // linked list can remove elements from the beginning faster than
@@ -28543,6 +29252,7 @@
 
 	  // if true, a maybeReadMore has been scheduled
 	  this.readingMore = false;
+
 	  this.decoder = null;
 	  this.encoding = null;
 	  if (options.encoding) {
@@ -28551,12 +29261,16 @@
 	  }
 	}
 	function Readable(options) {
+
 	  if (!(this instanceof Readable)) return new Readable(options);
+
 	  this._readableState = new ReadableState(options, this);
 
 	  // legacy
 	  this.readable = true;
+
 	  if (options && typeof options.read === 'function') this._read = options.read;
+
 	  EventEmitter.call(this);
 	}
 
@@ -28566,6 +29280,7 @@
 	// write() some more.
 	Readable.prototype.push = function (chunk, encoding) {
 	  var state = this._readableState;
+
 	  if (!state.objectMode && typeof chunk === 'string') {
 	    encoding = encoding || state.defaultEncoding;
 	    if (encoding !== state.encoding) {
@@ -28573,6 +29288,7 @@
 	      encoding = '';
 	    }
 	  }
+
 	  return readableAddChunk(this, state, chunk, encoding, false);
 	};
 
@@ -28581,9 +29297,11 @@
 	  var state = this._readableState;
 	  return readableAddChunk(this, state, chunk, '', true);
 	};
+
 	Readable.prototype.isPaused = function () {
 	  return this._readableState.flowing === false;
 	};
+
 	function readableAddChunk(stream, state, chunk, encoding, addToFront) {
 	  var er = chunkInvalid(state, chunk);
 	  if (er) {
@@ -28604,6 +29322,7 @@
 	        chunk = state.decoder.write(chunk);
 	        skipAdd = !state.objectMode && chunk.length === 0;
 	      }
+
 	      if (!addToFront) state.reading = false;
 
 	      // Don't add to the buffer if we've decoded to an empty string chunk and
@@ -28617,14 +29336,17 @@
 	          // update the buffer info.
 	          state.length += state.objectMode ? 1 : chunk.length;
 	          if (addToFront) state.buffer.unshift(chunk);else state.buffer.push(chunk);
+
 	          if (state.needReadable) emitReadable(stream);
 	        }
 	      }
+
 	      maybeReadMore(stream, state);
 	    }
 	  } else if (!addToFront) {
 	    state.reading = false;
 	  }
+
 	  return needMoreData(state);
 	}
 
@@ -28691,6 +29413,7 @@
 	  n = parseInt(n, 10);
 	  var state = this._readableState;
 	  var nOrig = n;
+
 	  if (n !== 0) state.emittedReadable = false;
 
 	  // if we're doing read(0) to trigger a readable event, but we
@@ -28701,6 +29424,7 @@
 	    if (state.length === 0 && state.ended) endReadable(this);else emitReadable(this);
 	    return null;
 	  }
+
 	  n = howMuchToRead(n, state);
 
 	  // if we've ended, and we're now clear, then finish it up.
@@ -28759,14 +29483,17 @@
 	    // and we need to re-evaluate how much data we can return to the user.
 	    if (!state.reading) n = howMuchToRead(nOrig, state);
 	  }
+
 	  var ret;
 	  if (n > 0) ret = fromList(n, state);else ret = null;
+
 	  if (ret === null) {
 	    state.needReadable = true;
 	    n = 0;
 	  } else {
 	    state.length -= n;
 	  }
+
 	  if (state.length === 0) {
 	    // If we have nothing in the buffer, then we want to know
 	    // as soon as we *do* get something into the buffer.
@@ -28775,16 +29502,20 @@
 	    // If we tried to read() past the EOF, then emit end on the next tick.
 	    if (nOrig !== n && state.ended) endReadable(this);
 	  }
+
 	  if (ret !== null) this.emit('data', ret);
+
 	  return ret;
 	};
+
 	function chunkInvalid(state, chunk) {
 	  var er = null;
-	  if (!isBuffer$1(chunk) && typeof chunk !== 'string' && chunk !== null && chunk !== undefined && !state.objectMode) {
+	  if (!Buffer.isBuffer(chunk) && typeof chunk !== 'string' && chunk !== null && chunk !== undefined && !state.objectMode) {
 	    er = new TypeError('Invalid non-string/buffer chunk');
 	  }
 	  return er;
 	}
+
 	function onEofChunk(stream, state) {
 	  if (state.ended) return;
 	  if (state.decoder) {
@@ -28812,6 +29543,7 @@
 	    if (state.sync) nextTick$1(emitReadable_, stream);else emitReadable_(stream);
 	  }
 	}
+
 	function emitReadable_(stream) {
 	  debug('emit readable');
 	  stream.emit('readable');
@@ -28830,6 +29562,7 @@
 	    nextTick$1(maybeReadMore_, stream, state);
 	  }
 	}
+
 	function maybeReadMore_(stream, state) {
 	  var len = state.length;
 	  while (!state.reading && !state.flowing && !state.ended && state.length < state.highWaterMark) {
@@ -28849,9 +29582,11 @@
 	Readable.prototype._read = function (n) {
 	  this.emit('error', new Error('not implemented'));
 	};
+
 	Readable.prototype.pipe = function (dest, pipeOpts) {
 	  var src = this;
 	  var state = this._readableState;
+
 	  switch (state.pipesCount) {
 	    case 0:
 	      state.pipes = dest;
@@ -28865,9 +29600,12 @@
 	  }
 	  state.pipesCount += 1;
 	  debug('pipe count=%d opts=%j', state.pipesCount, pipeOpts);
-	  var doEnd = !pipeOpts || pipeOpts.end !== false;
+
+	  var doEnd = (!pipeOpts || pipeOpts.end !== false);
+
 	  var endFn = doEnd ? onend : cleanup;
 	  if (state.endEmitted) nextTick$1(endFn);else src.once('end', endFn);
+
 	  dest.on('unpipe', onunpipe);
 	  function onunpipe(readable) {
 	    debug('onunpipe');
@@ -28875,6 +29613,7 @@
 	      cleanup();
 	    }
 	  }
+
 	  function onend() {
 	    debug('onend');
 	    dest.end();
@@ -28886,6 +29625,7 @@
 	  // too slow.
 	  var ondrain = pipeOnDrain(src);
 	  dest.on('drain', ondrain);
+
 	  var cleanedUp = false;
 	  function cleanup() {
 	    debug('cleanup');
@@ -28898,6 +29638,7 @@
 	    src.removeListener('end', onend);
 	    src.removeListener('end', cleanup);
 	    src.removeListener('data', ondata);
+
 	    cleanedUp = true;
 
 	    // if the reader is waiting for a drain event from this
@@ -28956,6 +29697,7 @@
 	    unpipe();
 	  }
 	  dest.once('finish', onfinish);
+
 	  function unpipe() {
 	    debug('unpipe');
 	    src.unpipe(dest);
@@ -28969,8 +29711,10 @@
 	    debug('pipe resume');
 	    src.resume();
 	  }
+
 	  return dest;
 	};
+
 	function pipeOnDrain(src) {
 	  return function () {
 	    var state = src._readableState;
@@ -28982,6 +29726,7 @@
 	    }
 	  };
 	}
+
 	Readable.prototype.unpipe = function (dest) {
 	  var state = this._readableState;
 
@@ -28992,6 +29737,7 @@
 	  if (state.pipesCount === 1) {
 	    // passed in one, but it's not the right one.
 	    if (dest && dest !== state.pipes) return this;
+
 	    if (!dest) dest = state.pipes;
 
 	    // got a match.
@@ -29011,19 +29757,22 @@
 	    state.pipes = null;
 	    state.pipesCount = 0;
 	    state.flowing = false;
+
 	    for (var _i = 0; _i < len; _i++) {
 	      dests[_i].emit('unpipe', this);
-	    }
-	    return this;
+	    }return this;
 	  }
 
 	  // try to find the right one.
 	  var i = indexOf(state.pipes, dest);
 	  if (i === -1) return this;
+
 	  state.pipes.splice(i, 1);
 	  state.pipesCount -= 1;
 	  if (state.pipesCount === 1) state.pipes = state.pipes[0];
+
 	  dest.emit('unpipe', this);
+
 	  return this;
 	};
 
@@ -29031,6 +29780,7 @@
 	// Ensure readable listeners eventually get something
 	Readable.prototype.on = function (ev, fn) {
 	  var res = EventEmitter.prototype.on.call(this, ev, fn);
+
 	  if (ev === 'data') {
 	    // Start flowing on next tick if stream isn't explicitly paused
 	    if (this._readableState.flowing !== false) this.resume();
@@ -29046,9 +29796,11 @@
 	      }
 	    }
 	  }
+
 	  return res;
 	};
 	Readable.prototype.addListener = Readable.prototype.on;
+
 	function nReadingNextTick(self) {
 	  debug('readable nexttick read 0');
 	  self.read(0);
@@ -29065,23 +29817,27 @@
 	  }
 	  return this;
 	};
+
 	function resume(stream, state) {
 	  if (!state.resumeScheduled) {
 	    state.resumeScheduled = true;
 	    nextTick$1(resume_, stream, state);
 	  }
 	}
+
 	function resume_(stream, state) {
 	  if (!state.reading) {
 	    debug('resume read 0');
 	    stream.read(0);
 	  }
+
 	  state.resumeScheduled = false;
 	  state.awaitDrain = 0;
 	  stream.emit('resume');
 	  flow(stream);
 	  if (state.flowing && !state.reading) stream.read(0);
 	}
+
 	Readable.prototype.pause = function () {
 	  debug('call pause flowing=%j', this._readableState.flowing);
 	  if (false !== this._readableState.flowing) {
@@ -29091,6 +29847,7 @@
 	  }
 	  return this;
 	};
+
 	function flow(stream) {
 	  var state = stream._readableState;
 	  debug('flow', state.flowing);
@@ -29103,6 +29860,7 @@
 	Readable.prototype.wrap = function (stream) {
 	  var state = this._readableState;
 	  var paused = false;
+
 	  var self = this;
 	  stream.on('end', function () {
 	    debug('wrapped end');
@@ -29110,14 +29868,17 @@
 	      var chunk = state.decoder.end();
 	      if (chunk && chunk.length) self.push(chunk);
 	    }
+
 	    self.push(null);
 	  });
+
 	  stream.on('data', function (chunk) {
 	    debug('wrapped data');
 	    if (state.decoder) chunk = state.decoder.write(chunk);
 
 	    // don't skip over falsy values in objectMode
 	    if (state.objectMode && (chunk === null || chunk === undefined)) return;else if (!state.objectMode && (!chunk || !chunk.length)) return;
+
 	    var ret = self.push(chunk);
 	    if (!ret) {
 	      paused = true;
@@ -29152,6 +29913,7 @@
 	      stream.resume();
 	    }
 	  };
+
 	  return self;
 	};
 
@@ -29165,6 +29927,7 @@
 	function fromList(n, state) {
 	  // nothing buffered
 	  if (state.length === 0) return null;
+
 	  var ret;
 	  if (state.objectMode) ret = state.buffer.shift();else if (!n || n >= state.length) {
 	    // read it all, truncate the list
@@ -29174,6 +29937,7 @@
 	    // read part of list
 	    ret = fromListPartial(n, state.buffer, state.decoder);
 	  }
+
 	  return ret;
 	}
 
@@ -29255,17 +30019,20 @@
 	  list.length -= c;
 	  return ret;
 	}
+
 	function endReadable(stream) {
 	  var state = stream._readableState;
 
 	  // If we get here before consuming all the bytes, then that is a
 	  // bug in node.  Should never happen.
 	  if (state.length > 0) throw new Error('"endReadable()" called on non-empty stream');
+
 	  if (!state.endEmitted) {
 	    state.ended = true;
 	    nextTick$1(endReadableNT, state, stream);
 	  }
 	}
+
 	function endReadableNT(state, stream) {
 	  // Check that we didn't get one last unshift.
 	  if (!state.endEmitted && state.length === 0) {
@@ -29274,11 +30041,13 @@
 	    stream.emit('end');
 	  }
 	}
+
 	function forEach(xs, f) {
 	  for (var i = 0, l = xs.length; i < l; i++) {
 	    f(xs[i], i);
 	  }
 	}
+
 	function indexOf(xs, x) {
 	  for (var i = 0, l = xs.length; i < l; i++) {
 	    if (xs[i] === x) return i;
@@ -29289,13 +30058,16 @@
 	// A bit simpler than readable streams.
 	Writable.WritableState = WritableState;
 	inherits$1(Writable, EventEmitter);
+
 	function nop() {}
+
 	function WriteReq(chunk, encoding, cb) {
 	  this.chunk = chunk;
 	  this.encoding = encoding;
 	  this.callback = cb;
 	  this.next = null;
 	}
+
 	function WritableState(options, stream) {
 	  Object.defineProperty(this, 'buffer', {
 	    get: deprecate(function () {
@@ -29307,6 +30079,7 @@
 	  // object stream flag to indicate whether or not this stream
 	  // contains buffers or objects.
 	  this.objectMode = !!options.objectMode;
+
 	  if (stream instanceof Duplex) this.objectMode = this.objectMode || !!options.writableObjectMode;
 
 	  // the point at which write() starts returning false
@@ -29317,7 +30090,8 @@
 	  this.highWaterMark = hwm || hwm === 0 ? hwm : defaultHwm;
 
 	  // cast to ints.
-	  this.highWaterMark = ~~this.highWaterMark;
+	  this.highWaterMark = ~ ~this.highWaterMark;
+
 	  this.needDrain = false;
 	  // at the start of calling end()
 	  this.ending = false;
@@ -29369,6 +30143,7 @@
 
 	  // the amount that is being written when _write is called.
 	  this.writelen = 0;
+
 	  this.bufferedRequest = null;
 	  this.lastBufferedRequest = null;
 
@@ -29390,6 +30165,7 @@
 	  // one allocated and free to use, and we maintain at most two
 	  this.corkedRequestsFree = new CorkedRequest(this);
 	}
+
 	WritableState.prototype.getBuffer = function writableStateGetBuffer() {
 	  var current = this.bufferedRequest;
 	  var out = [];
@@ -29400,17 +30176,22 @@
 	  return out;
 	};
 	function Writable(options) {
+
 	  // Writable ctor is applied to Duplexes, though they're not
 	  // instanceof Writable, they're instanceof Readable.
 	  if (!(this instanceof Writable) && !(this instanceof Duplex)) return new Writable(options);
+
 	  this._writableState = new WritableState(options, this);
 
 	  // legacy.
 	  this.writable = true;
+
 	  if (options) {
 	    if (typeof options.write === 'function') this._write = options.write;
+
 	    if (typeof options.writev === 'function') this._writev = options.writev;
 	  }
+
 	  EventEmitter.call(this);
 	}
 
@@ -29418,6 +30199,7 @@
 	Writable.prototype.pipe = function () {
 	  this.emit('error', new Error('Cannot pipe, not readable'));
 	};
+
 	function writeAfterEnd(stream, cb) {
 	  var er = new Error('write after end');
 	  // TODO: defer error events consistently everywhere, not just the cb
@@ -29448,32 +30230,44 @@
 	  }
 	  return valid;
 	}
+
 	Writable.prototype.write = function (chunk, encoding, cb) {
 	  var state = this._writableState;
 	  var ret = false;
+
 	  if (typeof encoding === 'function') {
 	    cb = encoding;
 	    encoding = null;
 	  }
+
 	  if (Buffer.isBuffer(chunk)) encoding = 'buffer';else if (!encoding) encoding = state.defaultEncoding;
+
 	  if (typeof cb !== 'function') cb = nop;
+
 	  if (state.ended) writeAfterEnd(this, cb);else if (validChunk(this, state, chunk, cb)) {
 	    state.pendingcb++;
 	    ret = writeOrBuffer(this, state, chunk, encoding, cb);
 	  }
+
 	  return ret;
 	};
+
 	Writable.prototype.cork = function () {
 	  var state = this._writableState;
+
 	  state.corked++;
 	};
+
 	Writable.prototype.uncork = function () {
 	  var state = this._writableState;
+
 	  if (state.corked) {
 	    state.corked--;
+
 	    if (!state.writing && !state.corked && !state.finished && !state.bufferProcessing && state.bufferedRequest) clearBuffer(this, state);
 	  }
 	};
+
 	Writable.prototype.setDefaultEncoding = function setDefaultEncoding(encoding) {
 	  // node::ParseEncoding() requires lower case.
 	  if (typeof encoding === 'string') encoding = encoding.toLowerCase();
@@ -29481,6 +30275,7 @@
 	  this._writableState.defaultEncoding = encoding;
 	  return this;
 	};
+
 	function decodeChunk(state, chunk, encoding) {
 	  if (!state.objectMode && state.decodeStrings !== false && typeof chunk === 'string') {
 	    chunk = Buffer.from(chunk, encoding);
@@ -29493,12 +30288,16 @@
 	// If we return false, then we need a drain event, so set that flag.
 	function writeOrBuffer(stream, state, chunk, encoding, cb) {
 	  chunk = decodeChunk(state, chunk, encoding);
+
 	  if (Buffer.isBuffer(chunk)) encoding = 'buffer';
 	  var len = state.objectMode ? 1 : chunk.length;
+
 	  state.length += len;
+
 	  var ret = state.length < state.highWaterMark;
 	  // we must ensure that previous needDrain will not be reset to false.
 	  if (!ret) state.needDrain = true;
+
 	  if (state.writing || state.corked) {
 	    var last = state.lastBufferedRequest;
 	    state.lastBufferedRequest = new WriteReq(chunk, encoding, cb);
@@ -29511,8 +30310,10 @@
 	  } else {
 	    doWrite(stream, state, false, len, chunk, encoding, cb);
 	  }
+
 	  return ret;
 	}
+
 	function doWrite(stream, state, writev, len, chunk, encoding, cb) {
 	  state.writelen = len;
 	  state.writecb = cb;
@@ -29521,38 +30322,47 @@
 	  if (writev) stream._writev(chunk, state.onwrite);else stream._write(chunk, encoding, state.onwrite);
 	  state.sync = false;
 	}
+
 	function onwriteError(stream, state, sync, er, cb) {
 	  --state.pendingcb;
 	  if (sync) nextTick$1(cb, er);else cb(er);
+
 	  stream._writableState.errorEmitted = true;
 	  stream.emit('error', er);
 	}
+
 	function onwriteStateUpdate(state) {
 	  state.writing = false;
 	  state.writecb = null;
 	  state.length -= state.writelen;
 	  state.writelen = 0;
 	}
+
 	function onwrite(stream, er) {
 	  var state = stream._writableState;
 	  var sync = state.sync;
 	  var cb = state.writecb;
+
 	  onwriteStateUpdate(state);
+
 	  if (er) onwriteError(stream, state, sync, er, cb);else {
 	    // Check if we're actually ready to finish, but don't emit yet
 	    var finished = needFinish(state);
+
 	    if (!finished && !state.corked && !state.bufferProcessing && state.bufferedRequest) {
 	      clearBuffer(stream, state);
 	    }
+
 	    if (sync) {
 	      /*<replacement>*/
-	      nextTick$1(afterWrite, stream, state, finished, cb);
+	        nextTick$1(afterWrite, stream, state, finished, cb);
 	      /*</replacement>*/
 	    } else {
-	      afterWrite(stream, state, finished, cb);
-	    }
+	        afterWrite(stream, state, finished, cb);
+	      }
 	  }
 	}
+
 	function afterWrite(stream, state, finished, cb) {
 	  if (!finished) onwriteDrain(stream, state);
 	  state.pendingcb--;
@@ -29574,18 +30384,21 @@
 	function clearBuffer(stream, state) {
 	  state.bufferProcessing = true;
 	  var entry = state.bufferedRequest;
+
 	  if (stream._writev && entry && entry.next) {
 	    // Fast case, write everything using _writev()
 	    var l = state.bufferedRequestCount;
 	    var buffer = new Array(l);
 	    var holder = state.corkedRequestsFree;
 	    holder.entry = entry;
+
 	    var count = 0;
 	    while (entry) {
 	      buffer[count] = entry;
 	      entry = entry.next;
 	      count += 1;
 	    }
+
 	    doWrite(stream, state, true, state.length, buffer, '', holder.finish);
 
 	    // doWrite is almost always async, defer these to save a bit of time
@@ -29605,6 +30418,7 @@
 	      var encoding = entry.encoding;
 	      var cb = entry.callback;
 	      var len = state.objectMode ? 1 : chunk.length;
+
 	      doWrite(stream, state, false, len, chunk, encoding, cb);
 	      entry = entry.next;
 	      // if we didn't call the onwrite immediately, then
@@ -29615,18 +30429,24 @@
 	        break;
 	      }
 	    }
+
 	    if (entry === null) state.lastBufferedRequest = null;
 	  }
+
 	  state.bufferedRequestCount = 0;
 	  state.bufferedRequest = entry;
 	  state.bufferProcessing = false;
 	}
+
 	Writable.prototype._write = function (chunk, encoding, cb) {
 	  cb(new Error('not implemented'));
 	};
+
 	Writable.prototype._writev = null;
+
 	Writable.prototype.end = function (chunk, encoding, cb) {
 	  var state = this._writableState;
+
 	  if (typeof chunk === 'function') {
 	    cb = chunk;
 	    chunk = null;
@@ -29635,6 +30455,7 @@
 	    cb = encoding;
 	    encoding = null;
 	  }
+
 	  if (chunk !== null && chunk !== undefined) this.write(chunk, encoding);
 
 	  // .end() fully uncorks
@@ -29646,15 +30467,18 @@
 	  // ignore unnecessary end() calls.
 	  if (!state.ending && !state.finished) endWritable(this, state, cb);
 	};
+
 	function needFinish(state) {
 	  return state.ending && state.length === 0 && state.bufferedRequest === null && !state.finished && !state.writing;
 	}
+
 	function prefinish(stream, state) {
 	  if (!state.prefinished) {
 	    state.prefinished = true;
 	    stream.emit('prefinish');
 	  }
 	}
+
 	function finishMaybe(stream, state) {
 	  var need = needFinish(state);
 	  if (need) {
@@ -29668,6 +30492,7 @@
 	  }
 	  return need;
 	}
+
 	function endWritable(stream, state, cb) {
 	  state.ending = true;
 	  finishMaybe(stream, state);
@@ -29682,8 +30507,10 @@
 	// there will be only 2 of these for each stream
 	function CorkedRequest(state) {
 	  var _this = this;
+
 	  this.next = null;
 	  this.entry = null;
+
 	  this.finish = function (err) {
 	    var entry = _this.entry;
 	    _this.entry = null;
@@ -29702,19 +30529,25 @@
 	}
 
 	inherits$1(Duplex, Readable);
-	var keys = /*#__PURE__*/Object.keys(Writable.prototype);
+
+	var keys = Object.keys(Writable.prototype);
 	for (var v = 0; v < keys.length; v++) {
 	  var method = keys[v];
 	  if (!Duplex.prototype[method]) Duplex.prototype[method] = Writable.prototype[method];
 	}
 	function Duplex(options) {
 	  if (!(this instanceof Duplex)) return new Duplex(options);
+
 	  Readable.call(this, options);
 	  Writable.call(this, options);
+
 	  if (options && options.readable === false) this.readable = false;
+
 	  if (options && options.writable === false) this.writable = false;
+
 	  this.allowHalfOpen = true;
 	  if (options && options.allowHalfOpen === false) this.allowHalfOpen = false;
+
 	  this.once('end', onend);
 	}
 
@@ -29728,31 +30561,41 @@
 	  // But allow more writes to happen in this tick.
 	  nextTick$1(onEndNT, this);
 	}
+
 	function onEndNT(self) {
 	  self.end();
 	}
 
 	// a transform stream is a readable/writable stream where you do
 	inherits$1(Transform, Duplex);
+
 	function TransformState(stream) {
 	  this.afterTransform = function (er, data) {
 	    return afterTransform(stream, er, data);
 	  };
+
 	  this.needTransform = false;
 	  this.transforming = false;
 	  this.writecb = null;
 	  this.writechunk = null;
 	  this.writeencoding = null;
 	}
+
 	function afterTransform(stream, er, data) {
 	  var ts = stream._transformState;
 	  ts.transforming = false;
+
 	  var cb = ts.writecb;
+
 	  if (!cb) return stream.emit('error', new Error('no writecb in Transform class'));
+
 	  ts.writechunk = null;
 	  ts.writecb = null;
+
 	  if (data !== null && data !== undefined) stream.push(data);
+
 	  cb(er);
+
 	  var rs = stream._readableState;
 	  rs.reading = false;
 	  if (rs.needReadable || rs.length < rs.highWaterMark) {
@@ -29761,7 +30604,9 @@
 	}
 	function Transform(options) {
 	  if (!(this instanceof Transform)) return new Transform(options);
+
 	  Duplex.call(this, options);
+
 	  this._transformState = new TransformState(this);
 
 	  // when the writable side finishes, then flush out anything remaining.
@@ -29774,16 +30619,20 @@
 	  // that Readable wants before the first _read call, so unset the
 	  // sync guard flag.
 	  this._readableState.sync = false;
+
 	  if (options) {
 	    if (typeof options.transform === 'function') this._transform = options.transform;
+
 	    if (typeof options.flush === 'function') this._flush = options.flush;
 	  }
+
 	  this.once('prefinish', function () {
 	    if (typeof this._flush === 'function') this._flush(function (er) {
 	      done(stream, er);
 	    });else done(stream);
 	  });
 	}
+
 	Transform.prototype.push = function (chunk, encoding) {
 	  this._transformState.needTransform = false;
 	  return Duplex.prototype.push.call(this, chunk, encoding);
@@ -29802,6 +30651,7 @@
 	Transform.prototype._transform = function (chunk, encoding, cb) {
 	  throw new Error('Not implemented');
 	};
+
 	Transform.prototype._write = function (chunk, encoding, cb) {
 	  var ts = this._transformState;
 	  ts.writecb = cb;
@@ -29818,6 +30668,7 @@
 	// That we got here means that the readable side wants more data.
 	Transform.prototype._read = function (n) {
 	  var ts = this._transformState;
+
 	  if (ts.writechunk !== null && ts.writecb && !ts.transforming) {
 	    ts.transforming = true;
 	    this._transform(ts.writechunk, ts.writeencoding, ts.afterTransform);
@@ -29827,6 +30678,7 @@
 	    ts.needTransform = true;
 	  }
 	};
+
 	function done(stream, er) {
 	  if (er) return stream.emit('error', er);
 
@@ -29834,16 +30686,21 @@
 	  // that nothing more will ever be provided
 	  var ws = stream._writableState;
 	  var ts = stream._transformState;
+
 	  if (ws.length) throw new Error('Calling transform done when ws.length != 0');
+
 	  if (ts.transforming) throw new Error('Calling transform done when still transforming');
+
 	  return stream.push(null);
 	}
 
 	inherits$1(PassThrough, Transform);
 	function PassThrough(options) {
 	  if (!(this instanceof PassThrough)) return new PassThrough(options);
+
 	  Transform.call(this, options);
 	}
+
 	PassThrough.prototype._transform = function (chunk, encoding, cb) {
 	  cb(null, chunk);
 	};
@@ -29864,8 +30721,10 @@
 	function Stream() {
 	  EventEmitter.call(this);
 	}
-	Stream.prototype.pipe = function (dest, options) {
+
+	Stream.prototype.pipe = function(dest, options) {
 	  var source = this;
+
 	  function ondata(chunk) {
 	    if (dest.writable) {
 	      if (false === dest.write(chunk) && source.pause) {
@@ -29873,12 +30732,15 @@
 	      }
 	    }
 	  }
+
 	  source.on('data', ondata);
+
 	  function ondrain() {
 	    if (source.readable && source.resume) {
 	      source.resume();
 	    }
 	  }
+
 	  dest.on('drain', ondrain);
 
 	  // If the 'end' option is not supplied, dest.end() will be called when
@@ -29887,15 +30749,20 @@
 	    source.on('end', onend);
 	    source.on('close', onclose);
 	  }
+
 	  var didOnEnd = false;
 	  function onend() {
 	    if (didOnEnd) return;
 	    didOnEnd = true;
+
 	    dest.end();
 	  }
+
+
 	  function onclose() {
 	    if (didOnEnd) return;
 	    didOnEnd = true;
+
 	    if (typeof dest.destroy === 'function') dest.destroy();
 	  }
 
@@ -29914,17 +30781,24 @@
 	  function cleanup() {
 	    source.removeListener('data', ondata);
 	    dest.removeListener('drain', ondrain);
+
 	    source.removeListener('end', onend);
 	    source.removeListener('close', onclose);
+
 	    source.removeListener('error', onerror);
 	    dest.removeListener('error', onerror);
+
 	    source.removeListener('end', cleanup);
 	    source.removeListener('close', cleanup);
+
 	    dest.removeListener('close', cleanup);
 	  }
+
 	  source.on('end', cleanup);
 	  source.on('close', cleanup);
+
 	  dest.on('close', cleanup);
+
 	  dest.emit('pipe', source);
 
 	  // Allow for unix-like usage: A.pipe(B).pipe(C)
@@ -30528,7 +31402,7 @@
 	// call a callback on the next process tick if running in
 	// an environment that supports it
 	function _callback(callback) {
-	  if (process$1 && nextTick$1) nextTick$1(callback);else callback();
+	  if (browser$1 && browser$1.nextTick) browser$1.nextTick(callback);else callback();
 	}
 	// shared arg processing for the parse routines
 	function _processParseOptions(options) {
@@ -30835,7 +31709,7 @@
 	    }
 	    return '';
 	}
-	function getFeatureId$2(feature) {
+	function getFeatureId$1(feature) {
 	    const { attributes } = feature;
 	    const id = attributes.get('gff_id');
 	    const transcript_id = attributes.get('transcript_id');
@@ -30857,7 +31731,7 @@
 	}
 	function getFeatureNameOrId$1(feature) {
 	    const name = getFeatureName$1(feature);
-	    const id = getFeatureId$2(feature);
+	    const id = getFeatureId$1(feature);
 	    if (name) {
 	        return `: ${name}`;
 	    }
@@ -30894,41 +31768,37 @@
 	    }
 	    return parents;
 	}
-	function getFeaturesUnderClick(mousePosition, includeSiblings = false) {
-	    const clickedFeatures = [];
-	    if (!mousePosition.featureAndGlyphUnderMouse) {
-	        return clickedFeatures;
+	function getRelatedFeatures(feature, bp, includeSiblings = false) {
+	    const relatedFeatures = [];
+	    relatedFeatures.push(feature);
+	    for (const x of getParents(feature)) {
+	        relatedFeatures.push(x);
 	    }
-	    clickedFeatures.push(mousePosition.featureAndGlyphUnderMouse.feature);
-	    for (const x of getParents(mousePosition.featureAndGlyphUnderMouse.feature)) {
-	        clickedFeatures.push(x);
-	    }
-	    const { bp } = mousePosition;
-	    const children = getChildren(mousePosition.featureAndGlyphUnderMouse.feature);
+	    const children = getChildren(feature);
 	    for (const child of children) {
 	        if (child.min < bp && child.max >= bp) {
-	            clickedFeatures.push(child);
+	            relatedFeatures.push(child);
 	        }
 	    }
 	    if (!includeSiblings) {
-	        return clickedFeatures;
+	        return relatedFeatures;
 	    }
 	    // Also add siblings , i.e. features having the same parent as the clicked
 	    // one and intersecting the click position
-	    if (mousePosition.featureAndGlyphUnderMouse.feature.parent) {
-	        const siblings = mousePosition.featureAndGlyphUnderMouse.feature.parent.children;
+	    if (feature.parent) {
+	        const siblings = feature.parent.children;
 	        if (siblings) {
 	            for (const [, sib] of siblings) {
-	                if (sib._id == mousePosition.featureAndGlyphUnderMouse.feature._id) {
+	                if (sib._id == feature._id) {
 	                    continue;
 	                }
 	                if (sib.min < bp && sib.max >= bp) {
-	                    clickedFeatures.push(sib);
+	                    relatedFeatures.push(sib);
 	                }
 	            }
 	        }
 	    }
-	    return clickedFeatures;
+	    return relatedFeatures;
 	}
 
 	function getMinAndMaxPx(feature, refName, regionNumber, lgv) {
@@ -30963,6 +31833,115 @@
 	        return { feature, edge: 'max' };
 	    }
 	    return;
+	}
+	function isSelectedFeature(feature, selectedFeature) {
+	    return Boolean(selectedFeature && feature._id === selectedFeature._id);
+	}
+	function containsSelectedFeature(feature, selectedFeature) {
+	    if (!selectedFeature) {
+	        return false;
+	    }
+	    if (feature._id === selectedFeature._id) {
+	        return true;
+	    }
+	    return feature.hasDescendant(selectedFeature._id);
+	}
+	function makeFeatureLabel(feature) {
+	    let name;
+	    if (feature.attributes.get('gff_name')) {
+	        name = feature.attributes.get('gff_name')?.join(',');
+	    }
+	    else if (feature.attributes.get('gff_id')) {
+	        name = feature.attributes.get('gff_id')?.join(',');
+	    }
+	    else {
+	        name = feature._id;
+	    }
+	    const coords = `(${(feature.min + 1).toLocaleString('en')}..${feature.max.toLocaleString('en')})`;
+	    const maxLen = 60;
+	    if (name && name.length + coords.length > maxLen + 5) {
+	        const trim = maxLen - coords.length;
+	        name = trim > 0 ? name.slice(0, trim) : '';
+	        name = `${name}[...]`;
+	    }
+	    return `${name} ${coords}`;
+	}
+	function getContextMenuItemsForFeature$2(display, sourceFeature) {
+	    const { apolloInternetAccount: internetAccount, changeManager, regions, selectedFeature, session, } = display;
+	    const menuItems = [];
+	    const role = internetAccount ? internetAccount.role : 'admin';
+	    const admin = role === 'admin';
+	    const readOnly = !(role && ['admin', 'user'].includes(role));
+	    const [region] = regions;
+	    const sourceAssemblyId = display.getAssemblyId(region.assemblyName);
+	    const currentAssemblyId = display.getAssemblyId(region.assemblyName);
+	    menuItems.push({
+	        label: makeFeatureLabel(sourceFeature),
+	        type: 'subHeader',
+	    }, {
+	        label: 'Add child feature',
+	        disabled: readOnly,
+	        onClick: () => {
+	            session.queueDialog((doneCallback) => [
+	                AddChildFeature,
+	                {
+	                    session,
+	                    handleClose: () => {
+	                        doneCallback();
+	                    },
+	                    changeManager,
+	                    sourceFeature,
+	                    sourceAssemblyId,
+	                    internetAccount,
+	                },
+	            ]);
+	        },
+	    }, {
+	        label: 'Copy features and annotations',
+	        disabled: readOnly,
+	        onClick: () => {
+	            session.queueDialog((doneCallback) => [
+	                CopyFeature,
+	                {
+	                    session,
+	                    handleClose: () => {
+	                        doneCallback();
+	                    },
+	                    changeManager,
+	                    sourceFeature,
+	                    sourceAssemblyId: currentAssemblyId,
+	                },
+	            ]);
+	        },
+	    }, {
+	        label: 'Delete feature',
+	        disabled: !admin,
+	        onClick: () => {
+	            session.queueDialog((doneCallback) => [
+	                DeleteFeature,
+	                {
+	                    session,
+	                    handleClose: () => {
+	                        doneCallback();
+	                    },
+	                    changeManager,
+	                    sourceFeature,
+	                    sourceAssemblyId: currentAssemblyId,
+	                    selectedFeature,
+	                    setSelectedFeature: (feature) => {
+	                        display.setSelectedFeature(feature);
+	                    },
+	                },
+	            ]);
+	        },
+	    });
+	    return menuItems;
+	}
+	function navToFeatureCenter(feature, paddingPct, refSeqLength) {
+	    const paddingBp = (feature.max - feature.min) * paddingPct;
+	    const start = Math.max(feature.min - paddingBp, 1);
+	    const end = Math.min(feature.max + paddingBp, refSeqLength);
+	    return { refName: feature.refSeq, start, end };
 	}
 
 	function expandFeatures(feature, newLocation, edge) {
@@ -31033,6 +32012,18 @@
 	    }
 	    return expandFeatures(feature, newLocation, edge);
 	}
+	function isMousePositionWithFeature(mousePosition) {
+	    return 'feature' in mousePosition;
+	}
+	function getMousePosition(event, lgv) {
+	    const canvas = event.currentTarget;
+	    const { clientX, clientY } = event;
+	    const { left, top } = canvas.getBoundingClientRect();
+	    const x = clientX - left;
+	    const y = clientY - top;
+	    const { coord: bp, index: regionNumber, refName } = lgv.pxToBp(x);
+	    return { x, y, refName, bp, regionNumber };
+	}
 
 	async function createFetchErrorMessage(response, additionalText) {
 	    let errorMessage;
@@ -31051,75 +32042,9 @@
 	    return internetAccounts.find((ia) => ia.type === 'ApolloInternetAccount');
 	}
 
-	var Info = {};
-
-	var _interopRequireDefault$o = interopRequireDefault.exports;
-	Object.defineProperty(Info, "__esModule", {
-	  value: true
-	});
-	var default_1$o = Info["default"] = void 0;
-	var _createSvgIcon$o = /*#__PURE__*/_interopRequireDefault$o(createSvgIcon);
-	var _jsxRuntime$o = require$$2__default["default"];
-	var _default$q = /*#__PURE__*/(0, _createSvgIcon$o["default"])( /*#__PURE__*/(0, _jsxRuntime$o.jsx)("path", {
-	  d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
-	}), 'Info');
-	default_1$o = Info["default"] = _default$q;
-
-	var Link = {};
-
-	var _interopRequireDefault$n = interopRequireDefault.exports;
-	Object.defineProperty(Link, "__esModule", {
-	  value: true
-	});
-	var default_1$n = Link["default"] = void 0;
-	var _createSvgIcon$n = /*#__PURE__*/_interopRequireDefault$n(createSvgIcon);
-	var _jsxRuntime$n = require$$2__default["default"];
-	var _default$p = /*#__PURE__*/(0, _createSvgIcon$n["default"])( /*#__PURE__*/(0, _jsxRuntime$n.jsx)("path", {
-	  d: "M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"
-	}), 'Link');
-	default_1$n = Link["default"] = _default$p;
-
-	var RadioButtonChecked = {};
-
-	var _interopRequireDefault$m = interopRequireDefault.exports;
-	Object.defineProperty(RadioButtonChecked, "__esModule", {
-	  value: true
-	});
-	var default_1$m = RadioButtonChecked["default"] = void 0;
-	var _createSvgIcon$m = /*#__PURE__*/_interopRequireDefault$m(createSvgIcon);
-	var _jsxRuntime$m = require$$2__default["default"];
-	var _default$o = /*#__PURE__*/(0, _createSvgIcon$m["default"])( /*#__PURE__*/(0, _jsxRuntime$m.jsx)("path", {
-	  d: "M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
-	}), 'RadioButtonChecked');
-	default_1$m = RadioButtonChecked["default"] = _default$o;
-
-	var RadioButtonUnchecked = {};
-
-	var _interopRequireDefault$l = interopRequireDefault.exports;
-	Object.defineProperty(RadioButtonUnchecked, "__esModule", {
-	  value: true
-	});
-	var default_1$l = RadioButtonUnchecked["default"] = void 0;
-	var _createSvgIcon$l = /*#__PURE__*/_interopRequireDefault$l(createSvgIcon);
-	var _jsxRuntime$l = require$$2__default["default"];
-	var _default$n = /*#__PURE__*/(0, _createSvgIcon$l["default"])( /*#__PURE__*/(0, _jsxRuntime$l.jsx)("path", {
-	  d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
-	}), 'RadioButtonUnchecked');
-	default_1$l = RadioButtonUnchecked["default"] = _default$n;
-
-	var Close = {};
-
-	var _interopRequireDefault$k = interopRequireDefault.exports;
-	Object.defineProperty(Close, "__esModule", {
-	  value: true
-	});
-	var default_1$k = Close["default"] = void 0;
-	var _createSvgIcon$k = /*#__PURE__*/_interopRequireDefault$k(createSvgIcon);
-	var _jsxRuntime$k = require$$2__default["default"];
-	var _default$m = /*#__PURE__*/(0, _createSvgIcon$k["default"])( /*#__PURE__*/(0, _jsxRuntime$k.jsx)("path", {
+	var CloseIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
 	  d: "M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
 	}), 'Close');
-	default_1$k = Close["default"] = _default$m;
 
 	/* eslint-disable @typescript-eslint/unbound-method */
 	const useStyles$g = mui.makeStyles()((theme) => ({
@@ -31141,7 +32066,7 @@
 	    return (React__default["default"].createElement(ui.Dialog, { ...other, header: React__default["default"].createElement(React__default["default"].Fragment, null,
 	            React__default["default"].createElement(material.DialogTitle, { className: classes.dialogTitle }, title),
 	            React__default["default"].createElement(material.IconButton, { "aria-label": "close", onClick: handleClose, className: classes.closeButton },
-	                React__default["default"].createElement(default_1$k, null))) }));
+	                React__default["default"].createElement(CloseIcon, null))) }));
 	});
 
 	/* eslint-disable @typescript-eslint/unbound-method */
@@ -31169,7 +32094,7 @@
 	        borderTop: '1px solid rgba(0, 0, 0, .125)',
 	    },
 	    radioIcon: {
-	        color: theme?.palette?.tertiary?.contrastText,
+	        color: theme.palette.tertiary.contrastText,
 	    },
 	    dialog: {
 	        // minHeight: 500,
@@ -31434,7 +32359,7 @@
 	                        checkAssemblyName(e.target.value);
 	                    }, disabled: submitted && !errorMessage }),
 	                React__default["default"].createElement(material.Accordion, { disableGutters: true, elevation: 0, square: true, className: classes.accordion, expanded: expanded === 'panelFastaInput', onChange: handleAccordionChange('panelFastaInput') },
-	                    React__default["default"].createElement(material.AccordionSummary, { className: classes.accordionSummary, expandIcon: expanded === 'panelFastaInput' ? (React__default["default"].createElement(default_1$m, { className: classes.radioIcon, sx: { fontSize: '1.2rem', ml: 5 } })) : (React__default["default"].createElement(default_1$l, { className: classes.radioIcon, sx: { fontSize: '1.2rem', mr: 5 } })), "aria-controls": "panelFastaInputd-content", id: "panelFastaInputd-header" },
+	                    React__default["default"].createElement(material.AccordionSummary, { className: classes.accordionSummary, expandIcon: expanded === 'panelFastaInput' ? (React__default["default"].createElement(RadioButtonCheckedIcon, { className: classes.radioIcon, sx: { fontSize: '1.2rem', ml: 5 } })) : (React__default["default"].createElement(RadioButtonUncheckedIcon, { className: classes.radioIcon, sx: { fontSize: '1.2rem', mr: 5 } })), "aria-controls": "panelFastaInputd-content", id: "panelFastaInputd-header" },
 	                        React__default["default"].createElement(material.Typography, { component: "span" }, "FASTA input")),
 	                    React__default["default"].createElement(material.AccordionDetails, { className: classes.accordionDetails },
 	                        React__default["default"].createElement(material.FormGroup, null,
@@ -31449,14 +32374,14 @@
 	                                    "Use external URLs",
 	                                    React__default["default"].createElement(material.Tooltip, { title: "Use external URLs to provide FASTA and index files. Does not copy the files to the Apollo collaboration server, so ensure the URLs are stable.", placement: "top-start" },
 	                                        React__default["default"].createElement(material.IconButton, { size: "small" },
-	                                            React__default["default"].createElement(default_1$o, { sx: { fontSize: 18 } })))) }),
+	                                            React__default["default"].createElement(InfoIcon, { sx: { fontSize: 18 } })))) }),
 	                            React__default["default"].createElement(material.FormControlLabel, { "data-testid": "sequence-is-editable-checkbox", control: React__default["default"].createElement(material.Checkbox, { onChange: () => {
 	                                        setSequenceIsEditable(!sequenceIsEditable);
 	                                    } }), checked: sequenceIsEditable, disabled: fileType === FileType.EXTERNAL, label: React__default["default"].createElement(material.Box, { display: "flex", alignItems: "center" },
 	                                    "Store sequence in database",
 	                                    React__default["default"].createElement(material.Tooltip, { title: "Enables users to edit the genomic sequence, but comes with performance impacts. Use with care.", placement: "top-start" },
 	                                        React__default["default"].createElement(material.IconButton, { size: "small" },
-	                                            React__default["default"].createElement(default_1$o, { sx: { fontSize: 18 } })))) }),
+	                                            React__default["default"].createElement(InfoIcon, { sx: { fontSize: 18 } })))) }),
 	                            React__default["default"].createElement(material.FormControlLabel, { "data-testid": "fasta-is-gzip-checkbox", control: React__default["default"].createElement(material.Checkbox, { checked: isGzip, onChange: () => {
 	                                        if (sequenceIsEditable) {
 	                                            setIsGzip(!isGzip);
@@ -31474,7 +32399,7 @@
 	                                                React__default["default"].createElement("span", null, "FASTA"),
 	                                                React__default["default"].createElement(material.Tooltip, { title: 'Unless "Store sequence in database" enabled, FASTA input must be compressed with bgzip and indexed with samtools faidx (or equivalent). Compression is optional for sequences stored in the database.' },
 	                                                    React__default["default"].createElement(material.IconButton, { size: "small" },
-	                                                        React__default["default"].createElement(default_1$o, { sx: { fontSize: 18 } }))))),
+	                                                        React__default["default"].createElement(InfoIcon, { sx: { fontSize: 18 } }))))),
 	                                        React__default["default"].createElement(material.TableCell, { style: { borderBottomWidth: 0 } },
 	                                            React__default["default"].createElement("input", { "data-testid": "fasta-input-file", type: "file", onChange: (e) => {
 	                                                    setFastaFile(e.target.files?.item(0) ?? null);
@@ -31498,14 +32423,14 @@
 	                                                React__default["default"].createElement("span", null, "FASTA"),
 	                                                React__default["default"].createElement(material.Tooltip, { title: "Remote FASTA input must be compressed with bgzip and indexed with samtools faidx (or equivalent)" },
 	                                                    React__default["default"].createElement(material.IconButton, { size: "small" },
-	                                                        React__default["default"].createElement(default_1$o, { sx: { fontSize: 18 } }))))),
+	                                                        React__default["default"].createElement(InfoIcon, { sx: { fontSize: 18 } }))))),
 	                                        React__default["default"].createElement(material.TableCell, { style: { borderBottomWidth: 0 } },
 	                                            React__default["default"].createElement(material.TextField, { "data-testid": "fasta-input-url", variant: "outlined", value: fastaUrl, error: !validFastaUrl, onChange: (e) => {
 	                                                    setFastaUrl(e.target.value);
 	                                                }, disabled: submitted && !errorMessage, slotProps: {
 	                                                    input: {
 	                                                        startAdornment: (React__default["default"].createElement(material.InputAdornment, { position: "start" },
-	                                                            React__default["default"].createElement(default_1$n, null))),
+	                                                            React__default["default"].createElement(LinkIcon, null))),
 	                                                    },
 	                                                } }))),
 	                                    React__default["default"].createElement(material.TableRow, null,
@@ -31516,7 +32441,7 @@
 	                                                }, disabled: submitted && !errorMessage, slotProps: {
 	                                                    input: {
 	                                                        startAdornment: (React__default["default"].createElement(material.InputAdornment, { position: "start" },
-	                                                            React__default["default"].createElement(default_1$n, null))),
+	                                                            React__default["default"].createElement(LinkIcon, null))),
 	                                                    },
 	                                                } }))),
 	                                    React__default["default"].createElement(material.TableRow, null,
@@ -31527,15 +32452,15 @@
 	                                                }, disabled: submitted && !errorMessage, slotProps: {
 	                                                    input: {
 	                                                        startAdornment: (React__default["default"].createElement(material.InputAdornment, { position: "start" },
-	                                                            React__default["default"].createElement(default_1$n, null))),
+	                                                            React__default["default"].createElement(LinkIcon, null))),
 	                                                    },
 	                                                } }))))))))),
 	                React__default["default"].createElement(material.Accordion, { disableGutters: true, elevation: 0, square: true, className: classes.accordion, expanded: expanded === 'panelGffInput', onChange: handleAccordionChange('panelGffInput') },
-	                    React__default["default"].createElement(material.AccordionSummary, { className: classes.accordionSummary, expandIcon: expanded === 'panelGffInput' ? (React__default["default"].createElement(default_1$m, { className: classes.radioIcon, sx: { fontSize: '1.2rem', ml: 5 } })) : (React__default["default"].createElement(default_1$l, { className: classes.radioIcon, sx: { fontSize: '1.2rem', mr: 5 } })), "aria-controls": "panelGffInputd-content" },
+	                    React__default["default"].createElement(material.AccordionSummary, { className: classes.accordionSummary, expandIcon: expanded === 'panelGffInput' ? (React__default["default"].createElement(RadioButtonCheckedIcon, { className: classes.radioIcon, sx: { fontSize: '1.2rem', ml: 5 } })) : (React__default["default"].createElement(RadioButtonUncheckedIcon, { className: classes.radioIcon, sx: { fontSize: '1.2rem', mr: 5 } })), "aria-controls": "panelGffInputd-content" },
 	                        React__default["default"].createElement(material.Typography, { component: "span" },
 	                            "GFF3 input",
 	                            React__default["default"].createElement(material.Tooltip, { title: "GFF3 must includes FASTA sequences. File can be gzip compressed." },
-	                                React__default["default"].createElement(default_1$o, { className: classes.radioIcon, sx: { fontSize: 18 } })))),
+	                                React__default["default"].createElement(InfoIcon, { className: classes.radioIcon, sx: { fontSize: 18 } })))),
 	                    React__default["default"].createElement(material.AccordionDetails, { className: classes.accordionDetails },
 	                        React__default["default"].createElement(material.Box, { style: { marginTop: 20 } },
 	                            React__default["default"].createElement("input", { "data-testid": "gff3-input-file", type: "file", disabled: submitted && !errorMessage, onChange: (e) => {
@@ -31552,6 +32477,58 @@
 	            React__default["default"].createElement(material.DialogActions, null,
 	                React__default["default"].createElement(material.Button, { disabled: !checkSumbission(validAsm, sequenceIsEditable, fileType, fastaFile, fastaIndexFile, fastaGziIndexFile, validFastaUrl, validFastaIndexUrl, validFastaGziIndexUrl) || submitted, variant: "contained", type: "submit", "data-testid": "submit-button" }, submitted ? 'Submitting...' : 'Submit'),
 	                React__default["default"].createElement(material.Button, { variant: "outlined", type: "submit", onClick: handleClose }, "Cancel"))),
+	        errorMessage ? (React__default["default"].createElement(material.DialogContent, null,
+	            React__default["default"].createElement(material.DialogContentText, { color: "error" }, errorMessage))) : null));
+	}
+
+	const columns$1 = [
+	    {
+	        field: 'name',
+	        headerName: 'Assembly Name',
+	        width: 150,
+	        editable: false,
+	    },
+	    {
+	        field: 'aliases',
+	        headerName: 'Aliases',
+	        width: 300,
+	        editable: true,
+	    },
+	];
+	function AddAssemblyAliases({ changeManager, handleClose, session, }) {
+	    const { apolloDataStore } = session;
+	    const { collaborationServerDriver } = apolloDataStore;
+	    const assemblies = collaborationServerDriver.getAssemblies();
+	    const rows = assemblies.map((assembly) => {
+	        return {
+	            id: assembly.name,
+	            name: assembly.displayName,
+	            aliases: assembly.aliases.join(', '),
+	        };
+	    });
+	    const [errorMessage, setErrorMessage] = React__default["default"].useState('');
+	    const processRowUpdate = (newRow, _oldRow) => {
+	        const change = new dist$2.AddAssemblyAliasesChange({
+	            typeName: 'AddAssemblyAliasesChange',
+	            assembly: newRow.id,
+	            aliases: newRow.aliases.split(','),
+	        });
+	        void changeManager.submit(change).catch(() => {
+	            setErrorMessage('Error submitting change');
+	        });
+	        handleClose();
+	        return newRow;
+	    };
+	    return (React__default["default"].createElement(Dialog, { open: true, title: "Add assembly aliases", handleClose: handleClose, maxWidth: 'sm', "data-testid": "add-assembly-alias", fullWidth: true },
+	        React__default["default"].createElement(material.DialogContent, { style: { display: 'flex', flexDirection: 'column' } },
+	            React__default["default"].createElement(material.Box, { sx: { height: 400, width: '100%' } },
+	                React__default["default"].createElement(xDataGrid.DataGrid, { rows: rows, columns: columns$1, initialState: {
+	                        pagination: {
+	                            paginationModel: {
+	                                pageSize: 5,
+	                            },
+	                        },
+	                    }, pageSizeOptions: [5], processRowUpdate: processRowUpdate, disableRowSelectionOnClick: true }))),
 	        errorMessage ? (React__default["default"].createElement(material.DialogContent, null,
 	            React__default["default"].createElement(material.DialogContentText, { color: "error" }, errorMessage))) : null));
 	}
@@ -36911,15 +37888,15 @@
 	}
 	race$1.raceInit = raceInit;
 
-	var range$1 = {};
+	var range$2 = {};
 
-	Object.defineProperty(range$1, "__esModule", {
+	Object.defineProperty(range$2, "__esModule", {
 	  value: true
 	});
-	range$1.range = void 0;
+	range$2.range = void 0;
 	var Observable_1$4 = Observable$1;
 	var empty_1$5 = empty;
-	function range(start, count, scheduler) {
+	function range$1(start, count, scheduler) {
 	  if (count == null) {
 	    count = start;
 	    start = 0;
@@ -36946,7 +37923,7 @@
 	    subscriber.complete();
 	  });
 	}
-	range$1.range = range;
+	range$2.range = range$1;
 
 	var using$1 = {};
 
@@ -41026,7 +42003,7 @@
 	      return race_1.race;
 	    }
 	  });
-	  var range_1 = range$1;
+	  var range_1 = range$2;
 	  Object.defineProperty(exports, "range", {
 	    enumerable: true,
 	    get: function get() {
@@ -49603,12 +50580,13 @@
 	    function onSubmit(event) {
 	        event.preventDefault();
 	        setErrorMessage('');
+	        const _id = new objectid().toHexString();
 	        const change = new dist$2.AddFeatureChange({
 	            changedIds: [sourceFeature._id],
 	            typeName: 'AddFeatureChange',
 	            assembly: sourceAssemblyId,
 	            addedFeature: {
-	                _id: new objectid().toHexString(),
+	                _id,
 	                refSeq: sourceFeature.refSeq,
 	                min: Number(start) - 1,
 	                max: Number(end),
@@ -49616,7 +50594,9 @@
 	            },
 	            parentFeatureId: sourceFeature._id,
 	        });
-	        void changeManager.submit(change);
+	        void changeManager.submit(change).then(() => {
+	            session.apolloSetSelectedFeature(_id);
+	        });
 	        handleClose();
 	        event.preventDefault();
 	    }
@@ -49727,7 +50707,9 @@
 	                    children,
 	                },
 	            });
-	            void changeManager.submit(change);
+	            void changeManager.submit(change).then(() => {
+	                session.apolloSetSelectedFeature(id);
+	            });
 	            handleClose();
 	            return;
 	        }
@@ -49739,7 +50721,9 @@
 	                assembly: region.assemblyName,
 	                addedFeature: mRNA,
 	            });
-	            void changeManager.submit(change);
+	            void changeManager.submit(change).then(() => {
+	                session.apolloSetSelectedFeature(mRNA._id);
+	            });
 	            handleClose();
 	            return;
 	        }
@@ -49761,7 +50745,9 @@
 	                strand,
 	            },
 	        });
-	        void changeManager.submit(change);
+	        void changeManager.submit(change).then(() => {
+	            session.apolloSetSelectedFeature(id);
+	        });
 	        handleClose();
 	        return;
 	    }
@@ -49820,12 +50806,12 @@
 	                                "Add gene and sub-features",
 	                                React__default["default"].createElement(material.Tooltip, { title: "This is a shortcut to create a gene with a single mRNA, exon, and CDS" },
 	                                    React__default["default"].createElement(material.IconButton, { size: "small" },
-	                                        React__default["default"].createElement(default_1$o, { sx: { fontSize: 18 } })))) }),
+	                                        React__default["default"].createElement(InfoIcon, { sx: { fontSize: 18 } })))) }),
 	                        React__default["default"].createElement(material.FormControlLabel, { value: NewFeature.TRANSCRIPT_AND_SUBFEATURES, control: React__default["default"].createElement(material.Radio, null), label: React__default["default"].createElement(material.Box, { display: "flex", alignItems: "center" },
 	                                "Add transcript and sub-features",
 	                                React__default["default"].createElement(material.Tooltip, { title: "This is a shortcut to create a single mRNA with exon and CDS, but without a parent gene" },
 	                                    React__default["default"].createElement(material.IconButton, { size: "small" },
-	                                        React__default["default"].createElement(default_1$o, { sx: { fontSize: 18 } })))) }),
+	                                        React__default["default"].createElement(InfoIcon, { sx: { fontSize: 18 } })))) }),
 	                        React__default["default"].createElement(material.FormControlLabel, { value: NewFeature.CUSTOM, checked: type !== NewFeature.GENE_AND_SUBFEATURES &&
 	                                type !== NewFeature.TRANSCRIPT_AND_SUBFEATURES, control: React__default["default"].createElement(material.Radio, null), label: "Add feature with a sequence ontology type" }))),
 	                type === NewFeature.CUSTOM ? (React__default["default"].createElement(OntologyTermAutocomplete, { session: session, ontologyName: "Sequence Ontology", style: { width: 170 }, value: "", filterTerms: isOntologyClass, renderInput: (params) => (React__default["default"].createElement(material.TextField, { ...params, label: "Type", variant: "outlined", fullWidth: true })), onChange: (_oldValue, newValue) => {
@@ -49967,7 +50953,9 @@
 	            copyFeature: true,
 	            allIds: featureIds,
 	        });
-	        void changeManager.submit(change);
+	        void changeManager.submit(change).then(() => {
+	            session.apolloSetSelectedFeature(newFeatureLine._id);
+	        });
 	        handleClose();
 	        event.preventDefault();
 	    }
@@ -50077,7 +51065,7 @@
 	                    React__default["default"].createElement(material.DialogContentText, null, "Select account"),
 	                    React__default["default"].createElement(material.Select, { value: selectedInternetAccount.internetAccountId, onChange: handleChangeInternetAccount, disabled: submitted && !errorMessage }, internetAccounts.map((option) => (React__default["default"].createElement(material.MenuItem, { key: option.id, value: option.internetAccountId }, option.name)))))) : null,
 	                React__default["default"].createElement(material.DialogContentText, null, "Select assembly"),
-	                React__default["default"].createElement(material.Select, { labelId: "label", value: selectedAssembly?.name ?? '', onChange: handleChangeAssembly, disabled: assemblies.length === 0 }, assemblies.map((option) => (React__default["default"].createElement(material.MenuItem, { key: option.name, value: option.name }, option.displayName ?? option.name)))),
+	                React__default["default"].createElement(material.Select, { labelId: "label", value: selectedAssembly?.name ?? '', onChange: handleChangeAssembly, disabled: assemblies.length === 0 }, assemblies.map((option) => (React__default["default"].createElement(material.MenuItem, { key: option.name, value: option.name }, option.displayName)))),
 	                React__default["default"].createElement(material.DialogContentText, null,
 	                    React__default["default"].createElement("strong", { style: { color: 'red' } }, "NOTE: All assembly data will be deleted and this operation cannot be undone!")),
 	                React__default["default"].createElement(material.FormGroup, null,
@@ -50772,7 +51760,7 @@
 	                    "This assembly already has ",
 	                    featuresCount,
 	                    " features, would you like to delete the existing features before importing new ones?"),
-	                React__default["default"].createElement(FormControlLabel__default["default"], { label: "Yes, delete existing features", disabled: submitted && !errorMessage, control: React__default["default"].createElement(Checkbox__default["default"], { checked: deleteFeatures, onChange: handleDeleteFeatures, inputProps: { 'aria-label': 'controlled' }, color: "warning" }) }))) : null,
+	                React__default["default"].createElement(FormControlLabel__default["default"], { label: "Yes, delete existing features", disabled: submitted && !errorMessage, control: React__default["default"].createElement(Checkbox__default["default"], { checked: deleteFeatures, onChange: handleDeleteFeatures, slotProps: { input: { 'aria-label': 'controlled' } }, color: "warning" }) }))) : null,
 	            React__default["default"].createElement(material.DialogActions, null,
 	                React__default["default"].createElement(material.Button, { disabled: !(selectedAssembly && file && featuresCount !== undefined) ||
 	                        submitted, variant: "contained", type: "submit" }, submitted ? 'Submitting...' : 'Submit'),
@@ -50943,7 +51931,7 @@
 	                    React__default["default"].createElement(material.DialogContentText, null, "Select account"),
 	                    React__default["default"].createElement(material.Select, { value: selectedInternetAccount.internetAccountId, onChange: handleChangeInternetAccount, disabled: submitted && !errorMessage }, internetAccounts.map((option) => (React__default["default"].createElement(material.MenuItem, { key: option.id, value: option.internetAccountId }, option.name)))))) : null,
 	                React__default["default"].createElement(material.DialogContentText, null, "Select assembly"),
-	                React__default["default"].createElement(material.Select, { style: { width: 300 }, labelId: "label", value: selectedAssembly?.name ?? '', onChange: handleChangeAssembly, disabled: assemblies.length === 0 }, assemblies.map((option) => (React__default["default"].createElement(material.MenuItem, { key: option.name, value: option.name }, option.displayName ?? option.name)))),
+	                React__default["default"].createElement(material.Select, { style: { width: 300 }, labelId: "label", value: selectedAssembly?.name ?? '', onChange: handleChangeAssembly, disabled: assemblies.length === 0 }, assemblies.map((option) => (React__default["default"].createElement(material.MenuItem, { key: option.name, value: option.name }, option.displayName)))),
 	                React__default["default"].createElement("br", null),
 	                React__default["default"].createElement("br", null),
 	                React__default["default"].createElement(material.TableContainer, { component: material.Paper },
@@ -50962,20 +51950,6 @@
 	        errorMessage ? (React__default["default"].createElement(material.DialogContent, null,
 	            React__default["default"].createElement(material.DialogContentText, { color: "error" }, errorMessage))) : null));
 	}
-
-	var Delete = {};
-
-	var _interopRequireDefault$j = interopRequireDefault.exports;
-	Object.defineProperty(Delete, "__esModule", {
-	  value: true
-	});
-	var default_1$j = Delete["default"] = void 0;
-	var _createSvgIcon$j = /*#__PURE__*/_interopRequireDefault$j(createSvgIcon);
-	var _jsxRuntime$j = require$$2__default["default"];
-	var _default$l = /*#__PURE__*/(0, _createSvgIcon$j["default"])( /*#__PURE__*/(0, _jsxRuntime$j.jsx)("path", {
-	  d: "M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
-	}), 'Delete');
-	default_1$j = Delete["default"] = _default$l;
 
 	/* eslint-disable @typescript-eslint/unbound-method */
 	function ManageUsers({ changeManager, handleClose, session, }) {
@@ -51060,7 +52034,7 @@
 	            field: 'actions',
 	            type: 'actions',
 	            getActions: (params) => [
-	                React__default["default"].createElement(xDataGrid.GridActionsCellItem, { key: `delete-${params.id}`, icon: React__default["default"].createElement(default_1$j, null), onClick: async () => {
+	                React__default["default"].createElement(xDataGrid.GridActionsCellItem, { key: `delete-${params.id}`, icon: React__default["default"].createElement(DeleteIcon, null), onClick: async () => {
 	                        if (globalThis.confirm('Delete this user?')) {
 	                            await deleteUser(params.id);
 	                        }
@@ -51235,15 +52209,17 @@
 	    return `${id} [${transcript.min + 1}-${transcript.max}]`;
 	}
 	function MergeTranscripts({ changeManager, handleClose, selectedFeature, session, setSelectedFeature, sourceAssemblyId, sourceFeature, }) {
-	    const { notify } = session;
 	    const [errorMessage, setErrorMessage] = React.useState('');
-	    const [selectedTranscript, setSelectedTranscript] = React.useState();
-	    async function onSubmit(event) {
+	    const transcripts = getTranscripts(sourceFeature, session);
+	    const firstTranscript = Object.keys(transcripts).at(0);
+	    const [selectedTranscriptId, setSelectedTranscriptId] = React.useState(firstTranscript);
+	    function onSubmit(event) {
 	        event.preventDefault();
 	        setErrorMessage('');
-	        if (!selectedTranscript) {
+	        if (!selectedTranscriptId) {
 	            return;
 	        }
+	        const selectedTranscript = transcripts[selectedTranscriptId];
 	        if (selectedFeature?._id === sourceFeature._id) {
 	            setSelectedFeature();
 	        }
@@ -51258,17 +52234,14 @@
 	            secondTranscript: require$$1$3.getSnapshot(selectedTranscript),
 	            parentFeatureId: sourceFeature.parent._id,
 	        });
-	        await changeManager.submit(change);
-	        notify('Transcripts successfully merged', 'success');
+	        void changeManager.submit(change);
 	        handleClose();
-	        event.preventDefault();
 	    }
 	    const handleTypeChange = (e) => {
 	        setErrorMessage('');
 	        const { value } = e.target;
-	        setSelectedTranscript(transcripts[value]);
+	        setSelectedTranscriptId(value);
 	    };
-	    const transcripts = getTranscripts(sourceFeature, session);
 	    return (React__default["default"].createElement(Dialog, { open: true, title: "Merge transcripts", handleClose: handleClose, maxWidth: false, "data-testid": "merge-transcripts" },
 	        React__default["default"].createElement("form", { onSubmit: onSubmit },
 	            React__default["default"].createElement(material.DialogContent, { style: { display: 'flex', flexDirection: 'column' } },
@@ -51276,10 +52249,10 @@
 	                    ? 'There are no transcripts to merge with'
 	                    : 'Merge with transcript:',
 	                React__default["default"].createElement(material.FormControl, { style: { marginTop: 5 } },
-	                    React__default["default"].createElement(material.RadioGroup, { "aria-labelledby": "demo-radio-buttons-group-label", name: "radio-buttons-group", value: selectedTranscript, onChange: handleTypeChange }, Object.keys(transcripts).map((key) => (React__default["default"].createElement(material.FormControlLabel, { value: key, key: key, control: React__default["default"].createElement(material.Radio, null), label: React__default["default"].createElement(material.Box, { display: "flex", alignItems: "center" }, makeRadioButtonName(transcripts[key])) })))))),
+	                    React__default["default"].createElement(material.RadioGroup, { "aria-labelledby": "demo-radio-buttons-group-label", name: "radio-buttons-group", value: selectedTranscriptId, onChange: handleTypeChange }, Object.keys(transcripts).map((key) => (React__default["default"].createElement(material.FormControlLabel, { value: key, key: key, control: React__default["default"].createElement(material.Radio, null), label: React__default["default"].createElement(material.Box, { display: "flex", alignItems: "center" }, makeRadioButtonName(transcripts[key])) })))))),
 	            React__default["default"].createElement(material.DialogActions, null,
 	                React__default["default"].createElement(material.Button, { variant: "contained", type: "submit", disabled: Object.keys(transcripts).length === 0 ||
-	                        selectedTranscript === undefined }, "Submit"),
+	                        selectedTranscriptId === undefined }, "Submit"),
 	                React__default["default"].createElement(material.Button, { variant: "outlined", type: "submit", onClick: handleClose }, "Cancel"))),
 	        errorMessage ? (React__default["default"].createElement(material.DialogContent, null,
 	            React__default["default"].createElement(material.DialogContentText, { color: "error" }, errorMessage))) : null));
@@ -51348,6 +52321,13 @@
 	            handleClose();
 	            return;
 	        }
+	        const fileMetadata = {};
+	        if (require$$1$2.isElectron) {
+	            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+	            const { webUtils } = globalThis.require('electron');
+	            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+	            fileMetadata.file = webUtils.getPathForFile(file);
+	        }
 	        const assemblyConfig = {
 	            name: assemblyId,
 	            aliases: [assemblyName],
@@ -51356,16 +52336,13 @@
 	                trackId: `sequenceConfigId-${assemblyName}`,
 	                type: 'ReferenceSequenceTrack',
 	                adapter: { type: 'ApolloSequenceAdapter', assemblyId },
-	                metadata: {
-	                    apollo: true,
-	                    ...(require$$1$2.isElectron
-	                        ? { file: file.path }
-	                        : {}),
-	                },
+	                metadata: { apollo: true, ...fileMetadata },
 	            },
 	        };
 	        // Save assembly into session
-	        await (addSessionAssembly || addAssembly)(assemblyConfig);
+	        await (require$$1$2.isElectron
+	            ? addAssembly?.(assemblyConfig)
+	            : (addSessionAssembly || addAssembly)(assemblyConfig));
 	        const a = await assemblyManager.waitForAssembly(assemblyConfig.name);
 	        if (a) {
 	            // @ts-expect-error MST type coercion problem?
@@ -51398,158 +52375,16 @@
 	            React__default["default"].createElement(material.DialogContentText, { color: "error" }, errorMessage))) : null));
 	}
 
-	var ContentCopy = {};
-
-	var _interopRequireDefault$i = interopRequireDefault.exports;
-	Object.defineProperty(ContentCopy, "__esModule", {
-	  value: true
-	});
-	var default_1$i = ContentCopy["default"] = void 0;
-	var _createSvgIcon$i = /*#__PURE__*/_interopRequireDefault$i(createSvgIcon);
-	var _jsxRuntime$i = require$$2__default["default"];
-	var _default$k = /*#__PURE__*/(0, _createSvgIcon$i["default"])( /*#__PURE__*/(0, _jsxRuntime$i.jsx)("path", {
-	  d: "M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"
-	}), 'ContentCopy');
-	default_1$i = ContentCopy["default"] = _default$k;
-
-	var FirstPage = {};
-
-	var _interopRequireDefault$h = interopRequireDefault.exports;
-	Object.defineProperty(FirstPage, "__esModule", {
-	  value: true
-	});
-	var default_1$h = FirstPage["default"] = void 0;
-	var _createSvgIcon$h = /*#__PURE__*/_interopRequireDefault$h(createSvgIcon);
-	var _jsxRuntime$h = require$$2__default["default"];
-	var _default$j = /*#__PURE__*/(0, _createSvgIcon$h["default"])( /*#__PURE__*/(0, _jsxRuntime$h.jsx)("path", {
-	  d: "M18.41 16.59 13.82 12l4.59-4.59L17 6l-6 6 6 6zM6 6h2v12H6z"
-	}), 'FirstPage');
-	default_1$h = FirstPage["default"] = _default$j;
-
-	var KeyboardArrowDown = {};
-
-	var _interopRequireDefault$g = interopRequireDefault.exports;
-	Object.defineProperty(KeyboardArrowDown, "__esModule", {
-	  value: true
-	});
-	var default_1$g = KeyboardArrowDown["default"] = void 0;
-	var _createSvgIcon$g = /*#__PURE__*/_interopRequireDefault$g(createSvgIcon);
-	var _jsxRuntime$g = require$$2__default["default"];
-	var _default$i = /*#__PURE__*/(0, _createSvgIcon$g["default"])( /*#__PURE__*/(0, _jsxRuntime$g.jsx)("path", {
-	  d: "M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
-	}), 'KeyboardArrowDown');
-	default_1$g = KeyboardArrowDown["default"] = _default$i;
-
-	var KeyboardArrowLeft = {};
-
-	var _interopRequireDefault$f = interopRequireDefault.exports;
-	Object.defineProperty(KeyboardArrowLeft, "__esModule", {
-	  value: true
-	});
-	var default_1$f = KeyboardArrowLeft["default"] = void 0;
-	var _createSvgIcon$f = /*#__PURE__*/_interopRequireDefault$f(createSvgIcon);
-	var _jsxRuntime$f = require$$2__default["default"];
-	var _default$h = /*#__PURE__*/(0, _createSvgIcon$f["default"])( /*#__PURE__*/(0, _jsxRuntime$f.jsx)("path", {
-	  d: "M15.41 16.59 10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"
-	}), 'KeyboardArrowLeft');
-	default_1$f = KeyboardArrowLeft["default"] = _default$h;
-
-	var KeyboardArrowRight = {};
-
-	var _interopRequireDefault$e = interopRequireDefault.exports;
-	Object.defineProperty(KeyboardArrowRight, "__esModule", {
-	  value: true
-	});
-	var default_1$e = KeyboardArrowRight["default"] = void 0;
-	var _createSvgIcon$e = /*#__PURE__*/_interopRequireDefault$e(createSvgIcon);
-	var _jsxRuntime$e = require$$2__default["default"];
-	var _default$g = /*#__PURE__*/(0, _createSvgIcon$e["default"])( /*#__PURE__*/(0, _jsxRuntime$e.jsx)("path", {
-	  d: "M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
-	}), 'KeyboardArrowRight');
-	default_1$e = KeyboardArrowRight["default"] = _default$g;
-
-	var KeyboardArrowUp = {};
-
-	var _interopRequireDefault$d = interopRequireDefault.exports;
-	Object.defineProperty(KeyboardArrowUp, "__esModule", {
-	  value: true
-	});
-	var default_1$d = KeyboardArrowUp["default"] = void 0;
-	var _createSvgIcon$d = /*#__PURE__*/_interopRequireDefault$d(createSvgIcon);
-	var _jsxRuntime$d = require$$2__default["default"];
-	var _default$f = /*#__PURE__*/(0, _createSvgIcon$d["default"])( /*#__PURE__*/(0, _jsxRuntime$d.jsx)("path", {
-	  d: "M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6z"
-	}), 'KeyboardArrowUp');
-	default_1$d = KeyboardArrowUp["default"] = _default$f;
-
-	var LastPage = {};
-
-	var _interopRequireDefault$c = interopRequireDefault.exports;
-	Object.defineProperty(LastPage, "__esModule", {
-	  value: true
-	});
-	var default_1$c = LastPage["default"] = void 0;
-	var _createSvgIcon$c = /*#__PURE__*/_interopRequireDefault$c(createSvgIcon);
-	var _jsxRuntime$c = require$$2__default["default"];
-	var _default$e = /*#__PURE__*/(0, _createSvgIcon$c["default"])( /*#__PURE__*/(0, _jsxRuntime$c.jsx)("path", {
-	  d: "M5.59 7.41 10.18 12l-4.59 4.59L7 18l6-6-6-6zM16 6h2v12h-2z"
-	}), 'LastPage');
-	default_1$c = LastPage["default"] = _default$e;
-
-	async function copyToClipboard(element) {
-	    if (isSecureContext) {
-	        const textBlob = new Blob([element.outerText], { type: 'text/plain' });
-	        const htmlBlob = new Blob([element.outerHTML], { type: 'text/html' });
-	        const clipboardItem = new ClipboardItem({
-	            [textBlob.type]: textBlob,
-	            [htmlBlob.type]: htmlBlob,
-	        });
-	        return navigator.clipboard.write([clipboardItem]);
-	    }
-	    const copyCallback = (event) => {
-	        event.clipboardData?.setData('text/plain', element.outerText);
-	        event.clipboardData?.setData('text/html', element.outerHTML);
-	        event.preventDefault();
-	    };
-	    document.addEventListener('copy', copyCallback);
-	    // fall back to deprecated only in non-secure contexts
-	    // eslint-disable-next-line @typescript-eslint/no-deprecated
-	    document.execCommand('copy');
-	    document.removeEventListener('copy', copyCallback);
-	}
-
-	/* eslint-disable @typescript-eslint/no-explicit-any */
-	const changeTypeMapping = {
-	    FeatureAttributeChange: 'Attribute Change',
-	    UserChange: 'User Change',
-	    UndoSplitExonChange: 'Undo Split Exon',
-	    UndoMergeTranscriptsChange: 'Undo Merge Transcripts',
-	    UndoMergeExonsChange: 'Undo Merge Exons',
-	    TypeChange: 'Type Change',
-	    StrandChange: 'Strand Change',
-	    SplitExonChange: 'Split Exon',
-	    MergeTranscriptsChange: 'Merge Transcripts',
-	    MergeExonsChange: 'Merge Exons',
-	    LocationStartChange: 'Location Start Change',
-	    LocationEndChange: 'Location End Change',
-	    DeleteUserChange: 'Delete User',
-	    DeleteFeatureChange: 'Delete Feature',
-	    DeleteAssemblyChange: 'Delete Assembly',
-	    AddFeatureChange: 'Add Feature',
-	};
-	function getFeatureId$1(feature) {
-	    if (!feature) {
-	        return '';
-	    }
-	    const keys = ['gene_id', 'transcript_id', 'exon_id', 'protein_id'];
-	    for (const key of keys) {
-	        const value = feature.attributes?.[key];
-	        if (value && Array.isArray(value) && value.length > 0) {
-	            return value[0];
-	        }
-	    }
-	    return feature._id || '';
-	}
+	/* eslint-disable @typescript-eslint/unbound-method */
+	const useStyles$e = mui.makeStyles()((theme) => ({
+	    changeTextarea: {
+	        fontFamily: 'monospace',
+	        width: 600,
+	        resize: 'none',
+	        border: `1px solid ${theme.palette.divider}`,
+	        borderRadius: theme.shape.borderRadius,
+	    },
+	}));
 	function ViewChangeLog({ handleClose, session }) {
 	    const { internetAccounts } = require$$1$3.getRoot(session);
 	    const apolloInternetAccount = internetAccounts.find((ia) => ia.type === 'ApolloInternetAccount');
@@ -51557,13 +52392,37 @@
 	        throw new Error('No Apollo internet account found');
 	    }
 	    const { baseURL } = apolloInternetAccount;
+	    const { classes } = useStyles$e();
 	    const [errorMessage, setErrorMessage] = React.useState();
 	    const [assemblyCollection, setAssemblyCollection] = React.useState([]);
 	    const [assemblyId, setAssemblyId] = React.useState('');
-	    const [tableData, setTableData] = React.useState([]);
-	    const [page, setPage] = React__default["default"].useState(0);
-	    const [rowsPerPage, setRowsPerPage] = React__default["default"].useState(5);
-	    const [searchText, setSearchText] = React.useState('');
+	    const [displayGridData, setDisplayGridData] = React.useState([]);
+	    const gridColumns = [
+	        { field: 'sequence' },
+	        {
+	            field: 'typeName',
+	            headerName: 'Change type',
+	            width: 200,
+	            type: 'singleSelect',
+	            // TODO: Get these from change manager once it's on the session
+	            valueOptions: [...dist$3.changeRegistry.changes.keys()],
+	        },
+	        {
+	            field: 'changes',
+	            headerName: 'Change JSON',
+	            width: 600,
+	            renderCell: ({ value }) => (React__default["default"].createElement("textarea", { className: classes.changeTextarea, value: JSON.stringify(value), readOnly: true })),
+	            valueFormatter: ({ value }) => JSON.stringify(value),
+	        },
+	        { field: 'user', headerName: 'User', width: 140 },
+	        {
+	            field: 'createdAt',
+	            headerName: 'Time',
+	            width: 160,
+	            type: 'dateTime',
+	            valueGetter: (value) => value && new Date(value),
+	        },
+	    ];
 	    React.useEffect(() => {
 	        async function getAssemblies() {
 	            const uri = new URL('assemblies', baseURL).href;
@@ -51615,30 +52474,7 @@
 	                    return;
 	                }
 	                const data = await response.json();
-	                const changes = data;
-	                const changesData = [];
-	                for (const change of changes) {
-	                    const { changedIds } = change;
-	                    const changesArray = Array.isArray(change.changes)
-	                        ? change.changes
-	                        : [];
-	                    let i = 0;
-	                    for (const c of changesArray) {
-	                        const newChange = {
-	                            ...change,
-	                            changes: [c],
-	                            _id: `${change._id}-${i}`,
-	                        };
-	                        if ('featureId' in c &&
-	                            changedIds.includes(c.featureId)) {
-	                            newChange.changedIds = [c.featureId];
-	                            newChange._id = `${change._id}-${c.featureId}`;
-	                        }
-	                        changesData.push(newChange);
-	                        i++;
-	                    }
-	                }
-	                setTableData(changesData);
+	                setDisplayGridData(data);
 	            }
 	        }
 	        getGridData().catch((error) => {
@@ -51648,562 +52484,29 @@
 	    function handleChangeAssembly(e) {
 	        setAssemblyId(e.target.value);
 	    }
-	    const handleChangePage = (event, newPage) => {
-	        setPage(newPage);
-	    };
-	    const handleChangeRowsPerPage = (event) => {
-	        setRowsPerPage(Number.parseInt(event.target.value, 10));
-	        setPage(0);
-	    };
-	    const getRowsForPage = () => {
-	        const rows = rowsPerPage > 0
-	            ? getFilteredRows().slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-	            : getFilteredRows();
-	        return rows;
-	    };
-	    const getFilteredRows = () => {
-	        if (!searchText || searchText.trim() === '') {
-	            return tableData;
-	        }
-	        const lower = searchText.toLowerCase();
-	        return tableData.filter((row) => {
-	            const { _id = '', typeName = '', user = '', createdAt = '', updatedAt = '', changedIds = [], changes = [], } = row;
-	            const content = [
-	                _id,
-	                typeName,
-	                user,
-	                createdAt,
-	                updatedAt,
-	                ...changedIds,
-	                JSON.stringify(changes),
-	            ]
-	                .join(' ')
-	                .toLowerCase();
-	            return content.includes(lower);
-	        });
-	    };
-	    return (React__default["default"].createElement(Dialog, { open: true, title: "Change history", handleClose: handleClose, "data-testid": "view-changelog", maxWidth: "xl", fullWidth: true },
+	    return (React__default["default"].createElement(Dialog, { open: true, fullScreen: true, title: "View change log", handleClose: handleClose, "data-testid": "view-changelog" },
+	        React__default["default"].createElement(material.Select, { style: { width: 200, marginLeft: 40 }, value: assemblyId, onChange: handleChangeAssembly }, assemblyCollection.map((option) => (React__default["default"].createElement(material.MenuItem, { key: option._id, value: option._id }, option.name)))),
 	        React__default["default"].createElement(material.DialogContent, null,
-	            React__default["default"].createElement(material.Grid2, { container: true, spacing: 2 },
-	                React__default["default"].createElement(material.Grid2, { size: 6 },
-	                    React__default["default"].createElement(material.Select, { value: assemblyId, onChange: handleChangeAssembly, size: "small", style: {
-	                            width: 300,
-	                            margin: 0,
-	                        } }, assemblyCollection.map((option) => (React__default["default"].createElement(material.MenuItem, { key: option._id, value: option._id }, option.name))))),
-	                React__default["default"].createElement(material.Grid2, { size: 6 },
-	                    React__default["default"].createElement(material.TextField, { id: "outlined-basic", label: "Filter", size: "small", variant: "outlined", style: {
-	                            float: 'right',
-	                            width: 300,
-	                            margin: 0,
-	                        }, value: searchText, onChange: (e) => {
-	                            setSearchText(e.target.value);
-	                        } })),
-	                React__default["default"].createElement(material.Grid2, { size: 12, sx: { height: '70vh', overflowY: 'scroll' } },
-	                    React__default["default"].createElement(TableContainer__default["default"], { component: Paper__default["default"] },
-	                        React__default["default"].createElement(Table__default["default"], { "aria-label": "collapsible table" },
-	                            React__default["default"].createElement(TableHead__default["default"], null,
-	                                React__default["default"].createElement(TableRow__default["default"], null,
-	                                    React__default["default"].createElement(TableCell__default["default"], null),
-	                                    React__default["default"].createElement(TableCell__default["default"], null, "Change type"),
-	                                    React__default["default"].createElement(TableCell__default["default"], null, "Feature ID"),
-	                                    React__default["default"].createElement(TableCell__default["default"], { align: "right" }, "User"),
-	                                    React__default["default"].createElement(TableCell__default["default"], { align: "right" }, "Created At"))),
-	                            React__default["default"].createElement(TableBody__default["default"], null,
-	                                getRowsForPage().map((row) => (React__default["default"].createElement(Row, { key: row._id, row: row, session: session, assemblyId: assemblyId }))),
-	                                getRowsForPage().length === 0 && (React__default["default"].createElement(TableRow__default["default"], null,
-	                                    React__default["default"].createElement(TableCell__default["default"], { colSpan: 6, align: "center" }, "No changes found")))),
-	                            React__default["default"].createElement(TableFooter__default["default"], null,
-	                                React__default["default"].createElement(TableRow__default["default"], null,
-	                                    React__default["default"].createElement(TableCell__default["default"], { colSpan: 6, align: "left" },
-	                                        React__default["default"].createElement(TablePagination__default["default"], { rowsPerPageOptions: [
-	                                                5,
-	                                                10,
-	                                                25,
-	                                                { label: 'All', value: -1 },
-	                                            ], colSpan: 3, count: getFilteredRows().length, rowsPerPage: rowsPerPage, page: page, slotProps: {
-	                                                select: {
-	                                                    inputProps: {
-	                                                        'aria-label': 'rows per page',
-	                                                    },
-	                                                    native: true,
-	                                                },
-	                                            }, onPageChange: handleChangePage, onRowsPerPageChange: handleChangeRowsPerPage, ActionsComponent: TablePaginationActions }))))))))),
+	            React__default["default"].createElement(xDataGrid.DataGrid, { pagination: true, rows: displayGridData, columns: gridColumns, getRowId: (row) => row._id, slots: { toolbar: xDataGrid.GridToolbar }, initialState: {
+	                    sorting: { sortModel: [{ field: 'sequence', sort: 'desc' }] },
+	                    columns: { columnVisibilityModel: { sequence: false } },
+	                } })),
+	        React__default["default"].createElement(material.DialogActions, null,
+	            React__default["default"].createElement(material.Button, { variant: "outlined", type: "submit", onClick: handleClose }, "Close")),
 	        errorMessage ? (React__default["default"].createElement(material.DialogContent, null,
 	            React__default["default"].createElement(material.DialogContentText, { color: "error" }, errorMessage))) : null));
 	}
-	function Row(props) {
-	    const { row, key, session, assemblyId } = props;
-	    const [open, setOpen] = React__default["default"].useState(false);
-	    const [collapsedContent, setCollapsedContent] = React.useState(null);
-	    // TODO: Refactor
-	    React.useEffect(() => {
-	        switch (row.typeName) {
-	            case 'LocationStartChange':
-	            case 'LocationEndChange': {
-	                setCollapsedContent(React__default["default"].createElement(CollapsedLocationChangeContent, { row: row, session: session, assemblyId: assemblyId }));
-	                break;
-	            }
-	            case 'FeatureAttributeChange': {
-	                setCollapsedContent(React__default["default"].createElement(CollapsedFeatureAttributeContent, { row: row, session: session, assemblyId: assemblyId }));
-	                break;
-	            }
-	            case 'TypeChange': {
-	                setCollapsedContent(React__default["default"].createElement(CollapsedTypeChangeContent, { row: row, session: session, assemblyId: assemblyId }));
-	                break;
-	            }
-	            case 'AddFeatureChange': {
-	                setCollapsedContent(React__default["default"].createElement(CollapsedAddFeatureContent, { row: row, session: session, assemblyId: assemblyId }));
-	                break;
-	            }
-	            case 'DeleteFeatureChange': {
-	                setCollapsedContent(React__default["default"].createElement(CollapsedDeleteFeatureContent, { row: row }));
-	                break;
-	            }
-	            default: {
-	                setCollapsedContent(React__default["default"].createElement(CollapsedJsonContent, { row: row }));
-	            }
-	        }
-	        // eslint-disable-next-line react-hooks/exhaustive-deps
-	    }, [row]);
-	    return (React__default["default"].createElement(React__default["default"].Fragment, null,
-	        React__default["default"].createElement(TableRow__default["default"], { key: key, sx: { borderBottom: '1px solid #e0e0e0' } },
-	            React__default["default"].createElement(TableCell__default["default"], { sx: { borderBottom: 'none', width: '40px', maxWidth: '40px' } },
-	                React__default["default"].createElement(IconButton__default["default"], { "aria-label": "expand row", size: "small", onClick: () => {
-	                        setOpen(!open);
-	                    } }, open ? React__default["default"].createElement(default_1$d, null) : React__default["default"].createElement(default_1$g, null))),
-	            React__default["default"].createElement(TableCell__default["default"], { component: "th", scope: "row", sx: { borderBottom: 'none' } }, changeTypeMapping[row.typeName] || row.typeName),
-	            React__default["default"].createElement(TableCell__default["default"], { sx: { borderBottom: 'none' } }, row.changedIds.length > 0 ? row.changedIds.join(', ') : '-'),
-	            React__default["default"].createElement(TableCell__default["default"], { align: "right", sx: { borderBottom: 'none' } }, row.user),
-	            React__default["default"].createElement(TableCell__default["default"], { align: "right", sx: { borderBottom: 'none' } }, row.createdAt)),
-	        open && (React__default["default"].createElement(TableRow__default["default"], null,
-	            React__default["default"].createElement(TableCell__default["default"], { style: { paddingBottom: 0, paddingTop: 0 }, colSpan: 6 },
-	                React__default["default"].createElement(Collapse__default["default"], { in: open, timeout: "auto", unmountOnExit: true },
-	                    React__default["default"].createElement(Box__default["default"], { sx: { margin: 1 } }, collapsedContent)))))));
-	}
-	function CollapsedAddFeatureContent(props) {
-	    const { row, session, assemblyId } = props;
-	    const { changes } = row;
-	    const { addedFeature } = changes?.[0] || {};
-	    const feature = addedFeature;
-	    const [addedFeatureRows, setAddedFeatureRows] = React.useState([]);
-	    const [gene, setGene] = React.useState();
-	    React.useEffect(() => {
-	        const fetchGeneFeature = async (featureId) => {
-	            if (!featureId) {
-	                return;
-	            }
-	            const driver = session.apolloDataStore.collaborationServerDriver;
-	            const fetchedFeature = await driver.getFeatureById(featureId, assemblyId, true);
-	            if (!fetchedFeature) {
-	                return;
-	            }
-	            setGene(fetchedFeature);
-	        };
-	        if (feature.type === 'gene') {
-	            setGene(feature);
-	        }
-	        else {
-	            const featureId = feature._id;
-	            fetchGeneFeature(featureId).catch((error) => {
-	                console.error('Error fetching feature by ID:', error);
-	                setGene(undefined);
-	            });
-	        }
-	        const rows = [];
-	        rows.push({
-	            id: feature._id,
-	            type: feature.type,
-	        });
-	        if (feature.children) {
-	            for (const [, child] of Object.entries(feature.children)) {
-	                rows.push({
-	                    id: child._id,
-	                    type: child.type,
-	                });
-	                if (child.children) {
-	                    for (const [, grandChild] of Object.entries(child.children)) {
-	                        rows.push({
-	                            id: grandChild._id,
-	                            type: grandChild.type,
-	                        });
-	                    }
-	                }
-	            }
-	        }
-	        setAddedFeatureRows(rows);
-	        // eslint-disable-next-line react-hooks/exhaustive-deps
-	    }, [row]);
-	    if (!addedFeature) {
-	        return React__default["default"].createElement(CollapsedJsonContent, { row: row });
-	    }
-	    return (React__default["default"].createElement(TableContainer__default["default"], { component: Paper__default["default"], style: { margin: 10, maxHeight: '300px', overflow: 'auto' } },
-	        React__default["default"].createElement(Table__default["default"], { size: "small" },
-	            React__default["default"].createElement(TableBody__default["default"], null,
-	                React__default["default"].createElement(TableRow__default["default"], { style: { borderTop: '1px solid #e0e0e0' } },
-	                    React__default["default"].createElement(TableCell__default["default"], null,
-	                        React__default["default"].createElement("small", null, "Feature ID")),
-	                    React__default["default"].createElement(TableCell__default["default"], null,
-	                        React__default["default"].createElement("small", null, "Type")),
-	                    React__default["default"].createElement(TableCell__default["default"], null,
-	                        React__default["default"].createElement("small", null, "Status"))),
-	                addedFeatureRows.map((r) => (React__default["default"].createElement(TableRow__default["default"], { key: r.id },
-	                    React__default["default"].createElement(TableCell__default["default"], null,
-	                        React__default["default"].createElement("small", null, r.id)),
-	                    React__default["default"].createElement(TableCell__default["default"], null,
-	                        React__default["default"].createElement("small", null, r.type)),
-	                    React__default["default"].createElement(TableCell__default["default"], null,
-	                        React__default["default"].createElement("small", null, getFeatureStatus(gene, row))))))))));
-	}
-	function CollapsedDeleteFeatureContent(props) {
-	    const { row } = props;
-	    const { changes } = row;
-	    const { deletedFeature } = changes?.[0] || {};
-	    if (!deletedFeature) {
-	        return React__default["default"].createElement(CollapsedJsonContent, { row: row });
-	    }
-	    const feature = deletedFeature;
-	    const deletedFeatureRows = [];
-	    deletedFeatureRows.push({
-	        id: feature._id,
-	        type: feature.type,
-	    });
-	    if (feature.children) {
-	        for (const [, child] of Object.entries(feature.children)) {
-	            deletedFeatureRows.push({
-	                id: child._id,
-	                type: child.type,
-	            });
-	            if (child.children) {
-	                for (const [, grandChild] of Object.entries(child.children)) {
-	                    deletedFeatureRows.push({
-	                        id: grandChild._id,
-	                        type: grandChild.type,
-	                    });
-	                }
-	            }
-	        }
-	    }
-	    return (React__default["default"].createElement(TableContainer__default["default"], { component: Paper__default["default"], style: { margin: 10, maxHeight: '300px', overflow: 'auto' } },
-	        React__default["default"].createElement(Table__default["default"], { size: "small" },
-	            React__default["default"].createElement(TableBody__default["default"], null,
-	                React__default["default"].createElement(TableRow__default["default"], { style: { borderTop: '1px solid #e0e0e0' } },
-	                    React__default["default"].createElement(TableCell__default["default"], null,
-	                        React__default["default"].createElement("small", null, "Feature ID")),
-	                    React__default["default"].createElement(TableCell__default["default"], null,
-	                        React__default["default"].createElement("small", null, "Type"))),
-	                deletedFeatureRows.map((row) => (React__default["default"].createElement(TableRow__default["default"], { key: row.id },
-	                    React__default["default"].createElement(TableCell__default["default"], null,
-	                        React__default["default"].createElement("small", null, row.id)),
-	                    React__default["default"].createElement(TableCell__default["default"], null,
-	                        React__default["default"].createElement("small", null, row.type)))))))));
-	}
-	function CollapsedTypeChangeContent(props) {
-	    const { row, session, assemblyId } = props;
-	    const [featureId] = row.changedIds;
-	    const [gene, setGene] = React.useState();
-	    const [feature, setFeature] = React.useState();
-	    const [diffAttributes, setDiffAttributes] = React.useState([]);
-	    React.useEffect(() => {
-	        const fetchFeature = async () => {
-	            if (!featureId) {
-	                return;
-	            }
-	            const driver = session.apolloDataStore.collaborationServerDriver;
-	            const fetchedFeature = await driver.getFeatureById(featureId, assemblyId, true);
-	            setGene(fetchedFeature);
-	            if (!fetchedFeature) {
-	                return;
-	            }
-	            if (featureId === fetchedFeature._id) {
-	                setFeature(fetchedFeature);
-	                return;
-	            }
-	            for (const [k, t] of new Map(Object.entries(fetchedFeature.children ?? {}))) {
-	                if (k === featureId) {
-	                    setFeature(t);
-	                    return;
-	                }
-	                for (const [tk, c] of new Map(Object.entries(t.children ?? {}))) {
-	                    if (tk === featureId) {
-	                        setFeature(c);
-	                        return;
-	                    }
-	                }
-	            }
-	        };
-	        fetchFeature().catch((error) => {
-	            console.error('Error fetching feature by ID:', error);
-	            setFeature(undefined);
-	        });
-	        const diffAttrs = [];
-	        diffAttrs.push({
-	            attribute: '',
-	            old: [String(row.changes?.[0].oldType)],
-	            new: [String(row.changes?.[0].newType)],
-	        });
-	        setDiffAttributes(diffAttrs);
-	        // eslint-disable-next-line react-hooks/exhaustive-deps
-	    }, [featureId, assemblyId]);
-	    if (!feature) {
-	        return React__default["default"].createElement(CollapsedJsonContent, { ...props });
-	    }
-	    return (React__default["default"].createElement("div", null,
-	        React__default["default"].createElement(CollapsedInfoContent, { feature: feature, gene: gene, row: row }),
-	        React__default["default"].createElement(CollapsedDiffAttributesContent, { diffAttributes: diffAttributes })));
-	}
-	function CollapsedLocationChangeContent(props) {
-	    const { row, session, assemblyId } = props;
-	    const [featureId] = row.changedIds;
-	    const [gene, setGene] = React.useState();
-	    const [feature, setFeature] = React.useState();
-	    const [diffAttributes, setDiffAttributes] = React.useState([]);
-	    React.useEffect(() => {
-	        const fetchFeature = async () => {
-	            if (!featureId) {
-	                return;
-	            }
-	            const driver = session.apolloDataStore.collaborationServerDriver;
-	            const fetchedFeature = await driver.getFeatureById(featureId, assemblyId, true);
-	            setGene(fetchedFeature);
-	            if (!fetchedFeature) {
-	                return;
-	            }
-	            if (featureId === fetchedFeature._id) {
-	                setFeature(fetchedFeature);
-	                return;
-	            }
-	            for (const [k, t] of new Map(Object.entries(fetchedFeature.children ?? {}))) {
-	                if (k === featureId) {
-	                    setFeature(t);
-	                    return;
-	                }
-	                for (const [tk, c] of new Map(Object.entries(t.children ?? {}))) {
-	                    if (tk === featureId) {
-	                        setFeature(c);
-	                        return;
-	                    }
-	                }
-	            }
-	        };
-	        fetchFeature().catch((error) => {
-	            console.error('Error fetching feature by ID:', error);
-	            setFeature(undefined);
-	        });
-	        const diffAttrs = [];
-	        if (row.typeName === 'LocationStartChange') {
-	            diffAttrs.push({
-	                attribute: '',
-	                old: [String(row.changes?.[0].oldStart)],
-	                new: [String(row.changes?.[0].newStart)],
-	            });
-	        }
-	        if (row.typeName === 'LocationEndChange') {
-	            diffAttrs.push({
-	                attribute: '',
-	                old: [String(row.changes?.[0].oldEnd)],
-	                new: [String(row.changes?.[0].newEnd)],
-	            });
-	        }
-	        setDiffAttributes(diffAttrs);
-	        // eslint-disable-next-line react-hooks/exhaustive-deps
-	    }, [featureId, assemblyId]);
-	    if (!feature) {
-	        return React__default["default"].createElement(CollapsedJsonContent, { ...props });
-	    }
-	    return (React__default["default"].createElement("div", null,
-	        React__default["default"].createElement(CollapsedInfoContent, { feature: feature, gene: gene, row: row }),
-	        React__default["default"].createElement(CollapsedDiffAttributesContent, { diffAttributes: diffAttributes })));
-	}
-	function CollapsedFeatureAttributeContent(props) {
-	    const { row, session, assemblyId } = props;
-	    const [featureId] = row.changedIds;
-	    const [gene, setGene] = React.useState();
-	    const [feature, setFeature] = React.useState();
-	    const [diffAttributes, setDiffAttributes] = React.useState([]);
-	    const getDiffAttributes = (oldAttrs, newAttrs) => {
-	        const allKeys = new Set([
-	            ...Object.keys(oldAttrs),
-	            ...Object.keys(newAttrs),
-	        ]);
-	        const diff = [];
-	        for (const key of allKeys) {
-	            const oldValues = oldAttrs[key] ?? [];
-	            const newValues = newAttrs[key] ?? [];
-	            const oldSet = new Set(oldValues);
-	            const newSet = new Set(newValues);
-	            const isEqual = oldValues.length === newValues.length &&
-	                oldSet.size === newSet.size &&
-	                [...oldSet].every((value) => newSet.has(value));
-	            if (!isEqual) {
-	                diff.push({
-	                    attribute: key,
-	                    old: oldValues,
-	                    new: newValues,
-	                });
-	            }
-	        }
-	        return diff;
-	    };
-	    React.useEffect(() => {
-	        const fetchFeature = async () => {
-	            if (!featureId) {
-	                return;
-	            }
-	            const driver = session.apolloDataStore.collaborationServerDriver;
-	            const fetchedFeature = await driver.getFeatureById(featureId, assemblyId, true);
-	            setGene(fetchedFeature);
-	            if (!fetchedFeature) {
-	                return;
-	            }
-	            if (featureId === fetchedFeature._id) {
-	                setFeature(fetchedFeature);
-	                return;
-	            }
-	            for (const [k, t] of new Map(Object.entries(fetchedFeature.children ?? {}))) {
-	                if (k === featureId) {
-	                    setFeature(t);
-	                    return;
-	                }
-	                for (const [tk, c] of new Map(Object.entries(t.children ?? {}))) {
-	                    if (tk === featureId) {
-	                        setFeature(c);
-	                        return;
-	                    }
-	                }
-	            }
-	        };
-	        fetchFeature().catch((error) => {
-	            console.error('Error fetching feature by ID:', error);
-	            setFeature(undefined);
-	        });
-	        const diffAttrs = getDiffAttributes((row.changes?.[0].oldAttributes ?? {}), (row.changes?.[0].newAttributes ?? {}));
-	        setDiffAttributes(diffAttrs);
-	        // eslint-disable-next-line react-hooks/exhaustive-deps
-	    }, [featureId, assemblyId]);
-	    if (!feature) {
-	        return React__default["default"].createElement(CollapsedJsonContent, { ...props });
-	    }
-	    return (React__default["default"].createElement("div", null,
-	        React__default["default"].createElement(CollapsedInfoContent, { feature: feature, gene: gene, row: row }),
-	        React__default["default"].createElement(CollapsedDiffAttributesContent, { diffAttributes: diffAttributes })));
-	}
-	function CollapsedDiffAttributesContent(props) {
-	    const { diffAttributes } = props;
-	    return (React__default["default"].createElement("div", null, diffAttributes.length > 0 && (React__default["default"].createElement(TableContainer__default["default"], { component: Paper__default["default"], style: { margin: 10 } },
-	        React__default["default"].createElement(Table__default["default"], { size: "small" },
-	            React__default["default"].createElement(TableBody__default["default"], null,
-	                React__default["default"].createElement(TableRow__default["default"], { style: { borderTop: '1px solid #e0e0e0' } },
-	                    React__default["default"].createElement(TableCell__default["default"], { align: "left" },
-	                        React__default["default"].createElement("small", null, "Attribute")),
-	                    React__default["default"].createElement(TableCell__default["default"], { align: "left" },
-	                        React__default["default"].createElement("small", null, "Old")),
-	                    React__default["default"].createElement(TableCell__default["default"], { align: "left" },
-	                        React__default["default"].createElement("small", null, "New"))),
-	                diffAttributes.map((attr, index) => (React__default["default"].createElement(TableRow__default["default"], { key: index },
-	                    React__default["default"].createElement(TableCell__default["default"], { align: "left" },
-	                        React__default["default"].createElement("small", null, attr.attribute)),
-	                    React__default["default"].createElement(TableCell__default["default"], null, attr.old.length > 0 ? (React__default["default"].createElement("ul", null, attr.old.map((value, i) => (React__default["default"].createElement("li", { key: i }, value))))) : (React__default["default"].createElement("small", null, "N/A"))),
-	                    React__default["default"].createElement(TableCell__default["default"], { align: "left" }, attr.new.length > 0 ? (React__default["default"].createElement("ul", null, attr.new.map((value, i) => (React__default["default"].createElement("li", { key: i }, value))))) : (React__default["default"].createElement("small", null, "N/A"))))))))))));
-	}
-	const getFeatureStatus = (gene, row) => {
-	    if (!gene) {
-	        return 'Unknown';
-	    }
-	    const savedAt = gene.attributes?.savedAt?.[0];
-	    if (savedAt && row.updatedAt) {
-	        const havanaSavedAtDate = new Date(savedAt);
-	        const geneUpdatedAtDate = new Date(row.updatedAt);
-	        if (havanaSavedAtDate >= geneUpdatedAtDate) {
-	            return 'Done';
-	        }
-	    }
-	    return 'Pending';
-	};
-	function CollapsedInfoContent(props) {
-	    const { feature, gene, row } = props;
-	    return (React__default["default"].createElement(TableContainer__default["default"], { component: Paper__default["default"], style: { margin: 10 } },
-	        React__default["default"].createElement(Table__default["default"], { size: "small" },
-	            React__default["default"].createElement(TableBody__default["default"], null,
-	                React__default["default"].createElement(TableRow__default["default"], { style: { borderTop: '1px solid #e0e0e0' } },
-	                    React__default["default"].createElement(TableCell__default["default"], null,
-	                        React__default["default"].createElement("small", null, "Type")),
-	                    React__default["default"].createElement(TableCell__default["default"], null,
-	                        React__default["default"].createElement("small", null, "Feature ID")),
-	                    gene?.type !== feature.type && (React__default["default"].createElement(TableCell__default["default"], null,
-	                        React__default["default"].createElement("small", null, "Gene ID"))),
-	                    React__default["default"].createElement(TableCell__default["default"], null,
-	                        React__default["default"].createElement("small", null, "Status"))),
-	                React__default["default"].createElement(TableRow__default["default"], null,
-	                    React__default["default"].createElement(TableCell__default["default"], null,
-	                        React__default["default"].createElement("small", null, feature.type)),
-	                    React__default["default"].createElement(TableCell__default["default"], null,
-	                        React__default["default"].createElement("small", null, getFeatureId$1(feature))),
-	                    gene?.type !== feature.type && (React__default["default"].createElement(TableCell__default["default"], null,
-	                        React__default["default"].createElement("small", null, getFeatureId$1(gene)))),
-	                    React__default["default"].createElement(TableCell__default["default"], null,
-	                        React__default["default"].createElement("small", null, getFeatureStatus(gene, row))))))));
-	}
-	function CollapsedJsonContent(props) {
-	    const { row } = props;
-	    const objectRef = React.useRef(null);
-	    const onCopyClick = () => {
-	        const objectDiv = objectRef.current;
-	        if (!objectDiv) {
-	            return;
-	        }
-	        void copyToClipboard(objectDiv);
-	    };
-	    return (React__default["default"].createElement("div", null,
-	        React__default["default"].createElement("div", { style: {
-	                marginTop: 10,
-	                display: 'flex',
-	                flexDirection: 'row',
-	                alignItems: 'center',
-	                gap: 10,
-	            } },
-	            React__default["default"].createElement(Typography__default["default"], null, "Change Object"),
-	            React__default["default"].createElement(material.Tooltip, { title: "Copy" },
-	                React__default["default"].createElement(default_1$i, { style: { fontSize: 15, cursor: 'pointer' }, onClick: onCopyClick }))),
-	        React__default["default"].createElement("div", { style: {
-	                height: '100px',
-	                overflowY: 'scroll',
-	                border: '1px solid #e0e0e0',
-	                borderRadius: 5,
-	            }, ref: objectRef },
-	            React__default["default"].createElement("pre", null, JSON.stringify(row.changes, null, 2)))));
-	}
-	function TablePaginationActions(props) {
-	    const theme = styles.useTheme();
-	    const { count, page, rowsPerPage, onPageChange } = props;
-	    const handleFirstPageButtonClick = (event) => {
-	        onPageChange(event, 0);
-	    };
-	    const handleBackButtonClick = (event) => {
-	        onPageChange(event, page - 1);
-	    };
-	    const handleNextButtonClick = (event) => {
-	        onPageChange(event, page + 1);
-	    };
-	    const handleLastPageButtonClick = (event) => {
-	        onPageChange(event, Math.max(0, Math.ceil(count / rowsPerPage) - 1));
-	    };
-	    return (React__default["default"].createElement(Box__default["default"], { sx: { flexShrink: 0, ml: 2.5 } },
-	        React__default["default"].createElement(IconButton__default["default"], { onClick: handleFirstPageButtonClick, disabled: page === 0, "aria-label": "first page" }, theme.direction === 'rtl' ? React__default["default"].createElement(default_1$c, null) : React__default["default"].createElement(default_1$h, null)),
-	        React__default["default"].createElement(IconButton__default["default"], { onClick: handleBackButtonClick, disabled: page === 0, "aria-label": "previous page" }, theme.direction === 'rtl' ? (React__default["default"].createElement(default_1$e, null)) : (React__default["default"].createElement(default_1$f, null))),
-	        React__default["default"].createElement(IconButton__default["default"], { onClick: handleNextButtonClick, disabled: page >= Math.ceil(count / rowsPerPage) - 1, "aria-label": "next page" }, theme.direction === 'rtl' ? (React__default["default"].createElement(default_1$f, null)) : (React__default["default"].createElement(default_1$e, null))),
-	        React__default["default"].createElement(IconButton__default["default"], { onClick: handleLastPageButtonClick, disabled: page >= Math.ceil(count / rowsPerPage) - 1, "aria-label": "last page" }, theme.direction === 'rtl' ? React__default["default"].createElement(default_1$h, null) : React__default["default"].createElement(default_1$c, null))));
-	}
 
 	/* eslint-disable @typescript-eslint/unbound-method */
-	const columns$1 = [
+	const columns = [
 	    { field: 'refName', headerName: 'Ref Name' },
-	    { field: 'aliases', headerName: 'Aliases', editable: true },
+	    { field: 'aliases', headerName: 'Aliases', editable: true, flex: 1 },
 	];
 	const isGeneratedObjectId = (key) => {
 	    const pattern = /^[\da-f]{24}$/i;
 	    return pattern.test(key);
 	};
-	function AddRefSeqAliases({ changeManager, handleClose, session, }) {
+	const AddRefSeqAliases = mobxReact.observer(function AddRefSeqAliases({ changeManager, handleClose, session, }) {
 	    const fileRef = React.useRef(null);
 	    const [errorMessage, setErrorMessage] = React.useState('');
 	    const [enableSubmit, setEnableSubmit] = React.useState(false);
@@ -52214,43 +52517,48 @@
 	    const { collaborationServerDriver } = apolloDataStore;
 	    const assemblies = collaborationServerDriver.getAssemblies();
 	    React.useEffect(() => {
-	        let retry = 0;
-	        const maxRetries = 2;
-	        const initializeRefNameAliasMap = () => {
-	            if (!selectedAssembly) {
-	                return;
+	        if (assemblies.length > 0) {
+	            setSelectedAssembly(assemblies[0]);
+	            collaborationServerDriver
+	                .getRefNameAliases(assemblies[0].name)
+	                .then((refNameAliases) => {
+	                initializeRefNameAliasMap(refNameAliases);
+	            })
+	                .catch(() => {
+	                setRefNameAliasMap(new Map());
+	                setErrorMessage('Error fetching refName aliases for assembly');
+	            });
+	        }
+	        // eslint-disable-next-line react-hooks/exhaustive-deps
+	    }, []);
+	    const initializeRefNameAliasMap = (refNameAliasesList) => {
+	        const initialMap = new Map();
+	        for (const refNameAliases of refNameAliasesList) {
+	            const key = refNameAliases.refName;
+	            if (isGeneratedObjectId(key)) {
+	                continue;
 	            }
-	            const initialMap = new Map();
-	            if (retry < maxRetries && !selectedAssembly.refNames) {
-	                retry++;
-	                setTimeout(initializeRefNameAliasMap, 50);
-	            }
-	            if (!selectedAssembly.refNames) {
-	                return;
-	            }
-	            const refNameAliasess = selectedAssembly.refNameAliases;
-	            for (const key in refNameAliasess) {
-	                const value = refNameAliasess[key];
-	                if (!value || isGeneratedObjectId(key)) {
-	                    continue;
-	                }
-	                if (initialMap.has(value)) {
-	                    const aliases = initialMap.get(value) ?? [];
-	                    initialMap.set(value, [...aliases, key]);
-	                }
-	                else {
-	                    initialMap.set(value, [key]);
-	                }
-	            }
-	            setRefNameAliasMap(initialMap);
-	        };
-	        initializeRefNameAliasMap();
-	    }, [selectedAssembly]);
+	            initialMap.set(key, refNameAliases.aliases);
+	        }
+	        setRefNameAliasMap(initialMap);
+	    };
 	    const handleChangeAssembly = (e) => {
 	        const newAssembly = assemblies.find((asm) => asm.name === e.target.value);
 	        setSelectedAssembly(newAssembly);
+	        if (!newAssembly?.name) {
+	            return;
+	        }
+	        collaborationServerDriver
+	            .getRefNameAliases(newAssembly.name)
+	            .then((refNameAliases) => {
+	            initializeRefNameAliasMap(refNameAliases);
+	            setErrorMessage('');
+	        })
+	            .catch(() => {
+	            setRefNameAliasMap(new Map());
+	            setErrorMessage('Error fetching refName aliases for assembly');
+	        });
 	        setEnableSubmit(false);
-	        setErrorMessage('');
 	        if (fileRef.current) {
 	            fileRef.current.value = '';
 	        }
@@ -52280,10 +52588,11 @@
 	            setErrorMessage('Error reading file');
 	        });
 	    };
-	    const rowSelectionChange = (ids) => {
-	        if (ids.length > 0) {
+	    const rowSelectionChange = (gridRowSelectionModel) => {
+	        const { ids } = gridRowSelectionModel;
+	        if (ids.size > 0) {
 	            setEnableSubmit(true);
-	            const selectedRows = ids.flatMap((id) => getTableRows().filter((row) => row.id === id));
+	            const selectedRows = [...ids.values()].flatMap((id) => getTableRows().filter((row) => String(row.id) === String(id)));
 	            setSelectedRows(selectedRows);
 	        }
 	        else {
@@ -52334,29 +52643,27 @@
 	    };
 	    return (React__default["default"].createElement(Dialog, { open: true, title: "Add reference sequence aliases", handleClose: handleClose, maxWidth: 'sm', "data-testid": "add-refseq-alias", fullWidth: true },
 	        React__default["default"].createElement(material.DialogContent, { style: { display: 'flex', flexDirection: 'column' } },
-	            React__default["default"].createElement(material.Grid2, { container: true, spacing: 2 },
-	                React__default["default"].createElement(material.Grid2, null,
+	            React__default["default"].createElement(material.Grid, { container: true, spacing: 2 },
+	                React__default["default"].createElement(material.Grid, null,
 	                    React__default["default"].createElement(material.FormControl, { disabled: enableSubmit && !errorMessage, fullWidth: true },
 	                        React__default["default"].createElement(material.InputLabel, { id: "demo-simple-select-label" }, "Assembly"),
-	                        React__default["default"].createElement(material.Select, { labelId: "demo-simple-select-label", id: "demo-simple-select", label: "Assembly", value: selectedAssembly?.name ?? '', onChange: handleChangeAssembly }, assemblies.map((option) => (React__default["default"].createElement(material.MenuItem, { key: option.name, value: option.name }, option.displayName ?? option.name)))))),
-	                React__default["default"].createElement(material.Grid2, null,
+	                        React__default["default"].createElement(material.Select, { labelId: "demo-simple-select-label", id: "demo-simple-select", label: "Assembly", value: selectedAssembly?.name ?? '', onChange: handleChangeAssembly, style: { minWidth: 150 } }, assemblies.map((option) => (React__default["default"].createElement(material.MenuItem, { key: option.name, value: option.name }, option.displayName)))))),
+	                React__default["default"].createElement(material.Grid, null,
 	                    React__default["default"].createElement(material.InputLabel, null, "Load RefName alias"),
 	                    React__default["default"].createElement("input", { type: "file", onChange: handleChangeFileHandler, ref: fileRef, disabled: (enableSubmit && !errorMessage) || !selectedAssembly }))),
 	            selectedAssembly && refNameAliasMap.size > 0 ? (React__default["default"].createElement("div", { style: { height: 200, width: '100%', marginTop: 20 } },
 	                React__default["default"].createElement(material.InputLabel, null, "Refname aliases found for selected assembly."),
-	                React__default["default"].createElement(xDataGrid.DataGrid, { rows: getTableRows(), columns: columns$1, initialState: {
+	                React__default["default"].createElement(xDataGrid.DataGrid, { rows: getTableRows(), columns: columns, initialState: {
 	                        pagination: {
 	                            paginationModel: { page: 0, pageSize: 5 },
 	                        },
-	                    }, pageSizeOptions: [5, 10], onRowSelectionModelChange: (ids) => {
-	                        rowSelectionChange(ids);
-	                    }, processRowUpdate: processRowUpdate, checkboxSelection: true }))) : null),
+	                    }, pageSizeOptions: [5, 10], onRowSelectionModelChange: rowSelectionChange, processRowUpdate: processRowUpdate, checkboxSelection: true, disableRowSelectionExcludeModel: true }))) : null),
 	        React__default["default"].createElement(material.DialogActions, null,
 	            React__default["default"].createElement(material.Button, { variant: "contained", type: "submit", disabled: !enableSubmit, onClick: handleSubmit }, "Submit"),
 	            React__default["default"].createElement(material.Button, { variant: "outlined", type: "submit", onClick: handleClose }, "Close")),
 	        errorMessage ? (React__default["default"].createElement(material.DialogContent, null,
 	            React__default["default"].createElement(material.DialogContentText, { color: "error" }, errorMessage))) : null));
-	}
+	});
 
 	function ViewCheckResults({ handleClose, session, }) {
 	    const { internetAccounts } = require$$1$3.getRoot(session);
@@ -52422,7 +52729,7 @@
 	        setSelectedAssembly(newAssembly);
 	    }
 	    return (React__default["default"].createElement(Dialog, { open: true, fullScreen: true, title: "View check results", handleClose: handleClose, "data-testid": "view-check-results" },
-	        React__default["default"].createElement(material.Select, { style: { width: 200, marginLeft: 40 }, value: selectedAssembly?.name ?? '', onChange: handleChangeAssembly, disabled: assemblies.length === 0 }, assemblies.map((option) => (React__default["default"].createElement(material.MenuItem, { key: option.name, value: option.name }, option.displayName ?? option.name)))),
+	        React__default["default"].createElement(material.Select, { style: { width: 200, marginLeft: 40 }, value: selectedAssembly?.name ?? '', onChange: handleChangeAssembly, disabled: assemblies.length === 0 }, assemblies.map((option) => (React__default["default"].createElement(material.MenuItem, { key: option.name, value: option.name }, option.displayName)))),
 	        React__default["default"].createElement(material.DialogContent, null,
 	            React__default["default"].createElement(xDataGrid.DataGrid, { pagination: true, rows: displayGridData, columns: gridColumns, getRowId: (row) => row._id, slots: { toolbar: xDataGrid.GridToolbar }, initialState: {
 	                    sorting: { sortModel: [{ field: 'name', sort: 'asc' }] },
@@ -52492,177 +52799,128 @@
 	            React__default["default"].createElement(material.DialogContentText, { color: "error" }, errorMessage))) : null));
 	}
 
-	const columns = [
-	    {
-	        field: 'name',
-	        headerName: 'Assembly Name',
-	        width: 150,
-	        editable: false,
-	    },
-	    {
-	        field: 'aliases',
-	        headerName: 'Aliases',
-	        width: 300,
-	        editable: true,
-	    },
-	];
-	function AddAssemblyAliases({ changeManager, handleClose, session, }) {
-	    const { apolloDataStore } = session;
-	    const { collaborationServerDriver } = apolloDataStore;
-	    const assemblies = collaborationServerDriver.getAssemblies();
-	    const rows = assemblies.map((assembly) => {
-	        return {
-	            id: assembly.name,
-	            name: assembly.displayName ?? assembly.name,
-	            aliases: assembly.aliases.join(', '),
-	        };
-	    });
-	    const [errorMessage, setErrorMessage] = React__default["default"].useState('');
-	    const processRowUpdate = (newRow, _oldRow) => {
-	        const change = new dist$2.AddAssemblyAliasesChange({
-	            typeName: 'AddAssemblyAliasesChange',
-	            assembly: newRow.id,
-	            aliases: newRow.aliases.split(','),
-	        });
-	        void changeManager.submit(change).catch(() => {
-	            setErrorMessage('Error submitting change');
-	        });
-	        handleClose();
-	        return newRow;
-	    };
-	    return (React__default["default"].createElement(Dialog, { open: true, title: "Add assembly aliases", handleClose: handleClose, maxWidth: 'sm', "data-testid": "add-assembly-alias", fullWidth: true },
-	        React__default["default"].createElement(material.DialogContent, { style: { display: 'flex', flexDirection: 'column' } },
-	            React__default["default"].createElement(material.Box, { sx: { height: 400, width: '100%' } },
-	                React__default["default"].createElement(xDataGrid.DataGrid, { rows: rows, columns: columns, initialState: {
-	                        pagination: {
-	                            paginationModel: {
-	                                pageSize: 5,
+	function addTopLevelAdminMenus(rootModel) {
+	    rootModel.appendToMenu('Apollo', {
+	        label: 'Admin',
+	        type: 'subMenu',
+	        icon: AdminPanelSettingsIcon,
+	        subMenu: [
+	            {
+	                label: 'Add Assembly',
+	                icon: AddIcon,
+	                onClick: (session) => {
+	                    session.queueDialog((doneCallback) => [
+	                        AddAssembly,
+	                        {
+	                            session,
+	                            handleClose: () => {
+	                                doneCallback();
+	                            },
+	                            changeManager: session.apolloDataStore.changeManager,
+	                        },
+	                    ]);
+	                },
+	            },
+	            {
+	                label: 'Delete Assembly',
+	                icon: DeleteIcon,
+	                onClick: (session) => {
+	                    session.queueDialog((doneCallback) => [
+	                        DeleteAssembly,
+	                        {
+	                            session,
+	                            handleClose: () => {
+	                                doneCallback();
+	                            },
+	                            changeManager: session.apolloDataStore.changeManager,
+	                        },
+	                    ]);
+	                },
+	            },
+	            {
+	                label: 'Import Features',
+	                icon: InputIcon,
+	                onClick: (session) => {
+	                    session.queueDialog((doneCallback) => [
+	                        ImportFeatures,
+	                        {
+	                            session,
+	                            handleClose: () => {
+	                                doneCallback();
+	                            },
+	                            changeManager: session.apolloDataStore.changeManager,
+	                        },
+	                    ]);
+	                },
+	            },
+	            {
+	                label: 'Add reference sequence aliases',
+	                onClick: (session) => {
+	                    session.queueDialog((doneCallback) => [
+	                        AddRefSeqAliases,
+	                        {
+	                            session,
+	                            handleClose: () => {
+	                                doneCallback();
+	                            },
+	                            changeManager: session.apolloDataStore.changeManager,
+	                        },
+	                    ]);
+	                },
+	            },
+	            {
+	                label: 'Add Assembly aliases',
+	                onClick: (session) => {
+	                    session.queueDialog((doneCallback) => [
+	                        AddAssemblyAliases,
+	                        {
+	                            session,
+	                            handleClose: () => {
+	                                doneCallback();
+	                            },
+	                            changeManager: session.apolloDataStore.changeManager,
+	                        },
+	                    ]);
+	                },
+	            },
+	            {
+	                label: 'Manage Users',
+	                icon: PersonIcon,
+	                onClick: (session) => {
+	                    session.queueDialog((doneCallback) => [
+	                        ManageUsers,
+	                        {
+	                            session,
+	                            handleClose: () => {
+	                                doneCallback();
+	                            },
+	                            changeManager: session.apolloDataStore.changeManager,
+	                        },
+	                    ]);
+	                },
+	            },
+	            {
+	                label: 'Manage Checks',
+	                icon: RuleIcon,
+	                onClick: (session) => {
+	                    session.queueDialog((doneCallback) => [
+	                        ManageChecks,
+	                        {
+	                            session,
+	                            handleClose: () => {
+	                                doneCallback();
 	                            },
 	                        },
-	                    }, pageSizeOptions: [5], processRowUpdate: processRowUpdate, disableRowSelectionOnClick: true }))),
-	        errorMessage ? (React__default["default"].createElement(material.DialogContent, null,
-	            React__default["default"].createElement(material.DialogContentText, { color: "error" }, errorMessage))) : null));
-	}
-
-	function addMenuItems(rootModel) {
-	    rootModel.appendToMenu('Apollo', {
-	        label: 'Add Assembly',
-	        onClick: (session) => {
-	            session.queueDialog((doneCallback) => [
-	                AddAssembly,
-	                {
-	                    session,
-	                    handleClose: () => {
-	                        doneCallback();
-	                    },
-	                    changeManager: session.apolloDataStore.changeManager,
+	                    ]);
 	                },
-	            ]);
-	        },
-	    });
-	    rootModel.appendToMenu('Apollo', {
-	        label: 'Delete Assembly',
-	        onClick: (session) => {
-	            session.queueDialog((doneCallback) => [
-	                DeleteAssembly,
-	                {
-	                    session,
-	                    handleClose: () => {
-	                        doneCallback();
-	                    },
-	                    changeManager: session.apolloDataStore.changeManager,
-	                },
-	            ]);
-	        },
-	    });
-	    rootModel.appendToMenu('Apollo', {
-	        label: 'Import Features',
-	        onClick: (session) => {
-	            session.queueDialog((doneCallback) => [
-	                ImportFeatures,
-	                {
-	                    session,
-	                    handleClose: () => {
-	                        doneCallback();
-	                    },
-	                    changeManager: session.apolloDataStore.changeManager,
-	                },
-	            ]);
-	        },
-	    });
-	    rootModel.appendToMenu('Apollo', {
-	        label: 'Add reference sequence aliases',
-	        onClick: (session) => {
-	            session.queueDialog((doneCallback) => [
-	                AddRefSeqAliases,
-	                {
-	                    session,
-	                    handleClose: () => {
-	                        doneCallback();
-	                    },
-	                    changeManager: session.apolloDataStore.changeManager,
-	                },
-	            ]);
-	        },
-	    });
-	    rootModel.appendToMenu('Apollo', {
-	        label: 'Add Assembly aliases',
-	        onClick: (session) => {
-	            session.queueDialog((doneCallback) => [
-	                AddAssemblyAliases,
-	                {
-	                    session,
-	                    handleClose: () => {
-	                        doneCallback();
-	                    },
-	                    changeManager: session.apolloDataStore.changeManager,
-	                },
-	            ]);
-	        },
-	    });
-	    rootModel.appendToMenu('Apollo', {
-	        label: 'Manage Users',
-	        onClick: (session) => {
-	            session.queueDialog((doneCallback) => [
-	                ManageUsers,
-	                {
-	                    session,
-	                    handleClose: () => {
-	                        doneCallback();
-	                    },
-	                    changeManager: session.apolloDataStore.changeManager,
-	                },
-	            ]);
-	        },
-	    });
-	    rootModel.appendToMenu('Apollo', {
-	        label: 'Undo',
-	        onClick: (session) => {
-	            const { apolloDataStore } = session;
-	            const { notify } = session;
-	            if (apolloDataStore.changeManager.recentChanges.length > 0) {
-	                void apolloDataStore.changeManager.revertLastChange();
-	            }
-	            else {
-	                notify('No changes to undo', 'info');
-	            }
-	        },
+	            },
+	        ],
 	    });
 	}
 
-	var AccountCircle = {};
-
-	var _interopRequireDefault$b = interopRequireDefault.exports;
-	Object.defineProperty(AccountCircle, "__esModule", {
-	  value: true
-	});
-	var default_1$b = AccountCircle["default"] = void 0;
-	var _createSvgIcon$b = /*#__PURE__*/_interopRequireDefault$b(createSvgIcon);
-	var _jsxRuntime$b = require$$2__default["default"];
-	var _default$d = /*#__PURE__*/(0, _createSvgIcon$b["default"])( /*#__PURE__*/(0, _jsxRuntime$b.jsx)("path", {
-	  d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 4c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm0 14c-2.03 0-4.43-.82-6.14-2.88C7.55 15.8 9.68 15 12 15s4.45.8 6.14 2.12C16.43 19.18 14.03 20 12 20z"
+	var AccountCircleIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
+	  d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m0 4c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6m0 14c-2.03 0-4.43-.82-6.14-2.88C7.55 15.8 9.68 15 12 15s4.45.8 6.14 2.12C16.43 19.18 14.03 20 12 20"
 	}), 'AccountCircle');
-	default_1$b = AccountCircle["default"] = _default$d;
 
 	// Icon source: https://developers.google.com/identity/branding-guidelines
 	function Google(props) {
@@ -52683,7 +52941,7 @@
 	        React__default["default"].createElement("rect", { x: "11", y: "11", width: "9", height: "9", fill: color === 'disabled' ? '#B9B9B9' : '#FFB900' })));
 	}
 
-	const useStyles$e = mui.makeStyles()((theme) => ({
+	const useStyles$d = mui.makeStyles()((theme) => ({
 	    loginButton: {
 	        marginBottom: theme.spacing(1),
 	        width: '220px',
@@ -52695,29 +52953,29 @@
 	    },
 	}));
 	function GoogleButton(props) {
-	    const { classes } = useStyles$e();
+	    const { classes } = useStyles$d();
 	    const { disabled } = props;
 	    return (React__default["default"].createElement(material.Button, { className: classes.loginButton, variant: "outlined", startIcon: React__default["default"].createElement(Google, { color: disabled ? 'disabled' : undefined }), ...props }, "Sign in with Google"));
 	}
 	function MicrosoftButton(props) {
-	    const { classes } = useStyles$e();
+	    const { classes } = useStyles$d();
 	    const { disabled } = props;
 	    return (React__default["default"].createElement(material.Button, { className: classes.loginButton, variant: "outlined", startIcon: React__default["default"].createElement(Microsoft, { color: disabled ? 'disabled' : undefined }), ...props }, "Sign in with Microsoft"));
 	}
 	function GuestButton(props) {
-	    const { classes } = useStyles$e();
-	    return (React__default["default"].createElement(material.Button, { className: classes.loginButton, variant: "outlined", startIcon: React__default["default"].createElement(default_1$b, { fontSize: "small" }), ...props }, "Continue as Guest"));
+	    const { classes } = useStyles$d();
+	    return (React__default["default"].createElement(material.Button, { className: classes.loginButton, variant: "outlined", startIcon: React__default["default"].createElement(AccountCircleIcon, { fontSize: "small" }), ...props }, "Continue as Guest"));
 	}
 
 	/* eslint-disable @typescript-eslint/use-unknown-in-catch-callback-variable */
-	const useStyles$d = mui.makeStyles()((theme) => ({
+	const useStyles$c = mui.makeStyles()((theme) => ({
 	    divider: {
 	        marginTop: theme.spacing(4),
 	        marginBottom: theme.spacing(5),
 	    },
 	}));
 	const AuthTypeSelector = ({ baseURL, handleClose, name, }) => {
-	    const { classes } = useStyles$d();
+	    const { classes } = useStyles$c();
 	    const [errorMessage, setErrorMessage] = React.useState('');
 	    const [loginTypes, setLoginTypes] = React.useState([]);
 	    React.useEffect(() => {
@@ -52780,7 +53038,7 @@
 
 	/* eslint-disable @typescript-eslint/no-unsafe-return */
 	const inWebWorker$1 = typeof sessionStorage === 'undefined';
-	const stateModelFactory$2 = (configSchema) => {
+	const stateModelFactory$3 = (configSchema) => {
 	    return pluggableElementTypes.InternetAccount.named('ApolloInternetAccount')
 	        .props({
 	        type: require$$1$3.types.literal('ApolloInternetAccount'),
@@ -52801,6 +53059,7 @@
 	    }))
 	        .volatile(() => ({
 	        role: undefined,
+	        controller: new AbortController(),
 	    }))
 	        .actions((self) => {
 	        let roleNotificationSent = false;
@@ -52922,7 +53181,7 @@
 	            const searchParams = new URLSearchParams({ type: authType });
 	            url.search = searchParams.toString();
 	            const uri = url.toString();
-	            const response = await fetch(uri);
+	            const response = await fetch(uri, { signal: self.controller.signal });
 	            if (!response.ok) {
 	                const errorMessage = await createFetchErrorMessage(response, 'Error when logging in');
 	                reject(new Error(errorMessage));
@@ -52951,7 +53210,19 @@
 	                locationType: 'UriLocation',
 	                uri,
 	            });
-	            const response = yield apolloFetch(uri, { method: 'GET' });
+	            let response;
+	            try {
+	                response = yield apolloFetch(uri, {
+	                    method: 'GET',
+	                    signal: self.controller.signal,
+	                });
+	            }
+	            catch (error) {
+	                if (!self.controller.signal.aborted) {
+	                    console.error(error);
+	                }
+	                return;
+	            }
 	            if (!response.ok) {
 	                const errorMessage = yield createFetchErrorMessage(response, 'Error when fetching server LastChangeSequence');
 	                throw new Error(errorMessage);
@@ -52978,7 +53249,19 @@
 	                locationType: 'UriLocation',
 	                uri,
 	            });
-	            const response = yield apolloFetch(uri, { method: 'GET' });
+	            let response;
+	            try {
+	                response = yield apolloFetch(uri, {
+	                    method: 'GET',
+	                    signal: self.controller.signal,
+	                });
+	            }
+	            catch (error) {
+	                if (!self.controller.signal.aborted) {
+	                    console.error(error);
+	                }
+	                return;
+	            }
 	            if (!response.ok) {
 	                console.error(`Error when fetching the last updates to recover socket connection — ${response.status}`);
 	                return;
@@ -53002,10 +53285,12 @@
 	            if (!token) {
 	                throw new Error('No Token found');
 	            }
+	            const user = dist$2.getDecodedToken(token);
+	            const localSessionId = dist$2.makeUserSessionId(user);
 	            const { socket } = self;
 	            const { addCheckResult, changeManager, deleteCheckResult } = session.apolloDataStore;
-	            socket.on('connect', async () => {
-	                await self.getMissingChanges();
+	            socket.on('connect', () => {
+	                void self.getMissingChanges();
 	            });
 	            socket.on('connect_error', (error) => {
 	                console.error(error);
@@ -53023,7 +53308,7 @@
 	                }
 	                // Save server last change sequence into session storage
 	                sessionStorage.setItem('LastChangeSequence', String(message.changeSequence));
-	                if (message.userSessionId === token) {
+	                if (message.userSessionId === localSessionId) {
 	                    return; // we did this change, no need to apply it again
 	                }
 	                const change = dist$3.Change.fromJSON(message.changeInfo);
@@ -53031,8 +53316,6 @@
 	            });
 	            socket.on('USER_LOCATION', (message) => {
 	                const { channel, locations, userName, userSessionId } = message;
-	                const user = dist$2.getDecodedToken(token);
-	                const localSessionId = dist$2.makeUserSessionId(user);
 	                if (channel === 'USER_LOCATION' && userSessionId !== localSessionId) {
 	                    const collaborator = {
 	                        name: userName,
@@ -53052,7 +53335,10 @@
 	    }))
 	        .actions((self) => {
 	        async function postUserLocation(userLoc) {
-	            const { baseURL } = self;
+	            if (!require$$1$3.isAlive(self)) {
+	                return;
+	            }
+	            const { baseURL, controller } = self;
 	            const url = new URL('users/userLocation', baseURL).href;
 	            const userLocation = new URLSearchParams(JSON.stringify(userLoc));
 	            const apolloFetch = self.getFetcher({
@@ -53063,6 +53349,7 @@
 	                const response = await apolloFetch(url, {
 	                    method: 'POST',
 	                    body: userLocation,
+	                    signal: controller.signal,
 	                });
 	                if (!response.ok) {
 	                    throw new Error('ignore'); // ignore message, will get caught by "catch"
@@ -53089,7 +53376,7 @@
 	            if (role === 'admin') {
 	                const rootModel = require$$1$3.getRoot(self);
 	                if (require$$1$2.isAbstractMenuManager(rootModel)) {
-	                    addMenuItems(rootModel);
+	                    addTopLevelAdminMenus(rootModel);
 	                }
 	            }
 	            // Get and set server last change sequence into session storage
@@ -53103,7 +53390,10 @@
 	                locationType: 'UriLocation',
 	                uri,
 	            });
-	            yield apolloFetch(uri, { method: 'GET' });
+	            yield apolloFetch(uri, {
+	                method: 'GET',
+	                signal: self.controller.signal,
+	            });
 	            window.addEventListener('beforeunload', () => {
 	                self.postUserLocation([]);
 	            });
@@ -53139,6 +53429,10 @@
 	                    reaction.dispose();
 	                }
 	            }, { name: 'ApolloInternetAccount' });
+	        },
+	        beforeDestroy() {
+	            self.controller.abort('internet account beforeDestroy');
+	            self.socket.close();
 	        },
 	    }));
 	};
@@ -53197,7 +53491,7 @@
 	    }
 	}
 
-	var configSchema$4 = configuration.ConfigurationSchema('ApolloRefNameAliasAdapter', {
+	var configSchema$5 = configuration.ConfigurationSchema('ApolloRefNameAliasAdapter', {
 	    assemblyId: {
 	        type: 'string',
 	        defaultValue: '',
@@ -53207,7 +53501,7 @@
 	function installApolloRefNameAliasAdapter(pluginManager) {
 	    pluginManager.addAdapterType(() => new AdapterType__default["default"]({
 	        name: 'ApolloRefNameAliasAdapter',
-	        configSchema: configSchema$4,
+	        configSchema: configSchema$5,
 	        adapterMetadata: {
 	            category: undefined,
 	            hiddenFromGUI: true,
@@ -53316,7 +53610,7 @@
 	  }]);
 	  return SimpleFeature;
 	}();
-	var _default$c = simpleFeature["default"] = SimpleFeature;
+	var _default$1 = simpleFeature["default"] = SimpleFeature;
 
 	/* eslint-disable @typescript-eslint/prefer-promise-reject-errors */
 	function isApolloMessageData$1(data) {
@@ -53403,7 +53697,7 @@
 	                    regionWithAssemblyName.end = region.end;
 	                }
 	                const { seq } = await backendDriver.getSequence(regionWithAssemblyName);
-	                observer.next(new _default$c({
+	                observer.next(new _default$1({
 	                    id: `${refName} ${start}-${end}`,
 	                    data: { refName, start, end, seq },
 	                }));
@@ -53436,7 +53730,7 @@
 	                    messageId,
 	                });
 	            });
-	            observer.next(new _default$c({
+	            observer.next(new _default$1({
 	                id: `${refName} ${start}-${end}`,
 	                data: { refName, start, end, seq },
 	            }));
@@ -53452,7 +53746,7 @@
 	    freeResources( /* { region } */) { }
 	}
 
-	var configSchema$3 = configuration.ConfigurationSchema('ApolloSequenceAdapter', {
+	var configSchema$4 = configuration.ConfigurationSchema('ApolloSequenceAdapter', {
 	    assemblyId: {
 	        type: 'string',
 	        defaultValue: '',
@@ -53462,7 +53756,7 @@
 	function installApolloSequenceAdapter(pluginManager) {
 	    pluginManager.addAdapterType(() => new AdapterType__default["default"]({
 	        name: 'ApolloSequenceAdapter',
-	        configSchema: configSchema$3,
+	        configSchema: configSchema$4,
 	        adapterMetadata: {
 	            category: undefined,
 	            hiddenFromGUI: true,
@@ -53547,7 +53841,7 @@
 	  }]);
 	  return BaseResult;
 	}();
-	var _default$b = BaseResults["default"] = BaseResult;
+	var _default = BaseResults["default"] = BaseResult;
 	var RefSequenceResult = /*#__PURE__*/function (_BaseResult) {
 	  _inherits(RefSequenceResult, _BaseResult);
 	  var _super = /*#__PURE__*/_createSuper(RefSequenceResult);
@@ -53582,7 +53876,7 @@
 	    mapBaseResult(features, assembly, query) {
 	        return features.map((feature) => {
 	            const refName = assembly.getCanonicalRefName(feature.refSeq);
-	            return new _default$b({
+	            return new _default({
 	                label: query,
 	                trackId: this.trackId,
 	                locString: `${refName}:${feature.min + 1}..${feature.max}`,
@@ -53615,7 +53909,7 @@
 	    freeResources() { }
 	}
 
-	var configSchema$2 = configuration.ConfigurationSchema('ApolloTextSearchAdapter', {
+	var configSchema$3 = configuration.ConfigurationSchema('ApolloTextSearchAdapter', {
 	    assemblyNames: {
 	        type: 'stringArray',
 	        defaultValue: [],
@@ -53638,62 +53932,32 @@
 	    pluginManager.addTextSearchAdapterType(() => new pluggableElementTypes.TextSearchAdapterType({
 	        name: 'ApolloTextSearchAdapter',
 	        displayName: 'Apollo text search adapter',
-	        configSchema: configSchema$2,
+	        configSchema: configSchema$3,
 	        AdapterClass: ApolloTextSearchAdapter,
 	        description: 'Apollo Text Search adapter',
 	    }));
 	}
 
-	var ExpandMore = {};
-
-	var _interopRequireDefault$a = interopRequireDefault.exports;
-	Object.defineProperty(ExpandMore, "__esModule", {
-	  value: true
-	});
-	var default_1$a = ExpandMore["default"] = void 0;
-	var _createSvgIcon$a = /*#__PURE__*/_interopRequireDefault$a(createSvgIcon);
-	var _jsxRuntime$a = require$$2__default["default"];
-	var _default$a = /*#__PURE__*/(0, _createSvgIcon$a["default"])( /*#__PURE__*/(0, _jsxRuntime$a.jsx)("path", {
+	var ExpandMoreIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
 	  d: "M16.59 8.59 12 13.17 7.41 8.59 6 10l6 6 6-6z"
 	}), 'ExpandMore');
-	default_1$a = ExpandMore["default"] = _default$a;
 
-	var Edit = {};
-
-	var _interopRequireDefault$9 = interopRequireDefault.exports;
-	Object.defineProperty(Edit, "__esModule", {
-	  value: true
-	});
-	var default_1$9 = Edit["default"] = void 0;
-	var _createSvgIcon$9 = /*#__PURE__*/_interopRequireDefault$9(createSvgIcon);
-	var _jsxRuntime$9 = require$$2__default["default"];
-	var _default$9 = /*#__PURE__*/(0, _createSvgIcon$9["default"])( /*#__PURE__*/(0, _jsxRuntime$9.jsx)("path", {
-	  d: "M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+	var EditIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
+	  d: "M3 17.25V21h3.75L17.81 9.94l-3.75-3.75zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.996.996 0 0 0-1.41 0l-1.83 1.83 3.75 3.75z"
 	}), 'Edit');
-	default_1$9 = Edit["default"] = _default$9;
 
-	var MoreHoriz = {};
-
-	var _interopRequireDefault$8 = interopRequireDefault.exports;
-	Object.defineProperty(MoreHoriz, "__esModule", {
-	  value: true
-	});
-	var default_1$8 = MoreHoriz["default"] = void 0;
-	var _createSvgIcon$8 = /*#__PURE__*/_interopRequireDefault$8(createSvgIcon);
-	var _jsxRuntime$8 = require$$2__default["default"];
-	var _default$8 = /*#__PURE__*/(0, _createSvgIcon$8["default"])( /*#__PURE__*/(0, _jsxRuntime$8.jsx)("path", {
-	  d: "M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+	var MoreHorizIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
+	  d: "M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2m12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2m-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2"
 	}), 'MoreHoriz');
-	default_1$8 = MoreHoriz["default"] = _default$8;
 
-	const useStyles$c = mui.makeStyles()((theme) => ({
+	const useStyles$b = mui.makeStyles()((theme) => ({
 	    attributeKey: {
 	        fontWeight: 'bold',
 	        marginRight: theme.spacing(2),
 	    },
 	}));
 	function AttributeKey({ attributeKey: key }) {
-	    const { classes } = useStyles$c();
+	    const { classes } = useStyles$b();
 	    const startsWithCapital = /^[A-Z]/.test(key);
 	    let displayKey = key;
 	    let titleText;
@@ -53712,7 +53976,7 @@
 	    return (React__default["default"].createElement("div", { style: { display: 'flex' } },
 	        React__default["default"].createElement(material.Typography, { className: classes.attributeKey }, displayKey),
 	        titleText ? (React__default["default"].createElement(material.Tooltip, { title: titleText },
-	            React__default["default"].createElement(material.Chip, { icon: React__default["default"].createElement(default_1$o, null), label: "GFF3", size: "small", variant: "outlined" }))) : null));
+	            React__default["default"].createElement(material.Chip, { icon: React__default["default"].createElement(InfoIcon, null), label: "GFF3", size: "small", variant: "outlined" }))) : null));
 	}
 
 	const customKeyName = 'Custom';
@@ -53758,19 +54022,9 @@
 	            React__default["default"].createElement(material.Button, { variant: "outlined", onClick: handleCancel }, "Cancel"))));
 	});
 
-	var AddBox = {};
-
-	var _interopRequireDefault$7 = interopRequireDefault.exports;
-	Object.defineProperty(AddBox, "__esModule", {
-	  value: true
-	});
-	var default_1$7 = AddBox["default"] = void 0;
-	var _createSvgIcon$7 = /*#__PURE__*/_interopRequireDefault$7(createSvgIcon);
-	var _jsxRuntime$7 = require$$2__default["default"];
-	var _default$7 = /*#__PURE__*/(0, _createSvgIcon$7["default"])( /*#__PURE__*/(0, _jsxRuntime$7.jsx)("path", {
-	  d: "M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"
+	var AddBoxIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
+	  d: "M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2m-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4z"
 	}), 'AddBox');
-	default_1$7 = AddBox["default"] = _default$7;
 
 	/* eslint-disable @typescript-eslint/unbound-method */
 	const StringTextField = mobxReact.observer(function StringTextField({ onChangeCommitted, value: initialValue, ...props }) {
@@ -53837,9 +54091,9 @@
 	            React__default["default"].createElement(material.IconButton, { "aria-label": "delete", size: "medium", edge: "end", onClick: () => {
 	                    deleteValue(idx);
 	                } },
-	                React__default["default"].createElement(default_1$j, { fontSize: "inherit" }))))),
+	                React__default["default"].createElement(DeleteIcon, { fontSize: "inherit" }))))),
 	        React__default["default"].createElement(material.IconButton, { "aria-label": "add", size: "medium", color: "secondary", edge: "start", onClick: addValue },
-	            React__default["default"].createElement(default_1$7, { fontSize: "inherit" })),
+	            React__default["default"].createElement(AddBoxIcon, { fontSize: "inherit" })),
 	        React__default["default"].createElement(material.DialogActions, null,
 	            React__default["default"].createElement(material.Button, { color: "primary", variant: "contained", onClick: () => {
 	                    setAttribute(newValues.filter(Boolean));
@@ -53853,7 +54107,7 @@
 	    return (React__default["default"].createElement(React__default["default"].Fragment, null, values?.map((value, idx) => (React__default["default"].createElement(material.Typography, { key: `${idx}.${value}`, variant: "body2", color: "textSecondary" }, value)))));
 	}
 
-	const useStyles$b = mui.makeStyles()((theme) => ({
+	const useStyles$a = mui.makeStyles()((theme) => ({
 	    list: {
 	        'li:nth-of-type(odd)': {
 	            backgroundColor: theme.palette.action.focus,
@@ -53865,7 +54119,7 @@
 	}));
 	const Attributes = mobxReact.observer(function Attributes({ assembly, editable, feature, session, }) {
 	    const { pluginManager } = require$$1$2.getEnv(session);
-	    const { classes } = useStyles$b();
+	    const { classes } = useStyles$a();
 	    const [anchorEl, setAnchorEl] = React.useState(null);
 	    const [selectedKey, setSelectedKey] = React.useState(null);
 	    const [editingKey, setEditingKey] = React.useState(null);
@@ -53957,7 +54211,7 @@
 	                return (React__default["default"].createElement(material.ListItem, { key: key, secondaryAction: editable && !editingKey ? (React__default["default"].createElement(material.IconButton, { edge: "end", onClick: (event) => {
 	                            handleListMenuClick(event, key);
 	                        } },
-	                        React__default["default"].createElement(default_1$8, null))) : null },
+	                        React__default["default"].createElement(MoreHorizIcon, null))) : null },
 	                    React__default["default"].createElement(material.ListItemText, { disableTypography: true, primary: React__default["default"].createElement(AttributeKey, { attributeKey: key }), secondary: editingKey === key ? (React__default["default"].createElement(AttributeEditor, { session: session, attributeValues: values, setAttribute: (newValues) => {
 	                                setEditingKey(null);
 	                                if (newValues) {
@@ -53983,11 +54237,11 @@
 	        React__default["default"].createElement(material.Menu, { anchorEl: anchorEl, open: open, onClose: handleClose },
 	            React__default["default"].createElement(material.MenuItem, { onClick: handleDelete },
 	                React__default["default"].createElement(material.ListItemIcon, null,
-	                    React__default["default"].createElement(default_1$j, { fontSize: "small" })),
+	                    React__default["default"].createElement(DeleteIcon, { fontSize: "small" })),
 	                React__default["default"].createElement(material.Typography, { variant: "inherit" }, "Delete")),
 	            React__default["default"].createElement(material.MenuItem, { onClick: handleEdit },
 	                React__default["default"].createElement(material.ListItemIcon, null,
-	                    React__default["default"].createElement(default_1$9, { fontSize: "small" })),
+	                    React__default["default"].createElement(EditIcon, { fontSize: "small" })),
 	                React__default["default"].createElement(material.Typography, { variant: "inherit" }, "Edit")))));
 	});
 
@@ -54024,7 +54278,10 @@
 	                    setValue(String(initialValue));
 	                }
 	                else {
-	                    onChangeCommitted(valueAsNumber);
+	                    const success = onChangeCommitted(valueAsNumber);
+	                    if (!success) {
+	                        setValue(String(initialValue));
+	                    }
 	                }
 	            }
 	        }, inputRef: (node) => {
@@ -54076,7 +54333,8 @@
 	            newStart,
 	            assembly,
 	        });
-	        return changeManager.submit(change);
+	        void changeManager.submit(change);
+	        return true;
 	    }
 	    function handleEndChange(newEnd) {
 	        const change = new dist$2.LocationEndChange({
@@ -54087,7 +54345,8 @@
 	            newEnd,
 	            assembly,
 	        });
-	        return changeManager.submit(change);
+	        void changeManager.submit(change);
+	        return true;
 	    }
 	    async function fetchValidTerms(parentFeature, ontologyStore, _signal) {
 	        const terms = await fetchValidDescendantTerms(parentFeature, ontologyStore);
@@ -54164,7 +54423,7 @@
 	    const body = wrap === undefined ? seq : dist$2.splitStringIntoChunks(seq, wrap).join('\n');
 	    return `${header}${body}`;
 	}
-	const useStyles$a = mui.makeStyles()({
+	const useStyles$9 = mui.makeStyles()({
 	    sequence: {
 	        width: '100%',
 	        resize: 'vertical',
@@ -54172,7 +54431,7 @@
 	});
 	const Sequence = mobxReact.observer(function Sequence({ assembly, feature, refName, session, }) {
 	    const currentAssembly = session.apolloDataStore.assemblies.get(assembly);
-	    const { classes } = useStyles$a();
+	    const { classes } = useStyles$9();
 	    if (!(feature && currentAssembly)) {
 	        return null;
 	    }
@@ -54194,7 +54453,7 @@
 	        React__default["default"].createElement("textarea", { readOnly: true, rows: 20, className: classes.sequence, value: sequence })));
 	});
 
-	const useStyles$9 = mui.makeStyles()((theme) => ({
+	const useStyles$8 = mui.makeStyles()((theme) => ({
 	    root: {
 	        padding: theme.spacing(2),
 	    },
@@ -54204,7 +54463,7 @@
 	    const { assembly, feature, refName } = model;
 	    const session = require$$1$2.getSession(model);
 	    const currentAssembly = session.apolloDataStore.assemblies.get(assembly);
-	    const { classes } = useStyles$9();
+	    const { classes } = useStyles$8();
 	    const [panelState, setPanelState] = React.useState(['attributes']);
 	    React.useEffect(() => {
 	        setPanelState(['attributes']);
@@ -54236,20 +54495,20 @@
 	        React__default["default"].createElement(material.Accordion, { style: { marginTop: 10 }, expanded: panelState.includes('attributes'), onChange: (e, expanded) => {
 	                handlePanelChange(expanded, 'attributes');
 	            } },
-	            React__default["default"].createElement(material.AccordionSummary, { expandIcon: React__default["default"].createElement(default_1$a, { style: { color: 'white' } }), "aria-controls": "panel1-content", id: "panel1-header" },
+	            React__default["default"].createElement(material.AccordionSummary, { expandIcon: React__default["default"].createElement(ExpandMoreIcon, { style: { color: 'white' } }), "aria-controls": "panel1-content", id: "panel1-header" },
 	                React__default["default"].createElement(material.Typography, { component: "span" }, "Attributes")),
 	            React__default["default"].createElement(material.AccordionDetails, null,
 	                React__default["default"].createElement(Attributes, { feature: feature, session: session, assembly: currentAssembly._id, editable: true }))),
 	        React__default["default"].createElement(material.Accordion, { style: { marginTop: 10 }, expanded: panelState.includes('sequence'), onChange: (e, expanded) => {
 	                handlePanelChange(expanded, 'sequence');
 	            } },
-	            React__default["default"].createElement(material.AccordionSummary, { expandIcon: React__default["default"].createElement(default_1$a, { style: { color: 'white' } }), "aria-controls": "panel2-content", id: "panel2-header" },
+	            React__default["default"].createElement(material.AccordionSummary, { expandIcon: React__default["default"].createElement(ExpandMoreIcon, { style: { color: 'white' } }), "aria-controls": "panel2-content", id: "panel2-header" },
 	                React__default["default"].createElement(material.Typography, { component: "span" }, "Sequence")),
 	            React__default["default"].createElement(material.AccordionDetails, null, panelState.includes('sequence') && (React__default["default"].createElement(Sequence, { feature: feature, session: session, assembly: currentAssembly._id, refName: refName })))),
 	        React__default["default"].createElement(material.Accordion, { style: { marginTop: 10 }, expanded: panelState.includes('related_features'), onChange: (e, expanded) => {
 	                handlePanelChange(expanded, 'related_features');
 	            } },
-	            React__default["default"].createElement(material.AccordionSummary, { expandIcon: React__default["default"].createElement(default_1$a, { style: { color: 'white' } }), "aria-controls": "panel3-content", id: "panel3-header" },
+	            React__default["default"].createElement(material.AccordionSummary, { expandIcon: React__default["default"].createElement(ExpandMoreIcon, { style: { color: 'white' } }), "aria-controls": "panel3-content", id: "panel3-header" },
 	                React__default["default"].createElement(material.Typography, { component: "span" }, "Related features")),
 	            React__default["default"].createElement(material.AccordionDetails, null,
 	                React__default["default"].createElement(FeatureDetailsNavigation, { model: model, feature: feature })))));
@@ -54308,8 +54567,7 @@
 	     * Additional attributes of the feature. This could include name, source,
 	     * note, dbxref, etc.
 	     */
-	    attributes: mobx_state_tree_1.types.map(mobx_state_tree_1.types.array(mobx_state_tree_1.types.string)),
-	    updatedAt: mobx_state_tree_1.types.maybe(mobx_state_tree_1.types.string)
+	    attributes: mobx_state_tree_1.types.map(mobx_state_tree_1.types.array(mobx_state_tree_1.types.string))
 	  }).views(function (self) {
 	    return {
 	      get length() {
@@ -55200,7 +55458,7 @@
 	      _this.container.insertBefore(tag, before);
 	      _this.tags.push(tag);
 	    };
-	    this.isSpeedy = options.speedy === undefined ? process$1.env.NODE_ENV === 'production' : options.speedy;
+	    this.isSpeedy = options.speedy === undefined ? browser$1.env.NODE_ENV === 'production' : options.speedy;
 	    this.tags = [];
 	    this.ctr = 0;
 	    this.nonce = options.nonce; // key is the value of the data-emotion attribute, it's used to identify different sheets
@@ -55223,7 +55481,7 @@
 	      this._insertTag(createStyleElement(this));
 	    }
 	    var tag = this.tags[this.tags.length - 1];
-	    if (process$1.env.NODE_ENV !== 'production') {
+	    if (browser$1.env.NODE_ENV !== 'production') {
 	      var isImportRule = rule.charCodeAt(0) === 64 && rule.charCodeAt(1) === 105;
 	      if (isImportRule && this._alreadyInsertedOrderInsensitiveRule) {
 	        // this would only cause problem in speedy mode
@@ -55240,7 +55498,7 @@
 	        // the big drawback is that the css won't be editable in devtools
 	        sheet.insertRule(rule, sheet.cssRules.length);
 	      } catch (e) {
-	        if (process$1.env.NODE_ENV !== 'production' && !/:(-moz-placeholder|-moz-focus-inner|-moz-focusring|-ms-input-placeholder|-moz-read-write|-moz-read-only|-ms-clear|-ms-expand|-ms-reveal){/.test(rule)) {
+	        if (browser$1.env.NODE_ENV !== 'production' && !/:(-moz-placeholder|-moz-focus-inner|-moz-focusring|-ms-input-placeholder|-moz-read-write|-moz-read-only|-ms-clear|-ms-expand|-ms-reveal){/.test(rule)) {
 	          console.error("There was a problem inserting the following rule: \"" + rule + "\"", e);
 	        }
 	      }
@@ -55256,7 +55514,7 @@
 	    });
 	    this.tags = [];
 	    this.ctr = 0;
-	    if (process$1.env.NODE_ENV !== 'production') {
+	    if (browser$1.env.NODE_ENV !== 'production') {
 	      this._alreadyInsertedOrderInsensitiveRule = false;
 	    }
 	  };
@@ -56260,7 +56518,7 @@
 	var defaultStylisPlugins = [prefixer];
 	var createCache = function createCache(options) {
 	  var key = options.key;
-	  if (process$1.env.NODE_ENV !== 'production' && !key) {
+	  if (browser$1.env.NODE_ENV !== 'production' && !key) {
 	    throw new Error("You have to configure `key` for your cache. Please make sure it's unique (and not equal to 'css') as it's used for linking styles to your cache.\n" + "If multiple caches share the same key they might \"fight\" for each other's style elements.");
 	  }
 	  if (key === 'css') {
@@ -56285,7 +56543,7 @@
 	    });
 	  }
 	  var stylisPlugins = options.stylisPlugins || defaultStylisPlugins;
-	  if (process$1.env.NODE_ENV !== 'production') {
+	  if (browser$1.env.NODE_ENV !== 'production') {
 	    // $FlowFixMe
 	    if (/[^a-z-]/.test(key)) {
 	      throw new Error("Emotion key must only contain lower case alphabetical characters and - but \"" + key + "\" was passed");
@@ -56310,7 +56568,7 @@
 	  }
 	  var _insert;
 	  var omnipresentPlugins = [compat, removeLabel];
-	  if (process$1.env.NODE_ENV !== 'production') {
+	  if (browser$1.env.NODE_ENV !== 'production') {
 	    omnipresentPlugins.push(createUnsafeSelectorsAlarm({
 	      get compat() {
 	        return cache.compat;
@@ -56319,7 +56577,7 @@
 	  }
 	  {
 	    var currentSheet;
-	    var finalizingPlugins = [stringify, process$1.env.NODE_ENV !== 'production' ? function (element) {
+	    var finalizingPlugins = [stringify, browser$1.env.NODE_ENV !== 'production' ? function (element) {
 	      if (!element.root) {
 	        if (element["return"]) {
 	          currentSheet.insert(element["return"]);
@@ -56338,7 +56596,7 @@
 	    };
 	    _insert = function insert(selector, serialized, sheet, shouldCache) {
 	      currentSheet = sheet;
-	      if (process$1.env.NODE_ENV !== 'production' && serialized.map !== undefined) {
+	      if (browser$1.env.NODE_ENV !== 'production' && serialized.map !== undefined) {
 	        currentSheet = {
 	          insert: function insert(rule) {
 	            sheet.insert(rule + serialized.map);
@@ -56539,7 +56797,7 @@
 	  }
 	  return value;
 	};
-	if (process$1.env.NODE_ENV !== 'production') {
+	if (browser$1.env.NODE_ENV !== 'production') {
 	  var contentValuePattern = /(var|attr|counters?|url|element|(((repeating-)?(linear|radial))|conic)-gradient)\(|(no-)?(open|close)-quote/;
 	  var contentValues = ['normal', 'none', 'initial', 'inherit', 'unset'];
 	  var oldProcessStyleValue = processStyleValue;
@@ -56568,7 +56826,7 @@
 	    return '';
 	  }
 	  if (interpolation.__emotion_styles !== undefined) {
-	    if (process$1.env.NODE_ENV !== 'production' && interpolation.toString() === 'NO_COMPONENT_SELECTOR') {
+	    if (browser$1.env.NODE_ENV !== 'production' && interpolation.toString() === 'NO_COMPONENT_SELECTOR') {
 	      throw new Error(noComponentSelectorMessage);
 	    }
 	    return interpolation;
@@ -56603,7 +56861,7 @@
 	            }
 	          }
 	          var styles = interpolation.styles + ";";
-	          if (process$1.env.NODE_ENV !== 'production' && interpolation.map !== undefined) {
+	          if (browser$1.env.NODE_ENV !== 'production' && interpolation.map !== undefined) {
 	            styles += interpolation.map;
 	          }
 	          return styles;
@@ -56617,13 +56875,13 @@
 	          var result = interpolation(mergedProps);
 	          cursor = previousCursor;
 	          return handleInterpolation(mergedProps, registered, result);
-	        } else if (process$1.env.NODE_ENV !== 'production') {
+	        } else if (browser$1.env.NODE_ENV !== 'production') {
 	          console.error('Functions that are interpolated in css calls will be stringified.\n' + 'If you want to have a css call based on props, create a function that returns a css call like this\n' + 'let dynamicStyle = (props) => css`color: ${props.color}`\n' + 'It can be called directly with props or interpolated in a styled call like this\n' + "let SomeComponent = styled('div')`${dynamicStyle}`");
 	        }
 	        break;
 	      }
 	    case 'string':
-	      if (process$1.env.NODE_ENV !== 'production') {
+	      if (browser$1.env.NODE_ENV !== 'production') {
 	        var matched = [];
 	        var replaced = interpolation.replace(animationRegex, function (match, p1, p2) {
 	          var fakeVarName = "animation" + matched.length;
@@ -56659,7 +56917,7 @@
 	          string += processStyleName(_key) + ":" + processStyleValue(_key, value) + ";";
 	        }
 	      } else {
-	        if (_key === 'NO_COMPONENT_SELECTOR' && process$1.env.NODE_ENV !== 'production') {
+	        if (_key === 'NO_COMPONENT_SELECTOR' && browser$1.env.NODE_ENV !== 'production') {
 	          throw new Error(noComponentSelectorMessage);
 	        }
 	        if (Array.isArray(value) && typeof value[0] === 'string' && (registered == null || registered[value[0]] === undefined)) {
@@ -56679,7 +56937,7 @@
 	              }
 	            default:
 	              {
-	                if (process$1.env.NODE_ENV !== 'production' && _key === 'undefined') {
+	                if (browser$1.env.NODE_ENV !== 'production' && _key === 'undefined') {
 	                  console.error(UNDEFINED_AS_OBJECT_KEY_ERROR);
 	                }
 	                string += _key + "{" + interpolated + "}";
@@ -56693,7 +56951,7 @@
 	}
 	var labelPattern = /label:\s*([^\s;\n{]+)\s*(;|$)/g;
 	var sourceMapPattern;
-	if (process$1.env.NODE_ENV !== 'production') {
+	if (browser$1.env.NODE_ENV !== 'production') {
 	  sourceMapPattern = /\/\*#\ssourceMappingURL=data:application\/json;\S+\s+\*\//g;
 	} // this is the cursor for keyframes
 	// keyframes are stored on the SerializedStyles object as a linked list
@@ -56711,7 +56969,7 @@
 	    stringMode = false;
 	    styles += handleInterpolation(mergedProps, registered, strings);
 	  } else {
-	    if (process$1.env.NODE_ENV !== 'production' && strings[0] === undefined) {
+	    if (browser$1.env.NODE_ENV !== 'production' && strings[0] === undefined) {
 	      console.error(ILLEGAL_ESCAPE_SEQUENCE_ERROR$1);
 	    }
 	    styles += strings[0];
@@ -56720,14 +56978,14 @@
 	  for (var i = 1; i < args.length; i++) {
 	    styles += handleInterpolation(mergedProps, registered, args[i]);
 	    if (stringMode) {
-	      if (process$1.env.NODE_ENV !== 'production' && strings[i] === undefined) {
+	      if (browser$1.env.NODE_ENV !== 'production' && strings[i] === undefined) {
 	        console.error(ILLEGAL_ESCAPE_SEQUENCE_ERROR$1);
 	      }
 	      styles += strings[i];
 	    }
 	  }
 	  var sourceMap;
-	  if (process$1.env.NODE_ENV !== 'production') {
+	  if (browser$1.env.NODE_ENV !== 'production') {
 	    styles = styles.replace(sourceMapPattern, function (match) {
 	      sourceMap = match;
 	      return '';
@@ -56744,7 +57002,7 @@
 	    match[1];
 	  }
 	  var name = murmur2(styles) + identifierName;
-	  if (process$1.env.NODE_ENV !== 'production') {
+	  if (browser$1.env.NODE_ENV !== 'production') {
 	    // $FlowFixMe SerializedStyles type doesn't have toString property (and we don't want to add it)
 	    return {
 	      name: name,
@@ -56780,7 +57038,7 @@
 	typeof HTMLElement !== 'undefined' ? /* #__PURE__ */createCache({
 	  key: 'css'
 	}) : null);
-	if (process$1.env.NODE_ENV !== 'production') {
+	if (browser$1.env.NODE_ENV !== 'production') {
 	  EmotionCacheContext.displayName = 'EmotionCacheContext';
 	}
 	var withEmotionCache = function withEmotionCache(func) {
@@ -56792,7 +57050,7 @@
 	  });
 	};
 	var ThemeContext = /* #__PURE__ */React__namespace.createContext({});
-	if (process$1.env.NODE_ENV !== 'production') {
+	if (browser$1.env.NODE_ENV !== 'production') {
 	  ThemeContext.displayName = 'EmotionThemeContext';
 	}
 	var typePropName = '__EMOTION_TYPE_PLEASE_DO_NOT_USE__';
@@ -56824,7 +57082,7 @@
 	    className = props.className + " ";
 	  }
 	  var serialized = serializeStyles(registeredStyles, undefined, React__namespace.useContext(ThemeContext));
-	  if (process$1.env.NODE_ENV !== 'production' && serialized.name.indexOf('-') === -1) {
+	  if (browser$1.env.NODE_ENV !== 'production' && serialized.name.indexOf('-') === -1) {
 	    var labelFromStack = props[labelPropName];
 	    if (labelFromStack) {
 	      serialized = serializeStyles([serialized, 'label:' + labelFromStack + ';']);
@@ -56833,7 +57091,7 @@
 	  className += cache.key + "-" + serialized.name;
 	  var newProps = {};
 	  for (var key in props) {
-	    if (hasOwnProperty.call(props, key) && key !== 'css' && key !== typePropName && (process$1.env.NODE_ENV === 'production' || key !== labelPropName)) {
+	    if (hasOwnProperty.call(props, key) && key !== 'css' && key !== typePropName && (browser$1.env.NODE_ENV === 'production' || key !== labelPropName)) {
 	      newProps[key] = props[key];
 	    }
 	  }
@@ -56845,7 +57103,7 @@
 	    isStringTag: typeof WrappedComponent === 'string'
 	  }), /*#__PURE__*/React__namespace.createElement(WrappedComponent, newProps));
 	});
-	if (process$1.env.NODE_ENV !== 'production') {
+	if (browser$1.env.NODE_ENV !== 'production') {
 	  Emotion.displayName = 'EmotionCssPropInternal';
 	}
 
@@ -56885,7 +57143,7 @@
 	  return null;
 	};
 	var createStyled = function createStyled(tag, options) {
-	  if (process$1.env.NODE_ENV !== 'production') {
+	  if (browser$1.env.NODE_ENV !== 'production') {
 	    if (tag === undefined) {
 	      throw new Error('You are trying to create a styled element with an undefined component.\nYou may have forgotten to import it.');
 	    }
@@ -56910,14 +57168,14 @@
 	    if (args[0] == null || args[0].raw === undefined) {
 	      styles.push.apply(styles, args);
 	    } else {
-	      if (process$1.env.NODE_ENV !== 'production' && args[0][0] === undefined) {
+	      if (browser$1.env.NODE_ENV !== 'production' && args[0][0] === undefined) {
 	        console.error(ILLEGAL_ESCAPE_SEQUENCE_ERROR);
 	      }
 	      styles.push(args[0][0]);
 	      var len = args.length;
 	      var i = 1;
 	      for (; i < len; i++) {
-	        if (process$1.env.NODE_ENV !== 'production' && args[0][i] === undefined) {
+	        if (browser$1.env.NODE_ENV !== 'production' && args[0][i] === undefined) {
 	          console.error(ILLEGAL_ESCAPE_SEQUENCE_ERROR);
 	        }
 	        styles.push(args[i], args[0][i]);
@@ -56972,7 +57230,7 @@
 	    Styled.__emotion_forwardProp = shouldForwardProp;
 	    Object.defineProperty(Styled, 'toString', {
 	      value: function value() {
-	        if (targetClassName === undefined && process$1.env.NODE_ENV !== 'production') {
+	        if (targetClassName === undefined && browser$1.env.NODE_ENV !== 'production') {
 	          return 'NO_COMPONENT_SELECTOR';
 	        } // $FlowFixMe: coerce undefined to string
 
@@ -56997,7 +57255,36 @@
 	  newStyled[tagName] = newStyled(tagName);
 	});
 
+	async function copyToClipboard(element) {
+	    if (isSecureContext) {
+	        const textBlob = new Blob([element.outerText], { type: 'text/plain' });
+	        const htmlBlob = new Blob([element.outerHTML], { type: 'text/html' });
+	        const clipboardItem = new ClipboardItem({
+	            [textBlob.type]: textBlob,
+	            [htmlBlob.type]: htmlBlob,
+	        });
+	        return navigator.clipboard.write([clipboardItem]);
+	    }
+	    const copyCallback = (event) => {
+	        event.clipboardData?.setData('text/plain', element.outerText);
+	        event.clipboardData?.setData('text/html', element.outerHTML);
+	        event.preventDefault();
+	    };
+	    document.addEventListener('copy', copyCallback);
+	    // fall back to deprecated only in non-secure contexts
+	    // eslint-disable-next-line @typescript-eslint/no-deprecated
+	    document.execCommand('copy');
+	    document.removeEventListener('copy', copyCallback);
+	}
+
 	const SEQUENCE_WRAP_LENGTH = 60;
+	function getSequenceLength(segments) {
+	    let length = 0;
+	    for (const segment of segments) {
+	        length += segment.sequence.length;
+	    }
+	    return length;
+	}
 	function getSequenceSegments(segmentType, feature, getSequence) {
 	    const segments = [];
 	    const { cdsLocations, strand, transcriptParts } = feature;
@@ -57018,33 +57305,21 @@
 	                    : loc.type;
 	                const previousSegment = segments.at(-1);
 	                if (!previousSegment) {
-	                    const sequenceLines = dist$2.splitStringIntoChunks(sequence, SEQUENCE_WRAP_LENGTH);
 	                    segments.push({
 	                        type,
-	                        sequenceLines,
+	                        sequence,
 	                        locs: [{ min: loc.min, max: loc.max }],
 	                    });
 	                    continue;
 	                }
 	                if (previousSegment.type === type) {
-	                    const [previousSegmentFirstLine, ...previousSegmentFollowingLines] = previousSegment.sequenceLines;
-	                    const newSequence = previousSegmentFollowingLines.join('') + sequence;
-	                    previousSegment.sequenceLines = [
-	                        previousSegmentFirstLine,
-	                        ...dist$2.splitStringIntoChunks(newSequence, SEQUENCE_WRAP_LENGTH),
-	                    ];
+	                    previousSegment.sequence += sequence;
 	                    previousSegment.locs.push({ min: loc.min, max: loc.max });
 	                }
 	                else {
-	                    const count = segments.reduce((accumulator, currentSegment) => accumulator +
-	                        currentSegment.sequenceLines.reduce((subAccumulator, currentLine) => subAccumulator + currentLine.length, 0), 0);
-	                    const previousLineLength = count % SEQUENCE_WRAP_LENGTH;
-	                    const newSegmentFirstLineLength = SEQUENCE_WRAP_LENGTH - previousLineLength;
-	                    const newSegmentFirstLine = sequence.slice(0, newSegmentFirstLineLength);
-	                    const newSegmentRemainderLines = dist$2.splitStringIntoChunks(sequence.slice(newSegmentFirstLineLength), SEQUENCE_WRAP_LENGTH);
 	                    segments.push({
 	                        type,
-	                        sequenceLines: [newSegmentFirstLine, ...newSegmentRemainderLines],
+	                        sequence,
 	                        locs: [{ min: loc.min, max: loc.max }],
 	                    });
 	                }
@@ -57056,14 +57331,14 @@
 	            const [firstLocation] = cdsLocations;
 	            const locs = [];
 	            for (const loc of firstLocation) {
-	                wholeSequence += getSequence(loc.min, loc.max);
+	                let locSeq = getSequence(loc.min, loc.max);
+	                if (strand === -1) {
+	                    locSeq = require$$1$2.revcom(locSeq);
+	                }
+	                wholeSequence += locSeq;
 	                locs.push({ min: loc.min, max: loc.max });
 	            }
-	            if (strand === -1) {
-	                wholeSequence = require$$1$2.revcom(wholeSequence);
-	            }
-	            const sequenceLines = dist$2.splitStringIntoChunks(wholeSequence, SEQUENCE_WRAP_LENGTH);
-	            segments.push({ type: 'CDS', sequenceLines, locs });
+	            segments.push({ type: 'CDS', sequence: wholeSequence, locs });
 	            return segments;
 	        }
 	        case 'protein': {
@@ -57071,11 +57346,12 @@
 	            const [firstLocation] = cdsLocations;
 	            const locs = [];
 	            for (const loc of firstLocation) {
-	                wholeSequence += getSequence(loc.min, loc.max);
+	                let locSeq = getSequence(loc.min, loc.max);
+	                if (strand === -1) {
+	                    locSeq = require$$1$2.revcom(locSeq);
+	                }
+	                wholeSequence += locSeq;
 	                locs.push({ min: loc.min, max: loc.max });
-	            }
-	            if (strand === -1) {
-	                wholeSequence = require$$1$2.revcom(wholeSequence);
 	            }
 	            let protein = '';
 	            for (let i = 0; i < wholeSequence.length; i += 3) {
@@ -57083,8 +57359,7 @@
 	                protein +=
 	                    require$$1$2.defaultCodonTable[codonSeq] || '&';
 	            }
-	            const sequenceLines = dist$2.splitStringIntoChunks(protein, SEQUENCE_WRAP_LENGTH);
-	            segments.push({ type: 'protein', sequenceLines, locs });
+	            segments.push({ type: 'protein', sequence: protein, locs });
 	            return segments;
 	        }
 	    }
@@ -57127,13 +57402,6 @@
 	    }
 	    locIntervals.push(previous);
 	    return locIntervals;
-	}
-	function getSequenceLength(locationIntervals) {
-	    let length = 0;
-	    for (const loc of locationIntervals) {
-	        length += loc.max - loc.min;
-	    }
-	    return length;
 	}
 	const TranscriptSequence = mobxReact.observer(function TranscriptSequence({ assembly, feature, refName, session, }) {
 	    const currentAssembly = session.apolloDataStore.assemblies.get(assembly);
@@ -57194,8 +57462,28 @@
 	        }
 	        void copyToClipboard(seqDiv);
 	    };
+	    function wrapSequence(sequenceSegments, sequenceWrapLength) {
+	        const seqElements = [];
+	        let processedChars = 0;
+	        for (const [index, segment] of sequenceSegments.entries()) {
+	            const lastLineLength = processedChars % sequenceWrapLength;
+	            const segmentLineBreak = processedChars > 0 && lastLineLength === 0 ? '\n' : '';
+	            processedChars += segment.sequence.length;
+	            const firstLine = segmentLineBreak +
+	                segment.sequence.slice(0, sequenceWrapLength - lastLineLength);
+	            const remainingLines = dist$2.splitStringIntoChunks(segment.sequence.slice(firstLine.length), sequenceWrapLength);
+	            const printLines = [firstLine, ...remainingLines];
+	            const span = (React__default["default"].createElement("span", { key: `${segment.type}-${index}`, style: {
+	                    background: getSegmentColor(segment.type),
+	                    color: theme.palette.getContrastText(getSegmentColor(segment.type)),
+	                    whiteSpace: 'pre-line',
+	                } }, printLines.join('\n')));
+	            seqElements.push(span);
+	        }
+	        return seqElements;
+	    }
 	    return (React__default["default"].createElement(React__default["default"].Fragment, null,
-	        React__default["default"].createElement(material.Select, { defaultValue: "genomic", value: selectedOption, onChange: handleChangeSeqOption, size: "small" }, sequenceOptions.map((option) => (React__default["default"].createElement(material.MenuItem, { key: option, value: option }, option)))),
+	        React__default["default"].createElement(material.Select, { defaultValue: "genomic", value: selectedOption, onChange: handleChangeSeqOption, size: "small", "data-testid": "sequenceOptionSelector" }, sequenceOptions.map((option) => (React__default["default"].createElement(material.MenuItem, { key: option, value: option, "data-testid": `sequenceOption-${option}` }, option)))),
 	        React__default["default"].createElement(material.Button, { variant: "contained", onClick: onCopyClick, style: { marginLeft: 10 }, size: "medium" }, "Copy sequence"),
 	        React__default["default"].createElement(material.Paper, { style: {
 	                fontFamily: 'monospace',
@@ -57213,45 +57501,23 @@
 	            "(strand=",
 	            feature.strand === 1 ? '+' : '-',
 	            ";length=",
-	            getSequenceLength(locationIntervals),
+	            getSequenceLength(sequenceSegments),
 	            ")",
 	            React__default["default"].createElement("br", null),
-	            sequenceSegments.map((segment, index) => (React__default["default"].createElement("span", { key: `${segment.type}-${index}`, style: {
-	                    background: getSegmentColor(segment.type),
-	                    color: theme.palette.getContrastText(getSegmentColor(segment.type)),
-	                } }, segment.sequenceLines.map((sequenceLine, idx) => (React__default["default"].createElement(React__default["default"].Fragment, { key: `${sequenceLine.slice(0, 5)}-${idx}` },
-	                sequenceLine,
-	                idx === segment.sequenceLines.length - 1 &&
-	                    sequenceLine.length !== SEQUENCE_WRAP_LENGTH ? null : (React__default["default"].createElement("br", null)))))))))));
+	            wrapSequence(sequenceSegments, SEQUENCE_WRAP_LENGTH))));
 	});
 
-	var ContentCut = {};
+	var ContentCopyIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
+	  d: "M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2m0 16H8V7h11z"
+	}), 'ContentCopy');
 
-	var _interopRequireDefault$6 = interopRequireDefault.exports;
-	Object.defineProperty(ContentCut, "__esModule", {
-	  value: true
-	});
-	var default_1$6 = ContentCut["default"] = void 0;
-	var _createSvgIcon$6 = /*#__PURE__*/_interopRequireDefault$6(createSvgIcon);
-	var _jsxRuntime$6 = require$$2__default["default"];
-	var _default$6 = /*#__PURE__*/(0, _createSvgIcon$6["default"])( /*#__PURE__*/(0, _jsxRuntime$6.jsx)("path", {
-	  d: "M9.64 7.64c.23-.5.36-1.05.36-1.64 0-2.21-1.79-4-4-4S2 3.79 2 6s1.79 4 4 4c.59 0 1.14-.13 1.64-.36L10 12l-2.36 2.36C7.14 14.13 6.59 14 6 14c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4c0-.59-.13-1.14-.36-1.64L12 14l7 7h3v-1L9.64 7.64zM6 8c-1.1 0-2-.89-2-2s.9-2 2-2 2 .89 2 2-.9 2-2 2zm0 12c-1.1 0-2-.89-2-2s.9-2 2-2 2 .89 2 2-.9 2-2 2zm6-7.5c-.28 0-.5-.22-.5-.5s.22-.5.5-.5.5.22.5.5-.22.5-.5.5zM19 3l-6 6 2 2 7-7V3z"
+	var ContentCutIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
+	  d: "M9.64 7.64c.23-.5.36-1.05.36-1.64 0-2.21-1.79-4-4-4S2 3.79 2 6s1.79 4 4 4c.59 0 1.14-.13 1.64-.36L10 12l-2.36 2.36C7.14 14.13 6.59 14 6 14c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4c0-.59-.13-1.14-.36-1.64L12 14l7 7h3v-1zM6 8c-1.1 0-2-.89-2-2s.9-2 2-2 2 .89 2 2-.9 2-2 2m0 12c-1.1 0-2-.89-2-2s.9-2 2-2 2 .89 2 2-.9 2-2 2m6-7.5c-.28 0-.5-.22-.5-.5s.22-.5.5-.5.5.22.5.5-.22.5-.5.5M19 3l-6 6 2 2 7-7V3z"
 	}), 'ContentCut');
-	default_1$6 = ContentCut["default"] = _default$6;
 
-	var Remove = {};
-
-	var _interopRequireDefault$5 = interopRequireDefault.exports;
-	Object.defineProperty(Remove, "__esModule", {
-	  value: true
-	});
-	var default_1$5 = Remove["default"] = void 0;
-	var _createSvgIcon$5 = /*#__PURE__*/_interopRequireDefault$5(createSvgIcon);
-	var _jsxRuntime$5 = require$$2__default["default"];
-	var _default$5 = /*#__PURE__*/(0, _createSvgIcon$5["default"])( /*#__PURE__*/(0, _jsxRuntime$5.jsx)("path", {
-	  d: "M19 13H5v-2h14v2z"
+	var RemoveIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
+	  d: "M19 13H5v-2h14z"
 	}), 'Remove');
-	default_1$5 = Remove["default"] = _default$5;
 
 	const StyledTextField = newStyled(NumberTextField)(() => ({
 	    '&.MuiFormControl-root': {
@@ -57281,7 +57547,7 @@
 	});
 	const Strand = (props) => {
 	    const { strand } = props;
-	    return (React__default["default"].createElement("div", null, strand === 1 ? (React__default["default"].createElement(default_1$p, null)) : strand === -1 ? (React__default["default"].createElement(default_1$5, null)) : (React__default["default"].createElement(material.Typography, { component: 'span' }, "N/A"))));
+	    return (React__default["default"].createElement("div", null, strand === 1 ? (React__default["default"].createElement(AddIcon, null)) : strand === -1 ? (React__default["default"].createElement(RemoveIcon, null)) : (React__default["default"].createElement(material.Typography, { component: 'span' }, "N/A"))));
 	};
 	const minMaxExonTranscriptLocation = (transcript, featureTypeOntology) => {
 	    const { transcriptExonParts } = transcript;
@@ -57323,26 +57589,26 @@
 	            throw new Error('Transcript should have child features');
 	        }
 	        if (oldLocation === newLocation) {
-	            return;
+	            return true;
 	        }
 	        const cdsFeature = getMatchingCDSFeature(feature, featureTypeOntology, oldLocation, isMin);
 	        if (!cdsFeature) {
 	            notify('No matching CDS feature found', 'error');
-	            return;
+	            return false;
 	        }
 	        if (isMin && newLocation >= cdsFeature.max) {
 	            notify('Start location should be less than CDS end location', 'error');
-	            return;
+	            return false;
 	        }
 	        if (!isMin && newLocation <= cdsFeature.min) {
 	            notify('End location should be greater than CDS start location', 'error');
-	            return;
+	            return false;
 	        }
 	        // overlapping exon of new CDS location
 	        const overlappingExon = getOverlappingExonForCDS(feature, featureTypeOntology, newLocation, isMin);
 	        if (!overlappingExon) {
 	            notify('There should be an overlapping exon for the new CDS location', 'error');
-	            return;
+	            return false;
 	        }
 	        const change = isMin
 	            ? new dist$2.LocationStartChange({
@@ -57371,6 +57637,7 @@
 	            .catch(() => {
 	            notify('Error updating feature CDS position', 'error');
 	        });
+	        return true;
 	    };
 	    function handleExonLocationChange(oldLocation, newLocation, feature, isMin) {
 	        if (!feature.children) {
@@ -57379,32 +57646,32 @@
 	        const { matchingExon, prevExon, nextExon } = getNeighboringExonParts(feature, featureTypeOntology, oldLocation, isMin);
 	        if (!matchingExon) {
 	            notify('No matching exon found', 'error');
-	            return;
+	            return false;
 	        }
 	        // Start location should be less than end location
 	        if (isMin && newLocation >= matchingExon.max) {
 	            notify(`Start location should be less than end location`, 'error');
-	            return;
+	            return false;
 	        }
 	        // End location should be greater than start location
 	        if (!isMin && newLocation <= matchingExon.min) {
 	            notify(`End location should be greater than start location`, 'error');
-	            return;
+	            return false;
 	        }
 	        // Changed location should be greater than end location of previous exon - give 2bp buffer
 	        if (prevExon && prevExon.max + 2 > newLocation) {
 	            notify(`Error while changing start location`, 'error');
-	            return;
+	            return false;
 	        }
 	        // Changed location should be less than start location of next exon - give 2bp buffer
 	        if (nextExon && nextExon.min - 2 < newLocation) {
 	            notify(`Error while changing end location`, 'error');
-	            return;
+	            return false;
 	        }
 	        const exonFeature = getExonFeature(feature, matchingExon.min, matchingExon.max, featureTypeOntology);
 	        if (!exonFeature) {
 	            notify('No matching exon feature found', 'error');
-	            return;
+	            return false;
 	        }
 	        const cdsFeature = getFirstCDSFeature(feature, featureTypeOntology);
 	        // START LOCATION CHANGE
@@ -57511,6 +57778,7 @@
 	                notify('Error updating feature exon end position', 'error');
 	            });
 	        }
+	        return true;
 	    }
 	    const appendEndLocationChange = (feature, change, newLocation) => {
 	        change.changedIds.push(feature._id);
@@ -57690,6 +57958,7 @@
 	                }
 	            }
 	        }
+	        spliceSite = spliceSite.toUpperCase();
 	        return [
 	            {
 	                spliceSite,
@@ -57712,6 +57981,7 @@
 	                }
 	            }
 	        }
+	        spliceSite = spliceSite.toUpperCase();
 	        return [
 	            {
 	                spliceSite,
@@ -57897,7 +58167,7 @@
 	    return (React__default["default"].createElement("div", null,
 	        cdsPresent && (React__default["default"].createElement("div", null,
 	            React__default["default"].createElement(material.Accordion, null,
-	                React__default["default"].createElement(StyledAccordionSummary, { expandIcon: React__default["default"].createElement(default_1$a, { style: { color: 'white' } }), "aria-controls": "panel1-content", id: "panel1-header" },
+	                React__default["default"].createElement(StyledAccordionSummary, { expandIcon: React__default["default"].createElement(ExpandMoreIcon, { style: { color: 'white' } }), "aria-controls": "panel1-content", id: "panel1-header" },
 	                    React__default["default"].createElement(material.Typography, { component: "span", fontWeight: 'bold' }, "Translation")),
 	                React__default["default"].createElement(material.AccordionDetails, null,
 	                    React__default["default"].createElement(SequenceContainer, null,
@@ -57910,49 +58180,49 @@
 	                            gap: 10,
 	                        } },
 	                        React__default["default"].createElement(material.Tooltip, { title: "Copy" },
-	                            React__default["default"].createElement(default_1$i, { style: { fontSize: 15, cursor: 'pointer' }, onClick: onCopyClick })),
+	                            React__default["default"].createElement(ContentCopyIcon, { style: { fontSize: 15, cursor: 'pointer' }, onClick: onCopyClick })),
 	                        React__default["default"].createElement(material.Tooltip, { title: "Trim" },
-	                            React__default["default"].createElement(default_1$6, { style: { fontSize: 15, cursor: 'pointer' }, onClick: trimTranslationSequence }))))),
-	            React__default["default"].createElement(material.Grid2, { container: true, justifyContent: "center", alignItems: "center", style: { textAlign: 'center', marginTop: 10 } },
-	                React__default["default"].createElement(material.Grid2, { size: 1 }),
-	                strand === 1 ? (React__default["default"].createElement(material.Grid2, { size: 4 },
+	                            React__default["default"].createElement(ContentCutIcon, { style: { fontSize: 15, cursor: 'pointer' }, onClick: trimTranslationSequence }))))),
+	            React__default["default"].createElement(material.Grid, { container: true, justifyContent: "center", alignItems: "center", style: { textAlign: 'center', marginTop: 10 } },
+	                React__default["default"].createElement(material.Grid, { size: 1 }),
+	                strand === 1 ? (React__default["default"].createElement(material.Grid, { size: 4 },
 	                    React__default["default"].createElement(StyledTextField, { margin: "dense", variant: "outlined", value: cdsMin + 1, onChangeCommitted: (newLocation) => {
-	                            updateCDSLocation(cdsMin, newLocation - 1, feature, true);
-	                        }, style: { border: '1px solid black', borderRadius: 5 } }))) : (React__default["default"].createElement(material.Grid2, { size: 4 },
+	                            return updateCDSLocation(cdsMin, newLocation - 1, feature, true);
+	                        }, style: { border: '1px solid black', borderRadius: 5 } }))) : (React__default["default"].createElement(material.Grid, { size: 4 },
 	                    React__default["default"].createElement(StyledTextField, { margin: "dense", variant: "outlined", value: cdsMax, onChangeCommitted: (newLocation) => {
-	                            updateCDSLocation(cdsMax, newLocation, feature, false);
+	                            return updateCDSLocation(cdsMax, newLocation, feature, false);
 	                        }, style: { border: '1px solid black', borderRadius: 5 } }))),
-	                React__default["default"].createElement(material.Grid2, { size: 2 },
+	                React__default["default"].createElement(material.Grid, { size: 2 },
 	                    React__default["default"].createElement(material.Typography, { component: 'span' }, "CDS")),
-	                strand === 1 ? (React__default["default"].createElement(material.Grid2, { size: 4 },
+	                strand === 1 ? (React__default["default"].createElement(material.Grid, { size: 4 },
 	                    React__default["default"].createElement(StyledTextField, { margin: "dense", variant: "outlined", value: cdsMax, onChangeCommitted: (newLocation) => {
-	                            updateCDSLocation(cdsMax, newLocation, feature, false);
-	                        }, style: { border: '1px solid black', borderRadius: 5 } }))) : (React__default["default"].createElement(material.Grid2, { size: 4 },
+	                            return updateCDSLocation(cdsMax, newLocation, feature, false);
+	                        }, style: { border: '1px solid black', borderRadius: 5 } }))) : (React__default["default"].createElement(material.Grid, { size: 4 },
 	                    React__default["default"].createElement(StyledTextField, { margin: "dense", variant: "outlined", value: cdsMin + 1, onChangeCommitted: (newLocation) => {
-	                            updateCDSLocation(cdsMin, newLocation - 1, feature, true);
+	                            return updateCDSLocation(cdsMin, newLocation - 1, feature, true);
 	                        }, style: { border: '1px solid black', borderRadius: 5 } }))),
-	                React__default["default"].createElement(material.Grid2, { size: 1 })))),
+	                React__default["default"].createElement(material.Grid, { size: 1 })))),
 	        React__default["default"].createElement("div", { style: { marginTop: 5 } }, transcriptExonParts.map((loc, index) => {
-	            return (React__default["default"].createElement("div", { key: index }, loc.type === 'exon' && (React__default["default"].createElement(material.Grid2, { container: true, justifyContent: "center", alignItems: "center", style: { textAlign: 'center' } },
-	                React__default["default"].createElement(material.Grid2, { size: 1 }, index !== 0 &&
+	            return (React__default["default"].createElement("div", { key: index }, loc.type === 'exon' && (React__default["default"].createElement(material.Grid, { container: true, justifyContent: "center", alignItems: "center", style: { textAlign: 'center' } },
+	                React__default["default"].createElement(material.Grid, { size: 1 }, index !== 0 &&
 	                    getFivePrimeSpliceSite(loc, index).map((site, idx) => (React__default["default"].createElement(material.Typography, { key: idx, component: 'span', color: site.color }, site.spliceSite)))),
-	                strand === 1 ? (React__default["default"].createElement(material.Grid2, { size: 4, style: { padding: 0 } },
+	                strand === 1 ? (React__default["default"].createElement(material.Grid, { size: 4, style: { padding: 0 } },
 	                    React__default["default"].createElement(StyledTextField, { margin: "dense", variant: "outlined", value: loc.min + 1, onChangeCommitted: (newLocation) => {
-	                            handleExonLocationChange(loc.min, newLocation - 1, feature, true);
-	                        } }))) : (React__default["default"].createElement(material.Grid2, { size: 4, style: { padding: 0 } },
+	                            return handleExonLocationChange(loc.min, newLocation - 1, feature, true);
+	                        } }))) : (React__default["default"].createElement(material.Grid, { size: 4, style: { padding: 0 } },
 	                    React__default["default"].createElement(StyledTextField, { margin: "dense", variant: "outlined", value: loc.max, onChangeCommitted: (newLocation) => {
-	                            handleExonLocationChange(loc.max, newLocation, feature, false);
+	                            return handleExonLocationChange(loc.max, newLocation, feature, false);
 	                        } }))),
-	                React__default["default"].createElement(material.Grid2, { size: 2 },
+	                React__default["default"].createElement(material.Grid, { size: 2 },
 	                    React__default["default"].createElement(Strand, { strand: feature.strand })),
-	                strand === 1 ? (React__default["default"].createElement(material.Grid2, { size: 4, style: { padding: 0 } },
+	                strand === 1 ? (React__default["default"].createElement(material.Grid, { size: 4, style: { padding: 0 } },
 	                    React__default["default"].createElement(StyledTextField, { margin: "dense", variant: "outlined", value: loc.max, onChangeCommitted: (newLocation) => {
-	                            handleExonLocationChange(loc.max, newLocation, feature, false);
-	                        } }))) : (React__default["default"].createElement(material.Grid2, { size: 4, style: { padding: 0 } },
+	                            return handleExonLocationChange(loc.max, newLocation, feature, false);
+	                        } }))) : (React__default["default"].createElement(material.Grid, { size: 4, style: { padding: 0 } },
 	                    React__default["default"].createElement(StyledTextField, { margin: "dense", variant: "outlined", value: loc.min + 1, onChangeCommitted: (newLocation) => {
-	                            handleExonLocationChange(loc.min, newLocation - 1, feature, true);
+	                            return handleExonLocationChange(loc.min, newLocation - 1, feature, true);
 	                        } }))),
-	                React__default["default"].createElement(material.Grid2, { size: 1 }, index !== transcriptExonParts.length - 1 &&
+	                React__default["default"].createElement(material.Grid, { size: 1 }, index !== transcriptExonParts.length - 1 &&
 	                    getThreePrimeSpliceSite(loc, index).map((site, idx) => (React__default["default"].createElement(material.Typography, { key: idx, component: 'span', color: site.color }, site.spliceSite))))))));
 	        }))));
 	});
@@ -57963,7 +58233,7 @@
 	const TranscriptWidgetSummary = mobxReact.observer(function TranscriptWidgetSummary(props) {
 	    const { feature } = props;
 	    const name = getFeatureName$1(feature);
-	    const id = getFeatureId$2(feature);
+	    const id = getFeatureId$1(feature);
 	    return (React__default["default"].createElement(material.Table, { size: "small", sx: { fontSize: '0.75rem', '& .MuiTableCell-root': { padding: '4px' } } },
 	        React__default["default"].createElement(material.TableBody, null,
 	            name !== '' && (React__default["default"].createElement(material.TableRow, null,
@@ -57971,10 +58241,7 @@
 	                React__default["default"].createElement(material.TableCell, null, getFeatureName$1(feature)))),
 	            id !== '' && (React__default["default"].createElement(material.TableRow, null,
 	                React__default["default"].createElement(HeaderTableCell, null, "ID"),
-	                React__default["default"].createElement(material.TableCell, null, getFeatureId$2(feature)))),
-	            React__default["default"].createElement(material.TableRow, null,
-	                React__default["default"].createElement(HeaderTableCell, null, "Apollo ID"),
-	                React__default["default"].createElement(material.TableCell, null, feature._id)),
+	                React__default["default"].createElement(material.TableCell, null, getFeatureId$1(feature)))),
 	            React__default["default"].createElement(material.TableRow, null,
 	                React__default["default"].createElement(HeaderTableCell, null, "Type"),
 	                React__default["default"].createElement(material.TableCell, null, feature.type)),
@@ -57991,7 +58258,7 @@
 	                React__default["default"].createElement(material.TableCell, null, getStrand(feature.strand))))));
 	});
 
-	const useStyles$8 = mui.makeStyles()((theme) => ({
+	const useStyles$7 = mui.makeStyles()((theme) => ({
 	    root: {
 	        padding: theme.spacing(2),
 	    },
@@ -58008,7 +58275,7 @@
 	    return null;
 	}
 	const ApolloTranscriptDetailsWidget = mobxReact.observer(function ApolloTranscriptDetails(props) {
-	    const { classes } = useStyles$8();
+	    const { classes } = useStyles$7();
 	    const DEFAULT_PANELS = ['summary', 'location'];
 	    const [panelState, setPanelState] = React.useState(DEFAULT_PANELS);
 	    const { model } = props;
@@ -58023,7 +58290,6 @@
 	    const currentAssembly = apolloSession.apolloDataStore.assemblies.get(assembly);
 	    const { internetAccounts } = require$$1$3.getRoot(session);
 	    const apolloInternetAccount = internetAccounts.find((ia) => ia.type === 'ApolloInternetAccount');
-	    const token = apolloInternetAccount?.retrieveToken();
 	    const role = apolloInternetAccount ? apolloInternetAccount.role : 'admin';
 	    const editable = ['admin', 'user'].includes(role ?? '');
 	    if (!(feature && currentAssembly)) {
@@ -58048,60 +58314,59 @@
 	            setPanelState(panelState.filter((p) => p !== panel));
 	        }
 	    }
-	    const CustomComponent = pluginManager.evaluateExtensionPoint('Apollo-TranscriptDetailsCustomComponent', NoOpCustomComponent, props);
-	    const CustomTypesComponent = pluginManager.evaluateExtensionPoint('Apollo-TranscriptDetailsCustomTypesComponent', () => null, {
-	        feature,
-	        session,
-	    });
-	    const CustomSaveComponent = pluginManager.evaluateExtensionPoint('Apollo-TranscriptDetailsCustomSaveComponent', () => null, {
-	        feature,
-	        session,
-	        token,
-	    });
-	    const CustomAttributesComponent = pluginManager.evaluateExtensionPoint('Apollo-TranscriptDetailsCustomAttributesComponent', () => null, {
-	        feature,
-	        session,
-	    });
+	    const CustomComponentInsideSummary = pluginManager.evaluateExtensionPoint('Apollo-TranscriptDetailsCustomComponent-InsideSummary', NoOpCustomComponent, { feature, session });
+	    const CustomComponentAfterSummary = pluginManager.evaluateExtensionPoint('Apollo-TranscriptDetailsCustomComponent-AfterSummary', NoOpCustomComponent, { feature, session });
+	    const CustomComponentInsideLocation = pluginManager.evaluateExtensionPoint('Apollo-TranscriptDetailsCustomComponent-InsideLocation', NoOpCustomComponent, { feature, session });
+	    const CustomComponentAfterLocation = pluginManager.evaluateExtensionPoint('Apollo-TranscriptDetailsCustomComponent-AfterLocation', NoOpCustomComponent, { feature, session });
+	    const CustomComponentInsideAttributes = pluginManager.evaluateExtensionPoint('Apollo-TranscriptDetailsCustomComponent-InsideAttributes', NoOpCustomComponent, { feature, session });
+	    const CustomComponentAfterAttributes = pluginManager.evaluateExtensionPoint('Apollo-TranscriptDetailsCustomComponent-AfterAttributes', NoOpCustomComponent, { feature, session });
+	    const CustomComponentInsideSequence = pluginManager.evaluateExtensionPoint('Apollo-TranscriptDetailsCustomComponent-InsideSequence', NoOpCustomComponent, { feature, session });
+	    const CustomComponentAfterSequence = pluginManager.evaluateExtensionPoint('Apollo-TranscriptDetailsCustomComponent-AfterSequence', NoOpCustomComponent, { feature, session });
 	    return (React__default["default"].createElement("div", { className: classes.root },
 	        React__default["default"].createElement(material.Accordion, { expanded: panelState.includes('summary'), onChange: (e, expanded) => {
 	                handlePanelChange(expanded, 'summary');
 	            } },
-	            React__default["default"].createElement(StyledAccordionSummary, { expandIcon: React__default["default"].createElement(default_1$a, { style: { color: 'white' } }), "aria-controls": "panel1-content", id: "panel1-header" },
+	            React__default["default"].createElement(StyledAccordionSummary, { expandIcon: React__default["default"].createElement(ExpandMoreIcon, { style: { color: 'white' } }), "aria-controls": "panel1-content", id: "panel1-header" },
 	                React__default["default"].createElement(material.Typography, { component: "span", fontWeight: 'bold' }, "Summary")),
 	            React__default["default"].createElement(material.AccordionDetails, null,
-	                React__default["default"].createElement(TranscriptWidgetSummary, { feature: feature, refName: refName }))),
-	        React__default["default"].createElement(CustomComponent, { session: session, feature: feature }),
+	                React__default["default"].createElement(TranscriptWidgetSummary, { feature: feature, refName: refName }),
+	                React__default["default"].createElement(CustomComponentInsideSummary, { session: session, feature: feature }))),
+	        React__default["default"].createElement(CustomComponentAfterSummary, { session: session, feature: feature }),
 	        React__default["default"].createElement(material.Accordion, { style: { marginTop: 5 }, expanded: panelState.includes('location'), onChange: (e, expanded) => {
 	                handlePanelChange(expanded, 'location');
 	            } },
-	            React__default["default"].createElement(StyledAccordionSummary, { expandIcon: React__default["default"].createElement(default_1$a, { style: { color: 'white' } }), "aria-controls": "panel2-content", id: "panel2-header" },
+	            React__default["default"].createElement(StyledAccordionSummary, { expandIcon: React__default["default"].createElement(ExpandMoreIcon, { style: { color: 'white' } }), "aria-controls": "panel2-content", id: "panel2-header" },
 	                React__default["default"].createElement(material.Typography, { component: "span", fontWeight: 'bold' }, "Location")),
 	            React__default["default"].createElement(material.AccordionDetails, null,
 	                React__default["default"].createElement(TranscriptWidgetEditLocation, { feature: feature, refName: refName, session: apolloSession, assembly: currentAssembly._id || '' }),
-	                React__default["default"].createElement(CustomTypesComponent, { feature: feature, session: session }),
-	                React__default["default"].createElement(CustomAttributesComponent, { feature: feature, session: session }))),
+	                React__default["default"].createElement(CustomComponentInsideLocation, { session: session, feature: feature }))),
+	        React__default["default"].createElement(CustomComponentAfterLocation, { session: session, feature: feature }),
 	        React__default["default"].createElement(material.Accordion, { style: { marginTop: 5 }, expanded: panelState.includes('attrs'), onChange: (e, expanded) => {
 	                handlePanelChange(expanded, 'attrs');
 	            } },
-	            React__default["default"].createElement(StyledAccordionSummary, { expandIcon: React__default["default"].createElement(default_1$a, { style: { color: 'white' } }), "aria-controls": "panel3-content", id: "panel3-header" },
+	            React__default["default"].createElement(StyledAccordionSummary, { expandIcon: React__default["default"].createElement(ExpandMoreIcon, { style: { color: 'white' } }), "aria-controls": "panel3-content", id: "panel3-header" },
 	                React__default["default"].createElement("div", { style: { display: 'flex', alignItems: 'center' } },
 	                    React__default["default"].createElement(material.Typography, { component: "span", fontWeight: 'bold' },
 	                        "Attributes",
 	                        ' '),
 	                    React__default["default"].createElement(material.Tooltip, { title: "Separate multiple values for the attribute with commas" },
-	                        React__default["default"].createElement(default_1$o, { style: { color: 'white', fontSize: 15, marginLeft: 10 } })))),
+	                        React__default["default"].createElement(InfoIcon, { style: { color: 'white', fontSize: 15, marginLeft: 10 } })))),
 	            React__default["default"].createElement(material.AccordionDetails, null,
-	                React__default["default"].createElement(Attributes, { feature: feature, session: apolloSession, assembly: currentAssembly._id || '', editable: editable }))),
+	                React__default["default"].createElement(Attributes, { feature: feature, session: apolloSession, assembly: currentAssembly._id || '', editable: editable }),
+	                React__default["default"].createElement(CustomComponentInsideAttributes, { session: session, feature: feature }))),
+	        React__default["default"].createElement(CustomComponentAfterAttributes, { session: session, feature: feature }),
 	        React__default["default"].createElement(material.Accordion, { style: { marginTop: 5 }, expanded: panelState.includes('sequence'), onChange: (e, expanded) => {
 	                handlePanelChange(expanded, 'sequence');
 	            } },
-	            React__default["default"].createElement(StyledAccordionSummary, { expandIcon: React__default["default"].createElement(default_1$a, { style: { color: 'white' } }), "aria-controls": "panel4-content", id: "panel4-header" },
+	            React__default["default"].createElement(StyledAccordionSummary, { expandIcon: React__default["default"].createElement(ExpandMoreIcon, { style: { color: 'white' } }), "aria-controls": "panel4-content", id: "panel4-header" },
 	                React__default["default"].createElement(material.Typography, { component: "span", fontWeight: 'bold' }, "Sequence")),
-	            React__default["default"].createElement(material.AccordionDetails, null, panelState.includes('sequence') && (React__default["default"].createElement(TranscriptSequence, { feature: feature, session: apolloSession, assembly: currentAssembly._id || '', refName: refName })))),
-	        React__default["default"].createElement(CustomSaveComponent, { feature: feature, session: session, token: token })));
+	            React__default["default"].createElement(material.AccordionDetails, null,
+	                panelState.includes('sequence') && (React__default["default"].createElement(TranscriptSequence, { feature: feature, session: apolloSession, assembly: currentAssembly._id || '', refName: refName })),
+	                React__default["default"].createElement(CustomComponentInsideSequence, { session: session, feature: feature }))),
+	        React__default["default"].createElement(CustomComponentAfterSequence, { feature: feature, session: session })));
 	});
 
-	const configSchema$1 = configuration.ConfigurationSchema('LinearApolloDisplay', {}, { explicitIdentifier: 'displayId', explicitlyTyped: true });
+	const configSchema$2 = configuration.ConfigurationSchema('LinearApolloDisplay', {}, { explicitIdentifier: 'displayId', explicitlyTyped: true });
 
 	function handleFeatureTypeChange(changeManager, feature, oldType, newType) {
 	    const featureId = feature._id;
@@ -58140,13 +58405,13 @@
 	    return changeManager.submit(change);
 	}
 
-	const useStyles$7 = mui.makeStyles()({
+	const useStyles$6 = mui.makeStyles()({
 	    highlighted: {
 	        background: 'orange',
 	    },
 	});
 	const Highlight = ({ highlight, text, }) => {
-	    const { classes } = useStyles$7();
+	    const { classes } = useStyles$6();
 	    if (!highlight) {
 	        return React__default["default"].createElement(React__default["default"].Fragment, null, text);
 	    }
@@ -58183,7 +58448,7 @@
 	});
 
 	/* eslint-disable @typescript-eslint/unbound-method */
-	const useStyles$6 = mui.makeStyles()((theme) => ({
+	const useStyles$5 = mui.makeStyles()((theme) => ({
 	    inputWrapper: {
 	        position: 'relative',
 	    },
@@ -58204,7 +58469,7 @@
 	    const [value, setValue] = React.useState(initialValue);
 	    const [blur, setBlur] = React.useState(false);
 	    const [inputNode, setInputNode] = React.useState(null);
-	    const { classes } = useStyles$6();
+	    const { classes } = useStyles$5();
 	    React.useEffect(() => {
 	        if (initialValue !== value) {
 	            setValue(initialValue);
@@ -58411,7 +58676,7 @@
 	}
 
 	/* eslint-disable unicorn/no-nested-ternary */
-	const useStyles$5 = mui.makeStyles()((theme) => ({
+	const useStyles$4 = mui.makeStyles()((theme) => ({
 	    typeContent: {
 	        display: 'inline-block',
 	        width: '174px',
@@ -58449,16 +58714,12 @@
 	    const { changeManager, getAssemblyId, regions, selectedFeature, session, setSelectedFeature, filteredTranscripts, updateFilteredTranscripts, } = display;
 	    return featureContextMenuItems(feature, regions[0], getAssemblyId, selectedFeature, setSelectedFeature, session, changeManager, filteredTranscripts, updateFilteredTranscripts);
 	}
-	function getTopLevelFeature(feature) {
-	    let cur = feature;
-	    while (cur.parent) {
-	        cur = cur.parent;
-	    }
-	    return cur;
+	function navigateHere(displayState, feature) {
+	    displayState.lgv.navTo(navToFeatureCenter(feature, 0.1, displayState.lgv.totalBp));
 	}
 	const Feature = mobxReact.observer(function Feature({ depth, feature, isHovered, isSelected, model: displayState, selectedFeatureClass, setContextMenu, }) {
-	    const { classes } = useStyles$5();
-	    const { apolloHover, changeManager, selectedFeature, session, tabularEditor: tabularEditorState, } = displayState;
+	    const { classes } = useStyles$4();
+	    const { changeManager, hoveredFeature, selectedFeature, session, tabularEditor: tabularEditorState, } = displayState;
 	    const { featureCollapsed, filterText } = tabularEditorState;
 	    const { _id, children, max, min, strand, type } = feature;
 	    const expanded = !featureCollapsed.get(_id);
@@ -58472,12 +58733,7 @@
 	    };
 	    return (React__default["default"].createElement(React__default["default"].Fragment, null,
 	        React__default["default"].createElement("tr", { onMouseEnter: (_e) => {
-	                displayState.setApolloHover({
-	                    feature,
-	                    topLevelFeature: getTopLevelFeature(feature),
-	                    // @ts-expect-error TODO fix in future when moving hover logic to session.
-	                    glyph: displayState.getGlyph(getTopLevelFeature(feature)),
-	                });
+	                displayState.setHoveredFeature({ feature, bp: min });
 	            }, className: classes.feature +
 	                (isSelected
 	                    ? ` ${selectedFeatureClass}`
@@ -58486,6 +58742,9 @@
 	                        : ''), onClick: (e) => {
 	                e.stopPropagation();
 	                displayState.setSelectedFeature(feature);
+	            }, onDoubleClick: () => {
+	                displayState.setSelectedFeature(feature);
+	                navigateHere(displayState, feature);
 	            }, onContextMenu: (e) => {
 	                e.preventDefault();
 	                setContextMenu({
@@ -58531,7 +58790,7 @@
 	                return text.includes(filterText);
 	            })
 	                .map(([featureId, childFeature]) => {
-	                const childHovered = apolloHover?.feature._id === childFeature._id;
+	                const childHovered = hoveredFeature?.feature._id === childFeature._id;
 	                const childSelected = selectedFeature?._id === childFeature._id;
 	                return (React__default["default"].createElement(Feature, { isHovered: childHovered, isSelected: childSelected, selectedFeatureClass: selectedFeatureClass, key: featureId, depth: (depth || 0) + 1, feature: childFeature, model: displayState, setContextMenu: setContextMenu }));
 	            })
@@ -58553,7 +58812,7 @@
 	    return;
 	}
 
-	const useStyles$4 = mui.makeStyles()((theme) => ({
+	const useStyles$3 = mui.makeStyles()((theme) => ({
 	    scrollableTable: {
 	        width: '100%',
 	        height: '100%',
@@ -58572,9 +58831,9 @@
 	    },
 	}));
 	const HybridGrid = mobxReact.observer(function HybridGrid({ model, }) {
-	    const { apolloHover, seenFeatures, selectedFeature, tabularEditor } = model;
+	    const { hoveredFeature, seenFeatures, selectedFeature, tabularEditor } = model;
 	    const theme = material.useTheme();
-	    const { classes } = useStyles$4();
+	    const { classes } = useStyles$3();
 	    const scrollContainerRef = React.useRef(null);
 	    const [contextMenu, setContextMenu] = React.useState(null);
 	    const { filterText } = tabularEditor;
@@ -58618,7 +58877,7 @@
 	            })
 	                .map(([featureId, feature]) => {
 	                const isSelected = selectedFeature?._id === featureId;
-	                const isHovered = apolloHover?.feature._id === featureId;
+	                const isHovered = hoveredFeature?.feature._id === featureId;
 	                return (React__default["default"].createElement(Feature, { key: featureId, isSelected: isSelected, isHovered: isHovered, selectedFeatureClass: classes.selectedFeature, feature: feature, model: model, depth: 0, setContextMenu: setContextMenu }));
 	            }))),
 	        React__default["default"].createElement(ui.Menu, { open: Boolean(contextMenu), onMenuItemClick: (_, callback) => {
@@ -58626,43 +58885,25 @@
 	                setContextMenu(null);
 	            }, onClose: () => {
 	                setContextMenu(null);
-	            }, TransitionProps: {
-	                onExit: () => {
-	                    setContextMenu(null);
+	            }, slotProps: {
+	                transition: {
+	                    onExit: () => {
+	                        setContextMenu(null);
+	                    },
 	                },
 	            }, style: { zIndex: theme.zIndex.tooltip }, menuItems: contextMenu?.items ?? [], anchorReference: "anchorPosition", anchorPosition: contextMenu?.position })));
 	});
 
-	var Clear = {};
-
-	var _interopRequireDefault$4 = interopRequireDefault.exports;
-	Object.defineProperty(Clear, "__esModule", {
-	  value: true
-	});
-	var default_1$4 = Clear["default"] = void 0;
-	var _createSvgIcon$4 = /*#__PURE__*/_interopRequireDefault$4(createSvgIcon);
-	var _jsxRuntime$4 = require$$2__default["default"];
-	var _default$4 = /*#__PURE__*/(0, _createSvgIcon$4["default"])( /*#__PURE__*/(0, _jsxRuntime$4.jsx)("path", {
+	var ClearIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
 	  d: "M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
 	}), 'Clear');
-	default_1$4 = Clear["default"] = _default$4;
 
-	var UnfoldLess = {};
-
-	var _interopRequireDefault$3 = interopRequireDefault.exports;
-	Object.defineProperty(UnfoldLess, "__esModule", {
-	  value: true
-	});
-	var default_1$3 = UnfoldLess["default"] = void 0;
-	var _createSvgIcon$3 = /*#__PURE__*/_interopRequireDefault$3(createSvgIcon);
-	var _jsxRuntime$3 = require$$2__default["default"];
-	var _default$3 = /*#__PURE__*/(0, _createSvgIcon$3["default"])( /*#__PURE__*/(0, _jsxRuntime$3.jsx)("path", {
-	  d: "M7.41 18.59 8.83 20 12 16.83 15.17 20l1.41-1.41L12 14l-4.59 4.59zm9.18-13.18L15.17 4 12 7.17 8.83 4 7.41 5.41 12 10l4.59-4.59z"
+	var UnfoldLessIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
+	  d: "M7.41 18.59 8.83 20 12 16.83 15.17 20l1.41-1.41L12 14zm9.18-13.18L15.17 4 12 7.17 8.83 4 7.41 5.41 12 10z"
 	}), 'UnfoldLess');
-	default_1$3 = UnfoldLess["default"] = _default$3;
 
 	/* eslint-disable @typescript-eslint/unbound-method */
-	const useStyles$3 = mui.makeStyles()({
+	const useStyles$2 = mui.makeStyles()({
 	    toolbar: {
 	        width: '100%',
 	        display: 'flex',
@@ -58676,11 +58917,11 @@
 	});
 	const ToolBar = mobxReact.observer(function ToolBar({ model: displayState, }) {
 	    const model = displayState.tabularEditor;
-	    const { classes } = useStyles$3();
+	    const { classes } = useStyles$2();
 	    return (React__default["default"].createElement("div", { className: classes.toolbar },
 	        React__default["default"].createElement(material.Tooltip, { title: "Collapse all" },
 	            React__default["default"].createElement(material.IconButton, { "aria-label": "collapse", sx: { marginTop: 0 }, onClick: model.collapseAllFeatures },
-	                React__default["default"].createElement(default_1$3, null))),
+	                React__default["default"].createElement(UnfoldLessIcon, null))),
 	        React__default["default"].createElement(material.TextField, { className: classes.filterText, label: "Filter features", value: model.filterText, sx: { marginTop: 0 }, variant: "outlined", onChange: (event) => {
 	                model.setFilterText(event.target.value);
 	            }, slotProps: {
@@ -58689,7 +58930,7 @@
 	                        React__default["default"].createElement(material.IconButton, { onClick: () => {
 	                                model.clearFilterText();
 	                            } },
-	                            React__default["default"].createElement(default_1$4, null)))),
+	                            React__default["default"].createElement(ClearIcon, null)))),
 	                },
 	            } })));
 	});
@@ -58757,14 +58998,8 @@
 	function drawBoxFill(ctx, x, y, width, height, color) {
 	    drawBox(ctx, x + 1, y + 1, width - 2, height - 2, color);
 	}
-	function drawBoxText(ctx, x, y, width, color, text) {
-	    ctx.fillStyle = color;
-	    const textStart = Math.max(x + 1, 0);
-	    const textWidth = x - 1 + width - textStart;
-	    ctx.fillText(text, textStart, y + 11, textWidth);
-	}
 	function draw$3(ctx, feature, row, stateModel, displayedRegionIndex) {
-	    const { apolloRowHeight: heightPx, lgv, session, theme } = stateModel;
+	    const { apolloRowHeight: heightPx, lgv, selectedFeature, theme } = stateModel;
 	    const { bpPerPx, displayedRegions, offsetPx } = lgv;
 	    const displayedRegion = displayedRegions[displayedRegionIndex];
 	    const minX = (lgv.bpToPx({
@@ -58773,13 +59008,11 @@
 	        regionNumber: displayedRegionIndex,
 	    })?.offsetPx ?? 0) - offsetPx;
 	    const { reversed } = displayedRegion;
-	    const { apolloSelectedFeature } = session;
 	    const widthPx = feature.length / bpPerPx;
 	    const startPx = reversed ? minX - widthPx : minX;
 	    const top = row * heightPx;
-	    const isSelected = isSelectedFeature$1(feature, apolloSelectedFeature);
-	    const backgroundColor = getBackgroundColor(theme, isSelected);
-	    const textColor = getTextColor(theme, isSelected);
+	    const backgroundColor = theme.palette.background.default;
+	    const textColor = theme.palette.text.primary;
 	    const featureBox = [
 	        startPx,
 	        top,
@@ -58792,7 +59025,9 @@
 	        return;
 	    }
 	    drawBoxFill(ctx, startPx, top, widthPx, heightPx, backgroundColor);
-	    drawBoxText(ctx, startPx, top, widthPx, textColor, feature.type);
+	    if (isSelectedFeature(feature, selectedFeature)) {
+	        drawHighlight$2(stateModel, ctx, feature, true);
+	    }
 	}
 	function drawDragPreview$3(stateModel, overlayCtx) {
 	    const { apolloDragging, apolloRowHeight, lgv, theme } = stateModel;
@@ -58812,18 +59047,14 @@
 	    const rectY = row * apolloRowHeight;
 	    const rectWidth = Math.abs(current.x - featureEdgePx);
 	    const rectHeight = apolloRowHeight * rowCount;
-	    overlayCtx.strokeStyle = theme?.palette.info.main ?? 'rgb(255,0,0)';
+	    overlayCtx.strokeStyle = theme.palette.info.main;
 	    overlayCtx.setLineDash([6]);
 	    overlayCtx.strokeRect(rectX, rectY, rectWidth, rectHeight);
-	    overlayCtx.fillStyle = material.alpha(theme?.palette.info.main ?? 'rgb(255,0,0)', 0.2);
+	    overlayCtx.fillStyle = material.alpha(theme.palette.info.main, 0.2);
 	    overlayCtx.fillRect(rectX, rectY, rectWidth, rectHeight);
 	}
-	function drawHover$3(stateModel, ctx) {
-	    const { apolloHover, apolloRowHeight, lgv, theme } = stateModel;
-	    if (!apolloHover) {
-	        return;
-	    }
-	    const { feature } = apolloHover;
+	function drawHighlight$2(stateModel, ctx, feature, selected = false) {
+	    const { apolloRowHeight, lgv, theme } = stateModel;
 	    const position = stateModel.getFeatureLayoutPosition(feature);
 	    if (!position) {
 	        return;
@@ -58840,15 +59071,24 @@
 	    })?.offsetPx ?? 0) - offsetPx;
 	    const top = layoutRow * apolloRowHeight;
 	    const widthPx = length / bpPerPx;
-	    ctx.fillStyle = theme?.palette.action.focus ?? 'rgba(0,0,0,0.04)';
+	    ctx.fillStyle = selected
+	        ? theme.palette.action.disabled
+	        : theme.palette.action.focus;
 	    ctx.fillRect(startPx, top, widthPx, apolloRowHeight);
 	}
-	function drawTooltip$3(display, context) {
-	    const { apolloHover, apolloRowHeight, lgv, theme } = display;
-	    if (!apolloHover) {
+	function drawHover$3(stateModel, ctx) {
+	    const { hoveredFeature } = stateModel;
+	    if (!hoveredFeature) {
 	        return;
 	    }
-	    const { feature } = apolloHover;
+	    drawHighlight$2(stateModel, ctx, hoveredFeature.feature);
+	}
+	function drawTooltip$3(display, context) {
+	    const { hoveredFeature, apolloRowHeight, lgv, theme } = display;
+	    if (!hoveredFeature) {
+	        return;
+	    }
+	    const { feature } = hoveredFeature;
 	    const position = display.getFeatureLayoutPosition(feature);
 	    if (!position) {
 	        return;
@@ -58879,14 +59119,14 @@
 	    }
 	    const maxWidth = Math.max(...textWidth);
 	    startPx = startPx + widthPx + 5;
-	    context.fillStyle = material.alpha(theme?.palette.text.primary ?? 'rgb(1, 1, 1)', 0.7);
+	    context.fillStyle = material.alpha(theme.palette.text.primary, 0.7);
 	    context.fillRect(startPx, top, maxWidth + 4, textWidth.length === 3 ? 45 : 35);
 	    context.beginPath();
 	    context.moveTo(startPx, top);
 	    context.lineTo(startPx - 5, top + 5);
 	    context.lineTo(startPx, top + 10);
 	    context.fill();
-	    context.fillStyle = theme?.palette.background.default ?? 'rgba(255, 255, 255)';
+	    context.fillStyle = theme.palette.background.default;
 	    let textTop = top + 12;
 	    context.fillText(featureType, startPx + 2, textTop);
 	    if (featureName) {
@@ -58896,127 +59136,16 @@
 	    textTop = textTop + 12;
 	    context.fillText(location, startPx + 2, textTop);
 	}
-	function isSelectedFeature$1(feature, selectedFeature) {
-	    return Boolean(selectedFeature && feature._id === selectedFeature._id);
-	}
-	function getBackgroundColor(theme, selected) {
-	    return selected
-	        ? theme?.palette.text.primary ?? 'black'
-	        : theme?.palette.background.default ?? 'white';
-	}
-	function getTextColor(theme, selected) {
-	    return selected
-	        ? theme?.palette.getContrastText(getBackgroundColor(theme, selected)) ??
-	            'white'
-	        : theme?.palette.text.primary ?? 'black';
-	}
 	function drawBox(ctx, x, y, width, height, color) {
 	    ctx.fillStyle = color;
 	    ctx.fillRect(x, y, width, height);
 	}
 	function getContextMenuItems$3(display) {
-	    const { apolloHover } = display;
-	    if (!apolloHover) {
+	    const { hoveredFeature } = display;
+	    if (!hoveredFeature) {
 	        return [];
 	    }
-	    const { feature: sourceFeature } = apolloHover;
-	    return getContextMenuItemsForFeature$2(display, sourceFeature);
-	}
-	function makeFeatureLabel(feature) {
-	    let name;
-	    if (feature.attributes.get('gff_name')) {
-	        name = feature.attributes.get('gff_name')?.join(',');
-	    }
-	    else if (feature.attributes.get('gff_id')) {
-	        name = feature.attributes.get('gff_id')?.join(',');
-	    }
-	    else {
-	        name = feature._id;
-	    }
-	    const coords = `(${(feature.min + 1).toLocaleString('en')}..${feature.max.toLocaleString('en')})`;
-	    const maxLen = 60;
-	    if (name && name.length + coords.length > maxLen + 5) {
-	        const trim = maxLen - coords.length;
-	        name = trim > 0 ? name.slice(0, trim) : '';
-	        name = `${name}[...]`;
-	    }
-	    return `${name} ${coords}`;
-	}
-	function getContextMenuItemsForFeature$2(display, sourceFeature) {
-	    const { apolloInternetAccount: internetAccount, changeManager, regions, selectedFeature, session, } = display;
-	    const menuItems = [];
-	    const role = internetAccount ? internetAccount.role : 'admin';
-	    const admin = role === 'admin';
-	    const readOnly = !(role && ['admin', 'user'].includes(role));
-	    const [region] = regions;
-	    const sourceAssemblyId = display.getAssemblyId(region.assemblyName);
-	    const currentAssemblyId = display.getAssemblyId(region.assemblyName);
-	    const { featureTypeOntology } = session.apolloDataStore.ontologyManager;
-	    if (!featureTypeOntology) {
-	        throw new Error('featureTypeOntology is undefined');
-	    }
-	    // Add only relevant options
-	    menuItems.push({
-	        label: makeFeatureLabel(sourceFeature),
-	        type: 'subHeader',
-	    }, {
-	        label: 'Add child feature',
-	        disabled: readOnly,
-	        onClick: () => {
-	            session.queueDialog((doneCallback) => [
-	                AddChildFeature,
-	                {
-	                    session,
-	                    handleClose: () => {
-	                        doneCallback();
-	                    },
-	                    changeManager,
-	                    sourceFeature,
-	                    sourceAssemblyId,
-	                    internetAccount,
-	                },
-	            ]);
-	        },
-	    }, {
-	        label: 'Copy features and annotations',
-	        disabled: readOnly,
-	        onClick: () => {
-	            session.queueDialog((doneCallback) => [
-	                CopyFeature,
-	                {
-	                    session,
-	                    handleClose: () => {
-	                        doneCallback();
-	                    },
-	                    changeManager,
-	                    sourceFeature,
-	                    sourceAssemblyId: currentAssemblyId,
-	                },
-	            ]);
-	        },
-	    }, {
-	        label: 'Delete feature',
-	        disabled: !admin,
-	        onClick: () => {
-	            session.queueDialog((doneCallback) => [
-	                DeleteFeature,
-	                {
-	                    session,
-	                    handleClose: () => {
-	                        doneCallback();
-	                    },
-	                    changeManager,
-	                    sourceFeature,
-	                    sourceAssemblyId: currentAssemblyId,
-	                    selectedFeature,
-	                    setSelectedFeature: (feature) => {
-	                        display.setSelectedFeature(feature);
-	                    },
-	                },
-	            ]);
-	        },
-	    });
-	    return menuItems;
+	    return getContextMenuItemsForFeature$2(display, hoveredFeature.feature);
 	}
 	function getFeatureFromLayout$2(feature, _bp, _row) {
 	    return feature;
@@ -59028,10 +59157,9 @@
 	    return 0;
 	}
 	function onMouseDown$3(stateModel, currentMousePosition, event) {
-	    const { featureAndGlyphUnderMouse } = currentMousePosition;
+	    const { feature } = currentMousePosition;
 	    // swallow the mouseDown if we are on the edge of the feature so that we
 	    // don't start dragging the view if we try to drag the feature edge
-	    const { feature } = featureAndGlyphUnderMouse;
 	    const edge = isMouseOnFeatureEdge(currentMousePosition, feature, stateModel);
 	    if (edge) {
 	        event.stopPropagation();
@@ -59042,10 +59170,9 @@
 	    return;
 	}
 	function onMouseMove$3(stateModel, mousePosition) {
-	    if (isMousePositionWithFeatureAndGlyph$1(mousePosition)) {
-	        const { featureAndGlyphUnderMouse } = mousePosition;
-	        stateModel.setApolloHover(featureAndGlyphUnderMouse);
-	        const { feature } = featureAndGlyphUnderMouse;
+	    if (isMousePositionWithFeature(mousePosition)) {
+	        const { feature, bp } = mousePosition;
+	        stateModel.setHoveredFeature({ feature, bp });
 	        const edge = isMouseOnFeatureEdge(mousePosition, feature, stateModel);
 	        if (edge) {
 	            stateModel.setCursor('col-resize');
@@ -59058,11 +59185,10 @@
 	    if (stateModel.apolloDragging) {
 	        return;
 	    }
-	    const { featureAndGlyphUnderMouse } = mousePosition;
-	    if (!featureAndGlyphUnderMouse) {
+	    const { feature } = mousePosition;
+	    if (!feature) {
 	        return;
 	    }
-	    const { feature } = featureAndGlyphUnderMouse;
 	    stateModel.setSelectedFeature(feature);
 	    stateModel.showFeatureDetailsWidget(feature);
 	}
@@ -59103,6 +59229,14 @@
 	    onMouseMove: onMouseMove$3,
 	    onMouseUp: onMouseUp$3,
 	};
+
+	var SkipNextRoundedIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
+	  d: "m7.58 16.89 5.77-4.07c.56-.4.56-1.24 0-1.63L7.58 7.11C6.91 6.65 6 7.12 6 7.93v8.14c0 .81.91 1.28 1.58.82M16 7v10c0 .55.45 1 1 1s1-.45 1-1V7c0-.55-.45-1-1-1s-1 .45-1 1"
+	}), 'SkipNextRounded');
+
+	var SkipPreviousRoundedIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
+	  d: "M7 6c.55 0 1 .45 1 1v10c0 .55-.45 1-1 1s-1-.45-1-1V7c0-.55.45-1 1-1m3.66 6.82 5.77 4.07c.66.47 1.58-.01 1.58-.82V7.93c0-.81-.91-1.28-1.58-.82l-5.77 4.07c-.57.4-.57 1.24 0 1.64"
+	}), 'SkipPreviousRounded');
 
 	let forwardFillLight$1 = null;
 	let backwardFillLight$1 = null;
@@ -59154,37 +59288,55 @@
 	        }
 	    }
 	}
-	function draw$2(ctx, feature, row, stateModel, displayedRegionIndex) {
-	    const { apolloRowHeight, lgv, session, theme } = stateModel;
+	function drawBackground(ctx, feature, stateModel, displayedRegionIndex, row, color) {
+	    const { apolloRowHeight, lgv, session } = stateModel;
 	    const { bpPerPx, displayedRegions, offsetPx } = lgv;
 	    const displayedRegion = displayedRegions[displayedRegionIndex];
 	    const { refName, reversed } = displayedRegion;
-	    const rowHeight = apolloRowHeight;
-	    const cdsHeight = Math.round(0.9 * rowHeight);
-	    const { children, min, strand } = feature;
-	    if (!children) {
-	        return;
-	    }
-	    const { apolloSelectedFeature } = session;
 	    const { apolloDataStore } = session;
 	    const { featureTypeOntology } = apolloDataStore.ontologyManager;
 	    if (!featureTypeOntology) {
 	        throw new Error('featureTypeOntology is undefined');
 	    }
-	    // Draw background for gene
 	    const topLevelFeatureMinX = (lgv.bpToPx({
 	        refName,
-	        coord: min,
+	        coord: feature.min,
 	        regionNumber: displayedRegionIndex,
 	    })?.offsetPx ?? 0) - offsetPx;
 	    const topLevelFeatureWidthPx = feature.length / bpPerPx;
 	    const topLevelFeatureStartPx = reversed
 	        ? topLevelFeatureMinX - topLevelFeatureWidthPx
 	        : topLevelFeatureMinX;
-	    const topLevelFeatureTop = row * rowHeight;
-	    const topLevelFeatureHeight = getRowCount$1(feature, featureTypeOntology) * rowHeight;
-	    ctx.fillStyle = material.alpha(theme?.palette.background.paper ?? '#ffffff', 0.6);
+	    const topLevelFeatureTop = row * apolloRowHeight;
+	    const topLevelFeatureHeight = getRowCount$1(feature, featureTypeOntology) * apolloRowHeight;
+	    ctx.fillStyle = color;
 	    ctx.fillRect(topLevelFeatureStartPx, topLevelFeatureTop, topLevelFeatureWidthPx, topLevelFeatureHeight);
+	}
+	function backgroundColorForFeature(session, featureType) {
+	    const color = configuration.readConfObject(session.getPluginConfiguration(), 'backgroundColorForFeature', { featureType });
+	    return color;
+	}
+	function draw$2(ctx, feature, row, stateModel, displayedRegionIndex) {
+	    const { apolloRowHeight, lgv, selectedFeature, session, theme } = stateModel;
+	    const { bpPerPx, displayedRegions, offsetPx } = lgv;
+	    const displayedRegion = displayedRegions[displayedRegionIndex];
+	    const { refName, reversed } = displayedRegion;
+	    const rowHeight = apolloRowHeight;
+	    const cdsHeight = Math.round(0.9 * rowHeight);
+	    const { children, strand } = feature;
+	    if (!children) {
+	        return;
+	    }
+	    const { apolloDataStore } = session;
+	    const { featureTypeOntology } = apolloDataStore.ontologyManager;
+	    if (!featureTypeOntology) {
+	        throw new Error('featureTypeOntology is undefined');
+	    }
+	    // Draw background for gene
+	    drawBackground(ctx, feature, stateModel, displayedRegionIndex, row, material.alpha(theme.palette.background.paper, 0.6));
+	    if (featureTypeOntology.isTypeOf(feature.type, 'pseudogene')) {
+	        drawBackground(ctx, feature, stateModel, displayedRegionIndex, row, backgroundColorForFeature(session, 'pseudogenic_transcript'));
+	    }
 	    // Draw lines on different rows for each transcript
 	    let currentRow = 0;
 	    for (const [, transcript] of children) {
@@ -59199,6 +59351,12 @@
 	            continue;
 	        }
 	        const cdsCount = getCDSCount(transcript, featureTypeOntology);
+	        if (cdsCount === 0) {
+	            drawBackground(ctx, transcript, stateModel, displayedRegionIndex, currentRow, backgroundColorForFeature(session, 'nonCodingTranscript'));
+	        }
+	        if (featureTypeOntology.isTypeOf(transcript.type, 'pseudogenic_transcript')) {
+	            drawBackground(ctx, transcript, stateModel, displayedRegionIndex, currentRow, backgroundColorForFeature(session, 'pseudogenic_transcript'));
+	        }
 	        for (const [, childFeature] of transcriptChildren) {
 	            if (!featureTypeOntology.isTypeOf(childFeature.type, 'CDS')) {
 	                continue;
@@ -59211,8 +59369,8 @@
 	            currentRow += 1;
 	        }
 	    }
-	    const forwardFill = theme?.palette.mode === 'dark' ? forwardFillDark$1 : forwardFillLight$1;
-	    const backwardFill = theme?.palette.mode === 'dark' ? backwardFillDark$1 : backwardFillLight$1;
+	    const forwardFill = theme.palette.mode === 'dark' ? forwardFillDark$1 : forwardFillLight$1;
+	    const backwardFill = theme.palette.mode === 'dark' ? backwardFillDark$1 : backwardFillLight$1;
 	    // Draw exon and CDS for each transcript
 	    currentRow = 0;
 	    for (const [, child] of children) {
@@ -59225,7 +59383,7 @@
 	        const cdsCount = getCDSCount(child, featureTypeOntology);
 	        if (cdsCount != 0) {
 	            for (const cdsRow of child.cdsLocations) {
-	                const { _id, children: transcriptChildren } = child;
+	                const { children: transcriptChildren } = child;
 	                if (!transcriptChildren) {
 	                    continue;
 	                }
@@ -59243,18 +59401,14 @@
 	                        regionNumber: displayedRegionIndex,
 	                    })?.offsetPx ?? 0) - offsetPx;
 	                    const cdsStartPx = reversed ? minX - cdsWidthPx : minX;
-	                    ctx.fillStyle = theme?.palette.text.primary ?? 'black';
+	                    ctx.fillStyle = theme.palette.text.primary;
 	                    const cdsTop = (row + currentRow) * rowHeight + (rowHeight - cdsHeight) / 2;
 	                    ctx.fillRect(cdsStartPx, cdsTop, cdsWidthPx, cdsHeight);
 	                    if (cdsWidthPx > 2) {
 	                        ctx.clearRect(cdsStartPx + 1, cdsTop + 1, cdsWidthPx - 2, cdsHeight - 2);
 	                        const frame = require$$1$2.getFrame(cds.min, cds.max, child.strand ?? 1, cds.phase);
-	                        const frameColor = theme?.palette.framesCDS.at(frame)?.main;
-	                        const cdsColorCode = frameColor ?? 'rgb(171,71,188)';
-	                        ctx.fillStyle =
-	                            apolloSelectedFeature && _id === apolloSelectedFeature._id
-	                                ? 'rgb(0,0,0)'
-	                                : cdsColorCode;
+	                        const frameColor = theme.palette.framesCDS.at(frame)?.main;
+	                        ctx.fillStyle = frameColor ?? 'black';
 	                        ctx.fillRect(cdsStartPx + 1, cdsTop + 1, cdsWidthPx - 2, cdsHeight - 2);
 	                        if (forwardFill && backwardFill && strand) {
 	                            const reversal = reversed ? -1 : 1;
@@ -59283,13 +59437,15 @@
 	            currentRow += 1;
 	        }
 	    }
+	    if (selectedFeature && containsSelectedFeature(feature, selectedFeature)) {
+	        drawHighlight$1(stateModel, ctx, selectedFeature, true);
+	    }
 	}
 	function drawExon(ctx, stateModel, displayedRegionIndex, row, exon, currentRow, strand, forwardFill, backwardFill) {
-	    const { apolloRowHeight, lgv, session, theme } = stateModel;
+	    const { apolloRowHeight, lgv, theme } = stateModel;
 	    const { bpPerPx, displayedRegions, offsetPx } = lgv;
 	    const displayedRegion = displayedRegions[displayedRegionIndex];
 	    const { refName, reversed } = displayedRegion;
-	    const { apolloSelectedFeature } = session;
 	    const minX = (lgv.bpToPx({
 	        refName,
 	        coord: exon.min,
@@ -59300,14 +59456,11 @@
 	    const top = (row + currentRow) * apolloRowHeight;
 	    const exonHeight = Math.round(0.6 * apolloRowHeight);
 	    const exonTop = top + (apolloRowHeight - exonHeight) / 2;
-	    ctx.fillStyle = theme?.palette.text.primary ?? 'black';
+	    ctx.fillStyle = theme.palette.text.primary;
 	    ctx.fillRect(startPx, exonTop, widthPx, exonHeight);
 	    if (widthPx > 2) {
 	        ctx.clearRect(startPx + 1, exonTop + 1, widthPx - 2, exonHeight - 2);
-	        ctx.fillStyle =
-	            apolloSelectedFeature && exon._id === apolloSelectedFeature._id
-	                ? 'rgb(0,0,0)'
-	                : 'rgb(211,211,211)';
+	        ctx.fillStyle = 'rgb(211,211,211)';
 	        ctx.fillRect(startPx + 1, exonTop + 1, widthPx - 2, exonHeight - 2);
 	        if (forwardFill && backwardFill && strand) {
 	            const reversal = reversed ? -1 : 1;
@@ -59321,6 +59474,20 @@
 	        }
 	    }
 	}
+	function* range(start, stop, step = 1) {
+	    if (start === stop) {
+	        return;
+	    }
+	    if (start < stop) {
+	        for (let i = start; i < stop; i += step) {
+	            yield i;
+	        }
+	        return;
+	    }
+	    for (let i = start; i > stop; i -= step) {
+	        yield i;
+	    }
+	}
 	function drawLine(ctx, stateModel, displayedRegionIndex, row, transcript, currentRow) {
 	    const { apolloRowHeight, lgv, theme } = stateModel;
 	    const { bpPerPx, displayedRegions, offsetPx } = lgv;
@@ -59331,13 +59498,31 @@
 	        coord: transcript.min,
 	        regionNumber: displayedRegionIndex,
 	    })?.offsetPx ?? 0) - offsetPx;
-	    const widthPx = transcript.length / bpPerPx;
+	    const widthPx = Math.round(transcript.length / bpPerPx);
 	    const startPx = reversed ? minX - widthPx : minX;
 	    const height = Math.round((currentRow + 1 / 2) * apolloRowHeight) + row * apolloRowHeight;
-	    ctx.strokeStyle = theme?.palette.text.primary ?? 'black';
+	    ctx.strokeStyle = theme.palette.text.primary;
+	    const { strand = 1 } = transcript;
 	    ctx.beginPath();
-	    ctx.moveTo(startPx, height);
-	    ctx.lineTo(startPx + widthPx, height);
+	    // Draw the transcript line, and extend it out a bit on the 3` end
+	    const lineStart = startPx - (strand === -1 ? 5 : 0);
+	    const lineEnd = startPx + widthPx + (strand === -1 ? 0 : 5);
+	    ctx.moveTo(lineStart, height);
+	    ctx.lineTo(lineEnd, height);
+	    // Now to draw arrows every 20 pixels along the line
+	    // Make the arrow range a bit shorter to avoid an arrow hanging off the 5` end
+	    const arrowsStart = lineStart + (strand === -1 ? 0 : 3);
+	    const arrowsEnd = lineEnd - (strand === -1 ? 3 : 0);
+	    // Offset determines if the arrows face left or right
+	    const offset = strand === -1 ? 3 : -3;
+	    const arrowRange = strand === -1
+	        ? range(arrowsStart, arrowsEnd, 20)
+	        : range(arrowsEnd, arrowsStart, 20);
+	    for (const arrowLocation of arrowRange) {
+	        ctx.moveTo(arrowLocation + offset, height + offset);
+	        ctx.lineTo(arrowLocation, height);
+	        ctx.lineTo(arrowLocation + offset, height - offset);
+	    }
 	    ctx.stroke();
 	}
 	function drawDragPreview$2(stateModel, overlayCtx) {
@@ -59358,19 +59543,15 @@
 	    const rectY = row * apolloRowHeight;
 	    const rectWidth = Math.abs(current.x - featureEdgePx);
 	    const rectHeight = apolloRowHeight * rowCount;
-	    overlayCtx.strokeStyle = theme?.palette.info.main ?? 'rgb(255,0,0)';
+	    overlayCtx.strokeStyle = theme.palette.info.main;
 	    overlayCtx.setLineDash([6]);
 	    overlayCtx.strokeRect(rectX, rectY, rectWidth, rectHeight);
-	    overlayCtx.fillStyle = material.alpha(theme?.palette.info.main ?? 'rgb(255,0,0)', 0.2);
+	    overlayCtx.fillStyle = material.alpha(theme.palette.info.main, 0.2);
 	    overlayCtx.fillRect(rectX, rectY, rectWidth, rectHeight);
 	}
-	function drawHover$2(stateModel, ctx) {
-	    const { apolloHover, apolloRowHeight, lgv, session, theme } = stateModel;
+	function drawHighlight$1(stateModel, ctx, feature, selected = false) {
+	    const { apolloRowHeight, lgv, session, theme } = stateModel;
 	    const { featureTypeOntology } = session.apolloDataStore.ontologyManager;
-	    if (!apolloHover) {
-	        return;
-	    }
-	    const { feature } = apolloHover;
 	    const position = stateModel.getFeatureLayoutPosition(feature);
 	    if (!position) {
 	        return;
@@ -59388,11 +59569,20 @@
 	    const row = layoutRow + featureRow;
 	    const top = row * apolloRowHeight;
 	    const widthPx = length / bpPerPx;
-	    ctx.fillStyle = theme?.palette.action.selected ?? 'rgba(0,0,0,04)';
+	    ctx.fillStyle = selected
+	        ? theme.palette.action.disabled
+	        : theme.palette.action.focus;
 	    if (!featureTypeOntology) {
 	        throw new Error('featureTypeOntology is undefined');
 	    }
 	    ctx.fillRect(startPx, top, widthPx, apolloRowHeight * getRowCount$1(feature, featureTypeOntology));
+	}
+	function drawHover$2(stateModel, ctx) {
+	    const { hoveredFeature } = stateModel;
+	    if (!hoveredFeature) {
+	        return;
+	    }
+	    drawHighlight$1(stateModel, ctx, hoveredFeature.feature);
 	}
 	function getFeatureFromLayout$1(feature, bp, row, featureTypeOntology) {
 	    const featureInThisRow = featuresForRow$1(feature, featureTypeOntology)[row] || [];
@@ -59516,39 +59706,10 @@
 	    }
 	    return;
 	}
-	function onMouseDown$2(stateModel, currentMousePosition, event) {
-	    const { featureAndGlyphUnderMouse } = currentMousePosition;
-	    // swallow the mouseDown if we are on the edge of the feature so that we
-	    // don't start dragging the view if we try to drag the feature edge
-	    const { feature } = featureAndGlyphUnderMouse;
-	    const draggableFeature = getDraggableFeatureInfo$1(currentMousePosition, feature, stateModel);
-	    if (draggableFeature) {
-	        event.stopPropagation();
-	        stateModel.startDrag(currentMousePosition, draggableFeature.feature, draggableFeature.edge, true);
-	    }
-	}
-	function onMouseMove$2(stateModel, mousePosition) {
-	    if (isMousePositionWithFeatureAndGlyph$1(mousePosition)) {
-	        const { featureAndGlyphUnderMouse } = mousePosition;
-	        stateModel.setApolloHover(featureAndGlyphUnderMouse);
-	        const { feature } = featureAndGlyphUnderMouse;
-	        const draggableFeature = getDraggableFeatureInfo$1(mousePosition, feature, stateModel);
-	        if (draggableFeature) {
-	            stateModel.setCursor('col-resize');
-	            return;
-	        }
-	    }
-	    stateModel.setCursor();
-	}
-	function onMouseUp$2(stateModel, mousePosition) {
+	function selectFeatureAndOpenWidget(stateModel, feature) {
 	    if (stateModel.apolloDragging) {
 	        return;
 	    }
-	    const { featureAndGlyphUnderMouse } = mousePosition;
-	    if (!featureAndGlyphUnderMouse) {
-	        return;
-	    }
-	    const { feature } = featureAndGlyphUnderMouse;
 	    stateModel.setSelectedFeature(feature);
 	    const { session } = stateModel;
 	    const { apolloDataStore } = session;
@@ -59575,6 +59736,38 @@
 	    else {
 	        stateModel.showFeatureDetailsWidget(feature);
 	    }
+	}
+	function onMouseDown$2(stateModel, currentMousePosition, event) {
+	    const { feature } = currentMousePosition;
+	    // swallow the mouseDown if we are on the edge of the feature so that we
+	    // don't start dragging the view if we try to drag the feature edge
+	    const draggableFeature = getDraggableFeatureInfo$1(currentMousePosition, feature, stateModel);
+	    if (draggableFeature) {
+	        event.stopPropagation();
+	        stateModel.startDrag(currentMousePosition, draggableFeature.feature, draggableFeature.edge, true);
+	    }
+	}
+	function onMouseMove$2(stateModel, mousePosition) {
+	    if (isMousePositionWithFeature(mousePosition)) {
+	        const { feature, bp } = mousePosition;
+	        stateModel.setHoveredFeature({ feature, bp });
+	        const draggableFeature = getDraggableFeatureInfo$1(mousePosition, feature, stateModel);
+	        if (draggableFeature) {
+	            stateModel.setCursor('col-resize');
+	            return;
+	        }
+	    }
+	    stateModel.setCursor();
+	}
+	function onMouseUp$2(stateModel, mousePosition) {
+	    if (stateModel.apolloDragging) {
+	        return;
+	    }
+	    const { feature } = mousePosition;
+	    if (!feature) {
+	        return;
+	    }
+	    selectFeatureAndOpenWidget(stateModel, feature);
 	}
 	function getDraggableFeatureInfo$1(mousePosition, feature, stateModel) {
 	    const { session } = stateModel;
@@ -59657,108 +59850,203 @@
 	    }
 	    return featureTypeOntology.isTypeOf(feature.type, 'CDS');
 	}
+	function getAdjacentExons(currentExon, display, mousePosition, session) {
+	    const lgv = require$$1$2.getContainingView(display);
+	    // Genomic coords of current view
+	    const viewGenomicLeft = mousePosition.bp - lgv.bpPerPx * mousePosition.x;
+	    const viewGenomicRight = viewGenomicLeft + lgv.coarseTotalBp;
+	    if (!currentExon.parent) {
+	        return { upstream: undefined, downstream: undefined };
+	    }
+	    const transcript = currentExon.parent;
+	    if (!transcript.children) {
+	        throw new Error(`Error getting children of ${transcript._id}`);
+	    }
+	    const { featureTypeOntology } = session.apolloDataStore.ontologyManager;
+	    if (!featureTypeOntology) {
+	        throw new Error('featureTypeOntology is undefined');
+	    }
+	    let exons = [];
+	    for (const [, child] of transcript.children) {
+	        if (featureTypeOntology.isTypeOf(child.type, 'exon')) {
+	            exons.push(child);
+	        }
+	    }
+	    const adjacentExons = {
+	        upstream: undefined,
+	        downstream: undefined,
+	    };
+	    exons = exons.sort((a, b) => (a.min < b.min ? -1 : 1));
+	    for (const exon of exons) {
+	        if (exon.min > viewGenomicRight) {
+	            adjacentExons.downstream = exon;
+	            break;
+	        }
+	    }
+	    exons = exons.sort((a, b) => (a.min > b.min ? -1 : 1));
+	    for (const exon of exons) {
+	        if (exon.max < viewGenomicLeft) {
+	            adjacentExons.upstream = exon;
+	            break;
+	        }
+	    }
+	    if (transcript.strand === -1) {
+	        const newUpstream = adjacentExons.downstream;
+	        adjacentExons.downstream = adjacentExons.upstream;
+	        adjacentExons.upstream = newUpstream;
+	    }
+	    return adjacentExons;
+	}
+	function getStreamIcon(strand, isUpstream, isFlipped) {
+	    // This is the icon you would use for strand=1, downstream, straight
+	    // (non-flipped) view
+	    let icon = SkipNextRoundedIcon;
+	    if (strand === -1) {
+	        icon = SkipPreviousRoundedIcon;
+	    }
+	    if (isUpstream) {
+	        icon =
+	            icon === SkipPreviousRoundedIcon
+	                ? SkipNextRoundedIcon
+	                : SkipPreviousRoundedIcon;
+	    }
+	    if (isFlipped) {
+	        icon =
+	            icon === SkipPreviousRoundedIcon
+	                ? SkipNextRoundedIcon
+	                : SkipPreviousRoundedIcon;
+	    }
+	    return icon;
+	}
 	function getContextMenuItems$2(display, mousePosition) {
-	    const { apolloInternetAccount: internetAccount, apolloHover, changeManager, regions, selectedFeature, session, } = display;
+	    const { apolloInternetAccount: internetAccount, hoveredFeature, changeManager, regions, selectedFeature, session, } = display;
 	    const [region] = regions;
 	    const currentAssemblyId = display.getAssemblyId(region.assemblyName);
 	    const menuItems = [];
 	    const role = internetAccount ? internetAccount.role : 'admin';
 	    const admin = role === 'admin';
-	    if (!apolloHover) {
+	    if (!hoveredFeature) {
 	        return menuItems;
 	    }
-	    let featuresUnderClick = getFeaturesUnderClick(mousePosition);
-	    if (isCDSFeature(mousePosition.featureAndGlyphUnderMouse.feature, session)) {
-	        featuresUnderClick = getFeaturesUnderClick(mousePosition, true);
-	    }
-	    for (const feature of featuresUnderClick) {
-	        const contextMenuItemsForFeature = boxGlyph.getContextMenuItemsForFeature(display, feature);
-	        if (isExonFeature(feature, session)) {
-	            contextMenuItemsForFeature.push({
-	                label: 'Merge exons',
-	                disabled: !admin,
-	                onClick: () => {
-	                    session.queueDialog((doneCallback) => [
-	                        MergeExons,
-	                        {
-	                            session,
-	                            handleClose: () => {
-	                                doneCallback();
-	                            },
-	                            changeManager,
-	                            sourceFeature: feature,
-	                            sourceAssemblyId: currentAssemblyId,
-	                            selectedFeature,
-	                            setSelectedFeature: (feature) => {
-	                                display.setSelectedFeature(feature);
-	                            },
-	                        },
-	                    ]);
-	                },
-	            }, {
-	                label: 'Split exon',
-	                disabled: !admin,
-	                onClick: () => {
-	                    session.queueDialog((doneCallback) => [
-	                        SplitExon,
-	                        {
-	                            session,
-	                            handleClose: () => {
-	                                doneCallback();
-	                            },
-	                            changeManager,
-	                            sourceFeature: feature,
-	                            sourceAssemblyId: currentAssemblyId,
-	                            selectedFeature,
-	                            setSelectedFeature: (feature) => {
-	                                display.setSelectedFeature(feature);
-	                            },
-	                        },
-	                    ]);
-	                },
-	            });
+	    if (isMousePositionWithFeature(mousePosition)) {
+	        const { bp, feature } = mousePosition;
+	        let featuresUnderClick = getRelatedFeatures(feature, bp);
+	        if (isCDSFeature(feature, session)) {
+	            featuresUnderClick = getRelatedFeatures(feature, bp, true);
 	        }
-	        if (isTranscriptFeature(feature, session)) {
-	            contextMenuItemsForFeature.push({
-	                label: 'Merge transcript',
-	                onClick: () => {
-	                    session.queueDialog((doneCallback) => [
-	                        MergeTranscripts,
-	                        {
-	                            session,
-	                            handleClose: () => {
-	                                doneCallback();
-	                            },
-	                            changeManager,
-	                            sourceFeature: feature,
-	                            sourceAssemblyId: currentAssemblyId,
-	                            selectedFeature,
-	                            setSelectedFeature: (feature) => {
-	                                display.setSelectedFeature(feature);
-	                            },
+	        for (const feature of featuresUnderClick) {
+	            const contextMenuItemsForFeature = boxGlyph.getContextMenuItemsForFeature(display, feature);
+	            if (isExonFeature(feature, session)) {
+	                const adjacentExons = getAdjacentExons(feature, display, mousePosition, session);
+	                const lgv = require$$1$2.getContainingView(display);
+	                if (adjacentExons.upstream) {
+	                    const exon = adjacentExons.upstream;
+	                    contextMenuItemsForFeature.push({
+	                        label: 'Go to upstream exon',
+	                        icon: getStreamIcon(feature.strand, true, lgv.displayedRegions.at(0)?.reversed),
+	                        onClick: () => {
+	                            lgv.navTo(navToFeatureCenter(exon, 0.1, lgv.totalBp));
+	                            selectFeatureAndOpenWidget(display, exon);
 	                        },
-	                    ]);
-	                },
-	            });
-	            if (require$$1$2.isSessionModelWithWidgets(session)) {
+	                    });
+	                }
+	                if (adjacentExons.downstream) {
+	                    const exon = adjacentExons.downstream;
+	                    contextMenuItemsForFeature.push({
+	                        label: 'Go to downstream exon',
+	                        icon: getStreamIcon(feature.strand, false, lgv.displayedRegions.at(0)?.reversed),
+	                        onClick: () => {
+	                            lgv.navTo(navToFeatureCenter(exon, 0.1, lgv.totalBp));
+	                            selectFeatureAndOpenWidget(display, exon);
+	                        },
+	                    });
+	                }
 	                contextMenuItemsForFeature.push({
-	                    label: 'Open transcript details',
+	                    label: 'Merge exons',
+	                    disabled: !admin,
 	                    onClick: () => {
-	                        const apolloTranscriptWidget = session.addWidget('ApolloTranscriptDetails', 'apolloTranscriptDetails', {
-	                            feature,
-	                            assembly: currentAssemblyId,
-	                            changeManager,
-	                            refName: region.refName,
-	                        });
-	                        session.showWidget(apolloTranscriptWidget);
+	                        session.queueDialog((doneCallback) => [
+	                            MergeExons,
+	                            {
+	                                session,
+	                                handleClose: () => {
+	                                    doneCallback();
+	                                },
+	                                changeManager,
+	                                sourceFeature: feature,
+	                                sourceAssemblyId: currentAssemblyId,
+	                                selectedFeature,
+	                                setSelectedFeature: (feature) => {
+	                                    display.setSelectedFeature(feature);
+	                                },
+	                            },
+	                        ]);
+	                    },
+	                }, {
+	                    label: 'Split exon',
+	                    disabled: !admin,
+	                    onClick: () => {
+	                        session.queueDialog((doneCallback) => [
+	                            SplitExon,
+	                            {
+	                                session,
+	                                handleClose: () => {
+	                                    doneCallback();
+	                                },
+	                                changeManager,
+	                                sourceFeature: feature,
+	                                sourceAssemblyId: currentAssemblyId,
+	                                selectedFeature,
+	                                setSelectedFeature: (feature) => {
+	                                    display.setSelectedFeature(feature);
+	                                },
+	                            },
+	                        ]);
 	                    },
 	                });
 	            }
+	            if (isTranscriptFeature(feature, session)) {
+	                contextMenuItemsForFeature.push({
+	                    label: 'Merge transcript',
+	                    onClick: () => {
+	                        session.queueDialog((doneCallback) => [
+	                            MergeTranscripts,
+	                            {
+	                                session,
+	                                handleClose: () => {
+	                                    doneCallback();
+	                                },
+	                                changeManager,
+	                                sourceFeature: feature,
+	                                sourceAssemblyId: currentAssemblyId,
+	                                selectedFeature,
+	                                setSelectedFeature: (feature) => {
+	                                    display.setSelectedFeature(feature);
+	                                },
+	                            },
+	                        ]);
+	                    },
+	                });
+	                if (require$$1$2.isSessionModelWithWidgets(session)) {
+	                    contextMenuItemsForFeature.push({
+	                        label: 'Open transcript details',
+	                        onClick: () => {
+	                            const apolloTranscriptWidget = session.addWidget('ApolloTranscriptDetails', 'apolloTranscriptDetails', {
+	                                feature,
+	                                assembly: currentAssemblyId,
+	                                changeManager,
+	                                refName: region.refName,
+	                            });
+	                            session.showWidget(apolloTranscriptWidget);
+	                        },
+	                    });
+	                }
+	            }
+	            menuItems.push({
+	                label: feature.type,
+	                subMenu: contextMenuItemsForFeature,
+	            });
 	        }
-	        menuItems.push({
-	            label: feature.type,
-	            subMenu: contextMenuItemsForFeature,
-	        });
 	    }
 	    return menuItems;
 	}
@@ -59795,8 +60083,12 @@
 	    return featuresForRow(feature).length;
 	}
 	function draw$1(ctx, feature, row, stateModel, displayedRegionIndex) {
+	    const { selectedFeature } = stateModel;
 	    for (let i = 0; i < getRowCount(feature); i++) {
 	        drawRow(ctx, feature, row + i, row, stateModel, displayedRegionIndex);
+	    }
+	    if (selectedFeature && containsSelectedFeature(feature, selectedFeature)) {
+	        drawHighlight(stateModel, ctx, selectedFeature);
 	    }
 	}
 	function drawRow(ctx, topLevelFeature, row, topRow, stateModel, displayedRegionIndex) {
@@ -59806,7 +60098,7 @@
 	    }
 	}
 	function drawFeature(ctx, feature, row, stateModel, displayedRegionIndex) {
-	    const { apolloRowHeight: heightPx, lgv, session } = stateModel;
+	    const { apolloRowHeight: heightPx, lgv, theme } = stateModel;
 	    const { bpPerPx, displayedRegions, offsetPx } = lgv;
 	    const displayedRegion = displayedRegions[displayedRegionIndex];
 	    const minX = (lgv.bpToPx({
@@ -59815,13 +60107,11 @@
 	        regionNumber: displayedRegionIndex,
 	    })?.offsetPx ?? 0) - offsetPx;
 	    const { reversed } = displayedRegion;
-	    const { apolloSelectedFeature } = session;
 	    const widthPx = feature.length / bpPerPx;
 	    const startPx = reversed ? minX - widthPx : minX;
 	    const top = row * heightPx;
 	    const rowCount = getRowCount(feature);
-	    const isSelected = isSelectedFeature$1(feature, apolloSelectedFeature);
-	    const groupingColor = isSelected ? 'rgba(130,0,0,0.45)' : 'rgba(255,0,0,0.25)';
+	    const groupingColor = material.alpha(theme.palette.background.paper, 0.6);
 	    if (rowCount > 1) {
 	        // draw background that encapsulates all child features
 	        const featureHeight = rowCount * heightPx;
@@ -59829,12 +60119,8 @@
 	    }
 	    boxGlyph.draw(ctx, feature, row, stateModel, displayedRegionIndex);
 	}
-	function drawHover$1(stateModel, ctx) {
-	    const { apolloHover, apolloRowHeight, lgv } = stateModel;
-	    if (!apolloHover) {
-	        return;
-	    }
-	    const { feature } = apolloHover;
+	function drawHighlight(stateModel, ctx, feature, selected = false) {
+	    const { apolloRowHeight, lgv, theme } = stateModel;
 	    const position = stateModel.getFeatureLayoutPosition(feature);
 	    if (!position) {
 	        return;
@@ -59851,8 +60137,17 @@
 	    })?.offsetPx ?? 0) - offsetPx;
 	    const top = (layoutRow + featureRow) * apolloRowHeight;
 	    const widthPx = length / bpPerPx;
-	    ctx.fillStyle = 'rgba(0,0,0,0.2)';
+	    ctx.fillStyle = selected
+	        ? theme.palette.action.disabled
+	        : theme.palette.action.focus;
 	    ctx.fillRect(startPx, top, widthPx, apolloRowHeight * getRowCount(feature));
+	}
+	function drawHover$1(stateModel, ctx) {
+	    const { hoveredFeature } = stateModel;
+	    if (!hoveredFeature) {
+	        return;
+	    }
+	    drawHighlight(stateModel, ctx, hoveredFeature.feature);
 	}
 	function getFeatureFromLayout(feature, bp, row) {
 	    const layoutRow = featuresForRow(feature)[row];
@@ -59868,30 +60163,32 @@
 	    return;
 	}
 	function getContextMenuItems$1(display, mousePosition) {
-	    const { apolloHover, session } = display;
+	    const { hoveredFeature, session } = display;
 	    const menuItems = [];
-	    if (!apolloHover) {
+	    if (!hoveredFeature) {
 	        return menuItems;
 	    }
-	    const { feature: sourceFeature } = apolloHover;
 	    const { featureTypeOntology } = session.apolloDataStore.ontologyManager;
 	    if (!featureTypeOntology) {
 	        throw new Error('featureTypeOntology is undefined');
 	    }
 	    const sourceFeatureMenuItems = boxGlyph.getContextMenuItems(display, mousePosition);
 	    menuItems.push({
-	        label: sourceFeature.type,
+	        label: hoveredFeature.feature.type,
 	        subMenu: sourceFeatureMenuItems,
 	    });
-	    for (const relative of getFeaturesUnderClick(mousePosition)) {
-	        if (relative._id === sourceFeature._id) {
-	            continue;
+	    if (isMousePositionWithFeature(mousePosition)) {
+	        const { bp, feature } = mousePosition;
+	        for (const relative of getRelatedFeatures(feature, bp)) {
+	            if (relative._id === hoveredFeature.feature._id) {
+	                continue;
+	            }
+	            const contextMenuItemsForFeature = boxGlyph.getContextMenuItemsForFeature(display, relative);
+	            menuItems.push({
+	                label: relative.type,
+	                subMenu: contextMenuItemsForFeature,
+	            });
 	        }
-	        const contextMenuItemsForFeature = boxGlyph.getContextMenuItemsForFeature(display, relative);
-	        menuItems.push({
-	            label: relative.type,
-	            subMenu: contextMenuItemsForFeature,
-	        });
 	    }
 	    return menuItems;
 	}
@@ -59938,14 +60235,14 @@
 	    return (React__default["default"].createElement(Dialog, { open: true, maxWidth: false, "data-testid": "filter-features-dialog", title: "Filter features by type", handleClose: handleClose },
 	        React__default["default"].createElement(material.DialogContent, null,
 	            React__default["default"].createElement(material.DialogContentText, null, "Select the feature types you want to display in the apollo track"),
-	            React__default["default"].createElement(material.Grid2, { container: true, spacing: 2 },
-	                React__default["default"].createElement(material.Grid2, { size: 8 },
+	            React__default["default"].createElement(material.Grid, { container: true, spacing: 2 },
+	                React__default["default"].createElement(material.Grid, { size: 8 },
 	                    React__default["default"].createElement(OntologyTermAutocomplete, { session: session, ontologyName: "Sequence Ontology", style: { width: '100%' }, value: type, filterTerms: isOntologyClass, renderInput: (params) => (React__default["default"].createElement(material.TextField, { ...params, label: "Feature type", variant: "outlined", fullWidth: true })), onChange: (oldValue, newValue) => {
 	                            if (newValue) {
 	                                handleChange(newValue);
 	                            }
 	                        } })),
-	                React__default["default"].createElement(material.Grid2, { size: 4 },
+	                React__default["default"].createElement(material.Grid, { size: 4 },
 	                    React__default["default"].createElement(material.Button, { variant: "contained", onClick: handleAddFeatureType, disabled: !type, style: { marginTop: 9 }, size: "medium" }, "Add"))),
 	            selectedFeatureTypes.length > 0 && (React__default["default"].createElement("div", null,
 	                React__default["default"].createElement("hr", null),
@@ -59956,18 +60253,142 @@
 	                        } }))))))))));
 	});
 
-	const minDisplayHeight$1 = 20;
-	function baseModelFactory$1(_pluginManager, configSchema) {
+	const EditZoomThresholdDialog = mobxReact.observer(function ({ model, handleClose, }) {
+	    const [zoomThreshold, setZoomThreshold] = React.useState(`${model.zoomThresholdSetting}`);
+	    return (React__default["default"].createElement(ui.Dialog, { open: true, onClose: handleClose, title: "Edit zoom threshold setting" },
+	        React__default["default"].createElement(material.DialogContent, null,
+	            React__default["default"].createElement(material.Typography, null, "The zoom level in base pairs (bp) per pixel at which features are rendered in this Annotations track. Increasing the value will allow features to render when zooming out, but might impact performance."),
+	            React__default["default"].createElement(material.TextField, { label: "Threshold value (bpPerPx)", value: zoomThreshold, onChange: (event) => {
+	                    setZoomThreshold(event.target.value);
+	                } }),
+	            React__default["default"].createElement(material.DialogActions, null,
+	                React__default["default"].createElement(material.Button, { variant: "contained", onClick: () => {
+	                        model.setZoomThresholdSetting({
+	                            zoomThreshold: +zoomThreshold,
+	                        });
+	                        handleClose();
+	                    } }, "Submit"),
+	                React__default["default"].createElement(material.Button, { variant: "contained", color: "secondary", onClick: () => {
+	                        handleClose();
+	                    } }, "Cancel")))));
+	});
+
+	const useStyles$1 = mui.makeStyles()((theme) => ({
+	    canvasContainer: {
+	        position: 'relative',
+	        left: 0,
+	    },
+	    canvas: {
+	        position: 'absolute',
+	        left: 0,
+	    },
+	    center: {
+	        display: 'flex',
+	        justifyContent: 'center',
+	    },
+	    ellipses: {
+	        textOverflow: 'ellipsis',
+	        overflow: 'hidden',
+	    },
+	    avatar: {
+	        position: 'static',
+	        height: '100%',
+	        width: '100%',
+	        overflow: 'visible',
+	        color: theme.palette.warning.light,
+	        backgroundColor: theme.palette.warning.contrastText,
+	    },
+	    box: {
+	        position: 'absolute',
+	        overflow: 'visible',
+	    },
+	    badge: {
+	        display: 'inline-block',
+	    },
+	    loading: {
+	        position: 'absolute',
+	        right: theme.spacing(3),
+	        zIndex: 10,
+	        pointerEvents: 'none',
+	        textAlign: 'right',
+	    },
+	    locked: {
+	        position: 'absolute',
+	        right: theme.spacing(3),
+	        top: theme.spacing(6),
+	        zIndex: 1,
+	        pointerEvents: 'none',
+	        textAlign: 'right',
+	    },
+	}));
+	function clusterResultByMessage(items, width, touchesAsOverlap) {
+	    const byMsg = new Map();
+	    for (const it of items) {
+	        (byMsg.get(it.message) ?? byMsg.set(it.message, []).get(it.message)).push(it);
+	    }
+	    const clusters = [];
+	    const overlaps = (aEnd, bStart) => touchesAsOverlap ? bStart <= aEnd : bStart < aEnd;
+	    for (const [message, arr] of byMsg.entries()) {
+	        if (arr.length === 0) {
+	            continue;
+	        }
+	        arr.sort((a, b) => a.start - b.start);
+	        let group = [arr[0]];
+	        let curMin = arr[0].start;
+	        let curMax = arr[0].start + width;
+	        const pushResult = () => {
+	            const starts = group.map((d) => d.start).sort((a, b) => a - b);
+	            const mid = Math.floor(starts.length / 2);
+	            const median = starts.length % 2 ? starts[mid] : (starts[mid - 1] + starts[mid]) / 2;
+	            const clusterId = group[0]._id;
+	            const featureIds = group[0].ids;
+	            clusters.push({
+	                _id: clusterId,
+	                message,
+	                start: median,
+	                count: group.length,
+	                members: [...group],
+	                range: { min: curMin, max: curMax },
+	                featureIds,
+	            });
+	        };
+	        for (let i = 1; i < arr.length; i++) {
+	            const it = arr[i];
+	            const itStart = it.start;
+	            const itEnd = itStart + width;
+	            if (overlaps(curMax, itStart)) {
+	                group.push(it);
+	                if (itStart < curMin) {
+	                    curMin = itStart;
+	                }
+	                if (itEnd > curMax) {
+	                    curMax = itEnd;
+	                }
+	            }
+	            else {
+	                pushResult();
+	                group = [it];
+	                curMin = itStart;
+	                curMax = itEnd;
+	            }
+	        }
+	        pushResult();
+	    }
+	    clusters.sort((a, b) => a.message.localeCompare(b.message) || a.start - b.start);
+	    return clusters;
+	}
+
+	const minDisplayHeight$2 = 20;
+	function baseModelFactory$2(_pluginManager, configSchema) {
 	    return pluggableElementTypes.BaseDisplay.named('BaseLinearApolloDisplay')
 	        .props({
 	        type: require$$1$3.types.literal('LinearApolloDisplay'),
 	        configuration: configuration.ConfigurationReference(configSchema),
 	        graphical: true,
 	        table: false,
-	        showStartCodons: false,
-	        showStopCodons: true,
-	        highContrast: false,
-	        heightPreConfig: require$$1$3.types.maybe(require$$1$3.types.refinement('displayHeight', require$$1$3.types.number, (n) => n >= minDisplayHeight$1)),
+	        showCheckResults: true,
+	        zoomThreshold: 200,
+	        heightPreConfig: require$$1$3.types.maybe(require$$1$3.types.refinement('displayHeight', require$$1$3.types.number, (n) => n >= minDisplayHeight$2)),
 	        filteredFeatureTypes: require$$1$3.types.array(require$$1$3.types.string),
 	        loadingState: false,
 	    })
@@ -59995,15 +60416,18 @@
 	                return self.heightPreConfig;
 	            }
 	            if (self.graphical && self.table) {
-	                return 500;
+	                return 400;
 	            }
 	            if (self.graphical) {
-	                return 200;
+	                return 100;
 	            }
-	            return 300;
+	            return 200;
 	        },
 	        get loading() {
 	            return self.loadingState;
+	        },
+	        get zoomThresholdSetting() {
+	            return self.zoomThreshold ?? configuration.getConf(self, 'zoomThreshold');
 	        },
 	    }))
 	        .views((self) => ({
@@ -60023,7 +60447,7 @@
 	            return regions;
 	        },
 	        regionCannotBeRendered( /* region */) {
-	            if (self.lgv && self.lgv.bpPerPx >= 200) {
+	            if (self.lgv && self.lgv.bpPerPx >= self.zoomThreshold) {
 	                return 'Zoom in to see annotations';
 	            }
 	            return;
@@ -60061,13 +60485,17 @@
 	            return self.session
 	                .apolloSelectedFeature;
 	        },
+	        get hoveredFeature() {
+	            return self.session
+	                .apolloHoveredFeature;
+	        },
 	    }))
 	        .actions((self) => ({
 	        setScrollTop(scrollTop) {
 	            self.scrollTop = scrollTop;
 	        },
 	        setHeight(displayHeight) {
-	            self.heightPreConfig = Math.max(displayHeight, minDisplayHeight$1);
+	            self.heightPreConfig = Math.max(displayHeight, minDisplayHeight$2);
 	            return self.height;
 	        },
 	        resizeHeight(distance) {
@@ -60087,14 +60515,8 @@
 	            self.graphical = true;
 	            self.table = true;
 	        },
-	        toggleShowStartCodons() {
-	            self.showStartCodons = !self.showStartCodons;
-	        },
-	        toggleShowStopCodons() {
-	            self.showStopCodons = !self.showStopCodons;
-	        },
-	        toggleHighContrast() {
-	            self.highContrast = !self.highContrast;
+	        toggleShowCheckResults() {
+	            self.showCheckResults = !self.showCheckResults;
 	        },
 	        updateFilteredFeatureTypes(types) {
 	            self.filteredFeatureTypes = require$$1$3.cast(types);
@@ -60102,12 +60524,15 @@
 	        setLoading(loading) {
 	            self.loadingState = loading;
 	        },
+	        setZoomThresholdSetting({ zoomThreshold }) {
+	            self.zoomThreshold = zoomThreshold;
+	        },
 	    }))
 	        .views((self) => {
 	        const { filteredFeatureTypes, trackMenuItems: superTrackMenuItems } = self;
 	        return {
 	            trackMenuItems() {
-	                const { graphical, table, showStartCodons, showStopCodons, highContrast, } = self;
+	                const { graphical, table, showCheckResults } = self;
 	                return [
 	                    ...superTrackMenuItems(),
 	                    {
@@ -60139,27 +60564,20 @@
 	                                },
 	                            },
 	                            {
-	                                label: 'Show start codons',
+	                                label: 'Check Results',
 	                                type: 'checkbox',
-	                                checked: showStartCodons,
+	                                checked: showCheckResults,
 	                                onClick: () => {
-	                                    self.toggleShowStartCodons();
+	                                    self.toggleShowCheckResults();
 	                                },
 	                            },
 	                            {
-	                                label: 'Show stop codons',
-	                                type: 'checkbox',
-	                                checked: showStopCodons,
+	                                label: 'Change zoom threshold',
 	                                onClick: () => {
-	                                    self.toggleShowStopCodons();
-	                                },
-	                            },
-	                            {
-	                                label: 'Use high contrast colors',
-	                                type: 'checkbox',
-	                                checked: highContrast,
-	                                onClick: () => {
-	                                    self.toggleHighContrast();
+	                                    require$$1$2.getSession(self).queueDialog((handleClose) => [
+	                                        EditZoomThresholdDialog,
+	                                        { model: self, handleClose },
+	                                    ]);
 	                                },
 	                            },
 	                        ],
@@ -60190,6 +60608,9 @@
 	        .actions((self) => ({
 	        setSelectedFeature(feature) {
 	            self.session.apolloSetSelectedFeature(feature);
+	        },
+	        setHoveredFeature(hoveredFeature) {
+	            self.session.apolloSetHoveredFeature(hoveredFeature);
 	        },
 	        showFeatureDetailsWidget(feature, customWidgetNameAndId) {
 	            const [region] = self.regions;
@@ -60225,9 +60646,6 @@
 	                        self.setLoading(false);
 	                    }, 1000);
 	                });
-	                if (self.lgv.bpPerPx <= 3) {
-	                    void self.session.apolloDataStore.loadRefSeq(self.regions);
-	                }
 	            }, { name: 'LinearApolloDisplayLoadFeatures', delay: 1000 }));
 	        },
 	    }));
@@ -60256,7 +60674,7 @@
 	    return true;
 	}
 	function layoutsModelFactory$1(pluginManager, configSchema) {
-	    const BaseLinearApolloDisplay = baseModelFactory$1(pluginManager, configSchema);
+	    const BaseLinearApolloDisplay = baseModelFactory$2(pluginManager, configSchema);
 	    return BaseLinearApolloDisplay.named('LinearApolloDisplayLayouts')
 	        .props({
 	        cleanupBoundary: 200_000,
@@ -60269,10 +60687,11 @@
 	            return self.seenFeatures.get(id);
 	        },
 	        getGlyph(feature) {
-	            if (feature.looksLikeGene) {
+	            const { topLevelFeature } = feature;
+	            if (topLevelFeature.looksLikeGene) {
 	                return geneGlyph$1;
 	            }
-	            if (feature.children?.size) {
+	            if (topLevelFeature.children?.size) {
 	                return genericChildGlyph;
 	            }
 	            return boxGlyph;
@@ -60430,11 +60849,10 @@
 	    }));
 	}
 
-	function renderingModelIntermediateFactory$1(pluginManager, configSchema) {
+	function renderingModelFactory$2(pluginManager, configSchema) {
 	    const LinearApolloDisplayLayouts = layoutsModelFactory$1(pluginManager, configSchema);
 	    return LinearApolloDisplayLayouts.named('LinearApolloDisplayRendering')
 	        .props({
-	        sequenceRowHeight: 15,
 	        apolloRowHeight: 20,
 	        detailsMinHeight: 200,
 	        detailsHeight: 200,
@@ -60446,9 +60864,7 @@
 	        canvas: null,
 	        overlayCanvas: null,
 	        collaboratorCanvas: null,
-	        seqTrackCanvas: null,
-	        seqTrackOverlayCanvas: null,
-	        theme: undefined,
+	        theme: material.createTheme(),
 	    }))
 	        .views((self) => ({
 	        get featuresHeight() {
@@ -60474,15 +60890,11 @@
 	        setCollaboratorCanvas(canvas) {
 	            self.collaboratorCanvas = canvas;
 	        },
-	        setSeqTrackCanvas(canvas) {
-	            self.seqTrackCanvas = canvas;
-	        },
-	        setSeqTrackOverlayCanvas(canvas) {
-	            self.seqTrackOverlayCanvas = canvas;
-	        },
 	        setTheme(theme) {
 	            self.theme = theme;
 	        },
+	    }))
+	        .actions((self) => ({
 	        afterAttach() {
 	            require$$1$3.addDisposer(self, mobx.autorun(() => {
 	                if (!self.lgv.initialized || self.regionCannotBeRendered()) {
@@ -60524,11 +60936,453 @@
 	                    }
 	                }
 	            }, { name: 'LinearApolloDisplayRenderCollaborators' }));
+	            require$$1$3.addDisposer(self, mobx.autorun(() => {
+	                const { canvas, featureLayouts, featuresHeight, lgv } = self;
+	                if (!lgv.initialized || self.regionCannotBeRendered()) {
+	                    return;
+	                }
+	                const { displayedRegions, dynamicBlocks } = lgv;
+	                const ctx = canvas?.getContext('2d');
+	                if (!ctx) {
+	                    return;
+	                }
+	                ctx.clearRect(0, 0, dynamicBlocks.totalWidthPx, featuresHeight);
+	                for (const [idx, featureLayout] of featureLayouts.entries()) {
+	                    const displayedRegion = displayedRegions[idx];
+	                    for (const [row, featureLayoutRow] of featureLayout.entries()) {
+	                        for (const [featureRow, featureId] of featureLayoutRow) {
+	                            const feature = self.getAnnotationFeatureById(featureId);
+	                            if (featureRow > 0 || !feature) {
+	                                continue;
+	                            }
+	                            if (!require$$1$2.doesIntersect2(displayedRegion.start, displayedRegion.end, feature.min, feature.max)) {
+	                                continue;
+	                            }
+	                            self.getGlyph(feature).draw(ctx, feature, row, self, idx);
+	                        }
+	                    }
+	                }
+	            }, { name: 'LinearApolloDisplayRenderFeatures' }));
 	        },
 	    }));
 	}
+
+	function mouseEventsModelIntermediateFactory$1(pluginManager, configSchema) {
+	    const LinearApolloDisplayRendering = renderingModelFactory$2(pluginManager, configSchema);
+	    return LinearApolloDisplayRendering.named('LinearApolloDisplayMouseEvents')
+	        .volatile(() => ({
+	        apolloDragging: null,
+	        cursor: undefined,
+	    }))
+	        .views((self) => ({
+	        getMousePosition(event) {
+	            const mousePosition = getMousePosition(event, self.lgv);
+	            const { bp, regionNumber, y } = mousePosition;
+	            const row = Math.floor(y / self.apolloRowHeight);
+	            const featureLayout = self.featureLayouts[regionNumber];
+	            const layoutRow = featureLayout.get(row);
+	            if (!layoutRow) {
+	                return mousePosition;
+	            }
+	            const foundFeature = layoutRow.find((f) => {
+	                const feature = self.getAnnotationFeatureById(f[1]);
+	                return feature && bp >= feature.min && bp <= feature.max;
+	            });
+	            if (!foundFeature) {
+	                return mousePosition;
+	            }
+	            const [featureRow, topLevelFeatureId] = foundFeature;
+	            const topLevelFeature = self.getAnnotationFeatureById(topLevelFeatureId);
+	            if (!topLevelFeature) {
+	                return mousePosition;
+	            }
+	            const glyph = self.getGlyph(topLevelFeature);
+	            const { featureTypeOntology } = self.session.apolloDataStore.ontologyManager;
+	            if (!featureTypeOntology) {
+	                throw new Error('featureTypeOntology is undefined');
+	            }
+	            const feature = glyph.getFeatureFromLayout(topLevelFeature, bp, featureRow, featureTypeOntology);
+	            if (!feature) {
+	                return mousePosition;
+	            }
+	            return {
+	                ...mousePosition,
+	                feature,
+	            };
+	        },
+	    }))
+	        .actions((self) => ({
+	        continueDrag(mousePosition, event) {
+	            if (!self.apolloDragging) {
+	                throw new Error('continueDrag() called with no current drag in progress');
+	            }
+	            event.stopPropagation();
+	            self.apolloDragging = { ...self.apolloDragging, current: mousePosition };
+	        },
+	        setDragging(dragInfo) {
+	            self.apolloDragging = dragInfo ?? null;
+	        },
+	    }))
+	        .actions((self) => ({
+	        setCursor(cursor) {
+	            if (self.cursor !== cursor) {
+	                self.cursor = cursor;
+	            }
+	        },
+	        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+	        updateFilteredTranscripts(forms) {
+	            return;
+	        },
+	    }))
+	        .actions(() => ({
+	        // onClick(event: CanvasMouseEvent) {
+	        onClick() {
+	            // TODO: set the selected feature
+	        },
+	    }));
+	}
+	function mouseEventsModelFactory$1(pluginManager, configSchema) {
+	    const LinearApolloDisplayMouseEvents = mouseEventsModelIntermediateFactory$1(pluginManager, configSchema);
+	    return LinearApolloDisplayMouseEvents.views((self) => ({
+	        contextMenuItems(event) {
+	            const { hoveredFeature } = self;
+	            if (!hoveredFeature) {
+	                return [];
+	            }
+	            const mousePosition = self.getMousePosition(event);
+	            const { topLevelFeature } = hoveredFeature.feature;
+	            const glyph = self.getGlyph(topLevelFeature);
+	            if (isMousePositionWithFeature(mousePosition)) {
+	                return glyph.getContextMenuItems(self, mousePosition);
+	            }
+	            return [];
+	        },
+	    }))
+	        .actions((self) => ({
+	        // explicitly pass in a feature in case it's not the same as the one in
+	        // mousePosition (e.g. if features are drawn overlapping).
+	        startDrag(mousePosition, feature, edge, shrinkParent = false) {
+	            self.apolloDragging = {
+	                start: mousePosition,
+	                current: mousePosition,
+	                feature,
+	                edge,
+	                shrinkParent,
+	            };
+	        },
+	        endDrag() {
+	            if (!self.apolloDragging) {
+	                throw new Error('endDrag() called with no current drag in progress');
+	            }
+	            const { current, edge, feature, start, shrinkParent } = self.apolloDragging;
+	            // don't do anything if it was only dragged a tiny bit
+	            if (Math.abs(current.x - start.x) <= 4) {
+	                self.setDragging();
+	                self.setCursor();
+	                return;
+	            }
+	            const { displayedRegions } = self.lgv;
+	            const region = displayedRegions[start.regionNumber];
+	            const assembly = self.getAssemblyId(region.assemblyName);
+	            const changes = getPropagatedLocationChanges(feature, current.bp, edge, shrinkParent);
+	            const change = edge === 'max'
+	                ? new dist$2.LocationEndChange({
+	                    typeName: 'LocationEndChange',
+	                    changedIds: changes.map((c) => c.featureId),
+	                    changes: changes.map((c) => ({
+	                        featureId: c.featureId,
+	                        oldEnd: c.oldLocation,
+	                        newEnd: c.newLocation,
+	                    })),
+	                    assembly,
+	                })
+	                : new dist$2.LocationStartChange({
+	                    typeName: 'LocationStartChange',
+	                    changedIds: changes.map((c) => c.featureId),
+	                    changes: changes.map((c) => ({
+	                        featureId: c.featureId,
+	                        oldStart: c.oldLocation,
+	                        newStart: c.newLocation,
+	                    })),
+	                    assembly,
+	                });
+	            void self.changeManager.submit(change);
+	            self.setDragging();
+	            self.setCursor();
+	        },
+	    }))
+	        .actions((self) => ({
+	        onMouseDown(event) {
+	            const mousePosition = self.getMousePosition(event);
+	            if (isMousePositionWithFeature(mousePosition)) {
+	                const glyph = self.getGlyph(mousePosition.feature);
+	                glyph.onMouseDown(self, mousePosition, event);
+	            }
+	        },
+	        onMouseMove(event) {
+	            const mousePosition = self.getMousePosition(event);
+	            if (self.apolloDragging) {
+	                self.setCursor('col-resize');
+	                self.continueDrag(mousePosition, event);
+	                return;
+	            }
+	            if (isMousePositionWithFeature(mousePosition)) {
+	                const glyph = self.getGlyph(mousePosition.feature);
+	                glyph.onMouseMove(self, mousePosition, event);
+	            }
+	            else {
+	                self.setHoveredFeature();
+	                self.setCursor();
+	            }
+	        },
+	        onMouseLeave(event) {
+	            self.setDragging();
+	            self.setHoveredFeature();
+	            const mousePosition = self.getMousePosition(event);
+	            if (isMousePositionWithFeature(mousePosition)) {
+	                const glyph = self.getGlyph(mousePosition.feature);
+	                glyph.onMouseLeave(self, mousePosition, event);
+	            }
+	        },
+	        onMouseUp(event) {
+	            const mousePosition = self.getMousePosition(event);
+	            if (isMousePositionWithFeature(mousePosition)) {
+	                const glyph = self.getGlyph(mousePosition.feature);
+	                glyph.onMouseUp(self, mousePosition, event);
+	            }
+	            else {
+	                self.setSelectedFeature();
+	            }
+	            if (self.apolloDragging) {
+	                self.endDrag();
+	            }
+	        },
+	    }))
+	        .actions((self) => ({
+	        afterAttach() {
+	            require$$1$3.addDisposer(self, mobx.autorun(() => {
+	                // This type is wrong in @jbrowse/core
+	                // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+	                if (!self.lgv.initialized || self.regionCannotBeRendered()) {
+	                    return;
+	                }
+	                const ctx = self.overlayCanvas?.getContext('2d');
+	                if (!ctx) {
+	                    return;
+	                }
+	                ctx.clearRect(0, 0, self.lgv.dynamicBlocks.totalWidthPx, self.featuresHeight);
+	                const { apolloDragging, hoveredFeature } = self;
+	                if (!hoveredFeature) {
+	                    return;
+	                }
+	                const glyph = self.getGlyph(hoveredFeature.feature);
+	                // draw mouseover hovers
+	                glyph.drawHover(self, ctx);
+	                // draw tooltip on hover
+	                glyph.drawTooltip(self, ctx);
+	                // dragging previews
+	                if (apolloDragging) {
+	                    // NOTE: the glyph where the drag started is responsible for drawing the preview.
+	                    // it can call methods in other glyphs to help with this though.
+	                    const glyph = self.getGlyph(apolloDragging.feature.topLevelFeature);
+	                    glyph.drawDragPreview(self, ctx);
+	                }
+	            }, { name: 'LinearApolloDisplayRenderMouseoverAndDrag' }));
+	        },
+	    }));
+	}
+
+	function stateModelFactory$2(pluginManager, configSchema) {
+	    // TODO: this needs to be refactored so that the final composition of the
+	    // state model mixins happens here in one central place
+	    return mouseEventsModelFactory$1(pluginManager, configSchema)
+	        .props({ tabularEditor: require$$1$3.types.optional(TabularEditorStateModelType, {}) })
+	        .named('LinearApolloDisplay');
+	}
+
+	const configSchema$1 = configuration.ConfigurationSchema('LinearApolloReferenceSequenceDisplay', {}, { explicitIdentifier: 'displayId', explicitlyTyped: true });
+
+	const minDisplayHeight$1 = 20;
+	function baseModelFactory$1(_pluginManager, configSchema) {
+	    return pluggableElementTypes.BaseDisplay.named('BaseLinearApolloReferenceSequenceDisplay')
+	        .props({
+	        type: require$$1$3.types.literal('LinearApolloReferenceSequenceDisplay'),
+	        configuration: configuration.ConfigurationReference(configSchema),
+	        showStartCodons: false,
+	        showStopCodons: true,
+	        highContrast: false,
+	        heightPreConfig: require$$1$3.types.maybe(require$$1$3.types.refinement('displayHeight', require$$1$3.types.number, (n) => n >= minDisplayHeight$1)),
+	        sequenceRowHeight: 15,
+	    })
+	        .views((self) => {
+	        const { configuration, renderProps: superRenderProps } = self;
+	        return {
+	            renderProps() {
+	                return {
+	                    ...superRenderProps(),
+	                    ...tracks.getParentRenderProps(self),
+	                    config: configuration.renderer,
+	                };
+	            },
+	        };
+	    })
+	        .views((self) => ({
+	        get lgv() {
+	            return require$$1$2.getContainingView(self);
+	        },
+	    }))
+	        .views((self) => ({
+	        get rendererTypeName() {
+	            return self.configuration.renderer.type;
+	        },
+	        get session() {
+	            return require$$1$2.getSession(self);
+	        },
+	        get regions() {
+	            const regions = self.lgv.dynamicBlocks.contentBlocks.map(({ assemblyName, end, refName, start }) => ({
+	                assemblyName,
+	                refName,
+	                start: Math.round(start),
+	                end: Math.round(end),
+	            }));
+	            return regions;
+	        },
+	        regionCannotBeRendered( /* region */) {
+	            if (self.lgv && self.lgv.bpPerPx >= 3) {
+	                return 'Zoom in to see sequence';
+	            }
+	            return;
+	        },
+	    }))
+	        .views((self) => ({
+	        get apolloInternetAccount() {
+	            const [region] = self.regions;
+	            const { internetAccounts } = require$$1$3.getRoot(self);
+	            const { assemblyName } = region;
+	            const { assemblyManager } = self.session;
+	            const assembly = assemblyManager.get(assemblyName);
+	            if (!assembly) {
+	                throw new Error(`No assembly found with name ${assemblyName}`);
+	            }
+	            const { internetAccountConfigId } = configuration.getConf(assembly, [
+	                'sequence',
+	                'metadata',
+	            ]);
+	            return internetAccounts.find((ia) => configuration.getConf(ia, 'internetAccountId') === internetAccountConfigId);
+	        },
+	        get changeManager() {
+	            return self.session.apolloDataStore
+	                .changeManager;
+	        },
+	        getAssemblyId(assemblyName) {
+	            const { assemblyManager } = self.session;
+	            const assembly = assemblyManager.get(assemblyName);
+	            if (!assembly) {
+	                throw new Error(`Could not find assembly named ${assemblyName}`);
+	            }
+	            return assembly.name;
+	        },
+	        get selectedFeature() {
+	            return self.session
+	                .apolloSelectedFeature;
+	        },
+	        get hoveredFeature() {
+	            return self.session
+	                .apolloHoveredFeature;
+	        },
+	        get height() {
+	            const { sequenceRowHeight } = self;
+	            return self.lgv.bpPerPx <= 1
+	                ? sequenceRowHeight * 8
+	                : sequenceRowHeight * 6;
+	        },
+	    }))
+	        .volatile(() => ({
+	        scrollTop: 0,
+	    }))
+	        .actions((self) => ({
+	        setScrollTop(scrollTop) {
+	            self.scrollTop = scrollTop;
+	        },
+	        setHeight(displayHeight) {
+	            self.heightPreConfig = Math.max(displayHeight, minDisplayHeight$1);
+	            return self.height;
+	        },
+	        resizeHeight(distance) {
+	            const oldHeight = self.height;
+	            const newHeight = this.setHeight(self.height + distance);
+	            return newHeight - oldHeight;
+	        },
+	        toggleShowStartCodons() {
+	            self.showStartCodons = !self.showStartCodons;
+	        },
+	        toggleShowStopCodons() {
+	            self.showStopCodons = !self.showStopCodons;
+	        },
+	        toggleHighContrast() {
+	            self.highContrast = !self.highContrast;
+	        },
+	    }))
+	        .views((self) => {
+	        const { trackMenuItems: superTrackMenuItems } = self;
+	        return {
+	            trackMenuItems() {
+	                const { showStartCodons, showStopCodons, highContrast } = self;
+	                return [
+	                    ...superTrackMenuItems(),
+	                    {
+	                        type: 'subMenu',
+	                        label: 'Appearance',
+	                        subMenu: [
+	                            {
+	                                label: 'Show start codons',
+	                                type: 'checkbox',
+	                                checked: showStartCodons,
+	                                onClick: () => {
+	                                    self.toggleShowStartCodons();
+	                                },
+	                            },
+	                            {
+	                                label: 'Show stop codons',
+	                                type: 'checkbox',
+	                                checked: showStopCodons,
+	                                onClick: () => {
+	                                    self.toggleShowStopCodons();
+	                                },
+	                            },
+	                            {
+	                                label: 'Use high contrast colors',
+	                                type: 'checkbox',
+	                                checked: highContrast,
+	                                onClick: () => {
+	                                    self.toggleHighContrast();
+	                                },
+	                            },
+	                        ],
+	                    },
+	                ];
+	            },
+	        };
+	    })
+	        .actions((self) => ({
+	        afterAttach() {
+	            require$$1$3.addDisposer(self, mobx.autorun(() => {
+	                if (!self.lgv.initialized || self.regionCannotBeRendered()) {
+	                    return;
+	                }
+	                if (self.lgv.bpPerPx <= 3) {
+	                    void self.session.apolloDataStore.loadRefSeq(self.regions);
+	                }
+	            }, {
+	                name: 'LinearApolloReferenceSequenceDisplayLoadFeatures',
+	                delay: 1000,
+	            }));
+	        },
+	    }));
+	}
+
 	function colorCode(letter, theme) {
-	    return (theme?.palette.bases[letter.toUpperCase()].main.toString() ?? 'lightgray');
+	    return (theme.palette.bases[letter.toUpperCase()].main.toString() ?? 'lightgray');
 	}
 	function codonColorCode(letter, highContrast) {
 	    const colorMap = {
@@ -60575,9 +61429,59 @@
 	        drawLetter(seqTrackctx, trnslStartPx, trnslWidthPx, codonLetter, trnslY);
 	    }
 	}
-	function sequenceRenderingModelFactory(pluginManager, configSchema) {
-	    const LinearApolloDisplayRendering = renderingModelIntermediateFactory$1(pluginManager, configSchema);
-	    return LinearApolloDisplayRendering.actions((self) => ({
+	function getTranslationRow(frame, bpPerPx) {
+	    const offset = bpPerPx <= 1 ? 2 : 0;
+	    switch (frame) {
+	        case 3: {
+	            return 0;
+	        }
+	        case 2: {
+	            return 1;
+	        }
+	        case 1: {
+	            return 2;
+	        }
+	        case -1: {
+	            return 3 + offset;
+	        }
+	        case -2: {
+	            return 4 + offset;
+	        }
+	        case -3: {
+	            return 5 + offset;
+	        }
+	    }
+	}
+	function getSeqRow(strand, bpPerPx) {
+	    if (bpPerPx > 1 || strand === undefined) {
+	        return;
+	    }
+	    return strand === 1 ? 3 : 4;
+	}
+	function highlightSeq(seqTrackOverlayctx, theme, startPx, sequenceRowHeight, row, widthPx) {
+	    if (row !== undefined) {
+	        seqTrackOverlayctx.fillStyle = theme.palette.action.focus;
+	        seqTrackOverlayctx.fillRect(startPx, sequenceRowHeight * row, widthPx, sequenceRowHeight);
+	    }
+	}
+	function renderingModelFactory$1(pluginManager, configSchema) {
+	    const BaseLinearApolloReferenceSequenceDisplay = baseModelFactory$1(pluginManager, configSchema);
+	    return BaseLinearApolloReferenceSequenceDisplay.named('LinearApolloReferenceSequenceDisplayRendering')
+	        .volatile(() => ({
+	        seqTrackCanvas: null,
+	        seqTrackOverlayCanvas: null,
+	        theme: material.createTheme(),
+	    }))
+	        .actions((self) => ({
+	        setSeqTrackCanvas(canvas) {
+	            self.seqTrackCanvas = canvas;
+	        },
+	        setSeqTrackOverlayCanvas(canvas) {
+	            self.seqTrackOverlayCanvas = canvas;
+	        },
+	        setTheme(theme) {
+	            self.theme = theme;
+	        },
 	        afterAttach() {
 	            require$$1$3.addDisposer(self, mobx.autorun(() => {
 	                const { theme } = self;
@@ -60592,7 +61496,7 @@
 	                if (!seqTrackctx) {
 	                    return;
 	                }
-	                seqTrackctx.clearRect(0, 0, self.lgv.dynamicBlocks.totalWidthPx, self.lgv.bpPerPx <= 1 ? 125 : 95);
+	                seqTrackctx.clearRect(0, 0, self.lgv.dynamicBlocks.totalWidthPx, self.height);
 	                const frames = self.lgv.bpPerPx <= 1
 	                    ? [3, 2, 1, 0, 0, -1, -2, -3]
 	                    : [3, 2, 1, -1, -2, -3];
@@ -60679,178 +61583,8 @@
 	                        }
 	                    }
 	                }
-	            }, { name: 'LinearApolloDisplayRenderSequence' }));
-	        },
-	    }));
-	}
-	function renderingModelFactory$1(pluginManager, configSchema) {
-	    const LinearApolloDisplayRendering = sequenceRenderingModelFactory(pluginManager, configSchema);
-	    return LinearApolloDisplayRendering.actions((self) => ({
-	        afterAttach() {
+	            }, { name: 'LinearApolloReferenceSequenceDisplayRenderSequence' }));
 	            require$$1$3.addDisposer(self, mobx.autorun(() => {
-	                const { canvas, featureLayouts, featuresHeight, lgv } = self;
-	                if (!lgv.initialized || self.regionCannotBeRendered()) {
-	                    return;
-	                }
-	                const { displayedRegions, dynamicBlocks } = lgv;
-	                const ctx = canvas?.getContext('2d');
-	                if (!ctx) {
-	                    return;
-	                }
-	                ctx.clearRect(0, 0, dynamicBlocks.totalWidthPx, featuresHeight);
-	                for (const [idx, featureLayout] of featureLayouts.entries()) {
-	                    const displayedRegion = displayedRegions[idx];
-	                    for (const [row, featureLayoutRow] of featureLayout.entries()) {
-	                        for (const [featureRow, featureId] of featureLayoutRow) {
-	                            const feature = self.getAnnotationFeatureById(featureId);
-	                            if (featureRow > 0 || !feature) {
-	                                continue;
-	                            }
-	                            if (!require$$1$2.doesIntersect2(displayedRegion.start, displayedRegion.end, feature.min, feature.max)) {
-	                                continue;
-	                            }
-	                            self.getGlyph(feature).draw(ctx, feature, row, self, idx);
-	                        }
-	                    }
-	                }
-	            }, { name: 'LinearApolloDisplayRenderFeatures' }));
-	        },
-	    }));
-	}
-
-	function isMousePositionWithFeatureAndGlyph$1(mousePosition) {
-	    return 'featureAndGlyphUnderMouse' in mousePosition;
-	}
-	function getMousePosition$1(event, lgv) {
-	    const canvas = event.currentTarget;
-	    const { clientX, clientY } = event;
-	    const { left, top } = canvas.getBoundingClientRect();
-	    const x = clientX - left;
-	    const y = clientY - top;
-	    const { coord: bp, index: regionNumber, refName } = lgv.pxToBp(x);
-	    return { x, y, refName, bp, regionNumber };
-	}
-	function getTranslationRow(frame, bpPerPx) {
-	    const offset = bpPerPx <= 1 ? 2 : 0;
-	    switch (frame) {
-	        case 3: {
-	            return 0;
-	        }
-	        case 2: {
-	            return 1;
-	        }
-	        case 1: {
-	            return 2;
-	        }
-	        case -1: {
-	            return 3 + offset;
-	        }
-	        case -2: {
-	            return 4 + offset;
-	        }
-	        case -3: {
-	            return 5 + offset;
-	        }
-	    }
-	}
-	function getSeqRow(strand, bpPerPx) {
-	    if (bpPerPx > 1 || strand === undefined) {
-	        return;
-	    }
-	    return strand === 1 ? 3 : 4;
-	}
-	function highlightSeq(seqTrackOverlayctx, theme, startPx, sequenceRowHeight, row, widthPx) {
-	    if (row !== undefined) {
-	        seqTrackOverlayctx.fillStyle =
-	            theme?.palette.action.focus ?? 'rgba(0,0,0,0.04)';
-	        seqTrackOverlayctx.fillRect(startPx, sequenceRowHeight * row, widthPx, sequenceRowHeight);
-	    }
-	}
-	function mouseEventsModelIntermediateFactory$1(pluginManager, configSchema) {
-	    const LinearApolloDisplayRendering = renderingModelFactory$1(pluginManager, configSchema);
-	    return LinearApolloDisplayRendering.named('LinearApolloDisplayMouseEvents')
-	        .volatile(() => ({
-	        apolloDragging: null,
-	        cursor: undefined,
-	        apolloHover: undefined,
-	    }))
-	        .views((self) => ({
-	        getMousePosition(event) {
-	            const mousePosition = getMousePosition$1(event, self.lgv);
-	            const { bp, regionNumber, y } = mousePosition;
-	            const row = Math.floor(y / self.apolloRowHeight);
-	            const featureLayout = self.featureLayouts[regionNumber];
-	            const layoutRow = featureLayout.get(row);
-	            if (!layoutRow) {
-	                return mousePosition;
-	            }
-	            const foundFeature = layoutRow.find((f) => {
-	                const feature = self.getAnnotationFeatureById(f[1]);
-	                return feature && bp >= feature.min && bp <= feature.max;
-	            });
-	            if (!foundFeature) {
-	                return mousePosition;
-	            }
-	            const [featureRow, topLevelFeatureId] = foundFeature;
-	            const topLevelFeature = self.getAnnotationFeatureById(topLevelFeatureId);
-	            if (!topLevelFeature) {
-	                return mousePosition;
-	            }
-	            const glyph = self.getGlyph(topLevelFeature);
-	            const { featureTypeOntology } = self.session.apolloDataStore.ontologyManager;
-	            if (!featureTypeOntology) {
-	                throw new Error('featureTypeOntology is undefined');
-	            }
-	            const feature = glyph.getFeatureFromLayout(topLevelFeature, bp, featureRow, featureTypeOntology);
-	            if (!feature) {
-	                return mousePosition;
-	            }
-	            return {
-	                ...mousePosition,
-	                featureAndGlyphUnderMouse: { feature, topLevelFeature, glyph },
-	            };
-	        },
-	    }))
-	        .actions((self) => ({
-	        continueDrag(mousePosition, event) {
-	            if (!self.apolloDragging) {
-	                throw new Error('continueDrag() called with no current drag in progress');
-	            }
-	            event.stopPropagation();
-	            self.apolloDragging = { ...self.apolloDragging, current: mousePosition };
-	        },
-	        setDragging(dragInfo) {
-	            self.apolloDragging = dragInfo ?? null;
-	        },
-	    }))
-	        .actions((self) => ({
-	        setApolloHover(n) {
-	            self.apolloHover = n;
-	        },
-	        setCursor(cursor) {
-	            if (self.cursor !== cursor) {
-	                self.cursor = cursor;
-	            }
-	        },
-	        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-	        updateFilteredTranscripts(forms) {
-	            return;
-	        },
-	    }))
-	        .actions(() => ({
-	        // onClick(event: CanvasMouseEvent) {
-	        onClick() {
-	            // TODO: set the selected feature
-	        },
-	    }));
-	}
-	function mouseEventsSeqHightlightModelFactory(pluginManager, configSchema) {
-	    const LinearApolloDisplayRendering = mouseEventsModelIntermediateFactory$1(pluginManager, configSchema);
-	    return LinearApolloDisplayRendering.actions((self) => ({
-	        afterAttach() {
-	            require$$1$3.addDisposer(self, mobx.autorun(() => {
-	                // This type is wrong in @jbrowse/core
-	                // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
 	                if (!self.lgv.initialized || self.regionCannotBeRendered()) {
 	                    return;
 	                }
@@ -60858,12 +61592,12 @@
 	                if (!seqTrackOverlayctx) {
 	                    return;
 	                }
-	                seqTrackOverlayctx.clearRect(0, 0, self.lgv.dynamicBlocks.totalWidthPx, self.lgv.bpPerPx <= 1 ? 125 : 95);
-	                const { apolloHover, lgv, regions, sequenceRowHeight, session, theme, } = self;
-	                if (!apolloHover) {
+	                seqTrackOverlayctx.clearRect(0, 0, self.lgv.dynamicBlocks.totalWidthPx, self.height);
+	                const { hoveredFeature, lgv, regions, sequenceRowHeight, session, theme, } = self;
+	                if (!hoveredFeature) {
 	                    return;
 	                }
-	                const { feature } = apolloHover;
+	                const { feature } = hoveredFeature;
 	                const { featureTypeOntology } = session.apolloDataStore.ontologyManager;
 	                if (!featureTypeOntology) {
 	                    throw new Error('featureTypeOntology is undefined');
@@ -60912,160 +61646,43 @@
 	        },
 	    }));
 	}
-	function mouseEventsModelFactory$1(pluginManager, configSchema) {
-	    const LinearApolloDisplayMouseEvents = mouseEventsSeqHightlightModelFactory(pluginManager, configSchema);
-	    return LinearApolloDisplayMouseEvents.views((self) => ({
-	        contextMenuItems(event) {
-	            const { apolloHover } = self;
-	            if (!apolloHover) {
-	                return [];
-	            }
-	            const mousePosition = self.getMousePosition(event);
-	            const { topLevelFeature } = apolloHover;
-	            const glyph = self.getGlyph(topLevelFeature);
-	            if (isMousePositionWithFeatureAndGlyph$1(mousePosition)) {
-	                return glyph.getContextMenuItems(self, mousePosition);
-	            }
-	            return [];
-	        },
-	    }))
-	        .actions((self) => ({
-	        // explicitly pass in a feature in case it's not the same as the one in
-	        // mousePosition (e.g. if features are drawn overlapping).
-	        startDrag(mousePosition, feature, edge, shrinkParent = false) {
-	            self.apolloDragging = {
-	                start: mousePosition,
-	                current: mousePosition,
-	                feature,
-	                edge,
-	                shrinkParent,
-	            };
-	        },
-	        endDrag() {
-	            if (!self.apolloDragging) {
-	                throw new Error('endDrag() called with no current drag in progress');
-	            }
-	            const { current, edge, feature, start, shrinkParent } = self.apolloDragging;
-	            // don't do anything if it was only dragged a tiny bit
-	            if (Math.abs(current.x - start.x) <= 4) {
-	                self.setDragging();
-	                self.setCursor();
-	                return;
-	            }
-	            const { displayedRegions } = self.lgv;
-	            const region = displayedRegions[start.regionNumber];
-	            const assembly = self.getAssemblyId(region.assemblyName);
-	            const changes = getPropagatedLocationChanges(feature, current.bp, edge, shrinkParent);
-	            const change = edge === 'max'
-	                ? new dist$2.LocationEndChange({
-	                    typeName: 'LocationEndChange',
-	                    changedIds: changes.map((c) => c.featureId),
-	                    changes: changes.map((c) => ({
-	                        featureId: c.featureId,
-	                        oldEnd: c.oldLocation,
-	                        newEnd: c.newLocation,
-	                    })),
-	                    assembly,
-	                })
-	                : new dist$2.LocationStartChange({
-	                    typeName: 'LocationStartChange',
-	                    changedIds: changes.map((c) => c.featureId),
-	                    changes: changes.map((c) => ({
-	                        featureId: c.featureId,
-	                        oldStart: c.oldLocation,
-	                        newStart: c.newLocation,
-	                    })),
-	                    assembly,
-	                });
-	            void self.changeManager.submit(change);
-	            self.setDragging();
-	            self.setCursor();
-	        },
-	    }))
-	        .actions((self) => ({
-	        onMouseDown(event) {
-	            const mousePosition = self.getMousePosition(event);
-	            if (isMousePositionWithFeatureAndGlyph$1(mousePosition)) {
-	                mousePosition.featureAndGlyphUnderMouse.glyph.onMouseDown(self, mousePosition, event);
-	            }
-	        },
-	        onMouseMove(event) {
-	            const mousePosition = self.getMousePosition(event);
-	            if (self.apolloDragging) {
-	                self.setCursor('col-resize');
-	                self.continueDrag(mousePosition, event);
-	                return;
-	            }
-	            if (isMousePositionWithFeatureAndGlyph$1(mousePosition)) {
-	                mousePosition.featureAndGlyphUnderMouse.glyph.onMouseMove(self, mousePosition, event);
-	            }
-	            else {
-	                self.setApolloHover();
-	                self.setCursor();
-	            }
-	        },
-	        onMouseLeave(event) {
-	            self.setDragging();
-	            self.setApolloHover();
-	            const mousePosition = self.getMousePosition(event);
-	            if (isMousePositionWithFeatureAndGlyph$1(mousePosition)) {
-	                mousePosition.featureAndGlyphUnderMouse.glyph.onMouseLeave(self, mousePosition, event);
-	            }
-	        },
-	        onMouseUp(event) {
-	            const mousePosition = self.getMousePosition(event);
-	            if (isMousePositionWithFeatureAndGlyph$1(mousePosition)) {
-	                mousePosition.featureAndGlyphUnderMouse.glyph.onMouseUp(self, mousePosition, event);
-	            }
-	            else {
-	                self.setSelectedFeature();
-	            }
-	            if (self.apolloDragging) {
-	                self.endDrag();
-	            }
-	        },
-	    }))
-	        .actions((self) => ({
-	        afterAttach() {
-	            require$$1$3.addDisposer(self, mobx.autorun(() => {
-	                // This type is wrong in @jbrowse/core
-	                // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-	                if (!self.lgv.initialized || self.regionCannotBeRendered()) {
-	                    return;
-	                }
-	                const ctx = self.overlayCanvas?.getContext('2d');
-	                if (!ctx) {
-	                    return;
-	                }
-	                ctx.clearRect(0, 0, self.lgv.dynamicBlocks.totalWidthPx, self.featuresHeight);
-	                const { apolloDragging, apolloHover } = self;
-	                if (!apolloHover) {
-	                    return;
-	                }
-	                const { glyph } = apolloHover;
-	                // draw mouseover hovers
-	                glyph.drawHover(self, ctx);
-	                // draw tooltip on hover
-	                glyph.drawTooltip(self, ctx);
-	                // dragging previews
-	                if (apolloDragging) {
-	                    // NOTE: the glyph where the drag started is responsible for drawing the preview.
-	                    // it can call methods in other glyphs to help with this though.
-	                    const glyph = self.getGlyph(apolloDragging.feature.topLevelFeature);
-	                    glyph.drawDragPreview(self, ctx);
-	                }
-	            }, { name: 'LinearApolloDisplayRenderMouseoverAndDrag' }));
-	        },
-	    }));
-	}
 
 	function stateModelFactory$1(pluginManager, configSchema) {
 	    // TODO: this needs to be refactored so that the final composition of the
 	    // state model mixins happens here in one central place
-	    return mouseEventsModelFactory$1(pluginManager, configSchema)
-	        .props({ tabularEditor: require$$1$3.types.optional(TabularEditorStateModelType, {}) })
-	        .named('LinearApolloDisplay');
+	    return renderingModelFactory$1(pluginManager, configSchema).named('LinearApolloReferenceSequenceDisplay');
 	}
+
+	/* eslint-disable @typescript-eslint/unbound-method */
+	const LinearApolloReferenceSequenceDisplay = mobxReact.observer(function LinearApolloReferenceSequenceDisplay(props) {
+	    const theme = material.useTheme();
+	    const { model } = props;
+	    const { height, regionCannotBeRendered, setSeqTrackCanvas, setSeqTrackOverlayCanvas, setTheme, } = model;
+	    const { classes } = useStyles$1();
+	    React.useEffect(() => {
+	        setTheme(theme);
+	    }, [theme, setTheme]);
+	    const lgv = require$$1$2.getContainingView(model);
+	    const message = regionCannotBeRendered();
+	    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+	    if (message) {
+	        return (React__default["default"].createElement(material.Alert, { severity: "warning", classes: { message: classes.ellipses }, slotProps: { root: { className: classes.center } } },
+	            React__default["default"].createElement(material.Tooltip, { title: message },
+	                React__default["default"].createElement("div", null, message))));
+	    }
+	    return (React__default["default"].createElement(React__default["default"].Fragment, null, 3 / lgv.bpPerPx >= 1 ? (React__default["default"].createElement("div", { className: classes.canvasContainer, style: {
+	            width: lgv.dynamicBlocks.totalWidthPx,
+	            height,
+	        } },
+	        React__default["default"].createElement("canvas", { ref: async (node) => {
+	                await Promise.resolve();
+	                setSeqTrackCanvas(node);
+	            }, width: lgv.dynamicBlocks.totalWidthPx, height: height, className: classes.canvas, "data-testid": "seqTrackCanvas" }),
+	        React__default["default"].createElement("canvas", { ref: async (node) => {
+	                await Promise.resolve();
+	                setSeqTrackOverlayCanvas(node);
+	            }, width: lgv.dynamicBlocks.totalWidthPx, height: height, className: classes.canvas, "data-testid": "seqTrackOverlayCanvas" }))) : null));
+	});
 
 	const configSchema = configuration.ConfigurationSchema('LinearApolloSixFrameDisplay', {}, { explicitIdentifier: 'displayId', explicitlyTyped: true });
 
@@ -61092,13 +61709,13 @@
 	    return (React__default["default"].createElement(Dialog, { open: true, maxWidth: false, "data-testid": "filter-transcripts-dialog", title: "Filter transcripts by ID", handleClose: handleClose },
 	        React__default["default"].createElement(material.DialogContent, null,
 	            React__default["default"].createElement(material.DialogContentText, null, "Select the alternate transcripts you want to display in the apollo track"),
-	            React__default["default"].createElement(material.Grid2, { container: true, spacing: 2 },
-	                React__default["default"].createElement(material.Grid2, { size: 8 },
+	            React__default["default"].createElement(material.Grid, { container: true, spacing: 2 },
+	                React__default["default"].createElement(material.Grid, { size: 8 },
 	                    React__default["default"].createElement(material.FormGroup, null, allTranscripts.map((item) => (
 	                    // eslint-disable-next-line react/jsx-key
 	                    React__default["default"].createElement(material.FormControlLabel, { control: React__default["default"].createElement(material.Checkbox, { checked: !excludedTranscripts.includes(item), onChange: () => {
 	                                handleChange(item);
-	                            }, inputProps: { 'aria-label': 'controlled' } }), label: item })))))))));
+	                            }, slotProps: { input: { 'aria-label': 'controlled' } } }), label: item })))))))));
 	});
 
 	let forwardFillLight = null;
@@ -61177,7 +61794,7 @@
 	    }
 	}
 	function draw(ctx, topLevelFeature, _row, stateModel, displayedRegionIndex) {
-	    const { apolloRowHeight, lgv, session, theme, highestRow, filteredTranscripts, showFeatureLabels, } = stateModel;
+	    const { apolloRowHeight, lgv, session, theme, highestRow, filteredTranscripts, selectedFeature, showFeatureLabels, } = stateModel;
 	    const { bpPerPx, displayedRegions, offsetPx } = lgv;
 	    const displayedRegion = displayedRegions[displayedRegionIndex];
 	    const { refName, reversed } = displayedRegion;
@@ -61186,12 +61803,11 @@
 	    const cdsHeight = rowHeight;
 	    const topLevelFeatureHeight = rowHeight;
 	    const featureLabelSpacer = showFeatureLabels ? 2 : 1;
-	    const textColor = theme?.palette.text.primary ?? 'black';
+	    const textColor = theme.palette.text.primary;
 	    const { attributes, children, min, strand } = topLevelFeature;
 	    if (!children) {
 	        return;
 	    }
-	    const { apolloSelectedFeature } = session;
 	    const { apolloDataStore } = session;
 	    const { featureTypeOntology } = apolloDataStore.ontologyManager;
 	    if (!featureTypeOntology) {
@@ -61210,13 +61826,13 @@
 	        : topLevelFeatureMinX;
 	    const topLevelRow = (strand == 1 ? 3 : 4) * featureLabelSpacer;
 	    const topLevelFeatureTop = topLevelRow * rowHeight;
-	    ctx.fillStyle = theme?.palette.text.primary ?? 'black';
+	    ctx.fillStyle = theme.palette.text.primary;
 	    ctx.fillRect(topLevelFeatureStartPx, topLevelFeatureTop, topLevelFeatureWidthPx, topLevelFeatureHeight);
-	    ctx.fillStyle = isSelectedFeature(topLevelFeature, apolloSelectedFeature)
+	    ctx.fillStyle = isSelectedFeature(topLevelFeature, selectedFeature)
 	        ? material.alpha('rgb(0,0,0)', 0.7)
-	        : material.alpha(theme?.palette.background.paper ?? '#ffffff', 0.7);
+	        : material.alpha(theme.palette.background.paper, 0.7);
 	    ctx.fillRect(topLevelFeatureStartPx + 1, topLevelFeatureTop + 1, topLevelFeatureWidthPx - 2, topLevelFeatureHeight - 2);
-	    const isSelected = isSelectedFeature(topLevelFeature, apolloSelectedFeature);
+	    const isSelected = isSelectedFeature(topLevelFeature, selectedFeature);
 	    const label = {
 	        x: topLevelFeatureStartPx,
 	        y: topLevelFeatureTop,
@@ -61231,8 +61847,8 @@
 	    else {
 	        labelArray.push(label);
 	    }
-	    const forwardFill = theme?.palette.mode === 'dark' ? forwardFillDark : forwardFillLight;
-	    const backwardFill = theme?.palette.mode === 'dark' ? backwardFillDark : backwardFillLight;
+	    const forwardFill = theme.palette.mode === 'dark' ? forwardFillDark : forwardFillLight;
+	    const backwardFill = theme.palette.mode === 'dark' ? backwardFillDark : backwardFillLight;
 	    const reversal = reversed ? -1 : 1;
 	    let topFill = null, bottomFill = null;
 	    if (strand) {
@@ -61276,8 +61892,8 @@
 	            const widthPx = exon.length / bpPerPx;
 	            const startPx = reversed ? minX - widthPx : minX;
 	            const exonTop = topLevelFeatureTop + (topLevelFeatureHeight - exonHeight) / 2;
-	            const isSelected = isSelectedFeature(exon, apolloSelectedFeature);
-	            ctx.fillStyle = theme?.palette.text.primary ?? 'black';
+	            const isSelected = isSelectedFeature(exon, selectedFeature);
+	            ctx.fillStyle = theme.palette.text.primary;
 	            ctx.fillRect(startPx, exonTop, widthPx, exonHeight);
 	            if (widthPx > 2) {
 	                ctx.clearRect(startPx + 1, exonTop + 1, widthPx - 2, exonHeight - 2);
@@ -61305,7 +61921,7 @@
 	                }
 	            }
 	        }
-	        const isSelected = isSelectedFeature(child, apolloSelectedFeature?.parent);
+	        const isSelected = isSelectedFeature(child, selectedFeature?.parent);
 	        let cdsStartPx = 0;
 	        let cdsTop = 0;
 	        for (const cdsRow of cdsLocations) {
@@ -61313,9 +61929,9 @@
 	            let prevCDSEndPx = 0;
 	            let counter = 1;
 	            for (const cds of cdsRow.sort((a, b) => a.max - b.max)) {
-	                if ((apolloSelectedFeature &&
+	                if ((selectedFeature &&
 	                    isSelected &&
-	                    featureTypeOntology.isTypeOf(apolloSelectedFeature.type, 'CDS')) ||
+	                    featureTypeOntology.isTypeOf(selectedFeature.type, 'CDS')) ||
 	                    !deepSetHas(renderedCDS, cds)) {
 	                    const cdsWidthPx = (cds.max - cds.min) / bpPerPx;
 	                    const minX = (lgv.bpToPx({
@@ -61324,20 +61940,20 @@
 	                        regionNumber: displayedRegionIndex,
 	                    })?.offsetPx ?? 0) - offsetPx;
 	                    cdsStartPx = reversed ? minX - cdsWidthPx : minX;
-	                    ctx.fillStyle = theme?.palette.text.primary ?? 'black';
+	                    ctx.fillStyle = theme.palette.text.primary;
 	                    const frame = require$$1$2.getFrame(cds.min, cds.max, child.strand ?? 1, cds.phase);
 	                    const frameAdjust = (frame < 0 ? -1 * frame + 5 : frame) * featureLabelSpacer;
 	                    cdsTop = (frameAdjust - featureLabelSpacer) * rowHeight;
 	                    ctx.fillRect(cdsStartPx, cdsTop, cdsWidthPx, cdsHeight);
 	                    if (cdsWidthPx > 2) {
 	                        ctx.clearRect(cdsStartPx + 1, cdsTop + 1, cdsWidthPx - 2, cdsHeight - 2);
-	                        const frameColor = theme?.palette.framesCDS.at(frame)?.main;
+	                        const frameColor = theme.palette.framesCDS.at(frame)?.main;
 	                        const cdsColorCode = frameColor ?? 'rgb(171,71,188)';
 	                        ctx.fillStyle = cdsColorCode;
 	                        ctx.fillStyle =
-	                            apolloSelectedFeature &&
+	                            selectedFeature &&
 	                                isSelected &&
-	                                featureTypeOntology.isTypeOf(apolloSelectedFeature.type, 'CDS')
+	                                featureTypeOntology.isTypeOf(selectedFeature.type, 'CDS')
 	                                ? 'rgb(0,0,0)'
 	                                : cdsColorCode;
 	                        ctx.fillRect(cdsStartPx + 1, cdsTop + 1, cdsWidthPx - 2, cdsHeight - 2);
@@ -61411,23 +62027,23 @@
 	    const rectY = row * apolloRowHeight;
 	    const rectWidth = Math.abs(current.x - featureEdgePx);
 	    const rectHeight = apolloRowHeight * rowCount;
-	    overlayCtx.strokeStyle = theme?.palette.info.main ?? 'rgb(255,0,0)';
+	    overlayCtx.strokeStyle = theme.palette.info.main;
 	    overlayCtx.setLineDash([6]);
 	    overlayCtx.strokeRect(rectX, rectY, rectWidth, rectHeight);
-	    overlayCtx.fillStyle = material.alpha(theme?.palette.info.main ?? 'rgb(255,0,0)', 0.2);
+	    overlayCtx.fillStyle = material.alpha(theme.palette.info.main, 0.2);
 	    overlayCtx.fillRect(rectX, rectY, rectWidth, rectHeight);
 	}
 	function drawHover(stateModel, ctx) {
-	    const { apolloHover, apolloRowHeight, filteredTranscripts, lgv, highestRow, session, showFeatureLabels, } = stateModel;
-	    if (!apolloHover) {
+	    const { hoveredFeature, apolloRowHeight, filteredTranscripts, lgv, highestRow, session, showFeatureLabels, } = stateModel;
+	    if (!hoveredFeature) {
 	        return;
 	    }
+	    const { feature } = hoveredFeature;
 	    const { apolloDataStore } = session;
 	    const { featureTypeOntology } = apolloDataStore.ontologyManager;
 	    if (!featureTypeOntology) {
 	        throw new Error('featureTypeOntology is undefined');
 	    }
-	    const { feature } = apolloHover;
 	    if (!featureTypeOntology.isTypeOf(feature.type, 'transcript')) {
 	        return;
 	    }
@@ -61492,22 +62108,20 @@
 	    }
 	}
 	function onMouseDown(stateModel, currentMousePosition, event) {
-	    const { featureAndGlyphUnderMouse } = currentMousePosition;
+	    const { feature } = currentMousePosition;
 	    // swallow the mouseDown if we are on the edge of the feature so that we
 	    // don't start dragging the view if we try to drag the feature edge
-	    const { cds, feature } = featureAndGlyphUnderMouse;
-	    const draggableFeature = getDraggableFeatureInfo(currentMousePosition, cds, feature, stateModel);
+	    const draggableFeature = getDraggableFeatureInfo(currentMousePosition, feature, stateModel);
 	    if (draggableFeature) {
 	        event.stopPropagation();
 	        stateModel.startDrag(currentMousePosition, draggableFeature.feature, draggableFeature.edge, true);
 	    }
 	}
 	function onMouseMove(stateModel, mousePosition) {
-	    if (isMousePositionWithFeatureAndGlyph(mousePosition)) {
-	        const { featureAndGlyphUnderMouse } = mousePosition;
-	        stateModel.setApolloHover(featureAndGlyphUnderMouse);
-	        const { cds, feature } = featureAndGlyphUnderMouse;
-	        const draggableFeature = getDraggableFeatureInfo(mousePosition, cds, feature, stateModel);
+	    if (isMousePositionWithFeature(mousePosition)) {
+	        const { feature, bp } = mousePosition;
+	        stateModel.setHoveredFeature({ feature, bp });
+	        const draggableFeature = getDraggableFeatureInfo(mousePosition, feature, stateModel);
 	        if (draggableFeature) {
 	            stateModel.setCursor('col-resize');
 	            return;
@@ -61519,42 +62133,37 @@
 	    if (stateModel.apolloDragging) {
 	        return;
 	    }
-	    const { featureAndGlyphUnderMouse } = mousePosition;
-	    const { session } = stateModel;
-	    const { apolloDataStore } = session;
-	    const { featureTypeOntology } = apolloDataStore.ontologyManager;
-	    if (!featureAndGlyphUnderMouse) {
-	        return;
-	    }
-	    const { feature } = featureAndGlyphUnderMouse;
-	    stateModel.setSelectedFeature(feature);
-	    if (!featureTypeOntology) {
-	        throw new Error('featureTypeOntology is undefined');
-	    }
-	    let containsCDSOrExon = false;
-	    for (const [, child] of feature.children ?? []) {
-	        if (featureTypeOntology.isTypeOf(child.type, 'CDS') ||
-	            featureTypeOntology.isTypeOf(child.type, 'exon')) {
-	            containsCDSOrExon = true;
-	            break;
+	    if (isMousePositionWithFeature(mousePosition)) {
+	        const { feature } = mousePosition;
+	        const { session } = stateModel;
+	        const { apolloDataStore } = session;
+	        const { featureTypeOntology } = apolloDataStore.ontologyManager;
+	        stateModel.setSelectedFeature(feature);
+	        if (!featureTypeOntology) {
+	            throw new Error('featureTypeOntology is undefined');
+	        }
+	        let containsCDSOrExon = false;
+	        for (const [, child] of feature.children ?? []) {
+	            if (featureTypeOntology.isTypeOf(child.type, 'CDS') ||
+	                featureTypeOntology.isTypeOf(child.type, 'exon')) {
+	                containsCDSOrExon = true;
+	                break;
+	            }
+	        }
+	        if ((featureTypeOntology.isTypeOf(feature.type, 'transcript') ||
+	            featureTypeOntology.isTypeOf(feature.type, 'pseudogenic_transcript')) &&
+	            containsCDSOrExon) {
+	            stateModel.showFeatureDetailsWidget(feature, [
+	                'ApolloTranscriptDetails',
+	                'apolloTranscriptDetails',
+	            ]);
+	        }
+	        else {
+	            stateModel.showFeatureDetailsWidget(feature);
 	        }
 	    }
-	    if ((featureTypeOntology.isTypeOf(feature.type, 'transcript') ||
-	        featureTypeOntology.isTypeOf(feature.type, 'pseudogenic_transcript')) &&
-	        containsCDSOrExon) {
-	        stateModel.showFeatureDetailsWidget(feature, [
-	            'ApolloTranscriptDetails',
-	            'apolloTranscriptDetails',
-	        ]);
-	    }
-	    else {
-	        stateModel.showFeatureDetailsWidget(feature);
-	    }
 	}
-	function isSelectedFeature(feature, selectedFeature) {
-	    return Boolean(selectedFeature && feature._id === selectedFeature._id);
-	}
-	function getDraggableFeatureInfo(mousePosition, cds, feature, stateModel) {
+	function getDraggableFeatureInfo(mousePosition, feature, stateModel) {
 	    const { filteredTranscripts, session } = stateModel;
 	    const { apolloDataStore } = session;
 	    const { featureTypeOntology } = apolloDataStore.ontologyManager;
@@ -61562,9 +62171,6 @@
 	        throw new Error('featureTypeOntology is undefined');
 	    }
 	    const isTranscript = featureTypeOntology.isTypeOf(feature.type, 'transcript');
-	    if (cds === null) {
-	        return;
-	    }
 	    const featureID = feature.attributes
 	        .get('gff_id')
 	        ?.toString();
@@ -61605,16 +62211,20 @@
 	            }
 	        }
 	        // End of special cases, let's see if we're on the edge of this CDS or exon
-	        const minMax = getMinAndMaxPx(cds, refName, regionNumber, lgv);
-	        if (minMax) {
-	            const overlappingCDS = cdsChildren.find((child) => {
-	                const [start, end] = require$$1$2.intersection2(bp, bp + 1, child.min, child.max);
-	                return start !== undefined && end !== undefined;
-	            });
-	            if (overlappingCDS) {
-	                const overlappingEdge = getOverlappingEdge(overlappingCDS, x, minMax);
-	                if (overlappingEdge) {
-	                    return overlappingEdge;
+	        for (const loc of transcript.cdsLocations) {
+	            for (const cds of loc) {
+	                const minMax = getMinAndMaxPx(cds, refName, regionNumber, lgv);
+	                if (minMax) {
+	                    const overlappingCDS = cdsChildren.find((child) => {
+	                        const [start, end] = require$$1$2.intersection2(bp, bp + 1, child.min, child.max);
+	                        return start !== undefined && end !== undefined;
+	                    });
+	                    if (overlappingCDS) {
+	                        const overlappingEdge = getOverlappingEdge(overlappingCDS, x, minMax);
+	                        if (overlappingEdge) {
+	                            return overlappingEdge;
+	                        }
+	                    }
 	                }
 	            }
 	        }
@@ -61622,21 +62232,25 @@
 	    return;
 	}
 	function drawTooltip(display, context) {
-	    const { apolloHover, apolloRowHeight, filteredTranscripts, lgv, theme } = display;
-	    if (!apolloHover) {
+	    const { hoveredFeature, apolloRowHeight, filteredTranscripts, lgv, session, showFeatureLabels, theme, } = display;
+	    if (!hoveredFeature) {
 	        return;
 	    }
-	    const { cds, feature } = apolloHover;
-	    if (!cds) {
+	    const { feature, bp } = hoveredFeature;
+	    const { featureTypeOntology } = session.apolloDataStore.ontologyManager;
+	    if (!featureTypeOntology) {
+	        throw new Error('featureTypeOntology is undefined');
+	    }
+	    const isTranscript = featureTypeOntology.isTypeOf(feature.type, 'transcript');
+	    if (!isTranscript) {
 	        return;
 	    }
+	    const { attributes, strand, type } = feature;
 	    const position = display.getFeatureLayoutPosition(feature);
 	    if (!position) {
 	        return;
 	    }
-	    const featureID = feature.attributes
-	        .get('gff_id')
-	        ?.toString();
+	    const featureID = attributes.get('gff_id')?.toString();
 	    if (featureID && filteredTranscripts.includes(featureID)) {
 	        return;
 	    }
@@ -61646,8 +62260,20 @@
 	    const { refName, reversed } = displayedRegion;
 	    const rowHeight = apolloRowHeight;
 	    const cdsHeight = Math.round(0.7 * rowHeight);
+	    const featureLabelSpacer = showFeatureLabels ? 2 : 1;
 	    let location = 'Loc: ';
-	    const { strand } = feature;
+	    let cds = undefined;
+	    for (const loc of feature.cdsLocations) {
+	        for (const cdsLoc of loc) {
+	            if (bp >= cdsLoc.min && bp <= cdsLoc.max) {
+	                cds = cdsLoc;
+	                break;
+	            }
+	        }
+	    }
+	    if (!cds) {
+	        return;
+	    }
 	    const { max, min, phase } = cds;
 	    location += `${min + 1}–${max}`;
 	    let startPx = (lgv.bpToPx({
@@ -61656,133 +62282,133 @@
 	        regionNumber: layoutIndex,
 	    })?.offsetPx ?? 0) - offsetPx;
 	    const frame = require$$1$2.getFrame(min, max, strand ?? 1, phase);
-	    const frameAdjust = frame < 0 ? -1 * frame + 5 : frame;
-	    const cdsTop = (frameAdjust - 1) * rowHeight + (rowHeight - cdsHeight) / 2;
+	    const frameAdjust = (frame < 0 ? -1 * frame + 5 : frame) * featureLabelSpacer;
+	    const cdsTop = (frameAdjust - featureLabelSpacer) * rowHeight + (rowHeight - cdsHeight) / 2;
 	    const cdsWidthPx = (max - min) / bpPerPx;
 	    const featureType = `Type: ${cds.type}`;
-	    const { attributes } = feature;
 	    const featureName = attributes.get('gff_name')?.find((name) => name !== '');
 	    const textWidth = [
 	        context.measureText(featureType).width,
 	        context.measureText(location).width,
 	    ];
 	    if (featureName) {
-	        textWidth.push(context.measureText(`Parent Type: ${feature.type}`).width, context.measureText(`Parent Name: ${featureName}`).width);
+	        textWidth.push(context.measureText(`Parent Type: ${type}`).width, context.measureText(`Parent Name: ${featureName}`).width);
 	    }
 	    const maxWidth = Math.max(...textWidth);
 	    startPx = startPx + cdsWidthPx + 5;
-	    context.fillStyle = material.alpha(theme?.palette.text.primary ?? 'rgb(1, 1, 1)', 0.7);
+	    context.fillStyle = material.alpha(theme.palette.text.primary, 0.7);
 	    context.fillRect(startPx, cdsTop, maxWidth + 4, textWidth.length === 4 ? 55 : 35);
 	    context.beginPath();
 	    context.moveTo(startPx, cdsTop);
 	    context.lineTo(startPx - 5, cdsTop + 5);
 	    context.lineTo(startPx, cdsTop + 10);
 	    context.fill();
-	    context.fillStyle = theme?.palette.background.default ?? 'rgba(255, 255, 255)';
+	    context.fillStyle = theme.palette.background.default;
 	    let textTop = cdsTop + 12;
 	    context.fillText(featureType, startPx + 2, textTop);
 	    if (featureName) {
 	        textTop = textTop + 12;
-	        context.fillText(`Parent Type: ${feature.type}`, startPx + 2, textTop);
+	        context.fillText(`Parent Type: ${type}`, startPx + 2, textTop);
 	        textTop = textTop + 12;
 	        context.fillText(`Parent Name: ${featureName}`, startPx + 2, textTop);
 	    }
 	    textTop = textTop + 12;
 	    context.fillText(location, startPx + 2, textTop);
 	}
-	function getContextMenuItems(display) {
-	    const { apolloHover, apolloInternetAccount: internetAccount, changeManager, filteredTranscripts, regions, selectedFeature, session, } = display;
+	function getContextMenuItems(display, mousePosition) {
+	    const { apolloInternetAccount: internetAccount, hoveredFeature, changeManager, filteredTranscripts, regions, selectedFeature, session, } = display;
+	    const [region] = regions;
+	    const currentAssemblyId = display.getAssemblyId(region.assemblyName);
 	    const menuItems = [];
-	    if (!apolloHover) {
-	        return menuItems;
-	    }
-	    const { feature: sourceFeature } = apolloHover;
 	    const role = internetAccount ? internetAccount.role : 'admin';
 	    const admin = role === 'admin';
-	    const readOnly = !(role && ['admin', 'user'].includes(role));
-	    const [region] = regions;
-	    const sourceAssemblyId = display.getAssemblyId(region.assemblyName);
-	    const currentAssemblyId = display.getAssemblyId(region.assemblyName);
-	    menuItems.push({
-	        label: 'Add child feature',
-	        disabled: readOnly,
-	        onClick: () => {
-	            session.queueDialog((doneCallback) => [
-	                AddChildFeature,
-	                {
-	                    session,
-	                    handleClose: () => {
-	                        doneCallback();
-	                    },
-	                    changeManager,
-	                    sourceFeature,
-	                    sourceAssemblyId,
-	                    internetAccount,
-	                },
-	            ]);
-	        },
-	    }, {
-	        label: 'Copy features and annotations',
-	        disabled: readOnly,
-	        onClick: () => {
-	            session.queueDialog((doneCallback) => [
-	                CopyFeature,
-	                {
-	                    session,
-	                    handleClose: () => {
-	                        doneCallback();
-	                    },
-	                    changeManager,
-	                    sourceFeature,
-	                    sourceAssemblyId: currentAssemblyId,
-	                },
-	            ]);
-	        },
-	    }, {
-	        label: 'Delete feature',
-	        disabled: !admin,
-	        onClick: () => {
-	            session.queueDialog((doneCallback) => [
-	                DeleteFeature,
-	                {
-	                    session,
-	                    handleClose: () => {
-	                        doneCallback();
-	                    },
-	                    changeManager,
-	                    sourceFeature,
-	                    sourceAssemblyId: currentAssemblyId,
-	                    selectedFeature,
-	                    setSelectedFeature: (feature) => {
-	                        display.setSelectedFeature(feature);
-	                    },
-	                },
-	            ]);
-	        },
-	    });
+	    if (!hoveredFeature) {
+	        return menuItems;
+	    }
 	    const { featureTypeOntology } = session.apolloDataStore.ontologyManager;
 	    if (!featureTypeOntology) {
 	        throw new Error('featureTypeOntology is undefined');
 	    }
-	    if (featureTypeOntology.isTypeOf(sourceFeature.type, 'gene')) {
-	        menuItems.push({
-	            label: 'Filter alternate transcripts',
-	            onClick: () => {
-	                session.queueDialog((doneCallback) => [
-	                    FilterTranscripts,
-	                    {
-	                        handleClose: () => {
-	                            doneCallback();
-	                        },
-	                        sourceFeature,
-	                        filteredTranscripts: require$$1$3.getSnapshot(filteredTranscripts),
-	                        onUpdate: (forms) => {
-	                            display.updateFilteredTranscripts(forms);
-	                        },
+	    if (isMousePositionWithFeature(mousePosition)) {
+	        const { bp, feature } = mousePosition;
+	        for (const relatedFeature of getRelatedFeatures(feature, bp)) {
+	            const featureID = relatedFeature.attributes
+	                .get('gff_id')
+	                ?.toString();
+	            if (featureID && filteredTranscripts.includes(featureID)) {
+	                continue;
+	            }
+	            const contextMenuItemsForFeature = getContextMenuItemsForFeature$2(display, relatedFeature);
+	            if (featureTypeOntology.isTypeOf(relatedFeature.type, 'exon')) {
+	                contextMenuItemsForFeature.push({
+	                    label: 'Merge exons',
+	                    disabled: !admin,
+	                    onClick: () => {
+	                        session.queueDialog((doneCallback) => [
+	                            MergeExons,
+	                            {
+	                                session,
+	                                handleClose: () => {
+	                                    doneCallback();
+	                                },
+	                                changeManager,
+	                                sourceFeature: relatedFeature,
+	                                sourceAssemblyId: currentAssemblyId,
+	                                selectedFeature,
+	                                setSelectedFeature: (feature) => {
+	                                    display.setSelectedFeature(feature);
+	                                },
+	                            },
+	                        ]);
 	                    },
-	                ]);
-	            },
-	        });
+	                }, {
+	                    label: 'Split exon',
+	                    disabled: !admin,
+	                    onClick: () => {
+	                        session.queueDialog((doneCallback) => [
+	                            SplitExon,
+	                            {
+	                                session,
+	                                handleClose: () => {
+	                                    doneCallback();
+	                                },
+	                                changeManager,
+	                                sourceFeature: relatedFeature,
+	                                sourceAssemblyId: currentAssemblyId,
+	                                selectedFeature,
+	                                setSelectedFeature: (feature) => {
+	                                    display.setSelectedFeature(feature);
+	                                },
+	                            },
+	                        ]);
+	                    },
+	                });
+	            }
+	            if (featureTypeOntology.isTypeOf(relatedFeature.type, 'gene')) {
+	                contextMenuItemsForFeature.push({
+	                    label: 'Filter alternate transcripts',
+	                    onClick: () => {
+	                        session.queueDialog((doneCallback) => [
+	                            FilterTranscripts,
+	                            {
+	                                handleClose: () => {
+	                                    doneCallback();
+	                                },
+	                                sourceFeature: relatedFeature,
+	                                filteredTranscripts: require$$1$3.getSnapshot(filteredTranscripts),
+	                                onUpdate: (forms) => {
+	                                    display.updateFilteredTranscripts(forms);
+	                                },
+	                            },
+	                        ]);
+	                    },
+	                });
+	            }
+	            menuItems.push({
+	                label: relatedFeature.type,
+	                subMenu: contextMenuItemsForFeature,
+	            });
+	        }
 	    }
 	    return menuItems;
 	}
@@ -61795,6 +62421,7 @@
 	    drawHover,
 	    drawTooltip,
 	    getContextMenuItems,
+	    getContextMenuItemsForFeature: getContextMenuItemsForFeature$2,
 	    onMouseDown,
 	    onMouseLeave,
 	    onMouseMove,
@@ -61810,6 +62437,8 @@
 	        graphical: true,
 	        table: false,
 	        showFeatureLabels: true,
+	        showCheckResults: true,
+	        zoomThreshold: 200,
 	        heightPreConfig: require$$1$3.types.maybe(require$$1$3.types.refinement('displayHeight', require$$1$3.types.number, (n) => n >= minDisplayHeight)),
 	        filteredFeatureTypes: require$$1$3.types.array(require$$1$3.types.string),
 	    })
@@ -61840,9 +62469,12 @@
 	                return 500;
 	            }
 	            if (self.graphical) {
-	                return 200;
+	                return self.showFeatureLabels ? 400 : 200;
 	            }
 	            return 300;
+	        },
+	        get zoomThresholdSetting() {
+	            return self.zoomThreshold ?? configuration.getConf(self, 'zoomThreshold');
 	        },
 	    }))
 	        .views((self) => ({
@@ -61862,7 +62494,7 @@
 	            return regions;
 	        },
 	        regionCannotBeRendered( /* region */) {
-	            if (self.lgv && self.lgv.bpPerPx >= 200) {
+	            if (self.lgv && self.lgv.bpPerPx >= self.zoomThreshold) {
 	                return 'Zoom in to see annotations';
 	            }
 	            return;
@@ -61900,6 +62532,10 @@
 	            return self.session
 	                .apolloSelectedFeature;
 	        },
+	        get hoveredFeature() {
+	            return self.session
+	                .apolloHoveredFeature;
+	        },
 	    }))
 	        .actions((self) => ({
 	        setScrollTop(scrollTop) {
@@ -61929,15 +62565,21 @@
 	        toggleShowFeatureLabels() {
 	            self.showFeatureLabels = !self.showFeatureLabels;
 	        },
+	        toggleShowCheckResults() {
+	            self.showCheckResults = !self.showCheckResults;
+	        },
 	        updateFilteredFeatureTypes(types) {
 	            self.filteredFeatureTypes = require$$1$3.cast(types);
+	        },
+	        setZoomThresholdSetting({ zoomThreshold }) {
+	            self.zoomThreshold = zoomThreshold;
 	        },
 	    }))
 	        .views((self) => {
 	        const { filteredFeatureTypes, trackMenuItems: superTrackMenuItems } = self;
 	        return {
 	            trackMenuItems() {
-	                const { graphical, table, showFeatureLabels } = self;
+	                const { graphical, table, showFeatureLabels, showCheckResults } = self;
 	                return [
 	                    ...superTrackMenuItems(),
 	                    {
@@ -61976,6 +62618,23 @@
 	                                    self.toggleShowFeatureLabels();
 	                                },
 	                            },
+	                            {
+	                                label: 'Check Results',
+	                                type: 'checkbox',
+	                                checked: showCheckResults,
+	                                onClick: () => {
+	                                    self.toggleShowCheckResults();
+	                                },
+	                            },
+	                            {
+	                                label: 'Change zoom threshold',
+	                                onClick: () => {
+	                                    require$$1$2.getSession(self).queueDialog((handleClose) => [
+	                                        EditZoomThresholdDialog,
+	                                        { model: self, handleClose },
+	                                    ]);
+	                                },
+	                            },
 	                        ],
 	                    },
 	                    {
@@ -62004,6 +62663,9 @@
 	        .actions((self) => ({
 	        setSelectedFeature(feature) {
 	            self.session.apolloSetSelectedFeature(feature);
+	        },
+	        setHoveredFeature(hoveredFeature) {
+	            self.session.apolloSetHoveredFeature(hoveredFeature);
 	        },
 	        showFeatureDetailsWidget(feature, customWidgetNameAndId) {
 	            const [region] = self.regions;
@@ -62135,7 +62797,7 @@
 	                            featureLayout.set(rowNum, []);
 	                        }
 	                        const layoutRow = featureLayout.get(rowNum);
-	                        layoutRow?.push({ rowNum, feature, cds: null });
+	                        layoutRow?.push({ rowNum, feature });
 	                        const { children } = feature;
 	                        if (!children) {
 	                            continue;
@@ -62152,7 +62814,7 @@
 	                                            ? self.geneTrackRowNums[0]
 	                                            : self.geneTrackRowNums[1];
 	                                        const layoutRow = featureLayout.get(rowNum);
-	                                        layoutRow?.push({ rowNum, feature: exon, cds: null });
+	                                        layoutRow?.push({ rowNum, feature: exon });
 	                                    }
 	                                }
 	                                for (const cdsRow of cdsLocations) {
@@ -62163,7 +62825,7 @@
 	                                            featureLayout.set(rowNum, []);
 	                                        }
 	                                        const layoutRow = featureLayout.get(rowNum);
-	                                        layoutRow?.push({ rowNum, feature: child, cds });
+	                                        layoutRow?.push({ rowNum, feature: child });
 	                                    }
 	                                }
 	                            }
@@ -62224,15 +62886,14 @@
 	    }));
 	}
 
-	function renderingModelIntermediateFactory(pluginManager, configSchema) {
+	function renderingModelFactory(pluginManager, configSchema) {
 	    const LinearApolloSixFrameDisplayLayouts = layoutsModelFactory(pluginManager, configSchema);
 	    return LinearApolloSixFrameDisplayLayouts.named('LinearApolloSixFrameDisplayRendering')
 	        .props({
-	        sequenceRowHeight: 15,
 	        apolloRowHeight: 20,
 	        detailsMinHeight: 200,
 	        detailsHeight: 200,
-	        lastRowTooltipBufferHeight: 80,
+	        lastRowTooltipBufferHeight: 120,
 	        isShown: true,
 	        filteredTranscripts: require$$1$3.types.array(require$$1$3.types.string),
 	    })
@@ -62240,7 +62901,7 @@
 	        canvas: null,
 	        overlayCanvas: null,
 	        collaboratorCanvas: null,
-	        theme: undefined,
+	        theme: material.createTheme(),
 	    }))
 	        .views((self) => ({
 	        get featuresHeight() {
@@ -62270,6 +62931,8 @@
 	        setTheme(theme) {
 	            self.theme = theme;
 	        },
+	    }))
+	        .actions((self) => ({
 	        afterAttach() {
 	            require$$1$3.addDisposer(self, mobx.autorun(() => {
 	                if (!self.lgv.initialized || self.regionCannotBeRendered()) {
@@ -62311,13 +62974,6 @@
 	                    }
 	                }
 	            }, { name: 'LinearApolloSixFrameDisplayRenderCollaborators' }));
-	        },
-	    }));
-	}
-	function renderingModelFactory(pluginManager, configSchema) {
-	    const LinearApolloSixFrameDisplayRendering = renderingModelIntermediateFactory(pluginManager, configSchema);
-	    return LinearApolloSixFrameDisplayRendering.actions((self) => ({
-	        afterAttach() {
 	            require$$1$3.addDisposer(self, mobx.autorun(() => {
 	                const { canvas, featureLayouts, featuresHeight, lgv } = self;
 	                if (!lgv.initialized || self.regionCannotBeRendered()) {
@@ -62352,25 +63008,12 @@
 	    }));
 	}
 
-	function isMousePositionWithFeatureAndGlyph(mousePosition) {
-	    return 'featureAndGlyphUnderMouse' in mousePosition;
-	}
-	function getMousePosition(event, lgv) {
-	    const canvas = event.currentTarget;
-	    const { clientX, clientY } = event;
-	    const { left, top } = canvas.getBoundingClientRect();
-	    const x = clientX - left;
-	    const y = clientY - top;
-	    const { coord: bp, index: regionNumber, refName } = lgv.pxToBp(x);
-	    return { x, y, refName, bp, regionNumber };
-	}
 	function mouseEventsModelIntermediateFactory(pluginManager, configSchema) {
 	    const LinearApolloSixFrameDisplayRendering = renderingModelFactory(pluginManager, configSchema);
 	    return LinearApolloSixFrameDisplayRendering.named('LinearApolloSixFrameDisplayMouseEvents')
 	        .volatile(() => ({
 	        apolloDragging: null,
 	        cursor: undefined,
-	        apolloHover: undefined,
 	    }))
 	        .views((self) => ({
 	        getMousePosition(event) {
@@ -62381,6 +63024,10 @@
 	            const layoutRow = featureLayout.get(row);
 	            if (!layoutRow) {
 	                return mousePosition;
+	            }
+	            const { featureTypeOntology } = self.session.apolloDataStore.ontologyManager;
+	            if (!featureTypeOntology) {
+	                throw new Error('featureTypeOntology is undefined');
 	            }
 	            let foundFeature;
 	            if (self.geneTrackRowNums.includes(row)) {
@@ -62393,23 +63040,32 @@
 	            }
 	            else {
 	                foundFeature = layoutRow.find((f) => {
-	                    const featureID = f.feature.attributes.get('gff_id')?.toString();
-	                    return (f.cds != null &&
-	                        bp >= f.cds.min &&
-	                        bp <= f.cds.max &&
-	                        (featureID === undefined ||
-	                            !self.filteredTranscripts.includes(featureID)));
+	                    const { feature } = f;
+	                    const featureID = feature.attributes.get('gff_id')?.toString();
+	                    const isTranscript = featureTypeOntology.isTypeOf(feature.type, 'transcript');
+	                    if (!isTranscript) {
+	                        return false;
+	                    }
+	                    for (const loc of feature.cdsLocations) {
+	                        for (const cds of loc) {
+	                            let rowNum = require$$1$2.getFrame(cds.min, cds.max, feature.strand ?? 1, cds.phase);
+	                            rowNum = self.featureLabelSpacer(rowNum < 0 ? -1 * rowNum + 5 : rowNum);
+	                            if (row === rowNum && bp >= cds.min && bp <= cds.max) {
+	                                return (featureID === undefined ||
+	                                    !self.filteredTranscripts.includes(featureID));
+	                            }
+	                        }
+	                    }
+	                    return false;
 	                });
 	            }
 	            if (!foundFeature) {
 	                return mousePosition;
 	            }
-	            const { feature, cds } = foundFeature;
-	            const { topLevelFeature } = feature;
-	            const glyph = self.getGlyph(feature);
+	            const { feature } = foundFeature;
 	            return {
 	                ...mousePosition,
-	                featureAndGlyphUnderMouse: { cds, feature, topLevelFeature, glyph },
+	                feature,
 	            };
 	        },
 	    }))
@@ -62426,9 +63082,6 @@
 	        },
 	    }))
 	        .actions((self) => ({
-	        setApolloHover(n) {
-	            self.apolloHover = n;
-	        },
 	        setCursor(cursor) {
 	            if (self.cursor !== cursor) {
 	                self.cursor = cursor;
@@ -62448,14 +63101,18 @@
 	function mouseEventsModelFactory(pluginManager, configSchema) {
 	    const LinearApolloSixFrameDisplayMouseEvents = mouseEventsModelIntermediateFactory(pluginManager, configSchema);
 	    return LinearApolloSixFrameDisplayMouseEvents.views((self) => ({
-	        contextMenuItems(contextCoord) {
-	            const { apolloHover } = self;
-	            if (!(apolloHover && contextCoord)) {
+	        contextMenuItems(event) {
+	            const { hoveredFeature } = self;
+	            if (!hoveredFeature) {
 	                return [];
 	            }
-	            const { topLevelFeature } = apolloHover;
+	            const mousePosition = self.getMousePosition(event);
+	            const { topLevelFeature } = hoveredFeature.feature;
 	            const glyph = self.getGlyph(topLevelFeature);
-	            return glyph.getContextMenuItems(self);
+	            if (isMousePositionWithFeature(mousePosition)) {
+	                return glyph.getContextMenuItems(self, mousePosition);
+	            }
+	            return [];
 	        },
 	    }))
 	        .actions((self) => ({
@@ -62514,8 +63171,9 @@
 	        .actions((self) => ({
 	        onMouseDown(event) {
 	            const mousePosition = self.getMousePosition(event);
-	            if (isMousePositionWithFeatureAndGlyph(mousePosition)) {
-	                mousePosition.featureAndGlyphUnderMouse.glyph.onMouseDown(self, mousePosition, event);
+	            if (isMousePositionWithFeature(mousePosition)) {
+	                const glyph = self.getGlyph(mousePosition.feature);
+	                glyph.onMouseDown(self, mousePosition, event);
 	            }
 	        },
 	        onMouseMove(event) {
@@ -62525,26 +63183,29 @@
 	                self.continueDrag(mousePosition, event);
 	                return;
 	            }
-	            if (isMousePositionWithFeatureAndGlyph(mousePosition)) {
-	                mousePosition.featureAndGlyphUnderMouse.glyph.onMouseMove(self, mousePosition, event);
+	            if (isMousePositionWithFeature(mousePosition)) {
+	                const glyph = self.getGlyph(mousePosition.feature);
+	                glyph.onMouseMove(self, mousePosition, event);
 	            }
 	            else {
-	                self.setApolloHover();
+	                self.setHoveredFeature();
 	                self.setCursor();
 	            }
 	        },
 	        onMouseLeave(event) {
 	            self.setDragging();
-	            self.setApolloHover();
+	            self.setHoveredFeature();
 	            const mousePosition = self.getMousePosition(event);
-	            if (isMousePositionWithFeatureAndGlyph(mousePosition)) {
-	                mousePosition.featureAndGlyphUnderMouse.glyph.onMouseLeave(self, mousePosition, event);
+	            if (isMousePositionWithFeature(mousePosition)) {
+	                const glyph = self.getGlyph(mousePosition.feature);
+	                glyph.onMouseLeave(self, mousePosition, event);
 	            }
 	        },
 	        onMouseUp(event) {
 	            const mousePosition = self.getMousePosition(event);
-	            if (isMousePositionWithFeatureAndGlyph(mousePosition)) {
-	                mousePosition.featureAndGlyphUnderMouse.glyph.onMouseUp(self, mousePosition, event);
+	            if (isMousePositionWithFeature(mousePosition)) {
+	                const glyph = self.getGlyph(mousePosition.feature);
+	                glyph.onMouseUp(self, mousePosition, event);
 	            }
 	            else {
 	                self.setSelectedFeature();
@@ -62567,11 +63228,11 @@
 	                    return;
 	                }
 	                ctx.clearRect(0, 0, self.lgv.dynamicBlocks.totalWidthPx, self.featuresHeight);
-	                const { apolloDragging, apolloHover } = self;
-	                if (!apolloHover) {
+	                const { apolloDragging, hoveredFeature } = self;
+	                if (!hoveredFeature) {
 	                    return;
 	                }
-	                const { glyph } = apolloHover;
+	                const glyph = self.getGlyph(hoveredFeature.feature);
 	                // draw mouseover hovers
 	                glyph.drawHover(self, ctx);
 	                // draw tooltip on hover
@@ -62607,6 +63268,12 @@
 	        description: 'Flag used internally by jbrowse-plugin-apollo',
 	        type: 'boolean',
 	        defaultValue: false,
+	    },
+	    backgroundColorForFeature: {
+	        description: 'Color ',
+	        type: 'string',
+	        defaultValue: 'jexl:colorFeature(featureType)',
+	        contextVariable: ['featureType'],
 	    },
 	});
 
@@ -62707,8 +63374,7 @@
 	            if (f.min > region.end || f.max < region.start) {
 	                continue;
 	            }
-	            // Destination feature should be of type gene amd should be on the same strand as the source feature
-	            // featureTypeOntology?.isTypeOf(f.type, 'gene') && f.strand === annotationFeature.strand
+	            // Destination feature should be of type gene
 	            if (featureTypeOntology?.isTypeOf(f.type, 'gene')) {
 	                const featureSnapshot = require$$1$3.getSnapshot(f);
 	                filteredFeatures.push(featureSnapshot);
@@ -62889,6 +63555,7 @@
 	            },
 	        });
 	        await submitChange(change);
+	        apolloSessionModel.apolloSetSelectedFeature(newGeneId);
 	    };
 	    const extendSelectedDestinationFeatureLocation = async (newMin, newMax) => {
 	        if (!selectedDestinationFeature) {
@@ -63119,7 +63786,7 @@
 	                    ...superContextMenuItems(),
 	                    {
 	                        label: 'Create Apollo annotation',
-	                        icon: default_1$p,
+	                        icon: AddIcon,
 	                        onClick: () => {
 	                            session.queueDialog((doneCallback) => [
 	                                CreateApolloAnnotation,
@@ -63256,7 +63923,7 @@
 	                    ...superContextMenuItems(),
 	                    {
 	                        label: 'Create Apollo annotation',
-	                        icon: default_1$p,
+	                        icon: AddIcon,
 	                        onClick: () => {
 	                            session.queueDialog((doneCallback) => [
 	                                CreateApolloAnnotation,
@@ -63281,175 +63948,23 @@
 	    return pluggableElement;
 	}
 
-	var ExpandLess = {};
-
-	var _interopRequireDefault$2 = interopRequireDefault.exports;
-	Object.defineProperty(ExpandLess, "__esModule", {
-	  value: true
-	});
-	var default_1$2 = ExpandLess["default"] = void 0;
-	var _createSvgIcon$2 = /*#__PURE__*/_interopRequireDefault$2(createSvgIcon);
-	var _jsxRuntime$2 = require$$2__default["default"];
-	var _default$2 = /*#__PURE__*/(0, _createSvgIcon$2["default"])( /*#__PURE__*/(0, _jsxRuntime$2.jsx)("path", {
+	var ExpandLessIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
 	  d: "m12 8-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"
 	}), 'ExpandLess');
-	default_1$2 = ExpandLess["default"] = _default$2;
 
-	/* eslint-disable @typescript-eslint/unbound-method */
-	const useStyles$2 = mui.makeStyles()((theme) => ({
-	    canvasContainer: {
-	        position: 'relative',
-	        left: 0,
-	    },
-	    canvas: {
-	        position: 'absolute',
-	        left: 0,
-	    },
-	    ellipses: {
-	        textOverflow: 'ellipsis',
-	        overflow: 'hidden',
-	    },
-	    avatar: {
-	        position: 'absolute',
-	        color: theme.palette.warning.light,
-	        backgroundColor: theme.palette.warning.contrastText,
-	    },
-	    loading: {
-	        position: 'absolute',
-	        right: theme.spacing(3),
-	        zIndex: 10,
-	        pointerEvents: 'none',
-	        textAlign: 'right',
-	    },
-	}));
+	var ErrorIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
+	  d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m1 15h-2v-2h2zm0-4h-2V7h2z"
+	}), 'Error');
+
+	var LockIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
+	  d: "M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2m-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2m3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1z"
+	}), 'Lock');
+
+	// Lock icon when isLocked === true
 	const LinearApolloDisplay = mobxReact.observer(function LinearApolloDisplay(props) {
 	    const theme = material.useTheme();
 	    const { model } = props;
-	    const { loading, contextMenuItems: getContextMenuItems, cursor, featuresHeight, isShown, onMouseDown, onMouseLeave, onMouseMove, onMouseUp, regionCannotBeRendered, setCanvas, setCollaboratorCanvas, setOverlayCanvas, setSeqTrackCanvas, setSeqTrackOverlayCanvas, setTheme, } = model;
-	    const { classes } = useStyles$2();
-	    const lgv = require$$1$2.getContainingView(model);
-	    React.useEffect(() => {
-	        setTheme(theme);
-	    }, [theme, setTheme]);
-	    const [contextCoord, setContextCoord] = React.useState();
-	    const [contextMenuItems, setContextMenuItems] = React.useState([]);
-	    const message = regionCannotBeRendered();
-	    if (!isShown) {
-	        return null;
-	    }
-	    return (React__default["default"].createElement(React__default["default"].Fragment, null,
-	        3 / lgv.bpPerPx >= 1 ? (React__default["default"].createElement("div", { className: classes.canvasContainer, style: {
-	                width: lgv.dynamicBlocks.totalWidthPx,
-	                height: lgv.bpPerPx <= 1 ? 125 : 95,
-	            } },
-	            React__default["default"].createElement("canvas", { ref: async (node) => {
-	                    await Promise.resolve();
-	                    setSeqTrackCanvas(node);
-	                }, width: lgv.dynamicBlocks.totalWidthPx, height: lgv.bpPerPx <= 1 ? 125 : 95, className: classes.canvas, "data-testid": "seqTrackCanvas" }),
-	            React__default["default"].createElement("canvas", { ref: async (node) => {
-	                    await Promise.resolve();
-	                    setSeqTrackOverlayCanvas(node);
-	                }, width: lgv.dynamicBlocks.totalWidthPx, height: lgv.bpPerPx <= 1 ? 125 : 95, className: classes.canvas, "data-testid": "seqTrackOverlayCanvas" }))) : null,
-	        React__default["default"].createElement("div", { className: classes.canvasContainer, style: {
-	                width: lgv.dynamicBlocks.totalWidthPx,
-	                height: featuresHeight,
-	            }, onContextMenu: (event) => {
-	                event.preventDefault();
-	                if (contextMenuItems.length > 0) {
-	                    // There's already a context menu open, so close it
-	                    setContextMenuItems([]);
-	                }
-	                else {
-	                    const coord = [event.clientX, event.clientY];
-	                    setContextCoord(coord);
-	                    setContextMenuItems(getContextMenuItems(event));
-	                }
-	            } },
-	            loading ? (React__default["default"].createElement("div", { className: classes.loading },
-	                React__default["default"].createElement(material.CircularProgress, { size: "18px" }))) : null,
-	            message ? (React__default["default"].createElement(material.Alert, { severity: "warning", classes: { message: classes.ellipses } },
-	                React__default["default"].createElement(material.Tooltip, { title: message },
-	                    React__default["default"].createElement("div", null, message)))) : (
-	            // Promise.resolve() in these 3 callbacks is to avoid infinite rendering loop
-	            // https://github.com/mobxjs/mobx/issues/3728#issuecomment-1715400931
-	            React__default["default"].createElement(React__default["default"].Fragment, null,
-	                React__default["default"].createElement("canvas", { ref: async (node) => {
-	                        await Promise.resolve();
-	                        setCollaboratorCanvas(node);
-	                    }, width: lgv.dynamicBlocks.totalWidthPx, height: featuresHeight, className: classes.canvas, "data-testid": "collaboratorCanvas" }),
-	                React__default["default"].createElement("canvas", { ref: async (node) => {
-	                        await Promise.resolve();
-	                        setCanvas(node);
-	                    }, width: lgv.dynamicBlocks.totalWidthPx, height: featuresHeight, className: classes.canvas, "data-testid": "canvas" }),
-	                React__default["default"].createElement("canvas", { ref: async (node) => {
-	                        await Promise.resolve();
-	                        setOverlayCanvas(node);
-	                    }, width: lgv.dynamicBlocks.totalWidthPx, height: featuresHeight, onMouseMove: onMouseMove, onMouseLeave: onMouseLeave, onMouseDown: onMouseDown, onMouseUp: onMouseUp, className: classes.canvas, style: { cursor: cursor ?? 'default' }, "data-testid": "overlayCanvas" }),
-	                React__default["default"].createElement(ui.Menu, { open: contextMenuItems.length > 0, onMenuItemClick: (_, callback) => {
-	                        callback();
-	                        setContextMenuItems([]);
-	                    }, onClose: () => {
-	                        setContextMenuItems([]);
-	                    }, TransitionProps: {
-	                        onExit: () => {
-	                            setContextMenuItems([]);
-	                        },
-	                    }, anchorReference: "anchorPosition", anchorPosition: contextCoord
-	                        ? { top: contextCoord[1], left: contextCoord[0] }
-	                        : undefined, style: { zIndex: theme.zIndex.tooltip }, menuItems: contextMenuItems }))))));
-	});
-
-	var _Error = {};
-
-	var _interopRequireDefault$1 = interopRequireDefault.exports;
-	Object.defineProperty(_Error, "__esModule", {
-	  value: true
-	});
-	var default_1$1 = _Error["default"] = void 0;
-	var _createSvgIcon$1 = /*#__PURE__*/_interopRequireDefault$1(createSvgIcon);
-	var _jsxRuntime$1 = require$$2__default["default"];
-	var _default$1 = /*#__PURE__*/(0, _createSvgIcon$1["default"])( /*#__PURE__*/(0, _jsxRuntime$1.jsx)("path", {
-	  d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"
-	}), 'Error');
-	default_1$1 = _Error["default"] = _default$1;
-
-	const TrackLines = mobxReact.observer(function TrackLines({ model, hrStyle = { margin: 0, top: 0, color: 'black' }, idx = 0, }) {
-	    const { apolloRowHeight, highestRow, showFeatureLabels } = model;
-	    const featureLabelSpacer = showFeatureLabels ? 2 : 1;
-	    return (React__default["default"].createElement("div", { style: {
-	            position: 'absolute',
-	            left: 0,
-	            top: (apolloRowHeight * featureLabelSpacer * (highestRow + 1)) / 2 +
-	                idx * featureLabelSpacer * apolloRowHeight,
-	            width: '100%',
-	        } },
-	        React__default["default"].createElement("hr", { style: hrStyle })));
-	});
-
-	/* eslint-disable @typescript-eslint/unbound-method */
-	const useStyles$1 = mui.makeStyles()((theme) => ({
-	    canvasContainer: {
-	        position: 'relative',
-	        left: 0,
-	    },
-	    canvas: {
-	        position: 'absolute',
-	        left: 0,
-	    },
-	    ellipses: {
-	        textOverflow: 'ellipsis',
-	        overflow: 'hidden',
-	    },
-	    avatar: {
-	        position: 'absolute',
-	        color: theme.palette.warning.light,
-	        backgroundColor: theme.palette.warning.contrastText,
-	    },
-	}));
-	const LinearApolloSixFrameDisplay = mobxReact.observer(function LinearApolloSixFrameDisplay(props) {
-	    const theme = material.useTheme();
-	    const { model } = props;
-	    const { apolloRowHeight, contextMenuItems: getContextMenuItems, cursor, featuresHeight, isShown, onMouseDown, onMouseLeave, onMouseMove, onMouseUp, regionCannotBeRendered, session, setCanvas, setCollaboratorCanvas, setOverlayCanvas, setTheme, } = model;
+	    const { loading, apolloDragging, apolloRowHeight, contextMenuItems: getContextMenuItems, cursor, featuresHeight, isShown, onMouseDown, onMouseLeave, onMouseMove, onMouseUp, regionCannotBeRendered, session, setCanvas, setCollaboratorCanvas, setOverlayCanvas, setTheme, showCheckResults, } = model;
 	    const { classes } = useStyles$1();
 	    const lgv = require$$1$2.getContainingView(model);
 	    React.useEffect(() => {
@@ -63475,9 +63990,138 @@
 	                else {
 	                    const coord = [event.clientX, event.clientY];
 	                    setContextCoord(coord);
-	                    setContextMenuItems(getContextMenuItems(coord));
+	                    setContextMenuItems(getContextMenuItems(event));
 	                }
-	            } }, message ? (React__default["default"].createElement(material.Alert, { severity: "warning", classes: { message: classes.ellipses } },
+	            } },
+	            session.isLocked ? (React__default["default"].createElement("div", { className: classes.locked, "data-testid": "lock-icon" },
+	                React__default["default"].createElement(LockIcon, null))) : null,
+	            loading ? (React__default["default"].createElement("div", { className: classes.loading },
+	                React__default["default"].createElement(material.CircularProgress, { size: "18px" }))) : null,
+	            message ? (React__default["default"].createElement(material.Alert, { severity: "warning", classes: { message: classes.ellipses }, slotProps: { root: { className: classes.center } } },
+	                React__default["default"].createElement(material.Tooltip, { title: message },
+	                    React__default["default"].createElement("div", null, message)))) : (
+	            // Promise.resolve() in these 3 callbacks is to avoid infinite rendering loop
+	            // https://github.com/mobxjs/mobx/issues/3728#issuecomment-1715400931
+	            React__default["default"].createElement(React__default["default"].Fragment, null,
+	                React__default["default"].createElement("canvas", { ref: async (node) => {
+	                        await Promise.resolve();
+	                        setCollaboratorCanvas(node);
+	                    }, width: lgv.dynamicBlocks.totalWidthPx, height: featuresHeight, className: classes.canvas, "data-testid": "collaboratorCanvas" }),
+	                React__default["default"].createElement("canvas", { ref: async (node) => {
+	                        await Promise.resolve();
+	                        setCanvas(node);
+	                    }, width: lgv.dynamicBlocks.totalWidthPx, height: featuresHeight, className: classes.canvas, "data-testid": "canvas" }),
+	                React__default["default"].createElement("canvas", { ref: async (node) => {
+	                        await Promise.resolve();
+	                        setOverlayCanvas(node);
+	                    }, width: lgv.dynamicBlocks.totalWidthPx, height: featuresHeight, onMouseMove: onMouseMove, onMouseLeave: onMouseLeave, onMouseDown: onMouseDown, onMouseUp: onMouseUp, className: classes.canvas, style: { cursor: cursor ?? 'default' }, "data-testid": "overlayCanvas" }),
+	                lgv.displayedRegions.flatMap((region, idx) => {
+	                    const widthBp = lgv.bpPerPx * apolloRowHeight;
+	                    const assembly = assemblyManager.get(region.assemblyName);
+	                    if (showCheckResults) {
+	                        const filteredCheckResults = [
+	                            ...session.apolloDataStore.checkResults.values(),
+	                        ].filter((checkResult) => assembly?.isValidRefName(checkResult.refSeq) &&
+	                            assembly.getCanonicalRefName(checkResult.refSeq) ===
+	                                region.refName &&
+	                            require$$1$2.doesIntersect2(region.start, region.end, checkResult.start, checkResult.end));
+	                        const checkResults = clusterResultByMessage(filteredCheckResults, widthBp, true);
+	                        return checkResults.map((checkResult) => {
+	                            const left = (lgv.bpToPx({
+	                                refName: region.refName,
+	                                coord: checkResult.start,
+	                                regionNumber: idx,
+	                            })?.offsetPx ?? 0) - lgv.offsetPx;
+	                            const [feature] = checkResult.featureIds;
+	                            if (!feature) {
+	                                return null;
+	                            }
+	                            let row = 0;
+	                            const featureLayout = model.getFeatureLayoutPosition(feature);
+	                            if (featureLayout) {
+	                                row = featureLayout.layoutRow + featureLayout.featureRow;
+	                            }
+	                            const top = row * apolloRowHeight;
+	                            const height = apolloRowHeight;
+	                            return (React__default["default"].createElement(material.Tooltip, { key: checkResult._id, title: checkResult.message },
+	                                React__default["default"].createElement(material.Box, { className: classes.box, style: {
+	                                        top,
+	                                        left,
+	                                        height,
+	                                        width: height,
+	                                        pointerEvents: apolloDragging ? 'none' : 'auto',
+	                                    } },
+	                                    React__default["default"].createElement(material.Badge, { className: classes.badge, badgeContent: checkResult.count, color: "primary", overlap: "circular", anchorOrigin: {
+	                                            vertical: 'bottom',
+	                                            horizontal: 'right',
+	                                        }, invisible: checkResult.count <= 1 },
+	                                        React__default["default"].createElement(material.Avatar, { className: classes.avatar },
+	                                            React__default["default"].createElement(ErrorIcon, { "data-testid": `ErrorIcon-${checkResult.start}` }))))));
+	                        });
+	                    }
+	                    return null;
+	                }),
+	                React__default["default"].createElement(ui.Menu, { open: contextMenuItems.length > 0, onMenuItemClick: (_, callback) => {
+	                        callback();
+	                        setContextMenuItems([]);
+	                    }, onClose: () => {
+	                        setContextMenuItems([]);
+	                    }, slotProps: {
+	                        transition: {
+	                            onExit: () => {
+	                                setContextMenuItems([]);
+	                            },
+	                        },
+	                    }, anchorReference: "anchorPosition", anchorPosition: contextCoord
+	                        ? { top: contextCoord[1], left: contextCoord[0] }
+	                        : undefined, style: { zIndex: theme.zIndex.tooltip }, menuItems: contextMenuItems }))))));
+	});
+
+	const TrackLines = mobxReact.observer(function TrackLines({ model, hrStyle = { margin: 0, top: 0, color: 'black' }, idx = 0, }) {
+	    const { apolloRowHeight, highestRow, showFeatureLabels } = model;
+	    const featureLabelSpacer = showFeatureLabels ? 2 : 1;
+	    return (React__default["default"].createElement("div", { style: {
+	            position: 'absolute',
+	            left: 0,
+	            top: (apolloRowHeight * featureLabelSpacer * (highestRow + 1)) / 2 +
+	                idx * featureLabelSpacer * apolloRowHeight,
+	            width: '100%',
+	        } },
+	        React__default["default"].createElement("hr", { style: hrStyle })));
+	});
+
+	const LinearApolloSixFrameDisplay = mobxReact.observer(function LinearApolloSixFrameDisplay(props, apolloDragging) {
+	    const theme = material.useTheme();
+	    const { model } = props;
+	    const { apolloRowHeight, contextMenuItems: getContextMenuItems, cursor, featuresHeight, featureLabelSpacer, geneTrackRowNums, isShown, onMouseDown, onMouseLeave, onMouseMove, onMouseUp, regionCannotBeRendered, session, setCanvas, setCollaboratorCanvas, setOverlayCanvas, setTheme, showCheckResults, } = model;
+	    const { classes } = useStyles$1();
+	    const lgv = require$$1$2.getContainingView(model);
+	    React.useEffect(() => {
+	        setTheme(theme);
+	    }, [theme, setTheme]);
+	    const [contextCoord, setContextCoord] = React.useState();
+	    const [contextMenuItems, setContextMenuItems] = React.useState([]);
+	    const message = regionCannotBeRendered();
+	    if (!isShown) {
+	        return null;
+	    }
+	    const { assemblyManager } = session;
+	    return (React__default["default"].createElement(React__default["default"].Fragment, null,
+	        React__default["default"].createElement("div", { className: classes.canvasContainer, style: {
+	                width: lgv.dynamicBlocks.totalWidthPx,
+	                height: featuresHeight,
+	            }, onContextMenu: (event) => {
+	                event.preventDefault();
+	                if (contextMenuItems.length > 0) {
+	                    // There's already a context menu open, so close it
+	                    setContextMenuItems([]);
+	                }
+	                else {
+	                    const coord = [event.clientX, event.clientY];
+	                    setContextCoord(coord);
+	                    setContextMenuItems(getContextMenuItems(event));
+	                }
+	            } }, message ? (React__default["default"].createElement(material.Alert, { severity: "warning", classes: { message: classes.ellipses }, slotProps: { root: { className: classes.center } } },
 	            React__default["default"].createElement(material.Tooltip, { title: message },
 	                React__default["default"].createElement("div", null, message)))) : (
 	        // Promise.resolve() in these 3 callbacks is to avoid infinite rendering loop
@@ -63499,37 +64143,74 @@
 	                    setOverlayCanvas(node);
 	                }, width: lgv.dynamicBlocks.totalWidthPx, height: featuresHeight, onMouseMove: onMouseMove, onMouseLeave: onMouseLeave, onMouseDown: onMouseDown, onMouseUp: onMouseUp, className: classes.canvas, style: { cursor: cursor ?? 'default' }, "data-testid": "overlayCanvas" }),
 	            lgv.displayedRegions.flatMap((region, idx) => {
+	                const widthBp = lgv.bpPerPx * apolloRowHeight;
 	                const assembly = assemblyManager.get(region.assemblyName);
-	                return [...session.apolloDataStore.checkResults.values()]
-	                    .filter((checkResult) => assembly?.isValidRefName(checkResult.refSeq) &&
-	                    assembly.getCanonicalRefName(checkResult.refSeq) ===
-	                        region.refName &&
-	                    require$$1$2.doesIntersect2(region.start, region.end, checkResult.start, checkResult.end))
-	                    .map((checkResult) => {
-	                    const left = (lgv.bpToPx({
-	                        refName: region.refName,
-	                        coord: checkResult.start,
-	                        regionNumber: idx,
-	                    })?.offsetPx ?? 0) - lgv.offsetPx;
-	                    const [feature] = checkResult.ids;
-	                    if (!feature || !feature.parent?.looksLikeGene) {
-	                        return null;
-	                    }
-	                    const top = 0;
-	                    const height = apolloRowHeight;
-	                    return (React__default["default"].createElement(material.Tooltip, { key: checkResult._id, title: checkResult.message },
-	                        React__default["default"].createElement(material.Avatar, { className: classes.avatar, style: { top, left, height, width: height } },
-	                            React__default["default"].createElement(default_1$1, null))));
-	                });
+	                if (showCheckResults) {
+	                    const filteredCheckResults = [
+	                        ...session.apolloDataStore.checkResults.values(),
+	                    ].filter((checkResult) => assembly?.isValidRefName(checkResult.refSeq) &&
+	                        assembly.getCanonicalRefName(checkResult.refSeq) ===
+	                            region.refName &&
+	                        require$$1$2.doesIntersect2(region.start, region.end, checkResult.start, checkResult.end));
+	                    const checkResults = clusterResultByMessage(filteredCheckResults, widthBp, true);
+	                    return checkResults.map((checkResult) => {
+	                        const left = (lgv.bpToPx({
+	                            refName: region.refName,
+	                            coord: checkResult.start,
+	                            regionNumber: idx,
+	                        })?.offsetPx ?? 0) - lgv.offsetPx;
+	                        const [feature] = checkResult.featureIds;
+	                        if (!feature || !feature.parent?.looksLikeGene) {
+	                            return null;
+	                        }
+	                        let row;
+	                        for (const loc of feature.cdsLocations) {
+	                            for (const cds of loc) {
+	                                let rowNum = require$$1$2.getFrame(cds.min, cds.max, feature.strand ?? 1, cds.phase);
+	                                rowNum = featureLabelSpacer(rowNum < 0 ? -1 * rowNum + 5 : rowNum);
+	                                if (checkResult.start >= cds.min &&
+	                                    checkResult.start <= cds.max) {
+	                                    row = rowNum - 1;
+	                                    break;
+	                                }
+	                            }
+	                        }
+	                        if (row === undefined) {
+	                            const rowNum = feature.strand == 1
+	                                ? geneTrackRowNums[0]
+	                                : geneTrackRowNums[1];
+	                            row = rowNum - 1;
+	                        }
+	                        const top = row * apolloRowHeight;
+	                        const height = apolloRowHeight;
+	                        return (React__default["default"].createElement(material.Tooltip, { key: checkResult._id, title: checkResult.message },
+	                            React__default["default"].createElement(material.Box, { className: classes.box, style: {
+	                                    top,
+	                                    left,
+	                                    height,
+	                                    width: height,
+	                                    pointerEvents: apolloDragging ? 'none' : 'auto',
+	                                } },
+	                                React__default["default"].createElement(material.Badge, { className: classes.badge, badgeContent: checkResult.count, color: "primary", overlap: "circular", anchorOrigin: {
+	                                        vertical: 'bottom',
+	                                        horizontal: 'right',
+	                                    }, invisible: checkResult.count <= 1 },
+	                                    React__default["default"].createElement(material.Avatar, { className: classes.avatar },
+	                                        React__default["default"].createElement(ErrorIcon, { "data-testid": `ErrorIcon-${checkResult.start}` }))))));
+	                    });
+	                }
+	                return null;
 	            }),
 	            React__default["default"].createElement(ui.Menu, { open: contextMenuItems.length > 0, onMenuItemClick: (_, callback) => {
 	                    callback();
 	                    setContextMenuItems([]);
 	                }, onClose: () => {
 	                    setContextMenuItems([]);
-	                }, TransitionProps: {
-	                    onExit: () => {
-	                        setContextMenuItems([]);
+	                }, slotProps: {
+	                    transition: {
+	                        onExit: () => {
+	                            setContextMenuItems([]);
+	                        },
 	                    },
 	                }, anchorReference: "anchorPosition", anchorPosition: contextCoord
 	                    ? { top: contextCoord[1], left: contextCoord[0] }
@@ -63541,7 +64222,6 @@
 	const useStyles = mui.makeStyles()((theme) => ({
 	    shading: {
 	        background: material.alpha(theme.palette.primary.main, 0.2),
-	        overflowY: 'scroll',
 	        overflowX: 'hidden',
 	    },
 	    details: {
@@ -63623,7 +64303,7 @@
 	    return (React__default["default"].createElement("div", { className: classes.accordionRoot },
 	        open && onResize ? React__default["default"].createElement(ResizeHandle, { onResize: onResize }) : null,
 	        React__default["default"].createElement("div", { className: classes.accordionControl, onClick: onClick },
-	            open ? (React__default["default"].createElement(default_1$2, { className: classes.expandIcon })) : (React__default["default"].createElement(default_1$a, { className: classes.expandIcon })),
+	            open ? (React__default["default"].createElement(ExpandLessIcon, { className: classes.expandIcon })) : (React__default["default"].createElement(ExpandMoreIcon, { className: classes.expandIcon })),
 	            title ? (React__default["default"].createElement(material.Typography, { className: classes.title, variant: "caption", component: "span" }, title)) : null)));
 	});
 	const LinearApolloDisplayComponent = mobxReact.observer(function DisplayComponent({ model, ...other }) {
@@ -63703,19 +64383,139 @@
 	        React__default["default"].createElement(TabularEditorPane, { model: model })));
 	});
 
-	var Save = {};
+	var DownloadIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
+	  d: "M5 20h14v-2H5zM19 9h-4V3H9v6H5l7 7z"
+	}), 'Download');
 
-	var _interopRequireDefault = interopRequireDefault.exports;
-	Object.defineProperty(Save, "__esModule", {
-	  value: true
-	});
-	var default_1 = Save["default"] = void 0;
-	var _createSvgIcon = /*#__PURE__*/_interopRequireDefault(createSvgIcon);
-	var _jsxRuntime = require$$2__default["default"];
-	var _default = /*#__PURE__*/(0, _createSvgIcon["default"])( /*#__PURE__*/(0, _jsxRuntime.jsx)("path", {
-	  d: "M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"
+	var FactCheckIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
+	  fillRule: "evenodd",
+	  d: "M20 3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2M10 17H5v-2h5zm0-4H5v-2h5zm0-4H5V7h5zm4.82 6L12 12.16l1.41-1.41 1.41 1.42L17.99 9l1.42 1.42z"
+	}), 'FactCheck');
+
+	var FileOpenIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
+	  d: "M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H15v-8h5V8zm-1 7V3.5L18.5 9zm4 12.66V16h5.66v2h-2.24l2.95 2.95-1.41 1.41L19 19.41v2.24h-2z"
+	}), 'FileOpen');
+
+	var LogoutIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
+	  d: "m17 7-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4z"
+	}), 'Logout');
+
+	var RedoIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
+	  d: "M18.4 10.6C16.55 8.99 14.15 8 11.5 8c-4.65 0-8.58 3.03-9.96 7.22L3.9 16c1.05-3.19 4.05-5.5 7.6-5.5 1.95 0 3.73.72 5.12 1.88L13 16h9V7z"
+	}), 'Redo');
+
+	var TrackChangesIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
+	  d: "m19.07 4.93-1.41 1.41C19.1 7.79 20 9.79 20 12c0 4.42-3.58 8-8 8s-8-3.58-8-8c0-4.08 3.05-7.44 7-7.93v2.02C8.16 6.57 6 9.03 6 12c0 3.31 2.69 6 6 6s6-2.69 6-6c0-1.66-.67-3.16-1.76-4.24l-1.41 1.41C15.55 9.9 16 10.9 16 12c0 2.21-1.79 4-4 4s-4-1.79-4-4c0-1.86 1.28-3.41 3-3.86v2.14c-.6.35-1 .98-1 1.72 0 1.1.9 2 2 2s2-.9 2-2c0-.74-.4-1.38-1-1.72V2h-1C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10c0-2.76-1.12-5.26-2.93-7.07"
+	}), 'TrackChanges');
+
+	var UndoIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
+	  d: "M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8"
+	}), 'Undo');
+
+	function addTopLevelMenus(rootModel) {
+	    rootModel.insertInMenu('Apollo', {
+	        label: 'Redo',
+	        icon: RedoIcon,
+	        onClick(session) {
+	            const { apolloDataStore } = session;
+	            void apolloDataStore.changeManager.redoLastChange();
+	        },
+	    }, 0);
+	    rootModel.insertInMenu('Apollo', {
+	        label: 'Undo',
+	        icon: UndoIcon,
+	        onClick(session) {
+	            const { apolloDataStore } = session;
+	            void apolloDataStore.changeManager.undoLastChange();
+	        },
+	    }, 0);
+	    rootModel.appendToMenu('Apollo', {
+	        label: 'Download GFF3',
+	        icon: DownloadIcon,
+	        onClick: (session) => {
+	            session.queueDialog((doneCallback) => [
+	                DownloadGFF3,
+	                {
+	                    session,
+	                    handleClose: () => {
+	                        doneCallback();
+	                    },
+	                },
+	            ]);
+	        },
+	    });
+	    rootModel.appendToMenu('Apollo', {
+	        label: 'View Change Log',
+	        icon: TrackChangesIcon,
+	        onClick: (session) => {
+	            session.queueDialog((doneCallback) => [
+	                ViewChangeLog,
+	                {
+	                    session,
+	                    handleClose: () => {
+	                        doneCallback();
+	                    },
+	                },
+	            ]);
+	        },
+	    });
+	    rootModel.appendToMenu('Apollo', {
+	        label: 'Open local GFF3 file',
+	        icon: FileOpenIcon,
+	        onClick: (session) => {
+	            session.queueDialog((doneCallback) => [
+	                OpenLocalFile,
+	                {
+	                    session,
+	                    handleClose: () => {
+	                        doneCallback();
+	                    },
+	                    inMemoryFileDriver: session.apolloDataStore.inMemoryFileDriver,
+	                },
+	            ]);
+	        },
+	    });
+	    rootModel.appendToMenu('Apollo', {
+	        label: 'View check results',
+	        icon: FactCheckIcon,
+	        onClick: (session) => {
+	            session.queueDialog((doneCallback) => [
+	                ViewCheckResults,
+	                {
+	                    session,
+	                    handleClose: () => {
+	                        doneCallback();
+	                    },
+	                },
+	            ]);
+	        },
+	    });
+	    rootModel.appendToMenu('Apollo', {
+	        label: 'Lock/Unlock session',
+	        onClick: (session) => {
+	            session.toggleLocked();
+	        },
+	    });
+	    rootModel.appendToMenu('Apollo', {
+	        label: 'Log out',
+	        icon: LogoutIcon,
+	        onClick: (session) => {
+	            session.queueDialog((doneCallback) => [
+	                LogOut,
+	                {
+	                    session,
+	                    handleClose: () => {
+	                        doneCallback();
+	                    },
+	                },
+	            ]);
+	        },
+	    });
+	}
+
+	var SaveIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
+	  d: "M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3m3-10H5V5h10z"
 	}), 'Save');
-	default_1 = Save["default"] = _default;
 
 	/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 	const ApolloJobModel = require$$1$3.types
@@ -63812,12 +64612,17 @@
 	        this.dataStore = dataStore;
 	    }
 	    recentChanges = [];
+	    undoneChanges = [];
 	    async submit(change, opts = {}) {
 	        const { addToRecents = true, submitToBackend = true, updateJobsManager = false, } = opts;
 	        // pre-validate
 	        const session = require$$1$2.getSession(this.dataStore);
 	        const controller = new AbortController();
-	        const { jobsManager } = require$$1$2.getSession(this.dataStore);
+	        const { jobsManager, isLocked } = require$$1$2.getSession(this.dataStore);
+	        if (isLocked) {
+	            session.notify('Cannot submit changes in locked mode');
+	            return;
+	        }
 	        const job = {
 	            name: change.typeName,
 	            statusMessage: 'Pre-validating',
@@ -63854,7 +64659,7 @@
 	        const results2 = await dist$2.validationRegistry.frontendPostValidate(change, this.dataStore);
 	        if (!results2.ok) {
 	            // notify of invalid change and revert
-	            await this.revert(change);
+	            await this.undo(change);
 	        }
 	        if (submitToBackend) {
 	            if (updateJobsManager) {
@@ -63875,7 +64680,7 @@
 	                }
 	                console.error(error);
 	                session.notify(String(error), 'error');
-	                await this.revert(change, false);
+	                await this.undo(change, false);
 	                return;
 	            }
 	            if (!backendResult.ok) {
@@ -63884,37 +64689,49 @@
 	                    jobsManager.abortJob(job.name, msg);
 	                }
 	                session.notify(msg, 'error');
-	                await this.revert(change, false);
+	                await this.undo(change, false);
 	                return;
 	            }
 	            if (change.notification) {
 	                session.notify(change.notification, 'success');
 	            }
 	            if (addToRecents) {
-	                // Push the change into array
 	                this.recentChanges.push(change);
+	                this.undoneChanges = [];
 	            }
 	        }
 	        if (updateJobsManager) {
 	            jobsManager.done(job);
 	        }
 	    }
-	    async revert(change, submitToBackend = true) {
+	    async undo(change, submitToBackend = true) {
 	        const inverseChange = change.getInverse();
 	        const opts = { submitToBackend, addToRecents: false };
 	        return this.submit(inverseChange, opts);
 	    }
-	    /**
-	     * Undo the last change
-	     */
-	    async revertLastChange() {
+	    async redo(change, submitToBackend = true) {
+	        const opts = { submitToBackend, addToRecents: false };
+	        return this.submit(change, opts);
+	    }
+	    async undoLastChange() {
+	        const session = require$$1$2.getSession(this.dataStore);
 	        const lastChange = this.recentChanges.pop();
 	        if (!lastChange) {
-	            const session = require$$1$2.getSession(this.dataStore);
-	            session.notify('No changes to undo!', 'warning');
+	            session.notify('No changes to undo!', 'info');
 	            return;
 	        }
-	        return this.revert(lastChange);
+	        this.undoneChanges.push(lastChange);
+	        return this.undo(lastChange);
+	    }
+	    async redoLastChange() {
+	        const session = require$$1$2.getSession(this.dataStore);
+	        const lastChange = this.undoneChanges.pop();
+	        if (!lastChange) {
+	            session.notify('No changes to redo!', 'info');
+	            return;
+	        }
+	        this.recentChanges.push(lastChange);
+	        return this.redo(lastChange);
 	    }
 	}
 
@@ -63980,21 +64797,6 @@
 	        this.checkSocket(assemblyName, refName, internetAccount);
 	        return response.json();
 	    }
-	    async getFeatureById(featureId, assemblyName, topLevel) {
-	        const internetAccount = this.clientStore.getInternetAccount(assemblyName);
-	        const { baseURL } = internetAccount;
-	        const url = new URL(`features/${featureId}`, baseURL);
-	        const searchParams = new URLSearchParams({
-	            topLevel: String(topLevel),
-	        });
-	        url.search = searchParams.toString();
-	        const response = await this.fetch(internetAccount, url.toString());
-	        if (!response.ok) {
-	            const errorMessage = await createFetchErrorMessage(response, 'getFeatureById failed');
-	            throw new Error(errorMessage);
-	        }
-	        return response.json();
-	    }
 	    /**
 	     * Checks if there is assembly-refSeq specific socket. If not, it opens one
 	     * @param assembly - assemblyId
@@ -64012,10 +64814,25 @@
 	                internetAccount.setLastChangeSequenceNumber(Number(message.changeSequence));
 	                if (message.userSessionId !== token && message.channel === channel) {
 	                    const change = dist$3.Change.fromJSON(message.changeInfo);
-	                    await changeManager.submit(change, { submitToBackend: false });
+	                    if (dist$3.isFeatureChange(change) && this.haveDataForChange(change)) {
+	                        await changeManager.submit(change, { submitToBackend: false });
+	                    }
 	                }
 	            });
 	        }
+	    }
+	    haveDataForChange(change) {
+	        const { assembly, changedIds } = change;
+	        const apolloAssembly = this.clientStore.assemblies.get(assembly);
+	        if (!apolloAssembly) {
+	            return false;
+	        }
+	        for (const changedId of changedIds) {
+	            if (this.clientStore.getFeature(changedId)) {
+	                return true;
+	            }
+	        }
+	        return false;
 	    }
 	    /**
 	     * Call backend endpoint to get sequence by criteria
@@ -64112,7 +64929,7 @@
 	        return refSeqs.map((refSeq) => {
 	            return {
 	                refName: refSeq.name,
-	                aliases: [refSeq._id, ...refSeq.aliases],
+	                aliases: [...new Set([refSeq._id, ...refSeq.aliases])],
 	                uniqueId: `alias-${refSeq._id}`,
 	            };
 	        });
@@ -64185,9 +65002,6 @@
 	}
 
 	class InMemoryFileDriver extends BackendDriver {
-	    getFeatureById(_featureId, _assemblyName, _topLevel) {
-	        throw new Error('Method not implemented.');
-	    }
 	    async getFeatures() {
 	        return [[], []];
 	    }
@@ -64264,9 +65078,6 @@
 
 	/* eslint-disable @typescript-eslint/require-await */
 	class DesktopFileDriver extends BackendDriver {
-	    getFeatureById(_featureId, _assemblyName, _topLevel) {
-	        throw new Error('Method not implemented.');
-	    }
 	    async loadAssembly(assemblyName) {
 	        const { assemblyManager } = require$$1$2.getSession(this.clientStore);
 	        const assembly = assemblyManager.get(assemblyName);
@@ -64638,8 +65449,6 @@
 	}
 
 	function extendSession(pluginManager, sessionModel) {
-	    const aborter = new AbortController();
-	    const { signal } = aborter;
 	    const AnnotationFeatureExtended = pluginManager.evaluateExtensionPoint('Apollo-extendAnnotationFeature', dist.AnnotationFeatureModel);
 	    const ClientDataStore = clientDataStoreFactory(AnnotationFeatureExtended);
 	    const sm = sessionModel
@@ -64647,7 +65456,12 @@
 	        apolloDataStore: require$$1$3.types.optional(ClientDataStore, { typeName: 'Client' }),
 	        apolloSelectedFeature: require$$1$3.types.safeReference(AnnotationFeatureExtended),
 	        jobsManager: require$$1$3.types.optional(ApolloJobModel, {}),
+	        isLocked: require$$1$3.types.optional(require$$1$3.types.boolean, false),
 	    })
+	        .volatile(() => ({
+	        apolloHoveredFeature: undefined,
+	        abortController: new AbortController(),
+	    }))
 	        .extend(() => {
 	        const collabs = mobx.observable.array([]);
 	        return {
@@ -64674,6 +65488,9 @@
 	            // @ts-expect-error Not sure why TS thinks these MST types don't match
 	            self.apolloSelectedFeature = feature;
 	        },
+	        apolloSetHoveredFeature(feature) {
+	            self.apolloHoveredFeature = feature;
+	        },
 	        addApolloTrackConfig(assembly, baseURL) {
 	            const trackId = `apollo_track_${assembly.name}`;
 	            const hasTrack = self.tracks.some((track) => track.trackId === trackId);
@@ -64698,6 +65515,16 @@
 	                    },
 	                });
 	            }
+	        },
+	        toggleLocked() {
+	            self.isLocked = !self.isLocked;
+	        },
+	        getPluginConfiguration() {
+	            const { jbrowse } = require$$1$3.getRoot(self);
+	            const pluginConfiguration = 
+	            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+	            jbrowse.configuration.ApolloPlugin;
+	            return pluginConfiguration;
 	        },
 	        broadcastLocations() {
 	            const { internetAccounts } = require$$1$3.getRoot(self);
@@ -64747,9 +65574,15 @@
 	            }
 	        },
 	    }))
+	        .volatile((self) => ({
+	        previousSnapshot: require$$1$3.getSnapshot(self),
+	    }))
 	        .actions((self) => ({
-	        afterCreate: require$$1$3.flow(function* afterCreate() {
-	            mobx.autorun(() => {
+	        afterCreate() {
+	            require$$1$3.applySnapshot(self, { name: self.name, id: self.id });
+	            // @ts-expect-error type is missing on ApolloRootModel
+	            const { internetAccounts, jbrowse, reloadPluginManagerCallback } = require$$1$3.getRoot(self);
+	            require$$1$3.addDisposer(self, mobx.autorun(() => {
 	                // broadcastLocations() // **** This is not working and therefore we need to duplicate broadcastLocations() -method code here because autorun() does not observe changes otherwise
 	                const locations = [];
 	                for (const view of self
@@ -64766,7 +65599,8 @@
 	                                const { assemblyName, end, refName, start } = block;
 	                                const assembly = self.apolloDataStore.assemblies.get(assemblyName);
 	                                if (assembly &&
-	                                    assembly.backendDriverType === 'CollaborationServerDriver') {
+	                                    assembly.backendDriverType ===
+	                                        'CollaborationServerDriver') {
 	                                    locations.push({ assemblyName, refName, start, end });
 	                                }
 	                            }
@@ -64796,62 +65630,66 @@
 	                        internetAccount.postUserLocation(allLocations);
 	                    }
 	                }
-	            }, { name: 'ApolloSession' });
-	            // When the initial config.json loads, it doesn't include the Apollo
-	            // tracks, which would result in a potentially invalid session snapshot
-	            // if any tracks are open. Here we copy the session snapshot, apply an
-	            // empty session snapshot, and then restore the original session
-	            // snapshot after the updated config.json loads.
-	            // @ts-expect-error type is missing on ApolloRootModel
-	            const { internetAccounts, jbrowse, reloadPluginManagerCallback } = require$$1$3.getRoot(self);
-	            const pluginConfiguration = 
-	            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-	            jbrowse.configuration.ApolloPlugin;
-	            const hasRole = configuration.readConfObject(pluginConfiguration, 'hasRole');
-	            if (hasRole) {
-	                return;
-	            }
-	            const sessionSnapshot = require$$1$3.getSnapshot(self);
-	            const { id, name } = sessionSnapshot;
-	            require$$1$3.applySnapshot(self, { name, id });
-	            // fetch and initialize assemblies for each of our Apollo internet accounts
-	            for (const internetAccount of internetAccounts) {
-	                if (internetAccount.type !== 'ApolloInternetAccount') {
-	                    continue;
+	            }, { name: 'ApolloSessionBroadcastLocations' }));
+	            require$$1$3.addDisposer(self, mobx.autorun(async (reaction) => {
+	                // When the initial config.json loads, it doesn't include the Apollo
+	                // tracks, which would result in a potentially invalid session snapshot
+	                // if any tracks are open. Here we copy the session snapshot, apply an
+	                // empty session snapshot, and then restore the original session
+	                // snapshot after the updated config.json loads.
+	                const pluginConfiguration = 
+	                // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+	                jbrowse.configuration.ApolloPlugin;
+	                const hasRole = configuration.readConfObject(pluginConfiguration, 'hasRole');
+	                if (hasRole) {
+	                    // @ts-expect-error not sure why snapshot type is wrong for snapshot
+	                    require$$1$3.applySnapshot(self, self.previousSnapshot);
+	                    reaction.dispose();
+	                    return;
 	                }
-	                const { baseURL } = internetAccount;
-	                const uri = new URL('jbrowse/config.json', baseURL).href;
-	                const fetch = internetAccount.getFetcher({
-	                    locationType: 'UriLocation',
-	                    uri,
-	                });
-	                let response;
-	                try {
-	                    response = yield fetch(uri, { signal });
+	                const { signal } = self.abortController;
+	                // fetch and initialize assemblies for each of our Apollo internet accounts
+	                for (const internetAccount of internetAccounts) {
+	                    if (internetAccount.type !== 'ApolloInternetAccount') {
+	                        continue;
+	                    }
+	                    const { baseURL } = internetAccount;
+	                    const uri = new URL('jbrowse/config.json', baseURL).href;
+	                    const fetch = internetAccount.getFetcher({
+	                        locationType: 'UriLocation',
+	                        uri,
+	                    });
+	                    let response;
+	                    try {
+	                        response = await fetch(uri, { signal });
+	                    }
+	                    catch (error) {
+	                        if (!self.abortController.signal.aborted) {
+	                            console.error(error);
+	                        }
+	                        continue;
+	                    }
+	                    if (!response.ok) {
+	                        const errorMessage = await createFetchErrorMessage(response, 'Failed to fetch assemblies');
+	                        console.error(errorMessage);
+	                        continue;
+	                    }
+	                    let jbrowseConfig;
+	                    try {
+	                        jbrowseConfig = await response.json();
+	                    }
+	                    catch (error) {
+	                        console.error(error);
+	                        continue;
+	                    }
+	                    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+	                    reloadPluginManagerCallback(jbrowseConfig, self.previousSnapshot);
+	                    reaction.dispose();
 	                }
-	                catch (error) {
-	                    console.error(error);
-	                    continue;
-	                }
-	                if (!response.ok) {
-	                    const errorMessage = yield createFetchErrorMessage(response, 'Failed to fetch assemblies');
-	                    console.error(errorMessage);
-	                    continue;
-	                }
-	                let jbrowseConfig;
-	                try {
-	                    jbrowseConfig = yield response.json();
-	                }
-	                catch (error) {
-	                    console.error(error);
-	                    continue;
-	                }
-	                // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-	                reloadPluginManagerCallback(jbrowseConfig, sessionSnapshot);
-	            }
-	        }),
+	            }, { name: 'ApolloSessionLoadConfig' }));
+	        },
 	        beforeDestroy() {
-	            aborter.abort('destroying session model');
+	            self.abortController.abort('destroying session model');
 	        },
 	    }))
 	        .views((self) => {
@@ -64911,7 +65749,7 @@
 	                                // eslint-disable-next-line @typescript-eslint/no-unsafe-call
 	                                jbrowse.addTrackConf(newTrackConfigSnapshot);
 	                            },
-	                            icon: default_1,
+	                            icon: SaveIcon,
 	                        },
 	                    ]
 	                    : [
@@ -64951,7 +65789,7 @@
 	                                // eslint-disable-next-line @typescript-eslint/no-unsafe-call
 	                                jbrowse.deleteTrackConf(conf);
 	                            },
-	                            icon: default_1,
+	                            icon: SaveIcon,
 	                        },
 	                    ];
 	            },
@@ -65000,6 +65838,8 @@
 	}
 	const cdsCheck = new dist$2.CDSCheck();
 	dist$3.checkRegistry.registerCheck(cdsCheck.name, cdsCheck);
+	const transcriptCheck = new dist$2.TranscriptCheck();
+	dist$3.checkRegistry.registerCheck(transcriptCheck.name, transcriptCheck);
 	dist$2.validationRegistry.registerValidation(new dist$2.CoreValidation());
 	dist$2.validationRegistry.registerValidation(new dist$2.ParentChildValidation());
 	class ApolloPlugin extends require$$1__default["default"] {
@@ -65047,15 +65887,15 @@
 	            return new pluggableElementTypes.InternetAccountType({
 	                name: 'ApolloInternetAccount',
 	                configSchema: ApolloConfigSchema,
-	                stateModel: stateModelFactory$2(ApolloConfigSchema),
+	                stateModel: stateModelFactory$3(ApolloConfigSchema),
 	            });
 	        });
 	        pluginManager.addDisplayType(() => {
-	            const configSchema = configSchema$1;
+	            const configSchema = configSchema$2;
 	            return new pluggableElementTypes.DisplayType({
 	                name: 'LinearApolloDisplay',
 	                configSchema,
-	                stateModel: stateModelFactory$1(pluginManager, configSchema),
+	                stateModel: stateModelFactory$2(pluginManager, configSchema),
 	                trackType: 'ApolloTrack',
 	                viewType: 'LinearGenomeView',
 	                ReactComponent: LinearApolloDisplayComponent,
@@ -65070,6 +65910,18 @@
 	                trackType: 'ApolloTrack',
 	                viewType: 'LinearGenomeView',
 	                ReactComponent: LinearApolloSixFrameDisplayComponent,
+	            });
+	        });
+	        pluginManager.addDisplayType(() => {
+	            const configSchema = configSchema$1;
+	            return new pluggableElementTypes.DisplayType({
+	                name: 'LinearApolloReferenceSequenceDisplay',
+	                configSchema,
+	                stateModel: stateModelFactory$1(pluginManager, configSchema),
+	                displayName: 'Apollo reference sequence display',
+	                trackType: 'ReferenceSequenceTrack',
+	                viewType: 'LinearGenomeView',
+	                ReactComponent: LinearApolloReferenceSequenceDisplay,
 	            });
 	        });
 	        pluginManager.addToExtensionPoint('Core-extendSession', 
@@ -65087,7 +65939,7 @@
 	                                ...superRubberBandMenuItems(),
 	                                {
 	                                    label: 'Add new feature',
-	                                    icon: default_1$p,
+	                                    icon: AddIcon,
 	                                    onClick: () => {
 	                                        const session = require$$1$2.getSession(self);
 	                                        const { leftOffset, rightOffset } = self;
@@ -65180,91 +66032,16 @@
 	    }
 	    configure(pluginManager) {
 	        if (require$$1$2.isAbstractMenuManager(pluginManager.rootModel)) {
-	            pluginManager.rootModel.appendToMenu('Apollo', {
-	                label: 'Download GFF3',
-	                onClick: (session) => {
-	                    session.queueDialog((doneCallback) => [
-	                        DownloadGFF3,
-	                        {
-	                            session,
-	                            handleClose: () => {
-	                                doneCallback();
-	                            },
-	                        },
-	                    ]);
-	                },
+	            pluginManager.jexl.addFunction('colorFeature', (featureType) => {
+	                if (featureType === 'pseudogenic_transcript') {
+	                    return material.alpha('rgb(148, 203, 236)', 0.6);
+	                }
+	                if (featureType === 'nonCodingTranscript') {
+	                    return material.alpha('rgb(194, 106, 119)', 0.6);
+	                }
+	                throw new Error('Invalid type');
 	            });
-	            pluginManager.rootModel.appendToMenu('Apollo', {
-	                label: 'Manage Checks',
-	                onClick: (session) => {
-	                    session.queueDialog((doneCallback) => [
-	                        ManageChecks,
-	                        {
-	                            session,
-	                            handleClose: () => {
-	                                doneCallback();
-	                            },
-	                        },
-	                    ]);
-	                },
-	            });
-	            pluginManager.rootModel.appendToMenu('Apollo', {
-	                label: 'View Change Log',
-	                onClick: (session) => {
-	                    session.queueDialog((doneCallback) => [
-	                        ViewChangeLog,
-	                        {
-	                            session,
-	                            handleClose: () => {
-	                                doneCallback();
-	                            },
-	                        },
-	                    ]);
-	                },
-	            });
-	            pluginManager.rootModel.appendToMenu('Apollo', {
-	                label: 'Open local GFF3 file',
-	                onClick: (session) => {
-	                    session.queueDialog((doneCallback) => [
-	                        OpenLocalFile,
-	                        {
-	                            session,
-	                            handleClose: () => {
-	                                doneCallback();
-	                            },
-	                            inMemoryFileDriver: session.apolloDataStore.inMemoryFileDriver,
-	                        },
-	                    ]);
-	                },
-	            });
-	            pluginManager.rootModel.appendToMenu('Apollo', {
-	                label: 'View check results',
-	                onClick: (session) => {
-	                    session.queueDialog((doneCallback) => [
-	                        ViewCheckResults,
-	                        {
-	                            session,
-	                            handleClose: () => {
-	                                doneCallback();
-	                            },
-	                        },
-	                    ]);
-	                },
-	            });
-	            pluginManager.rootModel.appendToMenu('Apollo', {
-	                label: 'Log out',
-	                onClick: (session) => {
-	                    session.queueDialog((doneCallback) => [
-	                        LogOut,
-	                        {
-	                            session,
-	                            handleClose: () => {
-	                                doneCallback();
-	                            },
-	                        },
-	                    ]);
-	                },
-	            });
+	            addTopLevelMenus(pluginManager.rootModel);
 	        }
 	    }
 	}
