@@ -2111,7 +2111,7 @@
 
 	var toString$3 = {}.toString;
 
-	var isArray$4 = Array.isArray || function (arr) {
+	var isArray$3 = Array.isArray || function (arr) {
 	  return toString$3.call(arr) == '[object Array]';
 	};
 
@@ -2385,7 +2385,7 @@
 	      return fromArrayLike$1(that, obj)
 	    }
 
-	    if (obj.type === 'Buffer' && isArray$4(obj.data)) {
+	    if (obj.type === 'Buffer' && isArray$3(obj.data)) {
 	      return fromArrayLike$1(that, obj.data)
 	    }
 	  }
@@ -2450,7 +2450,7 @@
 	};
 
 	Buffer.concat = function concat (list, length) {
-	  if (!isArray$4(list)) {
+	  if (!isArray$3(list)) {
 	    throw new TypeError('"list" argument must be an Array of Buffers')
 	  }
 
@@ -4124,7 +4124,7 @@
 	  n = n.toString(16);
 	  return n.length === length ? n : "00000000".substring(n.length, length) + n;
 	}
-	var inspect$1 = Symbol && Symbol["for"] && /*#__PURE__*/Symbol["for"]('nodejs.util.inspect.custom') || 'inspect';
+	var inspect = Symbol && Symbol["for"] && /*#__PURE__*/Symbol["for"]('nodejs.util.inspect.custom') || 'inspect';
 
 	/**
 	 * Converts to a string representation of this Id.
@@ -4132,7 +4132,7 @@
 	 * @return {String} return the 24 byte hex string representation.
 	 * @api private
 	 */
-	ObjectID.prototype[inspect$1] = function () {
+	ObjectID.prototype[inspect] = function () {
 	  return "ObjectID(" + this + ")";
 	};
 	ObjectID.prototype.toJSON = ObjectID.prototype.toHexString;
@@ -5147,7 +5147,7 @@
 	});
 	AddAssemblyAliasesChange$1.AddAssemblyAliasesChange = void 0;
 	var common_1$o = dist$1;
-	var util_1$9 = require$$1__default$1["default"];
+	var util_1$b = require$$1__default$1["default"];
 	var AddAssemblyAliasesChange = /*#__PURE__*/function (_common_1$AssemblySpe) {
 	  _inherits(AddAssemblyAliasesChange, _common_1$AssemblySpe);
 	  var _super = /*#__PURE__*/_createSuper(AddAssemblyAliasesChange);
@@ -5163,7 +5163,7 @@
 	  _createClass(AddAssemblyAliasesChange, [{
 	    key: "executeOnClient",
 	    value: function executeOnClient(clientDataStore) {
-	      var _ref = (0, util_1$9.getSession)(clientDataStore),
+	      var _ref = (0, util_1$b.getSession)(clientDataStore),
 	        assemblyManager = _ref.assemblyManager;
 	      var assembly = assemblyManager.get(this.assembly);
 	      if (!assembly) {
@@ -5255,7 +5255,7 @@
 	  value: true
 	});
 	annotationFeatureToGFF3$1.annotationFeatureToGFF3 = annotationFeatureToGFF3;
-	var util_1$8 = require$$1__default$1["default"];
+	var util_1$a = require$$1__default$1["default"];
 	function annotationFeatureToGFF3(feature, parentId, refSeqNames) {
 	  var _feature$attributes, _feature$attributes$g, _feature$attributes2, _feature$attributes3;
 	  // eslint-disable-next-line unicorn/prefer-structured-clone
@@ -5446,7 +5446,7 @@
 	            type: 'intron'
 	          });
 	        }
-	        var _ref3 = (0, util_1$8.intersection2)(cdsMin, cdsMax, _child.min, _child.max),
+	        var _ref3 = (0, util_1$a.intersection2)(cdsMin, cdsMax, _child.min, _child.max),
 	          _ref4 = _slicedToArray(_ref3, 2),
 	          start = _ref4[0],
 	          end = _ref4[1];
@@ -5623,7 +5623,7 @@
 	});
 	gff3ToAnnotationFeature$1.gff3ToAnnotationFeature = gff3ToAnnotationFeature;
 	var tslib_1$4 = require$$0$1;
-	var util_1$7 = require$$1__default$1["default"];
+	var util_1$9 = require$$1__default$1["default"];
 	var bson_objectid_1$2 = /*#__PURE__*/tslib_1$4.__importDefault(objectid);
 	var gffReservedKeys_1 = gffReservedKeys;
 	function gff3ToAnnotationFeature(gff3Feature, refSeq, featureIds) {
@@ -5747,7 +5747,7 @@
 	          var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
 	            key = _Object$entries$_i[0],
 	            val = _Object$entries$_i[1];
-	          if (!val || key === 'Parent') {
+	          if (key === 'Parent') {
 	            continue;
 	          }
 	          var newKey = (0, gffReservedKeys_1.isGFFReservedAttribute)(key) ? gffReservedKeys_1.gffToInternal[key] : key;
@@ -6085,7 +6085,7 @@
 	      return false;
 	    }
 	    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-	    return (0, util_1$7.doesIntersect2)(loc.start, loc.end, nextLoc.start, nextLoc.end);
+	    return (0, util_1$9.doesIntersect2)(loc.start, loc.end, nextLoc.start, nextLoc.end);
 	  });
 	  // If no overlaps, assume it's a single CDS feature
 	  if (!overlapping) {
@@ -6108,7 +6108,7 @@
 	        return 1; // continue
 	      }
 	      var overlaps = lastGroup.some(function (lastGroupLoc) {
-	        return (0, util_1$7.doesIntersect2)( /* eslint-disable @typescript-eslint/no-non-null-assertion */
+	        return (0, util_1$9.doesIntersect2)( /* eslint-disable @typescript-eslint/no-non-null-assertion */
 	        lastGroupLoc.start, lastGroupLoc.end, location.start, location.end);
 	      });
 	      if (overlaps) {
@@ -6145,10 +6145,7 @@
 	  value: true
 	});
 	FromFileBaseChange$1.FromFileBaseChange = void 0;
-	/* eslint-disable @typescript-eslint/restrict-plus-operands */
 	/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-	/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-	/* eslint-disable @typescript-eslint/no-unsafe-call */
 	/* eslint-disable @typescript-eslint/no-unsafe-argument */
 	var common_1$n = dist$1;
 	var GFF3_1 = GFF3;
@@ -6170,7 +6167,7 @@
 	    value: function () {
 	      var _addRefSeqIntoDb = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(fileDoc, assembly, backend) {
 	        var _logger$debug;
-	        var logger, filesService, refSeqChunkModel, refSeqModel, user, CHUNK_SIZE, customChunkSize, chunkIndex, refSeqLen, refSeqDoc, fastaInfoStarted, sequenceStream, sequenceBuffer, incompleteLine, lastLineIsIncomplete, parsingStarted, lineCount, _iteratorAbruptCompletion, _didIteratorError, _iteratorError, _iterator, _step, data, chunk, lines, _iteratorAbruptCompletion2, _didIteratorError2, _iteratorError2, _iterator2, _step2, line, _logger$debug2, refSeqInfoLine, _logger$debug3, _refSeqDoc, _logger$debug4, name, description, _yield$refSeqModel$cr, _yield$refSeqModel$cr2, newRefSeqDoc, _refSeqDoc2, _id, chunkSize, sequence, _logger$verbose, _logger$debug5;
+	        var logger, filesService, refSeqChunkModel, refSeqModel, user, CHUNK_SIZE, customChunkSize, chunkIndex, refSeqLen, refSeqDoc, fastaInfoStarted, sequenceStream, sequenceBuffer, incompleteLine, lastLineIsIncomplete, parsingStarted, lineCount, decoder, _iteratorAbruptCompletion, _didIteratorError, _iteratorError, _iterator, _step, data, chunk, lines, _lines$pop, _iterator2, _step2, line, _logger$debug2, refSeqInfoLine, _logger$debug3, _refSeqDoc, _logger$debug4, name, description, _yield$refSeqModel$cr, _yield$refSeqModel$cr2, newRefSeqDoc, _refSeqDoc2, _id, chunkSize, sequence, _logger$verbose, _logger$debug5;
 	        return _regeneratorRuntime().wrap(function _callee$(_context) {
 	          while (1) switch (_context.prev = _context.next) {
 	            case 0:
@@ -6188,20 +6185,22 @@
 	              parsingStarted = false;
 	              (_logger$debug = logger.debug) === null || _logger$debug === void 0 || _logger$debug.call(logger, 'starting sequence stream');
 	              lineCount = 0;
+	              decoder = new TextDecoder(); // @ts-expect-error type is wrong here
+	              // eslint-disable-next-line @typescript-eslint/await-thenable
 	              _iteratorAbruptCompletion = false;
 	              _didIteratorError = false;
-	              _context.prev = 16;
+	              _context.prev = 17;
 	              _iterator = _asyncIterator(sequenceStream);
-	            case 18:
-	              _context.next = 20;
+	            case 19:
+	              _context.next = 21;
 	              return _iterator.next();
-	            case 20:
+	            case 21:
 	              if (!(_iteratorAbruptCompletion = !(_step = _context.sent).done)) {
-	                _context.next = 102;
+	                _context.next = 91;
 	                break;
 	              }
 	              data = _step.value;
-	              chunk = data.toString();
+	              chunk = decoder.decode(data);
 	              lastLineIsIncomplete = !chunk.endsWith('\n');
 	              // chunk is small enough that you can split the whole thing into lines without having to make it into smaller chunks first.
 	              lines = chunk.split(/\r?\n/);
@@ -6210,18 +6209,14 @@
 	                incompleteLine = '';
 	              }
 	              if (lastLineIsIncomplete) {
-	                incompleteLine = lines.pop() || '';
+	                incompleteLine = (_lines$pop = lines.pop()) !== null && _lines$pop !== void 0 ? _lines$pop : '';
 	              }
-	              _iteratorAbruptCompletion2 = false;
-	              _didIteratorError2 = false;
+	              _iterator2 = _createForOfIteratorHelper(lines);
 	              _context.prev = 29;
-	              _iterator2 = _asyncIterator(lines);
+	              _iterator2.s();
 	            case 31:
-	              _context.next = 33;
-	              return _iterator2.next();
-	            case 33:
-	              if (!(_iteratorAbruptCompletion2 = !(_step2 = _context.sent).done)) {
-	                _context.next = 83;
+	              if ((_step2 = _iterator2.n()).done) {
+	                _context.next = 80;
 	                break;
 	              }
 	              line = _step2.value;
@@ -6231,35 +6226,35 @@
 	              }
 	              // In case of GFF3 file we start to read sequence after '##FASTA' is found
 	              if (fastaInfoStarted) {
-	                _context.next = 40;
+	                _context.next = 38;
 	                break;
 	              }
 	              if (line.trim() === '##FASTA') {
 	                fastaInfoStarted = true;
 	              }
-	              return _context.abrupt("continue", 80);
-	            case 40:
+	              return _context.abrupt("continue", 78);
+	            case 38:
 	              refSeqInfoLine = /^>\s*(\S+)\s*(.*)/.exec(line); // Add new ref sequence info if we are reference seq info line
 	              if (!refSeqInfoLine) {
-	                _context.next = 66;
+	                _context.next = 64;
 	                break;
 	              }
 	              parsingStarted = true;
 	              (_logger$debug3 = logger.debug) === null || _logger$debug3 === void 0 || _logger$debug3.call(logger, "Reference sequence information line \"".concat(refSeqInfoLine[0], "\""));
 	              // If there is sequence from previous reference sequence then we need to add it to previous ref seq
 	              if (!(sequenceBuffer !== '')) {
-	                _context.next = 51;
+	                _context.next = 49;
 	                break;
 	              }
 	              if (refSeqDoc) {
-	                _context.next = 47;
+	                _context.next = 45;
 	                break;
 	              }
 	              throw new Error('No refSeq document found');
-	            case 47:
+	            case 45:
 	              refSeqLen += sequenceBuffer.length;
 	              // We cannot use Mongo 'session' / transaction here because Mongo has 16 MB limit for transaction
-	              _context.next = 50;
+	              _context.next = 48;
 	              return refSeqChunkModel.create([{
 	                refSeq: refSeqDoc._id,
 	                n: chunkIndex,
@@ -6267,20 +6262,20 @@
 	                user: user,
 	                status: -1
 	              }]);
-	            case 50:
+	            case 48:
 	              sequenceBuffer = '';
-	            case 51:
-	              _context.next = 53;
+	            case 49:
+	              _context.next = 51;
 	              return (_refSeqDoc = refSeqDoc) === null || _refSeqDoc === void 0 ? void 0 : _refSeqDoc.updateOne({
 	                length: refSeqLen
 	              });
-	            case 53:
+	            case 51:
 	              // await refSeqDoc?.updateOne({ length: refSeqLen }, { session })
 	              refSeqLen = 0;
 	              chunkIndex = 0;
 	              name = refSeqInfoLine[1].trim();
 	              description = refSeqInfoLine[2] ? refSeqInfoLine[2].trim() : ''; // We cannot use Mongo 'session' / transaction here because Mongo has 16 MB limit for transaction
-	              _context.next = 59;
+	              _context.next = 57;
 	              return refSeqModel.create([_objectSpread2(_objectSpread2({
 	                name: name,
 	                description: description,
@@ -6292,37 +6287,37 @@
 	                user: user,
 	                status: -1
 	              })]);
-	            case 59:
+	            case 57:
 	              _yield$refSeqModel$cr = _context.sent;
 	              _yield$refSeqModel$cr2 = _slicedToArray(_yield$refSeqModel$cr, 1);
 	              newRefSeqDoc = _yield$refSeqModel$cr2[0];
 	              (_logger$debug4 = logger.debug) === null || _logger$debug4 === void 0 || _logger$debug4.call(logger, "Added new refSeq \"".concat(name, "\", desc \"").concat(description, "\", docId \"").concat(newRefSeqDoc._id, "\""));
 	              refSeqDoc = newRefSeqDoc;
-	              _context.next = 80;
+	              _context.next = 78;
 	              break;
-	            case 66:
+	            case 64:
 	              if (!/\S/.test(line)) {
-	                _context.next = 80;
+	                _context.next = 78;
 	                break;
 	              }
 	              if (refSeqDoc) {
-	                _context.next = 69;
+	                _context.next = 67;
 	                break;
 	              }
 	              throw new Error('No refSeq document found');
-	            case 69:
+	            case 67:
 	              _refSeqDoc2 = refSeqDoc, _id = _refSeqDoc2._id, chunkSize = _refSeqDoc2.chunkSize;
 	              sequenceBuffer += line.replaceAll(/\s/g, '');
 	              // If sequence block > chunk size then save chunk into Mongo
-	            case 71:
+	            case 69:
 	              if (!(sequenceBuffer.length >= chunkSize)) {
-	                _context.next = 80;
+	                _context.next = 78;
 	                break;
 	              }
 	              sequence = sequenceBuffer.slice(0, chunkSize);
 	              refSeqLen += sequence.length;
 	              // We cannot use Mongo 'session' / transaction here because Mongo has 16 MB limit for transaction
-	              _context.next = 76;
+	              _context.next = 74;
 	              return refSeqChunkModel.create([{
 	                refSeq: _id,
 	                n: chunkIndex,
@@ -6330,93 +6325,75 @@
 	                user: user,
 	                status: -1
 	              }]);
-	            case 76:
+	            case 74:
 	              chunkIndex++;
 	              // Set remaining sequence
 	              sequenceBuffer = sequenceBuffer.slice(chunkSize);
-	              _context.next = 71;
+	              _context.next = 69;
 	              break;
-	            case 80:
-	              _iteratorAbruptCompletion2 = false;
+	            case 78:
 	              _context.next = 31;
 	              break;
-	            case 83:
-	              _context.next = 89;
+	            case 80:
+	              _context.next = 85;
 	              break;
+	            case 82:
+	              _context.prev = 82;
+	              _context.t0 = _context["catch"](29);
+	              _iterator2.e(_context.t0);
 	            case 85:
 	              _context.prev = 85;
-	              _context.t0 = _context["catch"](29);
-	              _didIteratorError2 = true;
-	              _iteratorError2 = _context.t0;
-	            case 89:
-	              _context.prev = 89;
-	              _context.prev = 90;
-	              if (!(_iteratorAbruptCompletion2 && _iterator2["return"] != null)) {
-	                _context.next = 94;
-	                break;
-	              }
-	              _context.next = 94;
-	              return _iterator2["return"]();
-	            case 94:
-	              _context.prev = 94;
-	              if (!_didIteratorError2) {
-	                _context.next = 97;
-	                break;
-	              }
-	              throw _iteratorError2;
-	            case 97:
-	              return _context.finish(94);
-	            case 98:
-	              return _context.finish(89);
-	            case 99:
+	              _iterator2.f();
+	              return _context.finish(85);
+	            case 88:
 	              _iteratorAbruptCompletion = false;
-	              _context.next = 18;
+	              _context.next = 19;
 	              break;
-	            case 102:
-	              _context.next = 108;
+	            case 91:
+	              _context.next = 97;
 	              break;
-	            case 104:
-	              _context.prev = 104;
-	              _context.t1 = _context["catch"](16);
+	            case 93:
+	              _context.prev = 93;
+	              _context.t1 = _context["catch"](17);
 	              _didIteratorError = true;
 	              _iteratorError = _context.t1;
-	            case 108:
-	              _context.prev = 108;
-	              _context.prev = 109;
+	            case 97:
+	              _context.prev = 97;
+	              _context.prev = 98;
 	              if (!(_iteratorAbruptCompletion && _iterator["return"] != null)) {
-	                _context.next = 113;
+	                _context.next = 102;
 	                break;
 	              }
-	              _context.next = 113;
+	              _context.next = 102;
 	              return _iterator["return"]();
-	            case 113:
-	              _context.prev = 113;
+	            case 102:
+	              _context.prev = 102;
 	              if (!_didIteratorError) {
-	                _context.next = 116;
+	                _context.next = 105;
 	                break;
 	              }
 	              throw _iteratorError;
-	            case 116:
-	              return _context.finish(113);
-	            case 117:
-	              return _context.finish(108);
-	            case 118:
+	            case 105:
+	              return _context.finish(102);
+	            case 106:
+	              return _context.finish(97);
+	            case 107:
 	              if (parsingStarted) {
-	                _context.next = 120;
+	                _context.next = 109;
 	                break;
 	              }
 	              throw new Error('No reference sequences found in file');
-	            case 120:
+	            case 109:
 	              if (!(sequenceBuffer || lastLineIsIncomplete)) {
-	                _context.next = 131;
+	                _context.next = 120;
 	                break;
 	              }
 	              if (refSeqDoc) {
-	                _context.next = 123;
+	                _context.next = 112;
 	                break;
 	              }
 	              throw new Error('No refSeq document found');
-	            case 123:
+	            case 112:
 	              // If the file did not end with line break so the last line is incomplete
 	              if (lastLineIsIncomplete) {
 	                sequenceBuffer += incompleteLine;
@@ -6425,7 +6402,7 @@
 	              (_logger$verbose = logger.verbose) === null || _logger$verbose === void 0 || _logger$verbose.call(logger, "*** Add the very last chunk to ref seq (\"".concat(refSeqDoc._id, "\", index ").concat(chunkIndex, " and total length for ref seq is ").concat(refSeqLen, "): \"").concat(sequenceBuffer, "\""));
 	              (_logger$debug5 = logger.debug) === null || _logger$debug5 === void 0 || _logger$debug5.call(logger, "Creating refSeq chunk number ".concat(chunkIndex, " of \"").concat(refSeqDoc._id, "\""));
 	              // We cannot use Mongo 'session' / transaction here because Mongo has 16 MB limit for transaction
-	              _context.next = 129;
+	              _context.next = 118;
 	              return refSeqChunkModel.create([{
 	                refSeq: refSeqDoc._id,
 	                n: chunkIndex,
@@ -6433,16 +6410,16 @@
 	                user: user,
 	                status: -1
 	              }]);
-	            case 129:
-	              _context.next = 131;
+	            case 118:
+	              _context.next = 120;
 	              return refSeqDoc.updateOne({
 	                length: refSeqLen
 	              });
-	            case 131:
+	            case 120:
 	            case "end":
 	              return _context.stop();
 	          }
-	        }, _callee, this, [[16, 104, 108, 118], [29, 85, 89, 99], [90,, 94, 98], [109,, 113, 117]]);
+	        }, _callee, this, [[17, 93, 97, 107], [29, 82, 85, 88], [98,, 102, 106]]);
 	      }));
 	      function addRefSeqIntoDb(_x, _x2, _x3) {
 	        return _addRefSeqIntoDb.apply(this, arguments);
@@ -6645,7 +6622,7 @@
 	    key: "executeOnServer",
 	    value: function () {
 	      var _executeOnServer = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(backend) {
-	        var assemblyModel, checkModel, fileModel, filesService, user, assembly, changes, logger, _iterator2, _step2, _logger$debug, _logger$debug2, _logger$debug3, _logger$debug4, change, assemblyName, fileIds, fileId, FILE_UPLOAD_FOLDER, fileDoc, assemblyDoc, checkDocs, checks, _yield$assemblyModel$, _yield$assemblyModel$2, newAssemblyDoc, featureStream, _iteratorAbruptCompletion, _didIteratorError, _iteratorError, _iterator, _step, f, _logger$verbose, gff3Feature;
+	        var assemblyModel, checkModel, fileModel, filesService, user, assembly, changes, logger, _iterator2, _step2, _logger$debug, _logger$debug2, _logger$debug3, change, assemblyName, fileIds, parseOptions, fileId, FILE_UPLOAD_FOLDER, fileDoc, assemblyDoc, checkDocs, checks, _yield$assemblyModel$, _yield$assemblyModel$2, newAssemblyDoc, _ref, _ref$bufferSize, bufferSize, featureStream, _iteratorAbruptCompletion, _didIteratorError, _iteratorError, _iterator, _step, f, _logger$verbose, gff3Feature;
 	        return _regeneratorRuntime().wrap(function _callee$(_context) {
 	          while (1) switch (_context.prev = _context.next) {
 	            case 0:
@@ -6660,7 +6637,7 @@
 	                break;
 	              }
 	              change = _step2.value;
-	              assemblyName = change.assemblyName, fileIds = change.fileIds;
+	              assemblyName = change.assemblyName, fileIds = change.fileIds, parseOptions = change.parseOptions;
 	              fileId = fileIds.fa;
 	              FILE_UPLOAD_FOLDER = browser$1.env.FILE_UPLOAD_FOLDER;
 	              if (FILE_UPLOAD_FOLDER) {
@@ -6722,9 +6699,11 @@
 	              _context.next = 36;
 	              return this.addRefSeqIntoDb(fileDoc, newAssemblyDoc._id.toString(), backend);
 	            case 36:
-	              // Loop all features
-	              (_logger$debug4 = logger.debug) === null || _logger$debug4 === void 0 || _logger$debug4.call(logger, "**************** LOOPATAAN KAIKKI FEATURET SEURAAVAKSI File type: \"".concat(fileDoc.type, "\""));
-	              featureStream = filesService.parseGFF3(filesService.getFileStream(fileDoc));
+	              _ref = parseOptions !== null && parseOptions !== void 0 ? parseOptions : {}, _ref$bufferSize = _ref.bufferSize, bufferSize = _ref$bufferSize === void 0 ? 10000 : _ref$bufferSize;
+	              featureStream = filesService.parseGFF3(filesService.getFileStream(fileDoc), {
+	                bufferSize: bufferSize
+	              }); // @ts-expect-error type is wrong here
+	              // eslint-disable-next-line @typescript-eslint/await-thenable
 	              _iteratorAbruptCompletion = false;
 	              _didIteratorError = false;
 	              _context.prev = 40;
@@ -7393,7 +7372,7 @@
 	  throw new Error('no url, path, or filehandle provided, cannot open');
 	}
 
-	var esm$1 = {
+	var esm$2 = {
 		__proto__: null,
 		open: open$1,
 		fromUrl: fromUrl,
@@ -16273,7 +16252,7 @@
 	  return FetchableSmallFasta;
 	}();
 
-	var esm = {
+	var esm$1 = {
 		__proto__: null,
 		parseSmallFasta: parseSmallFasta,
 		FetchableSmallFasta: FetchableSmallFasta,
@@ -16281,9 +16260,9 @@
 		BgzipIndexedFasta: BgzipIndexedFasta
 	};
 
-	var require$$0 = /*@__PURE__*/getAugmentedNamespace(esm);
+	var require$$0 = /*@__PURE__*/getAugmentedNamespace(esm$1);
 
-	var require$$2 = /*@__PURE__*/getAugmentedNamespace(esm$1);
+	var require$$2 = /*@__PURE__*/getAugmentedNamespace(esm$2);
 
 	/* eslint-disable @typescript-eslint/restrict-template-expressions */
 	/* eslint-disable @typescript-eslint/no-unnecessary-condition */
@@ -17487,50 +17466,63 @@
 	              _iterator2.s();
 	            case 6:
 	              if ((_step2 = _iterator2.n()).done) {
-	                _context3.next = 20;
+	                _context3.next = 24;
 	                break;
 	              }
 	              change = _step2.value;
 	              addedFeature = change.addedFeature, parentFeatureId = change.parentFeatureId;
 	              if (!parentFeatureId) {
+	                _context3.next = 21;
+	                break;
+	              }
+	              parentFeature = dataStore.getFeature(parentFeatureId); // maybe the parent feature hasn't been loaded yet
+	              if (parentFeature) {
 	                _context3.next = 17;
 	                break;
 	              }
+	              _context3.next = 14;
+	              return dataStore.loadFeatures([{
+	                assemblyName: assembly,
+	                refName: addedFeature.refSeq,
+	                start: addedFeature.min,
+	                end: addedFeature.max
+	              }]);
+	            case 14:
 	              parentFeature = dataStore.getFeature(parentFeatureId);
 	              if (parentFeature) {
-	                _context3.next = 13;
+	                _context3.next = 17;
 	                break;
 	              }
 	              throw new Error("Could not find parent feature \"".concat(parentFeatureId, "\""));
-	            case 13:
+	            case 17:
 	              // create an ID for the parent feature if it does not have one
 	              if (!parentFeature.attributes.get('_id')) {
 	                parentFeature.setAttribute('_id', [parentFeature._id]);
 	              }
 	              parentFeature.addChild(addedFeature);
-	              _context3.next = 18;
+	              _context3.next = 22;
 	              break;
-	            case 17:
+	            case 21:
 	              dataStore.addFeature(assembly, addedFeature);
-	            case 18:
+	            case 22:
 	              _context3.next = 6;
 	              break;
-	            case 20:
-	              _context3.next = 25;
+	            case 24:
+	              _context3.next = 29;
 	              break;
-	            case 22:
-	              _context3.prev = 22;
+	            case 26:
+	              _context3.prev = 26;
 	              _context3.t0 = _context3["catch"](4);
 	              _iterator2.e(_context3.t0);
-	            case 25:
-	              _context3.prev = 25;
+	            case 29:
+	              _context3.prev = 29;
 	              _iterator2.f();
-	              return _context3.finish(25);
-	            case 28:
+	              return _context3.finish(29);
+	            case 32:
 	            case "end":
 	              return _context3.stop();
 	          }
-	        }, _callee3, this, [[4, 22, 25, 28]]);
+	        }, _callee3, this, [[4, 26, 29, 32]]);
 	      }));
 	      function executeOnClient(_x3) {
 	        return _executeOnClient.apply(this, arguments);
@@ -17630,7 +17622,7 @@
 	    value: function () {
 	      var _executeOnServer = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(backend) {
 	        var _logger$debug;
-	        var fileModel, filesService, changes, deleteExistingFeatures, logger, _iterator2, _step2, _logger$debug2, change, fileId, FILE_UPLOAD_FOLDER, fileDoc, featureStream, featureCount, _iteratorAbruptCompletion, _didIteratorError, _iteratorError, _iterator, _step, f, gff3Feature, _logger$debug3;
+	        var fileModel, filesService, changes, deleteExistingFeatures, logger, _iterator2, _step2, _logger$debug2, change, fileId, parseOptions, FILE_UPLOAD_FOLDER, fileDoc, _ref, _ref$bufferSize, bufferSize, featureStream, featureCount, _iteratorAbruptCompletion, _didIteratorError, _iteratorError, _iterator, _step, f, gff3Feature, _logger$debug3;
 	        return _regeneratorRuntime().wrap(function _callee$(_context) {
 	          while (1) switch (_context.prev = _context.next) {
 	            case 0:
@@ -17648,11 +17640,11 @@
 	              _iterator2.s();
 	            case 8:
 	              if ((_step2 = _iterator2.n()).done) {
-	                _context.next = 56;
+	                _context.next = 57;
 	                break;
 	              }
 	              change = _step2.value;
-	              fileId = change.fileId;
+	              fileId = change.fileId, parseOptions = change.parseOptions;
 	              FILE_UPLOAD_FOLDER = browser$1.env.FILE_UPLOAD_FOLDER;
 	              if (FILE_UPLOAD_FOLDER) {
 	                _context.next = 14;
@@ -17672,83 +17664,87 @@
 	            case 19:
 	              (_logger$debug2 = logger.debug) === null || _logger$debug2 === void 0 || _logger$debug2.call(logger, "FileId \"".concat(fileId, "\", checksum \"").concat(fileDoc.checksum, "\""));
 	              // Read data from compressed file and parse the content
-	              featureStream = filesService.parseGFF3(filesService.getFileStream(fileDoc));
-	              featureCount = 0;
+	              _ref = parseOptions !== null && parseOptions !== void 0 ? parseOptions : {}, _ref$bufferSize = _ref.bufferSize, bufferSize = _ref$bufferSize === void 0 ? 10000 : _ref$bufferSize;
+	              featureStream = filesService.parseGFF3(filesService.getFileStream(fileDoc), {
+	                bufferSize: bufferSize
+	              });
+	              featureCount = 0; // @ts-expect-error type is wrong here
+	              // eslint-disable-next-line @typescript-eslint/await-thenable
 	              _iteratorAbruptCompletion = false;
 	              _didIteratorError = false;
-	              _context.prev = 24;
+	              _context.prev = 25;
 	              _iterator = _asyncIterator(featureStream);
-	            case 26:
-	              _context.next = 28;
+	            case 27:
+	              _context.next = 29;
 	              return _iterator.next();
-	            case 28:
+	            case 29:
 	              if (!(_iteratorAbruptCompletion = !(_step = _context.sent).done)) {
-	                _context.next = 38;
+	                _context.next = 39;
 	                break;
 	              }
 	              f = _step.value;
 	              gff3Feature = f; // Add new feature into database
 	              // We cannot use Mongo 'session' / transaction here because Mongo has 16 MB limit for transaction
-	              _context.next = 33;
+	              _context.next = 34;
 	              return this.addFeatureIntoDb(gff3Feature, backend);
-	            case 33:
+	            case 34:
 	              featureCount++;
 	              if (featureCount % 1000 === 0) {
 	                (_logger$debug3 = logger.debug) === null || _logger$debug3 === void 0 || _logger$debug3.call(logger, "Processed ".concat(featureCount, " features"));
 	              }
-	            case 35:
+	            case 36:
 	              _iteratorAbruptCompletion = false;
-	              _context.next = 26;
+	              _context.next = 27;
 	              break;
-	            case 38:
-	              _context.next = 44;
+	            case 39:
+	              _context.next = 45;
 	              break;
-	            case 40:
-	              _context.prev = 40;
-	              _context.t0 = _context["catch"](24);
+	            case 41:
+	              _context.prev = 41;
+	              _context.t0 = _context["catch"](25);
 	              _didIteratorError = true;
 	              _iteratorError = _context.t0;
-	            case 44:
-	              _context.prev = 44;
+	            case 45:
 	              _context.prev = 45;
+	              _context.prev = 46;
 	              if (!(_iteratorAbruptCompletion && _iterator["return"] != null)) {
-	                _context.next = 49;
+	                _context.next = 50;
 	                break;
 	              }
-	              _context.next = 49;
+	              _context.next = 50;
 	              return _iterator["return"]();
-	            case 49:
-	              _context.prev = 49;
+	            case 50:
+	              _context.prev = 50;
 	              if (!_didIteratorError) {
-	                _context.next = 52;
+	                _context.next = 53;
 	                break;
 	              }
 	              throw _iteratorError;
-	            case 52:
-	              return _context.finish(49);
 	            case 53:
-	              return _context.finish(44);
+	              return _context.finish(50);
 	            case 54:
+	              return _context.finish(45);
+	            case 55:
 	              _context.next = 8;
 	              break;
-	            case 56:
-	              _context.next = 61;
+	            case 57:
+	              _context.next = 62;
 	              break;
-	            case 58:
-	              _context.prev = 58;
+	            case 59:
+	              _context.prev = 59;
 	              _context.t1 = _context["catch"](6);
 	              _iterator2.e(_context.t1);
-	            case 61:
-	              _context.prev = 61;
+	            case 62:
+	              _context.prev = 62;
 	              _iterator2.f();
-	              return _context.finish(61);
-	            case 64:
-	              (_logger$debug = logger.debug) === null || _logger$debug === void 0 || _logger$debug.call(logger, 'New features added into database!');
+	              return _context.finish(62);
 	            case 65:
+	              (_logger$debug = logger.debug) === null || _logger$debug === void 0 || _logger$debug.call(logger, 'New features added into database!');
+	            case 66:
 	            case "end":
 	              return _context.stop();
 	          }
-	        }, _callee, this, [[6, 58, 61, 64], [24, 40, 44, 54], [45,, 49, 53]]);
+	        }, _callee, this, [[6, 59, 62, 65], [25, 41, 45, 55], [46,, 50, 54]]);
 	      }));
 	      function executeOnServer(_x) {
 	        return _executeOnServer.apply(this, arguments);
@@ -17818,7 +17814,7 @@
 	});
 	AddRefSeqAliasesChange$1.AddRefSeqAliasesChange = void 0;
 	var common_1$j = dist$1;
-	var util_1$6 = require$$1__default$1["default"];
+	var util_1$8 = require$$1__default$1["default"];
 	var AddRefSeqAliasesChange = /*#__PURE__*/function (_common_1$AssemblySpe) {
 	  _inherits(AddRefSeqAliasesChange, _common_1$AssemblySpe);
 	  var _super = /*#__PURE__*/_createSuper(AddRefSeqAliasesChange);
@@ -17835,7 +17831,7 @@
 	    key: "executeOnClient",
 	    value: function executeOnClient(clientDataStore) {
 	      var _assembly$refNameAlia;
-	      var _ref = (0, util_1$6.getSession)(clientDataStore),
+	      var _ref = (0, util_1$8.getSession)(clientDataStore),
 	        assemblyManager = _ref.assemblyManager;
 	      var assembly = assemblyManager.get(this.assembly);
 	      if (!assembly) {
@@ -17969,7 +17965,7 @@
 	/* eslint-disable @typescript-eslint/no-unnecessary-condition */
 	/* eslint-disable @typescript-eslint/no-unsafe-call */
 	var common_1$i = dist$1;
-	var util_1$5 = require$$1__default$1["default"];
+	var util_1$7 = require$$1__default$1["default"];
 	var DeleteAssemblyChange = /*#__PURE__*/function (_common_1$AssemblySpe) {
 	  _inherits(DeleteAssemblyChange, _common_1$AssemblySpe);
 	  var _super = /*#__PURE__*/_createSuper(DeleteAssemblyChange);
@@ -18100,7 +18096,7 @@
 	              }
 	              throw new Error('No data store');
 	            case 3:
-	              session = (0, util_1$5.getSession)(dataStore); // If assemblyId is not present in client data store
+	              session = (0, util_1$7.getSession)(dataStore); // If assemblyId is not present in client data store
 	              if (dataStore.assemblies.has(assembly)) {
 	                dataStore.deleteAssembly(assembly);
 	              }
@@ -19357,15 +19353,15 @@
 
 	var MergeExonsChange$1 = {};
 
-	var util$1 = {};
+	var util$2 = {};
 
-	Object.defineProperty(util$1, "__esModule", {
+	Object.defineProperty(util$2, "__esModule", {
 	  value: true
 	});
-	util$1.splitStringIntoChunks = splitStringIntoChunks;
-	util$1.getPrintableId = getPrintableId;
-	util$1.attributesToRecords = attributesToRecords;
-	util$1.stringifyAttributes = stringifyAttributes;
+	util$2.splitStringIntoChunks = splitStringIntoChunks;
+	util$2.getPrintableId = getPrintableId$1;
+	util$2.attributesToRecords = attributesToRecords;
+	util$2.stringifyAttributes = stringifyAttributes;
 	function splitStringIntoChunks(input, chunkSize) {
 	  var chunks = [];
 	  for (var i = 0; i < input.length; i += chunkSize) {
@@ -19374,7 +19370,7 @@
 	  }
 	  return chunks;
 	}
-	function getPrintableId(feature) {
+	function getPrintableId$1(feature) {
 	  var _ff$attributes$get, _ff$attributes$get2;
 	  var ff = feature;
 	  var gff_id = (_ff$attributes$get = ff.attributes.get('gff_id')) === null || _ff$attributes$get === void 0 ? void 0 : _ff$attributes$get.join(',');
@@ -19693,7 +19689,7 @@
 	});
 	MergeExonsChange$1.MergeExonsChange = void 0;
 	var common_1$b = dist$1;
-	var util_1$4 = util$1;
+	var util_1$6 = util$2;
 	var DeleteFeatureChange_1$3 = DeleteFeatureChange$1;
 	var UndoMergeExonsChange_1 = UndoMergeExonsChange$1;
 	var MergeExonsChange = /*#__PURE__*/function (_common_1$FeatureChan) {
@@ -19789,7 +19785,7 @@
 	                      mergedExon.min = Math.min(firstExon.min, secondExon.min);
 	                      mergedExon.max = Math.max(firstExon.max, secondExon.max);
 	                      mergedAttributes = mergedExon.attributes ? JSON.parse(JSON.stringify(mergedExon.attributes)) : {};
-	                      mergedAttributes.merged_with = [(0, util_1$4.stringifyAttributes)((0, util_1$4.attributesToRecords)(secondExon.attributes))];
+	                      mergedAttributes.merged_with = [(0, util_1$6.stringifyAttributes)((0, util_1$6.attributesToRecords)(secondExon.attributes))];
 	                      mergedExon.attributes = mergedAttributes;
 	                      deletedIds = (0, DeleteFeatureChange_1$3.findAndDeleteChildFeature)(topLevelFeature, secondExon._id, _this2);
 	                      deletedIds.push(secondExon._id);
@@ -19889,7 +19885,7 @@
 	              mergedExon.setMin(Math.min(firstExon.min, secondExon.min));
 	              mergedExon.setMax(Math.max(firstExon.max, secondExon.max));
 	              mrg = (_mergedExon$attribute = (_mergedExon$attribute2 = mergedExon.attributes.get('merged_with')) === null || _mergedExon$attribute2 === void 0 ? void 0 : _mergedExon$attribute2.slice()) !== null && _mergedExon$attribute !== void 0 ? _mergedExon$attribute : [];
-	              mergedWith = (0, util_1$4.stringifyAttributes)((0, util_1$4.attributesToRecords)(secondExon.attributes));
+	              mergedWith = (0, util_1$6.stringifyAttributes)((0, util_1$6.attributesToRecords)(secondExon.attributes));
 	              if (!mrg.includes(mergedWith)) {
 	                mrg.push(mergedWith);
 	              }
@@ -20222,9 +20218,9 @@
 	});
 	MergeTranscriptsChange$1.MergeTranscriptsChange = void 0;
 	var common_1$9 = dist$1;
-	var util_1$3 = require$$1__default$1["default"];
+	var util_1$5 = require$$1__default$1["default"];
 	var mobx_state_tree_1$2 = require$$1__default$2["default"];
-	var util_2 = util$1;
+	var util_2$2 = util$2;
 	var DeleteFeatureChange_1$2 = DeleteFeatureChange$1;
 	var UndoMergeTranscriptsChange_1 = UndoMergeTranscriptsChange$1;
 	var MergeTranscriptsChange = /*#__PURE__*/function (_common_1$FeatureChan) {
@@ -20373,7 +20369,7 @@
 	        if (!Object.keys(mergedAttributes).includes('merged_with')) {
 	          mergedAttributes.merged_with = [];
 	        }
-	        mergedAttributes.merged_with.push((0, util_2.stringifyAttributes)((0, util_2.attributesToRecords)(secondTranscript.attributes)));
+	        mergedAttributes.merged_with.push((0, util_2$2.stringifyAttributes)((0, util_2$2.attributesToRecords)(secondTranscript.attributes)));
 	      }
 	      firstTranscript.attributes = mergedAttributes;
 	      if (secondTranscript.children) {
@@ -20406,7 +20402,7 @@
 	          } else {
 	            toDelete = true;
 	          }
-	          if (mrgChild.type === secondFeatureChild.type && mrgChild.type === firstFeatureChild.type && (0, util_1$3.doesIntersect2)(secondFeatureChild.min, secondFeatureChild.max, mrgChild.min, mrgChild.max) && (0, util_1$3.doesIntersect2)(firstFeatureChild.min, firstFeatureChild.max, mrgChild.min, mrgChild.max)) {
+	          if (mrgChild.type === secondFeatureChild.type && mrgChild.type === firstFeatureChild.type && (0, util_1$5.doesIntersect2)(secondFeatureChild.min, secondFeatureChild.max, mrgChild.min, mrgChild.max) && (0, util_1$5.doesIntersect2)(firstFeatureChild.min, firstFeatureChild.max, mrgChild.min, mrgChild.max)) {
 	            mrgChild.min = Math.min(secondFeatureChild.min, mrgChild.min, firstFeatureChild.min);
 	            mrgChild.max = Math.max(secondFeatureChild.max, mrgChild.max, firstFeatureChild.max);
 	            if (!mrgChild.attributes) {
@@ -20417,10 +20413,10 @@
 	              mrgChildAttr.merged_with = [];
 	            }
 	            var mergedWithAttributes = mrgChildAttr.merged_with;
-	            mergedWithAttributes.push((0, util_2.stringifyAttributes)((0, util_2.attributesToRecords)(secondFeatureChild.attributes)));
+	            mergedWithAttributes.push((0, util_2$2.stringifyAttributes)((0, util_2$2.attributesToRecords)(secondFeatureChild.attributes)));
 	            if (toDelete) {
 	              var recs = firstFeatureChild.attributes ? JSON.parse(JSON.stringify(firstFeatureChild.attributes)) : undefined;
-	              mergedWithAttributes.push((0, util_2.stringifyAttributes)(recs));
+	              mergedWithAttributes.push((0, util_2$2.stringifyAttributes)(recs));
 	              firstTranscript.children["delete"](firstFeatureChild._id.toString());
 	            }
 	            mrgChildAttr.merged_with = _toConsumableArray(new Set(mergedWithAttributes));
@@ -20516,7 +20512,7 @@
 	      firstTranscript.setMin(Math.min(firstTranscript.min, secondTranscript.min));
 	      firstTranscript.setMax(Math.max(firstTranscript.max, secondTranscript.max));
 	      var mrg = (_firstTranscript$attr = (_firstTranscript$attr2 = firstTranscript.attributes.get('merged_with')) === null || _firstTranscript$attr2 === void 0 ? void 0 : _firstTranscript$attr2.slice()) !== null && _firstTranscript$attr !== void 0 ? _firstTranscript$attr : [];
-	      var mergedWith = (0, util_2.stringifyAttributes)((0, util_2.attributesToRecords)(secondTranscript.attributes));
+	      var mergedWith = (0, util_2$2.stringifyAttributes)((0, util_2$2.attributesToRecords)(secondTranscript.attributes));
 	      if (!mrg.includes(mergedWith)) {
 	        // executeOnClient runs twice (?!) so avoid adding this key again
 	        mrg.push(mergedWith);
@@ -20551,14 +20547,14 @@
 	          } else {
 	            toDelete = true;
 	          }
-	          if (mrgChild.type === secondFeatureChild.type && mrgChild.type === firstFeatureChild.type && (0, util_1$3.doesIntersect2)(secondFeatureChild.min, secondFeatureChild.max, mrgChild.min, mrgChild.max) && (0, util_1$3.doesIntersect2)(firstFeatureChild.min, firstFeatureChild.max, mrgChild.min, mrgChild.max)) {
+	          if (mrgChild.type === secondFeatureChild.type && mrgChild.type === firstFeatureChild.type && (0, util_1$5.doesIntersect2)(secondFeatureChild.min, secondFeatureChild.max, mrgChild.min, mrgChild.max) && (0, util_1$5.doesIntersect2)(firstFeatureChild.min, firstFeatureChild.max, mrgChild.min, mrgChild.max)) {
 	            var _mrgChild$attributes$, _mrgChild$attributes$2;
 	            mrgChild.setMin(Math.min(secondFeatureChild.min, mrgChild.min, firstFeatureChild.min));
 	            mrgChild.setMax(Math.max(secondFeatureChild.max, mrgChild.max, firstFeatureChild.max));
 	            var mergedWithAttributes = (_mrgChild$attributes$ = (_mrgChild$attributes$2 = mrgChild.attributes.get('merged_with')) === null || _mrgChild$attributes$2 === void 0 ? void 0 : _mrgChild$attributes$2.slice()) !== null && _mrgChild$attributes$ !== void 0 ? _mrgChild$attributes$ : [];
-	            mergedWithAttributes.push((0, util_2.stringifyAttributes)((0, util_2.attributesToRecords)(secondFeatureChild.attributes)));
+	            mergedWithAttributes.push((0, util_2$2.stringifyAttributes)((0, util_2$2.attributesToRecords)(secondFeatureChild.attributes)));
 	            if (toDelete) {
-	              mergedWithAttributes.push((0, util_2.stringifyAttributes)((0, mobx_state_tree_1$2.getSnapshot)(firstFeatureChild).attributes));
+	              mergedWithAttributes.push((0, util_2$2.stringifyAttributes)((0, mobx_state_tree_1$2.getSnapshot)(firstFeatureChild).attributes));
 	              firstTranscript.deleteChild(firstFeatureChild._id);
 	            }
 	            mrgChild.setAttribute('merged_with', _toConsumableArray(new Set(mergedWithAttributes)));
@@ -22789,7 +22785,7 @@
 	});
 	ParentChildValidation$1.ParentChildValidation = void 0;
 	var Changes_1 = Changes;
-	var util_1$2 = util$1;
+	var util_1$4 = util$2;
 	var Validation_1 = Validation$1;
 	var ParentChildValidation = /*#__PURE__*/function (_Validation_1$Validat) {
 	  _inherits(ParentChildValidation, _Validation_1$Validat);
@@ -22953,7 +22949,7 @@
 	          var _step2$value = _slicedToArray(_step2.value, 2),
 	            childFeature = _step2$value[1];
 	          if (feature.min !== null && feature.max !== null && childFeature.min !== null && childFeature.max !== null && (childFeature.max > feature.max || childFeature.min < feature.min)) {
-	            throw new Error("Feature ".concat((0, util_1$2.getPrintableId)(childFeature), " exceeds the bounds of its parent, ").concat((0, util_1$2.getPrintableId)(feature)));
+	            throw new Error("Feature ".concat((0, util_1$4.getPrintableId)(childFeature), " exceeds the bounds of its parent, ").concat((0, util_1$4.getPrintableId)(feature)));
 	          }
 	          this.checkChildFeatureBoundaries(childFeature);
 	        }
@@ -23069,14 +23065,34 @@
 
 	var CDSCheck$1 = {};
 
+	var util$1 = {};
+
+	Object.defineProperty(util$1, "__esModule", {
+	  value: true
+	});
+	util$1.getPrintableId = getPrintableId;
+	function getPrintableId(feature) {
+	  var _feature$attributes, _feature$attributes2;
+	  var gff_id = (_feature$attributes = feature.attributes) === null || _feature$attributes === void 0 || (_feature$attributes = _feature$attributes.gff_id) === null || _feature$attributes === void 0 ? void 0 : _feature$attributes.join(', ');
+	  if (gff_id) {
+	    return "".concat(gff_id, " (_id: ").concat(feature._id.toString(), ")");
+	  }
+	  var gff_name = (_feature$attributes2 = feature.attributes) === null || _feature$attributes2 === void 0 || (_feature$attributes2 = _feature$attributes2.gff_name) === null || _feature$attributes2 === void 0 ? void 0 : _feature$attributes2.join(', ');
+	  if (gff_name) {
+	    return "".concat(gff_name, " (_id: ").concat(feature._id.toString(), ")");
+	  }
+	  return "_id: ".concat(feature._id.toString());
+	}
+
 	Object.defineProperty(CDSCheck$1, "__esModule", {
 	  value: true
 	});
 	CDSCheck$1.CDSCheck = void 0;
 	var tslib_1$1 = require$$0$1;
 	var common_1$1 = dist$1;
-	var util_1$1 = require$$1__default$1["default"];
+	var util_1$3 = require$$1__default$1["default"];
 	var bson_objectid_1$1 = /*#__PURE__*/tslib_1$1.__importDefault(objectid);
+	var util_2$1 = util$1;
 	var STOP_CODONS;
 	(function (STOP_CODONS) {
 	  STOP_CODONS[STOP_CODONS["TAG"] = 0] = "TAG";
@@ -23265,7 +23281,7 @@
 	                refSeq: refSeq.toString(),
 	                start: cdsStart,
 	                end: cdsStart,
-	                message: "Unexpected start codon in feature \"".concat(_id, "\": ").concat(start_codon)
+	                message: "Unexpected start codon \"".concat(start_codon, "\" in feature \"").concat((0, util_2$1.getPrintableId)(feature), "\": ")
 	              });
 	            }
 	            lastCodon = codons.at(-1); // Last codon is supposed to be a stop
@@ -23278,7 +23294,7 @@
 	                refSeq: refSeq.toString(),
 	                start: cdsEnd,
 	                end: cdsEnd,
-	                message: "Missing stop codon in feature \"".concat(_id, "\"")
+	                message: "Missing stop codon in feature \"".concat((0, util_2$1.getPrintableId)(feature), "\"")
 	              });
 	            }
 	          } else {
@@ -23290,7 +23306,7 @@
 	              refSeq: refSeq.toString(),
 	              start: cdsEnd,
 	              end: cdsEnd,
-	              message: "Missing stop codon in feature \"".concat(_id, "\"")
+	              message: "Missing stop codon in feature \"".concat((0, util_2$1.getPrintableId)(feature), "\"")
 	            });
 	          }
 	          _iterator4 = _createForOfIteratorHelper(codons.entries());
@@ -23319,7 +23335,7 @@
 	              refSeq: refSeq.toString(),
 	              start: codonStart,
 	              end: codonEnd,
-	              message: "Internal stop codon in feature \"".concat(_id, "\"")
+	              message: "Internal stop codon in feature \"".concat((0, util_2$1.getPrintableId)(feature), "\"")
 	            });
 	          }
 	        case 26:
@@ -23389,7 +23405,7 @@
 	        if (child.type !== 'exon') {
 	          continue;
 	        }
-	        var _ref = (0, util_1$1.intersection2)(cdsMin, cdsMax, child.min, child.max),
+	        var _ref = (0, util_1$3.intersection2)(cdsMin, cdsMax, child.min, child.max),
 	          _ref2 = _slicedToArray(_ref, 2),
 	          start = _ref2[0],
 	          end = _ref2[1];
@@ -23524,8 +23540,9 @@
 	TranscriptCheck$1.TranscriptCheck = void 0;
 	var tslib_1 = require$$0$1;
 	var common_1 = dist$1;
-	var util_1 = require$$1__default$1["default"];
+	var util_1$2 = require$$1__default$1["default"];
 	var bson_objectid_1 = /*#__PURE__*/tslib_1.__importDefault(objectid);
+	var util_2 = util$1;
 	var CAUSES;
 	(function (CAUSES) {
 	  CAUSES[CAUSES["NonCanonicalSpliceSiteAtFivePrime"] = 0] = "NonCanonicalSpliceSiteAtFivePrime";
@@ -23537,7 +23554,7 @@
 	}
 	function _getSpliceSequences() {
 	  _getSpliceSequences = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(transcript, getSequence) {
-	    var exons, _i2, _Object$entries, _Object$entries$_i, child, spliceSeq, i, fivePrimeMin, threePrimeMin, _fivePrimeMin, fivePrimeSeq, threePrimeSeq;
+	    var exons, _i2, _Object$entries, _Object$entries$_i, child, spliceSeq, i, fivePrimeMin, threePrimeMin, _ref, fivePrimeSeq, threePrimeSeq;
 	    return _regeneratorRuntime().wrap(function _callee2$(_context2) {
 	      while (1) switch (_context2.prev = _context2.next) {
 	        case 0:
@@ -23560,31 +23577,37 @@
 	          }
 	          return _context2.abrupt("return", []);
 	        case 6:
+	          exons.sort(function (a, b) {
+	            return a.min < b.min ? -1 : 1;
+	          });
 	          spliceSeq = [];
 	          i = 0;
-	        case 8:
+	        case 9:
 	          if (!(i < exons.length - 1)) {
-	            _context2.next = 23;
+	            _context2.next = 24;
 	            break;
 	          }
 	          fivePrimeMin = exons[i].max;
-	          threePrimeMin = exons[i + 1].min - 2;
+	          threePrimeMin = exons[i + 1].min;
 	          if (transcript.strand === -1) {
-	            _fivePrimeMin = fivePrimeMin;
-	            fivePrimeMin = threePrimeMin;
-	            threePrimeMin = _fivePrimeMin;
+	            _ref = [fivePrimeMin, threePrimeMin];
+	            threePrimeMin = _ref[0];
+	            fivePrimeMin = _ref[1];
+	            fivePrimeMin -= 2;
+	          } else {
+	            threePrimeMin -= 2;
 	          }
-	          _context2.next = 14;
+	          _context2.next = 15;
 	          return getSequence(fivePrimeMin, fivePrimeMin + 2);
-	        case 14:
+	        case 15:
 	          fivePrimeSeq = _context2.sent;
-	          _context2.next = 17;
+	          _context2.next = 18;
 	          return getSequence(threePrimeMin, threePrimeMin + 2);
-	        case 17:
+	        case 18:
 	          threePrimeSeq = _context2.sent;
 	          if (transcript.strand === -1) {
-	            threePrimeSeq = (0, util_1.revcom)(threePrimeSeq);
-	            fivePrimeSeq = (0, util_1.revcom)(fivePrimeSeq);
+	            threePrimeSeq = (0, util_1$2.revcom)(threePrimeSeq);
+	            fivePrimeSeq = (0, util_1$2.revcom)(fivePrimeSeq);
 	          }
 	          spliceSeq.push({
 	            fivePrimeSeq: fivePrimeSeq,
@@ -23592,13 +23615,13 @@
 	            threePrimeSeq: threePrimeSeq,
 	            threePrimeMin: threePrimeMin
 	          });
-	        case 20:
+	        case 21:
 	          i++;
-	          _context2.next = 8;
+	          _context2.next = 9;
 	          break;
-	        case 23:
-	          return _context2.abrupt("return", spliceSeq);
 	        case 24:
+	          return _context2.abrupt("return", spliceSeq);
+	        case 25:
 	        case "end":
 	          return _context2.stop();
 	      }
@@ -23635,7 +23658,7 @@
 	                  refSeq: feature.refSeq.toString(),
 	                  start: spliceSequence.fivePrimeMin,
 	                  end: spliceSequence.fivePrimeMin + 2,
-	                  message: "Unexpected 5' splice site in \"".concat(feature._id, "\". Expected: ").concat(_toConsumableArray(VALID_FIVE_PRIME_SEQ).join('|'), ", got: ").concat(spliceSequence.fivePrimeSeq)
+	                  message: "Unexpected 5\u2032 splice site in \"".concat((0, util_2.getPrintableId)(feature), "\". Expected: ").concat(_toConsumableArray(VALID_FIVE_PRIME_SEQ).join('|'), ", got: ").concat(spliceSequence.fivePrimeSeq)
 	                });
 	              }
 	              if (!VALID_THREE_PRIME_SEQ.has(spliceSequence.threePrimeSeq.toUpperCase())) {
@@ -23647,7 +23670,7 @@
 	                  refSeq: feature.refSeq.toString(),
 	                  start: spliceSequence.threePrimeMin,
 	                  end: spliceSequence.threePrimeMin + 2,
-	                  message: "Unexpected 3' splice site in \"".concat(feature._id, "\". Expected: ").concat(_toConsumableArray(VALID_THREE_PRIME_SEQ).join('|'), ", got: ").concat(spliceSequence.threePrimeSeq)
+	                  message: "Unexpected 3\u2032 splice site in \"".concat((0, util_2.getPrintableId)(feature), "\". Expected: ").concat(_toConsumableArray(VALID_THREE_PRIME_SEQ).join('|'), ", got: ").concat(spliceSequence.threePrimeSeq)
 	                });
 	              }
 	            }
@@ -23772,7 +23795,7 @@
 	  tslib_1.__exportStar(Validations, exports);
 	  tslib_1.__exportStar(Common, exports);
 	  tslib_1.__exportStar(Checks, exports);
-	  tslib_1.__exportStar(util$1, exports);
+	  tslib_1.__exportStar(util$2, exports);
 	  tslib_1.__exportStar(Messages, exports);
 	  tslib_1.__exportStar(GFF3, exports);
 	})(dist$2);
@@ -23781,7 +23804,7 @@
 	  d: "M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6z"
 	}), 'Add');
 
-	var version = "0.3.8";
+	var version = "0.3.9";
 
 	const ApolloConfigSchema = configuration.ConfigurationSchema('ApolloInternetAccount', {
 	    baseURL: {
@@ -25312,7 +25335,7 @@
 	 */
 	var re = /^(?:(?![^:@\/?#]+:[^:@\/]*@)(http|https|ws|wss):\/\/)?((?:(([^:@\/?#]*)(?::([^:@\/?#]*))?)?@)?((?:[a-f0-9]{0,4}:){2,7}[a-f0-9]{0,4}|[^:\/?#]*)(?::(\d*))?)(((\/(?:[^?#](?![^?#\/]*\.[^?#\/.]+(?:[?#]|$)))*\/?)?([^?#\/]*))(?:\?([^#]*))?(?:#(.*))?)/;
 	var parts = ['source', 'protocol', 'authority', 'userInfo', 'user', 'password', 'host', 'port', 'relative', 'path', 'directory', 'file', 'query', 'anchor'];
-	function parse$1(str) {
+	function parse$2(str) {
 	  var src = str,
 	    b = str.indexOf('['),
 	    e = str.indexOf(']');
@@ -25377,13 +25400,13 @@
 	      uri = null;
 	    }
 	    if (uri) {
-	      uri = parse$1(uri);
+	      uri = parse$2(uri);
 	      opts.hostname = uri.host;
 	      opts.secure = uri.protocol === "https" || uri.protocol === "wss";
 	      opts.port = uri.port;
 	      if (uri.query) opts.query = uri.query;
 	    } else if (opts.host) {
-	      opts.hostname = parse$1(opts.host).host;
+	      opts.hostname = parse$2(opts.host).host;
 	    }
 	    installTimerFunctions(_assertThisInitialized(_this), opts);
 	    _this.secure = null != opts.secure ? opts.secure : typeof location !== "undefined" && "https:" === location.protocol;
@@ -25978,7 +26001,7 @@
 	      }
 	    }
 	    // parse
-	    obj = parse$1(uri);
+	    obj = parse$2(uri);
 	  }
 	  // make sure we treat `localhost:80` and `localhost` equally
 	  if (!obj.port) {
@@ -26219,7 +26242,7 @@
 	  return Encoder;
 	}();
 	// see https://stackoverflow.com/questions/8511281/check-if-a-value-is-an-object-in-javascript
-	function isObject$1(value) {
+	function isObject(value) {
 	  return Object.prototype.toString.call(value) === "[object Object]";
 	}
 	/**
@@ -26375,11 +26398,11 @@
 	    value: function isPayloadValid(type, payload) {
 	      switch (type) {
 	        case PacketType.CONNECT:
-	          return isObject$1(payload);
+	          return isObject(payload);
 	        case PacketType.DISCONNECT:
 	          return payload === undefined;
 	        case PacketType.CONNECT_ERROR:
-	          return typeof payload === "string" || isObject$1(payload);
+	          return typeof payload === "string" || isObject(payload);
 	        case PacketType.EVENT:
 	        case PacketType.BINARY_EVENT:
 	          return Array.isArray(payload) && (typeof payload[0] === "number" || typeof payload[0] === "string" && RESERVED_EVENTS$1.indexOf(payload[0]) === -1);
@@ -27937,2876 +27960,31 @@
 	  d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8"
 	}), 'RadioButtonUnchecked');
 
-	// This constructor is used to store event handlers. Instantiating this is
-	// faster than explicitly calling `Object.create(null)` to get a "clean" empty
-	// object (tested with v8 v4.9).
-	function EventHandlers() {}
-	EventHandlers.prototype = Object.create(null);
+	var esm = {};
 
-	function EventEmitter() {
-	  EventEmitter.init.call(this);
-	}
+	var api = {};
 
-	// nodejs oddity
-	// require('events') === require('events').EventEmitter
-	EventEmitter.EventEmitter = EventEmitter;
+	var parse$1 = {};
 
-	EventEmitter.usingDomains = false;
-
-	EventEmitter.prototype.domain = undefined;
-	EventEmitter.prototype._events = undefined;
-	EventEmitter.prototype._maxListeners = undefined;
-
-	// By default EventEmitters will print a warning if more than 10 listeners are
-	// added to it. This is a useful default which helps finding memory leaks.
-	EventEmitter.defaultMaxListeners = 10;
-
-	EventEmitter.init = function() {
-	  this.domain = null;
-
-	  if (!this._events || this._events === Object.getPrototypeOf(this)._events) {
-	    this._events = new EventHandlers();
-	    this._eventsCount = 0;
-	  }
-
-	  this._maxListeners = this._maxListeners || undefined;
-	};
-
-	// Obviously not all Emitters should be limited to 10. This function allows
-	// that to be increased. Set to zero for unlimited.
-	EventEmitter.prototype.setMaxListeners = function setMaxListeners(n) {
-	  if (typeof n !== 'number' || n < 0 || isNaN(n))
-	    throw new TypeError('"n" argument must be a positive number');
-	  this._maxListeners = n;
-	  return this;
-	};
-
-	function $getMaxListeners(that) {
-	  if (that._maxListeners === undefined)
-	    return EventEmitter.defaultMaxListeners;
-	  return that._maxListeners;
-	}
-
-	EventEmitter.prototype.getMaxListeners = function getMaxListeners() {
-	  return $getMaxListeners(this);
-	};
-
-	// These standalone emit* functions are used to optimize calling of event
-	// handlers for fast cases because emit() itself often has a variable number of
-	// arguments and can be deoptimized because of that. These functions always have
-	// the same number of arguments and thus do not get deoptimized, so the code
-	// inside them can execute faster.
-	function emitNone(handler, isFn, self) {
-	  if (isFn)
-	    handler.call(self);
-	  else {
-	    var len = handler.length;
-	    var listeners = arrayClone(handler, len);
-	    for (var i = 0; i < len; ++i)
-	      listeners[i].call(self);
-	  }
-	}
-	function emitOne(handler, isFn, self, arg1) {
-	  if (isFn)
-	    handler.call(self, arg1);
-	  else {
-	    var len = handler.length;
-	    var listeners = arrayClone(handler, len);
-	    for (var i = 0; i < len; ++i)
-	      listeners[i].call(self, arg1);
-	  }
-	}
-	function emitTwo(handler, isFn, self, arg1, arg2) {
-	  if (isFn)
-	    handler.call(self, arg1, arg2);
-	  else {
-	    var len = handler.length;
-	    var listeners = arrayClone(handler, len);
-	    for (var i = 0; i < len; ++i)
-	      listeners[i].call(self, arg1, arg2);
-	  }
-	}
-	function emitThree(handler, isFn, self, arg1, arg2, arg3) {
-	  if (isFn)
-	    handler.call(self, arg1, arg2, arg3);
-	  else {
-	    var len = handler.length;
-	    var listeners = arrayClone(handler, len);
-	    for (var i = 0; i < len; ++i)
-	      listeners[i].call(self, arg1, arg2, arg3);
-	  }
-	}
-
-	function emitMany(handler, isFn, self, args) {
-	  if (isFn)
-	    handler.apply(self, args);
-	  else {
-	    var len = handler.length;
-	    var listeners = arrayClone(handler, len);
-	    for (var i = 0; i < len; ++i)
-	      listeners[i].apply(self, args);
-	  }
-	}
-
-	EventEmitter.prototype.emit = function emit(type) {
-	  var er, handler, len, args, i, events, domain;
-	  var doError = (type === 'error');
-
-	  events = this._events;
-	  if (events)
-	    doError = (doError && events.error == null);
-	  else if (!doError)
-	    return false;
-
-	  domain = this.domain;
-
-	  // If there is no 'error' event listener then throw.
-	  if (doError) {
-	    er = arguments[1];
-	    if (domain) {
-	      if (!er)
-	        er = new Error('Uncaught, unspecified "error" event');
-	      er.domainEmitter = this;
-	      er.domain = domain;
-	      er.domainThrown = false;
-	      domain.emit('error', er);
-	    } else if (er instanceof Error) {
-	      throw er; // Unhandled 'error' event
-	    } else {
-	      // At least give some kind of context to the user
-	      var err = new Error('Uncaught, unspecified "error" event. (' + er + ')');
-	      err.context = er;
-	      throw err;
-	    }
-	    return false;
-	  }
-
-	  handler = events[type];
-
-	  if (!handler)
-	    return false;
-
-	  var isFn = typeof handler === 'function';
-	  len = arguments.length;
-	  switch (len) {
-	    // fast cases
-	    case 1:
-	      emitNone(handler, isFn, this);
-	      break;
-	    case 2:
-	      emitOne(handler, isFn, this, arguments[1]);
-	      break;
-	    case 3:
-	      emitTwo(handler, isFn, this, arguments[1], arguments[2]);
-	      break;
-	    case 4:
-	      emitThree(handler, isFn, this, arguments[1], arguments[2], arguments[3]);
-	      break;
-	    // slower
-	    default:
-	      args = new Array(len - 1);
-	      for (i = 1; i < len; i++)
-	        args[i - 1] = arguments[i];
-	      emitMany(handler, isFn, this, args);
-	  }
-
-	  return true;
-	};
-
-	function _addListener(target, type, listener, prepend) {
-	  var m;
-	  var events;
-	  var existing;
-
-	  if (typeof listener !== 'function')
-	    throw new TypeError('"listener" argument must be a function');
-
-	  events = target._events;
-	  if (!events) {
-	    events = target._events = new EventHandlers();
-	    target._eventsCount = 0;
-	  } else {
-	    // To avoid recursion in the case that type === "newListener"! Before
-	    // adding it to the listeners, first emit "newListener".
-	    if (events.newListener) {
-	      target.emit('newListener', type,
-	                  listener.listener ? listener.listener : listener);
-
-	      // Re-assign `events` because a newListener handler could have caused the
-	      // this._events to be assigned to a new object
-	      events = target._events;
-	    }
-	    existing = events[type];
-	  }
-
-	  if (!existing) {
-	    // Optimize the case of one listener. Don't need the extra array object.
-	    existing = events[type] = listener;
-	    ++target._eventsCount;
-	  } else {
-	    if (typeof existing === 'function') {
-	      // Adding the second element, need to change to array.
-	      existing = events[type] = prepend ? [listener, existing] :
-	                                          [existing, listener];
-	    } else {
-	      // If we've already got an array, just append.
-	      if (prepend) {
-	        existing.unshift(listener);
-	      } else {
-	        existing.push(listener);
-	      }
-	    }
-
-	    // Check for listener leak
-	    if (!existing.warned) {
-	      m = $getMaxListeners(target);
-	      if (m && m > 0 && existing.length > m) {
-	        existing.warned = true;
-	        var w = new Error('Possible EventEmitter memory leak detected. ' +
-	                            existing.length + ' ' + type + ' listeners added. ' +
-	                            'Use emitter.setMaxListeners() to increase limit');
-	        w.name = 'MaxListenersExceededWarning';
-	        w.emitter = target;
-	        w.type = type;
-	        w.count = existing.length;
-	        emitWarning(w);
-	      }
-	    }
-	  }
-
-	  return target;
-	}
-	function emitWarning(e) {
-	  typeof console.warn === 'function' ? console.warn(e) : console.log(e);
-	}
-	EventEmitter.prototype.addListener = function addListener(type, listener) {
-	  return _addListener(this, type, listener, false);
-	};
-
-	EventEmitter.prototype.on = EventEmitter.prototype.addListener;
-
-	EventEmitter.prototype.prependListener =
-	    function prependListener(type, listener) {
-	      return _addListener(this, type, listener, true);
-	    };
-
-	function _onceWrap(target, type, listener) {
-	  var fired = false;
-	  function g() {
-	    target.removeListener(type, g);
-	    if (!fired) {
-	      fired = true;
-	      listener.apply(target, arguments);
-	    }
-	  }
-	  g.listener = listener;
-	  return g;
-	}
-
-	EventEmitter.prototype.once = function once(type, listener) {
-	  if (typeof listener !== 'function')
-	    throw new TypeError('"listener" argument must be a function');
-	  this.on(type, _onceWrap(this, type, listener));
-	  return this;
-	};
-
-	EventEmitter.prototype.prependOnceListener =
-	    function prependOnceListener(type, listener) {
-	      if (typeof listener !== 'function')
-	        throw new TypeError('"listener" argument must be a function');
-	      this.prependListener(type, _onceWrap(this, type, listener));
-	      return this;
-	    };
-
-	// emits a 'removeListener' event iff the listener was removed
-	EventEmitter.prototype.removeListener =
-	    function removeListener(type, listener) {
-	      var list, events, position, i, originalListener;
-
-	      if (typeof listener !== 'function')
-	        throw new TypeError('"listener" argument must be a function');
-
-	      events = this._events;
-	      if (!events)
-	        return this;
-
-	      list = events[type];
-	      if (!list)
-	        return this;
-
-	      if (list === listener || (list.listener && list.listener === listener)) {
-	        if (--this._eventsCount === 0)
-	          this._events = new EventHandlers();
-	        else {
-	          delete events[type];
-	          if (events.removeListener)
-	            this.emit('removeListener', type, list.listener || listener);
-	        }
-	      } else if (typeof list !== 'function') {
-	        position = -1;
-
-	        for (i = list.length; i-- > 0;) {
-	          if (list[i] === listener ||
-	              (list[i].listener && list[i].listener === listener)) {
-	            originalListener = list[i].listener;
-	            position = i;
-	            break;
-	          }
-	        }
-
-	        if (position < 0)
-	          return this;
-
-	        if (list.length === 1) {
-	          list[0] = undefined;
-	          if (--this._eventsCount === 0) {
-	            this._events = new EventHandlers();
-	            return this;
-	          } else {
-	            delete events[type];
-	          }
-	        } else {
-	          spliceOne(list, position);
-	        }
-
-	        if (events.removeListener)
-	          this.emit('removeListener', type, originalListener || listener);
-	      }
-
-	      return this;
-	    };
-	    
-	// Alias for removeListener added in NodeJS 10.0
-	// https://nodejs.org/api/events.html#events_emitter_off_eventname_listener
-	EventEmitter.prototype.off = function(type, listener){
-	    return this.removeListener(type, listener);
-	};
-
-	EventEmitter.prototype.removeAllListeners =
-	    function removeAllListeners(type) {
-	      var listeners, events;
-
-	      events = this._events;
-	      if (!events)
-	        return this;
-
-	      // not listening for removeListener, no need to emit
-	      if (!events.removeListener) {
-	        if (arguments.length === 0) {
-	          this._events = new EventHandlers();
-	          this._eventsCount = 0;
-	        } else if (events[type]) {
-	          if (--this._eventsCount === 0)
-	            this._events = new EventHandlers();
-	          else
-	            delete events[type];
-	        }
-	        return this;
-	      }
-
-	      // emit removeListener for all listeners on all events
-	      if (arguments.length === 0) {
-	        var keys = Object.keys(events);
-	        for (var i = 0, key; i < keys.length; ++i) {
-	          key = keys[i];
-	          if (key === 'removeListener') continue;
-	          this.removeAllListeners(key);
-	        }
-	        this.removeAllListeners('removeListener');
-	        this._events = new EventHandlers();
-	        this._eventsCount = 0;
-	        return this;
-	      }
-
-	      listeners = events[type];
-
-	      if (typeof listeners === 'function') {
-	        this.removeListener(type, listeners);
-	      } else if (listeners) {
-	        // LIFO order
-	        do {
-	          this.removeListener(type, listeners[listeners.length - 1]);
-	        } while (listeners[0]);
-	      }
-
-	      return this;
-	    };
-
-	EventEmitter.prototype.listeners = function listeners(type) {
-	  var evlistener;
-	  var ret;
-	  var events = this._events;
-
-	  if (!events)
-	    ret = [];
-	  else {
-	    evlistener = events[type];
-	    if (!evlistener)
-	      ret = [];
-	    else if (typeof evlistener === 'function')
-	      ret = [evlistener.listener || evlistener];
-	    else
-	      ret = unwrapListeners(evlistener);
-	  }
-
-	  return ret;
-	};
-
-	EventEmitter.listenerCount = function(emitter, type) {
-	  if (typeof emitter.listenerCount === 'function') {
-	    return emitter.listenerCount(type);
-	  } else {
-	    return listenerCount$1.call(emitter, type);
-	  }
-	};
-
-	EventEmitter.prototype.listenerCount = listenerCount$1;
-	function listenerCount$1(type) {
-	  var events = this._events;
-
-	  if (events) {
-	    var evlistener = events[type];
-
-	    if (typeof evlistener === 'function') {
-	      return 1;
-	    } else if (evlistener) {
-	      return evlistener.length;
-	    }
-	  }
-
-	  return 0;
-	}
-
-	EventEmitter.prototype.eventNames = function eventNames() {
-	  return this._eventsCount > 0 ? Reflect.ownKeys(this._events) : [];
-	};
-
-	// About 1.5x faster than the two-arg version of Array#splice().
-	function spliceOne(list, index) {
-	  for (var i = index, k = i + 1, n = list.length; k < n; i += 1, k += 1)
-	    list[i] = list[k];
-	  list.pop();
-	}
-
-	function arrayClone(arr, i) {
-	  var copy = new Array(i);
-	  while (i--)
-	    copy[i] = arr[i];
-	  return copy;
-	}
-
-	function unwrapListeners(arr) {
-	  var ret = new Array(arr.length);
-	  for (var i = 0; i < ret.length; ++i) {
-	    ret[i] = arr[i].listener || arr[i];
-	  }
-	  return ret;
-	}
-
-	var inherits;
-	if (typeof Object.create === 'function'){
-	  inherits = function inherits(ctor, superCtor) {
-	    // implementation from standard node.js 'util' module
-	    ctor.super_ = superCtor;
-	    ctor.prototype = Object.create(superCtor.prototype, {
-	      constructor: {
-	        value: ctor,
-	        enumerable: false,
-	        writable: true,
-	        configurable: true
-	      }
-	    });
-	  };
-	} else {
-	  inherits = function inherits(ctor, superCtor) {
-	    ctor.super_ = superCtor;
-	    var TempCtor = function () {};
-	    TempCtor.prototype = superCtor.prototype;
-	    ctor.prototype = new TempCtor();
-	    ctor.prototype.constructor = ctor;
-	  };
-	}
-	var inherits$1 = inherits;
-
-	var formatRegExp = /%[sdj%]/g;
-	function format(f) {
-	  if (!isString(f)) {
-	    var objects = [];
-	    for (var i = 0; i < arguments.length; i++) {
-	      objects.push(inspect(arguments[i]));
-	    }
-	    return objects.join(' ');
-	  }
-
-	  var i = 1;
-	  var args = arguments;
-	  var len = args.length;
-	  var str = String(f).replace(formatRegExp, function(x) {
-	    if (x === '%%') return '%';
-	    if (i >= len) return x;
-	    switch (x) {
-	      case '%s': return String(args[i++]);
-	      case '%d': return Number(args[i++]);
-	      case '%j':
-	        try {
-	          return JSON.stringify(args[i++]);
-	        } catch (_) {
-	          return '[Circular]';
-	        }
-	      default:
-	        return x;
-	    }
-	  });
-	  for (var x = args[i]; i < len; x = args[++i]) {
-	    if (isNull(x) || !isObject(x)) {
-	      str += ' ' + x;
-	    } else {
-	      str += ' ' + inspect(x);
-	    }
-	  }
-	  return str;
-	}
-
-	// Mark that a method should not be used.
-	// Returns a modified function which warns once by default.
-	// If --no-deprecation is set, then it is a no-op.
-	function deprecate(fn, msg) {
-	  // Allow for deprecating things in the process of starting up.
-	  if (isUndefined(global$1.process)) {
-	    return function() {
-	      return deprecate(fn, msg).apply(this, arguments);
-	    };
-	  }
-
-	  if (browser$1.noDeprecation === true) {
-	    return fn;
-	  }
-
-	  var warned = false;
-	  function deprecated() {
-	    if (!warned) {
-	      if (browser$1.throwDeprecation) {
-	        throw new Error(msg);
-	      } else if (browser$1.traceDeprecation) {
-	        console.trace(msg);
-	      } else {
-	        console.error(msg);
-	      }
-	      warned = true;
-	    }
-	    return fn.apply(this, arguments);
-	  }
-
-	  return deprecated;
-	}
-
-	var debugs = {};
-	var debugEnviron;
-	function debuglog(set) {
-	  if (isUndefined(debugEnviron))
-	    debugEnviron = browser$1.env.NODE_DEBUG || '';
-	  set = set.toUpperCase();
-	  if (!debugs[set]) {
-	    if (new RegExp('\\b' + set + '\\b', 'i').test(debugEnviron)) {
-	      var pid = 0;
-	      debugs[set] = function() {
-	        var msg = format.apply(null, arguments);
-	        console.error('%s %d: %s', set, pid, msg);
-	      };
-	    } else {
-	      debugs[set] = function() {};
-	    }
-	  }
-	  return debugs[set];
-	}
-
-	/**
-	 * Echos the value of a value. Trys to print the value out
-	 * in the best way possible given the different types.
-	 *
-	 * @param {Object} obj The object to print out.
-	 * @param {Object} opts Optional options object that alters the output.
-	 */
-	/* legacy: obj, showHidden, depth, colors*/
-	function inspect(obj, opts) {
-	  // default options
-	  var ctx = {
-	    seen: [],
-	    stylize: stylizeNoColor
-	  };
-	  // legacy...
-	  if (arguments.length >= 3) ctx.depth = arguments[2];
-	  if (arguments.length >= 4) ctx.colors = arguments[3];
-	  if (isBoolean(opts)) {
-	    // legacy...
-	    ctx.showHidden = opts;
-	  } else if (opts) {
-	    // got an "options" object
-	    _extend(ctx, opts);
-	  }
-	  // set default options
-	  if (isUndefined(ctx.showHidden)) ctx.showHidden = false;
-	  if (isUndefined(ctx.depth)) ctx.depth = 2;
-	  if (isUndefined(ctx.colors)) ctx.colors = false;
-	  if (isUndefined(ctx.customInspect)) ctx.customInspect = true;
-	  if (ctx.colors) ctx.stylize = stylizeWithColor;
-	  return formatValue(ctx, obj, ctx.depth);
-	}
-
-	// http://en.wikipedia.org/wiki/ANSI_escape_code#graphics
-	inspect.colors = {
-	  'bold' : [1, 22],
-	  'italic' : [3, 23],
-	  'underline' : [4, 24],
-	  'inverse' : [7, 27],
-	  'white' : [37, 39],
-	  'grey' : [90, 39],
-	  'black' : [30, 39],
-	  'blue' : [34, 39],
-	  'cyan' : [36, 39],
-	  'green' : [32, 39],
-	  'magenta' : [35, 39],
-	  'red' : [31, 39],
-	  'yellow' : [33, 39]
-	};
-
-	// Don't use 'blue' not visible on cmd.exe
-	inspect.styles = {
-	  'special': 'cyan',
-	  'number': 'yellow',
-	  'boolean': 'yellow',
-	  'undefined': 'grey',
-	  'null': 'bold',
-	  'string': 'green',
-	  'date': 'magenta',
-	  // "name": intentionally not styling
-	  'regexp': 'red'
-	};
-
-
-	function stylizeWithColor(str, styleType) {
-	  var style = inspect.styles[styleType];
-
-	  if (style) {
-	    return '\u001b[' + inspect.colors[style][0] + 'm' + str +
-	           '\u001b[' + inspect.colors[style][1] + 'm';
-	  } else {
-	    return str;
-	  }
-	}
-
-
-	function stylizeNoColor(str, styleType) {
-	  return str;
-	}
-
-
-	function arrayToHash(array) {
-	  var hash = {};
-
-	  array.forEach(function(val, idx) {
-	    hash[val] = true;
-	  });
-
-	  return hash;
-	}
-
-
-	function formatValue(ctx, value, recurseTimes) {
-	  // Provide a hook for user-specified inspect functions.
-	  // Check that value is an object with an inspect function on it
-	  if (ctx.customInspect &&
-	      value &&
-	      isFunction$2(value.inspect) &&
-	      // Filter out the util module, it's inspect function is special
-	      value.inspect !== inspect &&
-	      // Also filter out any prototype objects using the circular check.
-	      !(value.constructor && value.constructor.prototype === value)) {
-	    var ret = value.inspect(recurseTimes, ctx);
-	    if (!isString(ret)) {
-	      ret = formatValue(ctx, ret, recurseTimes);
-	    }
-	    return ret;
-	  }
-
-	  // Primitive types cannot have properties
-	  var primitive = formatPrimitive(ctx, value);
-	  if (primitive) {
-	    return primitive;
-	  }
-
-	  // Look up the keys of the object.
-	  var keys = Object.keys(value);
-	  var visibleKeys = arrayToHash(keys);
-
-	  if (ctx.showHidden) {
-	    keys = Object.getOwnPropertyNames(value);
-	  }
-
-	  // IE doesn't make error fields non-enumerable
-	  // http://msdn.microsoft.com/en-us/library/ie/dww52sbt(v=vs.94).aspx
-	  if (isError(value)
-	      && (keys.indexOf('message') >= 0 || keys.indexOf('description') >= 0)) {
-	    return formatError(value);
-	  }
-
-	  // Some type of object without properties can be shortcutted.
-	  if (keys.length === 0) {
-	    if (isFunction$2(value)) {
-	      var name = value.name ? ': ' + value.name : '';
-	      return ctx.stylize('[Function' + name + ']', 'special');
-	    }
-	    if (isRegExp(value)) {
-	      return ctx.stylize(RegExp.prototype.toString.call(value), 'regexp');
-	    }
-	    if (isDate$1(value)) {
-	      return ctx.stylize(Date.prototype.toString.call(value), 'date');
-	    }
-	    if (isError(value)) {
-	      return formatError(value);
-	    }
-	  }
-
-	  var base = '', array = false, braces = ['{', '}'];
-
-	  // Make Array say that they are Array
-	  if (isArray$3(value)) {
-	    array = true;
-	    braces = ['[', ']'];
-	  }
-
-	  // Make functions say that they are functions
-	  if (isFunction$2(value)) {
-	    var n = value.name ? ': ' + value.name : '';
-	    base = ' [Function' + n + ']';
-	  }
-
-	  // Make RegExps say that they are RegExps
-	  if (isRegExp(value)) {
-	    base = ' ' + RegExp.prototype.toString.call(value);
-	  }
-
-	  // Make dates with properties first say the date
-	  if (isDate$1(value)) {
-	    base = ' ' + Date.prototype.toUTCString.call(value);
-	  }
-
-	  // Make error with message first say the error
-	  if (isError(value)) {
-	    base = ' ' + formatError(value);
-	  }
-
-	  if (keys.length === 0 && (!array || value.length == 0)) {
-	    return braces[0] + base + braces[1];
-	  }
-
-	  if (recurseTimes < 0) {
-	    if (isRegExp(value)) {
-	      return ctx.stylize(RegExp.prototype.toString.call(value), 'regexp');
-	    } else {
-	      return ctx.stylize('[Object]', 'special');
-	    }
-	  }
-
-	  ctx.seen.push(value);
-
-	  var output;
-	  if (array) {
-	    output = formatArray(ctx, value, recurseTimes, visibleKeys, keys);
-	  } else {
-	    output = keys.map(function(key) {
-	      return formatProperty(ctx, value, recurseTimes, visibleKeys, key, array);
-	    });
-	  }
-
-	  ctx.seen.pop();
-
-	  return reduceToSingleString(output, base, braces);
-	}
-
-
-	function formatPrimitive(ctx, value) {
-	  if (isUndefined(value))
-	    return ctx.stylize('undefined', 'undefined');
-	  if (isString(value)) {
-	    var simple = '\'' + JSON.stringify(value).replace(/^"|"$/g, '')
-	                                             .replace(/'/g, "\\'")
-	                                             .replace(/\\"/g, '"') + '\'';
-	    return ctx.stylize(simple, 'string');
-	  }
-	  if (isNumber(value))
-	    return ctx.stylize('' + value, 'number');
-	  if (isBoolean(value))
-	    return ctx.stylize('' + value, 'boolean');
-	  // For some reason typeof null is "object", so special case here.
-	  if (isNull(value))
-	    return ctx.stylize('null', 'null');
-	}
-
-
-	function formatError(value) {
-	  return '[' + Error.prototype.toString.call(value) + ']';
-	}
-
-
-	function formatArray(ctx, value, recurseTimes, visibleKeys, keys) {
-	  var output = [];
-	  for (var i = 0, l = value.length; i < l; ++i) {
-	    if (hasOwnProperty$1(value, String(i))) {
-	      output.push(formatProperty(ctx, value, recurseTimes, visibleKeys,
-	          String(i), true));
-	    } else {
-	      output.push('');
-	    }
-	  }
-	  keys.forEach(function(key) {
-	    if (!key.match(/^\d+$/)) {
-	      output.push(formatProperty(ctx, value, recurseTimes, visibleKeys,
-	          key, true));
-	    }
-	  });
-	  return output;
-	}
-
-
-	function formatProperty(ctx, value, recurseTimes, visibleKeys, key, array) {
-	  var name, str, desc;
-	  desc = Object.getOwnPropertyDescriptor(value, key) || { value: value[key] };
-	  if (desc.get) {
-	    if (desc.set) {
-	      str = ctx.stylize('[Getter/Setter]', 'special');
-	    } else {
-	      str = ctx.stylize('[Getter]', 'special');
-	    }
-	  } else {
-	    if (desc.set) {
-	      str = ctx.stylize('[Setter]', 'special');
-	    }
-	  }
-	  if (!hasOwnProperty$1(visibleKeys, key)) {
-	    name = '[' + key + ']';
-	  }
-	  if (!str) {
-	    if (ctx.seen.indexOf(desc.value) < 0) {
-	      if (isNull(recurseTimes)) {
-	        str = formatValue(ctx, desc.value, null);
-	      } else {
-	        str = formatValue(ctx, desc.value, recurseTimes - 1);
-	      }
-	      if (str.indexOf('\n') > -1) {
-	        if (array) {
-	          str = str.split('\n').map(function(line) {
-	            return '  ' + line;
-	          }).join('\n').substr(2);
-	        } else {
-	          str = '\n' + str.split('\n').map(function(line) {
-	            return '   ' + line;
-	          }).join('\n');
-	        }
-	      }
-	    } else {
-	      str = ctx.stylize('[Circular]', 'special');
-	    }
-	  }
-	  if (isUndefined(name)) {
-	    if (array && key.match(/^\d+$/)) {
-	      return str;
-	    }
-	    name = JSON.stringify('' + key);
-	    if (name.match(/^"([a-zA-Z_][a-zA-Z_0-9]*)"$/)) {
-	      name = name.substr(1, name.length - 2);
-	      name = ctx.stylize(name, 'name');
-	    } else {
-	      name = name.replace(/'/g, "\\'")
-	                 .replace(/\\"/g, '"')
-	                 .replace(/(^"|"$)/g, "'");
-	      name = ctx.stylize(name, 'string');
-	    }
-	  }
-
-	  return name + ': ' + str;
-	}
-
-
-	function reduceToSingleString(output, base, braces) {
-	  var length = output.reduce(function(prev, cur) {
-	    if (cur.indexOf('\n') >= 0) ;
-	    return prev + cur.replace(/\u001b\[\d\d?m/g, '').length + 1;
-	  }, 0);
-
-	  if (length > 60) {
-	    return braces[0] +
-	           (base === '' ? '' : base + '\n ') +
-	           ' ' +
-	           output.join(',\n  ') +
-	           ' ' +
-	           braces[1];
-	  }
-
-	  return braces[0] + base + ' ' + output.join(', ') + ' ' + braces[1];
-	}
-
-
-	// NOTE: These type checking functions intentionally don't use `instanceof`
-	// because it is fragile and can be easily faked with `Object.create()`.
-	function isArray$3(ar) {
-	  return Array.isArray(ar);
-	}
-
-	function isBoolean(arg) {
-	  return typeof arg === 'boolean';
-	}
-
-	function isNull(arg) {
-	  return arg === null;
-	}
-
-	function isNumber(arg) {
-	  return typeof arg === 'number';
-	}
-
-	function isString(arg) {
-	  return typeof arg === 'string';
-	}
-
-	function isUndefined(arg) {
-	  return arg === void 0;
-	}
-
-	function isRegExp(re) {
-	  return isObject(re) && objectToString(re) === '[object RegExp]';
-	}
-
-	function isObject(arg) {
-	  return typeof arg === 'object' && arg !== null;
-	}
-
-	function isDate$1(d) {
-	  return isObject(d) && objectToString(d) === '[object Date]';
-	}
-
-	function isError(e) {
-	  return isObject(e) &&
-	      (objectToString(e) === '[object Error]' || e instanceof Error);
-	}
-
-	function isFunction$2(arg) {
-	  return typeof arg === 'function';
-	}
-
-	function objectToString(o) {
-	  return Object.prototype.toString.call(o);
-	}
-
-	function _extend(origin, add) {
-	  // Don't do anything if add isn't an object
-	  if (!add || !isObject(add)) return origin;
-
-	  var keys = Object.keys(add);
-	  var i = keys.length;
-	  while (i--) {
-	    origin[keys[i]] = add[keys[i]];
-	  }
-	  return origin;
-	}
-	function hasOwnProperty$1(obj, prop) {
-	  return Object.prototype.hasOwnProperty.call(obj, prop);
-	}
-
-	function BufferList() {
-	  this.head = null;
-	  this.tail = null;
-	  this.length = 0;
-	}
-
-	BufferList.prototype.push = function (v) {
-	  var entry = { data: v, next: null };
-	  if (this.length > 0) this.tail.next = entry;else this.head = entry;
-	  this.tail = entry;
-	  ++this.length;
-	};
-
-	BufferList.prototype.unshift = function (v) {
-	  var entry = { data: v, next: this.head };
-	  if (this.length === 0) this.tail = entry;
-	  this.head = entry;
-	  ++this.length;
-	};
-
-	BufferList.prototype.shift = function () {
-	  if (this.length === 0) return;
-	  var ret = this.head.data;
-	  if (this.length === 1) this.head = this.tail = null;else this.head = this.head.next;
-	  --this.length;
-	  return ret;
-	};
-
-	BufferList.prototype.clear = function () {
-	  this.head = this.tail = null;
-	  this.length = 0;
-	};
-
-	BufferList.prototype.join = function (s) {
-	  if (this.length === 0) return '';
-	  var p = this.head;
-	  var ret = '' + p.data;
-	  while (p = p.next) {
-	    ret += s + p.data;
-	  }return ret;
-	};
-
-	BufferList.prototype.concat = function (n) {
-	  if (this.length === 0) return Buffer.alloc(0);
-	  if (this.length === 1) return this.head.data;
-	  var ret = Buffer.allocUnsafe(n >>> 0);
-	  var p = this.head;
-	  var i = 0;
-	  while (p) {
-	    p.data.copy(ret, i);
-	    i += p.data.length;
-	    p = p.next;
-	  }
-	  return ret;
-	};
-
-	// Copyright Joyent, Inc. and other Node contributors.
-	var isBufferEncoding = Buffer.isEncoding
-	  || function(encoding) {
-	       switch (encoding && encoding.toLowerCase()) {
-	         case 'hex': case 'utf8': case 'utf-8': case 'ascii': case 'binary': case 'base64': case 'ucs2': case 'ucs-2': case 'utf16le': case 'utf-16le': case 'raw': return true;
-	         default: return false;
-	       }
-	     };
-
-
-	function assertEncoding(encoding) {
-	  if (encoding && !isBufferEncoding(encoding)) {
-	    throw new Error('Unknown encoding: ' + encoding);
-	  }
-	}
-
-	// StringDecoder provides an interface for efficiently splitting a series of
-	// buffers into a series of JS strings without breaking apart multi-byte
-	// characters. CESU-8 is handled as part of the UTF-8 encoding.
-	//
-	// @TODO Handling all encodings inside a single object makes it very difficult
-	// to reason about this code, so it should be split up in the future.
-	// @TODO There should be a utf8-strict encoding that rejects invalid UTF-8 code
-	// points as used by CESU-8.
-	function StringDecoder(encoding) {
-	  this.encoding = (encoding || 'utf8').toLowerCase().replace(/[-_]/, '');
-	  assertEncoding(encoding);
-	  switch (this.encoding) {
-	    case 'utf8':
-	      // CESU-8 represents each of Surrogate Pair by 3-bytes
-	      this.surrogateSize = 3;
-	      break;
-	    case 'ucs2':
-	    case 'utf16le':
-	      // UTF-16 represents each of Surrogate Pair by 2-bytes
-	      this.surrogateSize = 2;
-	      this.detectIncompleteChar = utf16DetectIncompleteChar;
-	      break;
-	    case 'base64':
-	      // Base-64 stores 3 bytes in 4 chars, and pads the remainder.
-	      this.surrogateSize = 3;
-	      this.detectIncompleteChar = base64DetectIncompleteChar;
-	      break;
-	    default:
-	      this.write = passThroughWrite;
-	      return;
-	  }
-
-	  // Enough space to store all bytes of a single character. UTF-8 needs 4
-	  // bytes, but CESU-8 may require up to 6 (3 bytes per surrogate).
-	  this.charBuffer = new Buffer(6);
-	  // Number of bytes received for the current incomplete multi-byte character.
-	  this.charReceived = 0;
-	  // Number of bytes expected for the current incomplete multi-byte character.
-	  this.charLength = 0;
-	}
-
-	// write decodes the given buffer and returns it as JS string that is
-	// guaranteed to not contain any partial multi-byte characters. Any partial
-	// character found at the end of the buffer is buffered up, and will be
-	// returned when calling write again with the remaining bytes.
-	//
-	// Note: Converting a Buffer containing an orphan surrogate to a String
-	// currently works, but converting a String to a Buffer (via `new Buffer`, or
-	// Buffer#write) will replace incomplete surrogates with the unicode
-	// replacement character. See https://codereview.chromium.org/121173009/ .
-	StringDecoder.prototype.write = function(buffer) {
-	  var charStr = '';
-	  // if our last write ended with an incomplete multibyte character
-	  while (this.charLength) {
-	    // determine how many remaining bytes this buffer has to offer for this char
-	    var available = (buffer.length >= this.charLength - this.charReceived) ?
-	        this.charLength - this.charReceived :
-	        buffer.length;
-
-	    // add the new bytes to the char buffer
-	    buffer.copy(this.charBuffer, this.charReceived, 0, available);
-	    this.charReceived += available;
-
-	    if (this.charReceived < this.charLength) {
-	      // still not enough chars in this buffer? wait for more ...
-	      return '';
-	    }
-
-	    // remove bytes belonging to the current character from the buffer
-	    buffer = buffer.slice(available, buffer.length);
-
-	    // get the character that was split
-	    charStr = this.charBuffer.slice(0, this.charLength).toString(this.encoding);
-
-	    // CESU-8: lead surrogate (D800-DBFF) is also the incomplete character
-	    var charCode = charStr.charCodeAt(charStr.length - 1);
-	    if (charCode >= 0xD800 && charCode <= 0xDBFF) {
-	      this.charLength += this.surrogateSize;
-	      charStr = '';
-	      continue;
-	    }
-	    this.charReceived = this.charLength = 0;
-
-	    // if there are no more bytes in this buffer, just emit our char
-	    if (buffer.length === 0) {
-	      return charStr;
-	    }
-	    break;
-	  }
-
-	  // determine and set charLength / charReceived
-	  this.detectIncompleteChar(buffer);
-
-	  var end = buffer.length;
-	  if (this.charLength) {
-	    // buffer the incomplete character bytes we got
-	    buffer.copy(this.charBuffer, 0, buffer.length - this.charReceived, end);
-	    end -= this.charReceived;
-	  }
-
-	  charStr += buffer.toString(this.encoding, 0, end);
-
-	  var end = charStr.length - 1;
-	  var charCode = charStr.charCodeAt(end);
-	  // CESU-8: lead surrogate (D800-DBFF) is also the incomplete character
-	  if (charCode >= 0xD800 && charCode <= 0xDBFF) {
-	    var size = this.surrogateSize;
-	    this.charLength += size;
-	    this.charReceived += size;
-	    this.charBuffer.copy(this.charBuffer, size, 0, size);
-	    buffer.copy(this.charBuffer, 0, 0, size);
-	    return charStr.substring(0, end);
-	  }
-
-	  // or just emit the charStr
-	  return charStr;
-	};
-
-	// detectIncompleteChar determines if there is an incomplete UTF-8 character at
-	// the end of the given buffer. If so, it sets this.charLength to the byte
-	// length that character, and sets this.charReceived to the number of bytes
-	// that are available for this character.
-	StringDecoder.prototype.detectIncompleteChar = function(buffer) {
-	  // determine how many bytes we have to check at the end of this buffer
-	  var i = (buffer.length >= 3) ? 3 : buffer.length;
-
-	  // Figure out if one of the last i bytes of our buffer announces an
-	  // incomplete char.
-	  for (; i > 0; i--) {
-	    var c = buffer[buffer.length - i];
-
-	    // See http://en.wikipedia.org/wiki/UTF-8#Description
-
-	    // 110XXXXX
-	    if (i == 1 && c >> 5 == 0x06) {
-	      this.charLength = 2;
-	      break;
-	    }
-
-	    // 1110XXXX
-	    if (i <= 2 && c >> 4 == 0x0E) {
-	      this.charLength = 3;
-	      break;
-	    }
-
-	    // 11110XXX
-	    if (i <= 3 && c >> 3 == 0x1E) {
-	      this.charLength = 4;
-	      break;
-	    }
-	  }
-	  this.charReceived = i;
-	};
-
-	StringDecoder.prototype.end = function(buffer) {
-	  var res = '';
-	  if (buffer && buffer.length)
-	    res = this.write(buffer);
-
-	  if (this.charReceived) {
-	    var cr = this.charReceived;
-	    var buf = this.charBuffer;
-	    var enc = this.encoding;
-	    res += buf.slice(0, cr).toString(enc);
-	  }
-
-	  return res;
-	};
-
-	function passThroughWrite(buffer) {
-	  return buffer.toString(this.encoding);
-	}
-
-	function utf16DetectIncompleteChar(buffer) {
-	  this.charReceived = buffer.length % 2;
-	  this.charLength = this.charReceived ? 2 : 0;
-	}
-
-	function base64DetectIncompleteChar(buffer) {
-	  this.charReceived = buffer.length % 3;
-	  this.charLength = this.charReceived ? 3 : 0;
-	}
-
-	Readable.ReadableState = ReadableState;
-
-	var debug = debuglog('stream');
-	inherits$1(Readable, EventEmitter);
-
-	function prependListener(emitter, event, fn) {
-	  // Sadly this is not cacheable as some libraries bundle their own
-	  // event emitter implementation with them.
-	  if (typeof emitter.prependListener === 'function') {
-	    return emitter.prependListener(event, fn);
-	  } else {
-	    // This is a hack to make sure that our error handler is attached before any
-	    // userland ones.  NEVER DO THIS. This is here only because this code needs
-	    // to continue to work with older versions of Node.js that do not include
-	    // the prependListener() method. The goal is to eventually remove this hack.
-	    if (!emitter._events || !emitter._events[event])
-	      emitter.on(event, fn);
-	    else if (Array.isArray(emitter._events[event]))
-	      emitter._events[event].unshift(fn);
-	    else
-	      emitter._events[event] = [fn, emitter._events[event]];
-	  }
-	}
-	function listenerCount (emitter, type) {
-	  return emitter.listeners(type).length;
-	}
-	function ReadableState(options, stream) {
-
-	  options = options || {};
-
-	  // object stream flag. Used to make read(n) ignore n and to
-	  // make all the buffer merging and length checks go away
-	  this.objectMode = !!options.objectMode;
-
-	  if (stream instanceof Duplex) this.objectMode = this.objectMode || !!options.readableObjectMode;
-
-	  // the point at which it stops calling _read() to fill the buffer
-	  // Note: 0 is a valid value, means "don't call _read preemptively ever"
-	  var hwm = options.highWaterMark;
-	  var defaultHwm = this.objectMode ? 16 : 16 * 1024;
-	  this.highWaterMark = hwm || hwm === 0 ? hwm : defaultHwm;
-
-	  // cast to ints.
-	  this.highWaterMark = ~ ~this.highWaterMark;
-
-	  // A linked list is used to store data chunks instead of an array because the
-	  // linked list can remove elements from the beginning faster than
-	  // array.shift()
-	  this.buffer = new BufferList();
-	  this.length = 0;
-	  this.pipes = null;
-	  this.pipesCount = 0;
-	  this.flowing = null;
-	  this.ended = false;
-	  this.endEmitted = false;
-	  this.reading = false;
-
-	  // a flag to be able to tell if the onwrite cb is called immediately,
-	  // or on a later tick.  We set this to true at first, because any
-	  // actions that shouldn't happen until "later" should generally also
-	  // not happen before the first write call.
-	  this.sync = true;
-
-	  // whenever we return null, then we set a flag to say
-	  // that we're awaiting a 'readable' event emission.
-	  this.needReadable = false;
-	  this.emittedReadable = false;
-	  this.readableListening = false;
-	  this.resumeScheduled = false;
-
-	  // Crypto is kind of old and crusty.  Historically, its default string
-	  // encoding is 'binary' so we have to make this configurable.
-	  // Everything else in the universe uses 'utf8', though.
-	  this.defaultEncoding = options.defaultEncoding || 'utf8';
-
-	  // when piping, we only care about 'readable' events that happen
-	  // after read()ing all the bytes and not getting any pushback.
-	  this.ranOut = false;
-
-	  // the number of writers that are awaiting a drain event in .pipe()s
-	  this.awaitDrain = 0;
-
-	  // if true, a maybeReadMore has been scheduled
-	  this.readingMore = false;
-
-	  this.decoder = null;
-	  this.encoding = null;
-	  if (options.encoding) {
-	    this.decoder = new StringDecoder(options.encoding);
-	    this.encoding = options.encoding;
-	  }
-	}
-	function Readable(options) {
-
-	  if (!(this instanceof Readable)) return new Readable(options);
-
-	  this._readableState = new ReadableState(options, this);
-
-	  // legacy
-	  this.readable = true;
-
-	  if (options && typeof options.read === 'function') this._read = options.read;
-
-	  EventEmitter.call(this);
-	}
-
-	// Manually shove something into the read() buffer.
-	// This returns true if the highWaterMark has not been hit yet,
-	// similar to how Writable.write() returns true if you should
-	// write() some more.
-	Readable.prototype.push = function (chunk, encoding) {
-	  var state = this._readableState;
-
-	  if (!state.objectMode && typeof chunk === 'string') {
-	    encoding = encoding || state.defaultEncoding;
-	    if (encoding !== state.encoding) {
-	      chunk = Buffer.from(chunk, encoding);
-	      encoding = '';
-	    }
-	  }
-
-	  return readableAddChunk(this, state, chunk, encoding, false);
-	};
-
-	// Unshift should *always* be something directly out of read()
-	Readable.prototype.unshift = function (chunk) {
-	  var state = this._readableState;
-	  return readableAddChunk(this, state, chunk, '', true);
-	};
-
-	Readable.prototype.isPaused = function () {
-	  return this._readableState.flowing === false;
-	};
-
-	function readableAddChunk(stream, state, chunk, encoding, addToFront) {
-	  var er = chunkInvalid(state, chunk);
-	  if (er) {
-	    stream.emit('error', er);
-	  } else if (chunk === null) {
-	    state.reading = false;
-	    onEofChunk(stream, state);
-	  } else if (state.objectMode || chunk && chunk.length > 0) {
-	    if (state.ended && !addToFront) {
-	      var e = new Error('stream.push() after EOF');
-	      stream.emit('error', e);
-	    } else if (state.endEmitted && addToFront) {
-	      var _e = new Error('stream.unshift() after end event');
-	      stream.emit('error', _e);
-	    } else {
-	      var skipAdd;
-	      if (state.decoder && !addToFront && !encoding) {
-	        chunk = state.decoder.write(chunk);
-	        skipAdd = !state.objectMode && chunk.length === 0;
-	      }
-
-	      if (!addToFront) state.reading = false;
-
-	      // Don't add to the buffer if we've decoded to an empty string chunk and
-	      // we're not in object mode
-	      if (!skipAdd) {
-	        // if we want the data now, just emit it.
-	        if (state.flowing && state.length === 0 && !state.sync) {
-	          stream.emit('data', chunk);
-	          stream.read(0);
-	        } else {
-	          // update the buffer info.
-	          state.length += state.objectMode ? 1 : chunk.length;
-	          if (addToFront) state.buffer.unshift(chunk);else state.buffer.push(chunk);
-
-	          if (state.needReadable) emitReadable(stream);
-	        }
-	      }
-
-	      maybeReadMore(stream, state);
-	    }
-	  } else if (!addToFront) {
-	    state.reading = false;
-	  }
-
-	  return needMoreData(state);
-	}
-
-	// if it's past the high water mark, we can push in some more.
-	// Also, if we have no data yet, we can stand some
-	// more bytes.  This is to work around cases where hwm=0,
-	// such as the repl.  Also, if the push() triggered a
-	// readable event, and the user called read(largeNumber) such that
-	// needReadable was set, then we ought to push more, so that another
-	// 'readable' event will be triggered.
-	function needMoreData(state) {
-	  return !state.ended && (state.needReadable || state.length < state.highWaterMark || state.length === 0);
-	}
-
-	// backwards compatibility.
-	Readable.prototype.setEncoding = function (enc) {
-	  this._readableState.decoder = new StringDecoder(enc);
-	  this._readableState.encoding = enc;
-	  return this;
-	};
-
-	// Don't raise the hwm > 8MB
-	var MAX_HWM = 0x800000;
-	function computeNewHighWaterMark(n) {
-	  if (n >= MAX_HWM) {
-	    n = MAX_HWM;
-	  } else {
-	    // Get the next highest power of 2 to prevent increasing hwm excessively in
-	    // tiny amounts
-	    n--;
-	    n |= n >>> 1;
-	    n |= n >>> 2;
-	    n |= n >>> 4;
-	    n |= n >>> 8;
-	    n |= n >>> 16;
-	    n++;
-	  }
-	  return n;
-	}
-
-	// This function is designed to be inlinable, so please take care when making
-	// changes to the function body.
-	function howMuchToRead(n, state) {
-	  if (n <= 0 || state.length === 0 && state.ended) return 0;
-	  if (state.objectMode) return 1;
-	  if (n !== n) {
-	    // Only flow one buffer at a time
-	    if (state.flowing && state.length) return state.buffer.head.data.length;else return state.length;
-	  }
-	  // If we're asking for more than the current hwm, then raise the hwm.
-	  if (n > state.highWaterMark) state.highWaterMark = computeNewHighWaterMark(n);
-	  if (n <= state.length) return n;
-	  // Don't have enough
-	  if (!state.ended) {
-	    state.needReadable = true;
-	    return 0;
-	  }
-	  return state.length;
-	}
-
-	// you can override either this method, or the async _read(n) below.
-	Readable.prototype.read = function (n) {
-	  debug('read', n);
-	  n = parseInt(n, 10);
-	  var state = this._readableState;
-	  var nOrig = n;
-
-	  if (n !== 0) state.emittedReadable = false;
-
-	  // if we're doing read(0) to trigger a readable event, but we
-	  // already have a bunch of data in the buffer, then just trigger
-	  // the 'readable' event and move on.
-	  if (n === 0 && state.needReadable && (state.length >= state.highWaterMark || state.ended)) {
-	    debug('read: emitReadable', state.length, state.ended);
-	    if (state.length === 0 && state.ended) endReadable(this);else emitReadable(this);
-	    return null;
-	  }
-
-	  n = howMuchToRead(n, state);
-
-	  // if we've ended, and we're now clear, then finish it up.
-	  if (n === 0 && state.ended) {
-	    if (state.length === 0) endReadable(this);
-	    return null;
-	  }
-
-	  // All the actual chunk generation logic needs to be
-	  // *below* the call to _read.  The reason is that in certain
-	  // synthetic stream cases, such as passthrough streams, _read
-	  // may be a completely synchronous operation which may change
-	  // the state of the read buffer, providing enough data when
-	  // before there was *not* enough.
-	  //
-	  // So, the steps are:
-	  // 1. Figure out what the state of things will be after we do
-	  // a read from the buffer.
-	  //
-	  // 2. If that resulting state will trigger a _read, then call _read.
-	  // Note that this may be asynchronous, or synchronous.  Yes, it is
-	  // deeply ugly to write APIs this way, but that still doesn't mean
-	  // that the Readable class should behave improperly, as streams are
-	  // designed to be sync/async agnostic.
-	  // Take note if the _read call is sync or async (ie, if the read call
-	  // has returned yet), so that we know whether or not it's safe to emit
-	  // 'readable' etc.
-	  //
-	  // 3. Actually pull the requested chunks out of the buffer and return.
-
-	  // if we need a readable event, then we need to do some reading.
-	  var doRead = state.needReadable;
-	  debug('need readable', doRead);
-
-	  // if we currently have less than the highWaterMark, then also read some
-	  if (state.length === 0 || state.length - n < state.highWaterMark) {
-	    doRead = true;
-	    debug('length less than watermark', doRead);
-	  }
-
-	  // however, if we've ended, then there's no point, and if we're already
-	  // reading, then it's unnecessary.
-	  if (state.ended || state.reading) {
-	    doRead = false;
-	    debug('reading or ended', doRead);
-	  } else if (doRead) {
-	    debug('do read');
-	    state.reading = true;
-	    state.sync = true;
-	    // if the length is currently zero, then we *need* a readable event.
-	    if (state.length === 0) state.needReadable = true;
-	    // call internal read method
-	    this._read(state.highWaterMark);
-	    state.sync = false;
-	    // If _read pushed data synchronously, then `reading` will be false,
-	    // and we need to re-evaluate how much data we can return to the user.
-	    if (!state.reading) n = howMuchToRead(nOrig, state);
-	  }
-
-	  var ret;
-	  if (n > 0) ret = fromList(n, state);else ret = null;
-
-	  if (ret === null) {
-	    state.needReadable = true;
-	    n = 0;
-	  } else {
-	    state.length -= n;
-	  }
-
-	  if (state.length === 0) {
-	    // If we have nothing in the buffer, then we want to know
-	    // as soon as we *do* get something into the buffer.
-	    if (!state.ended) state.needReadable = true;
-
-	    // If we tried to read() past the EOF, then emit end on the next tick.
-	    if (nOrig !== n && state.ended) endReadable(this);
-	  }
-
-	  if (ret !== null) this.emit('data', ret);
-
-	  return ret;
-	};
-
-	function chunkInvalid(state, chunk) {
-	  var er = null;
-	  if (!Buffer.isBuffer(chunk) && typeof chunk !== 'string' && chunk !== null && chunk !== undefined && !state.objectMode) {
-	    er = new TypeError('Invalid non-string/buffer chunk');
-	  }
-	  return er;
-	}
-
-	function onEofChunk(stream, state) {
-	  if (state.ended) return;
-	  if (state.decoder) {
-	    var chunk = state.decoder.end();
-	    if (chunk && chunk.length) {
-	      state.buffer.push(chunk);
-	      state.length += state.objectMode ? 1 : chunk.length;
-	    }
-	  }
-	  state.ended = true;
-
-	  // emit 'readable' now to make sure it gets picked up.
-	  emitReadable(stream);
-	}
-
-	// Don't emit readable right away in sync mode, because this can trigger
-	// another read() call => stack overflow.  This way, it might trigger
-	// a nextTick recursion warning, but that's not so bad.
-	function emitReadable(stream) {
-	  var state = stream._readableState;
-	  state.needReadable = false;
-	  if (!state.emittedReadable) {
-	    debug('emitReadable', state.flowing);
-	    state.emittedReadable = true;
-	    if (state.sync) nextTick$1(emitReadable_, stream);else emitReadable_(stream);
-	  }
-	}
-
-	function emitReadable_(stream) {
-	  debug('emit readable');
-	  stream.emit('readable');
-	  flow(stream);
-	}
-
-	// at this point, the user has presumably seen the 'readable' event,
-	// and called read() to consume some data.  that may have triggered
-	// in turn another _read(n) call, in which case reading = true if
-	// it's in progress.
-	// However, if we're not ended, or reading, and the length < hwm,
-	// then go ahead and try to read some more preemptively.
-	function maybeReadMore(stream, state) {
-	  if (!state.readingMore) {
-	    state.readingMore = true;
-	    nextTick$1(maybeReadMore_, stream, state);
-	  }
-	}
-
-	function maybeReadMore_(stream, state) {
-	  var len = state.length;
-	  while (!state.reading && !state.flowing && !state.ended && state.length < state.highWaterMark) {
-	    debug('maybeReadMore read 0');
-	    stream.read(0);
-	    if (len === state.length)
-	      // didn't get any data, stop spinning.
-	      break;else len = state.length;
-	  }
-	  state.readingMore = false;
-	}
-
-	// abstract method.  to be overridden in specific implementation classes.
-	// call cb(er, data) where data is <= n in length.
-	// for virtual (non-string, non-buffer) streams, "length" is somewhat
-	// arbitrary, and perhaps not very meaningful.
-	Readable.prototype._read = function (n) {
-	  this.emit('error', new Error('not implemented'));
-	};
-
-	Readable.prototype.pipe = function (dest, pipeOpts) {
-	  var src = this;
-	  var state = this._readableState;
-
-	  switch (state.pipesCount) {
-	    case 0:
-	      state.pipes = dest;
-	      break;
-	    case 1:
-	      state.pipes = [state.pipes, dest];
-	      break;
-	    default:
-	      state.pipes.push(dest);
-	      break;
-	  }
-	  state.pipesCount += 1;
-	  debug('pipe count=%d opts=%j', state.pipesCount, pipeOpts);
-
-	  var doEnd = (!pipeOpts || pipeOpts.end !== false);
-
-	  var endFn = doEnd ? onend : cleanup;
-	  if (state.endEmitted) nextTick$1(endFn);else src.once('end', endFn);
-
-	  dest.on('unpipe', onunpipe);
-	  function onunpipe(readable) {
-	    debug('onunpipe');
-	    if (readable === src) {
-	      cleanup();
-	    }
-	  }
-
-	  function onend() {
-	    debug('onend');
-	    dest.end();
-	  }
-
-	  // when the dest drains, it reduces the awaitDrain counter
-	  // on the source.  This would be more elegant with a .once()
-	  // handler in flow(), but adding and removing repeatedly is
-	  // too slow.
-	  var ondrain = pipeOnDrain(src);
-	  dest.on('drain', ondrain);
-
-	  var cleanedUp = false;
-	  function cleanup() {
-	    debug('cleanup');
-	    // cleanup event handlers once the pipe is broken
-	    dest.removeListener('close', onclose);
-	    dest.removeListener('finish', onfinish);
-	    dest.removeListener('drain', ondrain);
-	    dest.removeListener('error', onerror);
-	    dest.removeListener('unpipe', onunpipe);
-	    src.removeListener('end', onend);
-	    src.removeListener('end', cleanup);
-	    src.removeListener('data', ondata);
-
-	    cleanedUp = true;
-
-	    // if the reader is waiting for a drain event from this
-	    // specific writer, then it would cause it to never start
-	    // flowing again.
-	    // So, if this is awaiting a drain, then we just call it now.
-	    // If we don't know, then assume that we are waiting for one.
-	    if (state.awaitDrain && (!dest._writableState || dest._writableState.needDrain)) ondrain();
-	  }
-
-	  // If the user pushes more data while we're writing to dest then we'll end up
-	  // in ondata again. However, we only want to increase awaitDrain once because
-	  // dest will only emit one 'drain' event for the multiple writes.
-	  // => Introduce a guard on increasing awaitDrain.
-	  var increasedAwaitDrain = false;
-	  src.on('data', ondata);
-	  function ondata(chunk) {
-	    debug('ondata');
-	    increasedAwaitDrain = false;
-	    var ret = dest.write(chunk);
-	    if (false === ret && !increasedAwaitDrain) {
-	      // If the user unpiped during `dest.write()`, it is possible
-	      // to get stuck in a permanently paused state if that write
-	      // also returned false.
-	      // => Check whether `dest` is still a piping destination.
-	      if ((state.pipesCount === 1 && state.pipes === dest || state.pipesCount > 1 && indexOf(state.pipes, dest) !== -1) && !cleanedUp) {
-	        debug('false write response, pause', src._readableState.awaitDrain);
-	        src._readableState.awaitDrain++;
-	        increasedAwaitDrain = true;
-	      }
-	      src.pause();
-	    }
-	  }
-
-	  // if the dest has an error, then stop piping into it.
-	  // however, don't suppress the throwing behavior for this.
-	  function onerror(er) {
-	    debug('onerror', er);
-	    unpipe();
-	    dest.removeListener('error', onerror);
-	    if (listenerCount(dest, 'error') === 0) dest.emit('error', er);
-	  }
-
-	  // Make sure our error handler is attached before userland ones.
-	  prependListener(dest, 'error', onerror);
-
-	  // Both close and finish should trigger unpipe, but only once.
-	  function onclose() {
-	    dest.removeListener('finish', onfinish);
-	    unpipe();
-	  }
-	  dest.once('close', onclose);
-	  function onfinish() {
-	    debug('onfinish');
-	    dest.removeListener('close', onclose);
-	    unpipe();
-	  }
-	  dest.once('finish', onfinish);
-
-	  function unpipe() {
-	    debug('unpipe');
-	    src.unpipe(dest);
-	  }
-
-	  // tell the dest that it's being piped to
-	  dest.emit('pipe', src);
-
-	  // start the flow if it hasn't been started already.
-	  if (!state.flowing) {
-	    debug('pipe resume');
-	    src.resume();
-	  }
-
-	  return dest;
-	};
-
-	function pipeOnDrain(src) {
-	  return function () {
-	    var state = src._readableState;
-	    debug('pipeOnDrain', state.awaitDrain);
-	    if (state.awaitDrain) state.awaitDrain--;
-	    if (state.awaitDrain === 0 && src.listeners('data').length) {
-	      state.flowing = true;
-	      flow(src);
-	    }
-	  };
-	}
-
-	Readable.prototype.unpipe = function (dest) {
-	  var state = this._readableState;
-
-	  // if we're not piping anywhere, then do nothing.
-	  if (state.pipesCount === 0) return this;
-
-	  // just one destination.  most common case.
-	  if (state.pipesCount === 1) {
-	    // passed in one, but it's not the right one.
-	    if (dest && dest !== state.pipes) return this;
-
-	    if (!dest) dest = state.pipes;
-
-	    // got a match.
-	    state.pipes = null;
-	    state.pipesCount = 0;
-	    state.flowing = false;
-	    if (dest) dest.emit('unpipe', this);
-	    return this;
-	  }
-
-	  // slow case. multiple pipe destinations.
-
-	  if (!dest) {
-	    // remove all.
-	    var dests = state.pipes;
-	    var len = state.pipesCount;
-	    state.pipes = null;
-	    state.pipesCount = 0;
-	    state.flowing = false;
-
-	    for (var _i = 0; _i < len; _i++) {
-	      dests[_i].emit('unpipe', this);
-	    }return this;
-	  }
-
-	  // try to find the right one.
-	  var i = indexOf(state.pipes, dest);
-	  if (i === -1) return this;
-
-	  state.pipes.splice(i, 1);
-	  state.pipesCount -= 1;
-	  if (state.pipesCount === 1) state.pipes = state.pipes[0];
-
-	  dest.emit('unpipe', this);
-
-	  return this;
-	};
-
-	// set up data events if they are asked for
-	// Ensure readable listeners eventually get something
-	Readable.prototype.on = function (ev, fn) {
-	  var res = EventEmitter.prototype.on.call(this, ev, fn);
-
-	  if (ev === 'data') {
-	    // Start flowing on next tick if stream isn't explicitly paused
-	    if (this._readableState.flowing !== false) this.resume();
-	  } else if (ev === 'readable') {
-	    var state = this._readableState;
-	    if (!state.endEmitted && !state.readableListening) {
-	      state.readableListening = state.needReadable = true;
-	      state.emittedReadable = false;
-	      if (!state.reading) {
-	        nextTick$1(nReadingNextTick, this);
-	      } else if (state.length) {
-	        emitReadable(this);
-	      }
-	    }
-	  }
-
-	  return res;
-	};
-	Readable.prototype.addListener = Readable.prototype.on;
-
-	function nReadingNextTick(self) {
-	  debug('readable nexttick read 0');
-	  self.read(0);
-	}
-
-	// pause() and resume() are remnants of the legacy readable stream API
-	// If the user uses them, then switch into old mode.
-	Readable.prototype.resume = function () {
-	  var state = this._readableState;
-	  if (!state.flowing) {
-	    debug('resume');
-	    state.flowing = true;
-	    resume(this, state);
-	  }
-	  return this;
-	};
-
-	function resume(stream, state) {
-	  if (!state.resumeScheduled) {
-	    state.resumeScheduled = true;
-	    nextTick$1(resume_, stream, state);
-	  }
-	}
-
-	function resume_(stream, state) {
-	  if (!state.reading) {
-	    debug('resume read 0');
-	    stream.read(0);
-	  }
-
-	  state.resumeScheduled = false;
-	  state.awaitDrain = 0;
-	  stream.emit('resume');
-	  flow(stream);
-	  if (state.flowing && !state.reading) stream.read(0);
-	}
-
-	Readable.prototype.pause = function () {
-	  debug('call pause flowing=%j', this._readableState.flowing);
-	  if (false !== this._readableState.flowing) {
-	    debug('pause');
-	    this._readableState.flowing = false;
-	    this.emit('pause');
-	  }
-	  return this;
-	};
-
-	function flow(stream) {
-	  var state = stream._readableState;
-	  debug('flow', state.flowing);
-	  while (state.flowing && stream.read() !== null) {}
-	}
-
-	// wrap an old-style stream as the async data source.
-	// This is *not* part of the readable stream interface.
-	// It is an ugly unfortunate mess of history.
-	Readable.prototype.wrap = function (stream) {
-	  var state = this._readableState;
-	  var paused = false;
-
-	  var self = this;
-	  stream.on('end', function () {
-	    debug('wrapped end');
-	    if (state.decoder && !state.ended) {
-	      var chunk = state.decoder.end();
-	      if (chunk && chunk.length) self.push(chunk);
-	    }
-
-	    self.push(null);
-	  });
-
-	  stream.on('data', function (chunk) {
-	    debug('wrapped data');
-	    if (state.decoder) chunk = state.decoder.write(chunk);
-
-	    // don't skip over falsy values in objectMode
-	    if (state.objectMode && (chunk === null || chunk === undefined)) return;else if (!state.objectMode && (!chunk || !chunk.length)) return;
-
-	    var ret = self.push(chunk);
-	    if (!ret) {
-	      paused = true;
-	      stream.pause();
-	    }
-	  });
-
-	  // proxy all the other methods.
-	  // important when wrapping filters and duplexes.
-	  for (var i in stream) {
-	    if (this[i] === undefined && typeof stream[i] === 'function') {
-	      this[i] = function (method) {
-	        return function () {
-	          return stream[method].apply(stream, arguments);
-	        };
-	      }(i);
-	    }
-	  }
-
-	  // proxy certain important events.
-	  var events = ['error', 'close', 'destroy', 'pause', 'resume'];
-	  forEach(events, function (ev) {
-	    stream.on(ev, self.emit.bind(self, ev));
-	  });
-
-	  // when we try to consume some more bytes, simply unpause the
-	  // underlying stream.
-	  self._read = function (n) {
-	    debug('wrapped _read', n);
-	    if (paused) {
-	      paused = false;
-	      stream.resume();
-	    }
-	  };
-
-	  return self;
-	};
-
-	// exposed for testing purposes only.
-	Readable._fromList = fromList;
-
-	// Pluck off n bytes from an array of buffers.
-	// Length is the combined lengths of all the buffers in the list.
-	// This function is designed to be inlinable, so please take care when making
-	// changes to the function body.
-	function fromList(n, state) {
-	  // nothing buffered
-	  if (state.length === 0) return null;
-
-	  var ret;
-	  if (state.objectMode) ret = state.buffer.shift();else if (!n || n >= state.length) {
-	    // read it all, truncate the list
-	    if (state.decoder) ret = state.buffer.join('');else if (state.buffer.length === 1) ret = state.buffer.head.data;else ret = state.buffer.concat(state.length);
-	    state.buffer.clear();
-	  } else {
-	    // read part of list
-	    ret = fromListPartial(n, state.buffer, state.decoder);
-	  }
-
-	  return ret;
-	}
-
-	// Extracts only enough buffered data to satisfy the amount requested.
-	// This function is designed to be inlinable, so please take care when making
-	// changes to the function body.
-	function fromListPartial(n, list, hasStrings) {
-	  var ret;
-	  if (n < list.head.data.length) {
-	    // slice is the same for buffers and strings
-	    ret = list.head.data.slice(0, n);
-	    list.head.data = list.head.data.slice(n);
-	  } else if (n === list.head.data.length) {
-	    // first chunk is a perfect match
-	    ret = list.shift();
-	  } else {
-	    // result spans more than one buffer
-	    ret = hasStrings ? copyFromBufferString(n, list) : copyFromBuffer(n, list);
-	  }
-	  return ret;
-	}
-
-	// Copies a specified amount of characters from the list of buffered data
-	// chunks.
-	// This function is designed to be inlinable, so please take care when making
-	// changes to the function body.
-	function copyFromBufferString(n, list) {
-	  var p = list.head;
-	  var c = 1;
-	  var ret = p.data;
-	  n -= ret.length;
-	  while (p = p.next) {
-	    var str = p.data;
-	    var nb = n > str.length ? str.length : n;
-	    if (nb === str.length) ret += str;else ret += str.slice(0, n);
-	    n -= nb;
-	    if (n === 0) {
-	      if (nb === str.length) {
-	        ++c;
-	        if (p.next) list.head = p.next;else list.head = list.tail = null;
-	      } else {
-	        list.head = p;
-	        p.data = str.slice(nb);
-	      }
-	      break;
-	    }
-	    ++c;
-	  }
-	  list.length -= c;
-	  return ret;
-	}
-
-	// Copies a specified amount of bytes from the list of buffered data chunks.
-	// This function is designed to be inlinable, so please take care when making
-	// changes to the function body.
-	function copyFromBuffer(n, list) {
-	  var ret = Buffer.allocUnsafe(n);
-	  var p = list.head;
-	  var c = 1;
-	  p.data.copy(ret);
-	  n -= p.data.length;
-	  while (p = p.next) {
-	    var buf = p.data;
-	    var nb = n > buf.length ? buf.length : n;
-	    buf.copy(ret, ret.length - n, 0, nb);
-	    n -= nb;
-	    if (n === 0) {
-	      if (nb === buf.length) {
-	        ++c;
-	        if (p.next) list.head = p.next;else list.head = list.tail = null;
-	      } else {
-	        list.head = p;
-	        p.data = buf.slice(nb);
-	      }
-	      break;
-	    }
-	    ++c;
-	  }
-	  list.length -= c;
-	  return ret;
-	}
-
-	function endReadable(stream) {
-	  var state = stream._readableState;
-
-	  // If we get here before consuming all the bytes, then that is a
-	  // bug in node.  Should never happen.
-	  if (state.length > 0) throw new Error('"endReadable()" called on non-empty stream');
-
-	  if (!state.endEmitted) {
-	    state.ended = true;
-	    nextTick$1(endReadableNT, state, stream);
-	  }
-	}
-
-	function endReadableNT(state, stream) {
-	  // Check that we didn't get one last unshift.
-	  if (!state.endEmitted && state.length === 0) {
-	    state.endEmitted = true;
-	    stream.readable = false;
-	    stream.emit('end');
-	  }
-	}
-
-	function forEach(xs, f) {
-	  for (var i = 0, l = xs.length; i < l; i++) {
-	    f(xs[i], i);
-	  }
-	}
-
-	function indexOf(xs, x) {
-	  for (var i = 0, l = xs.length; i < l; i++) {
-	    if (xs[i] === x) return i;
-	  }
-	  return -1;
-	}
-
-	// A bit simpler than readable streams.
-	Writable.WritableState = WritableState;
-	inherits$1(Writable, EventEmitter);
-
-	function nop() {}
-
-	function WriteReq(chunk, encoding, cb) {
-	  this.chunk = chunk;
-	  this.encoding = encoding;
-	  this.callback = cb;
-	  this.next = null;
-	}
-
-	function WritableState(options, stream) {
-	  Object.defineProperty(this, 'buffer', {
-	    get: deprecate(function () {
-	      return this.getBuffer();
-	    }, '_writableState.buffer is deprecated. Use _writableState.getBuffer ' + 'instead.')
-	  });
-	  options = options || {};
-
-	  // object stream flag to indicate whether or not this stream
-	  // contains buffers or objects.
-	  this.objectMode = !!options.objectMode;
-
-	  if (stream instanceof Duplex) this.objectMode = this.objectMode || !!options.writableObjectMode;
-
-	  // the point at which write() starts returning false
-	  // Note: 0 is a valid value, means that we always return false if
-	  // the entire buffer is not flushed immediately on write()
-	  var hwm = options.highWaterMark;
-	  var defaultHwm = this.objectMode ? 16 : 16 * 1024;
-	  this.highWaterMark = hwm || hwm === 0 ? hwm : defaultHwm;
-
-	  // cast to ints.
-	  this.highWaterMark = ~ ~this.highWaterMark;
-
-	  this.needDrain = false;
-	  // at the start of calling end()
-	  this.ending = false;
-	  // when end() has been called, and returned
-	  this.ended = false;
-	  // when 'finish' is emitted
-	  this.finished = false;
-
-	  // should we decode strings into buffers before passing to _write?
-	  // this is here so that some node-core streams can optimize string
-	  // handling at a lower level.
-	  var noDecode = options.decodeStrings === false;
-	  this.decodeStrings = !noDecode;
-
-	  // Crypto is kind of old and crusty.  Historically, its default string
-	  // encoding is 'binary' so we have to make this configurable.
-	  // Everything else in the universe uses 'utf8', though.
-	  this.defaultEncoding = options.defaultEncoding || 'utf8';
-
-	  // not an actual buffer we keep track of, but a measurement
-	  // of how much we're waiting to get pushed to some underlying
-	  // socket or file.
-	  this.length = 0;
-
-	  // a flag to see when we're in the middle of a write.
-	  this.writing = false;
-
-	  // when true all writes will be buffered until .uncork() call
-	  this.corked = 0;
-
-	  // a flag to be able to tell if the onwrite cb is called immediately,
-	  // or on a later tick.  We set this to true at first, because any
-	  // actions that shouldn't happen until "later" should generally also
-	  // not happen before the first write call.
-	  this.sync = true;
-
-	  // a flag to know if we're processing previously buffered items, which
-	  // may call the _write() callback in the same tick, so that we don't
-	  // end up in an overlapped onwrite situation.
-	  this.bufferProcessing = false;
-
-	  // the callback that's passed to _write(chunk,cb)
-	  this.onwrite = function (er) {
-	    onwrite(stream, er);
-	  };
-
-	  // the callback that the user supplies to write(chunk,encoding,cb)
-	  this.writecb = null;
-
-	  // the amount that is being written when _write is called.
-	  this.writelen = 0;
-
-	  this.bufferedRequest = null;
-	  this.lastBufferedRequest = null;
-
-	  // number of pending user-supplied write callbacks
-	  // this must be 0 before 'finish' can be emitted
-	  this.pendingcb = 0;
-
-	  // emit prefinish if the only thing we're waiting for is _write cbs
-	  // This is relevant for synchronous Transform streams
-	  this.prefinished = false;
-
-	  // True if the error was already emitted and should not be thrown again
-	  this.errorEmitted = false;
-
-	  // count buffered requests
-	  this.bufferedRequestCount = 0;
-
-	  // allocate the first CorkedRequest, there is always
-	  // one allocated and free to use, and we maintain at most two
-	  this.corkedRequestsFree = new CorkedRequest(this);
-	}
-
-	WritableState.prototype.getBuffer = function writableStateGetBuffer() {
-	  var current = this.bufferedRequest;
-	  var out = [];
-	  while (current) {
-	    out.push(current);
-	    current = current.next;
-	  }
-	  return out;
-	};
-	function Writable(options) {
-
-	  // Writable ctor is applied to Duplexes, though they're not
-	  // instanceof Writable, they're instanceof Readable.
-	  if (!(this instanceof Writable) && !(this instanceof Duplex)) return new Writable(options);
-
-	  this._writableState = new WritableState(options, this);
-
-	  // legacy.
-	  this.writable = true;
-
-	  if (options) {
-	    if (typeof options.write === 'function') this._write = options.write;
-
-	    if (typeof options.writev === 'function') this._writev = options.writev;
-	  }
-
-	  EventEmitter.call(this);
-	}
-
-	// Otherwise people can pipe Writable streams, which is just wrong.
-	Writable.prototype.pipe = function () {
-	  this.emit('error', new Error('Cannot pipe, not readable'));
-	};
-
-	function writeAfterEnd(stream, cb) {
-	  var er = new Error('write after end');
-	  // TODO: defer error events consistently everywhere, not just the cb
-	  stream.emit('error', er);
-	  nextTick$1(cb, er);
-	}
-
-	// If we get something that is not a buffer, string, null, or undefined,
-	// and we're not in objectMode, then that's an error.
-	// Otherwise stream chunks are all considered to be of length=1, and the
-	// watermarks determine how many objects to keep in the buffer, rather than
-	// how many bytes or characters.
-	function validChunk(stream, state, chunk, cb) {
-	  var valid = true;
-	  var er = false;
-	  // Always throw error if a null is written
-	  // if we are not in object mode then throw
-	  // if it is not a buffer, string, or undefined.
-	  if (chunk === null) {
-	    er = new TypeError('May not write null values to stream');
-	  } else if (!Buffer.isBuffer(chunk) && typeof chunk !== 'string' && chunk !== undefined && !state.objectMode) {
-	    er = new TypeError('Invalid non-string/buffer chunk');
-	  }
-	  if (er) {
-	    stream.emit('error', er);
-	    nextTick$1(cb, er);
-	    valid = false;
-	  }
-	  return valid;
-	}
-
-	Writable.prototype.write = function (chunk, encoding, cb) {
-	  var state = this._writableState;
-	  var ret = false;
-
-	  if (typeof encoding === 'function') {
-	    cb = encoding;
-	    encoding = null;
-	  }
-
-	  if (Buffer.isBuffer(chunk)) encoding = 'buffer';else if (!encoding) encoding = state.defaultEncoding;
-
-	  if (typeof cb !== 'function') cb = nop;
-
-	  if (state.ended) writeAfterEnd(this, cb);else if (validChunk(this, state, chunk, cb)) {
-	    state.pendingcb++;
-	    ret = writeOrBuffer(this, state, chunk, encoding, cb);
-	  }
-
-	  return ret;
-	};
-
-	Writable.prototype.cork = function () {
-	  var state = this._writableState;
-
-	  state.corked++;
-	};
-
-	Writable.prototype.uncork = function () {
-	  var state = this._writableState;
-
-	  if (state.corked) {
-	    state.corked--;
-
-	    if (!state.writing && !state.corked && !state.finished && !state.bufferProcessing && state.bufferedRequest) clearBuffer(this, state);
-	  }
-	};
-
-	Writable.prototype.setDefaultEncoding = function setDefaultEncoding(encoding) {
-	  // node::ParseEncoding() requires lower case.
-	  if (typeof encoding === 'string') encoding = encoding.toLowerCase();
-	  if (!(['hex', 'utf8', 'utf-8', 'ascii', 'binary', 'base64', 'ucs2', 'ucs-2', 'utf16le', 'utf-16le', 'raw'].indexOf((encoding + '').toLowerCase()) > -1)) throw new TypeError('Unknown encoding: ' + encoding);
-	  this._writableState.defaultEncoding = encoding;
-	  return this;
-	};
-
-	function decodeChunk(state, chunk, encoding) {
-	  if (!state.objectMode && state.decodeStrings !== false && typeof chunk === 'string') {
-	    chunk = Buffer.from(chunk, encoding);
-	  }
-	  return chunk;
-	}
-
-	// if we're already writing something, then just put this
-	// in the queue, and wait our turn.  Otherwise, call _write
-	// If we return false, then we need a drain event, so set that flag.
-	function writeOrBuffer(stream, state, chunk, encoding, cb) {
-	  chunk = decodeChunk(state, chunk, encoding);
-
-	  if (Buffer.isBuffer(chunk)) encoding = 'buffer';
-	  var len = state.objectMode ? 1 : chunk.length;
-
-	  state.length += len;
-
-	  var ret = state.length < state.highWaterMark;
-	  // we must ensure that previous needDrain will not be reset to false.
-	  if (!ret) state.needDrain = true;
-
-	  if (state.writing || state.corked) {
-	    var last = state.lastBufferedRequest;
-	    state.lastBufferedRequest = new WriteReq(chunk, encoding, cb);
-	    if (last) {
-	      last.next = state.lastBufferedRequest;
-	    } else {
-	      state.bufferedRequest = state.lastBufferedRequest;
-	    }
-	    state.bufferedRequestCount += 1;
-	  } else {
-	    doWrite(stream, state, false, len, chunk, encoding, cb);
-	  }
-
-	  return ret;
-	}
-
-	function doWrite(stream, state, writev, len, chunk, encoding, cb) {
-	  state.writelen = len;
-	  state.writecb = cb;
-	  state.writing = true;
-	  state.sync = true;
-	  if (writev) stream._writev(chunk, state.onwrite);else stream._write(chunk, encoding, state.onwrite);
-	  state.sync = false;
-	}
-
-	function onwriteError(stream, state, sync, er, cb) {
-	  --state.pendingcb;
-	  if (sync) nextTick$1(cb, er);else cb(er);
-
-	  stream._writableState.errorEmitted = true;
-	  stream.emit('error', er);
-	}
-
-	function onwriteStateUpdate(state) {
-	  state.writing = false;
-	  state.writecb = null;
-	  state.length -= state.writelen;
-	  state.writelen = 0;
-	}
-
-	function onwrite(stream, er) {
-	  var state = stream._writableState;
-	  var sync = state.sync;
-	  var cb = state.writecb;
-
-	  onwriteStateUpdate(state);
-
-	  if (er) onwriteError(stream, state, sync, er, cb);else {
-	    // Check if we're actually ready to finish, but don't emit yet
-	    var finished = needFinish(state);
-
-	    if (!finished && !state.corked && !state.bufferProcessing && state.bufferedRequest) {
-	      clearBuffer(stream, state);
-	    }
-
-	    if (sync) {
-	      /*<replacement>*/
-	        nextTick$1(afterWrite, stream, state, finished, cb);
-	      /*</replacement>*/
-	    } else {
-	        afterWrite(stream, state, finished, cb);
-	      }
-	  }
-	}
-
-	function afterWrite(stream, state, finished, cb) {
-	  if (!finished) onwriteDrain(stream, state);
-	  state.pendingcb--;
-	  cb();
-	  finishMaybe(stream, state);
-	}
-
-	// Must force callback to be called on nextTick, so that we don't
-	// emit 'drain' before the write() consumer gets the 'false' return
-	// value, and has a chance to attach a 'drain' listener.
-	function onwriteDrain(stream, state) {
-	  if (state.length === 0 && state.needDrain) {
-	    state.needDrain = false;
-	    stream.emit('drain');
-	  }
-	}
-
-	// if there's something in the buffer waiting, then process it
-	function clearBuffer(stream, state) {
-	  state.bufferProcessing = true;
-	  var entry = state.bufferedRequest;
-
-	  if (stream._writev && entry && entry.next) {
-	    // Fast case, write everything using _writev()
-	    var l = state.bufferedRequestCount;
-	    var buffer = new Array(l);
-	    var holder = state.corkedRequestsFree;
-	    holder.entry = entry;
-
-	    var count = 0;
-	    while (entry) {
-	      buffer[count] = entry;
-	      entry = entry.next;
-	      count += 1;
-	    }
-
-	    doWrite(stream, state, true, state.length, buffer, '', holder.finish);
-
-	    // doWrite is almost always async, defer these to save a bit of time
-	    // as the hot path ends with doWrite
-	    state.pendingcb++;
-	    state.lastBufferedRequest = null;
-	    if (holder.next) {
-	      state.corkedRequestsFree = holder.next;
-	      holder.next = null;
-	    } else {
-	      state.corkedRequestsFree = new CorkedRequest(state);
-	    }
-	  } else {
-	    // Slow case, write chunks one-by-one
-	    while (entry) {
-	      var chunk = entry.chunk;
-	      var encoding = entry.encoding;
-	      var cb = entry.callback;
-	      var len = state.objectMode ? 1 : chunk.length;
-
-	      doWrite(stream, state, false, len, chunk, encoding, cb);
-	      entry = entry.next;
-	      // if we didn't call the onwrite immediately, then
-	      // it means that we need to wait until it does.
-	      // also, that means that the chunk and cb are currently
-	      // being processed, so move the buffer counter past them.
-	      if (state.writing) {
-	        break;
-	      }
-	    }
-
-	    if (entry === null) state.lastBufferedRequest = null;
-	  }
-
-	  state.bufferedRequestCount = 0;
-	  state.bufferedRequest = entry;
-	  state.bufferProcessing = false;
-	}
-
-	Writable.prototype._write = function (chunk, encoding, cb) {
-	  cb(new Error('not implemented'));
-	};
-
-	Writable.prototype._writev = null;
-
-	Writable.prototype.end = function (chunk, encoding, cb) {
-	  var state = this._writableState;
-
-	  if (typeof chunk === 'function') {
-	    cb = chunk;
-	    chunk = null;
-	    encoding = null;
-	  } else if (typeof encoding === 'function') {
-	    cb = encoding;
-	    encoding = null;
-	  }
-
-	  if (chunk !== null && chunk !== undefined) this.write(chunk, encoding);
-
-	  // .end() fully uncorks
-	  if (state.corked) {
-	    state.corked = 1;
-	    this.uncork();
-	  }
-
-	  // ignore unnecessary end() calls.
-	  if (!state.ending && !state.finished) endWritable(this, state, cb);
-	};
-
-	function needFinish(state) {
-	  return state.ending && state.length === 0 && state.bufferedRequest === null && !state.finished && !state.writing;
-	}
-
-	function prefinish(stream, state) {
-	  if (!state.prefinished) {
-	    state.prefinished = true;
-	    stream.emit('prefinish');
-	  }
-	}
-
-	function finishMaybe(stream, state) {
-	  var need = needFinish(state);
-	  if (need) {
-	    if (state.pendingcb === 0) {
-	      prefinish(stream, state);
-	      state.finished = true;
-	      stream.emit('finish');
-	    } else {
-	      prefinish(stream, state);
-	    }
-	  }
-	  return need;
-	}
-
-	function endWritable(stream, state, cb) {
-	  state.ending = true;
-	  finishMaybe(stream, state);
-	  if (cb) {
-	    if (state.finished) nextTick$1(cb);else stream.once('finish', cb);
-	  }
-	  state.ended = true;
-	  stream.writable = false;
-	}
-
-	// It seems a linked list but it is not
-	// there will be only 2 of these for each stream
-	function CorkedRequest(state) {
-	  var _this = this;
-
-	  this.next = null;
-	  this.entry = null;
-
-	  this.finish = function (err) {
-	    var entry = _this.entry;
-	    _this.entry = null;
-	    while (entry) {
-	      var cb = entry.callback;
-	      state.pendingcb--;
-	      cb(err);
-	      entry = entry.next;
-	    }
-	    if (state.corkedRequestsFree) {
-	      state.corkedRequestsFree.next = _this;
-	    } else {
-	      state.corkedRequestsFree = _this;
-	    }
-	  };
-	}
-
-	inherits$1(Duplex, Readable);
-
-	var keys = Object.keys(Writable.prototype);
-	for (var v = 0; v < keys.length; v++) {
-	  var method = keys[v];
-	  if (!Duplex.prototype[method]) Duplex.prototype[method] = Writable.prototype[method];
-	}
-	function Duplex(options) {
-	  if (!(this instanceof Duplex)) return new Duplex(options);
-
-	  Readable.call(this, options);
-	  Writable.call(this, options);
-
-	  if (options && options.readable === false) this.readable = false;
-
-	  if (options && options.writable === false) this.writable = false;
-
-	  this.allowHalfOpen = true;
-	  if (options && options.allowHalfOpen === false) this.allowHalfOpen = false;
-
-	  this.once('end', onend);
-	}
-
-	// the no-half-open enforcer
-	function onend() {
-	  // if we allow half-open state, or if the writable side ended,
-	  // then we're ok.
-	  if (this.allowHalfOpen || this._writableState.ended) return;
-
-	  // no more data can be written.
-	  // But allow more writes to happen in this tick.
-	  nextTick$1(onEndNT, this);
-	}
-
-	function onEndNT(self) {
-	  self.end();
-	}
-
-	// a transform stream is a readable/writable stream where you do
-	inherits$1(Transform, Duplex);
-
-	function TransformState(stream) {
-	  this.afterTransform = function (er, data) {
-	    return afterTransform(stream, er, data);
-	  };
-
-	  this.needTransform = false;
-	  this.transforming = false;
-	  this.writecb = null;
-	  this.writechunk = null;
-	  this.writeencoding = null;
-	}
-
-	function afterTransform(stream, er, data) {
-	  var ts = stream._transformState;
-	  ts.transforming = false;
-
-	  var cb = ts.writecb;
-
-	  if (!cb) return stream.emit('error', new Error('no writecb in Transform class'));
-
-	  ts.writechunk = null;
-	  ts.writecb = null;
-
-	  if (data !== null && data !== undefined) stream.push(data);
-
-	  cb(er);
-
-	  var rs = stream._readableState;
-	  rs.reading = false;
-	  if (rs.needReadable || rs.length < rs.highWaterMark) {
-	    stream._read(rs.highWaterMark);
-	  }
-	}
-	function Transform(options) {
-	  if (!(this instanceof Transform)) return new Transform(options);
-
-	  Duplex.call(this, options);
-
-	  this._transformState = new TransformState(this);
-
-	  // when the writable side finishes, then flush out anything remaining.
-	  var stream = this;
-
-	  // start out asking for a readable event once data is transformed.
-	  this._readableState.needReadable = true;
-
-	  // we have implemented the _read method, and done the other things
-	  // that Readable wants before the first _read call, so unset the
-	  // sync guard flag.
-	  this._readableState.sync = false;
-
-	  if (options) {
-	    if (typeof options.transform === 'function') this._transform = options.transform;
-
-	    if (typeof options.flush === 'function') this._flush = options.flush;
-	  }
-
-	  this.once('prefinish', function () {
-	    if (typeof this._flush === 'function') this._flush(function (er) {
-	      done(stream, er);
-	    });else done(stream);
-	  });
-	}
-
-	Transform.prototype.push = function (chunk, encoding) {
-	  this._transformState.needTransform = false;
-	  return Duplex.prototype.push.call(this, chunk, encoding);
-	};
-
-	// This is the part where you do stuff!
-	// override this function in implementation classes.
-	// 'chunk' is an input chunk.
-	//
-	// Call `push(newChunk)` to pass along transformed output
-	// to the readable side.  You may call 'push' zero or more times.
-	//
-	// Call `cb(err)` when you are done with this chunk.  If you pass
-	// an error, then that'll put the hurt on the whole operation.  If you
-	// never call cb(), then you'll never get another chunk.
-	Transform.prototype._transform = function (chunk, encoding, cb) {
-	  throw new Error('Not implemented');
-	};
-
-	Transform.prototype._write = function (chunk, encoding, cb) {
-	  var ts = this._transformState;
-	  ts.writecb = cb;
-	  ts.writechunk = chunk;
-	  ts.writeencoding = encoding;
-	  if (!ts.transforming) {
-	    var rs = this._readableState;
-	    if (ts.needTransform || rs.needReadable || rs.length < rs.highWaterMark) this._read(rs.highWaterMark);
-	  }
-	};
-
-	// Doesn't matter what the args are here.
-	// _transform does all the work.
-	// That we got here means that the readable side wants more data.
-	Transform.prototype._read = function (n) {
-	  var ts = this._transformState;
-
-	  if (ts.writechunk !== null && ts.writecb && !ts.transforming) {
-	    ts.transforming = true;
-	    this._transform(ts.writechunk, ts.writeencoding, ts.afterTransform);
-	  } else {
-	    // mark that we need a transform, so that any data that comes in
-	    // will get processed, now that we've asked for it.
-	    ts.needTransform = true;
-	  }
-	};
-
-	function done(stream, er) {
-	  if (er) return stream.emit('error', er);
-
-	  // if there's nothing in the write buffer, then that means
-	  // that nothing more will ever be provided
-	  var ws = stream._writableState;
-	  var ts = stream._transformState;
-
-	  if (ws.length) throw new Error('Calling transform done when ws.length != 0');
-
-	  if (ts.transforming) throw new Error('Calling transform done when still transforming');
-
-	  return stream.push(null);
-	}
-
-	inherits$1(PassThrough, Transform);
-	function PassThrough(options) {
-	  if (!(this instanceof PassThrough)) return new PassThrough(options);
-
-	  Transform.call(this, options);
-	}
-
-	PassThrough.prototype._transform = function (chunk, encoding, cb) {
-	  cb(null, chunk);
-	};
-
-	inherits$1(Stream, EventEmitter);
-	Stream.Readable = Readable;
-	Stream.Writable = Writable;
-	Stream.Duplex = Duplex;
-	Stream.Transform = Transform;
-	Stream.PassThrough = PassThrough;
-
-	// Backwards-compat with node 0.4.x
-	Stream.Stream = Stream;
-
-	// old-style streams.  Note that the pipe method (the only relevant
-	// part of this class) is overridden in the Readable class.
-
-	function Stream() {
-	  EventEmitter.call(this);
-	}
-
-	Stream.prototype.pipe = function(dest, options) {
-	  var source = this;
-
-	  function ondata(chunk) {
-	    if (dest.writable) {
-	      if (false === dest.write(chunk) && source.pause) {
-	        source.pause();
-	      }
-	    }
-	  }
-
-	  source.on('data', ondata);
-
-	  function ondrain() {
-	    if (source.readable && source.resume) {
-	      source.resume();
-	    }
-	  }
-
-	  dest.on('drain', ondrain);
-
-	  // If the 'end' option is not supplied, dest.end() will be called when
-	  // source gets the 'end' or 'close' events.  Only dest.end() once.
-	  if (!dest._isStdio && (!options || options.end !== false)) {
-	    source.on('end', onend);
-	    source.on('close', onclose);
-	  }
-
-	  var didOnEnd = false;
-	  function onend() {
-	    if (didOnEnd) return;
-	    didOnEnd = true;
-
-	    dest.end();
-	  }
-
-
-	  function onclose() {
-	    if (didOnEnd) return;
-	    didOnEnd = true;
-
-	    if (typeof dest.destroy === 'function') dest.destroy();
-	  }
-
-	  // don't leave dangling pipes when there are errors.
-	  function onerror(er) {
-	    cleanup();
-	    if (EventEmitter.listenerCount(this, 'error') === 0) {
-	      throw er; // Unhandled stream error in pipe.
-	    }
-	  }
-
-	  source.on('error', onerror);
-	  dest.on('error', onerror);
-
-	  // remove all the event listeners that were added.
-	  function cleanup() {
-	    source.removeListener('data', ondata);
-	    dest.removeListener('drain', ondrain);
-
-	    source.removeListener('end', onend);
-	    source.removeListener('close', onclose);
-
-	    source.removeListener('error', onerror);
-	    dest.removeListener('error', onerror);
-
-	    source.removeListener('end', cleanup);
-	    source.removeListener('close', cleanup);
-
-	    dest.removeListener('close', cleanup);
-	  }
-
-	  source.on('end', cleanup);
-	  source.on('close', cleanup);
-
-	  dest.on('close', cleanup);
-
-	  dest.emit('pipe', source);
-
-	  // Allow for unix-like usage: A.pipe(B).pipe(C)
-	  return dest;
-	};
+	var util = {};
 
 	// Fast, low-level functions for parsing and formatting GFF3.
 	// JavaScript port of Robert Buels's Bio::GFF3::LowLevel Perl module.
+	Object.defineProperty(util, "__esModule", {
+	  value: true
+	});
+	util.unescape = unescape;
+	util.escape = escape;
+	util.escapeColumn = escapeColumn;
+	util.parseAttributes = parseAttributes;
+	util.parseFeature = parseFeature;
+	util.parseDirective = parseDirective;
+	util.formatAttributes = formatAttributes;
+	util.formatFeature = formatFeature;
+	util.formatDirective = formatDirective;
+	util.formatComment = formatComment;
+	util.formatSequence = formatSequence$1;
+	util.formatItem = formatItem;
 	/**
 	 * Unescape a string value used in a GFF3 attribute.
 	 *
@@ -30814,14 +27992,11 @@
 	 * @returns An unescaped string value
 	 */
 	function unescape(stringVal) {
-	  return stringVal.replace(/%([0-9A-Fa-f]{2})/g, function (_match, seq) {
-	    return String.fromCharCode(parseInt(seq, 16));
-	  });
+	  return decodeURIComponent(stringVal);
 	}
 	function _escape(regex, s) {
-	  return String(s).replace(regex, function (ch) {
-	    var hex = ch.charCodeAt(0).toString(16).toUpperCase().padStart(2, '0');
-	    return "%".concat(hex);
+	  return String(s).replaceAll(regex, function (ch) {
+	    return encodeURIComponent(ch).toUpperCase();
 	  });
 	}
 	/**
@@ -30831,7 +28006,7 @@
 	 * @returns An escaped string value
 	 */
 	function escape(rawVal) {
-	  return _escape(/[\n;\r\t=%&,\x00-\x1f\x7f-\xff]/g, rawVal);
+	  return _escape(/[\n;\r\t=%&,\u0000-\u001f\u007f]/g, rawVal);
 	}
 	/**
 	 * Escape a value for use in a GFF3 column value.
@@ -30840,7 +28015,7 @@
 	 * @returns An escaped column value
 	 */
 	function escapeColumn(rawVal) {
-	  return _escape(/[\n\r\t%\x00-\x1f\x7f-\xff]/g, rawVal);
+	  return _escape(/[\n\r\t%\u0000-\u001f\u007f]/g, rawVal);
 	}
 	/**
 	 * Parse the 9th column (attributes) of a GFF3 feature line.
@@ -30849,12 +28024,16 @@
 	 * @returns Parsed attributes
 	 */
 	function parseAttributes(attrString) {
-	  if (!(attrString && attrString.length) || attrString === '.') return {};
+	  if (!(attrString !== null && attrString !== void 0 && attrString.length) || attrString === '.') {
+	    return {};
+	  }
 	  var attrs = {};
-	  attrString.replace(/\r?\n$/, '').split(';').forEach(function (a) {
-	    var _arec;
+	  attrString.replace(/\r\n|[\r\n]$/, '').split(';').forEach(function (a) {
+	    var _nv$, _arec;
 	    var nv = a.split('=', 2);
-	    if (!(nv[1] && nv[1].length)) return;
+	    if (!((_nv$ = nv[1]) !== null && _nv$ !== void 0 && _nv$.length)) {
+	      return;
+	    }
 	    nv[0] = nv[0].trim();
 	    var arec = attrs[nv[0].trim()];
 	    if (!arec) {
@@ -30875,7 +28054,7 @@
 	 */
 	function parseFeature(line) {
 	  // split the line into columns and replace '.' with null in each column
-	  var f = line.split('\t').map(function (a) {
+	  var f = line.trim().split('\t').map(function (a) {
 	    return a === '.' || a === '' ? null : a;
 	  });
 	  // unescape only the ref, source, and type columns
@@ -30900,25 +28079,28 @@
 	 */
 	function parseDirective(line) {
 	  var match = /^\s*##\s*(\S+)\s*(.*)/.exec(line);
-	  if (!match) return null;
-	  var _match2 = _slicedToArray(match, 2),
-	    name = _match2[1];
-	  var _match3 = _slicedToArray(match, 3),
-	    contents = _match3[2];
+	  if (!match) {
+	    return null;
+	  }
+	  var _match = _slicedToArray(match, 2),
+	    name = _match[1];
+	  var _match2 = _slicedToArray(match, 3),
+	    contents = _match2[2];
 	  var parsed = {
 	    directive: name
 	  };
 	  if (contents.length) {
-	    contents = contents.replace(/\r?\n$/, '');
+	    contents = contents.replace(/\r\n|[\r\n]$/, '');
 	    parsed.value = contents;
 	  }
 	  // do a little additional parsing for sequence-region and genome-build directives
 	  if (name === 'sequence-region') {
+	    var _c$, _c$2;
 	    var c = contents.split(/\s+/, 3);
 	    return _objectSpread2(_objectSpread2({}, parsed), {}, {
 	      seq_id: c[0],
-	      start: c[1] && c[1].replace(/\D/g, ''),
-	      end: c[2] && c[2].replace(/\D/g, '')
+	      start: (_c$ = c[1]) === null || _c$ === void 0 ? void 0 : _c$.replaceAll(/\D/g, ''),
+	      end: (_c$2 = c[2]) === null || _c$2 === void 0 ? void 0 : _c$2.replaceAll(/\D/g, '')
 	    });
 	  } else if (name === 'genome-build') {
 	    var _contents$split = contents.split(/\s+/, 2),
@@ -30944,17 +28126,7 @@
 	    var _ref2 = _slicedToArray(_ref, 2),
 	      tag = _ref2[0],
 	      val = _ref2[1];
-	    if (!val) return;
-	    var valstring;
-	    if (val.hasOwnProperty('toString')) {
-	      valstring = escape(val.toString());
-	      // } else if (Array.isArray(val.values)) {
-	      //   valstring = val.values.map(escape).join(',')
-	    } else if (Array.isArray(val)) {
-	      valstring = val.map(escape).join(',');
-	    } else {
-	      valstring = escape(val);
-	    }
+	    var valstring = val.map(escape).join(',');
 	    attrOrder.push("".concat(escape(tag), "=").concat(valstring));
 	  });
 	  return attrOrder.length ? attrOrder.join(';') : '.';
@@ -31005,7 +28177,9 @@
 	 */
 	function formatDirective(directive) {
 	  var str = "##".concat(directive.directive);
-	  if (directive.value) str += " ".concat(directive.value);
+	  if (directive.value) {
+	    str += " ".concat(directive.value);
+	  }
 	  str += '\n';
 	  return str;
 	}
@@ -31026,23 +28200,33 @@
 	 * @returns Formatted single FASTA sequence string
 	 */
 	function formatSequence$1(seq) {
-	  return ">".concat(seq.id).concat(seq.description ? " ".concat(seq.description) : '', "\n").concat(seq.sequence, "\n");
-	}
-	/**
-	 * Format a directive, comment, sequence, or feature, or array of such items,
-	 * into one or more lines of GFF3.
-	 *
-	 * @param itemOrItems - A comment, sequence, or feature, or array of such items
-	 * @returns A formatted string or array of strings
-	 */
-	function formatItem(itemOrItems) {
-	  function formatSingleItem(item) {
-	    if ('attributes' in item) return formatFeature(item);
-	    if ('directive' in item) return formatDirective(item);
-	    if ('sequence' in item) return formatSequence$1(item);
-	    if ('comment' in item) return formatComment(item);
-	    return '# (invalid item found during format)\n';
+	  var header = ">".concat(seq.id).concat(seq.description ? " ".concat(seq.description) : '', "\n");
+	  // split sequence chunks into lines of length 80 for embedded FASTA
+	  var lineLength = 80;
+	  var numChunks = Math.ceil(seq.sequence.length / lineLength);
+	  var chunks = new Array(numChunks);
+	  for (var i = 0; i < numChunks; i += 1) {
+	    var start = i * lineLength;
+	    chunks[i] = seq.sequence.slice(start, start + lineLength);
 	  }
+	  return "".concat(header).concat(chunks.join('\n'), "\n");
+	}
+	function formatSingleItem(item) {
+	  if ('attributes' in item) {
+	    return formatFeature(item);
+	  }
+	  if ('directive' in item) {
+	    return formatDirective(item);
+	  }
+	  if ('sequence' in item) {
+	    return formatSequence$1(item);
+	  }
+	  if ('comment' in item) {
+	    return formatComment(item);
+	  }
+	  return '# (invalid item found during format)\n';
+	}
+	function formatItem(itemOrItems) {
 	  if (Array.isArray(itemOrItems)) {
 	    return itemOrItems.map(formatSingleItem);
 	  }
@@ -31052,29 +28236,21 @@
 	  return featureLine.child_features !== undefined && featureLine.derived_features !== undefined;
 	}
 
-	var util = {
-		__proto__: null,
-		unescape: unescape,
-		escape: escape,
-		escapeColumn: escapeColumn,
-		parseAttributes: parseAttributes,
-		parseFeature: parseFeature,
-		parseDirective: parseDirective,
-		formatAttributes: formatAttributes,
-		formatFeature: formatFeature,
-		formatDirective: formatDirective,
-		formatComment: formatComment,
-		formatSequence: formatSequence$1,
-		formatItem: formatItem
-	};
-
+	Object.defineProperty(parse$1, "__esModule", {
+	  value: true
+	});
+	parse$1.GFF3Parser = parse$1.FASTAParser = void 0;
+	var util_1$1 = util;
 	var containerAttributes = {
 	  Parent: 'child_features',
 	  Derives_from: 'derived_features'
 	};
 	var FASTAParser = /*#__PURE__*/function () {
-	  function FASTAParser(seqCallback) {
+	  function FASTAParser() {
+	    var seqCallback = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : function () {};
 	    _classCallCheck(this, FASTAParser);
+	    _defineProperty(this, "seqCallback", void 0);
+	    _defineProperty(this, "currentSequence", void 0);
 	    this.seqCallback = seqCallback;
 	    this.currentSequence = undefined;
 	  }
@@ -31083,66 +28259,68 @@
 	    value: function addLine(line) {
 	      var defMatch = /^>\s*(\S+)\s*(.*)/.exec(line);
 	      if (defMatch) {
-	        this._flush();
+	        this.flush();
 	        this.currentSequence = {
 	          id: defMatch[1],
 	          sequence: ''
 	        };
-	        if (defMatch[2]) this.currentSequence.description = defMatch[2].trim();
+	        if (defMatch[2]) {
+	          this.currentSequence.description = defMatch[2].trim();
+	        }
 	      } else if (this.currentSequence && /\S/.test(line)) {
-	        this.currentSequence.sequence += line.replace(/\s/g, '');
+	        this.currentSequence.sequence += line.replaceAll(/\s/g, '');
 	      }
 	    }
 	  }, {
-	    key: "_flush",
-	    value: function _flush() {
-	      if (this.currentSequence) this.seqCallback(this.currentSequence);
+	    key: "flush",
+	    value: function flush() {
+	      if (this.currentSequence) {
+	        this.seqCallback(this.currentSequence);
+	      }
 	    }
 	  }, {
 	    key: "finish",
 	    value: function finish() {
-	      this._flush();
+	      this.flush();
 	    }
 	  }]);
 	  return FASTAParser;
 	}();
-	var Parser = /*#__PURE__*/function () {
-	  function Parser(args) {
-	    _classCallCheck(this, Parser);
-	    this.fastaParser = undefined;
-	    // if this is true, the parser ignores the
-	    // rest of the lines in the file.  currently
-	    // set when the file switches over to FASTA
-	    this.eof = false;
-	    this.lineNumber = 0;
-	    // features that we have to keep on hand for now because they
-	    // might be referenced by something else
-	    this._underConstructionTopLevel = [];
+	parse$1.FASTAParser = FASTAParser;
+	var GFF3Parser = /*#__PURE__*/function () {
+	  function GFF3Parser(args) {
+	    _classCallCheck(this, GFF3Parser);
+	    _defineProperty(this, "endCallback", void 0);
+	    _defineProperty(this, "disableDerivesFromReferences", void 0);
+	    _defineProperty(this, "bufferSize", void 0);
+	    _defineProperty(this, "fastaParser", undefined);
+	    // if this is true, the parser ignores the  rest of the lines in the file.
+	    // currently set when the file switches over to FASTA
+	    _defineProperty(this, "eof", false);
+	    _defineProperty(this, "lineNumber", 0);
+	    // features that we have to keep on hand for now because they might be
+	    // referenced by something else
+	    _defineProperty(this, "underConstructionTopLevel", []);
 	    // index of the above by ID
-	    this._underConstructionById = {};
-	    this._completedReferences = {};
-	    // features that reference something we have not seen yet
-	    // structured as:
+	    _defineProperty(this, "underConstructionById", {});
+	    _defineProperty(this, "completedReferences", {});
+	    // features that reference something we have not seen yet. structured as:
 	    // {  'some_id' : {
 	    //     'Parent' : [ orphans that have a Parent attr referencing it ],
 	    //     'Derives_from' : [ orphans that have a Derives_from attr referencing it ],
 	    //    }
 	    // }
-	    this._underConstructionOrphans = {};
+	    _defineProperty(this, "underConstructionOrphans", new Map());
 	    // eslint-disable-next-line @typescript-eslint/no-empty-function
 	    var nullFunc = function nullFunc() {};
-	    this.featureCallback = args.featureCallback || nullFunc;
 	    this.endCallback = args.endCallback || nullFunc;
-	    this.commentCallback = args.commentCallback || nullFunc;
-	    this.errorCallback = args.errorCallback || nullFunc;
-	    this.directiveCallback = args.directiveCallback || nullFunc;
-	    this.sequenceCallback = args.sequenceCallback || nullFunc;
+	    this.disableDerivesFromReferences = args.disableDerivesFromReferences || false;
 	    // number of lines to buffer
-	    this.bufferSize = args.bufferSize === undefined ? 1000 : args.bufferSize;
+	    this.bufferSize = args.bufferSize === undefined ? Infinity : args.bufferSize;
 	  }
-	  _createClass(Parser, [{
+	  _createClass(GFF3Parser, [{
 	    key: "addLine",
-	    value: function addLine(line) {
+	    value: function addLine(line, callbacks) {
 	      // if we have transitioned to a fasta section, just delegate to that parser
 	      if (this.fastaParser) {
 	        this.fastaParser.addLine(line);
@@ -31155,7 +28333,7 @@
 	      this.lineNumber += 1;
 	      if (/^\s*[^#\s>]/.test(line)) {
 	        // feature line, most common case
-	        this._bufferLine(line);
+	        this.bufferLine(line, callbacks);
 	        return;
 	      }
 	      var match = /^\s*(#+)(.*)/.exec(line);
@@ -31167,156 +28345,176 @@
 	          contents = _match2[2];
 	        if (hashsigns.length === 3) {
 	          // sync directive, all forward-references are resolved.
-	          this._emitAllUnderConstructionFeatures();
+	          this.emitAllUnderConstructionFeatures(callbacks);
 	        } else if (hashsigns.length === 2) {
-	          var directive = parseDirective(line);
+	          var directive = (0, util_1$1.parseDirective)(line);
 	          if (directive) {
 	            if (directive.directive === 'FASTA') {
-	              this._emitAllUnderConstructionFeatures();
+	              this.emitAllUnderConstructionFeatures(callbacks);
 	              this.eof = true;
-	              this.fastaParser = new FASTAParser(this.sequenceCallback);
+	              this.fastaParser = new FASTAParser(callbacks.sequenceCallback);
 	            } else {
-	              this._emitItem(directive);
+	              this.emitItem(directive, callbacks);
 	            }
 	          }
 	        } else {
 	          contents = contents.replace(/\s*/, '');
-	          this._emitItem({
+	          this.emitItem({
 	            comment: contents
-	          });
+	          }, callbacks);
 	        }
 	      } else if (/^\s*$/.test(line)) ; else if (/^\s*>/.test(line)) {
 	        // implicit beginning of a FASTA section
-	        this._emitAllUnderConstructionFeatures();
+	        this.emitAllUnderConstructionFeatures(callbacks);
 	        this.eof = true;
-	        this.fastaParser = new FASTAParser(this.sequenceCallback);
+	        this.fastaParser = new FASTAParser(callbacks.sequenceCallback);
 	        this.fastaParser.addLine(line);
 	      } else {
 	        // it's a parse error
-	        var errLine = line.replace(/\r?\n?$/g, '');
-	        throw new Error("GFF3 parse error.  Cannot parse '".concat(errLine, "'."));
+	        var errLine = line.replaceAll(/\r\n|[\r\n]$/g, '');
+	        throw new Error("GFF3 parse error. Cannot parse '".concat(errLine, "'."));
 	      }
 	    }
 	  }, {
 	    key: "finish",
-	    value: function finish() {
-	      this._emitAllUnderConstructionFeatures();
-	      if (this.fastaParser) this.fastaParser.finish();
+	    value: function finish(callbacks) {
+	      this.emitAllUnderConstructionFeatures(callbacks);
+	      if (this.fastaParser) {
+	        this.fastaParser.finish();
+	      }
 	      this.endCallback();
 	    }
 	  }, {
-	    key: "_emitItem",
-	    value: function _emitItem(i) {
-	      if (Array.isArray(i)) this.featureCallback(i);else if ('directive' in i) this.directiveCallback(i);else if ('comment' in i) this.commentCallback(i);
+	    key: "emitItem",
+	    value: function emitItem(i, callbacks) {
+	      if (Array.isArray(i) && callbacks.featureCallback) {
+	        callbacks.featureCallback(i);
+	      } else if ('directive' in i && callbacks.directiveCallback) {
+	        callbacks.directiveCallback(i);
+	      } else if ('comment' in i && callbacks.commentCallback) {
+	        callbacks.commentCallback(i);
+	      }
 	    }
 	  }, {
-	    key: "_enforceBufferSizeLimit",
-	    value: function _enforceBufferSizeLimit() {
+	    key: "enforceBufferSizeLimit",
+	    value: function enforceBufferSizeLimit() {
 	      var _this = this;
 	      var additionalItemCount = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+	      var callbacks = arguments.length > 1 ? arguments[1] : undefined;
 	      var _unbufferItem = function _unbufferItem(item) {
-	        if (item && Array.isArray(item) && item[0].attributes && item[0].attributes.ID && item[0].attributes.ID[0]) {
+	        var _item$0$attributes;
+	        if (item && Array.isArray(item) && (_item$0$attributes = item[0].attributes) !== null && _item$0$attributes !== void 0 && (_item$0$attributes = _item$0$attributes.ID) !== null && _item$0$attributes !== void 0 && _item$0$attributes[0]) {
 	          var ids = item[0].attributes.ID;
 	          ids.forEach(function (id) {
-	            delete _this._underConstructionById[id];
-	            delete _this._completedReferences[id];
+	            delete _this.underConstructionById[id];
+	            delete _this.completedReferences[id];
 	          });
 	          item.forEach(function (i) {
-	            if (i.child_features) i.child_features.forEach(function (c) {
-	              return _unbufferItem(c);
-	            });
-	            if (i.derived_features) i.derived_features.forEach(function (d) {
-	              return _unbufferItem(d);
-	            });
+	            if (i.child_features) {
+	              i.child_features.forEach(function (c) {
+	                return _unbufferItem(c);
+	              });
+	            }
+	            if (i.derived_features) {
+	              i.derived_features.forEach(function (d) {
+	                return _unbufferItem(d);
+	              });
+	            }
 	          });
 	        }
 	      };
-	      while (this._underConstructionTopLevel.length + additionalItemCount > this.bufferSize) {
-	        var item = this._underConstructionTopLevel.shift();
+	      while (this.underConstructionTopLevel.length + additionalItemCount > this.bufferSize) {
+	        var item = this.underConstructionTopLevel.shift();
 	        if (item) {
-	          this._emitItem(item);
+	          this.emitItem(item, callbacks);
 	          _unbufferItem(item);
 	        }
 	      }
 	    }
 	    /**
-	     * return all under-construction features, called when we know
-	     * there will be no additional data to attach to them
+	     * return all under-construction features, called when we know there will be
+	     * no additional data to attach to them
 	     */
 	  }, {
-	    key: "_emitAllUnderConstructionFeatures",
-	    value: function _emitAllUnderConstructionFeatures() {
-	      this._underConstructionTopLevel.forEach(this._emitItem.bind(this));
-	      this._underConstructionTopLevel = [];
-	      this._underConstructionById = {};
-	      this._completedReferences = {};
-	      // if we have any orphans hanging around still, this is a
-	      // problem. die with a parse error
-	      if (Array.from(Object.values(this._underConstructionOrphans)).length) {
-	        throw new Error("some features reference other features that do not exist in the file (or in the same '###' scope). ".concat(JSON.stringify(this._underConstructionOrphans)));
+	    key: "emitAllUnderConstructionFeatures",
+	    value: function emitAllUnderConstructionFeatures(callbacks) {
+	      var _this2 = this;
+	      this.underConstructionTopLevel.forEach(function (f) {
+	        return _this2.emitItem.bind(_this2)(f, callbacks);
+	      });
+	      this.underConstructionTopLevel = [];
+	      this.underConstructionById = {};
+	      this.completedReferences = {};
+	      // if we have any orphans hanging around still, this is a problem. die with
+	      // a parse error
+	      if (this.underConstructionOrphans.size) {
+	        throw new Error("some features reference other features that do not exist in the file (or in the same '###' scope). ".concat(Array.from(this.underConstructionOrphans.keys()).join(',')));
 	      }
 	    }
 	    // do the right thing with a newly-parsed feature line
 	  }, {
-	    key: "_bufferLine",
-	    value: function _bufferLine(line) {
-	      var _this2 = this;
-	      var _a, _b, _c;
-	      var rawFeatureLine = parseFeature(line);
+	    key: "bufferLine",
+	    value: function bufferLine(line, callbacks) {
+	      var _featureLine$attribut,
+	        _featureLine$attribut2,
+	        _featureLine$attribut3,
+	        _this3 = this;
+	      var rawFeatureLine = (0, util_1$1.parseFeature)(line);
 	      var featureLine = _objectSpread2(_objectSpread2({}, rawFeatureLine), {}, {
 	        child_features: [],
 	        derived_features: []
 	      });
 	      // featureLine._lineNumber = this.lineNumber //< debugging aid
 	      // NOTE: a feature is an arrayref of one or more feature lines.
-	      var ids = ((_a = featureLine.attributes) === null || _a === void 0 ? void 0 : _a.ID) || [];
-	      var parents = ((_b = featureLine.attributes) === null || _b === void 0 ? void 0 : _b.Parent) || [];
-	      var derives = ((_c = featureLine.attributes) === null || _c === void 0 ? void 0 : _c.Derives_from) || [];
+	      var ids = ((_featureLine$attribut = featureLine.attributes) === null || _featureLine$attribut === void 0 ? void 0 : _featureLine$attribut.ID) || [];
+	      var parents = ((_featureLine$attribut2 = featureLine.attributes) === null || _featureLine$attribut2 === void 0 ? void 0 : _featureLine$attribut2.Parent) || [];
+	      var derives = this.disableDerivesFromReferences ? [] : ((_featureLine$attribut3 = featureLine.attributes) === null || _featureLine$attribut3 === void 0 ? void 0 : _featureLine$attribut3.Derives_from) || [];
 	      if (!ids.length && !parents.length && !derives.length) {
-	        // if it has no IDs and does not refer to anything, we can just
-	        // output it
-	        this._emitItem([featureLine]);
+	        // if it has no IDs and does not refer to anything, we can just output it
+	        this.emitItem([featureLine], callbacks);
 	        return;
 	      }
 	      var feature = undefined;
 	      ids.forEach(function (id) {
-	        var existing = _this2._underConstructionById[id];
+	        var existing = _this3.underConstructionById[id];
 	        if (existing) {
 	          // another location of the same feature
 	          if (existing[existing.length - 1].type !== featureLine.type) {
-	            _this2._parseError("multi-line feature \"".concat(id, "\" has inconsistent types: \"").concat(featureLine.type, "\", \"").concat(existing[existing.length - 1].type, "\""));
+	            _this3.parseError("multi-line feature \"".concat(id, "\" has inconsistent types: \"").concat(featureLine.type, "\", \"").concat(existing[existing.length - 1].type, "\""), callbacks);
 	          }
 	          existing.push(featureLine);
 	          feature = existing;
 	        } else {
-	          // haven't seen it yet, so buffer it so we can attach
-	          // child features to it
+	          // haven't seen it yet, so buffer it so we can attach child features to
+	          // it
 	          feature = [featureLine];
-	          _this2._enforceBufferSizeLimit(1);
+	          _this3.enforceBufferSizeLimit(1, callbacks);
 	          if (!parents.length && !derives.length) {
-	            _this2._underConstructionTopLevel.push(feature);
+	            _this3.underConstructionTopLevel.push(feature);
 	          }
-	          _this2._underConstructionById[id] = feature;
+	          _this3.underConstructionById[id] = feature;
 	          // see if we have anything buffered that refers to it
-	          _this2._resolveReferencesTo(feature, id);
+	          _this3.resolveReferencesTo(feature, id);
 	        }
 	      });
 	      // try to resolve all its references
-	      this._resolveReferencesFrom(feature || [featureLine], {
+	      this.resolveReferencesFrom(feature || [featureLine], {
 	        Parent: parents,
 	        Derives_from: derives
 	      }, ids);
 	    }
 	  }, {
-	    key: "_resolveReferencesTo",
-	    value: function _resolveReferencesTo(feature, id) {
-	      var references = this._underConstructionOrphans[id];
+	    key: "resolveReferencesTo",
+	    value: function resolveReferencesTo(feature, id) {
+	      var references = this.underConstructionOrphans.get(id);
 	      //   references is of the form
 	      //   {
 	      //     'Parent' : [ orphans that have a Parent attr referencing this feature ],
 	      //     'Derives_from' : [ orphans that have a Derives_from attr referencing this feature ],
 	      //    }
-	      if (!references) return;
+	      if (!references) {
+	        return;
+	      }
 	      feature.forEach(function (loc) {
 	        var _loc$child_features;
 	        (_loc$child_features = loc.child_features).push.apply(_loc$child_features, _toConsumableArray(references.Parent));
@@ -31325,193 +28523,248 @@
 	        var _loc$derived_features;
 	        (_loc$derived_features = loc.derived_features).push.apply(_loc$derived_features, _toConsumableArray(references.Derives_from));
 	      });
-	      delete this._underConstructionOrphans[id];
+	      this.underConstructionOrphans["delete"](id);
 	    }
 	  }, {
-	    key: "_parseError",
-	    value: function _parseError(message) {
+	    key: "parseError",
+	    value: function parseError(message, callbacks) {
+	      var _callbacks$errorCallb;
 	      this.eof = true;
-	      this.errorCallback("".concat(this.lineNumber, ": ").concat(message));
+	      (_callbacks$errorCallb = callbacks.errorCallback) === null || _callbacks$errorCallb === void 0 || _callbacks$errorCallb.call(callbacks, "".concat(this.lineNumber, ": ").concat(message));
+	    }
+	    // this is all a bit more awkward in javascript than it was in perl
+	  }, {
+	    key: "postSet",
+	    value: function postSet(obj, slot1, slot2) {
+	      var subObj = obj[slot1];
+	      if (!subObj) {
+	        subObj = {};
+	        obj[slot1] = subObj;
+	      }
+	      var returnVal = subObj[slot2] || false;
+	      subObj[slot2] = true;
+	      return returnVal;
 	    }
 	  }, {
-	    key: "_resolveReferencesFrom",
-	    value: function _resolveReferencesFrom(feature, references, ids) {
-	      var _this3 = this;
-	      // this is all a bit more awkward in javascript than it was in perl
-	      function postSet(obj, slot1, slot2) {
-	        var subObj = obj[slot1];
-	        if (!subObj) {
-	          subObj = {};
-	          obj[slot1] = subObj;
-	        }
-	        var returnVal = subObj[slot2] || false;
-	        subObj[slot2] = true;
-	        return returnVal;
-	      }
+	    key: "resolveReferencesFrom",
+	    value: function resolveReferencesFrom(feature, references, ids) {
+	      var _this4 = this;
 	      references.Parent.forEach(function (toId) {
-	        var otherFeature = _this3._underConstructionById[toId];
+	        var otherFeature = _this4.underConstructionById[toId];
 	        if (otherFeature) {
 	          var pname = containerAttributes.Parent;
 	          if (!ids.filter(function (id) {
-	            return postSet(_this3._completedReferences, id, "Parent,".concat(toId));
+	            return _this4.postSet(_this4.completedReferences, id, "Parent,".concat(toId));
 	          }).length) {
 	            otherFeature.forEach(function (location) {
 	              location[pname].push(feature);
 	            });
 	          }
 	        } else {
-	          var ref = _this3._underConstructionOrphans[toId];
+	          var ref = _this4.underConstructionOrphans.get(toId);
 	          if (!ref) {
 	            ref = {
 	              Parent: [],
 	              Derives_from: []
 	            };
-	            _this3._underConstructionOrphans[toId] = ref;
+	            _this4.underConstructionOrphans.set(toId, ref);
 	          }
 	          ref.Parent.push(feature);
 	        }
 	      });
 	      references.Derives_from.forEach(function (toId) {
-	        var otherFeature = _this3._underConstructionById[toId];
+	        var otherFeature = _this4.underConstructionById[toId];
 	        if (otherFeature) {
 	          var pname = containerAttributes.Derives_from;
 	          if (!ids.filter(function (id) {
-	            return postSet(_this3._completedReferences, id, "Derives_from,".concat(toId));
+	            return _this4.postSet(_this4.completedReferences, id, "Derives_from,".concat(toId));
 	          }).length) {
 	            otherFeature.forEach(function (location) {
 	              location[pname].push(feature);
 	            });
 	          }
 	        } else {
-	          var ref = _this3._underConstructionOrphans[toId];
+	          var ref = _this4.underConstructionOrphans.get(toId);
 	          if (!ref) {
 	            ref = {
 	              Parent: [],
 	              Derives_from: []
 	            };
-	            _this3._underConstructionOrphans[toId] = ref;
+	            _this4.underConstructionOrphans.set(toId, ref);
 	          }
 	          ref.Derives_from.push(feature);
 	        }
 	      });
 	    }
 	  }]);
-	  return Parser;
+	  return GFF3Parser;
 	}();
+	parse$1.GFF3Parser = GFF3Parser;
 
-	// call a callback on the next process tick if running in
-	// an environment that supports it
-	function _callback(callback) {
-	  if (browser$1 && browser$1.nextTick) browser$1.nextTick(callback);else callback();
-	}
+	Object.defineProperty(api, "__esModule", {
+	  value: true
+	});
+	api.GFFFormattingTransformer = api.GFFTransformer = void 0;
+	api.parseStringSync = parseStringSync;
+	api.formatSync = formatSync;
+	var parse_1 = parse$1;
+	var util_1 = util;
 	// shared arg processing for the parse routines
 	function _processParseOptions(options) {
 	  var out = _objectSpread2({
-	    encoding: 'utf8',
 	    parseFeatures: true,
 	    parseDirectives: false,
 	    parseSequences: true,
 	    parseComments: false,
-	    bufferSize: 1000
+	    bufferSize: Infinity,
+	    disableDerivesFromReferences: false
 	  }, options);
-	  if (options.parseAll) {
-	    out.parseFeatures = true;
-	    out.parseDirectives = true;
-	    out.parseComments = true;
-	    out.parseSequences = true;
-	  }
 	  return out;
 	}
-	var GFFTransform = /*#__PURE__*/function (_Transform) {
-	  _inherits(GFFTransform, _Transform);
-	  var _super = /*#__PURE__*/_createSuper(GFFTransform);
-	  function GFFTransform() {
-	    var _this;
-	    var inputOptions = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-	    _classCallCheck(this, GFFTransform);
-	    _this = _super.call(this, {
-	      objectMode: true
-	    });
-	    _this.textBuffer = '';
-	    var options = _processParseOptions(inputOptions);
-	    _this.encoding = inputOptions.encoding || 'utf8';
-	    _this.decoder = new StringDecoder();
-	    var push = _this.push.bind(_assertThisInitialized(_this));
-	    _this.parser = new Parser({
-	      featureCallback: options.parseFeatures ? push : undefined,
-	      directiveCallback: options.parseDirectives ? push : undefined,
-	      commentCallback: options.parseComments ? push : undefined,
-	      sequenceCallback: options.parseSequences ? push : undefined,
-	      errorCallback: function errorCallback(err) {
-	        return _this.emit('error', err);
-	      },
-	      bufferSize: options.bufferSize
-	    });
-	    return _this;
-	  }
-	  _createClass(GFFTransform, [{
-	    key: "_addLine",
-	    value: function _addLine(data) {
-	      if (data) {
-	        this.parser.addLine(data);
-	      }
-	    }
-	  }, {
-	    key: "_nextText",
-	    value: function _nextText(buffer) {
-	      var _this2 = this;
-	      var pieces = (this.textBuffer + buffer).split(/\r?\n/);
-	      this.textBuffer = pieces.pop() || '';
-	      pieces.forEach(function (piece) {
-	        return _this2._addLine(piece);
-	      });
-	    }
-	  }, {
-	    key: "_transform",
-	    value: function _transform(chunk, _encoding, callback) {
-	      this._nextText(this.decoder.write(chunk));
-	      _callback(callback);
-	    }
-	  }, {
-	    key: "_flush",
-	    value: function _flush(callback) {
-	      if (this.decoder.end) this._nextText(this.decoder.end());
-	      if (this.textBuffer != null) this._addLine(this.textBuffer);
-	      this.parser.finish();
-	      _callback(callback);
-	    }
-	  }]);
-	  return GFFTransform;
-	}(Transform);
 	/**
 	 * Parse a stream of text data into a stream of feature, directive, comment,
 	 * an sequence objects.
-	 *
-	 * @param options - Parsing options
-	 * @returns stream (in objectMode) of parsed items
 	 */
-	function parseStream() {
-	  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-	  return new GFFTransform(options);
-	}
-	function parseStringSync(str) {
-	  var inputOptions = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-	  if (!str) return [];
-	  var options = _processParseOptions(inputOptions);
+	var GFFTransformer = /*#__PURE__*/function () {
+	  /**
+	   * Options for how the text stream is parsed
+	   * @param options - Parser options
+	   */
+	  function GFFTransformer(options) {
+	    _classCallCheck(this, GFFTransformer);
+	    _defineProperty(this, "decoder", void 0);
+	    _defineProperty(this, "parser", void 0);
+	    _defineProperty(this, "lastString", '');
+	    _defineProperty(this, "parseFeatures", void 0);
+	    _defineProperty(this, "parseDirectives", void 0);
+	    _defineProperty(this, "parseComments", void 0);
+	    _defineProperty(this, "parseSequences", void 0);
+	    this.decoder = new TextDecoder();
+	    var processedOptions = _processParseOptions(options !== null && options !== void 0 ? options : {});
+	    var bufferSize = processedOptions.bufferSize,
+	      disableDerivesFromReferences = processedOptions.disableDerivesFromReferences;
+	    this.parser = new parse_1.GFF3Parser({
+	      bufferSize: bufferSize,
+	      disableDerivesFromReferences: disableDerivesFromReferences
+	    });
+	    this.parseFeatures = processedOptions.parseFeatures;
+	    this.parseDirectives = processedOptions.parseDirectives;
+	    this.parseComments = processedOptions.parseComments;
+	    this.parseSequences = processedOptions.parseSequences;
+	  }
+	  _createClass(GFFTransformer, [{
+	    key: "makeCallbacks",
+	    value: function makeCallbacks(controller) {
+	      var callbacks = {
+	        errorCallback: this.emitErrorMessage.bind(this, controller)
+	      };
+	      if (this.parseFeatures) {
+	        callbacks.featureCallback = function (item) {
+	          controller.enqueue(item);
+	        };
+	      }
+	      if (this.parseDirectives) {
+	        callbacks.directiveCallback = function (item) {
+	          controller.enqueue(item);
+	        };
+	      }
+	      if (this.parseComments) {
+	        callbacks.commentCallback = function (item) {
+	          controller.enqueue(item);
+	        };
+	      }
+	      if (this.parseSequences) {
+	        callbacks.sequenceCallback = function (item) {
+	          controller.enqueue(item);
+	        };
+	      }
+	      return callbacks;
+	    }
+	  }, {
+	    key: "emitErrorMessage",
+	    value: function emitErrorMessage(controller, errorMessage) {
+	      controller.error(errorMessage);
+	    }
+	  }, {
+	    key: "transform",
+	    value: function transform(chunk, controller) {
+	      // Decode the current chunk to string and prepend the last string
+	      var string = "".concat(this.lastString).concat(this.decoder.decode(chunk, {
+	        stream: true
+	      }));
+	      // Extract lines from chunk
+	      var lines = string.split(/\r\n|[\r\n]/g);
+	      // Save last line, as it might be incomplete
+	      this.lastString = lines.pop() || '';
+	      // Enqueue each line in the next chunk
+	      var _iterator = _createForOfIteratorHelper(lines),
+	        _step;
+	      try {
+	        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+	          var line = _step.value;
+	          this.parser.addLine(line, this.makeCallbacks(controller));
+	        }
+	      } catch (err) {
+	        _iterator.e(err);
+	      } finally {
+	        _iterator.f();
+	      }
+	    }
+	  }, {
+	    key: "flush",
+	    value: function flush(controller) {
+	      var callbacks = this.makeCallbacks(controller);
+	      this.lastString = "".concat(this.lastString).concat(this.decoder.decode());
+	      if (this.lastString) {
+	        this.parser.addLine(this.lastString, callbacks);
+	        this.lastString = '';
+	      }
+	      this.parser.finish(callbacks);
+	    }
+	  }]);
+	  return GFFTransformer;
+	}();
+	api.GFFTransformer = GFFTransformer;
+	/**
+	 * Synchronously parse a string containing GFF3 and return an array of the
+	 * parsed items.
+	 *
+	 * @param str - GFF3 string
+	 * @param inputOptions - Parsing options
+	 * @returns array of parsed features, directives, comments and/or sequences
+	 */
+	function parseStringSync(str, inputOptions) {
+	  if (!str) {
+	    return [];
+	  }
+	  var options = _processParseOptions(inputOptions !== null && inputOptions !== void 0 ? inputOptions : {});
 	  var items = [];
 	  var push = items.push.bind(items);
-	  var parser = new Parser({
-	    featureCallback: options.parseFeatures ? push : undefined,
-	    directiveCallback: options.parseDirectives ? push : undefined,
-	    commentCallback: options.parseComments ? push : undefined,
-	    sequenceCallback: options.parseSequences ? push : undefined,
-	    bufferSize: Infinity,
+	  var callbacks = {
 	    errorCallback: function errorCallback(err) {
-	      throw err;
+	      throw new Error(err);
 	    }
+	  };
+	  if (options.parseFeatures) {
+	    callbacks.featureCallback = push;
+	  }
+	  if (options.parseDirectives) {
+	    callbacks.directiveCallback = push;
+	  }
+	  if (options.parseComments) {
+	    callbacks.commentCallback = push;
+	  }
+	  if (options.parseSequences) {
+	    callbacks.sequenceCallback = push;
+	  }
+	  var parser = new parse_1.GFF3Parser({
+	    disableDerivesFromReferences: options.disableDerivesFromReferences || false,
+	    bufferSize: Infinity
 	  });
-	  str.split(/\r?\n/).forEach(parser.addLine.bind(parser));
-	  parser.finish();
+	  str.split(/\r\n|[\r\n]/).forEach(function (line) {
+	    return parser.addLine.bind(parser)(line, callbacks);
+	  });
+	  parser.finish(callbacks);
 	  return items;
 	}
 	/**
@@ -31526,118 +28779,144 @@
 	  var other = [];
 	  var sequences = [];
 	  items.forEach(function (i) {
-	    if ('sequence' in i) sequences.push(i);else other.push(i);
+	    if ('sequence' in i) {
+	      sequences.push(i);
+	    } else {
+	      other.push(i);
+	    }
 	  });
-	  var str = other.map(formatItem).join('');
+	  var str = other.map(function (o) {
+	    return Array.isArray(o) ? (0, util_1.formatItem)(o).join('') : (0, util_1.formatItem)(o);
+	  }).join('');
 	  if (sequences.length) {
 	    str += '##FASTA\n';
-	    str += sequences.map(formatSequence$1).join('');
+	    str += sequences.map(util_1.formatSequence).join('');
 	  }
 	  return str;
 	}
-	var FormattingTransform = /*#__PURE__*/function (_Transform2) {
-	  _inherits(FormattingTransform, _Transform2);
-	  var _super2 = /*#__PURE__*/_createSuper(FormattingTransform);
-	  function FormattingTransform() {
-	    var _this3;
+	/**
+	 * Transform a stream of features, directives, comments and/or sequences into a
+	 * stream of GFF3 text.
+	 *
+	 * Inserts synchronization (###) marks automatically.
+	 */
+	var GFFFormattingTransformer = /*#__PURE__*/function () {
+	  /**
+	   * Options for how the output text stream is formatted
+	   * @param options - Formatter options
+	   */
+	  function GFFFormattingTransformer() {
 	    var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-	    _classCallCheck(this, FormattingTransform);
-	    _this3 = _super2.call(this, Object.assign(options, {
-	      objectMode: true
-	    }));
-	    _this3.linesSinceLastSyncMark = 0;
-	    _this3.haveWeEmittedData = false;
-	    _this3.fastaMode = false;
-	    _this3.minLinesBetweenSyncMarks = options.minSyncLines || 100;
-	    _this3.insertVersionDirective = options.insertVersionDirective || false;
-	    return _this3;
+	    _classCallCheck(this, GFFFormattingTransformer);
+	    _defineProperty(this, "linesSinceLastSyncMark", 0);
+	    _defineProperty(this, "haveWeEmittedData", false);
+	    _defineProperty(this, "fastaMode", false);
+	    _defineProperty(this, "minLinesBetweenSyncMarks", void 0);
+	    _defineProperty(this, "insertVersionDirective", void 0);
+	    this.minLinesBetweenSyncMarks = options.minSyncLines || 100;
+	    this.insertVersionDirective = options.insertVersionDirective === false ? false : true;
 	  }
-	  _createClass(FormattingTransform, [{
-	    key: "_transform",
-	    value: function _transform(chunk, _encoding, callback) {
-	      // if we have not emitted anything yet, and this first
-	      // chunk is not a gff-version directive, emit one
-	      var str;
-	      if (!this.haveWeEmittedData && this.insertVersionDirective) {
-	        var thisChunk = Array.isArray(chunk) ? chunk[0] : chunk;
-	        if ('directive' in thisChunk) {
-	          if (thisChunk.directive !== 'gff-version') {
-	            this.push('##gff-version 3\n');
-	          }
-	        }
+	  _createClass(GFFFormattingTransformer, [{
+	    key: "transform",
+	    value: function transform(chunk, controller) {
+	      // if we have not emitted anything yet, and this first chunk is not a
+	      // gff-version directive, emit one
+	      if (!this.haveWeEmittedData && this.insertVersionDirective && (!('directive' in chunk) || 'directive' in chunk && chunk.directive !== 'gff-version')) {
+	        controller.enqueue('##gff-version 3\n');
 	      }
-	      // if it's a sequence chunk coming down, emit a FASTA directive and
-	      // change to FASTA mode
+	      // if it's a sequence chunk coming down, emit a FASTA directive and change
+	      // to FASTA mode
 	      if ('sequence' in chunk && !this.fastaMode) {
-	        this.push('##FASTA\n');
+	        controller.enqueue('##FASTA\n');
 	        this.fastaMode = true;
 	      }
-	      if (Array.isArray(chunk)) str = chunk.map(formatItem).join('');else str = formatItem(chunk);
-	      this.push(str);
+	      var str = Array.isArray(chunk) ? chunk.map(function (c) {
+	        return (0, util_1.formatItem)(c);
+	      }).join('') : (0, util_1.formatItem)(chunk);
+	      controller.enqueue(str);
 	      if (this.linesSinceLastSyncMark >= this.minLinesBetweenSyncMarks) {
-	        this.push('###\n');
+	        controller.enqueue('###\n');
 	        this.linesSinceLastSyncMark = 0;
 	      } else {
 	        // count the number of newlines in this chunk
 	        var count = 0;
+	        // eslint-disable-next-line @typescript-eslint/prefer-for-of
 	        for (var i = 0; i < str.length; i += 1) {
-	          if (str[i] === '\n') count += 1;
+	          if (str[i] === '\n') {
+	            count += 1;
+	          }
 	        }
 	        this.linesSinceLastSyncMark += count;
 	      }
 	      this.haveWeEmittedData = true;
-	      _callback(callback);
 	    }
 	  }]);
-	  return FormattingTransform;
-	}(Transform);
-	/**
-	 * Format a stream of features, directives, comments and/or sequences into a
-	 * stream of GFF3 text.
-	 *
-	 * Inserts synchronization (###) marks automatically.
-	 *
-	 * @param options - parser options
-	 */
-	function formatStream() {
-	  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-	  return new FormattingTransform(options);
-	}
-	/**
-	 * Format a stream of features, directives, comments and/or sequences into a
-	 * GFF3 file and write it to the filesystem.
+	  return GFFFormattingTransformer;
+	}();
+	api.GFFFormattingTransformer = GFFFormattingTransformer;
 
-	 * Inserts synchronization (###) marks and a ##gff-version
-	 * directive automatically (if one is not already present).
-	 *
-	 * @param stream - the stream to write to the file
-	 * @param filename - the file path to write to
-	 * @param options - parser options
-	 * @returns promise for null that resolves when the stream has been written
-	 */
-	function formatFile(stream, writeStream) {
-	  var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-	  var newOptions = _objectSpread2({
-	    insertVersionDirective: true
-	  }, options);
-	  return new Promise(function (resolve, reject) {
-	    stream.pipe(new FormattingTransform(newOptions)).on('end', function () {
-	      return resolve(null);
-	    }).on('error', reject).pipe(writeStream);
+	(function (exports) {
+
+	  var __createBinding = commonjsGlobal && commonjsGlobal.__createBinding || (Object.create ? function (o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    var desc = Object.getOwnPropertyDescriptor(m, k);
+	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+	      desc = {
+	        enumerable: true,
+	        get: function get() {
+	          return m[k];
+	        }
+	      };
+	    }
+	    Object.defineProperty(o, k2, desc);
+	  } : function (o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
 	  });
-	}
-
-	var gff = {
-	  parseStream: parseStream,
-	  parseStringSync: parseStringSync,
-	  formatSync: formatSync,
-	  formatStream: formatStream,
-	  formatFile: formatFile,
-	  util: util
-	};
+	  var __setModuleDefault = commonjsGlobal && commonjsGlobal.__setModuleDefault || (Object.create ? function (o, v) {
+	    Object.defineProperty(o, "default", {
+	      enumerable: true,
+	      value: v
+	    });
+	  } : function (o, v) {
+	    o["default"] = v;
+	  });
+	  var __importStar = commonjsGlobal && commonjsGlobal.__importStar || /*#__PURE__*/function () {
+	    var _ownKeys = function ownKeys(o) {
+	      _ownKeys = Object.getOwnPropertyNames || function (o) {
+	        var ar = [];
+	        for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+	        return ar;
+	      };
+	      return _ownKeys(o);
+	    };
+	    return function (mod) {
+	      if (mod && mod.__esModule) return mod;
+	      var result = {};
+	      if (mod != null) for (var k = _ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+	      __setModuleDefault(result, mod);
+	      return result;
+	    };
+	  }();
+	  var __exportStar = commonjsGlobal && commonjsGlobal.__exportStar || function (m, exports) {
+	    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
+	  };
+	  Object.defineProperty(exports, "__esModule", {
+	    value: true
+	  });
+	  exports.util = exports.defaultExport = void 0;
+	  var api$1 = /*#__PURE__*/__importStar(api);
+	  __exportStar(api, exports);
+	  var util$1 = /*#__PURE__*/__importStar(util);
+	  exports.defaultExport = /*#__PURE__*/_objectSpread2( /*#__PURE__*/_objectSpread2({}, api$1), {}, {
+	    util: util$1
+	  });
+	  exports["default"] = exports.defaultExport;
+	  exports.util = /*#__PURE__*/__importStar(util);
+	})(esm);
 
 	async function loadAssemblyIntoClient(assemblyId, gff3FileText, apolloDataStore) {
-	    const featuresAndSequences = gff.parseStringSync(gff3FileText, {
+	    const featuresAndSequences = esm.parseStringSync(gff3FileText, {
 	        parseSequences: true,
 	        parseComments: true,
 	        parseDirectives: false,
@@ -31801,6 +29080,135 @@
 	    return relatedFeatures;
 	}
 
+	var SkipNextRoundedIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
+	  d: "m7.58 16.89 5.77-4.07c.56-.4.56-1.24 0-1.63L7.58 7.11C6.91 6.65 6 7.12 6 7.93v8.14c0 .81.91 1.28 1.58.82M16 7v10c0 .55.45 1 1 1s1-.45 1-1V7c0-.55-.45-1-1-1s-1 .45-1 1"
+	}), 'SkipNextRounded');
+
+	var SkipPreviousRoundedIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
+	  d: "M7 6c.55 0 1 .45 1 1v10c0 .55-.45 1-1 1s-1-.45-1-1V7c0-.55.45-1 1-1m3.66 6.82 5.77 4.07c.66.47 1.58-.01 1.58-.82V7.93c0-.81-.91-1.28-1.58-.82l-5.77 4.07c-.57.4-.57 1.24 0 1.64"
+	}), 'SkipPreviousRounded');
+
+	function selectFeatureAndOpenWidget(stateModel, feature) {
+	    if (stateModel.apolloDragging) {
+	        return;
+	    }
+	    stateModel.setSelectedFeature(feature);
+	    const { session } = stateModel;
+	    const { apolloDataStore } = session;
+	    const { featureTypeOntology } = apolloDataStore.ontologyManager;
+	    if (!featureTypeOntology) {
+	        throw new Error('featureTypeOntology is undefined');
+	    }
+	    let containsCDSOrExon = false;
+	    for (const [, child] of feature.children ?? []) {
+	        if (featureTypeOntology.isTypeOf(child.type, 'CDS') ||
+	            featureTypeOntology.isTypeOf(child.type, 'exon')) {
+	            containsCDSOrExon = true;
+	            break;
+	        }
+	    }
+	    if ((featureTypeOntology.isTypeOf(feature.type, 'transcript') ||
+	        featureTypeOntology.isTypeOf(feature.type, 'pseudogenic_transcript')) &&
+	        containsCDSOrExon) {
+	        stateModel.showFeatureDetailsWidget(feature, [
+	            'ApolloTranscriptDetails',
+	            'apolloTranscriptDetails',
+	        ]);
+	    }
+	    else {
+	        stateModel.showFeatureDetailsWidget(feature);
+	    }
+	}
+	function isTranscriptFeature(feature, session) {
+	    const { featureTypeOntology } = session.apolloDataStore.ontologyManager;
+	    if (!featureTypeOntology) {
+	        throw new Error('featureTypeOntology is undefined');
+	    }
+	    return (featureTypeOntology.isTypeOf(feature.type, 'transcript') ||
+	        featureTypeOntology.isTypeOf(feature.type, 'pseudogenic_transcript'));
+	}
+	function isExonFeature(feature, session) {
+	    const { featureTypeOntology } = session.apolloDataStore.ontologyManager;
+	    if (!featureTypeOntology) {
+	        throw new Error('featureTypeOntology is undefined');
+	    }
+	    return featureTypeOntology.isTypeOf(feature.type, 'exon');
+	}
+	function isCDSFeature(feature, session) {
+	    const { featureTypeOntology } = session.apolloDataStore.ontologyManager;
+	    if (!featureTypeOntology) {
+	        throw new Error('featureTypeOntology is undefined');
+	    }
+	    return featureTypeOntology.isTypeOf(feature.type, 'CDS');
+	}
+	function getAdjacentExons(currentExon, display, mousePosition, session) {
+	    const lgv = require$$1$2.getContainingView(display);
+	    // Genomic coords of current view
+	    const viewGenomicLeft = mousePosition.bp - lgv.bpPerPx * mousePosition.x;
+	    const viewGenomicRight = viewGenomicLeft + lgv.coarseTotalBp;
+	    if (!currentExon.parent) {
+	        return { upstream: undefined, downstream: undefined };
+	    }
+	    const transcript = currentExon.parent;
+	    if (!transcript.children) {
+	        throw new Error(`Error getting children of ${transcript._id}`);
+	    }
+	    const { featureTypeOntology } = session.apolloDataStore.ontologyManager;
+	    if (!featureTypeOntology) {
+	        throw new Error('featureTypeOntology is undefined');
+	    }
+	    let exons = [];
+	    for (const [, child] of transcript.children) {
+	        if (featureTypeOntology.isTypeOf(child.type, 'exon')) {
+	            exons.push(child);
+	        }
+	    }
+	    const adjacentExons = {
+	        upstream: undefined,
+	        downstream: undefined,
+	    };
+	    exons = exons.sort((a, b) => (a.min < b.min ? -1 : 1));
+	    for (const exon of exons) {
+	        if (exon.min > viewGenomicRight) {
+	            adjacentExons.downstream = exon;
+	            break;
+	        }
+	    }
+	    exons = exons.sort((a, b) => (a.min > b.min ? -1 : 1));
+	    for (const exon of exons) {
+	        if (exon.max < viewGenomicLeft) {
+	            adjacentExons.upstream = exon;
+	            break;
+	        }
+	    }
+	    if (transcript.strand === -1) {
+	        const newUpstream = adjacentExons.downstream;
+	        adjacentExons.downstream = adjacentExons.upstream;
+	        adjacentExons.upstream = newUpstream;
+	    }
+	    return adjacentExons;
+	}
+	function getStreamIcon(strand, isUpstream, isFlipped) {
+	    // This is the icon you would use for strand=1, downstream, straight
+	    // (non-flipped) view
+	    let icon = SkipNextRoundedIcon;
+	    if (strand === -1) {
+	        icon = SkipPreviousRoundedIcon;
+	    }
+	    if (isUpstream) {
+	        icon =
+	            icon === SkipPreviousRoundedIcon
+	                ? SkipNextRoundedIcon
+	                : SkipPreviousRoundedIcon;
+	    }
+	    if (isFlipped) {
+	        icon =
+	            icon === SkipPreviousRoundedIcon
+	                ? SkipNextRoundedIcon
+	                : SkipPreviousRoundedIcon;
+	    }
+	    return icon;
+	}
 	function getMinAndMaxPx(feature, refName, regionNumber, lgv) {
 	    const minPxInfo = lgv.bpToPx({
 	        refName,
@@ -32142,21 +29550,8 @@
 	    const [fastaIndexUrl, setFastaIndexUrl] = React.useState('');
 	    const [fastaGziIndexUrl, setFastaGziIndexUrl] = React.useState('');
 	    const [loading, setLoading] = React.useState(false);
-	    const [isGzip, setIsGzip] = React.useState(false);
-	    React.useEffect(() => {
-	        setFastaIndexUrl(fastaUrl ? `${fastaUrl}.fai` : '');
-	    }, [fastaUrl]);
-	    React.useEffect(() => {
-	        setFastaGziIndexUrl(fastaUrl ? `${fastaUrl}.gzi` : '');
-	    }, [fastaUrl]);
-	    React.useEffect(() => {
-	        if (sequenceIsEditable || fileType === FileType.GFF3) {
-	            setIsGzip(fastaFile?.name.toLocaleLowerCase().endsWith('.gz') ? true : false);
-	        }
-	        else {
-	            setIsGzip(true);
-	        }
-	    }, [fastaFile, sequenceIsEditable, fileType]);
+	    const [fastaGzipChecked, setFastaGzipChecked] = React.useState(false);
+	    const [gff3GzipChecked, setGff3GzipChecked] = React.useState(false);
 	    function checkAssemblyName(assembly) {
 	        const { assemblies } = session;
 	        const checkAsm = assemblies.find((asm) => configuration.readConfObject(asm, 'displayName') === assembly);
@@ -32178,10 +29573,11 @@
 	        const uri = url.href;
 	        const formData = new FormData();
 	        let filename = file.name;
-	        if (fileType === FileType.FAI || fileType === FileType.GZI) {
-	            filename = `${filename}.txt`;
-	        }
-	        else if (isGzip && !file.name.toLocaleLowerCase().endsWith('.gz')) {
+	        const isGzip = fileType === FileType.BGZIP_FASTA ||
+	            (fileType === FileType.FASTA &&
+	                (!sequenceIsEditable || fastaGzipChecked)) ||
+	            (fileType === FileType.GFF3 && gff3GzipChecked);
+	        if (isGzip && !file.name.toLocaleLowerCase().endsWith('.gz')) {
 	            filename = `${filename}.gz`;
 	        }
 	        else if (!isGzip && file.name.toLocaleLowerCase().endsWith('.gz')) {
@@ -32342,12 +29738,6 @@
 	        if (newExpanded) {
 	            setExpanded(panel);
 	        }
-	        if (panel === 'panelGffInput') {
-	            setIsGzip(false);
-	        }
-	        else {
-	            setIsGzip(true);
-	        }
 	    };
 	    return (React__default["default"].createElement(Dialog, { open: true, handleClose: handleClose, "data-testid": "add-assembly-dialog", title: "Add new assembly", maxWidth: false },
 	        React__default["default"].createElement("form", { onSubmit: onSubmit, "data-testid": "submit-form" },
@@ -32382,12 +29772,12 @@
 	                                    React__default["default"].createElement(material.Tooltip, { title: "Enables users to edit the genomic sequence, but comes with performance impacts. Use with care.", placement: "top-start" },
 	                                        React__default["default"].createElement(material.IconButton, { size: "small" },
 	                                            React__default["default"].createElement(InfoIcon, { sx: { fontSize: 18 } })))) }),
-	                            React__default["default"].createElement(material.FormControlLabel, { "data-testid": "fasta-is-gzip-checkbox", control: React__default["default"].createElement(material.Checkbox, { checked: isGzip, onChange: () => {
+	                            React__default["default"].createElement(material.FormControlLabel, { "data-testid": "fasta-is-gzip-checkbox", control: React__default["default"].createElement(material.Checkbox, { checked: !sequenceIsEditable || fastaGzipChecked, onChange: () => {
 	                                        if (sequenceIsEditable) {
-	                                            setIsGzip(!isGzip);
+	                                            setFastaGzipChecked(!fastaGzipChecked);
 	                                        }
 	                                        else {
-	                                            setIsGzip(true);
+	                                            setFastaGzipChecked(true);
 	                                        }
 	                                    }, disabled: !sequenceIsEditable }), label: "FASTA is gzip compressed" }),
 	                            fileType === FileType.BGZIP_FASTA ||
@@ -32402,7 +29792,13 @@
 	                                                        React__default["default"].createElement(InfoIcon, { sx: { fontSize: 18 } }))))),
 	                                        React__default["default"].createElement(material.TableCell, { style: { borderBottomWidth: 0 } },
 	                                            React__default["default"].createElement("input", { "data-testid": "fasta-input-file", type: "file", onChange: (e) => {
-	                                                    setFastaFile(e.target.files?.item(0) ?? null);
+	                                                    const file = e.target.files?.item(0);
+	                                                    if (file) {
+	                                                        setFastaFile(file);
+	                                                        if (file.name.endsWith('.gz')) {
+	                                                            setFastaGzipChecked(true);
+	                                                        }
+	                                                    }
 	                                                }, disabled: submitted && !errorMessage }))),
 	                                    React__default["default"].createElement(material.TableRow, null,
 	                                        React__default["default"].createElement(material.TableCell, { style: { borderBottomWidth: 0 } }, "FASTA index (.fai)"),
@@ -32426,7 +29822,10 @@
 	                                                        React__default["default"].createElement(InfoIcon, { sx: { fontSize: 18 } }))))),
 	                                        React__default["default"].createElement(material.TableCell, { style: { borderBottomWidth: 0 } },
 	                                            React__default["default"].createElement(material.TextField, { "data-testid": "fasta-input-url", variant: "outlined", value: fastaUrl, error: !validFastaUrl, onChange: (e) => {
-	                                                    setFastaUrl(e.target.value);
+	                                                    const { value } = e.target;
+	                                                    setFastaUrl(value);
+	                                                    setFastaIndexUrl(value ? `${value}.fai` : '');
+	                                                    setFastaGziIndexUrl(value ? `${value}.gzi` : '');
 	                                                }, disabled: submitted && !errorMessage, slotProps: {
 	                                                    input: {
 	                                                        startAdornment: (React__default["default"].createElement(material.InputAdornment, { position: "start" },
@@ -32464,15 +29863,21 @@
 	                    React__default["default"].createElement(material.AccordionDetails, { className: classes.accordionDetails },
 	                        React__default["default"].createElement(material.Box, { style: { marginTop: 20 } },
 	                            React__default["default"].createElement("input", { "data-testid": "gff3-input-file", type: "file", disabled: submitted && !errorMessage, onChange: (e) => {
-	                                    setFastaFile(e.target.files?.item(0) ?? null);
-	                                    setFileType(FileType.GFF3);
+	                                    const file = e.target.files?.item(0);
+	                                    if (file) {
+	                                        setFastaFile(file);
+	                                        setFileType(FileType.GFF3);
+	                                        if (file.name.endsWith('.gz')) {
+	                                            setGff3GzipChecked(true);
+	                                        }
+	                                    }
 	                                } }),
 	                            React__default["default"].createElement(material.FormGroup, { style: { display: 'grid' } },
 	                                React__default["default"].createElement(material.FormControlLabel, { control: React__default["default"].createElement(material.Checkbox, { checked: importFeatures, onChange: () => {
 	                                            setImportFeatures(!importFeatures);
 	                                        }, disabled: submitted && !errorMessage }), label: "Load features from GFF3 file" }),
-	                                React__default["default"].createElement(material.FormControlLabel, { "data-testid": "gff3-is-gzip-checkbox", control: React__default["default"].createElement(material.Checkbox, { checked: isGzip, onChange: () => {
-	                                            setIsGzip(!isGzip);
+	                                React__default["default"].createElement(material.FormControlLabel, { "data-testid": "gff3-is-gzip-checkbox", control: React__default["default"].createElement(material.Checkbox, { checked: gff3GzipChecked, onChange: () => {
+	                                            setGff3GzipChecked(!gff3GzipChecked);
 	                                        }, disabled: submitted && !errorMessage }), label: "GFF3 is gzip compressed" })))))),
 	            React__default["default"].createElement(material.DialogActions, null,
 	                React__default["default"].createElement(material.Button, { disabled: !checkSumbission(validAsm, sequenceIsEditable, fileType, fastaFile, fastaIndexFile, fastaGziIndexFile, validFastaUrl, validFastaIndexUrl, validFastaGziIndexUrl) || submitted, variant: "contained", type: "submit", "data-testid": "submit-button" }, submitted ? 'Submitting...' : 'Submit'),
@@ -50452,19 +47857,13 @@
 	    // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
 	    (includeDeprecated || !isDeprecated(term)) &&
 	        (!filterTermsProp || filterTermsProp(term)), [filterTermsProp, includeDeprecated]);
-	    // effect for clearing choices when not open
-	    React.useEffect(() => {
-	        if (!open) {
-	            setTermChoices(undefined);
-	        }
-	    }, [open]);
 	    // effect for matching the current value with an ontology term
 	    React.useEffect(() => {
 	        const controller = new AbortController();
 	        const { signal } = controller;
 	        if (needToLoadCurrentTerm) {
-	            setCurrentOntologyTermInvalid('');
 	            getCurrentTerm(ontologyStore, valueString, filterTerms).then((term) => {
+	                setCurrentOntologyTermInvalid('');
 	                if (!signal.aborted) {
 	                    setCurrentOntologyTerm(term);
 	                }
@@ -50626,6 +48025,638 @@
 	            React__default["default"].createElement(material.DialogContentText, { color: "error" }, errorMessage))) : null));
 	}
 
+	class BackendDriver {
+	    clientStore;
+	    constructor(clientStore) {
+	        this.clientStore = clientStore;
+	    }
+	}
+
+	/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+	class ChangeManager {
+	    dataStore;
+	    constructor(dataStore) {
+	        this.dataStore = dataStore;
+	    }
+	    recentChanges = [];
+	    undoneChanges = [];
+	    async submit(change, opts = {}) {
+	        const { addToRecents = true, submitToBackend = true, updateJobsManager = false, } = opts;
+	        // pre-validate
+	        const session = require$$1$2.getSession(this.dataStore);
+	        const controller = new AbortController();
+	        const { jobsManager, isLocked } = require$$1$2.getSession(this.dataStore);
+	        if (isLocked) {
+	            session.notify('Cannot submit changes in locked mode');
+	            return;
+	        }
+	        const job = {
+	            name: change.typeName,
+	            statusMessage: 'Pre-validating',
+	            progressPct: 0,
+	            cancelCallback: () => {
+	                controller.abort();
+	            },
+	        };
+	        if (updateJobsManager) {
+	            jobsManager.runJob(job);
+	        }
+	        const result = await dist$2.validationRegistry.frontendPreValidate(change);
+	        if (!result.ok) {
+	            const msg = `Pre-validation failed: "${result.resultsMessages}"`;
+	            if (updateJobsManager) {
+	                jobsManager.abortJob(job.name, msg);
+	            }
+	            session.notify(msg, 'error');
+	            return;
+	        }
+	        try {
+	            // submit to client data store
+	            await change.execute(this.dataStore);
+	        }
+	        catch (error) {
+	            if (updateJobsManager) {
+	                jobsManager.abortJob(job.name, String(error));
+	            }
+	            console.error(error);
+	            session.notify(`Error encountered in client: ${String(error)}. Data may be out of sync, please refresh the page`, 'error');
+	            return;
+	        }
+	        // post-validate
+	        const results2 = await dist$2.validationRegistry.frontendPostValidate(change, this.dataStore);
+	        if (!results2.ok) {
+	            // notify of invalid change and revert
+	            await this.undo(change);
+	        }
+	        if (submitToBackend) {
+	            if (updateJobsManager) {
+	                jobsManager.update(job.name, 'Submitting to driver');
+	            }
+	            // submit to driver
+	            const { collaborationServerDriver, getBackendDriver } = this.dataStore;
+	            const backendDriver = dist$3.isAssemblySpecificChange(change)
+	                ? // for assembly-specific change, fall back in case it's an
+	                    // add-assembly change, since that won't exist in the driver yet
+	                    getBackendDriver(change.assembly) ?? collaborationServerDriver
+	                : collaborationServerDriver;
+	            let backendResult;
+	            try {
+	                backendResult = await backendDriver.submitChange(change, opts);
+	            }
+	            catch (error) {
+	                if (updateJobsManager) {
+	                    jobsManager.abortJob(job.name, String(error));
+	                }
+	                console.error(error);
+	                session.notify(String(error), 'error');
+	                await this.undo(change, false);
+	                return;
+	            }
+	            if (!backendResult.ok) {
+	                const msg = `Post-validation failed: "${result.resultsMessages}"`;
+	                if (updateJobsManager) {
+	                    jobsManager.abortJob(job.name, msg);
+	                }
+	                session.notify(msg, 'error');
+	                await this.undo(change, false);
+	                return;
+	            }
+	            if (change.notification) {
+	                session.notify(change.notification, 'success');
+	            }
+	            if (addToRecents) {
+	                this.recentChanges.push(change);
+	                this.undoneChanges = [];
+	            }
+	        }
+	        if (updateJobsManager) {
+	            jobsManager.done(job);
+	        }
+	    }
+	    async undo(change, submitToBackend = true) {
+	        const inverseChange = change.getInverse();
+	        const opts = { submitToBackend, addToRecents: false };
+	        return this.submit(inverseChange, opts);
+	    }
+	    async redo(change, submitToBackend = true) {
+	        const opts = { submitToBackend, addToRecents: false };
+	        return this.submit(change, opts);
+	    }
+	    async undoLastChange() {
+	        const session = require$$1$2.getSession(this.dataStore);
+	        const lastChange = this.recentChanges.pop();
+	        if (!lastChange) {
+	            session.notify('No changes to undo!', 'info');
+	            return;
+	        }
+	        this.undoneChanges.push(lastChange);
+	        return this.undo(lastChange);
+	    }
+	    async redoLastChange() {
+	        const session = require$$1$2.getSession(this.dataStore);
+	        const lastChange = this.undoneChanges.pop();
+	        if (!lastChange) {
+	            session.notify('No changes to redo!', 'info');
+	            return;
+	        }
+	        this.recentChanges.push(lastChange);
+	        return this.redo(lastChange);
+	    }
+	}
+
+	/* eslint-disable @typescript-eslint/no-base-to-string */
+	class CollaborationServerDriver extends BackendDriver {
+	    inFlight = new Map();
+	    refSeqMaps = new Map();
+	    async fetch(internetAccount, info, init) {
+	        const customFetch = internetAccount.getFetcher({
+	            locationType: 'UriLocation',
+	            uri: info.toString(),
+	        });
+	        return customFetch(info, init);
+	    }
+	    async searchFeatures(term, assemblies) {
+	        const internetAccount = this.clientStore.getInternetAccount(assemblies[0]);
+	        const { baseURL } = internetAccount;
+	        const url = new URL('features/searchFeatures', baseURL);
+	        const searchParams = new URLSearchParams({
+	            assemblies: assemblies.join(','),
+	            term,
+	        });
+	        url.search = searchParams.toString();
+	        const uri = url.toString();
+	        const response = await this.fetch(internetAccount, uri);
+	        if (!response.ok) {
+	            const errorMessage = await createFetchErrorMessage(response, 'searchFeatures failed');
+	            throw new Error(errorMessage);
+	        }
+	        return response.json();
+	    }
+	    /**
+	     * Call backend endpoint to get features by criteria
+	     * @param region -  Searchable region containing refSeq, start and end
+	     * @returns
+	     */
+	    async getFeatures(region) {
+	        const { assemblyName, end, refName, start } = region;
+	        const { assemblyManager } = require$$1$2.getSession(this.clientStore);
+	        const assembly = assemblyManager.get(assemblyName);
+	        if (!assembly) {
+	            throw new Error(`Could not find assembly with name "${assemblyName}"`);
+	        }
+	        const refSeqMap = await this.getRefSeqMapping(assemblyName);
+	        const refSeqEntry = refSeqMap.get(refName);
+	        if (!refSeqEntry) {
+	            throw new Error(`Could not find refSeq "${refName}"`);
+	        }
+	        const refSeq = refSeqEntry.id;
+	        const internetAccount = this.clientStore.getInternetAccount(assemblyName);
+	        const { baseURL } = internetAccount;
+	        const url = new URL('features/getFeaturesByRange', baseURL);
+	        const searchParams = new URLSearchParams({
+	            refSeq,
+	            start: String(start),
+	            end: String(end),
+	        });
+	        url.search = searchParams.toString();
+	        const uri = url.toString();
+	        const response = await this.fetch(internetAccount, uri);
+	        if (!response.ok) {
+	            const errorMessage = await createFetchErrorMessage(response, 'getFeatures failed');
+	            throw new Error(errorMessage);
+	        }
+	        this.checkSocket(assemblyName, refName, internetAccount);
+	        return response.json();
+	    }
+	    /**
+	     * Checks if there is assembly-refSeq specific socket. If not, it opens one
+	     * @param assembly - assemblyId
+	     * @param refSeq - refSeqName
+	     * @param internetAccount - internet account
+	     */
+	    checkSocket(assembly, refSeq, internetAccount) {
+	        const { socket } = internetAccount;
+	        const token = internetAccount.retrieveToken();
+	        const channel = `${assembly}-${refSeq}`;
+	        const changeManager = new ChangeManager(this.clientStore);
+	        if (!socket.hasListeners(channel)) {
+	            socket.on(channel, async (message) => {
+	                // Save server last change sequence into session storage
+	                internetAccount.setLastChangeSequenceNumber(Number(message.changeSequence));
+	                if (message.userSessionId !== token && message.channel === channel) {
+	                    const change = dist$3.Change.fromJSON(message.changeInfo);
+	                    if (dist$3.isFeatureChange(change) && this.haveDataForChange(change)) {
+	                        await changeManager.submit(change, { submitToBackend: false });
+	                    }
+	                }
+	            });
+	        }
+	    }
+	    haveDataForChange(change) {
+	        const { assembly, changedIds } = change;
+	        const apolloAssembly = this.clientStore.assemblies.get(assembly);
+	        if (!apolloAssembly) {
+	            return false;
+	        }
+	        for (const changedId of changedIds) {
+	            if (this.clientStore.getFeature(changedId)) {
+	                return true;
+	            }
+	        }
+	        return false;
+	    }
+	    /**
+	     * Call backend endpoint to get sequence by criteria
+	     * @param region -  Searchable region containing refSeq, start and end
+	     * @returns
+	     */
+	    async getSequence(region) {
+	        const inFlightKey = `${region.refName}:${region.start}-${region.end}`;
+	        const inFlightPromise = this.inFlight.get(inFlightKey);
+	        const { assemblyName, end, refName, start } = region;
+	        const { assemblyManager } = require$$1$2.getSession(this.clientStore);
+	        const assembly = assemblyManager.get(assemblyName);
+	        if (!assembly) {
+	            throw new Error(`Could not find assembly with name "${assemblyName}"`);
+	        }
+	        const refSeqMap = await this.getRefSeqMapping(assemblyName);
+	        const refSeqEntry = refSeqMap.get(refName);
+	        if (!refSeqEntry) {
+	            throw new Error(`Could not find refSeq "${refName}"`);
+	        }
+	        const refSeq = refSeqEntry.id;
+	        if (inFlightPromise) {
+	            const seq = await inFlightPromise;
+	            return { seq, refSeq };
+	        }
+	        let apolloAssembly = this.clientStore.assemblies.get(assemblyName);
+	        if (!apolloAssembly) {
+	            apolloAssembly = this.clientStore.addAssembly(assemblyName);
+	        }
+	        let apolloRefSeq = apolloAssembly.refSeqs.get(refSeq);
+	        if (!apolloRefSeq) {
+	            apolloRefSeq = apolloAssembly.addRefSeq(refSeq, refName);
+	        }
+	        const clientStoreSequence = apolloRefSeq.getSequence(start, end);
+	        if (clientStoreSequence.length === end - start) {
+	            return { seq: clientStoreSequence, refSeq };
+	        }
+	        const internetAccount = this.clientStore.getInternetAccount(assemblyName);
+	        const { baseURL } = internetAccount;
+	        const url = new URL('sequence', baseURL);
+	        const searchParams = new URLSearchParams({
+	            refSeq,
+	            start: String(start),
+	            end: String(end),
+	        });
+	        url.search = searchParams.toString();
+	        const uri = url.toString();
+	        const seqPromise = this.getSeqFromServer(internetAccount, uri, apolloRefSeq, start, end);
+	        this.inFlight.set(inFlightKey, seqPromise);
+	        const seq = await seqPromise;
+	        this.checkSocket(assemblyName, refName, internetAccount);
+	        this.inFlight.delete(inFlightKey);
+	        return { seq, refSeq };
+	    }
+	    async getSeqFromServer(internetAccount, uri, apolloRefSeq, start, stop) {
+	        const response = await this.fetch(internetAccount, uri);
+	        if (!response.ok) {
+	            let errorMessage;
+	            try {
+	                errorMessage = await response.text();
+	            }
+	            catch {
+	                errorMessage = '';
+	            }
+	            throw new Error(`getSequence failed: ${response.status} (${response.statusText})${errorMessage ? ` (${errorMessage})` : ''}`);
+	        }
+	        const seq = await response.text();
+	        apolloRefSeq.addSequence({ sequence: seq, start, stop });
+	        return seq;
+	    }
+	    async getRefSeqMapping(assemblyName) {
+	        const cachedRefSeqMap = this.refSeqMaps.get(assemblyName);
+	        if (cachedRefSeqMap) {
+	            return cachedRefSeqMap;
+	        }
+	        const { assemblyManager } = require$$1$2.getSession(this.clientStore);
+	        const assembly = assemblyManager.get(assemblyName);
+	        if (!assembly) {
+	            throw new Error(`Could not find assembly with name "${assemblyName}"`);
+	        }
+	        const internetAccount = this.clientStore.getInternetAccount(assemblyName);
+	        const { baseURL } = internetAccount;
+	        const url = new URL('refSeqs', baseURL);
+	        const searchParams = new URLSearchParams({ assembly: assemblyName });
+	        url.search = searchParams.toString();
+	        const uri = url.toString();
+	        const response = await this.fetch(internetAccount, uri);
+	        if (!response.ok) {
+	            let errorMessage;
+	            try {
+	                errorMessage = await response.text();
+	            }
+	            catch {
+	                errorMessage = '';
+	            }
+	            throw new Error(`getRefNameAliases failed: ${response.status} (${response.statusText})${errorMessage ? ` (${errorMessage})` : ''}`);
+	        }
+	        const refSeqs = (await response.json());
+	        const refSeqMap = new Map(refSeqs.map((refSeq) => [
+	            refSeq.name,
+	            { refName: refSeq.name, id: refSeq._id, aliases: refSeq.aliases },
+	        ]));
+	        this.refSeqMaps.set(assemblyName, refSeqMap);
+	        return refSeqMap;
+	    }
+	    async getRefNameAliases(assemblyName) {
+	        const refSeqMap = await this.getRefSeqMapping(assemblyName);
+	        return [...refSeqMap.values()].map((refSeq) => ({
+	            refName: refSeq.refName,
+	            aliases: [...new Set([refSeq.id, ...refSeq.aliases])],
+	            uniqueId: `alias-${refSeq.id}`,
+	        }));
+	    }
+	    async getRefSeqId(assemblyName, refName) {
+	        const refSeqMap = await this.getRefSeqMapping(assemblyName);
+	        if (!refSeqMap) {
+	            return;
+	        }
+	        const refSeq = refSeqMap.get(refName);
+	        return refSeq?.id;
+	    }
+	    async getRegions(assemblyName) {
+	        const { assemblyManager } = require$$1$2.getSession(this.clientStore);
+	        const assembly = assemblyManager.get(assemblyName);
+	        if (!assembly) {
+	            throw new Error(`Could not find assembly with name "${assemblyName}"`);
+	        }
+	        const internetAccount = this.clientStore.getInternetAccount(assemblyName);
+	        const { baseURL } = internetAccount;
+	        const url = new URL('refSeqs', baseURL);
+	        const searchParams = new URLSearchParams({ assembly: assemblyName });
+	        url.search = searchParams.toString();
+	        const uri = url.toString();
+	        const response = await this.fetch(internetAccount, uri);
+	        if (!response.ok) {
+	            let errorMessage;
+	            try {
+	                errorMessage = await response.text();
+	            }
+	            catch {
+	                errorMessage = '';
+	            }
+	            throw new Error(`getRegions failed: ${response.status} (${response.statusText})${errorMessage ? ` (${errorMessage})` : ''}`);
+	        }
+	        const refSeqs = await response.json();
+	        return refSeqs.map((refSeq) => ({
+	            refName: refSeq.name,
+	            start: 0,
+	            end: refSeq.length,
+	        }));
+	    }
+	    getAssemblies(internetAccountId) {
+	        const { assemblyManager } = require$$1$2.getSession(this.clientStore);
+	        return assemblyManager.assemblies.filter((assembly) => {
+	            const sequenceMetadata = configuration.getConf(assembly, ['sequence', 'metadata']);
+	            if (sequenceMetadata &&
+	                sequenceMetadata.apollo &&
+	                sequenceMetadata.internetAccountConfigId) {
+	                if (internetAccountId) {
+	                    return sequenceMetadata.internetAccountConfigId === internetAccountId;
+	                }
+	                return true;
+	            }
+	            return false;
+	        });
+	    }
+	    async submitChange(change, opts = {}) {
+	        const { internetAccountId } = opts;
+	        const internetAccount = this.clientStore.getInternetAccount('assembly' in change ? change.assembly : undefined, internetAccountId);
+	        const { baseURL } = internetAccount;
+	        const url = new URL('changes', baseURL).href;
+	        const response = await this.fetch(internetAccount, url, {
+	            method: 'POST',
+	            body: JSON.stringify(change.toJSON()),
+	            headers: { 'Content-Type': 'application/json' },
+	        });
+	        if (!response.ok) {
+	            const errorMessage = await createFetchErrorMessage(response, 'submitChange failed');
+	            throw new Error(errorMessage);
+	        }
+	        const results = new dist$2.ValidationResultSet();
+	        if (!response.ok) {
+	            results.ok = false;
+	        }
+	        return results;
+	    }
+	}
+
+	class InMemoryFileDriver extends BackendDriver {
+	    async getFeatures() {
+	        return [[], []];
+	    }
+	    async getSequence(region) {
+	        const { assemblyName, end, refName, start } = region;
+	        const assembly = this.clientStore.assemblies.get(assemblyName);
+	        if (!assembly) {
+	            return { seq: '', refSeq: refName };
+	        }
+	        const refSeq = assembly.refSeqs.get(refName);
+	        if (!refSeq) {
+	            return { seq: '', refSeq: refName };
+	        }
+	        const seq = refSeq.getSequence(start, end);
+	        return { seq, refSeq: refName };
+	    }
+	    async getRefNameAliases(assemblyName) {
+	        const assembly = this.clientStore.assemblies.get(assemblyName);
+	        const refNameAliases = [];
+	        if (!assembly) {
+	            return refNameAliases;
+	        }
+	        for (const [, refSeq] of assembly.refSeqs) {
+	            refNameAliases.push({
+	                refName: refSeq.name,
+	                aliases: [refSeq._id],
+	                uniqueId: `alias-${refSeq._id}`,
+	            });
+	        }
+	        return refNameAliases;
+	    }
+	    async getRegions(assemblyName) {
+	        const assembly = this.clientStore.assemblies.get(assemblyName);
+	        if (!assembly) {
+	            return [];
+	        }
+	        const regions = [];
+	        for (const [, refSeq] of assembly.refSeqs) {
+	            regions.push({
+	                assemblyName,
+	                refName: refSeq.name,
+	                start: refSeq.sequence[0].start,
+	                end: refSeq.sequence[0].stop,
+	            });
+	        }
+	        return regions;
+	    }
+	    getAssemblies() {
+	        const { assemblyManager } = require$$1$2.getSession(this.clientStore);
+	        return assemblyManager.assemblies.filter((assembly) => {
+	            const sequenceMetadata = configuration.getConf(assembly, ['sequence', 'metadata']);
+	            return Boolean(sequenceMetadata &&
+	                sequenceMetadata.apollo &&
+	                !sequenceMetadata.file &&
+	                !sequenceMetadata.internetAccountConfigId);
+	        });
+	    }
+	    async submitChange(_change, _opts = {}) {
+	        const { clientStore } = this;
+	        const { assemblies } = clientStore;
+	        clientStore.clearCheckResults();
+	        for (const [, assembly] of assemblies) {
+	            if (assembly.backendDriverType === 'InMemoryFileDriver') {
+	                const checkResults = await checkFeatures(assembly);
+	                clientStore.addCheckResults(checkResults);
+	            }
+	        }
+	        return new dist$2.ValidationResultSet();
+	    }
+	    async searchFeatures(_term, _assemblies) {
+	        return [];
+	    }
+	}
+
+	/* eslint-disable @typescript-eslint/require-await */
+	class DesktopFileDriver extends BackendDriver {
+	    async loadAssembly(assemblyName) {
+	        const { assemblyManager } = require$$1$2.getSession(this.clientStore);
+	        const assembly = assemblyManager.get(assemblyName);
+	        if (!assembly) {
+	            throw new Error(`Assembly ${assemblyName} not found`);
+	        }
+	        const { file } = configuration.getConf(assembly, ['sequence', 'metadata']);
+	        // eslint-disable-next-line @typescript-eslint/no-require-imports, @typescript-eslint/consistent-type-imports
+	        const fs = require('node:fs');
+	        const fileContents = await fs.promises.readFile(file, 'utf8');
+	        return loadAssemblyIntoClient(assemblyName, fileContents, this.clientStore);
+	    }
+	    async getAssembly(assemblyName) {
+	        let assembly = this.clientStore.assemblies.get(assemblyName);
+	        if (!assembly) {
+	            assembly = await this.loadAssembly(assemblyName);
+	        }
+	        return assembly;
+	    }
+	    async getRefNameAliases(assemblyName) {
+	        const assembly = await this.getAssembly(assemblyName);
+	        const refNameAliases = [];
+	        for (const [, refSeq] of assembly.refSeqs) {
+	            refNameAliases.push({
+	                refName: refSeq.name,
+	                aliases: [refSeq._id],
+	                uniqueId: `alias-${refSeq._id}`,
+	            });
+	        }
+	        return refNameAliases;
+	    }
+	    async getFeatures(region) {
+	        await this.getAssembly(region.assemblyName);
+	        return [[], []];
+	    }
+	    async getSequence(region) {
+	        const { assemblyName, end, refName, start } = region;
+	        const assembly = await this.getAssembly(assemblyName);
+	        const refSeq = assembly.refSeqs.get(refName);
+	        if (!refSeq) {
+	            throw new Error(`refSeq ${refName} not found in client data store`);
+	        }
+	        const seq = refSeq.getSequence(start, end);
+	        return { seq, refSeq: refName };
+	    }
+	    async getRegions(assemblyName) {
+	        const assembly = await this.getAssembly(assemblyName);
+	        const regions = [];
+	        for (const [, refSeq] of assembly.refSeqs) {
+	            regions.push({
+	                assemblyName,
+	                refName: refSeq.name,
+	                start: refSeq.sequence[0].start,
+	                end: refSeq.sequence[0].stop,
+	            });
+	        }
+	        return regions;
+	    }
+	    getAssemblies() {
+	        const { assemblyManager } = require$$1$2.getSession(this.clientStore);
+	        return assemblyManager.assemblies.filter((assembly) => {
+	            const sequenceMetadata = configuration.getConf(assembly, ['sequence', 'metadata']);
+	            return Boolean(sequenceMetadata &&
+	                sequenceMetadata.apollo &&
+	                !sequenceMetadata.internetAccountConfigId &&
+	                sequenceMetadata.file);
+	        });
+	    }
+	    async submitChange(change) {
+	        if (!dist$3.isAssemblySpecificChange(change)) {
+	            throw new Error(`Cannot use this type of change with local file: "${change.typeName}"`);
+	        }
+	        const { assemblyManager } = require$$1$2.getSession(this.clientStore);
+	        const assembly = assemblyManager.get(change.assembly);
+	        if (!assembly) {
+	            throw new Error(`Could not find assembly with name "${change.assembly}"`);
+	        }
+	        const { file } = configuration.getConf(assembly, ['sequence', 'metadata']);
+	        const clientAssembly = this.clientStore.assemblies.get(change.assembly);
+	        if (!clientAssembly) {
+	            throw new Error(`Could not find assembly in client with name "${change.assembly}"`);
+	        }
+	        const refSeqs = new Set(...clientAssembly.refSeqs.keys());
+	        const { checkResults } = this.clientStore;
+	        for (const checkResult of checkResults.values()) {
+	            if (refSeqs.has(checkResult.refSeq)) {
+	                checkResults.delete(checkResult._id);
+	            }
+	        }
+	        const newCheckResults = await checkFeatures(clientAssembly);
+	        this.clientStore.addCheckResults(newCheckResults);
+	        const gff3Items = [{ directive: 'gff-version', value: '3' }];
+	        for (const [, refSeq] of clientAssembly.refSeqs) {
+	            gff3Items.push({
+	                directive: 'sequence-region',
+	                value: `${refSeq.name} 1 ${refSeq.sequence[0].stop}`,
+	            });
+	        }
+	        for (const comment of clientAssembly.comments) {
+	            gff3Items.push({ comment });
+	        }
+	        for (const [, refSeq] of clientAssembly.refSeqs) {
+	            const { features } = refSeq;
+	            for (const [, feature] of features) {
+	                gff3Items.push(dist$2.annotationFeatureToGFF3(require$$1$3.getSnapshot(feature)));
+	            }
+	        }
+	        for (const [, refSeq] of clientAssembly.refSeqs) {
+	            const [sequence] = refSeq.sequence;
+	            const formattedSequence = dist$2.splitStringIntoChunks(sequence.sequence, 80).join('\n');
+	            gff3Items.push({
+	                id: refSeq.name,
+	                description: refSeq.description,
+	                sequence: formattedSequence,
+	            });
+	        }
+	        const gff3Contents = esm.formatSync(gff3Items);
+	        // eslint-disable-next-line @typescript-eslint/no-require-imports, @typescript-eslint/consistent-type-imports
+	        const fs = require('node:fs');
+	        await fs.promises.writeFile(file, gff3Contents, 'utf8');
+	        const results = new dist$2.ValidationResultSet();
+	        return results;
+	    }
+	    async searchFeatures(_term, _assemblies) {
+	        return [];
+	    }
+	}
+
 	/* eslint-disable @typescript-eslint/unbound-method */
 	var NewFeature;
 	(function (NewFeature) {
@@ -50668,25 +48699,25 @@
 	    const [end, setEnd] = React.useState(String(region.end));
 	    const [start, setStart] = React.useState(String(region.start + 1));
 	    const [type, setType] = React.useState(NewFeature.GENE_AND_SUBFEATURES);
-	    const [customType, setCustomType] = React.useState();
+	    const [customType, setCustomType] = React.useState('');
 	    const [strand, setStrand] = React.useState();
 	    const [errorMessage, setErrorMessage] = React.useState('');
-	    function onSubmit(event) {
+	    async function onSubmit(event) {
 	        event.preventDefault();
 	        setErrorMessage('');
-	        let refSeqId;
-	        for (const [, asm] of session.apolloDataStore.assemblies ?? new Map()) {
-	            if (asm._id === region.assemblyName) {
-	                for (const [, refseq] of asm.refSeqs ?? new Map()) {
-	                    if (refseq.name === region.refName) {
-	                        refSeqId = refseq._id;
-	                    }
-	                }
-	            }
-	        }
-	        if (!refSeqId) {
-	            setErrorMessage('Invalid refseq id. Make sure you have the Apollo annotation track open');
+	        const backendDriver = session.apolloDataStore.getBackendDriver(region.assemblyName);
+	        if (!backendDriver) {
+	            setErrorMessage('No backend driver found');
 	            return;
+	        }
+	        let refSeqId = region.refName;
+	        if (backendDriver instanceof CollaborationServerDriver) {
+	            const backendRefSeqId = await backendDriver.getRefSeqId(region.assemblyName, region.refName);
+	            if (!backendRefSeqId) {
+	                setErrorMessage(`Could not find refSeq for "${region.refName}"`);
+	                return;
+	            }
+	            refSeqId = backendRefSeqId;
 	        }
 	        if (type === NewFeature.GENE_AND_SUBFEATURES) {
 	            const mRNA = makeCodingMrna(refSeqId, strand, Number(start) - 1, Number(end));
@@ -50814,7 +48845,7 @@
 	                                        React__default["default"].createElement(InfoIcon, { sx: { fontSize: 18 } })))) }),
 	                        React__default["default"].createElement(material.FormControlLabel, { value: NewFeature.CUSTOM, checked: type !== NewFeature.GENE_AND_SUBFEATURES &&
 	                                type !== NewFeature.TRANSCRIPT_AND_SUBFEATURES, control: React__default["default"].createElement(material.Radio, null), label: "Add feature with a sequence ontology type" }))),
-	                type === NewFeature.CUSTOM ? (React__default["default"].createElement(OntologyTermAutocomplete, { session: session, ontologyName: "Sequence Ontology", style: { width: 170 }, value: "", filterTerms: isOntologyClass, renderInput: (params) => (React__default["default"].createElement(material.TextField, { ...params, label: "Type", variant: "outlined", fullWidth: true })), onChange: (_oldValue, newValue) => {
+	                type === NewFeature.CUSTOM ? (React__default["default"].createElement(OntologyTermAutocomplete, { session: session, ontologyName: "Sequence Ontology", style: { width: 170 }, value: customType, filterTerms: isOntologyClass, renderInput: (params) => (React__default["default"].createElement(material.TextField, { ...params, label: "Type", variant: "outlined", fullWidth: true })), onChange: (_oldValue, newValue) => {
 	                        if (newValue) {
 	                            handleChangeOntologyType(newValue);
 	                        }
@@ -50865,8 +48896,8 @@
 	        setSelectedAssemblyId(e.target.value);
 	    }
 	    React.useEffect(() => {
-	        setSelectedRefSeqId('');
 	        async function getRefNames() {
+	            setSelectedRefSeqId('');
 	            if (!selectedAssemblyId) {
 	                setErrorMessage('No assemblies to copy to');
 	                return;
@@ -51012,7 +49043,6 @@
 	/* eslint-disable @typescript-eslint/unbound-method */
 	function DeleteAssembly({ changeManager, handleClose, session, }) {
 	    const { internetAccounts } = require$$1$3.getRoot(session);
-	    const [selectedAssembly, setSelectedAssembly] = React.useState();
 	    const [errorMessage, setErrorMessage] = React.useState('');
 	    const [confirmDelete, setconfirmDelete] = React.useState(false);
 	    const [submitted, setSubmitted] = React.useState(false);
@@ -51023,11 +49053,7 @@
 	    const [selectedInternetAccount, setSelectedInternetAccount] = React.useState(apolloInternetAccounts[0]);
 	    const { collaborationServerDriver } = session.apolloDataStore;
 	    const assemblies = collaborationServerDriver.getAssemblies();
-	    React.useEffect(() => {
-	        if (assemblies.length > 0 && selectedAssembly === undefined) {
-	            setSelectedAssembly(assemblies[0]);
-	        }
-	    }, [assemblies, selectedAssembly]);
+	    const [selectedAssembly, setSelectedAssembly] = React.useState(assemblies.at(0));
 	    function handleChangeInternetAccount(e) {
 	        setSubmitted(false);
 	        const newlySelectedInternetAccount = apolloInternetAccounts.find((ia) => ia.internetAccountId === e.target.value);
@@ -51583,7 +49609,7 @@
 	            const { refName, seq } = sequenceFeature;
 	            gff3Items.push({ id: refName, description: '', sequence: seq });
 	        }
-	        const gff3 = gff.formatSync(gff3Items);
+	        const gff3 = esm.formatSync(gff3Items);
 	        const gff3Blob = new Blob([gff3], { type: 'text/plain;charset=utf-8' });
 	        FileSaver_min.exports.saveAs(gff3Blob, `${selectedAssembly.displayName ?? selectedAssembly.name}.gff3`);
 	    }
@@ -51807,7 +49833,6 @@
 
 	function ManageChecks({ handleClose, session }) {
 	    const { internetAccounts } = require$$1$3.getRoot(session);
-	    const [selectedAssembly, setSelectedAssembly] = React.useState();
 	    const [errorMessage, setErrorMessage] = React.useState('');
 	    const [submitted, setSubmitted] = React.useState(false);
 	    const apolloInternetAccounts = internetAccounts.filter((ia) => ia.type === 'ApolloInternetAccount');
@@ -51819,6 +49844,7 @@
 	    const [selectedChecks, setSelectedChecks] = React.useState([]);
 	    const { collaborationServerDriver } = session.apolloDataStore;
 	    const assemblies = collaborationServerDriver.getAssemblies();
+	    const [selectedAssembly, setSelectedAssembly] = React.useState(assemblies.at(0));
 	    React.useEffect(() => {
 	        async function getChecks() {
 	            const { baseURL, getFetcher } = selectedInternetAccount;
@@ -51838,17 +49864,12 @@
 	        });
 	    }, [selectedInternetAccount]);
 	    React.useEffect(() => {
-	        if (assemblies.length > 0 && selectedAssembly === undefined) {
-	            setSelectedAssembly(assemblies[0]);
-	        }
-	    }, [assemblies, selectedAssembly]);
-	    React.useEffect(() => {
 	        async function getChecks() {
 	            if (!selectedAssembly) {
 	                return;
 	            }
 	            const { baseURL, getFetcher } = selectedInternetAccount;
-	            const uri = new URL(`/assemblies/${selectedAssembly.name}`, baseURL).href;
+	            const uri = new URL(`assemblies/${selectedAssembly.name}`, baseURL).href;
 	            const apolloFetch = getFetcher({ locationType: 'UriLocation', uri });
 	            const response = await apolloFetch(uri, { method: 'GET' });
 	            if (!response.ok) {
@@ -51961,29 +49982,29 @@
 	    const [errorMessage, setErrorMessage] = React.useState('');
 	    const [selectedInternetAccount, setSelectedInternetAccount] = React.useState(apolloInternetAccounts[0]);
 	    const [users, setUsers] = React.useState([]);
-	    const getUsers = React.useCallback(async () => {
-	        const { baseURL } = selectedInternetAccount;
-	        const uri = new URL('users', baseURL).href;
-	        const apolloFetch = selectedInternetAccount.getFetcher({
-	            locationType: 'UriLocation',
-	            uri,
-	        });
-	        if (apolloFetch) {
-	            const response = await apolloFetch(uri, { method: 'GET' });
-	            if (!response.ok) {
-	                const newErrorMessage = await createFetchErrorMessage(response, 'Error when getting user data from db');
-	                setErrorMessage(newErrorMessage);
-	                return;
-	            }
-	            const data = (await response.json());
-	            setUsers(data.map((u) => (u.role === undefined ? { ...u, role: '' } : u)));
-	        }
-	    }, [selectedInternetAccount]);
 	    React.useEffect(() => {
+	        async function getUsers() {
+	            const { baseURL } = selectedInternetAccount;
+	            const uri = new URL('users', baseURL).href;
+	            const apolloFetch = selectedInternetAccount.getFetcher({
+	                locationType: 'UriLocation',
+	                uri,
+	            });
+	            if (apolloFetch) {
+	                const response = await apolloFetch(uri, { method: 'GET' });
+	                if (!response.ok) {
+	                    const newErrorMessage = await createFetchErrorMessage(response, 'Error when getting user data from db');
+	                    setErrorMessage(newErrorMessage);
+	                    return;
+	                }
+	                const data = (await response.json());
+	                setUsers(data.map((u) => (u.role === undefined ? { ...u, role: '' } : u)));
+	            }
+	        }
 	        getUsers().catch((error) => {
 	            setErrorMessage(String(error));
 	        });
-	    }, [getUsers]);
+	    }, [selectedInternetAccount]);
 	    async function deleteUser(id) {
 	        const change = new dist$2.DeleteUserChange({
 	            typeName: 'DeleteUserChange',
@@ -52394,9 +50415,10 @@
 	    const { baseURL } = apolloInternetAccount;
 	    const { classes } = useStyles$e();
 	    const [errorMessage, setErrorMessage] = React.useState();
-	    const [assemblyCollection, setAssemblyCollection] = React.useState([]);
-	    const [assemblyId, setAssemblyId] = React.useState('');
 	    const [displayGridData, setDisplayGridData] = React.useState([]);
+	    const { collaborationServerDriver } = session.apolloDataStore;
+	    const assemblies = collaborationServerDriver.getAssemblies();
+	    const [selectedAssembly, setSelectedAssembly] = React.useState(assemblies.at(0));
 	    const gridColumns = [
 	        { field: 'sequence' },
 	        {
@@ -52412,7 +50434,6 @@
 	            headerName: 'Change JSON',
 	            width: 600,
 	            renderCell: ({ value }) => (React__default["default"].createElement("textarea", { className: classes.changeTextarea, value: JSON.stringify(value), readOnly: true })),
-	            valueFormatter: ({ value }) => JSON.stringify(value),
 	        },
 	        { field: 'user', headerName: 'User', width: 140 },
 	        {
@@ -52424,40 +50445,15 @@
 	        },
 	    ];
 	    React.useEffect(() => {
-	        async function getAssemblies() {
-	            const uri = new URL('assemblies', baseURL).href;
-	            const apolloFetch = apolloInternetAccount?.getFetcher({
-	                locationType: 'UriLocation',
-	                uri,
-	            });
-	            if (apolloFetch) {
-	                const response = await apolloFetch(uri, { method: 'GET' });
-	                if (!response.ok) {
-	                    const newErrorMessage = await createFetchErrorMessage(response, 'Error when retrieving assemblies from server');
-	                    setErrorMessage(newErrorMessage);
-	                    return;
-	                }
-	                const data = (await response.json());
-	                setAssemblyCollection(data);
-	            }
-	        }
-	        getAssemblies().catch((error) => {
-	            setErrorMessage(String(error));
-	        });
-	    }, [apolloInternetAccount, baseURL]);
-	    React.useEffect(() => {
-	        if (!assemblyId && assemblyCollection.length > 0) {
-	            setAssemblyId(assemblyCollection[0]._id);
-	        }
-	    }, [assemblyId, assemblyCollection]);
-	    React.useEffect(() => {
 	        async function getGridData() {
-	            if (!assemblyId) {
+	            if (!selectedAssembly) {
 	                return;
 	            }
 	            // Get changes
 	            const url = new URL('changes', baseURL);
-	            const searchParams = new URLSearchParams({ assembly: assemblyId });
+	            const searchParams = new URLSearchParams({
+	                assembly: selectedAssembly.name,
+	            });
 	            url.search = searchParams.toString();
 	            const uri = url.toString();
 	            const apolloFetch = apolloInternetAccount?.getFetcher({
@@ -52480,12 +50476,13 @@
 	        getGridData().catch((error) => {
 	            setErrorMessage(String(error));
 	        });
-	    }, [assemblyId, apolloInternetAccount, baseURL]);
+	    }, [apolloInternetAccount, baseURL, selectedAssembly]);
 	    function handleChangeAssembly(e) {
-	        setAssemblyId(e.target.value);
+	        const newAssembly = assemblies.find((asm) => asm.name === e.target.value);
+	        setSelectedAssembly(newAssembly);
 	    }
 	    return (React__default["default"].createElement(Dialog, { open: true, fullScreen: true, title: "View change log", handleClose: handleClose, "data-testid": "view-changelog" },
-	        React__default["default"].createElement(material.Select, { style: { width: 200, marginLeft: 40 }, value: assemblyId, onChange: handleChangeAssembly }, assemblyCollection.map((option) => (React__default["default"].createElement(material.MenuItem, { key: option._id, value: option._id }, option.name)))),
+	        React__default["default"].createElement(material.Select, { style: { width: 200, marginLeft: 40 }, value: selectedAssembly?.name ?? '', onChange: handleChangeAssembly }, assemblies.map((option) => (React__default["default"].createElement(material.MenuItem, { key: option.name, value: option.name }, option.displayName || option.name)))),
 	        React__default["default"].createElement(material.DialogContent, null,
 	            React__default["default"].createElement(xDataGrid.DataGrid, { pagination: true, rows: displayGridData, columns: gridColumns, getRowId: (row) => row._id, slots: { toolbar: xDataGrid.GridToolbar }, initialState: {
 	                    sorting: { sortModel: [{ field: 'sequence', sort: 'desc' }] },
@@ -52665,6 +50662,7 @@
 	            React__default["default"].createElement(material.DialogContentText, { color: "error" }, errorMessage))) : null));
 	});
 
+	/* eslint-disable @typescript-eslint/unbound-method */
 	function ViewCheckResults({ handleClose, session, }) {
 	    const { internetAccounts } = require$$1$3.getRoot(session);
 	    const { collaborationServerDriver } = session.apolloDataStore;
@@ -52674,7 +50672,6 @@
 	    }
 	    const { baseURL } = apolloInternetAccount;
 	    const [errorMessage, setErrorMessage] = React.useState();
-	    const [selectedAssembly, setSelectedAssembly] = React.useState();
 	    const [displayGridData, setDisplayGridData] = React.useState([]);
 	    const gridColumns = [
 	        { field: '_id', headerName: 'id', width: 50 },
@@ -52688,11 +50685,7 @@
 	        { field: 'message', headerName: 'Message', flex: 1 },
 	    ];
 	    const assemblies = collaborationServerDriver.getAssemblies();
-	    React.useEffect(() => {
-	        if (!selectedAssembly && assemblies.length > 0) {
-	            setSelectedAssembly(assemblies[0]);
-	        }
-	    }, [assemblies, selectedAssembly]);
+	    const [selectedAssembly, setSelectedAssembly] = React.useState(assemblies.at(0));
 	    React.useEffect(() => {
 	        async function getGridData() {
 	            const assemblyId = selectedAssembly?.name;
@@ -53061,29 +51054,20 @@
 	        role: undefined,
 	        controller: new AbortController(),
 	    }))
-	        .actions((self) => {
-	        let roleNotificationSent = false;
-	        return {
-	            setRole() {
-	                const token = self.retrieveToken();
-	                if (!token) {
-	                    self.role = undefined;
-	                    return;
-	                }
-	                const dec = dist$2.getDecodedToken(token);
-	                const { role } = dec;
-	                if (!role && !roleNotificationSent) {
-	                    const { session } = require$$1$3.getRoot(self);
-	                    session.notify('You have registered as a user but have not been given access. Ask your administrator to enable access for your account.', 'warning');
-	                    // notify
-	                    roleNotificationSent = true;
-	                }
-	                if (self.role !== role) {
-	                    self.role = role;
-	                }
-	            },
-	        };
-	    })
+	        .actions((self) => ({
+	        setRole() {
+	            const token = self.retrieveToken();
+	            if (!token) {
+	                self.role = undefined;
+	                return;
+	            }
+	            const dec = dist$2.getDecodedToken(token);
+	            const { role } = dec;
+	            if (self.role !== role) {
+	                self.role = role;
+	            }
+	        },
+	    }))
 	        .actions((self) => {
 	        let listener;
 	        return {
@@ -53335,7 +51319,7 @@
 	    }))
 	        .actions((self) => {
 	        async function postUserLocation(userLoc) {
-	            if (!require$$1$3.isAlive(self)) {
+	            if (!require$$1$3.isAlive(self) || self.role === 'none') {
 	                return;
 	            }
 	            const { baseURL, controller } = self;
@@ -53371,45 +51355,64 @@
 	        };
 	        return { postUserLocation: debouncePostUserLocation(postUserLocation) };
 	    })
-	        .actions((self) => ({
-	        initialize: require$$1$3.flow(function* initialize(role) {
-	            if (role === 'admin') {
-	                const rootModel = require$$1$3.getRoot(self);
-	                if (require$$1$2.isAbstractMenuManager(rootModel)) {
-	                    addTopLevelAdminMenus(rootModel);
-	                }
-	            }
-	            // Get and set server last change sequence into session storage
-	            yield self.updateLastChangeSequenceNumber();
-	            // Open socket listeners
-	            self.addSocketListeners();
-	            // request user locations
-	            const { baseURL } = self;
-	            const uri = new URL('users/locations', baseURL).href;
-	            const apolloFetch = self.getFetcher({
-	                locationType: 'UriLocation',
-	                uri,
-	            });
-	            yield apolloFetch(uri, {
-	                method: 'GET',
-	                signal: self.controller.signal,
-	            });
-	            window.addEventListener('beforeunload', () => {
+	        .volatile(() => ({ roleNotificationSent: false }))
+	        .actions((self) => {
+	        function beforeUnloadListener() {
+	            self.postUserLocation([]);
+	        }
+	        function visibilityChangeListener() {
+	            // fires when user switches tabs, apps, goes to homescreen, etc.
+	            if (document.visibilityState === 'hidden') {
 	                self.postUserLocation([]);
-	            });
-	            document.addEventListener('visibilitychange', () => {
-	                // fires when user switches tabs, apps, goes to homescreen, etc.
-	                if (document.visibilityState === 'hidden') {
-	                    self.postUserLocation([]);
+	            }
+	            // fires when app transitions from prerender, user returns to the app / tab.
+	            if (document.visibilityState === 'visible') {
+	                const { session } = require$$1$3.getRoot(self);
+	                session.broadcastLocations();
+	            }
+	        }
+	        return {
+	            initialize: require$$1$3.flow(function* initialize(role) {
+	                if (role === 'none') {
+	                    if (!self.roleNotificationSent) {
+	                        const { session } = require$$1$3.getRoot(self);
+	                        session.notify('You have registered as an Apollo user but have not been given access. Ask your administrator to enable access for your account.', 'warning');
+	                        self.roleNotificationSent = true;
+	                    }
+	                    return;
 	                }
-	                // fires when app transitions from prerender, user returns to the app / tab.
-	                if (document.visibilityState === 'visible') {
-	                    const { session } = require$$1$3.getRoot(self);
-	                    session.broadcastLocations();
+	                if (role === 'admin') {
+	                    const rootModel = require$$1$3.getRoot(self);
+	                    if (require$$1$2.isAbstractMenuManager(rootModel)) {
+	                        addTopLevelAdminMenus(rootModel);
+	                    }
 	                }
-	            });
-	        }),
-	    }))
+	                // Get and set server last change sequence into session storage
+	                yield self.updateLastChangeSequenceNumber();
+	                // Open socket listeners
+	                self.addSocketListeners();
+	                // request user locations
+	                const { baseURL } = self;
+	                const uri = new URL('users/locations', baseURL).href;
+	                const apolloFetch = self.getFetcher({
+	                    locationType: 'UriLocation',
+	                    uri,
+	                });
+	                yield apolloFetch(uri, {
+	                    method: 'GET',
+	                    signal: self.controller.signal,
+	                });
+	                window.addEventListener('beforeunload', beforeUnloadListener);
+	                document.addEventListener('visibilitychange', visibilityChangeListener);
+	            }),
+	            removeBeforeUnloadListener() {
+	                window.removeEventListener('beforeunload', beforeUnloadListener);
+	            },
+	            removeVisibilityChangeListener() {
+	                document.removeEventListener('visibilitychange', visibilityChangeListener);
+	            },
+	        };
+	    })
 	        .actions((self) => ({
 	        afterAttach() {
 	            self.setRole();
@@ -53431,6 +51434,8 @@
 	            }, { name: 'ApolloInternetAccount' });
 	        },
 	        beforeDestroy() {
+	            self.removeBeforeUnloadListener();
+	            self.removeVisibilityChangeListener();
 	            self.controller.abort('internet account beforeDestroy');
 	            self.socket.close();
 	        },
@@ -53455,6 +51460,9 @@
 	                throw new Error('No Apollo data store found');
 	            }
 	            const backendDriver = dataStore.getBackendDriver(assemblyId);
+	            if (!backendDriver) {
+	                throw new Error('No backend driver found');
+	            }
 	            const refNameAliases = await backendDriver.getRefNameAliases(assemblyId);
 	            return refNameAliases;
 	        }
@@ -53637,6 +51645,9 @@
 	                throw new Error('No Apollo data store found');
 	            }
 	            const backendDriver = dataStore.getBackendDriver(assemblyId);
+	            if (!backendDriver) {
+	                throw new Error('No backend driver found');
+	            }
 	            const regions = await backendDriver.getRegions(assemblyId);
 	            this.regions = regions;
 	            return regions;
@@ -53687,6 +51698,10 @@
 	                    return;
 	                }
 	                const backendDriver = dataStore.getBackendDriver(assemblyId);
+	                if (!backendDriver) {
+	                    observer.error('No backend driver found');
+	                    return;
+	                }
 	                const regions = await backendDriver.getRegions(regionWithAssemblyName.assemblyName);
 	                const region = regions.find((region) => region.refName === regionWithAssemblyName.refName);
 	                if (!region) {
@@ -59026,7 +57041,7 @@
 	    }
 	    drawBoxFill(ctx, startPx, top, widthPx, heightPx, backgroundColor);
 	    if (isSelectedFeature(feature, selectedFeature)) {
-	        drawHighlight$2(stateModel, ctx, feature, true);
+	        drawHighlight$3(stateModel, ctx, feature, true);
 	    }
 	}
 	function drawDragPreview$3(stateModel, overlayCtx) {
@@ -59053,7 +57068,7 @@
 	    overlayCtx.fillStyle = material.alpha(theme.palette.info.main, 0.2);
 	    overlayCtx.fillRect(rectX, rectY, rectWidth, rectHeight);
 	}
-	function drawHighlight$2(stateModel, ctx, feature, selected = false) {
+	function drawHighlight$3(stateModel, ctx, feature, selected = false) {
 	    const { apolloRowHeight, lgv, theme } = stateModel;
 	    const position = stateModel.getFeatureLayoutPosition(feature);
 	    if (!position) {
@@ -59081,7 +57096,7 @@
 	    if (!hoveredFeature) {
 	        return;
 	    }
-	    drawHighlight$2(stateModel, ctx, hoveredFeature.feature);
+	    drawHighlight$3(stateModel, ctx, hoveredFeature.feature);
 	}
 	function drawTooltip$3(display, context) {
 	    const { hoveredFeature, apolloRowHeight, lgv, theme } = display;
@@ -59230,14 +57245,6 @@
 	    onMouseUp: onMouseUp$3,
 	};
 
-	var SkipNextRoundedIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
-	  d: "m7.58 16.89 5.77-4.07c.56-.4.56-1.24 0-1.63L7.58 7.11C6.91 6.65 6 7.12 6 7.93v8.14c0 .81.91 1.28 1.58.82M16 7v10c0 .55.45 1 1 1s1-.45 1-1V7c0-.55-.45-1-1-1s-1 .45-1 1"
-	}), 'SkipNextRounded');
-
-	var SkipPreviousRoundedIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
-	  d: "M7 6c.55 0 1 .45 1 1v10c0 .55-.45 1-1 1s-1-.45-1-1V7c0-.55.45-1 1-1m3.66 6.82 5.77 4.07c.66.47 1.58-.01 1.58-.82V7.93c0-.81-.91-1.28-1.58-.82l-5.77 4.07c-.57.4-.57 1.24 0 1.64"
-	}), 'SkipPreviousRounded');
-
 	let forwardFillLight$1 = null;
 	let backwardFillLight$1 = null;
 	let forwardFillDark$1 = null;
@@ -59289,7 +57296,7 @@
 	    }
 	}
 	function drawBackground(ctx, feature, stateModel, displayedRegionIndex, row, color) {
-	    const { apolloRowHeight, lgv, session } = stateModel;
+	    const { apolloRowHeight, lgv, session, theme } = stateModel;
 	    const { bpPerPx, displayedRegions, offsetPx } = lgv;
 	    const displayedRegion = displayedRegions[displayedRegionIndex];
 	    const { refName, reversed } = displayedRegion;
@@ -59309,12 +57316,18 @@
 	        : topLevelFeatureMinX;
 	    const topLevelFeatureTop = row * apolloRowHeight;
 	    const topLevelFeatureHeight = getRowCount$1(feature, featureTypeOntology) * apolloRowHeight;
-	    ctx.fillStyle = color;
+	    let selectedColor;
+	    if (color) {
+	        selectedColor = color;
+	    }
+	    else {
+	        selectedColor = configuration.readConfObject(session.getPluginConfiguration(), 'geneBackgroundColor', { featureType: feature.type });
+	        if (!selectedColor) {
+	            selectedColor = material.alpha(theme.palette.background.paper, 0.6);
+	        }
+	    }
+	    ctx.fillStyle = selectedColor;
 	    ctx.fillRect(topLevelFeatureStartPx, topLevelFeatureTop, topLevelFeatureWidthPx, topLevelFeatureHeight);
-	}
-	function backgroundColorForFeature(session, featureType) {
-	    const color = configuration.readConfObject(session.getPluginConfiguration(), 'backgroundColorForFeature', { featureType });
-	    return color;
 	}
 	function draw$2(ctx, feature, row, stateModel, displayedRegionIndex) {
 	    const { apolloRowHeight, lgv, selectedFeature, session, theme } = stateModel;
@@ -59333,10 +57346,7 @@
 	        throw new Error('featureTypeOntology is undefined');
 	    }
 	    // Draw background for gene
-	    drawBackground(ctx, feature, stateModel, displayedRegionIndex, row, material.alpha(theme.palette.background.paper, 0.6));
-	    if (featureTypeOntology.isTypeOf(feature.type, 'pseudogene')) {
-	        drawBackground(ctx, feature, stateModel, displayedRegionIndex, row, backgroundColorForFeature(session, 'pseudogenic_transcript'));
-	    }
+	    drawBackground(ctx, feature, stateModel, displayedRegionIndex, row);
 	    // Draw lines on different rows for each transcript
 	    let currentRow = 0;
 	    for (const [, transcript] of children) {
@@ -59351,12 +57361,6 @@
 	            continue;
 	        }
 	        const cdsCount = getCDSCount(transcript, featureTypeOntology);
-	        if (cdsCount === 0) {
-	            drawBackground(ctx, transcript, stateModel, displayedRegionIndex, currentRow, backgroundColorForFeature(session, 'nonCodingTranscript'));
-	        }
-	        if (featureTypeOntology.isTypeOf(transcript.type, 'pseudogenic_transcript')) {
-	            drawBackground(ctx, transcript, stateModel, displayedRegionIndex, currentRow, backgroundColorForFeature(session, 'pseudogenic_transcript'));
-	        }
 	        for (const [, childFeature] of transcriptChildren) {
 	            if (!featureTypeOntology.isTypeOf(childFeature.type, 'CDS')) {
 	                continue;
@@ -59438,7 +57442,7 @@
 	        }
 	    }
 	    if (selectedFeature && containsSelectedFeature(feature, selectedFeature)) {
-	        drawHighlight$1(stateModel, ctx, selectedFeature, true);
+	        drawHighlight$2(stateModel, ctx, selectedFeature, true);
 	    }
 	}
 	function drawExon(ctx, stateModel, displayedRegionIndex, row, exon, currentRow, strand, forwardFill, backwardFill) {
@@ -59504,18 +57508,20 @@
 	    ctx.strokeStyle = theme.palette.text.primary;
 	    const { strand = 1 } = transcript;
 	    ctx.beginPath();
+	    // If view is reversed, draw forward as reverse and vice versa
+	    const effectiveStrand = strand * (reversed ? -1 : 1);
 	    // Draw the transcript line, and extend it out a bit on the 3` end
-	    const lineStart = startPx - (strand === -1 ? 5 : 0);
-	    const lineEnd = startPx + widthPx + (strand === -1 ? 0 : 5);
+	    const lineStart = startPx - (effectiveStrand === -1 ? 5 : 0);
+	    const lineEnd = startPx + widthPx + (effectiveStrand === -1 ? 0 : 5);
 	    ctx.moveTo(lineStart, height);
 	    ctx.lineTo(lineEnd, height);
 	    // Now to draw arrows every 20 pixels along the line
 	    // Make the arrow range a bit shorter to avoid an arrow hanging off the 5` end
-	    const arrowsStart = lineStart + (strand === -1 ? 0 : 3);
-	    const arrowsEnd = lineEnd - (strand === -1 ? 3 : 0);
+	    const arrowsStart = lineStart + (effectiveStrand === -1 ? 0 : 3);
+	    const arrowsEnd = lineEnd - (effectiveStrand === -1 ? 3 : 0);
 	    // Offset determines if the arrows face left or right
-	    const offset = strand === -1 ? 3 : -3;
-	    const arrowRange = strand === -1
+	    const offset = effectiveStrand === -1 ? 3 : -3;
+	    const arrowRange = effectiveStrand === -1
 	        ? range(arrowsStart, arrowsEnd, 20)
 	        : range(arrowsEnd, arrowsStart, 20);
 	    for (const arrowLocation of arrowRange) {
@@ -59549,7 +57555,7 @@
 	    overlayCtx.fillStyle = material.alpha(theme.palette.info.main, 0.2);
 	    overlayCtx.fillRect(rectX, rectY, rectWidth, rectHeight);
 	}
-	function drawHighlight$1(stateModel, ctx, feature, selected = false) {
+	function drawHighlight$2(stateModel, ctx, feature, selected = false) {
 	    const { apolloRowHeight, lgv, session, theme } = stateModel;
 	    const { featureTypeOntology } = session.apolloDataStore.ontologyManager;
 	    const position = stateModel.getFeatureLayoutPosition(feature);
@@ -59582,7 +57588,7 @@
 	    if (!hoveredFeature) {
 	        return;
 	    }
-	    drawHighlight$1(stateModel, ctx, hoveredFeature.feature);
+	    drawHighlight$2(stateModel, ctx, hoveredFeature.feature);
 	}
 	function getFeatureFromLayout$1(feature, bp, row, featureTypeOntology) {
 	    const featureInThisRow = featuresForRow$1(feature, featureTypeOntology)[row] || [];
@@ -59706,37 +57712,6 @@
 	    }
 	    return;
 	}
-	function selectFeatureAndOpenWidget(stateModel, feature) {
-	    if (stateModel.apolloDragging) {
-	        return;
-	    }
-	    stateModel.setSelectedFeature(feature);
-	    const { session } = stateModel;
-	    const { apolloDataStore } = session;
-	    const { featureTypeOntology } = apolloDataStore.ontologyManager;
-	    if (!featureTypeOntology) {
-	        throw new Error('featureTypeOntology is undefined');
-	    }
-	    let containsCDSOrExon = false;
-	    for (const [, child] of feature.children ?? []) {
-	        if (featureTypeOntology.isTypeOf(child.type, 'CDS') ||
-	            featureTypeOntology.isTypeOf(child.type, 'exon')) {
-	            containsCDSOrExon = true;
-	            break;
-	        }
-	    }
-	    if ((featureTypeOntology.isTypeOf(feature.type, 'transcript') ||
-	        featureTypeOntology.isTypeOf(feature.type, 'pseudogenic_transcript')) &&
-	        containsCDSOrExon) {
-	        stateModel.showFeatureDetailsWidget(feature, [
-	            'ApolloTranscriptDetails',
-	            'apolloTranscriptDetails',
-	        ]);
-	    }
-	    else {
-	        stateModel.showFeatureDetailsWidget(feature);
-	    }
-	}
 	function onMouseDown$2(stateModel, currentMousePosition, event) {
 	    const { feature } = currentMousePosition;
 	    // swallow the mouseDown if we are on the edge of the feature so that we
@@ -59827,96 +57802,6 @@
 	        }
 	    }
 	    return;
-	}
-	function isTranscriptFeature(feature, session) {
-	    const { featureTypeOntology } = session.apolloDataStore.ontologyManager;
-	    if (!featureTypeOntology) {
-	        throw new Error('featureTypeOntology is undefined');
-	    }
-	    return (featureTypeOntology.isTypeOf(feature.type, 'transcript') ||
-	        featureTypeOntology.isTypeOf(feature.type, 'pseudogenic_transcript'));
-	}
-	function isExonFeature(feature, session) {
-	    const { featureTypeOntology } = session.apolloDataStore.ontologyManager;
-	    if (!featureTypeOntology) {
-	        throw new Error('featureTypeOntology is undefined');
-	    }
-	    return featureTypeOntology.isTypeOf(feature.type, 'exon');
-	}
-	function isCDSFeature(feature, session) {
-	    const { featureTypeOntology } = session.apolloDataStore.ontologyManager;
-	    if (!featureTypeOntology) {
-	        throw new Error('featureTypeOntology is undefined');
-	    }
-	    return featureTypeOntology.isTypeOf(feature.type, 'CDS');
-	}
-	function getAdjacentExons(currentExon, display, mousePosition, session) {
-	    const lgv = require$$1$2.getContainingView(display);
-	    // Genomic coords of current view
-	    const viewGenomicLeft = mousePosition.bp - lgv.bpPerPx * mousePosition.x;
-	    const viewGenomicRight = viewGenomicLeft + lgv.coarseTotalBp;
-	    if (!currentExon.parent) {
-	        return { upstream: undefined, downstream: undefined };
-	    }
-	    const transcript = currentExon.parent;
-	    if (!transcript.children) {
-	        throw new Error(`Error getting children of ${transcript._id}`);
-	    }
-	    const { featureTypeOntology } = session.apolloDataStore.ontologyManager;
-	    if (!featureTypeOntology) {
-	        throw new Error('featureTypeOntology is undefined');
-	    }
-	    let exons = [];
-	    for (const [, child] of transcript.children) {
-	        if (featureTypeOntology.isTypeOf(child.type, 'exon')) {
-	            exons.push(child);
-	        }
-	    }
-	    const adjacentExons = {
-	        upstream: undefined,
-	        downstream: undefined,
-	    };
-	    exons = exons.sort((a, b) => (a.min < b.min ? -1 : 1));
-	    for (const exon of exons) {
-	        if (exon.min > viewGenomicRight) {
-	            adjacentExons.downstream = exon;
-	            break;
-	        }
-	    }
-	    exons = exons.sort((a, b) => (a.min > b.min ? -1 : 1));
-	    for (const exon of exons) {
-	        if (exon.max < viewGenomicLeft) {
-	            adjacentExons.upstream = exon;
-	            break;
-	        }
-	    }
-	    if (transcript.strand === -1) {
-	        const newUpstream = adjacentExons.downstream;
-	        adjacentExons.downstream = adjacentExons.upstream;
-	        adjacentExons.upstream = newUpstream;
-	    }
-	    return adjacentExons;
-	}
-	function getStreamIcon(strand, isUpstream, isFlipped) {
-	    // This is the icon you would use for strand=1, downstream, straight
-	    // (non-flipped) view
-	    let icon = SkipNextRoundedIcon;
-	    if (strand === -1) {
-	        icon = SkipPreviousRoundedIcon;
-	    }
-	    if (isUpstream) {
-	        icon =
-	            icon === SkipPreviousRoundedIcon
-	                ? SkipNextRoundedIcon
-	                : SkipPreviousRoundedIcon;
-	    }
-	    if (isFlipped) {
-	        icon =
-	            icon === SkipPreviousRoundedIcon
-	                ? SkipNextRoundedIcon
-	                : SkipPreviousRoundedIcon;
-	    }
-	    return icon;
 	}
 	function getContextMenuItems$2(display, mousePosition) {
 	    const { apolloInternetAccount: internetAccount, hoveredFeature, changeManager, regions, selectedFeature, session, } = display;
@@ -60088,7 +57973,7 @@
 	        drawRow(ctx, feature, row + i, row, stateModel, displayedRegionIndex);
 	    }
 	    if (selectedFeature && containsSelectedFeature(feature, selectedFeature)) {
-	        drawHighlight(stateModel, ctx, selectedFeature);
+	        drawHighlight$1(stateModel, ctx, selectedFeature);
 	    }
 	}
 	function drawRow(ctx, topLevelFeature, row, topRow, stateModel, displayedRegionIndex) {
@@ -60119,7 +58004,7 @@
 	    }
 	    boxGlyph.draw(ctx, feature, row, stateModel, displayedRegionIndex);
 	}
-	function drawHighlight(stateModel, ctx, feature, selected = false) {
+	function drawHighlight$1(stateModel, ctx, feature, selected = false) {
 	    const { apolloRowHeight, lgv, theme } = stateModel;
 	    const position = stateModel.getFeatureLayoutPosition(feature);
 	    if (!position) {
@@ -60147,7 +58032,7 @@
 	    if (!hoveredFeature) {
 	        return;
 	    }
-	    drawHighlight(stateModel, ctx, hoveredFeature.feature);
+	    drawHighlight$1(stateModel, ctx, hoveredFeature.feature);
 	}
 	function getFeatureFromLayout(feature, bp, row) {
 	    const layoutRow = featuresForRow(feature)[row];
@@ -60376,6 +58261,25 @@
 	    }
 	    clusters.sort((a, b) => a.message.localeCompare(b.message) || a.start - b.start);
 	    return clusters;
+	}
+	function codonColorCode(letter, theme, highContrast) {
+	    if (letter === 'M') {
+	        return theme.palette.startCodon;
+	    }
+	    if (letter === '*') {
+	        return highContrast ? theme.palette.text.primary : theme.palette.stopCodon;
+	    }
+	    return;
+	}
+	function colorCode(letter, theme) {
+	    const letterUpper = letter.toUpperCase();
+	    if (letterUpper === 'A' ||
+	        letterUpper === 'C' ||
+	        letterUpper === 'G' ||
+	        letterUpper === 'T') {
+	        return theme.palette.bases[letterUpper].main.toString();
+	    }
+	    return 'lightgray';
 	}
 
 	const minDisplayHeight$2 = 20;
@@ -61202,6 +59106,247 @@
 
 	const configSchema$1 = configuration.ConfigurationSchema('LinearApolloReferenceSequenceDisplay', {}, { explicitIdentifier: 'displayId', explicitlyTyped: true });
 
+	function getSeqRow(strand, bpPerPx) {
+	    if (bpPerPx > 1 || strand === undefined) {
+	        return;
+	    }
+	    return strand === 1 ? 3 : 4;
+	}
+	function getTranslationRow(frame, bpPerPx) {
+	    const offset = bpPerPx <= 1 ? 2 : 0;
+	    switch (frame) {
+	        case 3: {
+	            return 0;
+	        }
+	        case 2: {
+	            return 1;
+	        }
+	        case 1: {
+	            return 2;
+	        }
+	        case -1: {
+	            return 3 + offset;
+	        }
+	        case -2: {
+	            return 4 + offset;
+	        }
+	        case -3: {
+	            return 5 + offset;
+	        }
+	    }
+	}
+	function getLeftPx$1(feature, bpPerPx, offsetPx, block) {
+	    const blockLeftPx = block.offsetPx - offsetPx;
+	    const featureLeftBpDistanceFromBlockLeftBp = block.reversed
+	        ? block.end - feature.max
+	        : feature.min - block.start;
+	    const featureLeftPxDistanceFromBlockLeftPx = featureLeftBpDistanceFromBlockLeftBp / bpPerPx;
+	    return blockLeftPx + featureLeftPxDistanceFromBlockLeftPx;
+	}
+	function fillAndStrokeRect(ctx, left, top, width, height, theme, selected = false) {
+	    ctx.fillStyle = selected
+	        ? theme.palette.action.disabled
+	        : theme.palette.action.focus;
+	    ctx.fillRect(left, top, width, height);
+	    ctx.strokeStyle = selected
+	        ? theme.palette.text.secondary
+	        : theme.palette.text.primary;
+	    ctx.strokeStyle = theme.palette.text.primary;
+	    ctx.strokeRect(left, top, width, height);
+	}
+	function drawHighlight(ctx, feature, bpPerPx, offsetPx, rowHeight, block, theme, selected = false) {
+	    const row = getSeqRow(feature.strand, bpPerPx);
+	    if (!row) {
+	        return;
+	    }
+	    const left = getLeftPx$1(feature, bpPerPx, offsetPx, block);
+	    const width = feature.length / bpPerPx;
+	    const top = row * rowHeight;
+	    fillAndStrokeRect(ctx, left, top, width, rowHeight, theme, selected);
+	}
+	function drawCDSHighlight(ctx, feature, bpPerPx, offsetPx, rowHeight, block, theme, selected = false) {
+	    const parentFeature = feature.parent;
+	    if (!parentFeature) {
+	        return;
+	    }
+	    const cdsLocs = parentFeature.cdsLocations.find((loc) => {
+	        const min = loc.at(feature.strand === 1 ? 0 : -1)?.min;
+	        const max = loc.at(feature.strand === 1 ? -1 : 0)?.max;
+	        return feature.min === min && feature.max === max;
+	    });
+	    if (!cdsLocs) {
+	        return;
+	    }
+	    for (const loc of cdsLocs) {
+	        const frame = require$$1$2.getFrame(loc.min, loc.max, feature.strand ?? 1, loc.phase);
+	        const row = getTranslationRow(frame, bpPerPx);
+	        const left = getLeftPx$1(loc, bpPerPx, offsetPx, block);
+	        const top = row * rowHeight;
+	        const width = (loc.max - loc.min) / bpPerPx;
+	        fillAndStrokeRect(ctx, left, top, width, rowHeight, theme, selected);
+	    }
+	}
+	function drawSequenceOverlay(canvas, ctx, hoveredFeature, selectedFeature, rowHeight, theme, session, bpPerPx, offsetPx, dynamicBlocks) {
+	    const { featureTypeOntology } = session.apolloDataStore.ontologyManager;
+	    if (!featureTypeOntology) {
+	        throw new Error('featureTypeOntology is undefined');
+	    }
+	    for (const block of dynamicBlocks.contentBlocks) {
+	        ctx.save();
+	        ctx.beginPath();
+	        const blockLeftPx = block.offsetPx - offsetPx;
+	        ctx.rect(blockLeftPx, 0, block.widthPx, canvas.height);
+	        ctx.clip();
+	        for (const feature of [
+	            selectedFeature,
+	            hoveredFeature?.feature,
+	        ].filter((f) => f !== undefined)) {
+	            if (featureTypeOntology.isTypeOf(feature.type, 'CDS')) {
+	                drawCDSHighlight(ctx, feature, bpPerPx, offsetPx, rowHeight, block, theme, true);
+	            }
+	            else {
+	                drawHighlight(ctx, feature, bpPerPx, offsetPx, rowHeight, block, theme, true);
+	            }
+	        }
+	        ctx.restore();
+	    }
+	}
+
+	function getLeftPx(display, feature, block) {
+	    const { lgv } = display;
+	    const { bpPerPx, offsetPx } = lgv;
+	    const blockLeftPx = block.offsetPx - offsetPx;
+	    const featureLeftBpDistanceFromBlockLeftBp = block.reversed
+	        ? block.end - feature.max
+	        : feature.min - block.start;
+	    const featureLeftPxDistanceFromBlockLeftPx = featureLeftBpDistanceFromBlockLeftBp / bpPerPx;
+	    return blockLeftPx + featureLeftPxDistanceFromBlockLeftPx;
+	}
+	/**
+	 * Perform a canvas strokeRect, but have the stroke be contained within the
+	 * given rect instead of centered on it.
+	 */
+	function strokeRectInner(ctx, left, top, width, height, color) {
+	    ctx.strokeStyle = color;
+	    ctx.lineWidth = 1;
+	    ctx.strokeRect(left + 0.5, top + 0.5, width - 1, height - 1);
+	}
+
+	function drawLetter(seqTrackctx, left, top, width, letter) {
+	    const fontSize = Math.min(width, 10);
+	    seqTrackctx.fillStyle = '#000';
+	    seqTrackctx.font = `${fontSize}px`;
+	    const textWidth = seqTrackctx.measureText(letter).width;
+	    const textX = Math.round(left + (width - textWidth) / 2);
+	    seqTrackctx.fillText(letter, textX, top + 10);
+	}
+	function drawTranslationFrameBackgrounds(canvas, ctx, bpPerPx, theme, dynamicBlocks, highContrast, sequenceRowHeight) {
+	    const frames = bpPerPx <= 1 ? [3, 2, 1, 0, 0, -1, -2, -3] : [3, 2, 1, -1, -2, -3];
+	    for (const [idx, frame] of frames.entries()) {
+	        const frameColor = theme.palette.framesCDS.at(frame)?.main;
+	        if (!frameColor) {
+	            continue;
+	        }
+	        const top = idx * sequenceRowHeight;
+	        const { offsetPx } = dynamicBlocks;
+	        const left = Math.max(0, -offsetPx);
+	        const width = Math.round(dynamicBlocks.totalWidthPx);
+	        ctx.fillStyle = highContrast ? theme.palette.background.default : frameColor;
+	        ctx.fillRect(left, top, width, sequenceRowHeight);
+	        if (highContrast) {
+	            // eslint-disable-next-line prefer-destructuring
+	            const strokeStyle = theme.palette.grey[200];
+	            strokeRectInner(ctx, left, top, width, sequenceRowHeight, strokeStyle);
+	        }
+	    }
+	    // allows inter-region padding lines to show through
+	    for (const block of dynamicBlocks.getBlocks()) {
+	        if (block.type === 'InterRegionPaddingBlock') {
+	            const left = Math.round(block.offsetPx - dynamicBlocks.offsetPx);
+	            ctx.clearRect(left, 0, block.widthPx, canvas.height);
+	        }
+	    }
+	}
+	function drawBase(ctx, base, index, leftPx, bpPerPx, rowHeight, theme) {
+	    if (1 / bpPerPx < 1) {
+	        return;
+	    }
+	    const left = Math.round(leftPx + index / bpPerPx);
+	    const nextLeft = Math.round(leftPx + (index + 1) / bpPerPx);
+	    const width = nextLeft - left;
+	    const strands = [-1, 1];
+	    for (const strand of strands) {
+	        const top = (strand === 1 ? 3 : 4) * rowHeight;
+	        const baseCode = strand === 1 ? base : require$$1$2.revcom(base);
+	        ctx.fillStyle = colorCode(baseCode, theme);
+	        ctx.fillRect(left, top, width, rowHeight);
+	        if (1 / bpPerPx >= 12) {
+	            const strokeStyle = theme.palette.text.disabled;
+	            strokeRectInner(ctx, left, top, width, rowHeight, strokeStyle);
+	            drawLetter(ctx, left, top, width, baseCode);
+	        }
+	    }
+	}
+	function drawCodon$1(ctx, codon, leftPx, index, theme, highContrast, bpPerPx, bp, rowHeight, showStartCodons, showStopCodons) {
+	    const frameOffsets = (bpPerPx <= 1 ? [0, 2, 1, 0, 7, 6, 5] : [0, 2, 1, 0, 5, 4, 3]).map((b) => b * rowHeight);
+	    const strands = [-1, 1];
+	    for (const strand of strands) {
+	        const frame = require$$1$2.getFrame(bp, bp + 3, strand, 0);
+	        const top = frameOffsets.at(frame);
+	        if (top === undefined) {
+	            continue;
+	        }
+	        const left = Math.round(leftPx + index / bpPerPx);
+	        const nextLeft = Math.round(leftPx + (index + 3) / bpPerPx);
+	        const width = nextLeft - left;
+	        const codonCode = strand === 1 ? codon : require$$1$2.revcom(codon);
+	        const aminoAcidCode = require$$1$2.defaultCodonTable[codonCode];
+	        const fillColor = codonColorCode(aminoAcidCode, theme, highContrast);
+	        if (fillColor &&
+	            ((showStopCodons && aminoAcidCode == '*') ||
+	                (showStartCodons && aminoAcidCode != '*'))) {
+	            ctx.fillStyle = fillColor;
+	            ctx.fillRect(left, top, width, rowHeight);
+	        }
+	        if (1 / bpPerPx >= 4) {
+	            const strokeStyle = theme.palette.text.disabled;
+	            strokeRectInner(ctx, left, top, width, rowHeight, strokeStyle);
+	            drawLetter(ctx, left, top, width, aminoAcidCode);
+	        }
+	    }
+	}
+	function drawSequenceTrack(canvas, theme, bpPerPx, offsetPx, dynamicBlocks, highContrast, showStartCodons, showStopCodons, sequenceRowHeight, session) {
+	    const ctx = canvas.getContext('2d');
+	    if (!ctx) {
+	        return;
+	    }
+	    ctx.clearRect(0, 0, canvas.width, canvas.height);
+	    drawTranslationFrameBackgrounds(canvas, ctx, bpPerPx, theme, dynamicBlocks, highContrast, sequenceRowHeight);
+	    const { apolloDataStore } = session;
+	    for (const block of dynamicBlocks.contentBlocks) {
+	        const assembly = apolloDataStore.assemblies.get(block.assemblyName);
+	        const ref = assembly?.getByRefName(block.refName);
+	        const roundedStart = Math.floor(block.start);
+	        const roundedEnd = Math.ceil(block.end);
+	        let seq = ref?.getSequence(roundedStart, roundedEnd);
+	        if (!seq) {
+	            return;
+	        }
+	        seq = seq.toUpperCase();
+	        const baseOffsetPx = (block.start - roundedStart) / bpPerPx;
+	        const seqLeftPx = block.offsetPx - offsetPx - baseOffsetPx;
+	        for (let i = 0; i < seq.length; i++) {
+	            const bp = roundedStart + i;
+	            const codon = seq.slice(i, i + 3);
+	            drawBase(ctx, seq[i], i, seqLeftPx, bpPerPx, sequenceRowHeight, theme);
+	            if (codon.length !== 3) {
+	                continue;
+	            }
+	            drawCodon$1(ctx, codon, seqLeftPx, i, theme, highContrast, bpPerPx, bp, sequenceRowHeight, showStartCodons, showStopCodons);
+	        }
+	    }
+	}
+
 	const minDisplayHeight$1 = 20;
 	function baseModelFactory$1(_pluginManager, configSchema) {
 	    return pluggableElementTypes.BaseDisplay.named('BaseLinearApolloReferenceSequenceDisplay')
@@ -61381,89 +59526,6 @@
 	    }));
 	}
 
-	function colorCode(letter, theme) {
-	    return (theme.palette.bases[letter.toUpperCase()].main.toString() ?? 'lightgray');
-	}
-	function codonColorCode(letter, highContrast) {
-	    const colorMap = {
-	        M: '#33ee33',
-	        '*': highContrast ? '#000000' : '#f44336',
-	    };
-	    return colorMap[letter.toUpperCase()];
-	}
-	function reverseCodonSeq(seq) {
-	    // disable because sequence is all ascii
-	    // eslint-disable-next-line @typescript-eslint/no-misused-spread
-	    return [...seq]
-	        .map((c) => require$$1$2.revcom(c))
-	        .reverse()
-	        .join('');
-	}
-	function drawLetter(seqTrackctx, startPx, widthPx, letter, textY) {
-	    const fontSize = Math.min(widthPx, 10);
-	    seqTrackctx.fillStyle = '#000';
-	    seqTrackctx.font = `${fontSize}px`;
-	    const textWidth = seqTrackctx.measureText(letter).width;
-	    const textX = startPx + (widthPx - textWidth) / 2;
-	    seqTrackctx.fillText(letter, textX, textY + 10);
-	}
-	function drawTranslation(seqTrackctx, bpPerPx, trnslStartPx, trnslY, trnslWidthPx, sequenceRowHeight, seq, i, reverse, showStartCodons, showStopCodons, highContrast) {
-	    let codonSeq = seq.slice(i, i + 3).toUpperCase();
-	    if (reverse) {
-	        codonSeq = reverseCodonSeq(codonSeq);
-	    }
-	    const codonLetter = require$$1$2.defaultCodonTable[codonSeq];
-	    if (!codonLetter) {
-	        return;
-	    }
-	    const fillColor = codonColorCode(codonLetter, highContrast);
-	    if (fillColor &&
-	        ((showStopCodons && codonLetter == '*') ||
-	            (showStartCodons && codonLetter != '*'))) {
-	        seqTrackctx.fillStyle = fillColor;
-	        seqTrackctx.fillRect(trnslStartPx, trnslY, trnslWidthPx, sequenceRowHeight);
-	    }
-	    if (bpPerPx <= 0.1) {
-	        seqTrackctx.rect(trnslStartPx, trnslY, trnslWidthPx, sequenceRowHeight);
-	        seqTrackctx.stroke();
-	        drawLetter(seqTrackctx, trnslStartPx, trnslWidthPx, codonLetter, trnslY);
-	    }
-	}
-	function getTranslationRow(frame, bpPerPx) {
-	    const offset = bpPerPx <= 1 ? 2 : 0;
-	    switch (frame) {
-	        case 3: {
-	            return 0;
-	        }
-	        case 2: {
-	            return 1;
-	        }
-	        case 1: {
-	            return 2;
-	        }
-	        case -1: {
-	            return 3 + offset;
-	        }
-	        case -2: {
-	            return 4 + offset;
-	        }
-	        case -3: {
-	            return 5 + offset;
-	        }
-	    }
-	}
-	function getSeqRow(strand, bpPerPx) {
-	    if (bpPerPx > 1 || strand === undefined) {
-	        return;
-	    }
-	    return strand === 1 ? 3 : 4;
-	}
-	function highlightSeq(seqTrackOverlayctx, theme, startPx, sequenceRowHeight, row, widthPx) {
-	    if (row !== undefined) {
-	        seqTrackOverlayctx.fillStyle = theme.palette.action.focus;
-	        seqTrackOverlayctx.fillRect(startPx, sequenceRowHeight * row, widthPx, sequenceRowHeight);
-	    }
-	}
 	function renderingModelFactory$1(pluginManager, configSchema) {
 	    const BaseLinearApolloReferenceSequenceDisplay = baseModelFactory$1(pluginManager, configSchema);
 	    return BaseLinearApolloReferenceSequenceDisplay.named('LinearApolloReferenceSequenceDisplayRendering')
@@ -61484,165 +59546,46 @@
 	        },
 	        afterAttach() {
 	            require$$1$3.addDisposer(self, mobx.autorun(() => {
-	                const { theme } = self;
-	                if (!self.lgv.initialized || self.regionCannotBeRendered()) {
+	                const { lgv, seqTrackCanvas, theme, highContrast, showStartCodons, showStopCodons, sequenceRowHeight, session, } = self;
+	                if (!lgv.initialized ||
+	                    self.regionCannotBeRendered() ||
+	                    !seqTrackCanvas) {
 	                    return;
 	                }
-	                const trnslWidthPx = 3 / self.lgv.bpPerPx;
+	                const trnslWidthPx = 3 / lgv.bpPerPx;
 	                if (trnslWidthPx < 1) {
 	                    return;
 	                }
-	                const seqTrackctx = self.seqTrackCanvas?.getContext('2d');
-	                if (!seqTrackctx) {
-	                    return;
-	                }
-	                seqTrackctx.clearRect(0, 0, self.lgv.dynamicBlocks.totalWidthPx, self.height);
-	                const frames = self.lgv.bpPerPx <= 1
-	                    ? [3, 2, 1, 0, 0, -1, -2, -3]
-	                    : [3, 2, 1, -1, -2, -3];
-	                let height = 0;
-	                if (theme) {
-	                    for (const frame of frames) {
-	                        let frameColor = theme.palette.framesCDS.at(frame)?.main;
-	                        if (frameColor) {
-	                            let offsetPx = 0;
-	                            if (self.highContrast) {
-	                                frameColor = 'white';
-	                                offsetPx = 1;
-	                                // eslint-disable-next-line prefer-destructuring
-	                                seqTrackctx.fillStyle = theme.palette.grey[200];
-	                                seqTrackctx.fillRect(0, height, self.lgv.dynamicBlocks.totalWidthPx, self.sequenceRowHeight);
-	                            }
-	                            seqTrackctx.fillStyle = frameColor;
-	                            seqTrackctx.fillRect(0 + offsetPx, height + offsetPx, self.lgv.dynamicBlocks.totalWidthPx - 2 * offsetPx, self.sequenceRowHeight - 2 * offsetPx);
-	                        }
-	                        height += self.sequenceRowHeight;
-	                    }
-	                }
-	                for (const [idx, region] of self.regions.entries()) {
-	                    const { apolloDataStore } = self.session;
-	                    const assembly = apolloDataStore.assemblies.get(region.assemblyName);
-	                    const ref = assembly?.getByRefName(region.refName);
-	                    const seq = ref?.getSequence(region.start, region.end);
-	                    if (!seq) {
-	                        return;
-	                    }
-	                    // disable because sequence is all ascii
-	                    // eslint-disable-next-line @typescript-eslint/no-misused-spread
-	                    for (const [i, letter] of [...seq].entries()) {
-	                        const trnslXOffset = (self.lgv.bpToPx({
-	                            refName: region.refName,
-	                            coord: region.start + i,
-	                            regionNumber: idx,
-	                        })?.offsetPx ?? 0) - self.lgv.offsetPx;
-	                        const trnslStartPx = self.lgv.displayedRegions[idx].reversed
-	                            ? trnslXOffset - trnslWidthPx
-	                            : trnslXOffset;
-	                        // Draw translation forward
-	                        for (let j = 2; j >= 0; j--) {
-	                            if ((region.start + i) % 3 === j) {
-	                                drawTranslation(seqTrackctx, self.lgv.bpPerPx, trnslStartPx, self.sequenceRowHeight * (2 - j), trnslWidthPx, self.sequenceRowHeight, seq, i, false, self.showStartCodons, self.showStopCodons, self.highContrast);
-	                            }
-	                        }
-	                        if (self.lgv.bpPerPx <= 1) {
-	                            const xOffset = (self.lgv.bpToPx({
-	                                refName: region.refName,
-	                                coord: region.start + i,
-	                                regionNumber: idx,
-	                            })?.offsetPx ?? 0) - self.lgv.offsetPx;
-	                            const widthPx = 1 / self.lgv.bpPerPx;
-	                            const startPx = self.lgv.displayedRegions[idx].reversed
-	                                ? xOffset - widthPx
-	                                : xOffset;
-	                            // Draw forward
-	                            seqTrackctx.beginPath();
-	                            seqTrackctx.fillStyle = colorCode(letter, self.theme);
-	                            seqTrackctx.rect(startPx, self.sequenceRowHeight * 3, widthPx, self.sequenceRowHeight);
-	                            seqTrackctx.fill();
-	                            if (self.lgv.bpPerPx <= 0.1) {
-	                                seqTrackctx.stroke();
-	                                drawLetter(seqTrackctx, startPx, widthPx, letter, self.sequenceRowHeight * 3);
-	                            }
-	                            // Draw reverse
-	                            const revLetter = require$$1$2.revcom(letter);
-	                            seqTrackctx.beginPath();
-	                            seqTrackctx.fillStyle = colorCode(revLetter, self.theme);
-	                            seqTrackctx.rect(startPx, self.sequenceRowHeight * 4, widthPx, self.sequenceRowHeight);
-	                            seqTrackctx.fill();
-	                            if (self.lgv.bpPerPx <= 0.1) {
-	                                seqTrackctx.stroke();
-	                                drawLetter(seqTrackctx, startPx, widthPx, revLetter, self.sequenceRowHeight * 4);
-	                            }
-	                        }
-	                        // Draw translation reverse
-	                        for (let k = 0; k <= 2; k++) {
-	                            const rowOffset = self.lgv.bpPerPx <= 1 ? 5 : 3;
-	                            if ((region.start + i) % 3 === k) {
-	                                drawTranslation(seqTrackctx, self.lgv.bpPerPx, trnslStartPx, self.sequenceRowHeight * (rowOffset + k), trnslWidthPx, self.sequenceRowHeight, seq, i, true, self.showStartCodons, self.showStopCodons, self.highContrast);
-	                            }
-	                        }
-	                    }
-	                }
+	                const { bpPerPx, offsetPx, dynamicBlocks } = lgv;
+	                // we have to be really explicit about passing in individual
+	                // variables here and not just e.g. "lgv" so that the autorun
+	                // tracks the variables correctly
+	                drawSequenceTrack(seqTrackCanvas, theme, bpPerPx, offsetPx, dynamicBlocks, highContrast, showStartCodons, showStopCodons, sequenceRowHeight, session);
 	            }, { name: 'LinearApolloReferenceSequenceDisplayRenderSequence' }));
 	            require$$1$3.addDisposer(self, mobx.autorun(() => {
-	                if (!self.lgv.initialized || self.regionCannotBeRendered()) {
+	                const { seqTrackOverlayCanvas } = self;
+	                if (!self.lgv.initialized ||
+	                    self.regionCannotBeRendered() ||
+	                    !seqTrackOverlayCanvas) {
 	                    return;
 	                }
-	                const seqTrackOverlayctx = self.seqTrackOverlayCanvas?.getContext('2d');
+	                const seqTrackOverlayctx = seqTrackOverlayCanvas.getContext('2d');
 	                if (!seqTrackOverlayctx) {
 	                    return;
 	                }
 	                seqTrackOverlayctx.clearRect(0, 0, self.lgv.dynamicBlocks.totalWidthPx, self.height);
-	                const { hoveredFeature, lgv, regions, sequenceRowHeight, session, theme, } = self;
-	                if (!hoveredFeature) {
+	                const { hoveredFeature, selectedFeature, lgv, sequenceRowHeight, session, theme, } = self;
+	                if (!(hoveredFeature || selectedFeature)) {
 	                    return;
 	                }
-	                const { feature } = hoveredFeature;
-	                const { featureTypeOntology } = session.apolloDataStore.ontologyManager;
-	                if (!featureTypeOntology) {
-	                    throw new Error('featureTypeOntology is undefined');
-	                }
-	                for (const [idx, region] of regions.entries()) {
-	                    if (featureTypeOntology.isTypeOf(feature.type, 'CDS')) {
-	                        const parentFeature = feature.parent;
-	                        if (!parentFeature) {
-	                            continue;
-	                        }
-	                        const cdsLocs = parentFeature.cdsLocations.find((loc) => feature.min === loc.at(0)?.min &&
-	                            feature.max === loc.at(-1)?.max);
-	                        if (!cdsLocs) {
-	                            continue;
-	                        }
-	                        for (const dl of cdsLocs) {
-	                            const frame = require$$1$2.getFrame(dl.min, dl.max, feature.strand ?? 1, dl.phase);
-	                            const row = getTranslationRow(frame, lgv.bpPerPx);
-	                            const offset = (lgv.bpToPx({
-	                                refName: region.refName,
-	                                coord: dl.min,
-	                                regionNumber: idx,
-	                            })?.offsetPx ?? 0) - lgv.offsetPx;
-	                            const widthPx = (dl.max - dl.min) / lgv.bpPerPx;
-	                            const startPx = lgv.displayedRegions[idx].reversed
-	                                ? offset - widthPx
-	                                : offset;
-	                            highlightSeq(seqTrackOverlayctx, theme, startPx, sequenceRowHeight, row, widthPx);
-	                        }
-	                    }
-	                    else {
-	                        const row = getSeqRow(feature.strand, lgv.bpPerPx);
-	                        const offset = (lgv.bpToPx({
-	                            refName: region.refName,
-	                            coord: feature.min,
-	                            regionNumber: idx,
-	                        })?.offsetPx ?? 0) - lgv.offsetPx;
-	                        const widthPx = feature.length / lgv.bpPerPx;
-	                        const startPx = lgv.displayedRegions[idx].reversed
-	                            ? offset - widthPx
-	                            : offset;
-	                        highlightSeq(seqTrackOverlayctx, theme, startPx, sequenceRowHeight, row, widthPx);
-	                    }
-	                }
-	            }, { name: 'LinearApolloDisplayRenderSeqHighlight' }));
+	                const { bpPerPx, dynamicBlocks, offsetPx } = lgv;
+	                // we have to be really explicit about passing in individual
+	                // variables here and not just e.g. "lgv" so that the autorun
+	                // tracks the variables correctly
+	                drawSequenceOverlay(seqTrackOverlayCanvas, seqTrackOverlayctx, hoveredFeature, selectedFeature, sequenceRowHeight, theme, session, bpPerPx, offsetPx, dynamicBlocks);
+	            }, {
+	                name: 'LinearApolloReferenceSequenceDisplayRenderSequenceHighlight',
+	            }));
 	        },
 	    }));
 	}
@@ -61780,14 +59723,14 @@
 	    for (let i = labelArray.length - 1; i >= 0; --i) {
 	        const label = labelArray[i];
 	        ctx.fillStyle = label.color;
-	        const labelRowX = Math.max(label.x + 1, 0);
+	        const labelRowX = label.x + 1;
 	        const labelRowY = label.y + label.h;
 	        const textWidth = require$$1$2.measureText(label.text, 10);
 	        if (label.isSelected) {
-	            ctx.clearRect(labelRowX - 5, labelRowY, textWidth + 10, label.h);
 	            ctx.font = 'bold '.concat(font);
 	        }
 	        if (label.text) {
+	            ctx.clearRect(labelRowX - 5, labelRowY, textWidth + 10, label.h);
 	            ctx.fillText(label.text, labelRowX, labelRowY + 11, textWidth);
 	            ctx.font = font;
 	        }
@@ -61945,6 +59888,26 @@
 	                    const frameAdjust = (frame < 0 ? -1 * frame + 5 : frame) * featureLabelSpacer;
 	                    cdsTop = (frameAdjust - featureLabelSpacer) * rowHeight;
 	                    ctx.fillRect(cdsStartPx, cdsTop, cdsWidthPx, cdsHeight);
+	                    // Draw lines to connect CDS features with shared mRNA parent
+	                    if (counter > 1) {
+	                        // Mid-point for intron line "hat"
+	                        const midPoint = [
+	                            (cdsStartPx - prevCDSEndPx) / 2 + prevCDSEndPx,
+	                            Math.max(frame < 0 ? rowHeight * featureLabelSpacer * highestRow + 1 : 1, // Avoid render ceiling
+	                            Math.min(prevCDSTop, cdsTop) - rowHeight / 2),
+	                        ];
+	                        ctx.strokeStyle = 'rgb(0, 128, 128)';
+	                        ctx.beginPath();
+	                        ctx.moveTo(prevCDSEndPx, prevCDSTop);
+	                        ctx.lineTo(...midPoint);
+	                        ctx.stroke();
+	                        ctx.moveTo(...midPoint);
+	                        ctx.lineTo(cdsStartPx, cdsTop + rowHeight / 2);
+	                        ctx.stroke();
+	                    }
+	                    prevCDSEndPx = cdsStartPx + cdsWidthPx;
+	                    prevCDSTop = cdsTop + rowHeight / 2;
+	                    counter += 1;
 	                    if (cdsWidthPx > 2) {
 	                        ctx.clearRect(cdsStartPx + 1, cdsTop + 1, cdsWidthPx - 2, cdsHeight - 2);
 	                        const frameColor = theme.palette.framesCDS.at(frame)?.main;
@@ -61957,28 +59920,6 @@
 	                                ? 'rgb(0,0,0)'
 	                                : cdsColorCode;
 	                        ctx.fillRect(cdsStartPx + 1, cdsTop + 1, cdsWidthPx - 2, cdsHeight - 2);
-	                        // Draw lines to connect CDS features with shared mRNA parent
-	                        if (counter > 1) {
-	                            // Mid-point for intron line "hat"
-	                            const midPoint = [
-	                                (cdsStartPx - prevCDSEndPx) / 2 + prevCDSEndPx,
-	                                Math.max(frame < 0
-	                                    ? rowHeight * featureLabelSpacer * highestRow + 1
-	                                    : 1, // Avoid render ceiling
-	                                Math.min(prevCDSTop, cdsTop) - rowHeight / 2),
-	                            ];
-	                            ctx.strokeStyle = 'rgb(0, 128, 128)';
-	                            ctx.beginPath();
-	                            ctx.moveTo(prevCDSEndPx, prevCDSTop);
-	                            ctx.lineTo(...midPoint);
-	                            ctx.stroke();
-	                            ctx.moveTo(...midPoint);
-	                            ctx.lineTo(cdsStartPx, cdsTop + rowHeight / 2);
-	                            ctx.stroke();
-	                        }
-	                        prevCDSEndPx = cdsStartPx + cdsWidthPx;
-	                        prevCDSTop = cdsTop + rowHeight / 2;
-	                        counter += 1;
 	                        if (topFill && bottomFill) {
 	                            ctx.fillStyle = topFill;
 	                            ctx.fillRect(cdsStartPx + 1, cdsTop + 1, cdsWidthPx - 2, (cdsHeight - 2) / 2);
@@ -62071,38 +60012,38 @@
 	        let counter = 1;
 	        for (const cds of cdsRow.sort((a, b) => a.max - b.max)) {
 	            const cdsWidthPx = (cds.max - cds.min) / bpPerPx;
+	            const minX = (lgv.bpToPx({
+	                refName,
+	                coord: cds.min,
+	                regionNumber: layoutIndex,
+	            })?.offsetPx ?? 0) - offsetPx;
+	            const cdsStartPx = reversed ? minX - cdsWidthPx : minX;
+	            const frame = require$$1$2.getFrame(cds.min, cds.max, strand ?? 1, cds.phase);
+	            const frameAdjust = (frame < 0 ? -1 * frame + 5 : frame) * featureLabelSpacer;
+	            const cdsTop = (frameAdjust - featureLabelSpacer) * rowHeight;
+	            if (counter > 1) {
+	                // Mid-point for intron line "hat"
+	                const midPoint = [
+	                    (cdsStartPx - prevCDSEndPx) / 2 + prevCDSEndPx,
+	                    Math.max(frame < 0 ? rowHeight * featureLabelSpacer * highestRow + 1 : 1, // Avoid render ceiling
+	                    Math.min(prevCDSTop, cdsTop) - rowHeight / 2),
+	                ];
+	                ctx.strokeStyle = 'rgb(0, 0, 0)';
+	                ctx.lineWidth = 2;
+	                ctx.beginPath();
+	                ctx.moveTo(prevCDSEndPx, prevCDSTop);
+	                ctx.lineTo(...midPoint);
+	                ctx.stroke();
+	                ctx.moveTo(...midPoint);
+	                ctx.lineTo(cdsStartPx, cdsTop + rowHeight / 2);
+	                ctx.stroke();
+	            }
+	            prevCDSEndPx = cdsStartPx + cdsWidthPx;
+	            prevCDSTop = cdsTop + rowHeight / 2;
+	            counter += 1;
 	            if (cdsWidthPx > 2) {
-	                const minX = (lgv.bpToPx({
-	                    refName,
-	                    coord: cds.min,
-	                    regionNumber: layoutIndex,
-	                })?.offsetPx ?? 0) - offsetPx;
-	                const cdsStartPx = reversed ? minX - cdsWidthPx : minX;
-	                const frame = require$$1$2.getFrame(cds.min, cds.max, strand ?? 1, cds.phase);
-	                const frameAdjust = (frame < 0 ? -1 * frame + 5 : frame) * featureLabelSpacer;
-	                const cdsTop = (frameAdjust - featureLabelSpacer) * rowHeight;
 	                ctx.fillStyle = 'rgba(255,0,0,0.6)';
 	                ctx.fillRect(cdsStartPx, cdsTop, cdsWidthPx, cdsHeight);
-	                if (counter > 1) {
-	                    // Mid-point for intron line "hat"
-	                    const midPoint = [
-	                        (cdsStartPx - prevCDSEndPx) / 2 + prevCDSEndPx,
-	                        Math.max(frame < 0 ? rowHeight * featureLabelSpacer * highestRow + 1 : 1, // Avoid render ceiling
-	                        Math.min(prevCDSTop, cdsTop) - rowHeight / 2),
-	                    ];
-	                    ctx.strokeStyle = 'rgb(0, 0, 0)';
-	                    ctx.lineWidth = 2;
-	                    ctx.beginPath();
-	                    ctx.moveTo(prevCDSEndPx, prevCDSTop);
-	                    ctx.lineTo(...midPoint);
-	                    ctx.stroke();
-	                    ctx.moveTo(...midPoint);
-	                    ctx.lineTo(cdsStartPx, cdsTop + rowHeight / 2);
-	                    ctx.stroke();
-	                }
-	                prevCDSEndPx = cdsStartPx + cdsWidthPx;
-	                prevCDSTop = cdsTop + rowHeight / 2;
-	                counter += 1;
 	            }
 	        }
 	    }
@@ -62331,15 +60272,43 @@
 	    }
 	    if (isMousePositionWithFeature(mousePosition)) {
 	        const { bp, feature } = mousePosition;
-	        for (const relatedFeature of getRelatedFeatures(feature, bp)) {
-	            const featureID = relatedFeature.attributes
+	        let featuresUnderClick = getRelatedFeatures(feature, bp);
+	        if (isCDSFeature(feature, session)) {
+	            featuresUnderClick = getRelatedFeatures(feature, bp, true);
+	        }
+	        for (const feature of featuresUnderClick) {
+	            const featureID = feature.attributes
 	                .get('gff_id')
 	                ?.toString();
 	            if (featureID && filteredTranscripts.includes(featureID)) {
 	                continue;
 	            }
-	            const contextMenuItemsForFeature = getContextMenuItemsForFeature$2(display, relatedFeature);
-	            if (featureTypeOntology.isTypeOf(relatedFeature.type, 'exon')) {
+	            const contextMenuItemsForFeature = getContextMenuItemsForFeature$2(display, feature);
+	            if (isExonFeature(feature, session)) {
+	                const adjacentExons = getAdjacentExons(feature, display, mousePosition, session);
+	                const lgv = require$$1$2.getContainingView(display);
+	                if (adjacentExons.upstream) {
+	                    const exon = adjacentExons.upstream;
+	                    contextMenuItemsForFeature.push({
+	                        label: 'Go to upstream exon',
+	                        icon: getStreamIcon(feature.strand, true, lgv.displayedRegions.at(0)?.reversed),
+	                        onClick: () => {
+	                            lgv.navTo(navToFeatureCenter(exon, 0.1, lgv.totalBp));
+	                            selectFeatureAndOpenWidget(display, exon);
+	                        },
+	                    });
+	                }
+	                if (adjacentExons.downstream) {
+	                    const exon = adjacentExons.downstream;
+	                    contextMenuItemsForFeature.push({
+	                        label: 'Go to downstream exon',
+	                        icon: getStreamIcon(feature.strand, false, lgv.displayedRegions.at(0)?.reversed),
+	                        onClick: () => {
+	                            lgv.navTo(navToFeatureCenter(exon, 0.1, lgv.totalBp));
+	                            selectFeatureAndOpenWidget(display, exon);
+	                        },
+	                    });
+	                }
 	                contextMenuItemsForFeature.push({
 	                    label: 'Merge exons',
 	                    disabled: !admin,
@@ -62352,7 +60321,7 @@
 	                                    doneCallback();
 	                                },
 	                                changeManager,
-	                                sourceFeature: relatedFeature,
+	                                sourceFeature: feature,
 	                                sourceAssemblyId: currentAssemblyId,
 	                                selectedFeature,
 	                                setSelectedFeature: (feature) => {
@@ -62373,7 +60342,7 @@
 	                                    doneCallback();
 	                                },
 	                                changeManager,
-	                                sourceFeature: relatedFeature,
+	                                sourceFeature: feature,
 	                                sourceAssemblyId: currentAssemblyId,
 	                                selectedFeature,
 	                                setSelectedFeature: (feature) => {
@@ -62384,7 +60353,7 @@
 	                    },
 	                });
 	            }
-	            if (featureTypeOntology.isTypeOf(relatedFeature.type, 'gene')) {
+	            if (featureTypeOntology.isTypeOf(feature.type, 'gene')) {
 	                contextMenuItemsForFeature.push({
 	                    label: 'Filter alternate transcripts',
 	                    onClick: () => {
@@ -62394,7 +60363,7 @@
 	                                handleClose: () => {
 	                                    doneCallback();
 	                                },
-	                                sourceFeature: relatedFeature,
+	                                sourceFeature: feature,
 	                                filteredTranscripts: require$$1$3.getSnapshot(filteredTranscripts),
 	                                onUpdate: (forms) => {
 	                                    display.updateFilteredTranscripts(forms);
@@ -62405,7 +60374,7 @@
 	                });
 	            }
 	            menuItems.push({
-	                label: relatedFeature.type,
+	                label: feature.type,
 	                subMenu: contextMenuItemsForFeature,
 	            });
 	        }
@@ -62437,6 +60406,8 @@
 	        graphical: true,
 	        table: false,
 	        showFeatureLabels: true,
+	        showStartCodons: false,
+	        showStopCodons: true,
 	        showCheckResults: true,
 	        zoomThreshold: 200,
 	        heightPreConfig: require$$1$3.types.maybe(require$$1$3.types.refinement('displayHeight', require$$1$3.types.number, (n) => n >= minDisplayHeight)),
@@ -62565,6 +60536,12 @@
 	        toggleShowFeatureLabels() {
 	            self.showFeatureLabels = !self.showFeatureLabels;
 	        },
+	        toggleShowStartCodons() {
+	            self.showStartCodons = !self.showStartCodons;
+	        },
+	        toggleShowStopCodons() {
+	            self.showStopCodons = !self.showStopCodons;
+	        },
 	        toggleShowCheckResults() {
 	            self.showCheckResults = !self.showCheckResults;
 	        },
@@ -62579,7 +60556,7 @@
 	        const { filteredFeatureTypes, trackMenuItems: superTrackMenuItems } = self;
 	        return {
 	            trackMenuItems() {
-	                const { graphical, table, showFeatureLabels, showCheckResults } = self;
+	                const { graphical, table, showFeatureLabels, showStartCodons, showStopCodons, showCheckResults, } = self;
 	                return [
 	                    ...superTrackMenuItems(),
 	                    {
@@ -62616,6 +60593,22 @@
 	                                checked: showFeatureLabels,
 	                                onClick: () => {
 	                                    self.toggleShowFeatureLabels();
+	                                },
+	                            },
+	                            {
+	                                label: 'Show start codons',
+	                                type: 'checkbox',
+	                                checked: showStartCodons,
+	                                onClick: () => {
+	                                    self.toggleShowStartCodons();
+	                                },
+	                            },
+	                            {
+	                                label: 'Show stop codons',
+	                                type: 'checkbox',
+	                                checked: showStopCodons,
+	                                onClick: () => {
+	                                    self.toggleShowStopCodons();
 	                                },
 	                            },
 	                            {
@@ -62694,7 +60687,7 @@
 	                    return;
 	                }
 	                void self.session.apolloDataStore.loadFeatures(self.regions);
-	                if (self.lgv.bpPerPx <= 3) {
+	                if (self.lgv.bpPerPx <= self.zoomThreshold) {
 	                    void self.session.apolloDataStore.loadRefSeq(self.regions);
 	                }
 	            }, { name: 'LinearApolloSixFrameDisplayLoadFeatures', delay: 1000 }));
@@ -62886,6 +60879,28 @@
 	    }));
 	}
 
+	function drawCodon(ctx, codon, leftPx, index, theme, highContrast, bpPerPx, bp, rowHeight, showFeatureLabels, showStartCodons, showStopCodons) {
+	    const frameOffsets = (showFeatureLabels ? [0, 4, 2, 0, 14, 12, 10] : [0, 2, 1, 0, 7, 6, 5]).map((b) => b * rowHeight);
+	    const strands = [-1, 1];
+	    for (const strand of strands) {
+	        const frame = require$$1$2.getFrame(bp, bp + 3, strand, 0);
+	        const top = frameOffsets.at(frame);
+	        if (top === undefined) {
+	            continue;
+	        }
+	        const left = Math.round(leftPx + index / bpPerPx);
+	        const width = Math.round(3 / bpPerPx) === 0 ? 1 : Math.round(3 / bpPerPx);
+	        const codonCode = strand === 1 ? codon : require$$1$2.revcom(codon);
+	        const aminoAcidCode = require$$1$2.defaultCodonTable[codonCode];
+	        const fillColor = codonColorCode(aminoAcidCode, theme, highContrast);
+	        if (fillColor &&
+	            ((showStopCodons && aminoAcidCode == '*') ||
+	                (showStartCodons && aminoAcidCode != '*'))) {
+	            ctx.fillStyle = fillColor;
+	            ctx.fillRect(left, top, width, rowHeight);
+	        }
+	    }
+	}
 	function renderingModelFactory(pluginManager, configSchema) {
 	    const LinearApolloSixFrameDisplayLayouts = layoutsModelFactory(pluginManager, configSchema);
 	    return LinearApolloSixFrameDisplayLayouts.named('LinearApolloSixFrameDisplayRendering')
@@ -62975,11 +60990,11 @@
 	                }
 	            }, { name: 'LinearApolloSixFrameDisplayRenderCollaborators' }));
 	            require$$1$3.addDisposer(self, mobx.autorun(() => {
-	                const { canvas, featureLayouts, featuresHeight, lgv } = self;
+	                const { apolloRowHeight, canvas, featureLayouts, featuresHeight, lgv, session, theme, showFeatureLabels, showStartCodons, showStopCodons, } = self;
 	                if (!lgv.initialized || self.regionCannotBeRendered()) {
 	                    return;
 	                }
-	                const { displayedRegions, dynamicBlocks } = lgv;
+	                const { bpPerPx, offsetPx, displayedRegions, dynamicBlocks } = lgv;
 	                const ctx = canvas?.getContext('2d');
 	                if (!ctx) {
 	                    return;
@@ -63000,6 +61015,27 @@
 	                            if (glyph !== undefined) {
 	                                glyph.draw(ctx, topLevelFeature, row, self, idx);
 	                            }
+	                        }
+	                    }
+	                }
+	                if (showStartCodons || showStopCodons) {
+	                    const { apolloDataStore } = session;
+	                    for (const block of dynamicBlocks.contentBlocks) {
+	                        const assembly = apolloDataStore.assemblies.get(block.assemblyName);
+	                        const ref = assembly?.getByRefName(block.refName);
+	                        const roundedStart = Math.floor(block.start);
+	                        const roundedEnd = Math.ceil(block.end);
+	                        let seq = ref?.getSequence(roundedStart, roundedEnd);
+	                        if (!seq) {
+	                            break;
+	                        }
+	                        seq = seq.toUpperCase();
+	                        const baseOffsetPx = (block.start - roundedStart) / bpPerPx;
+	                        const seqLeftPx = Math.round(block.offsetPx - offsetPx - baseOffsetPx);
+	                        for (let i = 0; i < seq.length; i++) {
+	                            const bp = roundedStart + i;
+	                            const codon = seq.slice(i, i + 3);
+	                            drawCodon(ctx, codon, seqLeftPx, i, theme, true, bpPerPx, bp, apolloRowHeight, showFeatureLabels, showStartCodons, showStopCodons);
 	                        }
 	                    }
 	                }
@@ -63269,10 +61305,10 @@
 	        type: 'boolean',
 	        defaultValue: false,
 	    },
-	    backgroundColorForFeature: {
-	        description: 'Color ',
+	    geneBackgroundColor: {
+	        description: 'Color for feature background',
 	        type: 'string',
-	        defaultValue: 'jexl:colorFeature(featureType)',
+	        defaultValue: 'jexl:geneBackgroundColor(featureType)',
 	        contextVariable: ['featureType'],
 	    },
 	});
@@ -63506,7 +61542,7 @@
 	                addedFeature: annotationFeature,
 	            });
 	        }
-	        await submitChange(change);
+	        await submitChange(change, annotationFeature._id);
 	    };
 	    const copyTranscriptsToDestinationGene = async (transcripts) => {
 	        if (!selectedDestinationFeature) {
@@ -63529,7 +61565,8 @@
 	                assembly: assembly.name,
 	                addedFeature: transcript,
 	            });
-	            await submitChange(change);
+	            // selects the last added transcript
+	            await submitChange(change, transcriptId);
 	        }
 	    };
 	    const createNewGeneFeatureWithTranscripts = async (childrens) => {
@@ -63554,8 +61591,7 @@
 	                },
 	            },
 	        });
-	        await submitChange(change);
-	        apolloSessionModel.apolloSetSelectedFeature(newGeneId);
+	        await submitChange(change, newGeneId);
 	    };
 	    const extendSelectedDestinationFeatureLocation = async (newMin, newMax) => {
 	        if (!selectedDestinationFeature) {
@@ -63586,8 +61622,13 @@
 	            await submitChange(change);
 	        }
 	    };
-	    const submitChange = async (change) => {
-	        await apolloSessionModel.apolloDataStore.changeManager.submit(change);
+	    const submitChange = async (change, selectedFeatureId) => {
+	        await apolloSessionModel.apolloDataStore.changeManager
+	            .submit(change)
+	            .then(() => {
+	            // Selects the newly added/modified feature
+	            apolloSessionModel.apolloSetSelectedFeature(selectedFeatureId);
+	        });
 	    };
 	    const handleCreateNewGeneChange = (e) => {
 	        setCreateNewGene(e.target.checked);
@@ -63952,19 +61993,67 @@
 	  d: "m12 8-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"
 	}), 'ExpandLess');
 
-	var ErrorIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
-	  d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m1 15h-2v-2h2zm0-4h-2V7h2z"
-	}), 'Error');
-
 	var LockIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
 	  d: "M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2m-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2m3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1z"
 	}), 'Lock');
 
+	var ErrorIcon = /*#__PURE__*/utils$7.createSvgIcon( /*#__PURE__*/jsxRuntime.jsx("path", {
+	  d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m1 15h-2v-2h2zm0-4h-2V7h2z"
+	}), 'Error');
+
+	const CheckResultWarnings = mobxReact.observer(function CheckResultWarnings({ display, }) {
+	    const { classes } = useStyles$1();
+	    const { apolloDragging, apolloRowHeight, lgv, session, showCheckResults } = display;
+	    const { assemblyManager } = session;
+	    if (!showCheckResults) {
+	        return null;
+	    }
+	    return lgv.dynamicBlocks.contentBlocks.map((block) => {
+	        const widthBp = lgv.bpPerPx * apolloRowHeight;
+	        const assembly = assemblyManager.get(block.assemblyName);
+	        if (!assembly) {
+	            return null;
+	        }
+	        const filteredCheckResults = [
+	            ...session.apolloDataStore.checkResults.values(),
+	        ].filter((checkResult) => assembly.isValidRefName(checkResult.refSeq) &&
+	            assembly.getCanonicalRefName(checkResult.refSeq) === block.refName &&
+	            require$$1$2.doesIntersect2(block.start, block.end, checkResult.start, checkResult.end));
+	        const checkResults = clusterResultByMessage(filteredCheckResults, widthBp, true);
+	        return checkResults.map((checkResult) => {
+	            const left = Math.round(getLeftPx(display, checkResult.range, block));
+	            const [feature] = checkResult.featureIds;
+	            if (!feature) {
+	                return null;
+	            }
+	            let row = 0;
+	            const featureLayout = display.getFeatureLayoutPosition(feature);
+	            if (featureLayout) {
+	                row = featureLayout.layoutRow + featureLayout.featureRow;
+	            }
+	            const top = row * apolloRowHeight;
+	            const height = apolloRowHeight;
+	            return (React__default["default"].createElement(material.Tooltip, { key: checkResult._id, title: checkResult.message },
+	                React__default["default"].createElement(material.Box, { className: classes.box, style: {
+	                        top,
+	                        left,
+	                        height,
+	                        width: height,
+	                        pointerEvents: apolloDragging ? 'none' : 'auto',
+	                    } },
+	                    React__default["default"].createElement(material.Badge, { className: classes.badge, badgeContent: checkResult.count, color: "primary", overlap: "circular", anchorOrigin: { vertical: 'bottom', horizontal: 'right' }, invisible: checkResult.count <= 1 },
+	                        React__default["default"].createElement(material.Avatar, { className: classes.avatar },
+	                            React__default["default"].createElement(ErrorIcon, { "data-testid": `ErrorIcon-${checkResult.start}` }))))));
+	        });
+	    });
+	});
+
+	/* eslint-disable @typescript-eslint/unbound-method */
 	// Lock icon when isLocked === true
 	const LinearApolloDisplay = mobxReact.observer(function LinearApolloDisplay(props) {
 	    const theme = material.useTheme();
 	    const { model } = props;
-	    const { loading, apolloDragging, apolloRowHeight, contextMenuItems: getContextMenuItems, cursor, featuresHeight, isShown, onMouseDown, onMouseLeave, onMouseMove, onMouseUp, regionCannotBeRendered, session, setCanvas, setCollaboratorCanvas, setOverlayCanvas, setTheme, showCheckResults, } = model;
+	    const { loading, contextMenuItems: getContextMenuItems, cursor, featuresHeight, isShown, onMouseDown, onMouseLeave, onMouseMove, onMouseUp, regionCannotBeRendered, session, setCanvas, setCollaboratorCanvas, setOverlayCanvas, setTheme, } = model;
 	    const { classes } = useStyles$1();
 	    const lgv = require$$1$2.getContainingView(model);
 	    React.useEffect(() => {
@@ -63976,7 +62065,6 @@
 	    if (!isShown) {
 	        return null;
 	    }
-	    const { assemblyManager } = session;
 	    return (React__default["default"].createElement(React__default["default"].Fragment, null,
 	        React__default["default"].createElement("div", { className: classes.canvasContainer, style: {
 	                width: lgv.dynamicBlocks.totalWidthPx,
@@ -64015,52 +62103,7 @@
 	                        await Promise.resolve();
 	                        setOverlayCanvas(node);
 	                    }, width: lgv.dynamicBlocks.totalWidthPx, height: featuresHeight, onMouseMove: onMouseMove, onMouseLeave: onMouseLeave, onMouseDown: onMouseDown, onMouseUp: onMouseUp, className: classes.canvas, style: { cursor: cursor ?? 'default' }, "data-testid": "overlayCanvas" }),
-	                lgv.displayedRegions.flatMap((region, idx) => {
-	                    const widthBp = lgv.bpPerPx * apolloRowHeight;
-	                    const assembly = assemblyManager.get(region.assemblyName);
-	                    if (showCheckResults) {
-	                        const filteredCheckResults = [
-	                            ...session.apolloDataStore.checkResults.values(),
-	                        ].filter((checkResult) => assembly?.isValidRefName(checkResult.refSeq) &&
-	                            assembly.getCanonicalRefName(checkResult.refSeq) ===
-	                                region.refName &&
-	                            require$$1$2.doesIntersect2(region.start, region.end, checkResult.start, checkResult.end));
-	                        const checkResults = clusterResultByMessage(filteredCheckResults, widthBp, true);
-	                        return checkResults.map((checkResult) => {
-	                            const left = (lgv.bpToPx({
-	                                refName: region.refName,
-	                                coord: checkResult.start,
-	                                regionNumber: idx,
-	                            })?.offsetPx ?? 0) - lgv.offsetPx;
-	                            const [feature] = checkResult.featureIds;
-	                            if (!feature) {
-	                                return null;
-	                            }
-	                            let row = 0;
-	                            const featureLayout = model.getFeatureLayoutPosition(feature);
-	                            if (featureLayout) {
-	                                row = featureLayout.layoutRow + featureLayout.featureRow;
-	                            }
-	                            const top = row * apolloRowHeight;
-	                            const height = apolloRowHeight;
-	                            return (React__default["default"].createElement(material.Tooltip, { key: checkResult._id, title: checkResult.message },
-	                                React__default["default"].createElement(material.Box, { className: classes.box, style: {
-	                                        top,
-	                                        left,
-	                                        height,
-	                                        width: height,
-	                                        pointerEvents: apolloDragging ? 'none' : 'auto',
-	                                    } },
-	                                    React__default["default"].createElement(material.Badge, { className: classes.badge, badgeContent: checkResult.count, color: "primary", overlap: "circular", anchorOrigin: {
-	                                            vertical: 'bottom',
-	                                            horizontal: 'right',
-	                                        }, invisible: checkResult.count <= 1 },
-	                                        React__default["default"].createElement(material.Avatar, { className: classes.avatar },
-	                                            React__default["default"].createElement(ErrorIcon, { "data-testid": `ErrorIcon-${checkResult.start}` }))))));
-	                        });
-	                    }
-	                    return null;
-	                }),
+	                React__default["default"].createElement(CheckResultWarnings, { display: model }),
 	                React__default["default"].createElement(ui.Menu, { open: contextMenuItems.length > 0, onMenuItemClick: (_, callback) => {
 	                        callback();
 	                        setContextMenuItems([]);
@@ -64121,100 +62164,103 @@
 	                    setContextCoord(coord);
 	                    setContextMenuItems(getContextMenuItems(event));
 	                }
-	            } }, message ? (React__default["default"].createElement(material.Alert, { severity: "warning", classes: { message: classes.ellipses }, slotProps: { root: { className: classes.center } } },
-	            React__default["default"].createElement(material.Tooltip, { title: message },
-	                React__default["default"].createElement("div", null, message)))) : (
-	        // Promise.resolve() in these 3 callbacks is to avoid infinite rendering loop
-	        // https://github.com/mobxjs/mobx/issues/3728#issuecomment-1715400931
-	        React__default["default"].createElement(React__default["default"].Fragment, null,
-	            React__default["default"].createElement(TrackLines, { model: model, idx: 0 }),
-	            React__default["default"].createElement(TrackLines, { model: model, hrStyle: { margin: 0, top: 0, color: 'grey', opacity: 0.4 }, idx: 1 }),
-	            React__default["default"].createElement(TrackLines, { model: model, idx: 2 }),
-	            React__default["default"].createElement("canvas", { ref: async (node) => {
-	                    await Promise.resolve();
-	                    setCollaboratorCanvas(node);
-	                }, width: lgv.dynamicBlocks.totalWidthPx, height: featuresHeight, className: classes.canvas, "data-testid": "collaboratorCanvas" }),
-	            React__default["default"].createElement("canvas", { ref: async (node) => {
-	                    await Promise.resolve();
-	                    setCanvas(node);
-	                }, width: lgv.dynamicBlocks.totalWidthPx, height: featuresHeight, className: classes.canvas, "data-testid": "canvas" }),
-	            React__default["default"].createElement("canvas", { ref: async (node) => {
-	                    await Promise.resolve();
-	                    setOverlayCanvas(node);
-	                }, width: lgv.dynamicBlocks.totalWidthPx, height: featuresHeight, onMouseMove: onMouseMove, onMouseLeave: onMouseLeave, onMouseDown: onMouseDown, onMouseUp: onMouseUp, className: classes.canvas, style: { cursor: cursor ?? 'default' }, "data-testid": "overlayCanvas" }),
-	            lgv.displayedRegions.flatMap((region, idx) => {
-	                const widthBp = lgv.bpPerPx * apolloRowHeight;
-	                const assembly = assemblyManager.get(region.assemblyName);
-	                if (showCheckResults) {
-	                    const filteredCheckResults = [
-	                        ...session.apolloDataStore.checkResults.values(),
-	                    ].filter((checkResult) => assembly?.isValidRefName(checkResult.refSeq) &&
-	                        assembly.getCanonicalRefName(checkResult.refSeq) ===
-	                            region.refName &&
-	                        require$$1$2.doesIntersect2(region.start, region.end, checkResult.start, checkResult.end));
-	                    const checkResults = clusterResultByMessage(filteredCheckResults, widthBp, true);
-	                    return checkResults.map((checkResult) => {
-	                        const left = (lgv.bpToPx({
-	                            refName: region.refName,
-	                            coord: checkResult.start,
-	                            regionNumber: idx,
-	                        })?.offsetPx ?? 0) - lgv.offsetPx;
-	                        const [feature] = checkResult.featureIds;
-	                        if (!feature || !feature.parent?.looksLikeGene) {
-	                            return null;
-	                        }
-	                        let row;
-	                        for (const loc of feature.cdsLocations) {
-	                            for (const cds of loc) {
-	                                let rowNum = require$$1$2.getFrame(cds.min, cds.max, feature.strand ?? 1, cds.phase);
-	                                rowNum = featureLabelSpacer(rowNum < 0 ? -1 * rowNum + 5 : rowNum);
-	                                if (checkResult.start >= cds.min &&
-	                                    checkResult.start <= cds.max) {
-	                                    row = rowNum - 1;
-	                                    break;
+	            } },
+	            session.isLocked ? (React__default["default"].createElement("div", { className: classes.locked, "data-testid": "lock-icon" },
+	                React__default["default"].createElement(LockIcon, null))) : null,
+	            message ? (React__default["default"].createElement(material.Alert, { severity: "warning", classes: { message: classes.ellipses }, slotProps: { root: { className: classes.center } } },
+	                React__default["default"].createElement(material.Tooltip, { title: message },
+	                    React__default["default"].createElement("div", null, message)))) : (
+	            // Promise.resolve() in these 3 callbacks is to avoid infinite rendering loop
+	            // https://github.com/mobxjs/mobx/issues/3728#issuecomment-1715400931
+	            React__default["default"].createElement(React__default["default"].Fragment, null,
+	                React__default["default"].createElement(TrackLines, { model: model, idx: 0 }),
+	                React__default["default"].createElement(TrackLines, { model: model, hrStyle: { margin: 0, top: 0, color: 'grey', opacity: 0.4 }, idx: 1 }),
+	                React__default["default"].createElement(TrackLines, { model: model, idx: 2 }),
+	                React__default["default"].createElement("canvas", { ref: async (node) => {
+	                        await Promise.resolve();
+	                        setCollaboratorCanvas(node);
+	                    }, width: lgv.dynamicBlocks.totalWidthPx, height: featuresHeight, className: classes.canvas, "data-testid": "collaboratorCanvas" }),
+	                React__default["default"].createElement("canvas", { ref: async (node) => {
+	                        await Promise.resolve();
+	                        setCanvas(node);
+	                    }, width: lgv.dynamicBlocks.totalWidthPx, height: featuresHeight, className: classes.canvas, "data-testid": "canvas" }),
+	                React__default["default"].createElement("canvas", { ref: async (node) => {
+	                        await Promise.resolve();
+	                        setOverlayCanvas(node);
+	                    }, width: lgv.dynamicBlocks.totalWidthPx, height: featuresHeight, onMouseMove: onMouseMove, onMouseLeave: onMouseLeave, onMouseDown: onMouseDown, onMouseUp: onMouseUp, className: classes.canvas, style: { cursor: cursor ?? 'default' }, "data-testid": "overlayCanvas" }),
+	                lgv.displayedRegions.flatMap((region, idx) => {
+	                    const widthBp = lgv.bpPerPx * apolloRowHeight;
+	                    const assembly = assemblyManager.get(region.assemblyName);
+	                    if (showCheckResults) {
+	                        const filteredCheckResults = [
+	                            ...session.apolloDataStore.checkResults.values(),
+	                        ].filter((checkResult) => assembly?.isValidRefName(checkResult.refSeq) &&
+	                            assembly.getCanonicalRefName(checkResult.refSeq) ===
+	                                region.refName &&
+	                            require$$1$2.doesIntersect2(region.start, region.end, checkResult.start, checkResult.end));
+	                        const checkResults = clusterResultByMessage(filteredCheckResults, widthBp, true);
+	                        return checkResults.map((checkResult) => {
+	                            const left = (lgv.bpToPx({
+	                                refName: region.refName,
+	                                coord: checkResult.start,
+	                                regionNumber: idx,
+	                            })?.offsetPx ?? 0) - lgv.offsetPx;
+	                            const [feature] = checkResult.featureIds;
+	                            if (!feature || !feature.parent?.looksLikeGene) {
+	                                return null;
+	                            }
+	                            let row;
+	                            for (const loc of feature.cdsLocations) {
+	                                for (const cds of loc) {
+	                                    let rowNum = require$$1$2.getFrame(cds.min, cds.max, feature.strand ?? 1, cds.phase);
+	                                    rowNum = featureLabelSpacer(rowNum < 0 ? -1 * rowNum + 5 : rowNum);
+	                                    if (checkResult.start >= cds.min &&
+	                                        checkResult.start <= cds.max) {
+	                                        row = rowNum - 1;
+	                                        break;
+	                                    }
 	                                }
 	                            }
-	                        }
-	                        if (row === undefined) {
-	                            const rowNum = feature.strand == 1
-	                                ? geneTrackRowNums[0]
-	                                : geneTrackRowNums[1];
-	                            row = rowNum - 1;
-	                        }
-	                        const top = row * apolloRowHeight;
-	                        const height = apolloRowHeight;
-	                        return (React__default["default"].createElement(material.Tooltip, { key: checkResult._id, title: checkResult.message },
-	                            React__default["default"].createElement(material.Box, { className: classes.box, style: {
-	                                    top,
-	                                    left,
-	                                    height,
-	                                    width: height,
-	                                    pointerEvents: apolloDragging ? 'none' : 'auto',
-	                                } },
-	                                React__default["default"].createElement(material.Badge, { className: classes.badge, badgeContent: checkResult.count, color: "primary", overlap: "circular", anchorOrigin: {
-	                                        vertical: 'bottom',
-	                                        horizontal: 'right',
-	                                    }, invisible: checkResult.count <= 1 },
-	                                    React__default["default"].createElement(material.Avatar, { className: classes.avatar },
-	                                        React__default["default"].createElement(ErrorIcon, { "data-testid": `ErrorIcon-${checkResult.start}` }))))));
-	                    });
-	                }
-	                return null;
-	            }),
-	            React__default["default"].createElement(ui.Menu, { open: contextMenuItems.length > 0, onMenuItemClick: (_, callback) => {
-	                    callback();
-	                    setContextMenuItems([]);
-	                }, onClose: () => {
-	                    setContextMenuItems([]);
-	                }, slotProps: {
-	                    transition: {
-	                        onExit: () => {
-	                            setContextMenuItems([]);
+	                            if (row === undefined) {
+	                                const rowNum = feature.strand == 1
+	                                    ? geneTrackRowNums[0]
+	                                    : geneTrackRowNums[1];
+	                                row = rowNum - 1;
+	                            }
+	                            const top = row * apolloRowHeight;
+	                            const height = apolloRowHeight;
+	                            return (React__default["default"].createElement(material.Tooltip, { key: checkResult._id, title: checkResult.message },
+	                                React__default["default"].createElement(material.Box, { className: classes.box, style: {
+	                                        top,
+	                                        left,
+	                                        height,
+	                                        width: height,
+	                                        pointerEvents: apolloDragging ? 'none' : 'auto',
+	                                    } },
+	                                    React__default["default"].createElement(material.Badge, { className: classes.badge, badgeContent: checkResult.count, color: "primary", overlap: "circular", anchorOrigin: {
+	                                            vertical: 'bottom',
+	                                            horizontal: 'right',
+	                                        }, invisible: checkResult.count <= 1 },
+	                                        React__default["default"].createElement(material.Avatar, { className: classes.avatar },
+	                                            React__default["default"].createElement(ErrorIcon, { "data-testid": `ErrorIcon-${checkResult.start}` }))))));
+	                        });
+	                    }
+	                    return null;
+	                }),
+	                React__default["default"].createElement(ui.Menu, { open: contextMenuItems.length > 0, onMenuItemClick: (_, callback) => {
+	                        callback();
+	                        setContextMenuItems([]);
+	                    }, onClose: () => {
+	                        setContextMenuItems([]);
+	                    }, slotProps: {
+	                        transition: {
+	                            onExit: () => {
+	                                setContextMenuItems([]);
+	                            },
 	                        },
-	                    },
-	                }, anchorReference: "anchorPosition", anchorPosition: contextCoord
-	                    ? { top: contextCoord[1], left: contextCoord[0] }
-	                    : undefined, style: { zIndex: theme.zIndex.tooltip }, menuItems: contextMenuItems }))))));
+	                    }, anchorReference: "anchorPosition", anchorPosition: contextCoord
+	                        ? { top: contextCoord[1], left: contextCoord[0] }
+	                        : undefined, style: { zIndex: theme.zIndex.tooltip }, menuItems: contextMenuItems }))))));
 	});
 
 	/* eslint-disable @typescript-eslint/unbound-method */
@@ -64278,21 +62324,19 @@
 	        event.preventDefault();
 	        onResize(event.movementY);
 	    }, [onResize]);
-	    const cancelDrag = React.useCallback((event) => {
-	        event.stopPropagation();
-	        event.preventDefault();
-	        globalThis.removeEventListener('mousemove', mouseMove);
-	        globalThis.removeEventListener('mouseup', cancelDrag);
-	        globalThis.removeEventListener('mouseleave', cancelDrag);
-	    }, [mouseMove]);
 	    return (
 	    // TODO: a11y
 	    // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
 	    React__default["default"].createElement("div", { onMouseDown: (event) => {
 	            event.stopPropagation();
-	            globalThis.addEventListener('mousemove', mouseMove);
-	            globalThis.addEventListener('mouseup', cancelDrag);
-	            globalThis.addEventListener('mouseleave', cancelDrag);
+	            const controller = new AbortController();
+	            const { signal } = controller;
+	            function abortDrag() {
+	                controller.abort();
+	            }
+	            globalThis.addEventListener('mousemove', mouseMove, { signal });
+	            globalThis.addEventListener('mouseup', abortDrag, { signal });
+	            globalThis.addEventListener('mouseleave', abortDrag, { signal });
 	        }, onClick: (e) => {
 	            e.stopPropagation();
 	            e.preventDefault();
@@ -64598,614 +62642,6 @@
 	    },
 	}));
 
-	class BackendDriver {
-	    clientStore;
-	    constructor(clientStore) {
-	        this.clientStore = clientStore;
-	    }
-	}
-
-	/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-	class ChangeManager {
-	    dataStore;
-	    constructor(dataStore) {
-	        this.dataStore = dataStore;
-	    }
-	    recentChanges = [];
-	    undoneChanges = [];
-	    async submit(change, opts = {}) {
-	        const { addToRecents = true, submitToBackend = true, updateJobsManager = false, } = opts;
-	        // pre-validate
-	        const session = require$$1$2.getSession(this.dataStore);
-	        const controller = new AbortController();
-	        const { jobsManager, isLocked } = require$$1$2.getSession(this.dataStore);
-	        if (isLocked) {
-	            session.notify('Cannot submit changes in locked mode');
-	            return;
-	        }
-	        const job = {
-	            name: change.typeName,
-	            statusMessage: 'Pre-validating',
-	            progressPct: 0,
-	            cancelCallback: () => {
-	                controller.abort();
-	            },
-	        };
-	        if (updateJobsManager) {
-	            jobsManager.runJob(job);
-	        }
-	        const result = await dist$2.validationRegistry.frontendPreValidate(change);
-	        if (!result.ok) {
-	            const msg = `Pre-validation failed: "${result.resultsMessages}"`;
-	            if (updateJobsManager) {
-	                jobsManager.abortJob(job.name, msg);
-	            }
-	            session.notify(msg, 'error');
-	            return;
-	        }
-	        try {
-	            // submit to client data store
-	            await change.execute(this.dataStore);
-	        }
-	        catch (error) {
-	            if (updateJobsManager) {
-	                jobsManager.abortJob(job.name, String(error));
-	            }
-	            console.error(error);
-	            session.notify(`Error encountered in client: ${String(error)}. Data may be out of sync, please refresh the page`, 'error');
-	            return;
-	        }
-	        // post-validate
-	        const results2 = await dist$2.validationRegistry.frontendPostValidate(change, this.dataStore);
-	        if (!results2.ok) {
-	            // notify of invalid change and revert
-	            await this.undo(change);
-	        }
-	        if (submitToBackend) {
-	            if (updateJobsManager) {
-	                jobsManager.update(job.name, 'Submitting to driver');
-	            }
-	            // submit to driver
-	            const { collaborationServerDriver, getBackendDriver } = this.dataStore;
-	            const backendDriver = dist$3.isAssemblySpecificChange(change)
-	                ? getBackendDriver(change.assembly)
-	                : collaborationServerDriver;
-	            let backendResult;
-	            try {
-	                backendResult = await backendDriver.submitChange(change, opts);
-	            }
-	            catch (error) {
-	                if (updateJobsManager) {
-	                    jobsManager.abortJob(job.name, String(error));
-	                }
-	                console.error(error);
-	                session.notify(String(error), 'error');
-	                await this.undo(change, false);
-	                return;
-	            }
-	            if (!backendResult.ok) {
-	                const msg = `Post-validation failed: "${result.resultsMessages}"`;
-	                if (updateJobsManager) {
-	                    jobsManager.abortJob(job.name, msg);
-	                }
-	                session.notify(msg, 'error');
-	                await this.undo(change, false);
-	                return;
-	            }
-	            if (change.notification) {
-	                session.notify(change.notification, 'success');
-	            }
-	            if (addToRecents) {
-	                this.recentChanges.push(change);
-	                this.undoneChanges = [];
-	            }
-	        }
-	        if (updateJobsManager) {
-	            jobsManager.done(job);
-	        }
-	    }
-	    async undo(change, submitToBackend = true) {
-	        const inverseChange = change.getInverse();
-	        const opts = { submitToBackend, addToRecents: false };
-	        return this.submit(inverseChange, opts);
-	    }
-	    async redo(change, submitToBackend = true) {
-	        const opts = { submitToBackend, addToRecents: false };
-	        return this.submit(change, opts);
-	    }
-	    async undoLastChange() {
-	        const session = require$$1$2.getSession(this.dataStore);
-	        const lastChange = this.recentChanges.pop();
-	        if (!lastChange) {
-	            session.notify('No changes to undo!', 'info');
-	            return;
-	        }
-	        this.undoneChanges.push(lastChange);
-	        return this.undo(lastChange);
-	    }
-	    async redoLastChange() {
-	        const session = require$$1$2.getSession(this.dataStore);
-	        const lastChange = this.undoneChanges.pop();
-	        if (!lastChange) {
-	            session.notify('No changes to redo!', 'info');
-	            return;
-	        }
-	        this.recentChanges.push(lastChange);
-	        return this.redo(lastChange);
-	    }
-	}
-
-	/* eslint-disable @typescript-eslint/no-base-to-string */
-	class CollaborationServerDriver extends BackendDriver {
-	    inFlight = new Map();
-	    async fetch(internetAccount, info, init) {
-	        const customFetch = internetAccount.getFetcher({
-	            locationType: 'UriLocation',
-	            uri: info.toString(),
-	        });
-	        return customFetch(info, init);
-	    }
-	    async searchFeatures(term, assemblies) {
-	        const internetAccount = this.clientStore.getInternetAccount(assemblies[0]);
-	        const { baseURL } = internetAccount;
-	        const url = new URL('features/searchFeatures', baseURL);
-	        const searchParams = new URLSearchParams({
-	            assemblies: assemblies.join(','),
-	            term,
-	        });
-	        url.search = searchParams.toString();
-	        const uri = url.toString();
-	        const response = await this.fetch(internetAccount, uri);
-	        if (!response.ok) {
-	            const errorMessage = await createFetchErrorMessage(response, 'searchFeatures failed');
-	            throw new Error(errorMessage);
-	        }
-	        return response.json();
-	    }
-	    /**
-	     * Call backend endpoint to get features by criteria
-	     * @param region -  Searchable region containing refSeq, start and end
-	     * @returns
-	     */
-	    async getFeatures(region) {
-	        const { assemblyName, end, refName, start } = region;
-	        const { assemblyManager } = require$$1$2.getSession(this.clientStore);
-	        const assembly = assemblyManager.get(assemblyName);
-	        if (!assembly) {
-	            throw new Error(`Could not find assembly with name "${assemblyName}"`);
-	        }
-	        const { ids } = configuration.getConf(assembly, ['sequence', 'metadata']);
-	        const refSeq = ids[refName];
-	        if (!refSeq) {
-	            throw new Error(`Could not find refSeq "${refName}"`);
-	        }
-	        const internetAccount = this.clientStore.getInternetAccount(assemblyName);
-	        const { baseURL } = internetAccount;
-	        const url = new URL('features/getFeatures', baseURL);
-	        const searchParams = new URLSearchParams({
-	            refSeq,
-	            start: String(start),
-	            end: String(end),
-	        });
-	        url.search = searchParams.toString();
-	        const uri = url.toString();
-	        const response = await this.fetch(internetAccount, uri);
-	        if (!response.ok) {
-	            const errorMessage = await createFetchErrorMessage(response, 'getFeatures failed');
-	            throw new Error(errorMessage);
-	        }
-	        this.checkSocket(assemblyName, refName, internetAccount);
-	        return response.json();
-	    }
-	    /**
-	     * Checks if there is assembly-refSeq specific socket. If not, it opens one
-	     * @param assembly - assemblyId
-	     * @param refSeq - refSeqName
-	     * @param internetAccount - internet account
-	     */
-	    checkSocket(assembly, refSeq, internetAccount) {
-	        const { socket } = internetAccount;
-	        const token = internetAccount.retrieveToken();
-	        const channel = `${assembly}-${refSeq}`;
-	        const changeManager = new ChangeManager(this.clientStore);
-	        if (!socket.hasListeners(channel)) {
-	            socket.on(channel, async (message) => {
-	                // Save server last change sequence into session storage
-	                internetAccount.setLastChangeSequenceNumber(Number(message.changeSequence));
-	                if (message.userSessionId !== token && message.channel === channel) {
-	                    const change = dist$3.Change.fromJSON(message.changeInfo);
-	                    if (dist$3.isFeatureChange(change) && this.haveDataForChange(change)) {
-	                        await changeManager.submit(change, { submitToBackend: false });
-	                    }
-	                }
-	            });
-	        }
-	    }
-	    haveDataForChange(change) {
-	        const { assembly, changedIds } = change;
-	        const apolloAssembly = this.clientStore.assemblies.get(assembly);
-	        if (!apolloAssembly) {
-	            return false;
-	        }
-	        for (const changedId of changedIds) {
-	            if (this.clientStore.getFeature(changedId)) {
-	                return true;
-	            }
-	        }
-	        return false;
-	    }
-	    /**
-	     * Call backend endpoint to get sequence by criteria
-	     * @param region -  Searchable region containing refSeq, start and end
-	     * @returns
-	     */
-	    async getSequence(region) {
-	        const inFlightKey = `${region.refName}:${region.start}-${region.end}`;
-	        const inFlightPromise = this.inFlight.get(inFlightKey);
-	        const { assemblyName, end, refName, start } = region;
-	        const { assemblyManager } = require$$1$2.getSession(this.clientStore);
-	        const assembly = assemblyManager.get(assemblyName);
-	        if (!assembly) {
-	            throw new Error(`Could not find assembly with name "${assemblyName}"`);
-	        }
-	        const { ids } = configuration.getConf(assembly, ['sequence', 'metadata']);
-	        const refSeq = ids[refName];
-	        if (!refSeq) {
-	            throw new Error(`Could not find refSeq "${refName}"`);
-	        }
-	        if (inFlightPromise) {
-	            const seq = await inFlightPromise;
-	            return { seq, refSeq };
-	        }
-	        let apolloAssembly = this.clientStore.assemblies.get(assemblyName);
-	        if (!apolloAssembly) {
-	            apolloAssembly = this.clientStore.addAssembly(assemblyName);
-	        }
-	        let apolloRefSeq = apolloAssembly.refSeqs.get(refSeq);
-	        if (!apolloRefSeq) {
-	            apolloRefSeq = apolloAssembly.addRefSeq(refSeq, refName);
-	        }
-	        const clientStoreSequence = apolloRefSeq.getSequence(start, end);
-	        if (clientStoreSequence.length === end - start) {
-	            return { seq: clientStoreSequence, refSeq };
-	        }
-	        const internetAccount = this.clientStore.getInternetAccount(assemblyName);
-	        const { baseURL } = internetAccount;
-	        const url = new URL('sequence', baseURL);
-	        const searchParams = new URLSearchParams({
-	            refSeq,
-	            start: String(start),
-	            end: String(end),
-	        });
-	        url.search = searchParams.toString();
-	        const uri = url.toString();
-	        const seqPromise = this.getSeqFromServer(internetAccount, uri, apolloRefSeq, start, end);
-	        this.inFlight.set(inFlightKey, seqPromise);
-	        const seq = await seqPromise;
-	        this.checkSocket(assemblyName, refName, internetAccount);
-	        this.inFlight.delete(inFlightKey);
-	        return { seq, refSeq };
-	    }
-	    async getSeqFromServer(internetAccount, uri, apolloRefSeq, start, stop) {
-	        const response = await this.fetch(internetAccount, uri);
-	        if (!response.ok) {
-	            let errorMessage;
-	            try {
-	                errorMessage = await response.text();
-	            }
-	            catch {
-	                errorMessage = '';
-	            }
-	            throw new Error(`getSequence failed: ${response.status} (${response.statusText})${errorMessage ? ` (${errorMessage})` : ''}`);
-	        }
-	        const seq = await response.text();
-	        apolloRefSeq.addSequence({ sequence: seq, start, stop });
-	        return seq;
-	    }
-	    async getRefNameAliases(assemblyName) {
-	        const { assemblyManager } = require$$1$2.getSession(this.clientStore);
-	        const assembly = assemblyManager.get(assemblyName);
-	        if (!assembly) {
-	            throw new Error(`Could not find assembly with name "${assemblyName}"`);
-	        }
-	        const internetAccount = this.clientStore.getInternetAccount(assemblyName);
-	        const { baseURL } = internetAccount;
-	        const url = new URL('refSeqs', baseURL);
-	        const searchParams = new URLSearchParams({ assembly: assemblyName });
-	        url.search = searchParams.toString();
-	        const uri = url.toString();
-	        const response = await this.fetch(internetAccount, uri);
-	        if (!response.ok) {
-	            let errorMessage;
-	            try {
-	                errorMessage = await response.text();
-	            }
-	            catch {
-	                errorMessage = '';
-	            }
-	            throw new Error(`getRefNameAliases failed: ${response.status} (${response.statusText})${errorMessage ? ` (${errorMessage})` : ''}`);
-	        }
-	        const refSeqs = (await response.json());
-	        return refSeqs.map((refSeq) => {
-	            return {
-	                refName: refSeq.name,
-	                aliases: [...new Set([refSeq._id, ...refSeq.aliases])],
-	                uniqueId: `alias-${refSeq._id}`,
-	            };
-	        });
-	    }
-	    async getRegions(assemblyName) {
-	        const { assemblyManager } = require$$1$2.getSession(this.clientStore);
-	        const assembly = assemblyManager.get(assemblyName);
-	        if (!assembly) {
-	            throw new Error(`Could not find assembly with name "${assemblyName}"`);
-	        }
-	        const internetAccount = this.clientStore.getInternetAccount(assemblyName);
-	        const { baseURL } = internetAccount;
-	        const url = new URL('refSeqs', baseURL);
-	        const searchParams = new URLSearchParams({ assembly: assemblyName });
-	        url.search = searchParams.toString();
-	        const uri = url.toString();
-	        const response = await this.fetch(internetAccount, uri);
-	        if (!response.ok) {
-	            let errorMessage;
-	            try {
-	                errorMessage = await response.text();
-	            }
-	            catch {
-	                errorMessage = '';
-	            }
-	            throw new Error(`getRegions failed: ${response.status} (${response.statusText})${errorMessage ? ` (${errorMessage})` : ''}`);
-	        }
-	        const refSeqs = await response.json();
-	        return refSeqs.map((refSeq) => ({
-	            refName: refSeq.name,
-	            start: 0,
-	            end: refSeq.length,
-	        }));
-	    }
-	    getAssemblies(internetAccountId) {
-	        const { assemblyManager } = require$$1$2.getSession(this.clientStore);
-	        return assemblyManager.assemblies.filter((assembly) => {
-	            const sequenceMetadata = configuration.getConf(assembly, ['sequence', 'metadata']);
-	            if (sequenceMetadata &&
-	                sequenceMetadata.apollo &&
-	                sequenceMetadata.internetAccountConfigId) {
-	                if (internetAccountId) {
-	                    return sequenceMetadata.internetAccountConfigId === internetAccountId;
-	                }
-	                return true;
-	            }
-	            return false;
-	        });
-	    }
-	    async submitChange(change, opts = {}) {
-	        const { internetAccountId } = opts;
-	        const internetAccount = this.clientStore.getInternetAccount('assembly' in change ? change.assembly : undefined, internetAccountId);
-	        const { baseURL } = internetAccount;
-	        const url = new URL('changes', baseURL).href;
-	        const response = await this.fetch(internetAccount, url, {
-	            method: 'POST',
-	            body: JSON.stringify(change.toJSON()),
-	            headers: { 'Content-Type': 'application/json' },
-	        });
-	        if (!response.ok) {
-	            const errorMessage = await createFetchErrorMessage(response, 'submitChange failed');
-	            throw new Error(errorMessage);
-	        }
-	        const results = new dist$2.ValidationResultSet();
-	        if (!response.ok) {
-	            results.ok = false;
-	        }
-	        return results;
-	    }
-	}
-
-	class InMemoryFileDriver extends BackendDriver {
-	    async getFeatures() {
-	        return [[], []];
-	    }
-	    async getSequence(region) {
-	        const { assemblyName, end, refName, start } = region;
-	        const assembly = this.clientStore.assemblies.get(assemblyName);
-	        if (!assembly) {
-	            return { seq: '', refSeq: refName };
-	        }
-	        const refSeq = assembly.refSeqs.get(refName);
-	        if (!refSeq) {
-	            return { seq: '', refSeq: refName };
-	        }
-	        const seq = refSeq.getSequence(start, end);
-	        return { seq, refSeq: refName };
-	    }
-	    async getRefNameAliases(assemblyName) {
-	        const assembly = this.clientStore.assemblies.get(assemblyName);
-	        const refNameAliases = [];
-	        if (!assembly) {
-	            return refNameAliases;
-	        }
-	        for (const [, refSeq] of assembly.refSeqs) {
-	            refNameAliases.push({
-	                refName: refSeq.name,
-	                aliases: [refSeq._id],
-	                uniqueId: `alias-${refSeq._id}`,
-	            });
-	        }
-	        return refNameAliases;
-	    }
-	    async getRegions(assemblyName) {
-	        const assembly = this.clientStore.assemblies.get(assemblyName);
-	        if (!assembly) {
-	            return [];
-	        }
-	        const regions = [];
-	        for (const [, refSeq] of assembly.refSeqs) {
-	            regions.push({
-	                assemblyName,
-	                refName: refSeq.name,
-	                start: refSeq.sequence[0].start,
-	                end: refSeq.sequence[0].stop,
-	            });
-	        }
-	        return regions;
-	    }
-	    getAssemblies() {
-	        const { assemblyManager } = require$$1$2.getSession(this.clientStore);
-	        return assemblyManager.assemblies.filter((assembly) => {
-	            const sequenceMetadata = configuration.getConf(assembly, ['sequence', 'metadata']);
-	            return Boolean(sequenceMetadata &&
-	                sequenceMetadata.apollo &&
-	                !sequenceMetadata.file &&
-	                !sequenceMetadata.internetAccountConfigId);
-	        });
-	    }
-	    async submitChange(_change, _opts = {}) {
-	        const { clientStore } = this;
-	        const { assemblies } = clientStore;
-	        clientStore.clearCheckResults();
-	        for (const [, assembly] of assemblies) {
-	            if (assembly.backendDriverType === 'InMemoryFileDriver') {
-	                const checkResults = await checkFeatures(assembly);
-	                clientStore.addCheckResults(checkResults);
-	            }
-	        }
-	        return new dist$2.ValidationResultSet();
-	    }
-	    async searchFeatures(_term, _assemblies) {
-	        return [];
-	    }
-	}
-
-	/* eslint-disable @typescript-eslint/require-await */
-	class DesktopFileDriver extends BackendDriver {
-	    async loadAssembly(assemblyName) {
-	        const { assemblyManager } = require$$1$2.getSession(this.clientStore);
-	        const assembly = assemblyManager.get(assemblyName);
-	        if (!assembly) {
-	            throw new Error(`Assembly ${assemblyName} not found`);
-	        }
-	        const { file } = configuration.getConf(assembly, ['sequence', 'metadata']);
-	        // eslint-disable-next-line @typescript-eslint/no-require-imports, @typescript-eslint/consistent-type-imports
-	        const fs = require('node:fs');
-	        const fileContents = await fs.promises.readFile(file, 'utf8');
-	        return loadAssemblyIntoClient(assemblyName, fileContents, this.clientStore);
-	    }
-	    async getAssembly(assemblyName) {
-	        let assembly = this.clientStore.assemblies.get(assemblyName);
-	        if (!assembly) {
-	            assembly = await this.loadAssembly(assemblyName);
-	        }
-	        return assembly;
-	    }
-	    async getRefNameAliases(assemblyName) {
-	        const assembly = await this.getAssembly(assemblyName);
-	        const refNameAliases = [];
-	        for (const [, refSeq] of assembly.refSeqs) {
-	            refNameAliases.push({
-	                refName: refSeq.name,
-	                aliases: [refSeq._id],
-	                uniqueId: `alias-${refSeq._id}`,
-	            });
-	        }
-	        return refNameAliases;
-	    }
-	    async getFeatures(region) {
-	        await this.getAssembly(region.assemblyName);
-	        return [[], []];
-	    }
-	    async getSequence(region) {
-	        const { assemblyName, end, refName, start } = region;
-	        const assembly = await this.getAssembly(assemblyName);
-	        const refSeq = assembly.refSeqs.get(refName);
-	        if (!refSeq) {
-	            throw new Error(`refSeq ${refName} not found in client data store`);
-	        }
-	        const seq = refSeq.getSequence(start, end);
-	        return { seq, refSeq: refName };
-	    }
-	    async getRegions(assemblyName) {
-	        const assembly = await this.getAssembly(assemblyName);
-	        const regions = [];
-	        for (const [, refSeq] of assembly.refSeqs) {
-	            regions.push({
-	                assemblyName,
-	                refName: refSeq.name,
-	                start: refSeq.sequence[0].start,
-	                end: refSeq.sequence[0].stop,
-	            });
-	        }
-	        return regions;
-	    }
-	    getAssemblies() {
-	        const { assemblyManager } = require$$1$2.getSession(this.clientStore);
-	        return assemblyManager.assemblies.filter((assembly) => {
-	            const sequenceMetadata = configuration.getConf(assembly, ['sequence', 'metadata']);
-	            return Boolean(sequenceMetadata &&
-	                sequenceMetadata.apollo &&
-	                !sequenceMetadata.internetAccountConfigId &&
-	                sequenceMetadata.file);
-	        });
-	    }
-	    async submitChange(change) {
-	        if (!dist$3.isAssemblySpecificChange(change)) {
-	            throw new Error(`Cannot use this type of change with local file: "${change.typeName}"`);
-	        }
-	        const { assemblyManager } = require$$1$2.getSession(this.clientStore);
-	        const assembly = assemblyManager.get(change.assembly);
-	        if (!assembly) {
-	            throw new Error(`Could not find assembly with name "${change.assembly}"`);
-	        }
-	        const { file } = configuration.getConf(assembly, ['sequence', 'metadata']);
-	        const clientAssembly = this.clientStore.assemblies.get(change.assembly);
-	        if (!clientAssembly) {
-	            throw new Error(`Could not find assembly in client with name "${change.assembly}"`);
-	        }
-	        const refSeqs = new Set(...clientAssembly.refSeqs.keys());
-	        const { checkResults } = this.clientStore;
-	        for (const checkResult of checkResults.values()) {
-	            if (refSeqs.has(checkResult.refSeq)) {
-	                checkResults.delete(checkResult._id);
-	            }
-	        }
-	        const newCheckResults = await checkFeatures(clientAssembly);
-	        this.clientStore.addCheckResults(newCheckResults);
-	        const gff3Items = [{ directive: 'gff-version', value: '3' }];
-	        for (const [, refSeq] of clientAssembly.refSeqs) {
-	            gff3Items.push({
-	                directive: 'sequence-region',
-	                value: `${refSeq.name} 1 ${refSeq.sequence[0].stop}`,
-	            });
-	        }
-	        for (const comment of clientAssembly.comments) {
-	            gff3Items.push({ comment });
-	        }
-	        for (const [, refSeq] of clientAssembly.refSeqs) {
-	            const { features } = refSeq;
-	            for (const [, feature] of features) {
-	                gff3Items.push(dist$2.annotationFeatureToGFF3(require$$1$3.getSnapshot(feature)));
-	            }
-	        }
-	        for (const [, refSeq] of clientAssembly.refSeqs) {
-	            const [sequence] = refSeq.sequence;
-	            const formattedSequence = dist$2.splitStringIntoChunks(sequence.sequence, 80).join('\n');
-	            gff3Items.push({
-	                id: refSeq.name,
-	                description: refSeq.description,
-	                sequence: formattedSequence,
-	            });
-	        }
-	        const gff3Contents = gff.formatSync(gff3Items);
-	        // eslint-disable-next-line @typescript-eslint/no-require-imports, @typescript-eslint/consistent-type-imports
-	        const fs = require('node:fs');
-	        await fs.promises.writeFile(file, gff3Contents, 'utf8');
-	        const results = new dist$2.ValidationResultSet();
-	        return results;
-	    }
-	    async searchFeatures(_term, _assemblies) {
-	        return [];
-	    }
-	}
-
 	function clientDataStoreFactory(AnnotationFeatureExtended) {
 	    return require$$1$3.types
 	        .model('ClientDataStore', {
@@ -65237,14 +62673,32 @@
 	            }
 	            return self.assemblies.put(assemblySnapshot);
 	        },
+	    }))
+	        .actions((self) => ({
 	        addFeature(assemblyId, feature) {
-	            const assembly = self.assemblies.get(assemblyId);
-	            if (!assembly) {
-	                throw new Error(`Could not find assembly "${assemblyId}" to add feature "${feature._id}"`);
+	            const session = require$$1$2.getSession(self);
+	            const { assemblyManager } = session;
+	            let apolloAssembly = self.assemblies.get(assemblyId);
+	            if (!apolloAssembly) {
+	                // maybe it's a valid assembly that we haven't loaded yet
+	                const assembly = assemblyManager.get(assemblyId);
+	                if (!assembly) {
+	                    throw new Error(`Could not find assembly "${assemblyId}" to add feature "${feature._id}"`);
+	                }
+	                apolloAssembly = self.addAssembly(assemblyId);
 	            }
-	            const ref = assembly.refSeqs.get(feature.refSeq);
+	            let ref = apolloAssembly.refSeqs.get(feature.refSeq);
 	            if (!ref) {
-	                throw new Error(`Could not find refSeq "${feature.refSeq}" to add feature "${feature._id}"`);
+	                // maybe it's a valid refName that we haven't loaded yet
+	                const assembly = assemblyManager.get(assemblyId);
+	                if (!assembly) {
+	                    throw new Error(`Could not find assembly "${assemblyId}" to add feature "${feature._id}"`);
+	                }
+	                const canonicalRefName = assembly.getCanonicalRefName(feature.refSeq);
+	                if (!canonicalRefName) {
+	                    throw new Error(`Could not find refSeq "${feature.refSeq}" to add feature "${feature._id}"`);
+	                }
+	                ref = apolloAssembly.addRefSeq(feature.refSeq, canonicalRefName);
 	            }
 	            ref.features.put(feature);
 	        },
@@ -65344,14 +62798,11 @@
 	    }))
 	        .views((self) => ({
 	        getBackendDriver(assemblyId) {
-	            if (!assemblyId) {
-	                return self.collaborationServerDriver;
-	            }
 	            const session = require$$1$2.getSession(self);
 	            const { assemblyManager } = session;
 	            const assembly = assemblyManager.get(assemblyId);
 	            if (!assembly) {
-	                return self.collaborationServerDriver;
+	                return;
 	            }
 	            const { file, internetAccountConfigId } = configuration.getConf(assembly, [
 	                'sequence',
@@ -65536,17 +62987,14 @@
 	                const lgv = view;
 	                if (lgv.initialized) {
 	                    const { dynamicBlocks } = lgv;
-	                    // eslint-disable-next-line unicorn/no-array-for-each
-	                    dynamicBlocks.forEach((block) => {
-	                        if (block.regionNumber !== undefined) {
-	                            const { assemblyName, end, refName, start } = block;
-	                            const assembly = self.apolloDataStore.assemblies.get(assemblyName);
-	                            if (assembly &&
-	                                assembly.backendDriverType === 'CollaborationServerDriver') {
-	                                locations.push({ assemblyName, refName, start, end });
-	                            }
+	                    for (const block of dynamicBlocks.contentBlocks) {
+	                        const { assemblyName, end, refName, start } = block;
+	                        const assembly = self.apolloDataStore.assemblies.get(assemblyName);
+	                        if (assembly &&
+	                            assembly.backendDriverType === 'CollaborationServerDriver') {
+	                            locations.push({ assemblyName, refName, start, end });
 	                        }
-	                    });
+	                    }
 	                }
 	            }
 	            if (locations.length === 0) {
@@ -65593,18 +63041,14 @@
 	                    const lgv = view;
 	                    if (lgv.initialized) {
 	                        const { dynamicBlocks } = lgv;
-	                        // eslint-disable-next-line unicorn/no-array-for-each
-	                        dynamicBlocks.forEach((block) => {
-	                            if (block.regionNumber !== undefined) {
-	                                const { assemblyName, end, refName, start } = block;
-	                                const assembly = self.apolloDataStore.assemblies.get(assemblyName);
-	                                if (assembly &&
-	                                    assembly.backendDriverType ===
-	                                        'CollaborationServerDriver') {
-	                                    locations.push({ assemblyName, refName, start, end });
-	                                }
+	                        for (const block of dynamicBlocks.contentBlocks) {
+	                            const { assemblyName, end, refName, start } = block;
+	                            const assembly = self.apolloDataStore.assemblies.get(assemblyName);
+	                            if (assembly &&
+	                                assembly.backendDriverType === 'CollaborationServerDriver') {
+	                                locations.push({ assemblyName, refName, start, end });
 	                            }
-	                        });
+	                        }
 	                    }
 	                }
 	                if (locations.length === 0) {
@@ -65986,6 +63430,9 @@
 	                                break;
 	                            }
 	                            const backendDriver = dataStore.getBackendDriver(assemblyName);
+	                            if (!backendDriver) {
+	                                break;
+	                            }
 	                            const { seq: sequence } = await backendDriver.getSequence(region);
 	                            handle.workers[0].postMessage({
 	                                apollo,
@@ -66001,6 +63448,9 @@
 	                                break;
 	                            }
 	                            const backendDriver = dataStore.getBackendDriver(assembly);
+	                            if (!backendDriver) {
+	                                break;
+	                            }
 	                            const regions = await backendDriver.getRegions(assembly);
 	                            handle.workers[0].postMessage({
 	                                apollo,
@@ -66016,6 +63466,9 @@
 	                                break;
 	                            }
 	                            const backendDriver = dataStore.getBackendDriver(assembly);
+	                            if (!backendDriver) {
+	                                break;
+	                            }
 	                            const refNameAliases = await backendDriver.getRefNameAliases(assembly);
 	                            handle.workers[0].postMessage({
 	                                apollo,
@@ -66032,14 +63485,14 @@
 	    }
 	    configure(pluginManager) {
 	        if (require$$1$2.isAbstractMenuManager(pluginManager.rootModel)) {
-	            pluginManager.jexl.addFunction('colorFeature', (featureType) => {
-	                if (featureType === 'pseudogenic_transcript') {
+	            pluginManager.jexl.addFunction('geneBackgroundColor', (featureType) => {
+	                if (featureType === 'pseudogene') {
 	                    return material.alpha('rgb(148, 203, 236)', 0.6);
 	                }
-	                if (featureType === 'nonCodingTranscript') {
+	                if (featureType === 'ncRNA_gene') {
 	                    return material.alpha('rgb(194, 106, 119)', 0.6);
 	                }
-	                throw new Error('Invalid type');
+	                return;
 	            });
 	            addTopLevelMenus(pluginManager.rootModel);
 	        }
