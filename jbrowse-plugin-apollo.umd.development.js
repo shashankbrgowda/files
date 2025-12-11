@@ -1615,7 +1615,6 @@
 	});
 	AssemblySpecificChange$3.AssemblySpecificChange = void 0;
 	AssemblySpecificChange$3.isAssemblySpecificChange = isAssemblySpecificChange$1;
-	/* eslint-disable @typescript-eslint/no-unnecessary-condition */
 	var Change_1$1 = Change$3;
 	function isAssemblySpecificChange$1(
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -1632,7 +1631,37 @@
 	    _this.assembly = json.assembly;
 	    return _this;
 	  }
-	  return _createClass(AssemblySpecificChange);
+	  _createClass(AssemblySpecificChange, [{
+	    key: "getIndexedIds",
+	    value: function getIndexedIds(feature, idsToIndex) {
+	      var _a;
+	      var indexedIds = [];
+	      var _iterator = _createForOfIteratorHelper(idsToIndex !== null && idsToIndex !== void 0 ? idsToIndex : []),
+	        _step;
+	      try {
+	        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+	          var additionalId = _step.value;
+	          var idValue = (_a = feature.attributes) === null || _a === void 0 ? void 0 : _a[additionalId];
+	          if (idValue) {
+	            indexedIds.push(idValue[0]);
+	          }
+	        }
+	      } catch (err) {
+	        _iterator.e(err);
+	      } finally {
+	        _iterator.f();
+	      }
+	      if (feature.children) {
+	        for (var _i = 0, _Object$values = Object.values(feature.children); _i < _Object$values.length; _i++) {
+	          var child = _Object$values[_i];
+	          var childIndexedIds = this.getIndexedIds(child, idsToIndex);
+	          indexedIds.push.apply(indexedIds, _toConsumableArray(childIndexedIds));
+	        }
+	      }
+	      return indexedIds;
+	    }
+	  }]);
+	  return AssemblySpecificChange;
 	}(Change_1$1.Change);
 	AssemblySpecificChange$3.AssemblySpecificChange = AssemblySpecificChange$2;
 
@@ -4706,7 +4735,6 @@
 	});
 	AssemblySpecificChange$1.AssemblySpecificChange = void 0;
 	AssemblySpecificChange$1.isAssemblySpecificChange = isAssemblySpecificChange;
-	/* eslint-disable @typescript-eslint/no-unnecessary-condition */
 	var Change_1 = Change$1;
 	function isAssemblySpecificChange(
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -4723,7 +4751,37 @@
 	    _this.assembly = json.assembly;
 	    return _this;
 	  }
-	  return _createClass(AssemblySpecificChange);
+	  _createClass(AssemblySpecificChange, [{
+	    key: "getIndexedIds",
+	    value: function getIndexedIds(feature, idsToIndex) {
+	      var _a;
+	      var indexedIds = [];
+	      var _iterator = _createForOfIteratorHelper(idsToIndex !== null && idsToIndex !== void 0 ? idsToIndex : []),
+	        _step;
+	      try {
+	        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+	          var additionalId = _step.value;
+	          var idValue = (_a = feature.attributes) === null || _a === void 0 ? void 0 : _a[additionalId];
+	          if (idValue) {
+	            indexedIds.push(idValue[0]);
+	          }
+	        }
+	      } catch (err) {
+	        _iterator.e(err);
+	      } finally {
+	        _iterator.f();
+	      }
+	      if (feature.children) {
+	        for (var _i = 0, _Object$values = Object.values(feature.children); _i < _Object$values.length; _i++) {
+	          var child = _Object$values[_i];
+	          var childIndexedIds = this.getIndexedIds(child, idsToIndex);
+	          indexedIds.push.apply(indexedIds, _toConsumableArray(childIndexedIds));
+	        }
+	      }
+	      return indexedIds;
+	    }
+	  }]);
+	  return AssemblySpecificChange;
 	}(Change_1.Change);
 	AssemblySpecificChange$1.AssemblySpecificChange = AssemblySpecificChange;
 
@@ -5626,7 +5684,7 @@
 	var util_1$9 = require$$1__default$1["default"];
 	var bson_objectid_1$2 = /*#__PURE__*/tslib_1$4.__importDefault(objectid);
 	var gffReservedKeys_1 = gffReservedKeys;
-	function gff3ToAnnotationFeature(gff3Feature, refSeq, featureIds) {
+	function gff3ToAnnotationFeature(gff3Feature, refSeq) {
 	  var _gff3Feature = _slicedToArray(gff3Feature, 1),
 	    firstFeature = _gff3Feature[0];
 	  var end = firstFeature.end,
@@ -5650,7 +5708,7 @@
 	    _getFeatureMinMax2 = _slicedToArray(_getFeatureMinMax, 2),
 	    min = _getFeatureMinMax2[0],
 	    max = _getFeatureMinMax2[1];
-	  var convertedChildren = convertChildren(gff3Feature, refSeq, featureIds);
+	  var convertedChildren = convertChildren(gff3Feature, refSeq);
 	  var convertedAttributes = convertFeatureAttributes$1(gff3Feature);
 	  var feature = {
 	    _id: new bson_objectid_1$2["default"]().toHexString(),
@@ -5673,9 +5731,6 @@
 	  }
 	  if (convertedAttributes) {
 	    feature.attributes = convertedAttributes;
-	  }
-	  if (featureIds) {
-	    featureIds.push(feature._id);
 	  }
 	  return feature;
 	}
@@ -5810,7 +5865,7 @@
 	      if (firstChildFeatureLocation.type === 'CDS') {
 	        cdsFeatures.push(childFeature);
 	      } else {
-	        var child = gff3ToAnnotationFeature(childFeature, refSeq, featureIds);
+	        var child = gff3ToAnnotationFeature(childFeature, refSeq);
 	        convertedChildren[child._id] = child;
 	      }
 	    }
@@ -5820,7 +5875,7 @@
 	    _iterator2.f();
 	  }
 	  if (cdsFeatures.length > 0) {
-	    var processedCDS = processCDS(cdsFeatures, refSeq, featureIds);
+	    var processedCDS = processCDS(cdsFeatures, refSeq);
 	    var _iterator3 = _createForOfIteratorHelper(processedCDS),
 	      _step3;
 	    try {
@@ -6052,7 +6107,7 @@
 	 * should be represented in our internal structure
 	 * @param cdsFeatures -
 	 */
-	function processCDS(cdsFeatures, refSeq, featureIds) {
+	function processCDS(cdsFeatures, refSeq) {
 	  var locationCounts = cdsFeatures.map(function (cds) {
 	    return cds.length;
 	  });
@@ -6063,7 +6118,7 @@
 	    return count > 1;
 	  })) {
 	    return cdsFeatures.map(function (cds) {
-	      return gff3ToAnnotationFeature(cds, refSeq, featureIds);
+	      return gff3ToAnnotationFeature(cds, refSeq);
 	    });
 	  }
 	  // If all CDS have a single location, we guess that this GFF3 represented CDS
@@ -6089,7 +6144,7 @@
 	  });
 	  // If no overlaps, assume it's a single CDS feature
 	  if (!overlapping) {
-	    return [gff3ToAnnotationFeature(sortedCDSLocations, refSeq, featureIds)];
+	    return [gff3ToAnnotationFeature(sortedCDSLocations, refSeq)];
 	  }
 	  // Some CDS locations overlap, the best we can do is use the original order to
 	  // guess how to group the locations into features
@@ -6126,7 +6181,7 @@
 	    _iterator12.f();
 	  }
 	  return groupedLocations.map(function (group) {
-	    return gff3ToAnnotationFeature(group, refSeq, featureIds);
+	    return gff3ToAnnotationFeature(group, refSeq);
 	  });
 	}
 
@@ -6486,71 +6541,76 @@
 	    key: "addFeatureIntoDb",
 	    value: function () {
 	      var _addFeatureIntoDb = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(gff3Feature, backend) {
-	        var featureModel, refSeqModel, user, assembly, refSeqCache, _gff3Feature, refName, refSeqDoc, _yield$refSeqModel$fi, featureIds, newFeature;
+	        var INDEXED_IDS, idsToIndex, assembly, refSeqCache, featureModel, refSeqModel, user, _gff3Feature, refName, refSeqDoc, _yield$refSeqModel$fi, newFeature, allIds, indexedIds;
 	        return _regeneratorRuntime().wrap(function _callee3$(_context3) {
 	          while (1) switch (_context3.prev = _context3.next) {
 	            case 0:
-	              featureModel = backend.featureModel, refSeqModel = backend.refSeqModel, user = backend.user;
+	              INDEXED_IDS = browser$1.env.INDEXED_IDS;
+	              if (INDEXED_IDS) {
+	                idsToIndex = INDEXED_IDS.split(',');
+	              }
 	              assembly = this.assembly, refSeqCache = this.refSeqCache;
+	              featureModel = backend.featureModel, refSeqModel = backend.refSeqModel, user = backend.user;
 	              _gff3Feature = _slicedToArray(gff3Feature, 1), refName = _gff3Feature[0].seq_id;
 	              if (refName) {
-	                _context3.next = 5;
+	                _context3.next = 7;
 	                break;
 	              }
 	              throw new Error("Valid seq_id not found in feature ".concat(JSON.stringify(gff3Feature)));
-	            case 5:
+	            case 7:
 	              refSeqDoc = refSeqCache.get(refName);
-	              if (refSeqDoc) {
-	                _context3.next = 20;
-	                break;
-	              }
-	              _context3.next = 9;
-	              return refSeqModel.findOne({
-	                assembly: assembly,
-	                name: refName
-	              }).exec();
-	            case 9:
-	              _context3.t1 = _yield$refSeqModel$fi = _context3.sent;
-	              _context3.t0 = _context3.t1 !== null;
-	              if (!_context3.t0) {
-	                _context3.next = 13;
-	                break;
-	              }
-	              _context3.t0 = _yield$refSeqModel$fi !== void 0;
-	            case 13:
-	              if (!_context3.t0) {
-	                _context3.next = 17;
-	                break;
-	              }
-	              _context3.t2 = _yield$refSeqModel$fi;
-	              _context3.next = 18;
-	              break;
-	            case 17:
-	              _context3.t2 = undefined;
-	            case 18:
-	              refSeqDoc = _context3.t2;
-	              if (refSeqDoc) {
-	                refSeqCache.set(refName, refSeqDoc);
-	              }
-	            case 20:
 	              if (refSeqDoc) {
 	                _context3.next = 22;
 	                break;
 	              }
-	              throw new Error("RefSeq was not found by assembly \"".concat(assembly, "\" and seq_id \"").concat(refName, "\" not found"));
+	              _context3.next = 11;
+	              return refSeqModel.findOne({
+	                assembly: assembly,
+	                name: refName
+	              }).exec();
+	            case 11:
+	              _context3.t1 = _yield$refSeqModel$fi = _context3.sent;
+	              _context3.t0 = _context3.t1 !== null;
+	              if (!_context3.t0) {
+	                _context3.next = 15;
+	                break;
+	              }
+	              _context3.t0 = _yield$refSeqModel$fi !== void 0;
+	            case 15:
+	              if (!_context3.t0) {
+	                _context3.next = 19;
+	                break;
+	              }
+	              _context3.t2 = _yield$refSeqModel$fi;
+	              _context3.next = 20;
+	              break;
+	            case 19:
+	              _context3.t2 = undefined;
+	            case 20:
+	              refSeqDoc = _context3.t2;
+	              if (refSeqDoc) {
+	                refSeqCache.set(refName, refSeqDoc);
+	              }
 	            case 22:
-	              // Let's add featureId to parent feature
-	              featureIds = [];
-	              newFeature = (0, GFF3_1.gff3ToAnnotationFeature)(gff3Feature, refSeqDoc._id, featureIds); // Add into Mongo
+	              if (refSeqDoc) {
+	                _context3.next = 24;
+	                break;
+	              }
+	              throw new Error("RefSeq was not found by assembly \"".concat(assembly, "\" and seq_id \"").concat(refName, "\" not found"));
+	            case 24:
+	              newFeature = (0, GFF3_1.gff3ToAnnotationFeature)(gff3Feature, refSeqDoc._id);
+	              allIds = this.getAllIds(newFeature);
+	              indexedIds = this.getIndexedIds(newFeature, idsToIndex); // Add into Mongo
 	              // We cannot use Mongo 'session' / transaction here because Mongo has 16 MB limit for transaction
-	              _context3.next = 26;
+	              _context3.next = 29;
 	              return featureModel.create([_objectSpread2(_objectSpread2({
-	                allIds: featureIds
+	                allIds: allIds,
+	                indexedIds: indexedIds
 	              }, newFeature), {}, {
 	                user: user,
 	                status: -1
 	              })]);
-	            case 26:
+	            case 29:
 	            case "end":
 	              return _context3.stop();
 	          }
@@ -6561,6 +6621,19 @@
 	      }
 	      return addFeatureIntoDb;
 	    }()
+	  }, {
+	    key: "getAllIds",
+	    value: function getAllIds(feature) {
+	      var allIds = [feature._id];
+	      if (feature.children) {
+	        for (var _i = 0, _Object$values = Object.values(feature.children); _i < _Object$values.length; _i++) {
+	          var child = _Object$values[_i];
+	          var childIds = this.getAllIds(child);
+	          allIds.push.apply(allIds, _toConsumableArray(childIds));
+	        }
+	      }
+	      return allIds;
+	    }
 	  }]);
 	  return FromFileBaseChange;
 	}(common_1$n.AssemblySpecificChange);
@@ -17288,7 +17361,7 @@
 	    value: function () {
 	      var _executeOnServer = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(backend) {
 	        var _logger$debug, _logger$debug2;
-	        var assemblyModel, featureModel, refSeqModel, session, user, assembly, changes, logger, assemblyDoc, errMsg, featureCnt, _iterator, _step, _logger$debug3, change, addedFeature, allIds, copyFeature, parentFeatureId, _id, refSeq, refSeqDoc, _logger$debug4, _yield$featureModel$c, _yield$featureModel$c2, newFeatureDoc, _topLevelFeature$allI, topLevelFeature, parentFeature, childIds, _logger$verbose, _childIds, allIdsV2, _yield$featureModel$c3, _yield$featureModel$c4, _newFeatureDoc;
+	        var assemblyModel, featureModel, refSeqModel, session, user, assembly, changes, logger, assemblyDoc, errMsg, featureCnt, INDEXED_IDS, idsToIndex, _iterator, _step, _logger$debug3, change, addedFeature, allIds, copyFeature, parentFeatureId, _id, refSeq, refSeqDoc, _logger$debug4, indexedIds, _yield$featureModel$c, _yield$featureModel$c2, newFeatureDoc, _topLevelFeature$allI, topLevelFeature, parentFeature, childIds, _logger$verbose, _childIds, allIdsV2, _indexedIds, _yield$featureModel$c3, _yield$featureModel$c4, _newFeatureDoc;
 	        return _regeneratorRuntime().wrap(function _callee$(_context) {
 	          while (1) switch (_context.prev = _context.next) {
 	            case 0:
@@ -17308,119 +17381,127 @@
 	            case 9:
 	              featureCnt = 0;
 	              (_logger$debug = logger.debug) === null || _logger$debug === void 0 || _logger$debug.call(logger, "changes: ".concat(JSON.stringify(changes)));
+	              INDEXED_IDS = browser$1.env.INDEXED_IDS;
+	              if (INDEXED_IDS) {
+	                idsToIndex = INDEXED_IDS.split(',');
+	              }
 	              // Loop the changes
 	              _iterator = _createForOfIteratorHelper(changes);
-	              _context.prev = 12;
+	              _context.prev = 14;
 	              _iterator.s();
-	            case 14:
+	            case 16:
 	              if ((_step = _iterator.n()).done) {
-	                _context.next = 61;
+	                _context.next = 65;
 	                break;
 	              }
 	              change = _step.value;
 	              (_logger$debug3 = logger.debug) === null || _logger$debug3 === void 0 || _logger$debug3.call(logger, "change: ".concat(JSON.stringify(change)));
 	              addedFeature = change.addedFeature, allIds = change.allIds, copyFeature = change.copyFeature, parentFeatureId = change.parentFeatureId;
 	              _id = addedFeature._id, refSeq = addedFeature.refSeq;
-	              _context.next = 21;
+	              _context.next = 23;
 	              return refSeqModel.findById(refSeq).session(session).exec();
-	            case 21:
+	            case 23:
 	              refSeqDoc = _context.sent;
 	              if (refSeqDoc) {
-	                _context.next = 24;
+	                _context.next = 26;
 	                break;
 	              }
 	              throw new Error("RefSeq was not found by assembly \"".concat(assembly, "\" and seq_id \"").concat(refSeq, "\" not found"));
-	            case 24:
+	            case 26:
 	              if (!copyFeature) {
-	                _context.next = 34;
+	                _context.next = 37;
 	                break;
 	              }
-	              _context.next = 27;
+	              indexedIds = this.getIndexedIds(addedFeature, idsToIndex); // Add into Mongo
+	              _context.next = 30;
 	              return featureModel.create([_objectSpread2(_objectSpread2({}, addedFeature), {}, {
 	                allIds: allIds,
+	                indexedIds: indexedIds,
 	                status: -1,
 	                user: user
 	              })], {
 	                session: session
 	              });
-	            case 27:
+	            case 30:
 	              _yield$featureModel$c = _context.sent;
 	              _yield$featureModel$c2 = _slicedToArray(_yield$featureModel$c, 1);
 	              newFeatureDoc = _yield$featureModel$c2[0];
 	              (_logger$debug4 = logger.debug) === null || _logger$debug4 === void 0 || _logger$debug4.call(logger, "Copied feature, docId \"".concat(newFeatureDoc._id, "\" to assembly \"").concat(assembly, "\""));
 	              featureCnt++;
-	              _context.next = 58;
+	              _context.next = 62;
 	              break;
-	            case 34:
+	            case 37:
 	              if (!parentFeatureId) {
-	                _context.next = 50;
+	                _context.next = 53;
 	                break;
 	              }
-	              _context.next = 37;
+	              _context.next = 40;
 	              return featureModel.findOne({
 	                allIds: parentFeatureId
 	              }).session(session).exec();
-	            case 37:
+	            case 40:
 	              topLevelFeature = _context.sent;
 	              if (topLevelFeature) {
-	                _context.next = 40;
-	                break;
-	              }
-	              throw new Error("Could not find feature with ID \"".concat(parentFeatureId, "\""));
-	            case 40:
-	              parentFeature = this.getFeatureFromId(topLevelFeature, parentFeatureId);
-	              if (parentFeature) {
 	                _context.next = 43;
 	                break;
 	              }
-	              throw new Error("Could not find feature with ID \"".concat(parentFeatureId, "\" in feature \"").concat(topLevelFeature._id, "\""));
+	              throw new Error("Could not find feature with ID \"".concat(parentFeatureId, "\""));
 	            case 43:
+	              parentFeature = this.getFeatureFromId(topLevelFeature, parentFeatureId);
+	              if (parentFeature) {
+	                _context.next = 46;
+	                break;
+	              }
+	              throw new Error("Could not find feature with ID \"".concat(parentFeatureId, "\" in feature \"").concat(topLevelFeature._id, "\""));
+	            case 46:
 	              this.addChild(parentFeature, addedFeature);
 	              childIds = this.getChildFeatureIds(addedFeature);
 	              (_topLevelFeature$allI = topLevelFeature.allIds).push.apply(_topLevelFeature$allI, [_id].concat(_toConsumableArray(childIds)));
-	              _context.next = 48;
+	              _context.next = 51;
 	              return topLevelFeature.save();
-	            case 48:
-	              _context.next = 58;
+	            case 51:
+	              _context.next = 62;
 	              break;
-	            case 50:
+	            case 53:
 	              _childIds = this.getChildFeatureIds(addedFeature);
 	              allIdsV2 = [_id].concat(_toConsumableArray(_childIds));
-	              _context.next = 54;
+	              _indexedIds = this.getIndexedIds(addedFeature, idsToIndex);
+	              _context.next = 58;
 	              return featureModel.create([_objectSpread2({
 	                allIds: allIdsV2,
+	                indexedIds: _indexedIds,
 	                status: 0
 	              }, addedFeature)], {
 	                session: session
 	              });
-	            case 54:
+	            case 58:
 	              _yield$featureModel$c3 = _context.sent;
 	              _yield$featureModel$c4 = _slicedToArray(_yield$featureModel$c3, 1);
 	              _newFeatureDoc = _yield$featureModel$c4[0];
 	              (_logger$verbose = logger.verbose) === null || _logger$verbose === void 0 || _logger$verbose.call(logger, "Added docId \"".concat(_newFeatureDoc._id, "\""));
-	            case 58:
+	            case 62:
 	              featureCnt++;
-	            case 59:
-	              _context.next = 14;
-	              break;
-	            case 61:
-	              _context.next = 66;
-	              break;
 	            case 63:
-	              _context.prev = 63;
-	              _context.t0 = _context["catch"](12);
+	              _context.next = 16;
+	              break;
+	            case 65:
+	              _context.next = 70;
+	              break;
+	            case 67:
+	              _context.prev = 67;
+	              _context.t0 = _context["catch"](14);
 	              _iterator.e(_context.t0);
-	            case 66:
-	              _context.prev = 66;
-	              _iterator.f();
-	              return _context.finish(66);
-	            case 69:
-	              (_logger$debug2 = logger.debug) === null || _logger$debug2 === void 0 || _logger$debug2.call(logger, "Added ".concat(featureCnt, " new feature(s) into database."));
 	            case 70:
+	              _context.prev = 70;
+	              _iterator.f();
+	              return _context.finish(70);
+	            case 73:
+	              (_logger$debug2 = logger.debug) === null || _logger$debug2 === void 0 || _logger$debug2.call(logger, "Added ".concat(featureCnt, " new feature(s) into database."));
+	            case 74:
 	            case "end":
 	              return _context.stop();
 	          }
-	        }, _callee, this, [[12, 63, 66, 69]]);
+	        }, _callee, this, [[14, 67, 70, 73]]);
 	      }));
 	      function executeOnServer(_x) {
 	        return _executeOnServer.apply(this, arguments);
@@ -29343,6 +29424,19 @@
 	            ]);
 	        },
 	    });
+	    if (require$$1$2.isSessionModelWithWidgets(session)) {
+	        menuItems.push({
+	            label: 'Open feature details',
+	            onClick: () => {
+	                const apolloGeneWidget = session.addWidget('ApolloFeatureDetailsWidget', 'apolloFeatureDetailsWidget', {
+	                    feature: sourceFeature,
+	                    assembly: currentAssemblyId,
+	                    refName: region.refName,
+	                });
+	                session.showWidget(apolloGeneWidget);
+	            },
+	        });
+	    }
 	    return menuItems;
 	}
 	function navToFeatureCenter(feature, paddingPct, refSeqLength) {
@@ -29595,7 +29689,7 @@
 	                statusMessage: 'Pre-validating',
 	                progressPct: 0,
 	                cancelCallback: () => {
-	                    controller.abort();
+	                    controller.abort('AddAssembly');
 	                    jobsManager.abortJob(job.name);
 	                },
 	            };
@@ -47874,7 +47968,7 @@
 	            });
 	        }
 	        return () => {
-	            controller.abort();
+	            controller.abort('OntologyTermAutocomplete matcher');
 	        };
 	    }, [session, valueString, filterTerms, ontologyStore, needToLoadCurrentTerm]);
 	    // effect for loading term autocompletions
@@ -47893,7 +47987,7 @@
 	            });
 	        }
 	        return () => {
-	            controller.abort();
+	            controller.abort('OntologyTermAutocomplete loader');
 	        };
 	    }, [
 	        needToLoadTermChoices,
@@ -48045,17 +48139,24 @@
 	        // pre-validate
 	        const session = require$$1$2.getSession(this.dataStore);
 	        const controller = new AbortController();
-	        const { jobsManager, isLocked } = require$$1$2.getSession(this.dataStore);
+	        // eslint-disable-next-line @typescript-eslint/unbound-method
+	        const { jobsManager, isLocked, changeInProgress, setChangeInProgress } = require$$1$2.getSession(this.dataStore);
 	        if (isLocked) {
 	            session.notify('Cannot submit changes in locked mode');
+	            setChangeInProgress(false);
 	            return;
 	        }
+	        if (changeInProgress) {
+	            session.notify('Could not submit change, there is another change still in progress');
+	            return;
+	        }
+	        setChangeInProgress(true);
 	        const job = {
 	            name: change.typeName,
 	            statusMessage: 'Pre-validating',
 	            progressPct: 0,
 	            cancelCallback: () => {
-	                controller.abort();
+	                controller.abort('ChangeManager');
 	            },
 	        };
 	        if (updateJobsManager) {
@@ -48068,6 +48169,7 @@
 	                jobsManager.abortJob(job.name, msg);
 	            }
 	            session.notify(msg, 'error');
+	            setChangeInProgress(false);
 	            return;
 	        }
 	        try {
@@ -48080,6 +48182,7 @@
 	            }
 	            console.error(error);
 	            session.notify(`Error encountered in client: ${String(error)}. Data may be out of sync, please refresh the page`, 'error');
+	            setChangeInProgress(false);
 	            return;
 	        }
 	        // post-validate
@@ -48110,6 +48213,7 @@
 	                console.error(error);
 	                session.notify(String(error), 'error');
 	                await this.undo(change, false);
+	                setChangeInProgress(false);
 	                return;
 	            }
 	            if (!backendResult.ok) {
@@ -48119,6 +48223,7 @@
 	                }
 	                session.notify(msg, 'error');
 	                await this.undo(change, false);
+	                setChangeInProgress(false);
 	                return;
 	            }
 	            if (change.notification) {
@@ -48132,6 +48237,7 @@
 	        if (updateJobsManager) {
 	            jobsManager.done(job);
 	        }
+	        setChangeInProgress(false);
 	    }
 	    async undo(change, submitToBackend = true) {
 	        const inverseChange = change.getInverse();
@@ -48212,7 +48318,7 @@
 	        const refSeq = refSeqEntry.id;
 	        const internetAccount = this.clientStore.getInternetAccount(assemblyName);
 	        const { baseURL } = internetAccount;
-	        const url = new URL('features/getFeaturesByRange', baseURL);
+	        const url = new URL('features/getFeatures', baseURL);
 	        const searchParams = new URLSearchParams({
 	            refSeq,
 	            start: String(start),
@@ -48237,17 +48343,22 @@
 	    checkSocket(assembly, refSeq, internetAccount) {
 	        const { socket } = internetAccount;
 	        const token = internetAccount.retrieveToken();
+	        if (!token) {
+	            return;
+	        }
+	        const localSessionId = dist$2.makeUserSessionId(token);
 	        const channel = `${assembly}-${refSeq}`;
 	        const changeManager = new ChangeManager(this.clientStore);
 	        if (!socket.hasListeners(channel)) {
 	            socket.on(channel, async (message) => {
 	                // Save server last change sequence into session storage
 	                internetAccount.setLastChangeSequenceNumber(Number(message.changeSequence));
-	                if (message.userSessionId !== token && message.channel === channel) {
-	                    const change = dist$3.Change.fromJSON(message.changeInfo);
-	                    if (dist$3.isFeatureChange(change) && this.haveDataForChange(change)) {
-	                        await changeManager.submit(change, { submitToBackend: false });
-	                    }
+	                if (message.userSessionId === localSessionId) {
+	                    return; // we did this change, no need to apply it again
+	                }
+	                const change = dist$3.Change.fromJSON(message.changeInfo);
+	                if (dist$3.isFeatureChange(change) && this.haveDataForChange(change)) {
+	                    await changeManager.submit(change, { submitToBackend: false });
 	                }
 	            });
 	        }
@@ -49740,7 +49851,7 @@
 	            statusMessage: 'Uploading file, this may take awhile',
 	            progressPct: 0,
 	            cancelCallback: () => {
-	                controller.abort();
+	                controller.abort('ImportFeatures');
 	                jobsManager.abortJob(job.name);
 	            },
 	        };
@@ -50991,7 +51102,7 @@
 	            }
 	        });
 	        return () => {
-	            controller.abort();
+	            controller.abort('AuthTypeSelector');
 	        };
 	    }, [baseURL]);
 	    function handleClick(authType) {
@@ -51428,8 +51539,13 @@
 	                    return;
 	                }
 	                if (self.role) {
-	                    await self.initialize(self.role);
-	                    reaction.dispose();
+	                    try {
+	                        await self.initialize(self.role);
+	                        reaction.dispose();
+	                    }
+	                    catch {
+	                        // if initialize fails, do nothing so the autorun runs again
+	                    }
 	                }
 	            }, { name: 'ApolloInternetAccount' });
 	        },
@@ -55579,6 +55695,7 @@
 	    const refData = currentAssembly?.getByRefName(refName);
 	    const { changeManager } = session.apolloDataStore;
 	    const seqRef = React.useRef(null);
+	    const { changeInProgress } = session;
 	    if (!refData) {
 	        return null;
 	    }
@@ -56026,10 +56143,13 @@
 	            // highlight start codon and stop codons
 	            if (codonSeq === 'ATG') {
 	                elements.push(React__default["default"].createElement(material.Typography, { component: 'span', style: {
-	                        backgroundColor: 'yellow',
+	                        backgroundColor: changeInProgress ? 'lightgray' : 'yellow',
 	                        cursor: 'pointer',
 	                        border: '1px solid black',
 	                    }, key: codonGenomicPos, onClick: () => {
+	                        if (changeInProgress) {
+	                            return;
+	                        }
 	                        // NOTE: codonGenomicPos is important here for calculating the genomic location
 	                        // of the start codon. We are using the codonGenomicPos as the key in the typography
 	                        // elements to maintain the genomic postion of the codon start
@@ -56113,20 +56233,21 @@
 	        }
 	        // Trim any sequence before first start codon and after stop codon
 	        const startCodonIndex = translationSequence.indexOf('M');
-	        const stopCodonIndex = translationSequence.indexOf('*') + 1;
+	        const stopCodonIndex = translationSequence.indexOf('*');
 	        const startCodonPos = translSeqCodonStartGenomicPosArr[startCodonIndex].codonGenomicPos;
 	        const stopCodonPos = translSeqCodonStartGenomicPosArr[stopCodonIndex].codonGenomicPos;
 	        if (!startCodonPos || !stopCodonPos) {
 	            return;
 	        }
 	        const startCodonGenomicLoc = getCodonGenomicLocation(startCodonPos);
-	        const stopCodonGenomicLoc = getCodonGenomicLocation(stopCodonPos);
+	        let stopCodonGenomicLoc = getCodonGenomicLocation(stopCodonPos);
 	        if (strand === 1) {
 	            if (startCodonGenomicLoc > stopCodonGenomicLoc) {
 	                notify('Start codon genomic location should be less than stop codon genomic location', 'error');
 	                return;
 	            }
 	            let promise;
+	            stopCodonGenomicLoc += 3; // move to end of stop codon
 	            if (startCodonGenomicLoc !== cdsMin) {
 	                promise = new Promise((resolve) => {
 	                    updateCDSLocation(cdsMin, startCodonGenomicLoc, feature, true, () => {
@@ -56152,6 +56273,7 @@
 	                return;
 	            }
 	            let promise;
+	            stopCodonGenomicLoc -= 3; // move to end of stop codon
 	            if (startCodonGenomicLoc !== cdsMax) {
 	                promise = new Promise((resolve) => {
 	                    updateCDSLocation(cdsMax, startCodonGenomicLoc, feature, false, () => {
@@ -56195,27 +56317,29 @@
 	                            gap: 10,
 	                        } },
 	                        React__default["default"].createElement(material.Tooltip, { title: "Copy" },
-	                            React__default["default"].createElement(ContentCopyIcon, { style: { fontSize: 15, cursor: 'pointer' }, onClick: onCopyClick })),
+	                            React__default["default"].createElement("button", { onClick: onCopyClick, style: { border: 'none', background: 'none', padding: 0 }, disabled: changeInProgress },
+	                                React__default["default"].createElement(ContentCopyIcon, { style: { fontSize: 15 } }))),
 	                        React__default["default"].createElement(material.Tooltip, { title: "Trim" },
-	                            React__default["default"].createElement(ContentCutIcon, { style: { fontSize: 15, cursor: 'pointer' }, onClick: trimTranslationSequence }))))),
+	                            React__default["default"].createElement("button", { onClick: trimTranslationSequence, style: { border: 'none', background: 'none', padding: 0 }, disabled: changeInProgress },
+	                                React__default["default"].createElement(ContentCutIcon, { style: { fontSize: 15 } })))))),
 	            React__default["default"].createElement(material.Grid, { container: true, justifyContent: "center", alignItems: "center", style: { textAlign: 'center', marginTop: 10 } },
 	                React__default["default"].createElement(material.Grid, { size: 1 }),
 	                strand === 1 ? (React__default["default"].createElement(material.Grid, { size: 4 },
 	                    React__default["default"].createElement(StyledTextField, { margin: "dense", variant: "outlined", value: cdsMin + 1, onChangeCommitted: (newLocation) => {
 	                            return updateCDSLocation(cdsMin, newLocation - 1, feature, true);
-	                        }, style: { border: '1px solid black', borderRadius: 5 } }))) : (React__default["default"].createElement(material.Grid, { size: 4 },
+	                        }, style: { border: '1px solid black', borderRadius: 5 }, disabled: changeInProgress }))) : (React__default["default"].createElement(material.Grid, { size: 4 },
 	                    React__default["default"].createElement(StyledTextField, { margin: "dense", variant: "outlined", value: cdsMax, onChangeCommitted: (newLocation) => {
 	                            return updateCDSLocation(cdsMax, newLocation, feature, false);
-	                        }, style: { border: '1px solid black', borderRadius: 5 } }))),
+	                        }, style: { border: '1px solid black', borderRadius: 5 }, disabled: changeInProgress }))),
 	                React__default["default"].createElement(material.Grid, { size: 2 },
 	                    React__default["default"].createElement(material.Typography, { component: 'span' }, "CDS")),
 	                strand === 1 ? (React__default["default"].createElement(material.Grid, { size: 4 },
 	                    React__default["default"].createElement(StyledTextField, { margin: "dense", variant: "outlined", value: cdsMax, onChangeCommitted: (newLocation) => {
 	                            return updateCDSLocation(cdsMax, newLocation, feature, false);
-	                        }, style: { border: '1px solid black', borderRadius: 5 } }))) : (React__default["default"].createElement(material.Grid, { size: 4 },
+	                        }, style: { border: '1px solid black', borderRadius: 5 }, disabled: changeInProgress }))) : (React__default["default"].createElement(material.Grid, { size: 4 },
 	                    React__default["default"].createElement(StyledTextField, { margin: "dense", variant: "outlined", value: cdsMin + 1, onChangeCommitted: (newLocation) => {
 	                            return updateCDSLocation(cdsMin, newLocation - 1, feature, true);
-	                        }, style: { border: '1px solid black', borderRadius: 5 } }))),
+	                        }, style: { border: '1px solid black', borderRadius: 5 }, disabled: changeInProgress }))),
 	                React__default["default"].createElement(material.Grid, { size: 1 })))),
 	        React__default["default"].createElement("div", { style: { marginTop: 5 } }, transcriptExonParts.map((loc, index) => {
 	            return (React__default["default"].createElement("div", { key: index }, loc.type === 'exon' && (React__default["default"].createElement(material.Grid, { container: true, justifyContent: "center", alignItems: "center", style: { textAlign: 'center' } },
@@ -56224,19 +56348,19 @@
 	                strand === 1 ? (React__default["default"].createElement(material.Grid, { size: 4, style: { padding: 0 } },
 	                    React__default["default"].createElement(StyledTextField, { margin: "dense", variant: "outlined", value: loc.min + 1, onChangeCommitted: (newLocation) => {
 	                            return handleExonLocationChange(loc.min, newLocation - 1, feature, true);
-	                        } }))) : (React__default["default"].createElement(material.Grid, { size: 4, style: { padding: 0 } },
+	                        }, disabled: changeInProgress }))) : (React__default["default"].createElement(material.Grid, { size: 4, style: { padding: 0 } },
 	                    React__default["default"].createElement(StyledTextField, { margin: "dense", variant: "outlined", value: loc.max, onChangeCommitted: (newLocation) => {
 	                            return handleExonLocationChange(loc.max, newLocation, feature, false);
-	                        } }))),
+	                        }, disabled: changeInProgress }))),
 	                React__default["default"].createElement(material.Grid, { size: 2 },
 	                    React__default["default"].createElement(Strand, { strand: feature.strand })),
 	                strand === 1 ? (React__default["default"].createElement(material.Grid, { size: 4, style: { padding: 0 } },
 	                    React__default["default"].createElement(StyledTextField, { margin: "dense", variant: "outlined", value: loc.max, onChangeCommitted: (newLocation) => {
 	                            return handleExonLocationChange(loc.max, newLocation, feature, false);
-	                        } }))) : (React__default["default"].createElement(material.Grid, { size: 4, style: { padding: 0 } },
+	                        }, disabled: changeInProgress }))) : (React__default["default"].createElement(material.Grid, { size: 4, style: { padding: 0 } },
 	                    React__default["default"].createElement(StyledTextField, { margin: "dense", variant: "outlined", value: loc.min + 1, onChangeCommitted: (newLocation) => {
 	                            return handleExonLocationChange(loc.min, newLocation - 1, feature, true);
-	                        } }))),
+	                        }, disabled: changeInProgress }))),
 	                React__default["default"].createElement(material.Grid, { size: 1 }, index !== transcriptExonParts.length - 1 &&
 	                    getThreePrimeSpliceSite(loc, index).map((site, idx) => (React__default["default"].createElement(material.Typography, { key: idx, component: 'span', color: site.color }, site.spliceSite))))))));
 	        }))));
@@ -57913,8 +58037,8 @@
 	                    },
 	                });
 	                if (require$$1$2.isSessionModelWithWidgets(session)) {
-	                    contextMenuItemsForFeature.push({
-	                        label: 'Open transcript details',
+	                    contextMenuItemsForFeature.splice(1, 0, {
+	                        label: 'Open transcript editor',
 	                        onClick: () => {
 	                            const apolloTranscriptWidget = session.addWidget('ApolloTranscriptDetails', 'apolloTranscriptDetails', {
 	                                feature,
@@ -59106,34 +59230,26 @@
 
 	const configSchema$1 = configuration.ConfigurationSchema('LinearApolloReferenceSequenceDisplay', {}, { explicitIdentifier: 'displayId', explicitlyTyped: true });
 
-	function getSeqRow(strand, bpPerPx) {
+	function getSeqRow(strand, bpPerPx, reversed) {
 	    if (bpPerPx > 1 || strand === undefined) {
 	        return;
 	    }
+	    if (reversed) {
+	        return strand === 1 ? 4 : 3;
+	    }
 	    return strand === 1 ? 3 : 4;
 	}
-	function getTranslationRow(frame, bpPerPx) {
-	    const offset = bpPerPx <= 1 ? 2 : 0;
-	    switch (frame) {
-	        case 3: {
-	            return 0;
-	        }
-	        case 2: {
-	            return 1;
-	        }
-	        case 1: {
-	            return 2;
-	        }
-	        case -1: {
-	            return 3 + offset;
-	        }
-	        case -2: {
-	            return 4 + offset;
-	        }
-	        case -3: {
-	            return 5 + offset;
-	        }
+	function getTranslationRow(frame, bpPerPx, reversed) {
+	    const frameRows = bpPerPx <= 1 ? [2, 1, 0, 7, 6, 5] : [2, 1, 0, 5, 4, 3];
+	    if (reversed) {
+	        frameRows.reverse();
 	    }
+	    frameRows.unshift(0);
+	    const row = frameRows.at(frame);
+	    if (row === undefined) {
+	        throw new Error('could not find row');
+	    }
+	    return row;
 	}
 	function getLeftPx$1(feature, bpPerPx, offsetPx, block) {
 	    const blockLeftPx = block.offsetPx - offsetPx;
@@ -59155,7 +59271,7 @@
 	    ctx.strokeRect(left, top, width, height);
 	}
 	function drawHighlight(ctx, feature, bpPerPx, offsetPx, rowHeight, block, theme, selected = false) {
-	    const row = getSeqRow(feature.strand, bpPerPx);
+	    const row = getSeqRow(feature.strand, bpPerPx, block.reversed);
 	    if (!row) {
 	        return;
 	    }
@@ -59179,7 +59295,7 @@
 	    }
 	    for (const loc of cdsLocs) {
 	        const frame = require$$1$2.getFrame(loc.min, loc.max, feature.strand ?? 1, loc.phase);
-	        const row = getTranslationRow(frame, bpPerPx);
+	        const row = getTranslationRow(frame, bpPerPx, block.reversed);
 	        const left = getLeftPx$1(loc, bpPerPx, offsetPx, block);
 	        const top = row * rowHeight;
 	        const width = (loc.max - loc.min) / bpPerPx;
@@ -59202,10 +59318,10 @@
 	            hoveredFeature?.feature,
 	        ].filter((f) => f !== undefined)) {
 	            if (featureTypeOntology.isTypeOf(feature.type, 'CDS')) {
-	                drawCDSHighlight(ctx, feature, bpPerPx, offsetPx, rowHeight, block, theme, true);
+	                drawCDSHighlight(ctx, feature, bpPerPx, offsetPx, rowHeight, block, theme, feature._id === selectedFeature?._id);
 	            }
 	            else {
-	                drawHighlight(ctx, feature, bpPerPx, offsetPx, rowHeight, block, theme, true);
+	                drawHighlight(ctx, feature, bpPerPx, offsetPx, rowHeight, block, theme, feature._id === selectedFeature?._id);
 	            }
 	        }
 	        ctx.restore();
@@ -59240,30 +59356,23 @@
 	    const textX = Math.round(left + (width - textWidth) / 2);
 	    seqTrackctx.fillText(letter, textX, top + 10);
 	}
-	function drawTranslationFrameBackgrounds(canvas, ctx, bpPerPx, theme, dynamicBlocks, highContrast, sequenceRowHeight) {
+	function drawTranslationFrameBackgrounds(ctx, bpPerPx, theme, highContrast, left, width, sequenceRowHeight, reversed) {
 	    const frames = bpPerPx <= 1 ? [3, 2, 1, 0, 0, -1, -2, -3] : [3, 2, 1, -1, -2, -3];
+	    if (reversed) {
+	        frames.reverse();
+	    }
 	    for (const [idx, frame] of frames.entries()) {
 	        const frameColor = theme.palette.framesCDS.at(frame)?.main;
 	        if (!frameColor) {
 	            continue;
 	        }
 	        const top = idx * sequenceRowHeight;
-	        const { offsetPx } = dynamicBlocks;
-	        const left = Math.max(0, -offsetPx);
-	        const width = Math.round(dynamicBlocks.totalWidthPx);
 	        ctx.fillStyle = highContrast ? theme.palette.background.default : frameColor;
 	        ctx.fillRect(left, top, width, sequenceRowHeight);
 	        if (highContrast) {
 	            // eslint-disable-next-line prefer-destructuring
 	            const strokeStyle = theme.palette.grey[200];
 	            strokeRectInner(ctx, left, top, width, sequenceRowHeight, strokeStyle);
-	        }
-	    }
-	    // allows inter-region padding lines to show through
-	    for (const block of dynamicBlocks.getBlocks()) {
-	        if (block.type === 'InterRegionPaddingBlock') {
-	            const left = Math.round(block.offsetPx - dynamicBlocks.offsetPx);
-	            ctx.clearRect(left, 0, block.widthPx, canvas.height);
 	        }
 	    }
 	}
@@ -59321,9 +59430,10 @@
 	        return;
 	    }
 	    ctx.clearRect(0, 0, canvas.width, canvas.height);
-	    drawTranslationFrameBackgrounds(canvas, ctx, bpPerPx, theme, dynamicBlocks, highContrast, sequenceRowHeight);
 	    const { apolloDataStore } = session;
 	    for (const block of dynamicBlocks.contentBlocks) {
+	        const totalOffsetPx = block.offsetPx - offsetPx;
+	        drawTranslationFrameBackgrounds(ctx, bpPerPx, theme, highContrast, totalOffsetPx, block.widthPx, sequenceRowHeight, block.reversed);
 	        const assembly = apolloDataStore.assemblies.get(block.assemblyName);
 	        const ref = assembly?.getByRefName(block.refName);
 	        const roundedStart = Math.floor(block.start);
@@ -59333,10 +59443,14 @@
 	            return;
 	        }
 	        seq = seq.toUpperCase();
-	        const baseOffsetPx = (block.start - roundedStart) / bpPerPx;
-	        const seqLeftPx = block.offsetPx - offsetPx - baseOffsetPx;
+	        if (block.reversed) {
+	            seq = require$$1$2.revcom(seq);
+	        }
+	        const baseOffsetPx = (block.reversed ? roundedEnd - block.end : block.start - roundedStart) /
+	            bpPerPx;
+	        const seqLeftPx = totalOffsetPx - baseOffsetPx;
 	        for (let i = 0; i < seq.length; i++) {
-	            const bp = roundedStart + i;
+	            const bp = block.reversed ? roundedEnd - i : roundedStart + i;
 	            const codon = seq.slice(i, i + 3);
 	            drawBase(ctx, seq[i], i, seqLeftPx, bpPerPx, sequenceRowHeight, theme);
 	            if (codon.length !== 3) {
@@ -62332,7 +62446,7 @@
 	            const controller = new AbortController();
 	            const { signal } = controller;
 	            function abortDrag() {
-	                controller.abort();
+	                controller.abort('makeDisplayComponent');
 	            }
 	            globalThis.addEventListener('mousemove', mouseMove, { signal });
 	            globalThis.addEventListener('mouseup', abortDrag, { signal });
@@ -62769,7 +62883,7 @@
 	                            statusMessage: `Loading ontology "${name}", version "${version}", this may take a while`,
 	                            progressPct: 0,
 	                            cancelCallback: () => {
-	                                controller.abort();
+	                                controller.abort('ClientDataStore');
 	                                jobsManager.abortJob(job.name);
 	                            },
 	                        };
@@ -62908,6 +63022,7 @@
 	        apolloSelectedFeature: require$$1$3.types.safeReference(AnnotationFeatureExtended),
 	        jobsManager: require$$1$3.types.optional(ApolloJobModel, {}),
 	        isLocked: require$$1$3.types.optional(require$$1$3.types.boolean, false),
+	        changeInProgress: require$$1$3.types.optional(require$$1$3.types.boolean, false),
 	    })
 	        .volatile(() => ({
 	        apolloHoveredFeature: undefined,
@@ -62969,6 +63084,9 @@
 	        },
 	        toggleLocked() {
 	            self.isLocked = !self.isLocked;
+	        },
+	        setChangeInProgress(changeInProgress) {
+	            self.changeInProgress = changeInProgress;
 	        },
 	        getPluginConfiguration() {
 	            const { jbrowse } = require$$1$3.getRoot(self);
