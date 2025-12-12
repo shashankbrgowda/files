@@ -23885,7 +23885,7 @@
 	  d: "M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6z"
 	}), 'Add');
 
-	var version = "0.3.9";
+	var version = "0.3.10";
 
 	const ApolloConfigSchema = configuration.ConfigurationSchema('ApolloInternetAccount', {
 	    baseURL: {
