@@ -1634,14 +1634,15 @@
 	  _createClass(AssemblySpecificChange, [{
 	    key: "getIndexedIds",
 	    value: function getIndexedIds(feature, idsToIndex) {
-	      var _a;
 	      var indexedIds = [];
 	      var _iterator = _createForOfIteratorHelper(idsToIndex !== null && idsToIndex !== void 0 ? idsToIndex : []),
 	        _step;
 	      try {
 	        for (_iterator.s(); !(_step = _iterator.n()).done;) {
 	          var additionalId = _step.value;
-	          var idValue = (_a = feature.attributes) === null || _a === void 0 ? void 0 : _a[additionalId];
+	          var attributes = feature.attributes;
+	          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+	          var idValue = attributes instanceof Map ? attributes.get(additionalId) : attributes === null || attributes === void 0 ? void 0 : attributes[additionalId];
 	          if (idValue) {
 	            indexedIds.push(idValue[0]);
 	          }
@@ -1652,10 +1653,19 @@
 	        _iterator.f();
 	      }
 	      if (feature.children) {
-	        for (var _i = 0, _Object$values = Object.values(feature.children); _i < _Object$values.length; _i++) {
-	          var child = _Object$values[_i];
-	          var childIndexedIds = this.getIndexedIds(child, idsToIndex);
-	          indexedIds.push.apply(indexedIds, _toConsumableArray(childIndexedIds));
+	        var childrenIterable = feature.children instanceof Map ? feature.children.values() : Object.values(feature.children);
+	        var _iterator2 = _createForOfIteratorHelper(childrenIterable),
+	          _step2;
+	        try {
+	          for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+	            var child = _step2.value;
+	            var childIndexedIds = this.getIndexedIds(child, idsToIndex);
+	            indexedIds.push.apply(indexedIds, _toConsumableArray(childIndexedIds));
+	          }
+	        } catch (err) {
+	          _iterator2.e(err);
+	        } finally {
+	          _iterator2.f();
 	        }
 	      }
 	      return indexedIds;
@@ -4754,14 +4764,15 @@
 	  _createClass(AssemblySpecificChange, [{
 	    key: "getIndexedIds",
 	    value: function getIndexedIds(feature, idsToIndex) {
-	      var _a;
 	      var indexedIds = [];
 	      var _iterator = _createForOfIteratorHelper(idsToIndex !== null && idsToIndex !== void 0 ? idsToIndex : []),
 	        _step;
 	      try {
 	        for (_iterator.s(); !(_step = _iterator.n()).done;) {
 	          var additionalId = _step.value;
-	          var idValue = (_a = feature.attributes) === null || _a === void 0 ? void 0 : _a[additionalId];
+	          var attributes = feature.attributes;
+	          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+	          var idValue = attributes instanceof Map ? attributes.get(additionalId) : attributes === null || attributes === void 0 ? void 0 : attributes[additionalId];
 	          if (idValue) {
 	            indexedIds.push(idValue[0]);
 	          }
@@ -4772,10 +4783,19 @@
 	        _iterator.f();
 	      }
 	      if (feature.children) {
-	        for (var _i = 0, _Object$values = Object.values(feature.children); _i < _Object$values.length; _i++) {
-	          var child = _Object$values[_i];
-	          var childIndexedIds = this.getIndexedIds(child, idsToIndex);
-	          indexedIds.push.apply(indexedIds, _toConsumableArray(childIndexedIds));
+	        var childrenIterable = feature.children instanceof Map ? feature.children.values() : Object.values(feature.children);
+	        var _iterator2 = _createForOfIteratorHelper(childrenIterable),
+	          _step2;
+	        try {
+	          for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+	            var child = _step2.value;
+	            var childIndexedIds = this.getIndexedIds(child, idsToIndex);
+	            indexedIds.push.apply(indexedIds, _toConsumableArray(childIndexedIds));
+	          }
+	        } catch (err) {
+	          _iterator2.e(err);
+	        } finally {
+	          _iterator2.f();
 	        }
 	      }
 	      return indexedIds;
@@ -17025,17 +17045,22 @@
 	    value: function () {
 	      var _executeOnServer = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(backend) {
 	        var _this2 = this;
-	        var featureModel, session, changes, logger, _iterator, _step, _loop;
+	        var featureModel, session, changes, logger, INDEXED_IDS, idsToIndex, _iterator, _step, _loop;
 	        return _regeneratorRuntime().wrap(function _callee$(_context2) {
 	          while (1) switch (_context2.prev = _context2.next) {
 	            case 0:
 	              featureModel = backend.featureModel, session = backend.session;
-	              changes = this.changes, logger = this.logger; // Loop the changes
+	              changes = this.changes, logger = this.logger;
+	              INDEXED_IDS = browser$1.env.INDEXED_IDS;
+	              if (INDEXED_IDS) {
+	                idsToIndex = INDEXED_IDS.split(',');
+	              }
+	              // Loop the changes
 	              _iterator = _createForOfIteratorHelper(changes);
-	              _context2.prev = 3;
+	              _context2.prev = 5;
 	              _loop = /*#__PURE__*/_regeneratorRuntime().mark(function _loop() {
 	                var _logger$debug3;
-	                var change, deletedFeature, parentFeatureId, featureDoc, errMsg, _logger$debug, deletedIds, _logger$debug2;
+	                var change, deletedFeature, parentFeatureId, featureDoc, errMsg, _logger$debug, deletedIds, indexedIds, _logger$debug2;
 	                return _regeneratorRuntime().wrap(function _loop$(_context) {
 	                  while (1) switch (_context.prev = _context.next) {
 	                    case 0:
@@ -17076,59 +17101,71 @@
 	                      featureDoc.allIds = featureDoc.allIds.filter(function (id) {
 	                        return !deletedIds.includes(id);
 	                      });
+	                      indexedIds = _this2.getIndexedIds(featureDoc, idsToIndex);
+	                      if (featureDoc.indexedIds) {
+	                        if (indexedIds.length > 0) {
+	                          featureDoc.indexedIds = indexedIds;
+	                        } else {
+	                          delete featureDoc.indexedIds;
+	                        }
+	                      } else {
+	                        if (indexedIds.length > 0) {
+	                          featureDoc.indexedIds = indexedIds;
+	                        }
+	                      }
 	                      // Save updated document in Mongo
 	                      featureDoc.markModified('children'); // Mark as modified. Without this save() -method is not updating data in database
-	                      _context.prev = 20;
-	                      _context.next = 23;
+	                      _context.prev = 22;
+	                      _context.next = 25;
 	                      return featureDoc.save();
-	                    case 23:
-	                      _context.next = 29;
-	                      break;
 	                    case 25:
-	                      _context.prev = 25;
-	                      _context.t0 = _context["catch"](20);
+	                      _context.next = 31;
+	                      break;
+	                    case 27:
+	                      _context.prev = 27;
+	                      _context.t0 = _context["catch"](22);
 	                      (_logger$debug2 = logger.debug) === null || _logger$debug2 === void 0 || _logger$debug2.call(logger, "*** FAILED: ".concat(_context.t0));
 	                      throw _context.t0;
-	                    case 29:
+	                    case 31:
 	                      (_logger$debug3 = logger.debug) === null || _logger$debug3 === void 0 || _logger$debug3.call(logger, "Feature \"".concat(deletedFeature._id, "\" deleted from document \"").concat(featureDoc._id, "\""));
-	                    case 30:
+	                    case 32:
 	                    case "end":
 	                      return _context.stop();
 	                  }
-	                }, _loop, null, [[20, 25]]);
+	                }, _loop, null, [[22, 27]]);
 	              });
 	              _iterator.s();
-	            case 6:
+	            case 8:
 	              if ((_step = _iterator.n()).done) {
+	                _context2.next = 14;
+	                break;
+	              }
+	              return _context2.delegateYield(_loop(), "t0", 10);
+	            case 10:
+	              if (!_context2.t0) {
 	                _context2.next = 12;
 	                break;
 	              }
-	              return _context2.delegateYield(_loop(), "t0", 8);
-	            case 8:
-	              if (!_context2.t0) {
-	                _context2.next = 10;
-	                break;
-	              }
-	              return _context2.abrupt("continue", 10);
-	            case 10:
-	              _context2.next = 6;
-	              break;
+	              return _context2.abrupt("continue", 12);
 	            case 12:
-	              _context2.next = 17;
+	              _context2.next = 8;
 	              break;
 	            case 14:
-	              _context2.prev = 14;
-	              _context2.t1 = _context2["catch"](3);
+	              _context2.next = 19;
+	              break;
+	            case 16:
+	              _context2.prev = 16;
+	              _context2.t1 = _context2["catch"](5);
 	              _iterator.e(_context2.t1);
-	            case 17:
-	              _context2.prev = 17;
+	            case 19:
+	              _context2.prev = 19;
 	              _iterator.f();
-	              return _context2.finish(17);
-	            case 20:
+	              return _context2.finish(19);
+	            case 22:
 	            case "end":
 	              return _context2.stop();
 	          }
-	        }, _callee, this, [[3, 14, 17, 20]]);
+	        }, _callee, this, [[5, 16, 19, 22]]);
 	      }));
 	      function executeOnServer(_x) {
 	        return _executeOnServer.apply(this, arguments);
@@ -17361,7 +17398,7 @@
 	    value: function () {
 	      var _executeOnServer = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(backend) {
 	        var _logger$debug, _logger$debug2;
-	        var assemblyModel, featureModel, refSeqModel, session, user, assembly, changes, logger, assemblyDoc, errMsg, featureCnt, INDEXED_IDS, idsToIndex, _iterator, _step, _logger$debug3, change, addedFeature, allIds, copyFeature, parentFeatureId, _id, refSeq, refSeqDoc, _logger$debug4, indexedIds, _yield$featureModel$c, _yield$featureModel$c2, newFeatureDoc, _topLevelFeature$allI, topLevelFeature, parentFeature, childIds, _logger$verbose, _childIds, allIdsV2, _indexedIds, _yield$featureModel$c3, _yield$featureModel$c4, _newFeatureDoc;
+	        var assemblyModel, featureModel, refSeqModel, session, user, assembly, changes, logger, assemblyDoc, errMsg, featureCnt, INDEXED_IDS, idsToIndex, _iterator, _step, _logger$debug3, change, addedFeature, allIds, copyFeature, parentFeatureId, _id, refSeq, refSeqDoc, _logger$debug4, indexedIds, _yield$featureModel$c, _yield$featureModel$c2, newFeatureDoc, _indexedIds, _topLevelFeature$allI, _topLevelFeature$inde, _topLevelFeature$inde2, topLevelFeature, parentFeature, childIds, _logger$verbose, _childIds, allIdsV2, _yield$featureModel$c3, _yield$featureModel$c4, _newFeatureDoc;
 	        return _regeneratorRuntime().wrap(function _callee$(_context) {
 	          while (1) switch (_context.prev = _context.next) {
 	            case 0:
@@ -17391,7 +17428,7 @@
 	              _iterator.s();
 	            case 16:
 	              if ((_step = _iterator.n()).done) {
-	                _context.next = 65;
+	                _context.next = 67;
 	                break;
 	              }
 	              change = _step.value;
@@ -17428,45 +17465,49 @@
 	              newFeatureDoc = _yield$featureModel$c2[0];
 	              (_logger$debug4 = logger.debug) === null || _logger$debug4 === void 0 || _logger$debug4.call(logger, "Copied feature, docId \"".concat(newFeatureDoc._id, "\" to assembly \"").concat(assembly, "\""));
 	              featureCnt++;
-	              _context.next = 62;
+	              _context.next = 64;
 	              break;
 	            case 37:
+	              _indexedIds = this.getIndexedIds(addedFeature, idsToIndex); // Adding new child feature
 	              if (!parentFeatureId) {
-	                _context.next = 53;
+	                _context.next = 56;
 	                break;
 	              }
-	              _context.next = 40;
+	              _context.next = 41;
 	              return featureModel.findOne({
 	                allIds: parentFeatureId
 	              }).session(session).exec();
-	            case 40:
+	            case 41:
 	              topLevelFeature = _context.sent;
 	              if (topLevelFeature) {
-	                _context.next = 43;
+	                _context.next = 44;
 	                break;
 	              }
 	              throw new Error("Could not find feature with ID \"".concat(parentFeatureId, "\""));
-	            case 43:
+	            case 44:
 	              parentFeature = this.getFeatureFromId(topLevelFeature, parentFeatureId);
 	              if (parentFeature) {
-	                _context.next = 46;
+	                _context.next = 47;
 	                break;
 	              }
 	              throw new Error("Could not find feature with ID \"".concat(parentFeatureId, "\" in feature \"").concat(topLevelFeature._id, "\""));
-	            case 46:
+	            case 47:
 	              this.addChild(parentFeature, addedFeature);
 	              childIds = this.getChildFeatureIds(addedFeature);
 	              (_topLevelFeature$allI = topLevelFeature.allIds).push.apply(_topLevelFeature$allI, [_id].concat(_toConsumableArray(childIds)));
-	              _context.next = 51;
+	              if (_indexedIds.length > 0 && !topLevelFeature.indexedIds) {
+	                topLevelFeature.indexedIds = [];
+	              }
+	              (_topLevelFeature$inde = topLevelFeature.indexedIds) === null || _topLevelFeature$inde === void 0 || (_topLevelFeature$inde2 = _topLevelFeature$inde).push.apply(_topLevelFeature$inde2, _toConsumableArray(_indexedIds));
+	              _context.next = 54;
 	              return topLevelFeature.save();
-	            case 51:
-	              _context.next = 62;
+	            case 54:
+	              _context.next = 64;
 	              break;
-	            case 53:
+	            case 56:
 	              _childIds = this.getChildFeatureIds(addedFeature);
 	              allIdsV2 = [_id].concat(_toConsumableArray(_childIds));
-	              _indexedIds = this.getIndexedIds(addedFeature, idsToIndex);
-	              _context.next = 58;
+	              _context.next = 60;
 	              return featureModel.create([_objectSpread2({
 	                allIds: allIdsV2,
 	                indexedIds: _indexedIds,
@@ -17474,34 +17515,34 @@
 	              }, addedFeature)], {
 	                session: session
 	              });
-	            case 58:
+	            case 60:
 	              _yield$featureModel$c3 = _context.sent;
 	              _yield$featureModel$c4 = _slicedToArray(_yield$featureModel$c3, 1);
 	              _newFeatureDoc = _yield$featureModel$c4[0];
 	              (_logger$verbose = logger.verbose) === null || _logger$verbose === void 0 || _logger$verbose.call(logger, "Added docId \"".concat(_newFeatureDoc._id, "\""));
-	            case 62:
+	            case 64:
 	              featureCnt++;
-	            case 63:
+	            case 65:
 	              _context.next = 16;
 	              break;
-	            case 65:
-	              _context.next = 70;
-	              break;
 	            case 67:
-	              _context.prev = 67;
+	              _context.next = 72;
+	              break;
+	            case 69:
+	              _context.prev = 69;
 	              _context.t0 = _context["catch"](14);
 	              _iterator.e(_context.t0);
-	            case 70:
-	              _context.prev = 70;
+	            case 72:
+	              _context.prev = 72;
 	              _iterator.f();
-	              return _context.finish(70);
-	            case 73:
+	              return _context.finish(72);
+	            case 75:
 	              (_logger$debug2 = logger.debug) === null || _logger$debug2 === void 0 || _logger$debug2.call(logger, "Added ".concat(featureCnt, " new feature(s) into database."));
-	            case 74:
+	            case 76:
 	            case "end":
 	              return _context.stop();
 	          }
-	        }, _callee, this, [[14, 67, 70, 73]]);
+	        }, _callee, this, [[14, 69, 72, 75]]);
 	      }));
 	      function executeOnServer(_x) {
 	        return _executeOnServer.apply(this, arguments);
@@ -18405,31 +18446,32 @@
 	    key: "executeOnServer",
 	    value: function () {
 	      var _executeOnServer = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(backend) {
-	        var featureModel, session, changes, logger, featuresForChanges, _iterator, _step, _logger$debug, _logger$debug2, change, featureId, topLevelFeature, errMsg, foundFeature, _errMsg, _iterator2, _step2, _logger$debug4, _step2$value, idx, _change, newAttributes, _featuresForChanges$i, feature, _topLevelFeature, _logger$debug3;
-	        return _regeneratorRuntime().wrap(function _callee$(_context) {
-	          while (1) switch (_context.prev = _context.next) {
+	        var _this2 = this;
+	        var featureModel, session, changes, logger, featuresForChanges, _iterator, _step, _logger$debug, _logger$debug2, change, featureId, topLevelFeature, errMsg, foundFeature, _errMsg, INDEXED_IDS, idsToIndex, _iterator2, _step2, _loop;
+	        return _regeneratorRuntime().wrap(function _callee$(_context2) {
+	          while (1) switch (_context2.prev = _context2.next) {
 	            case 0:
 	              featureModel = backend.featureModel, session = backend.session;
 	              changes = this.changes, logger = this.logger;
 	              featuresForChanges = []; // Loop the changes and check that all features are found
 	              _iterator = _createForOfIteratorHelper(changes);
-	              _context.prev = 4;
+	              _context2.prev = 4;
 	              _iterator.s();
 	            case 6:
 	              if ((_step = _iterator.n()).done) {
-	                _context.next = 26;
+	                _context2.next = 26;
 	                break;
 	              }
 	              change = _step.value;
 	              featureId = change.featureId; // Search correct feature
-	              _context.next = 11;
+	              _context2.next = 11;
 	              return featureModel.findOne({
 	                allIds: featureId
 	              }).session(session).exec();
 	            case 11:
-	              topLevelFeature = _context.sent;
+	              topLevelFeature = _context2.sent;
 	              if (topLevelFeature) {
-	                _context.next = 16;
+	                _context2.next = 16;
 	                break;
 	              }
 	              errMsg = "*** ERROR: The following featureId was not found in database ='".concat(featureId, "'");
@@ -18439,7 +18481,7 @@
 	              (_logger$debug = logger.debug) === null || _logger$debug === void 0 || _logger$debug.call(logger, "*** Feature found: ".concat(JSON.stringify(topLevelFeature)));
 	              foundFeature = this.getFeatureFromId(topLevelFeature, featureId);
 	              if (foundFeature) {
-	                _context.next = 22;
+	                _context2.next = 22;
 	                break;
 	              }
 	              _errMsg = 'ERROR when searching feature by featureId';
@@ -18452,70 +18494,96 @@
 	                topLevelFeature: topLevelFeature
 	              });
 	            case 24:
-	              _context.next = 6;
+	              _context2.next = 6;
 	              break;
 	            case 26:
-	              _context.next = 31;
+	              _context2.next = 31;
 	              break;
 	            case 28:
-	              _context.prev = 28;
-	              _context.t0 = _context["catch"](4);
-	              _iterator.e(_context.t0);
+	              _context2.prev = 28;
+	              _context2.t0 = _context2["catch"](4);
+	              _iterator.e(_context2.t0);
 	            case 31:
-	              _context.prev = 31;
+	              _context2.prev = 31;
 	              _iterator.f();
-	              return _context.finish(31);
+	              return _context2.finish(31);
 	            case 34:
+	              INDEXED_IDS = browser$1.env.INDEXED_IDS;
+	              if (INDEXED_IDS) {
+	                idsToIndex = INDEXED_IDS.split(',');
+	              }
 	              // Let's update objects
 	              _iterator2 = _createForOfIteratorHelper(changes.entries());
-	              _context.prev = 35;
+	              _context2.prev = 37;
+	              _loop = /*#__PURE__*/_regeneratorRuntime().mark(function _loop() {
+	                var _idsToIndex, _logger$debug4;
+	                var _step2$value, idx, change, newAttributes, _featuresForChanges$i, feature, topLevelFeature, indexedIdsChanged, indexedIds, _logger$debug3;
+	                return _regeneratorRuntime().wrap(function _loop$(_context) {
+	                  while (1) switch (_context.prev = _context.next) {
+	                    case 0:
+	                      _step2$value = _slicedToArray(_step2.value, 2), idx = _step2$value[0], change = _step2$value[1];
+	                      newAttributes = change.newAttributes;
+	                      _featuresForChanges$i = featuresForChanges[idx], feature = _featuresForChanges$i.feature, topLevelFeature = _featuresForChanges$i.topLevelFeature;
+	                      indexedIdsChanged = (_idsToIndex = idsToIndex) === null || _idsToIndex === void 0 ? void 0 : _idsToIndex.some(function (id) {
+	                        var _feature$attributes;
+	                        return id in newAttributes || id in ((_feature$attributes = feature === null || feature === void 0 ? void 0 : feature.attributes) !== null && _feature$attributes !== void 0 ? _feature$attributes : {});
+	                      });
+	                      feature.attributes = newAttributes;
+	                      if (indexedIdsChanged) {
+	                        indexedIds = _this2.getIndexedIds(topLevelFeature, idsToIndex);
+	                        topLevelFeature.indexedIds = indexedIds;
+	                        topLevelFeature.markModified('indexedIds');
+	                      }
+	                      if (topLevelFeature._id.equals(feature._id)) {
+	                        topLevelFeature.markModified('attributes'); // Mark as modified. Without this save() -method is not updating data in database
+	                      } else {
+	                        topLevelFeature.markModified('children'); // Mark as modified. Without this save() -method is not updating data in database
+	                      }
+	                      _context.prev = 7;
+	                      _context.next = 10;
+	                      return topLevelFeature.save();
+	                    case 10:
+	                      _context.next = 16;
+	                      break;
+	                    case 12:
+	                      _context.prev = 12;
+	                      _context.t0 = _context["catch"](7);
+	                      (_logger$debug3 = logger.debug) === null || _logger$debug3 === void 0 || _logger$debug3.call(logger, "*** FAILED: ".concat(_context.t0));
+	                      throw _context.t0;
+	                    case 16:
+	                      (_logger$debug4 = logger.debug) === null || _logger$debug4 === void 0 || _logger$debug4.call(logger, "*** Feature attributes modified (added, edited or deleted), docId: ".concat(JSON.stringify(topLevelFeature)));
+	                    case 17:
+	                    case "end":
+	                      return _context.stop();
+	                  }
+	                }, _loop, null, [[7, 12]]);
+	              });
 	              _iterator2.s();
-	            case 37:
+	            case 40:
 	              if ((_step2 = _iterator2.n()).done) {
-	                _context.next = 55;
+	                _context2.next = 44;
 	                break;
 	              }
-	              _step2$value = _slicedToArray(_step2.value, 2), idx = _step2$value[0], _change = _step2$value[1];
-	              newAttributes = _change.newAttributes;
-	              _featuresForChanges$i = featuresForChanges[idx], feature = _featuresForChanges$i.feature, _topLevelFeature = _featuresForChanges$i.topLevelFeature;
-	              feature.attributes = newAttributes;
-	              if (_topLevelFeature._id.equals(feature._id)) {
-	                _topLevelFeature.markModified('attributes'); // Mark as modified. Without this save() -method is not updating data in database
-	              } else {
-	                _topLevelFeature.markModified('children'); // Mark as modified. Without this save() -method is not updating data in database
-	              }
-	              _context.prev = 43;
-	              _context.next = 46;
-	              return _topLevelFeature.save();
+	              return _context2.delegateYield(_loop(), "t1", 42);
+	            case 42:
+	              _context2.next = 40;
+	              break;
+	            case 44:
+	              _context2.next = 49;
+	              break;
 	            case 46:
-	              _context.next = 52;
-	              break;
-	            case 48:
-	              _context.prev = 48;
-	              _context.t1 = _context["catch"](43);
-	              (_logger$debug3 = logger.debug) === null || _logger$debug3 === void 0 || _logger$debug3.call(logger, "*** FAILED: ".concat(_context.t1));
-	              throw _context.t1;
-	            case 52:
-	              (_logger$debug4 = logger.debug) === null || _logger$debug4 === void 0 || _logger$debug4.call(logger, "*** Feature attributes modified (added, edited or deleted), docId: ".concat(JSON.stringify(_topLevelFeature)));
-	            case 53:
-	              _context.next = 37;
-	              break;
-	            case 55:
-	              _context.next = 60;
-	              break;
-	            case 57:
-	              _context.prev = 57;
-	              _context.t2 = _context["catch"](35);
-	              _iterator2.e(_context.t2);
-	            case 60:
-	              _context.prev = 60;
+	              _context2.prev = 46;
+	              _context2.t2 = _context2["catch"](37);
+	              _iterator2.e(_context2.t2);
+	            case 49:
+	              _context2.prev = 49;
 	              _iterator2.f();
-	              return _context.finish(60);
-	            case 63:
+	              return _context2.finish(49);
+	            case 52:
 	            case "end":
-	              return _context.stop();
+	              return _context2.stop();
 	          }
-	        }, _callee, this, [[4, 28, 31, 34], [35, 57, 60, 63], [43, 48]]);
+	        }, _callee, this, [[4, 28, 31, 34], [37, 46, 49, 52]]);
 	      }));
 	      function executeOnServer(_x) {
 	        return _executeOnServer.apply(this, arguments);
@@ -18526,13 +18594,13 @@
 	    key: "executeOnLocalGFF3",
 	    value: function () {
 	      var _executeOnLocalGFF = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(_backend) {
-	        return _regeneratorRuntime().wrap(function _callee2$(_context2) {
-	          while (1) switch (_context2.prev = _context2.next) {
+	        return _regeneratorRuntime().wrap(function _callee2$(_context3) {
+	          while (1) switch (_context3.prev = _context3.next) {
 	            case 0:
 	              throw new Error('applyToLocalGFF3 not implemented');
 	            case 1:
 	            case "end":
-	              return _context2.stop();
+	              return _context3.stop();
 	          }
 	        }, _callee2);
 	      }));
@@ -18546,49 +18614,49 @@
 	    value: function () {
 	      var _executeOnClient = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(dataStore) {
 	        var _iterator3, _step3, _step3$value, idx, changedId, feature;
-	        return _regeneratorRuntime().wrap(function _callee3$(_context3) {
-	          while (1) switch (_context3.prev = _context3.next) {
+	        return _regeneratorRuntime().wrap(function _callee3$(_context4) {
+	          while (1) switch (_context4.prev = _context4.next) {
 	            case 0:
 	              if (dataStore) {
-	                _context3.next = 2;
+	                _context4.next = 2;
 	                break;
 	              }
 	              throw new Error('No data store');
 	            case 2:
 	              _iterator3 = _createForOfIteratorHelper(this.changedIds.entries());
-	              _context3.prev = 3;
+	              _context4.prev = 3;
 	              _iterator3.s();
 	            case 5:
 	              if ((_step3 = _iterator3.n()).done) {
-	                _context3.next = 13;
+	                _context4.next = 13;
 	                break;
 	              }
 	              _step3$value = _slicedToArray(_step3.value, 2), idx = _step3$value[0], changedId = _step3$value[1];
 	              feature = dataStore.getFeature(changedId);
 	              if (feature) {
-	                _context3.next = 10;
+	                _context4.next = 10;
 	                break;
 	              }
 	              throw new Error("Could not find feature with identifier \"".concat(changedId, "\""));
 	            case 10:
 	              feature.setAttributes(new Map(Object.entries(this.changes[idx].newAttributes)));
 	            case 11:
-	              _context3.next = 5;
+	              _context4.next = 5;
 	              break;
 	            case 13:
-	              _context3.next = 18;
+	              _context4.next = 18;
 	              break;
 	            case 15:
-	              _context3.prev = 15;
-	              _context3.t0 = _context3["catch"](3);
-	              _iterator3.e(_context3.t0);
+	              _context4.prev = 15;
+	              _context4.t0 = _context4["catch"](3);
+	              _iterator3.e(_context4.t0);
 	            case 18:
-	              _context3.prev = 18;
+	              _context4.prev = 18;
 	              _iterator3.f();
-	              return _context3.finish(18);
+	              return _context4.finish(18);
 	            case 21:
 	            case "end":
-	              return _context3.stop();
+	              return _context4.stop();
 	          }
 	        }, _callee3, this, [[3, 15, 18, 21]]);
 	      }));
@@ -23885,7 +23953,7 @@
 	  d: "M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6z"
 	}), 'Add');
 
-	var version = "0.3.10";
+	var version = "0.3.11";
 
 	const ApolloConfigSchema = configuration.ConfigurationSchema('ApolloInternetAccount', {
 	    baseURL: {
