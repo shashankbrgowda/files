@@ -3107,12 +3107,10 @@
     }, {
       key: "addChild",
       value: function addChild(parentFeature, child) {
-        var _parentFeature$attrib;
+        var _parentFeature$attrib, _parentFeature$childr;
         if (!((_parentFeature$attrib = parentFeature.attributes) !== null && _parentFeature$attrib !== void 0 && _parentFeature$attrib._id)) {
-          var attributes = parentFeature.attributes;
-          if (!attributes) {
-            attributes = {};
-          }
+          var _parentFeature$attrib2 = parentFeature.attributes,
+            attributes = _parentFeature$attrib2 === void 0 ? {} : _parentFeature$attrib2;
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           attributes = _objectSpread2({
             _id: [parentFeature._id.toString()]
@@ -3120,9 +3118,7 @@
           parentFeature.attributes = attributes;
         }
         var _id = child._id;
-        if (!parentFeature.children) {
-          parentFeature.children = new Map();
-        }
+        (_parentFeature$childr = parentFeature.children) !== null && _parentFeature$childr !== void 0 ? _parentFeature$childr : parentFeature.children = new Map();
         parentFeature.children.set(_id, _objectSpread2(_objectSpread2({
           allIds: []
         }, child), {}, {
@@ -4284,10 +4280,9 @@
     }, {
       key: "mergeFeatureIntoTranscriptOnServer",
       value: function mergeFeatureIntoTranscriptOnServer(secondFeatureChild, firstTranscript) {
-        var _this2 = this;
-        if (!firstTranscript.children) {
-          firstTranscript.children = new Map();
-        }
+        var _firstTranscript$chil,
+          _this2 = this;
+        (_firstTranscript$chil = firstTranscript.children) !== null && _firstTranscript$chil !== void 0 ? _firstTranscript$chil : firstTranscript.children = new Map();
         var merged = false;
         var mrgChild;
         var toDelete;
@@ -4304,11 +4299,10 @@
               toDelete = true;
             }
             if (mrgChild.type === secondFeatureChild.type && mrgChild.type === firstFeatureChild.type && util$1.doesIntersect2(secondFeatureChild.min, secondFeatureChild.max, mrgChild.min, mrgChild.max) && util$1.doesIntersect2(firstFeatureChild.min, firstFeatureChild.max, mrgChild.min, mrgChild.max)) {
+              var _mrgChild, _mrgChild$attributes;
               mrgChild.min = Math.min(secondFeatureChild.min, mrgChild.min, firstFeatureChild.min);
               mrgChild.max = Math.max(secondFeatureChild.max, mrgChild.max, firstFeatureChild.max);
-              if (!mrgChild.attributes) {
-                mrgChild.attributes = {};
-              }
+              (_mrgChild$attributes = (_mrgChild = mrgChild).attributes) !== null && _mrgChild$attributes !== void 0 ? _mrgChild$attributes : _mrgChild.attributes = {};
               var mrgChildAttr = JSON.parse(JSON.stringify(mrgChild.attributes));
               if (!Object.keys(mrgChildAttr).includes('merged_with')) {
                 mrgChildAttr.merged_with = [];
@@ -4371,9 +4365,8 @@
     }, {
       key: "mergeFeatureIntoTranscriptOnClient",
       value: function mergeFeatureIntoTranscriptOnClient(secondFeatureChild, firstTranscript) {
-        if (!firstTranscript.children) {
-          firstTranscript.children = new Map();
-        }
+        var _firstTranscript$chil2;
+        (_firstTranscript$chil2 = firstTranscript.children) !== null && _firstTranscript$chil2 !== void 0 ? _firstTranscript$chil2 : firstTranscript.children = new Map();
         var merged = false;
         var mrgChild;
         var toDelete;
@@ -5633,21 +5626,21 @@
     var _feature$attributes, _feature$attributes2;
     var gff_id = (_feature$attributes = feature.attributes) === null || _feature$attributes === void 0 || (_feature$attributes = _feature$attributes.gff_id) === null || _feature$attributes === void 0 ? void 0 : _feature$attributes.join(', ');
     if (gff_id) {
-      return "".concat(gff_id, " (_id: ").concat(feature._id.toString(), ")");
+      return "".concat(gff_id, " (_id: ").concat(feature._id, ")");
     }
     var gff_name = (_feature$attributes2 = feature.attributes) === null || _feature$attributes2 === void 0 || (_feature$attributes2 = _feature$attributes2.gff_name) === null || _feature$attributes2 === void 0 ? void 0 : _feature$attributes2.join(', ');
     if (gff_name) {
-      return "".concat(gff_name, " (_id: ").concat(feature._id.toString(), ")");
+      return "".concat(gff_name, " (_id: ").concat(feature._id, ")");
     }
-    return "_id: ".concat(feature._id.toString());
+    return "_id: ".concat(feature._id);
   }
 
-  var STOP_CODONS;
+  var STOP_CODONS$1;
   (function (STOP_CODONS) {
     STOP_CODONS[STOP_CODONS["TAG"] = 0] = "TAG";
     STOP_CODONS[STOP_CODONS["TAA"] = 1] = "TAA";
     STOP_CODONS[STOP_CODONS["TGA"] = 2] = "TGA";
-  })(STOP_CODONS || (STOP_CODONS = {}));
+  })(STOP_CODONS$1 || (STOP_CODONS$1 = {}));
   var START_CODONS;
   (function (START_CODONS) {
     START_CODONS[START_CODONS["ATG"] = 0] = "ATG";
@@ -5748,8 +5741,8 @@
       return a.min < b.min ? -1 : 1;
     });
     var i = 0;
-    var currentStart = undefined;
-    var currentEnd = undefined;
+    var currentStart;
+    var currentEnd;
     for (var iloc = 0; iloc < sortedLocation.length; iloc++) {
       var loc = sortedLocation[iloc];
       var phase = loc.phase;
@@ -5819,20 +5812,20 @@
                   name: CHECK_NAME$1,
                   cause: CAUSES$1[CAUSES$1.MissingStartCodon],
                   ids: ids,
-                  refSeq: refSeq.toString(),
+                  refSeq: refSeq,
                   start: cdsStart,
                   end: cdsStart,
                   message: "Unexpected start codon \"".concat(start_codon, "\" in feature \"").concat(getPrintableId(feature), "\": ")
                 });
               }
               lastCodon = codons.at(-1); // Last codon is supposed to be a stop
-              if (lastCodon && !(lastCodon.toUpperCase() in STOP_CODONS)) {
+              if (lastCodon && !(lastCodon.toUpperCase() in STOP_CODONS$1)) {
                 checkResults.push({
                   _id: new ObjectID().toHexString(),
                   name: CHECK_NAME$1,
                   cause: CAUSES$1[CAUSES$1.MissingStopCodon],
                   ids: ids,
-                  refSeq: refSeq.toString(),
+                  refSeq: refSeq,
                   start: cdsEnd,
                   end: cdsEnd,
                   message: "Missing stop codon in feature \"".concat(getPrintableId(feature), "\"")
@@ -5844,7 +5837,7 @@
                 name: CHECK_NAME$1,
                 cause: CAUSES$1[CAUSES$1.MissingStopCodon],
                 ids: ids,
-                refSeq: refSeq.toString(),
+                refSeq: refSeq,
                 start: cdsEnd,
                 end: cdsEnd,
                 message: "Missing stop codon in feature \"".concat(getPrintableId(feature), "\"")
@@ -5866,14 +5859,14 @@
             return _context3.a(3, 9);
           case 7:
             location = getOriginalCodonLocation(cdsLocation, strand, idx);
-            if (location && codon.toUpperCase() in STOP_CODONS) {
+            if (location && codon.toUpperCase() in STOP_CODONS$1) {
               _location = _slicedToArray(location, 2), codonStart = _location[0], codonEnd = _location[1];
               checkResults.push({
                 _id: new ObjectID().toHexString(),
                 name: CHECK_NAME$1,
                 cause: CAUSES$1[CAUSES$1.InternalStopCodon],
                 ids: ids,
-                refSeq: refSeq.toString(),
+                refSeq: refSeq,
                 start: codonStart,
                 end: codonEnd,
                 message: "Internal stop codon in feature \"".concat(getPrintableId(feature), "\"")
@@ -6171,7 +6164,7 @@
                     name: CHECK_NAME,
                     cause: CAUSES[CAUSES.NonCanonicalSpliceSiteAtFivePrime],
                     ids: [feature._id],
-                    refSeq: feature.refSeq.toString(),
+                    refSeq: feature.refSeq,
                     start: spliceSequence.fivePrimeMin,
                     end: spliceSequence.fivePrimeMin + 2,
                     message: "Unexpected 5\u2032 splice site in \"".concat(getPrintableId(feature), "\". Expected: ").concat(_toConsumableArray(VALID_FIVE_PRIME_SEQ).join('|'), ", got: ").concat(spliceSequence.fivePrimeSeq)
@@ -6183,7 +6176,7 @@
                     name: CHECK_NAME,
                     cause: CAUSES[CAUSES.NonCanonicalSpliceSiteAtThreePrime],
                     ids: [feature._id],
-                    refSeq: feature.refSeq.toString(),
+                    refSeq: feature.refSeq,
                     start: spliceSequence.threePrimeMin,
                     end: spliceSequence.threePrimeMin + 2,
                     message: "Unexpected 3\u2032 splice site in \"".concat(getPrintableId(feature), "\". Expected: ").concat(_toConsumableArray(VALID_THREE_PRIME_SEQ).join('|'), ", got: ").concat(spliceSequence.threePrimeSeq)
@@ -6351,8 +6344,8 @@
         delete attributes.gff_score;
       }
       return {
-        start: Number(featureLoc.min) + 1,
-        end: Number(featureLoc.max),
+        start: featureLoc.min + 1,
+        end: featureLoc.max,
         seq_id: featureLoc.refSeq,
         source: source,
         type: featureLoc.type,
@@ -6557,7 +6550,7 @@
     return transcriptParts;
   }
   function getCdsLocations(feature) {
-    var transcriptParts = [];
+    var transcriptParts;
     try {
       transcriptParts = getTranscriptParts(feature);
     } catch (_unused) {
@@ -7122,7 +7115,7 @@
     d: "M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6z"
   }), 'Add');
 
-  var version = "0.3.13";
+  var version = "1.1.0";
 
   const ApolloConfigSchema = configuration.ConfigurationSchema('ApolloInternetAccount', {
       baseURL: {
@@ -21815,9 +21808,7 @@
               result = customTermList;
           }
       }
-      if (!result) {
-          result = await ontologyStore.getAllTerms();
-      }
+      result ??= await ontologyStore.getAllTerms();
       return filterTerms ? result.filter((element) => filterTerms(element)) : result;
   }
 
@@ -21878,6 +21869,81 @@
                                   } })] }), jsxRuntime.jsxs(material.DialogActions, { children: [jsxRuntime.jsx(material.Button, { variant: "contained", type: "submit", disabled: error || !(start && end && type), children: "Submit" }), jsxRuntime.jsx(material.Button, { variant: "outlined", type: "submit", onClick: handleClose, children: "Cancel" })] })] }), errorMessage ? (jsxRuntime.jsx(material.DialogContent, { children: jsxRuntime.jsx(material.DialogContentText, { color: "error", children: errorMessage }) })) : null] }));
   }
 
+  const PRESET_COLORS = [
+      '#cc79a7',
+      '#d65e00',
+      '#e69f00',
+      '#f0e442',
+      '#56b3e9',
+      '#0072b2',
+      '#009e73',
+  ];
+  function ColorFeature({ changeManager, handleClose, sourceAssemblyId, sourceFeature, }) {
+      const existingColor = sourceFeature.attributes.get('apollo_color')?.[0];
+      const [color, setColor] = React.useState(existingColor ?? PRESET_COLORS[0]);
+      async function onSubmit(event) {
+          event.preventDefault();
+          const currentColor = sourceFeature.attributes.get('apollo_color')?.[0];
+          if (currentColor === color) {
+              handleClose();
+              return;
+          }
+          const oldAttributes = mobxStateTree.getSnapshot(sourceFeature.attributes);
+          const newAttributes = { ...oldAttributes, apollo_color: [color] };
+          const change = new FeatureAttributeChange({
+              changedIds: [sourceFeature._id],
+              typeName: 'FeatureAttributeChange',
+              assembly: sourceAssemblyId,
+              featureId: sourceFeature._id,
+              oldAttributes,
+              newAttributes,
+          });
+          await changeManager.submit(change);
+          handleClose();
+      }
+      async function onRemove() {
+          const oldAttributes = mobxStateTree.getSnapshot(sourceFeature.attributes);
+          const { apollo_color: _removed, ...newAttributes } = oldAttributes;
+          const change = new FeatureAttributeChange({
+              changedIds: [sourceFeature._id],
+              typeName: 'FeatureAttributeChange',
+              assembly: sourceAssemblyId,
+              featureId: sourceFeature._id,
+              oldAttributes,
+              newAttributes,
+          });
+          await changeManager.submit(change);
+          handleClose();
+      }
+      return (jsxRuntime.jsx(Dialog, { open: true, title: "Color feature", handleClose: handleClose, maxWidth: false, "data-testid": "color-feature", children: jsxRuntime.jsxs("form", { onSubmit: (event) => {
+                  void onSubmit(event);
+              }, children: [jsxRuntime.jsxs(material.DialogContent, { style: { display: 'flex', flexDirection: 'column' }, children: [jsxRuntime.jsx(material.DialogContentText, { children: "Choose a color for this feature." }), jsxRuntime.jsx("div", { style: { display: 'flex', gap: 8, marginTop: 8 }, children: PRESET_COLORS.map((preset) => {
+                                  const selected = color.toLowerCase() === preset;
+                                  return (jsxRuntime.jsx("button", { type: "button", "aria-label": preset, "aria-pressed": selected, onClick: () => {
+                                          setColor(preset);
+                                      }, style: {
+                                          width: 32,
+                                          height: 32,
+                                          padding: 0,
+                                          borderRadius: 4,
+                                          border: '1px solid rgba(0, 0, 0, 0.3)',
+                                          outline: selected ? '2px solid currentColor' : 'none',
+                                          outlineOffset: 2,
+                                          backgroundColor: preset,
+                                          cursor: 'pointer',
+                                      } }, preset));
+                              }) }), jsxRuntime.jsxs("div", { style: {
+                                  display: 'flex',
+                                  alignItems: 'center',
+                                  gap: 8,
+                                  marginTop: 16,
+                              }, children: [jsxRuntime.jsx("label", { htmlFor: "color-feature-custom", children: "Custom:" }), jsxRuntime.jsx("input", { id: "color-feature-custom", type: "color", value: color, onChange: (event) => {
+                                          setColor(event.target.value);
+                                      } })] })] }), jsxRuntime.jsxs(material.DialogActions, { children: [jsxRuntime.jsx(material.Button, { variant: "contained", type: "submit", children: "Submit" }), jsxRuntime.jsx(material.Button, { variant: "outlined", color: "error", type: "button", disabled: existingColor === undefined, onClick: () => {
+                                  void onRemove();
+                              }, children: "Remove color" }), jsxRuntime.jsx(material.Button, { variant: "outlined", type: "button", onClick: handleClose, children: "Cancel" })] })] }) }));
+  }
+
   /**
    * Recursively assign new IDs to a feature
    * @param feature - Parent feature
@@ -21923,7 +21989,7 @@
                   setErrorMessage('No assemblies to copy to');
                   return;
               }
-              const assembly = await assemblyManager.waitForAssembly(selectedAssemblyId);
+              const assembly = (await assemblyManager.waitForAssembly(selectedAssemblyId));
               if (!assembly) {
                   return;
               }
@@ -21952,7 +22018,7 @@
           event.preventDefault();
           setErrorMessage('');
           const featureLength = sourceFeature.length;
-          const assembly = await assemblyManager.waitForAssembly(selectedAssemblyId);
+          const assembly = (await assemblyManager.waitForAssembly(selectedAssemblyId));
           if (!assembly) {
               setErrorMessage(`Assembly not found: ${selectedAssemblyId}.`);
               return;
@@ -22290,8 +22356,7 @@
                   locationChanges.push(geneChange);
               }
           }
-          if (featureTypeOntology &&
-              featureTypeOntology.isTypeOf(sourceFeature.type, 'exon')) {
+          if (featureTypeOntology?.isTypeOf(sourceFeature.type, 'exon')) {
               const cdsChange = trimCDS(sourceFeature);
               if (cdsChange) {
                   if (cdsChange.typeName === 'DeleteFeatureChange') {
@@ -22544,7 +22609,7 @@
       return;
   }
   function isSelectedFeature(feature, selectedFeature) {
-      return Boolean(selectedFeature && feature._id === selectedFeature._id);
+      return feature._id === selectedFeature?._id;
   }
   function makeFeatureLabel(feature) {
       let name;
@@ -22630,6 +22695,23 @@
                       setSelectedFeature: (feature) => {
                           display.setSelectedFeature(feature);
                       },
+                  },
+              ]);
+          },
+      }, {
+          label: 'Color feature',
+          disabled: readOnly,
+          onClick: () => {
+              session.queueDialog((doneCallback) => [
+                  ColorFeature,
+                  {
+                      session,
+                      handleClose: () => {
+                          doneCallback();
+                      },
+                      changeManager,
+                      sourceFeature,
+                      sourceAssemblyId: currentAssemblyId,
                   },
               ]);
           },
@@ -23133,6 +23215,153 @@
                           }, pageSizeOptions: [5], processRowUpdate: processRowUpdate, disableRowSelectionOnClick: true }) }) }), errorMessage ? (jsxRuntime.jsx(material.DialogContent, { children: jsxRuntime.jsx(material.DialogContentText, { color: "error", children: errorMessage }) })) : null] }));
   }
 
+  const START_CODON = 'ATG';
+  const STOP_CODONS = new Set(['TAA', 'TAG', 'TGA']);
+  function findLongestOrf(sequence) {
+      const starts = [
+          null,
+          null,
+          null,
+      ];
+      let longest;
+      for (let start = 0; start < sequence.length - 2; start++) {
+          const codon = sequence.slice(start, start + 3).toUpperCase();
+          const frame = (start % 3);
+          if (codon === START_CODON && starts[frame] === null) {
+              starts[frame] = start;
+          }
+          else if (STOP_CODONS.has(codon)) {
+              const inFrameStart = starts[frame];
+              if (inFrameStart === null) {
+                  continue;
+              }
+              const length = start - inFrameStart;
+              if (!longest || longest[1] - longest[0] < length) {
+                  longest = [inFrameStart, start];
+              }
+              starts[frame] = null;
+          }
+      }
+      return longest;
+  }
+
+  // Returns the genomic half-open boundary for stitched position `pos`.
+  // For strand +1: the inclusive start (min) of the nucleotide.
+  // For strand -1: the exclusive end (max) of the nucleotide.
+  // Symmetric usage:
+  //   plus:  cdsMin = helper(orf[0]), cdsMax = helper(orf[1]+3)
+  //   minus: cdsMax = helper(orf[0]), cdsMin = helper(orf[1]+3)
+  function stitchedToGenomicBound(pos, exons, strand) {
+      let cum = 0;
+      for (const exon of exons) {
+          const len = exon.max - exon.min;
+          if (pos <= cum + len) {
+              const off = pos - cum;
+              return strand === 1 ? exon.min + off : exon.max - off;
+          }
+          cum += len;
+      }
+      const last = exons.at(-1);
+      if (!last) {
+          throw new Error('No exons found');
+      }
+      return strand === 1 ? last.max : last.min;
+  }
+  function AddCodingSequence({ changeManager, handleClose, refName, session, sourceAssemblyId, sourceFeature, }) {
+      const [method, setMethod] = React.useState('longest-orf');
+      const [minInput, setMinInput] = React.useState('');
+      const [maxInput, setMaxInput] = React.useState('');
+      const [errorMessage, setErrorMessage] = React.useState('');
+      async function onSubmit(event) {
+          event.preventDefault();
+          setErrorMessage('');
+          let cdsMin;
+          let cdsMax;
+          try {
+              if (method === 'longest-orf') {
+                  const exonParts = sourceFeature.transcriptExonParts.filter((p) => p.type === 'exon');
+                  if (exonParts.length === 0) {
+                      setErrorMessage('No exons found in this transcript');
+                      return;
+                  }
+                  const backendDriver = session.apolloDataStore.getBackendDriver(sourceAssemblyId);
+                  if (!backendDriver) {
+                      setErrorMessage('No backend driver found for this assembly');
+                      return;
+                  }
+                  let stitchedSequence = '';
+                  for (const exon of exonParts) {
+                      const { seq } = await backendDriver.getSequence({
+                          assemblyName: sourceAssemblyId,
+                          refName,
+                          start: exon.min,
+                          end: exon.max,
+                      });
+                      stitchedSequence += sourceFeature.strand === -1 ? util$1.revcom(seq) : seq;
+                  }
+                  const orf = findLongestOrf(stitchedSequence);
+                  if (!orf) {
+                      ;
+                      session.notify('No open reading frame found in this transcript', 'error');
+                      handleClose();
+                      return;
+                  }
+                  const strand = sourceFeature.strand ?? 1;
+                  if (strand === 1) {
+                      cdsMin = stitchedToGenomicBound(orf[0], exonParts, 1);
+                      cdsMax = stitchedToGenomicBound(orf[1] + 3, exonParts, 1);
+                  }
+                  else {
+                      cdsMax = stitchedToGenomicBound(orf[0], exonParts, -1);
+                      cdsMin = stitchedToGenomicBound(orf[1] + 3, exonParts, -1);
+                  }
+              }
+              else {
+                  cdsMin = Number(minInput) - 1;
+                  cdsMax = Number(maxInput);
+              }
+              const _id = new ObjectID().toHexString();
+              const addedFeature = {
+                  _id,
+                  refSeq: sourceFeature.refSeq,
+                  min: cdsMin,
+                  max: cdsMax,
+                  type: 'CDS',
+              };
+              if (sourceFeature.strand) {
+                  addedFeature.strand = sourceFeature.strand;
+              }
+              const change = new AddFeatureChange({
+                  changedIds: [sourceFeature._id],
+                  typeName: 'AddFeatureChange',
+                  assembly: sourceAssemblyId,
+                  addedFeature,
+                  parentFeatureId: sourceFeature._id,
+              });
+              await changeManager.submit(change);
+              session.apolloSetSelectedFeature(_id);
+              handleClose();
+          }
+          catch (error) {
+              setErrorMessage(error instanceof Error ? error.message : 'An unknown error occurred');
+          }
+      }
+      const manualError = method === 'manual' &&
+          Boolean(minInput) &&
+          Boolean(maxInput) &&
+          Number(maxInput) <= Number(minInput);
+      const submitDisabled = method === 'manual' ? !(minInput && maxInput) || manualError : false;
+      return (jsxRuntime.jsxs(Dialog, { open: true, title: "Add coding sequence", handleClose: handleClose, maxWidth: false, "data-testid": "add-coding-sequence", children: [jsxRuntime.jsxs("form", { onSubmit: (event) => {
+                      void onSubmit(event);
+                  }, children: [jsxRuntime.jsxs(material.DialogContent, { style: { display: 'flex', flexDirection: 'column' }, children: [jsxRuntime.jsx(material.FormControl, { children: jsxRuntime.jsxs(material.RadioGroup, { value: method, onChange: (e) => {
+                                          setMethod(e.target.value);
+                                      }, children: [jsxRuntime.jsx(material.FormControlLabel, { value: "longest-orf", control: jsxRuntime.jsx(material.Radio, {}), label: "Calculate longest open reading frame" }), jsxRuntime.jsx(material.FormControlLabel, { value: "manual", control: jsxRuntime.jsx(material.Radio, {}), label: "Manual" })] }) }), method === 'manual' ? (jsxRuntime.jsxs(jsxRuntime.Fragment, { children: [jsxRuntime.jsx(material.TextField, { margin: "dense", id: "cds-min", label: "Min", type: "number", fullWidth: true, variant: "outlined", value: minInput, onChange: (e) => {
+                                              setMinInput(e.target.value);
+                                          } }), jsxRuntime.jsx(material.TextField, { margin: "dense", id: "cds-max", label: "Max", type: "number", fullWidth: true, variant: "outlined", value: maxInput, onChange: (e) => {
+                                              setMaxInput(e.target.value);
+                                          }, error: manualError, helperText: manualError ? '"Max" must be greater than "Min"' : null })] })) : null] }), jsxRuntime.jsxs(material.DialogActions, { children: [jsxRuntime.jsx(material.Button, { variant: "contained", type: "submit", disabled: submitDisabled, children: "Submit" }), jsxRuntime.jsx(material.Button, { variant: "outlined", type: "button", onClick: handleClose, children: "Cancel" })] })] }), errorMessage ? (jsxRuntime.jsx(material.DialogContent, { children: jsxRuntime.jsx(material.DialogContentText, { color: "error", children: errorMessage }) })) : null] }));
+  }
+
   class BackendDriver {
       clientStore;
       constructor(clientStore) {
@@ -23205,7 +23434,7 @@
       async getSequence(region) {
           const session = util$1.getSession(this.clientStore);
           const { assemblyManager } = session;
-          const assembly = await assemblyManager.waitForAssembly(region.assemblyName);
+          const assembly = (await assemblyManager.waitForAssembly(region.assemblyName));
           if (!assembly) {
               throw new Error(`Assembly not found: "${region.assemblyName}"`);
           }
@@ -23224,7 +23453,10 @@
           const adapter = new CLASS(
           // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
           adapterConf, undefined, pluginManager);
-          const seq = await adapter.getSequence(region);
+          const seq = await adapter.getSequence({
+              ...region,
+              refName: assembly.getSeqAdapterRefName(region.refName),
+          });
           if (!seq) {
               throw new Error(`Sequence not found: ${JSON.stringify(region)}`);
           }
@@ -23233,7 +23465,7 @@
       async getRegions(assemblyName) {
           const session = util$1.getSession(this.clientStore);
           const { assemblyManager } = session;
-          const assembly = await assemblyManager.waitForAssembly(assemblyName);
+          const assembly = (await assemblyManager.waitForAssembly(assemblyName));
           if (!assembly) {
               throw new Error(`Assembly not found: "${assemblyName}"`);
           }
@@ -23249,7 +23481,7 @@
       async getRefNameAliases(assemblyName) {
           const session = util$1.getSession(this.clientStore);
           const { assemblyManager } = session;
-          const assembly = await assemblyManager.waitForAssembly(assemblyName);
+          const assembly = (await assemblyManager.waitForAssembly(assemblyName));
           if (!assembly) {
               throw new Error(`Assembly not found: "${assemblyName}"`);
           }
@@ -23409,18 +23641,56 @@
           }
           return checkResults;
       }
-      async getChanges(assemblyName) {
+      async getChanges(assemblyName, opts = {}) {
           const regions = await this.getRegions(assemblyName);
           const refNames = regions.map((r) => r.refName);
           const db = await openDb(assemblyName, refNames);
-          const changes = [];
+          let changes = [];
           for await (const cursor of db.transaction('changes').store.iterate()) {
               changes.push({
                   sequence: cursor.key,
                   ...cursor.value,
               });
           }
-          return changes;
+          const { filters } = opts;
+          if (filters?.user) {
+              const re = new RegExp(filters.user, 'i');
+              changes = changes.filter((c) => c.user !== undefined && re.test(c.user));
+          }
+          if (filters?.typeName) {
+              changes = changes.filter((c) => c.typeName === filters.typeName);
+          }
+          if (filters?.startTime) {
+              const start = new Date(filters.startTime).getTime();
+              changes = changes.filter((c) => new Date(c.createdAt).getTime() >= start);
+          }
+          if (filters?.endTime) {
+              const end = new Date(filters.endTime).getTime();
+              changes = changes.filter((c) => new Date(c.createdAt).getTime() <= end);
+          }
+          const totalCount = changes.length;
+          const sortField = opts.sortField ?? 'sequence';
+          const sortOrder = opts.sortOrder ?? 'desc';
+          const direction = sortOrder === 'asc' ? 1 : -1;
+          changes.sort((a, b) => {
+              const aVal = a[sortField];
+              const bVal = b[sortField];
+              if (aVal === bVal) {
+                  return 0;
+              }
+              if (aVal === undefined) {
+                  return 1;
+              }
+              if (bVal === undefined) {
+                  return -1;
+              }
+              return aVal < bVal ? -direction : direction;
+          });
+          if (opts.page !== undefined && opts.pageSize !== undefined) {
+              const start = opts.page * opts.pageSize;
+              changes = changes.slice(start, start + opts.pageSize);
+          }
+          return { changes, totalCount };
       }
   }
 
@@ -23860,17 +24130,17 @@
        */
       checkSocket(assembly, refSeq, internetAccount) {
           const { socket } = internetAccount;
-          const token = internetAccount.retrieveToken();
-          if (!token) {
-              return;
-          }
-          const localSessionId = makeUserSessionId(token);
           const channel = `${assembly}-${refSeq}`;
-          const changeManager = new ChangeManager(this.clientStore);
           if (!socket.hasListeners(channel)) {
               socket.on(channel, async (message) => {
+                  const token = internetAccount.retrieveToken();
+                  if (!token) {
+                      return;
+                  }
+                  const localSessionId = makeUserSessionId(token);
+                  const changeManager = new ChangeManager(this.clientStore);
                   // Save server last change sequence into session storage
-                  internetAccount.setLastChangeSequenceNumber(Number(message.changeSequence));
+                  internetAccount.setLastChangeSequenceNumber(message.changeSequence);
                   if (message.userSessionId === localSessionId) {
                       return; // we did this change, no need to apply it again
                   }
@@ -23918,14 +24188,10 @@
               const seq = await inFlightPromise;
               return { seq, refSeq };
           }
-          let apolloAssembly = this.clientStore.assemblies.get(assemblyName);
-          if (!apolloAssembly) {
-              apolloAssembly = this.clientStore.addAssembly(assemblyName);
-          }
-          let apolloRefSeq = apolloAssembly.refSeqs.get(refSeq);
-          if (!apolloRefSeq) {
-              apolloRefSeq = apolloAssembly.addRefSeq(refSeq, refName);
-          }
+          const apolloAssembly = this.clientStore.assemblies.get(assemblyName) ??
+              this.clientStore.addAssembly(assemblyName);
+          const apolloRefSeq = apolloAssembly.refSeqs.get(refSeq) ??
+              apolloAssembly.addRefSeq(refSeq, refName);
           const clientStoreSequence = apolloRefSeq.getSequence(start, end);
           if (clientStoreSequence.length === end - start) {
               return { seq: clientStoreSequence, refSeq };
@@ -24059,11 +24325,36 @@
               return false;
           });
       }
-      async getChanges(assemblyName) {
+      async getChanges(assemblyName, opts = {}) {
           const internetAccount = this.clientStore.getInternetAccount(assemblyName);
           const { baseURL } = internetAccount;
           const url = new URL('changes', baseURL);
-          url.search = new URLSearchParams({ assembly: assemblyName }).toString();
+          const params = { assembly: assemblyName };
+          if (opts.page !== undefined) {
+              params.page = String(opts.page);
+          }
+          if (opts.pageSize !== undefined) {
+              params.pageSize = String(opts.pageSize);
+          }
+          if (opts.sortField) {
+              params.sortField = opts.sortField;
+          }
+          if (opts.sortOrder) {
+              params.sortOrder = opts.sortOrder;
+          }
+          if (opts.filters?.user) {
+              params.user = opts.filters.user;
+          }
+          if (opts.filters?.typeName) {
+              params.typeName = opts.filters.typeName;
+          }
+          if (opts.filters?.startTime) {
+              params.startTime = opts.filters.startTime;
+          }
+          if (opts.filters?.endTime) {
+              params.endTime = opts.filters.endTime;
+          }
+          url.search = new URLSearchParams(params).toString();
           const response = await this.fetch(internetAccount, url.toString());
           if (!response.ok) {
               const errorMessage = await createFetchErrorMessage(response, 'getChanges failed');
@@ -24257,7 +24548,7 @@
               setType(NewFeature[value]);
           }
       };
-      let submitDisabled = Boolean(error) || !(start && end && type);
+      let submitDisabled = error || !(start && end && type);
       if ((type === NewFeature.CUSTOM && !customType) ||
           (!strand && type === NewFeature.GENE_AND_SUBFEATURES) ||
           (!strand && type === NewFeature.TRANSCRIPT_AND_SUBFEATURES)) {
@@ -24278,7 +24569,7 @@
   function DeleteAssembly({ changeManager, handleClose, session, }) {
       const { internetAccounts } = mobxStateTree.getRoot(session);
       const [errorMessage, setErrorMessage] = React.useState('');
-      const [confirmDelete, setconfirmDelete] = React.useState(false);
+      const [confirmDelete, setConfirmDelete] = React.useState(false);
       const [submitted, setSubmitted] = React.useState(false);
       const apolloInternetAccounts = internetAccounts.filter((ia) => ia.type === 'ApolloInternetAccount');
       if (apolloInternetAccounts.length === 0) {
@@ -24319,7 +24610,7 @@
           event.preventDefault();
       }
       return (jsxRuntime.jsxs(Dialog, { open: true, title: "Delete Assembly", handleClose: handleClose, maxWidth: false, "data-testid": "delete-assembly", children: [jsxRuntime.jsxs("form", { onSubmit: onSubmit, children: [jsxRuntime.jsxs(material.DialogContent, { style: { display: 'flex', flexDirection: 'column' }, children: [apolloInternetAccounts.length > 1 ? (jsxRuntime.jsxs(jsxRuntime.Fragment, { children: [jsxRuntime.jsx(material.DialogContentText, { children: "Select account" }), jsxRuntime.jsx(material.Select, { value: selectedInternetAccount.internetAccountId, onChange: handleChangeInternetAccount, disabled: submitted && !errorMessage, children: internetAccounts.map((option) => (jsxRuntime.jsx(material.MenuItem, { value: option.internetAccountId, children: option.name }, option.id))) })] })) : null, jsxRuntime.jsx(material.DialogContentText, { children: "Select assembly" }), jsxRuntime.jsx(material.Select, { labelId: "label", value: selectedAssembly?.name ?? '', onChange: handleChangeAssembly, disabled: assemblies.length === 0, children: assemblies.map((option) => (jsxRuntime.jsx(material.MenuItem, { value: option.name, children: option.displayName }, option.name))) }), jsxRuntime.jsx(material.DialogContentText, { children: jsxRuntime.jsx("strong", { style: { color: 'red' }, children: "NOTE: All assembly data will be deleted and this operation cannot be undone!" }) }), jsxRuntime.jsx(material.FormGroup, { children: jsxRuntime.jsx(material.FormControlLabel, { control: jsxRuntime.jsx(material.Checkbox, { checked: confirmDelete, onChange: () => {
-                                              setconfirmDelete(!confirmDelete);
+                                              setConfirmDelete(!confirmDelete);
                                           } }), label: "I understand that all assembly data will be deleted" }) })] }), jsxRuntime.jsxs(material.DialogActions, { children: [jsxRuntime.jsx(material.Button, { disabled: !selectedAssembly || !confirmDelete, variant: "contained", type: "submit", children: "Delete" }), jsxRuntime.jsx(material.Button, { variant: "outlined", type: "submit", onClick: handleClose, children: "Cancel" })] })] }), errorMessage ? (jsxRuntime.jsx(material.DialogContent, { children: jsxRuntime.jsx(material.DialogContentText, { color: "error", children: errorMessage }) })) : null] }));
   }
 
@@ -25400,7 +25691,7 @@
       return (jsxRuntime.jsx(material.SvgIcon, { viewBox: "0 0 24 24", ...props, children: jsxRuntime.jsx("path", { d: "M23,12L19,8V11H10V13H19V16M1,18V6C1,4.89 1.9,4 3,4H15A2,2 0 0,1 17,6V9H15V6H3V18H15V15H17V18A2,2 0 0,1 15,20H3A2,2 0 0,1 1,18Z" }) }));
   }
   function DownloadGFF3({ handleClose, session, assembly: assemblyName, }) {
-      const [includeFASTA, setincludeFASTA] = React.useState(false);
+      const [includeFASTA, setIncludeFASTA] = React.useState(false);
       const [errorMessage, setErrorMessage] = React.useState('');
       const { getInternetAccount } = session.apolloDataStore;
       const { assemblyManager } = session;
@@ -25449,7 +25740,7 @@
           window.open(exportUri, '_blank');
       }
       return (jsxRuntime.jsxs(Dialog, { open: true, title: "Export annotations", handleClose: handleClose, maxWidth: false, "data-testid": "download-gff3", children: [jsxRuntime.jsxs("form", { onSubmit: onSubmit, children: [jsxRuntime.jsxs(material.DialogContent, { style: { display: 'flex', flexDirection: 'column' }, children: [jsxRuntime.jsxs(material.DialogContentText, { children: ["Exporting annotations for ", assemblyName] }), jsxRuntime.jsx(material.FormGroup, { children: jsxRuntime.jsx(material.FormControlLabel, { "data-testid": "include-fasta-checkbox", control: jsxRuntime.jsx(material.Checkbox, { checked: includeFASTA, onChange: () => {
-                                              setincludeFASTA(!includeFASTA);
+                                              setIncludeFASTA(!includeFASTA);
                                           }, disabled: !internetAccountConfigId }), label: "Include fasta sequence in GFF output" }) })] }), jsxRuntime.jsxs(material.DialogActions, { children: [jsxRuntime.jsx(material.Button, { variant: "contained", type: "submit", children: "Download" }), jsxRuntime.jsx(material.Button, { variant: "outlined", type: "submit", onClick: handleClose, children: "Cancel" })] })] }), errorMessage ? (jsxRuntime.jsx(material.DialogContent, { children: jsxRuntime.jsx(material.DialogContentText, { color: "error", children: errorMessage }) })) : null] }));
   }
   function getAssemblyGFF3Stream(assemblyName) {
@@ -25486,6 +25777,49 @@
           }
       }
       db.close();
+  }
+
+  function ImportAnnotations({ assemblyName, handleClose, session, }) {
+      const { changeManager } = session.apolloDataStore;
+      const [file, setFile] = React.useState();
+      const [errorMessage, setErrorMessage] = React.useState('');
+      const [loading, setLoading] = React.useState(false);
+      function handleChangeFile(e) {
+          if (e.target.files) {
+              setFile(e.target.files[0]);
+          }
+      }
+      async function onSubmit(event) {
+          event.preventDefault();
+          if (!file) {
+              return;
+          }
+          setLoading(true);
+          setErrorMessage('');
+          try {
+              const stream = file
+                  .stream()
+                  .pipeThrough(new TransformStream(new esmExports.GFFTransformer({ parseSequences: false })));
+              for await (const value of stream) {
+                  const annotationFeature = gff3ToAnnotationFeature(value);
+                  const change = new AddFeatureChange({
+                      changedIds: [annotationFeature._id],
+                      typeName: 'AddFeatureChange',
+                      assembly: assemblyName,
+                      addedFeature: annotationFeature,
+                  });
+                  await changeManager.submit(change);
+              }
+              handleClose();
+          }
+          catch (error) {
+              setErrorMessage(String(error));
+          }
+          finally {
+              setLoading(false);
+          }
+      }
+      return (jsxRuntime.jsxs(Dialog, { open: true, title: "Import annotations", handleClose: handleClose, children: [loading ? jsxRuntime.jsx(material.LinearProgress, {}) : null, jsxRuntime.jsxs("form", { onSubmit: onSubmit, children: [jsxRuntime.jsxs(material.DialogContent, { children: [jsxRuntime.jsx(material.DialogContentText, { children: "Import annotations from a GFF3 file into the current Apollo track. Features are parsed and stored locally in the browser, so importing very large GFF3 files is not recommended." }), jsxRuntime.jsx("input", { type: "file", accept: ".gff,.gff3", onChange: handleChangeFile, disabled: loading }), errorMessage ? (jsxRuntime.jsx(material.DialogContentText, { color: "error", children: errorMessage })) : null] }), jsxRuntime.jsxs(material.DialogActions, { children: [jsxRuntime.jsx(material.Button, { variant: "contained", type: "submit", disabled: !file || loading, children: "Import" }), jsxRuntime.jsx(material.Button, { variant: "outlined", onClick: handleClose, children: "Cancel" })] })] })] }));
   }
 
   function ImportFeatures({ changeManager, handleClose, session, }) {
@@ -25891,7 +26225,7 @@
           });
           return newRow;
       }
-      return (jsxRuntime.jsxs(Dialog, { open: true, fullScreen: true, title: "Manage users", handleClose: handleClose, "data-testid": "manage-users", children: [jsxRuntime.jsxs(material.DialogContent, { children: [apolloInternetAccounts.length > 1 ? (jsxRuntime.jsxs(jsxRuntime.Fragment, { children: [jsxRuntime.jsx(material.DialogContentText, { children: "Select account" }), jsxRuntime.jsx(material.Select, { value: selectedInternetAccount.internetAccountId, onChange: handleChangeInternetAccount, disabled: !errorMessage, children: internetAccounts.map((option) => (jsxRuntime.jsx(material.MenuItem, { value: option.internetAccountId, children: option.name }, option.id))) })] })) : null, jsxRuntime.jsx("div", { style: { height: '100%', width: '100%' }, children: jsxRuntime.jsx(xDataGrid.DataGrid, { pagination: true, rows: users, columns: gridColumns, getRowId: (row) => row._id, slots: { toolbar: xDataGrid.GridToolbar }, getRowHeight: () => 'auto', isCellEditable: (params) => !isCurrentUser(params.id), processRowUpdate: processRowUpdate, onProcessRowUpdateError: (error) => {
+      return (jsxRuntime.jsxs(Dialog, { open: true, fullScreen: true, title: "Manage users", handleClose: handleClose, "data-testid": "manage-users", children: [jsxRuntime.jsxs(material.DialogContent, { children: [apolloInternetAccounts.length > 1 ? (jsxRuntime.jsxs(jsxRuntime.Fragment, { children: [jsxRuntime.jsx(material.DialogContentText, { children: "Select account" }), jsxRuntime.jsx(material.Select, { value: selectedInternetAccount.internetAccountId, onChange: handleChangeInternetAccount, disabled: !errorMessage, children: internetAccounts.map((option) => (jsxRuntime.jsx(material.MenuItem, { value: option.internetAccountId, children: option.name }, option.id))) })] })) : null, jsxRuntime.jsx("div", { style: { height: '100%', width: '100%' }, children: jsxRuntime.jsx(xDataGrid.DataGrid, { pagination: true, rows: users, columns: gridColumns, getRowId: (row) => row._id, showToolbar: true, getRowHeight: () => 'auto', isCellEditable: (params) => !isCurrentUser(params.id), processRowUpdate: processRowUpdate, onProcessRowUpdateError: (error) => {
                                   setErrorMessage(String(error));
                               } }) })] }), jsxRuntime.jsx(material.DialogActions, { children: jsxRuntime.jsx(material.Button, { variant: "outlined", type: "submit", onClick: handleClose, children: "Close" }) }), errorMessage ? (jsxRuntime.jsx(material.DialogContent, { children: jsxRuntime.jsx(material.DialogContentText, { color: "error", children: errorMessage }) })) : null] }));
   }
@@ -26067,11 +26401,56 @@
           borderRadius: theme.shape.borderRadius,
       },
   }));
-  function ViewChangeLog({ handleClose, session, assembly: assemblyName, }) {
+  function buildFiltersFromModel(filterModel) {
+      const filters = {};
+      for (const item of filterModel.items) {
+          if (item.value === undefined || item.value === '' || item.value === null) {
+              continue;
+          }
+          switch (item.field) {
+              case 'user': {
+                  filters.user = String(item.value);
+                  break;
+              }
+              case 'typeName': {
+                  filters.typeName = String(item.value);
+                  break;
+              }
+              case 'createdAt': {
+                  const date = new Date(item.value).toISOString();
+                  if (item.operator === 'after' || item.operator === 'onOrAfter') {
+                      filters.startTime = date;
+                  }
+                  else if (item.operator === 'before' ||
+                      item.operator === 'onOrBefore') {
+                      filters.endTime = date;
+                  }
+                  break;
+              }
+          }
+      }
+      return filters;
+  }
+  function ViewChangeLog({ handleClose, session, assembly: assemblyId, }) {
       const { classes } = useStyles$e();
       const [errorMessage, setErrorMessage] = React.useState();
       const [displayGridData, setDisplayGridData] = React.useState([]);
+      const [rowCount, setRowCount] = React.useState(0);
+      const [loading, setLoading] = React.useState(false);
+      const [paginationModel, setPaginationModel] = React.useState({
+          page: 0,
+          pageSize: 15,
+      });
+      const [sortModel, setSortModel] = React.useState([
+          { field: 'sequence', sort: 'desc' },
+      ]);
+      const [filterModel, setFilterModel] = React.useState({
+          items: [],
+      });
       const { apolloDataStore } = session;
+      const { assemblyManager } = session;
+      const assembly = assemblyManager.get(assemblyId);
+      const assemblyName = assembly?.displayName ?? assemblyId;
       const gridColumns = [
           { field: 'sequence' },
           {
@@ -26086,6 +26465,8 @@
               field: 'changeData',
               headerName: 'Change JSON',
               width: 600,
+              sortable: false,
+              filterable: false,
               renderCell: ({ value }) => (jsxRuntime.jsx("textarea", { className: classes.changeTextarea, value: JSON.stringify(value), readOnly: true })),
           },
           { field: 'user', headerName: 'User', width: 140 },
@@ -26099,26 +26480,43 @@
       ];
       React.useEffect(() => {
           async function getGridData() {
-              const backendDriver = apolloDataStore.getBackendDriver(assemblyName);
+              const backendDriver = apolloDataStore.getBackendDriver(assemblyId);
               if (!backendDriver) {
-                  setErrorMessage(`No driver found for assembly "${assemblyName}"`);
+                  setErrorMessage(`No driver found for assembly "${assemblyId}"`);
                   return;
               }
-              const data = await backendDriver.getChanges(assemblyName);
-              const gridData = data.map((change) => {
-                  const { sequence, typeName, changes, user, createdAt, ...rest } = change;
-                  const changeData = changes ?? { typeName, ...rest };
+              setLoading(true);
+              const [sortEntry] = sortModel;
+              const sortField = sortEntry?.field;
+              const sortOrderValue = sortEntry?.sort;
+              const sortOrder = sortOrderValue === 'asc' || sortOrderValue === 'desc'
+                  ? sortOrderValue
+                  : undefined;
+              const { changes, totalCount } = await backendDriver.getChanges(assemblyId, {
+                  page: paginationModel.page,
+                  pageSize: paginationModel.pageSize,
+                  sortField,
+                  sortOrder,
+                  filters: buildFiltersFromModel(filterModel),
+              });
+              const gridData = changes.map((change) => {
+                  const { sequence, typeName, changes: nestedChanges, user, createdAt, ...rest } = change;
+                  const changeData = nestedChanges ?? { typeName, ...rest };
                   return { sequence, typeName, changeData, user, createdAt };
               });
               // @ts-expect-error not sure how to type this
               setDisplayGridData(gridData);
+              setRowCount(totalCount);
           }
-          getGridData().catch((error) => {
+          getGridData()
+              .catch((error) => {
               setErrorMessage(String(error));
+          })
+              .finally(() => {
+              setLoading(false);
           });
-      }, [apolloDataStore, assemblyName]);
-      return (jsxRuntime.jsxs(Dialog, { open: true, fullScreen: true, title: "View change log", handleClose: handleClose, "data-testid": "view-changelog", children: [jsxRuntime.jsxs(material.DialogContent, { children: [jsxRuntime.jsxs(material.DialogContentText, { children: ["Changes for ", assemblyName] }), jsxRuntime.jsx(xDataGrid.DataGrid, { pagination: true, rows: displayGridData, columns: gridColumns, getRowId: (row) => row.sequence, showToolbar: true, initialState: {
-                              sorting: { sortModel: [{ field: 'sequence', sort: 'desc' }] },
+      }, [apolloDataStore, assemblyId, paginationModel, sortModel, filterModel]);
+      return (jsxRuntime.jsxs(Dialog, { open: true, fullScreen: true, title: "View change log", handleClose: handleClose, "data-testid": "view-changelog", children: [jsxRuntime.jsxs(material.DialogContent, { children: [jsxRuntime.jsxs(material.DialogContentText, { children: ["Changes for ", assemblyName] }), jsxRuntime.jsx(xDataGrid.DataGrid, { pagination: true, paginationMode: "server", sortingMode: "server", filterMode: "server", rowCount: rowCount, paginationModel: paginationModel, onPaginationModelChange: setPaginationModel, sortModel: sortModel, onSortModelChange: setSortModel, filterModel: filterModel, onFilterModelChange: setFilterModel, loading: loading, rows: displayGridData, columns: gridColumns, getRowId: (row) => row.sequence, showToolbar: true, pageSizeOptions: [5, 15, 25, 50, 100], initialState: {
                               columns: { columnVisibilityModel: { sequence: false } },
                           } })] }), jsxRuntime.jsx(material.DialogActions, { children: jsxRuntime.jsx(material.Button, { variant: "outlined", type: "submit", onClick: handleClose, children: "Close" }) }), errorMessage ? (jsxRuntime.jsx(material.DialogContent, { children: jsxRuntime.jsx(material.DialogContentText, { color: "error", children: errorMessage }) })) : null] }));
   }
@@ -26137,12 +26535,13 @@
       const [enableSubmit, setEnableSubmit] = React.useState(false);
       const [selectedAssembly, setSelectedAssembly] = React.useState();
       const [selectedRows, setSelectedRows] = React.useState([]);
-      const [refNameAliasMap, setRefNameAliasMap] = React.useState(new Map());
+      const [refNameAliasMap, setRefNameAliasMap] = React.useState(() => new Map());
       const { apolloDataStore } = session;
       const { collaborationServerDriver } = apolloDataStore;
       const assemblies = collaborationServerDriver.getAssemblies();
       React.useEffect(() => {
           if (assemblies.length > 0) {
+              // eslint-disable-next-line @eslint-react/set-state-in-effect
               setSelectedAssembly(assemblies[0]);
               collaborationServerDriver
                   .getRefNameAliases(assemblies[0].name)
@@ -26154,7 +26553,7 @@
                   setErrorMessage('Error fetching refName aliases for assembly');
               });
           }
-          // eslint-disable-next-line react-hooks/exhaustive-deps
+          // eslint-disable-next-line @eslint-react/exhaustive-deps
       }, []);
       const initializeRefNameAliasMap = (refNameAliasesList) => {
           const initialMap = new Map();
@@ -26539,6 +26938,10 @@
     d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m0 4c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6m0 14c-2.03 0-4.43-.82-6.14-2.88C7.55 15.8 9.68 15 12 15s4.45.8 6.14 2.12C16.43 19.18 14.03 20 12 20"
   }), 'AccountCircle');
 
+  var BusinessIcon = /*#__PURE__*/utils.createSvgIcon(/*#__PURE__*/jsxRuntime.jsx("path", {
+    d: "M12 7V3H2v18h20V7zM6 19H4v-2h2zm0-4H4v-2h2zm0-4H4V9h2zm0-4H4V5h2zm4 12H8v-2h2zm0-4H8v-2h2zm0-4H8V9h2zm0-4H8V5h2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8zm-2-8h-2v2h2zm0 4h-2v2h2z"
+  }), 'Business');
+
   // Icon source: https://developers.google.com/identity/branding-guidelines
   function Google(props) {
       const { color } = props;
@@ -26563,17 +26966,23 @@
   }));
   function GoogleButton(props) {
       const { classes } = useStyles$d();
-      const { disabled } = props;
-      return (jsxRuntime.jsx(material.Button, { className: classes.loginButton, variant: "outlined", startIcon: jsxRuntime.jsx(Google, { color: disabled ? 'disabled' : undefined }), ...props, children: "Sign in with Google" }));
+      const { message } = props;
+      return (jsxRuntime.jsx(material.Button, { className: classes.loginButton, variant: "outlined", startIcon: jsxRuntime.jsx(Google, {}), ...props, children: message }));
   }
   function MicrosoftButton(props) {
       const { classes } = useStyles$d();
-      const { disabled } = props;
-      return (jsxRuntime.jsx(material.Button, { className: classes.loginButton, variant: "outlined", startIcon: jsxRuntime.jsx(Microsoft, { color: disabled ? 'disabled' : undefined }), ...props, children: "Sign in with Microsoft" }));
+      const { message } = props;
+      return (jsxRuntime.jsx(material.Button, { className: classes.loginButton, variant: "outlined", startIcon: jsxRuntime.jsx(Microsoft, {}), ...props, children: message }));
   }
   function GuestButton(props) {
       const { classes } = useStyles$d();
-      return (jsxRuntime.jsx(material.Button, { className: classes.loginButton, variant: "outlined", startIcon: jsxRuntime.jsx(AccountCircleIcon, { fontSize: "small" }), ...props, children: "Continue as Guest" }));
+      const { message } = props;
+      return (jsxRuntime.jsx(material.Button, { className: classes.loginButton, variant: "outlined", startIcon: jsxRuntime.jsx(AccountCircleIcon, { fontSize: "small" }), ...props, children: message }));
+  }
+  function GenericButton(props) {
+      const { classes } = useStyles$d();
+      const { message } = props;
+      return (jsxRuntime.jsx(material.Button, { className: classes.loginButton, variant: "outlined", startIcon: jsxRuntime.jsx(BusinessIcon, { fontSize: "small" }), ...props, children: message }));
   }
 
   const useStyles$c = makeStyles()((theme) => ({
@@ -26585,7 +26994,7 @@
   const AuthTypeSelector = ({ baseURL, handleClose, name, }) => {
       const { classes } = useStyles$c();
       const [errorMessage, setErrorMessage] = React.useState('');
-      const [loginTypes, setLoginTypes] = React.useState([]);
+      const [loginTypes, setLoginTypes] = React.useState(null);
       React.useEffect(() => {
           const controller = new AbortController();
           const { signal } = controller;
@@ -26599,6 +27008,9 @@
               }
               const data = (await response.json());
               setLoginTypes(data);
+              if (data.length === 0) {
+                  setErrorMessage('No login types configured');
+              }
           }
           getAuthTypes().catch((error) => {
               if (!isAbortException(error)) {
@@ -26610,26 +27022,35 @@
           };
       }, [baseURL]);
       function handleClick(authType) {
-          if (authType === 'google') {
-              handleClose('google');
-          }
-          else if (authType === 'microsoft') {
-              handleClose('microsoft');
-          }
-          else {
-              handleClose('guest');
-          }
+          handleClose(authType);
       }
-      const allowGoogle = loginTypes.includes('google');
-      const allowMicrosoft = loginTypes.includes('microsoft');
-      const allowGuest = loginTypes.includes('guest');
-      return (jsxRuntime.jsxs(Dialog, { open: true, title: `Log in to ${name}`, handleClose: handleClose, maxWidth: false, "data-testid": "login-apollo", children: [jsxRuntime.jsxs(material.DialogContent, { style: { display: 'flex', flexDirection: 'column', paddingTop: 8 }, children: [allowGoogle ? (jsxRuntime.jsx(GoogleButton, { disabled: !allowGoogle, onClick: () => {
-                              handleClick('google');
-                          } })) : null, allowMicrosoft ? (jsxRuntime.jsx(MicrosoftButton, { disabled: !allowMicrosoft, onClick: () => {
-                              handleClick('microsoft');
-                          } })) : null, allowGuest ? (jsxRuntime.jsxs(jsxRuntime.Fragment, { children: [jsxRuntime.jsx(material.Divider, { className: classes.divider }), jsxRuntime.jsx(GuestButton, { onClick: () => {
-                                      handleClick('guest');
-                                  } })] })) : null] }), jsxRuntime.jsx(material.DialogActions, { children: jsxRuntime.jsx(material.Button, { variant: "outlined", type: "submit", onClick: () => {
+      if (loginTypes === null) {
+          return 'Loading…';
+      }
+      const firstLoginType = loginTypes.at(0);
+      if (firstLoginType && loginTypes.length === 1 && !firstLoginType.needsPopup) {
+          handleClick(firstLoginType);
+      }
+      return (jsxRuntime.jsxs(Dialog, { open: true, title: `Log in to ${name}`, handleClose: handleClose, maxWidth: false, "data-testid": "login-apollo", children: [jsxRuntime.jsx(material.DialogContent, { style: { display: 'flex', flexDirection: 'column', paddingTop: 8 }, children: loginTypes.map((loginType) => {
+                      if (loginType.name === 'google') {
+                          return (jsxRuntime.jsx(GoogleButton, { message: loginType.message, onClick: () => {
+                                  handleClick(loginType);
+                              } }, loginType.name));
+                      }
+                      if (loginType.name === 'microsoft') {
+                          return (jsxRuntime.jsx(MicrosoftButton, { message: loginType.message, onClick: () => {
+                                  handleClick(loginType);
+                              } }, loginType.name));
+                      }
+                      if (loginType.name === 'guest') {
+                          return (jsxRuntime.jsxs(React.Fragment, { children: [jsxRuntime.jsx(material.Divider, { className: classes.divider }), jsxRuntime.jsx(GuestButton, { message: loginType.message, onClick: () => {
+                                          handleClick(loginType);
+                                      } })] }, loginType.name));
+                      }
+                      return (jsxRuntime.jsx(GenericButton, { message: loginType.message, onClick: () => {
+                              handleClick(loginType);
+                          } }, loginType.name));
+                  }) }), jsxRuntime.jsx(material.DialogActions, { children: jsxRuntime.jsx(material.Button, { variant: "outlined", type: "submit", onClick: () => {
                           handleClose();
                       }, children: "Cancel" }) }), errorMessage ? (jsxRuntime.jsx(material.DialogContent, { children: jsxRuntime.jsx(material.DialogContentText, { color: "error", children: errorMessage }) })) : null] }));
   };
@@ -26664,6 +27085,7 @@
           .volatile(() => ({
           role: undefined,
           controller: new AbortController(),
+          tokenPromise: undefined,
       }))
           .actions((self) => ({
           setRole() {
@@ -26673,10 +27095,68 @@
                   return;
               }
               const dec = getDecodedToken(token);
-              const { role } = dec;
+              const { role, exp } = dec;
+              if (exp < Date.now() / 1000) {
+                  self.role = undefined;
+                  self.removeToken();
+                  return;
+              }
               if (self.role !== role) {
                   self.role = role;
               }
+          },
+      }))
+          .actions((self) => {
+          const superGetFetcher = self.getFetcher;
+          return {
+              getFetcher(loc) {
+                  const fetcher = superGetFetcher(loc);
+                  return async (input, init) => {
+                      const response = await fetcher(input, init);
+                      if (response.status === 403) {
+                          self.removeToken();
+                          self.setRole();
+                          return fetcher(input, init);
+                      }
+                      return response;
+                  };
+              },
+          };
+      })
+          .actions((self) => ({
+          removeToken() {
+              sessionStorage.removeItem(self.tokenKey);
+              self.tokenPromise = undefined;
+          },
+      }))
+          .actions((self) => ({
+          async getToken(location) {
+              if (self.tokenPromise) {
+                  return self.tokenPromise;
+              }
+              let token = location?.internetAccountPreAuthorization?.authInfo?.token;
+              if (token) {
+                  self.tokenPromise = Promise.resolve(token);
+                  return self.tokenPromise;
+              }
+              if (inWebWorker$1) {
+                  throw new Error('Did not get internet account pre-authorization info in worker');
+              }
+              token = self.retrieveToken();
+              if (token) {
+                  self.tokenPromise = Promise.resolve(token);
+                  return self.tokenPromise;
+              }
+              self.tokenPromise = new Promise((resolve, reject) => {
+                  self.getTokenFromUser((token) => {
+                      self.storeToken(token);
+                      resolve(token);
+                  }, (error) => {
+                      self.removeToken();
+                      reject(error);
+                  });
+              });
+              return self.tokenPromise;
           },
       }))
           .actions((self) => {
@@ -26766,13 +27246,13 @@
                       },
                   ]);
               });
-              if (authType !== 'guest') {
+              if (authType.needsPopup) {
                   // eslint-disable-next-line @typescript-eslint/no-floating-promises
-                  self.openAuthWindow(authType, resolve, reject);
+                  self.openAuthWindow(authType.name, resolve, reject);
                   return;
               }
               const url = new URL('auth/login', baseURL);
-              const searchParams = new URLSearchParams({ type: authType });
+              const searchParams = new URLSearchParams({ type: authType.name });
               url.search = searchParams.toString();
               const uri = url.toString();
               const response = await fetch(uri, { signal: self.controller.signal });
@@ -26821,7 +27301,7 @@
                   const errorMessage = yield createFetchErrorMessage(response, 'Error when fetching server LastChangeSequence');
                   throw new Error(errorMessage);
               }
-              const changes = yield response.json();
+              const { changes } = yield response.json();
               const sequence = changes.length > 0 ? changes[0].sequence : 0;
               self.setLastChangeSequenceNumber(sequence);
           }),
@@ -26860,7 +27340,7 @@
                   console.error(`Error when fetching the last updates to recover socket connection — ${response.status}`);
                   return;
               }
-              const serializedChanges = yield response.json();
+              const { changes: serializedChanges } = yield response.json();
               for (const serializedChange of serializedChanges) {
                   const change = Change$1.fromJSON(serializedChange);
                   void changeManager.submit(change, { submitToBackend: false });
@@ -26893,7 +27373,7 @@
               socket.on('COMMON', (message) => {
                   if ('checkResult' in message) {
                       if (message.deleted) {
-                          deleteCheckResult(message.checkResult._id.toString());
+                          deleteCheckResult(message.checkResult._id);
                       }
                       else {
                           addCheckResult(message.checkResult);
@@ -27720,7 +28200,9 @@
               return newValues;
           });
       }
-      return (jsxRuntime.jsxs(jsxRuntime.Fragment, { children: [newValues.map((value, idx) => (jsxRuntime.jsxs("div", { style: { display: 'flex' }, children: [jsxRuntime.jsx(StringTextField, { value: value, onChangeCommitted: (editedValue) => {
+      return (jsxRuntime.jsxs(jsxRuntime.Fragment, { children: [newValues.map((value, idx) => (
+              // eslint-disable-next-line @eslint-react/no-array-index-key
+              jsxRuntime.jsxs("div", { style: { display: 'flex' }, children: [jsxRuntime.jsx(StringTextField, { value: value, onChangeCommitted: (editedValue) => {
                               updateValue(idx, editedValue);
                           }, variant: "outlined", fullWidth: true }), jsxRuntime.jsx(material.IconButton, { "aria-label": "delete", size: "medium", edge: "end", onClick: () => {
                               deleteValue(idx);
@@ -27732,7 +28214,9 @@
   });
 
   function DefaultAttributeViewer({ values }) {
-      return (jsxRuntime.jsx(jsxRuntime.Fragment, { children: values?.map((value, idx) => (jsxRuntime.jsx(material.Typography, { variant: "body2", color: "textSecondary", children: value }, `${idx}.${value}`))) }));
+      return (jsxRuntime.jsx(jsxRuntime.Fragment, { children: values?.map((value, idx) => (jsxRuntime.jsx(material.Typography
+          // eslint-disable-next-line @eslint-react/no-array-index-key
+          , { variant: "body2", color: "textSecondary", children: value }, `${idx}.${value}`))) }));
   }
 
   const useStyles$a = makeStyles()((theme) => ({
@@ -28038,6 +28522,7 @@
       const { classes } = useStyles$8();
       const [panelState, setPanelState] = React.useState(['attributes']);
       React.useEffect(() => {
+          // eslint-disable-next-line @eslint-react/set-state-in-effect
           setPanelState(['attributes']);
       }, [feature]);
       if (!(feature && currentAssembly)) {
@@ -28124,6 +28609,7 @@
        */
       get minWithChildren() {
         var min = self.min;
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
         var children = self.children;
         if (!children) {
           return min;
@@ -28150,6 +28636,7 @@
        */
       get maxWithChildren() {
         var max = self.max;
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
         var children = self.children;
         if (!children) {
           return max;
@@ -28258,6 +28745,7 @@
         if (!featureTypeOntology.isTypeOf(self.type, 'transcript') && !featureTypeOntology.isTypeOf(self.type, 'pseudogenic_transcript')) {
           throw new Error('Only features of type "transcript" or equivalent can calculate CDS locations');
         }
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
         var children = self.children;
         if (!children) {
           throw new Error('no CDS or exons in transcript');
@@ -29162,7 +29650,7 @@
           else {
               setSequenceOptions(defaultSequenceOptions);
           }
-          // eslint-disable-next-line react-hooks/exhaustive-deps
+          // eslint-disable-next-line @eslint-react/exhaustive-deps
       }, [feature]);
       if (!(currentAssembly && refData)) {
           return null;
@@ -29225,6 +29713,10 @@
                           .join(';'), "(strand=", feature.strand === 1 ? '+' : '-', ";length=", getSequenceLength(sequenceSegments), ")", jsxRuntime.jsx("br", {}), wrapSequence(sequenceSegments, SEQUENCE_WRAP_LENGTH)] })] }));
   });
 
+  var RemoveIcon = /*#__PURE__*/utils.createSvgIcon(/*#__PURE__*/jsxRuntime.jsx("path", {
+    d: "M19 13H5v-2h14z"
+  }), 'Remove');
+
   var ContentCopyIcon = /*#__PURE__*/utils.createSvgIcon(/*#__PURE__*/jsxRuntime.jsx("path", {
     d: "M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2m0 16H8V7h11z"
   }), 'ContentCopy');
@@ -29233,23 +29725,6 @@
     d: "M9.64 7.64c.23-.5.36-1.05.36-1.64 0-2.21-1.79-4-4-4S2 3.79 2 6s1.79 4 4 4c.59 0 1.14-.13 1.64-.36L10 12l-2.36 2.36C7.14 14.13 6.59 14 6 14c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4c0-.59-.13-1.14-.36-1.64L12 14l7 7h3v-1zM6 8c-1.1 0-2-.89-2-2s.9-2 2-2 2 .89 2 2-.9 2-2 2m0 12c-1.1 0-2-.89-2-2s.9-2 2-2 2 .89 2 2-.9 2-2 2m6-7.5c-.28 0-.5-.22-.5-.5s.22-.5.5-.5.5.22.5.5-.22.5-.5.5M19 3l-6 6 2 2 7-7V3z"
   }), 'ContentCut');
 
-  var RemoveIcon = /*#__PURE__*/utils.createSvgIcon(/*#__PURE__*/jsxRuntime.jsx("path", {
-    d: "M19 13H5v-2h14z"
-  }), 'Remove');
-
-  const StyledTextField = newStyled(NumberTextField)(() => ({
-      '&.MuiFormControl-root': {
-          marginTop: 0,
-          marginBottom: 0,
-          width: '100%',
-      },
-      '& .MuiInputBase-input': {
-          fontSize: 12,
-          height: 20,
-          padding: 1,
-          paddingLeft: 10,
-      },
-  }));
   const SequenceContainer = newStyled('div')({
       display: 'flex',
       justifyContent: 'center',
@@ -29271,6 +29746,187 @@
           maxHeight: 30,
       },
   }));
+  function Translation({ changeInProgress, cdsLocations, refData, strand, 
+  // eslint-disable-next-line @typescript-eslint/unbound-method
+  updateCDSLocation, cdsMin, cdsMax, feature, session, }) {
+      const seqRef = React.useRef(null);
+      const { notify } = session;
+      const cdsSequences = [];
+      const [firstLocation] = cdsLocations;
+      for (const loc of firstLocation) {
+          const seq = refData.getSequence(loc.min, loc.max);
+          cdsSequences.push(strand === -1 ? util$1.revcom(seq) : seq);
+      }
+      const cdsSequence = cdsSequences.join('');
+      const proteinSequence = [];
+      for (let codonGenomicPos = 0; codonGenomicPos < cdsSequence.length; codonGenomicPos += 3) {
+          const codonSeq = cdsSequence
+              .slice(codonGenomicPos, codonGenomicPos + 3)
+              .toUpperCase();
+          const protein = util$1.defaultCodonTable[codonSeq] || '&';
+          proteinSequence.push(protein);
+      }
+      const onCopyClick = () => {
+          const seqDiv = seqRef.current;
+          if (!seqDiv) {
+              return;
+          }
+          void copyToClipboard(seqDiv);
+      };
+      // Codon position is the index of the start codon in the CDS genomic sequence
+      // Calculate the genomic location of the start codon based on the codon position in the CDS
+      const getCodonGenomicLocation = (codonGenomicPosition) => {
+          const [firstLocation] = cdsLocations;
+          let cdsLen = 0;
+          const sortedCDSLocations = firstLocation.toSorted(({ min: a }, { min: b }) => a - b);
+          // Suppose CDS locations are [{min: 0, max: 10}, {min: 20, max: 30}, {min: 40, max: 50}]
+          // and codonGenomicPosition is 25
+          // ((10 - 0) + (30 - 20) + (50 - 40)) > 25
+          // So, start codon is in (40, 50)
+          // 40 + (25-20) = 45 is the genomic location of the start codon
+          if (strand === 1) {
+              for (const loc of sortedCDSLocations) {
+                  const locLength = loc.max - loc.min;
+                  if (cdsLen + locLength > codonGenomicPosition) {
+                      return loc.min + (codonGenomicPosition - cdsLen);
+                  }
+                  cdsLen += locLength;
+              }
+          }
+          else if (strand === -1) {
+              for (let i = sortedCDSLocations.length - 1; i >= 0; i--) {
+                  const loc = sortedCDSLocations[i];
+                  const locLength = loc.max - loc.min;
+                  if (cdsLen + locLength > codonGenomicPosition) {
+                      return loc.max - (codonGenomicPosition - cdsLen);
+                  }
+                  cdsLen += locLength;
+              }
+          }
+          if (strand === 1) {
+              return cdsMin;
+          }
+          return cdsMax;
+      };
+      const trimTranslationSequence = () => {
+          if ((proteinSequence.at(0) === 'M' && proteinSequence.at(-1) === '*') ||
+              proteinSequence.length === 0) {
+              return;
+          }
+          // Trim any sequence before first start codon and after stop codon
+          const startCodonIndex = proteinSequence.indexOf('M');
+          const stopCodonIndex = proteinSequence.lastIndexOf('*');
+          const startCodonPos = startCodonIndex * 3;
+          const stopCodonPos = stopCodonIndex * 3;
+          const startCodonGenomicLoc = getCodonGenomicLocation(startCodonPos);
+          let stopCodonGenomicLoc = getCodonGenomicLocation(stopCodonPos);
+          if (strand === 1) {
+              if (startCodonGenomicLoc > stopCodonGenomicLoc) {
+                  notify('Start codon genomic location should be less than stop codon genomic location', 'error');
+                  return;
+              }
+              let promise;
+              stopCodonGenomicLoc += 3; // move to end of stop codon
+              if (startCodonGenomicLoc !== cdsMin) {
+                  promise = new Promise((resolve) => {
+                      updateCDSLocation(cdsMin, startCodonGenomicLoc, feature, true, () => {
+                          resolve(true);
+                      });
+                  });
+              }
+              if (stopCodonGenomicLoc !== cdsMax) {
+                  if (promise) {
+                      void promise.then(() => {
+                          updateCDSLocation(cdsMax, stopCodonGenomicLoc, feature, false);
+                      });
+                  }
+                  else {
+                      updateCDSLocation(cdsMax, stopCodonGenomicLoc, feature, false);
+                  }
+              }
+          }
+          if (strand === -1) {
+              // reverse strand
+              if (startCodonGenomicLoc < stopCodonGenomicLoc) {
+                  notify('Start codon genomic location should be less than stop codon genomic location', 'error');
+                  return;
+              }
+              let promise;
+              stopCodonGenomicLoc -= 3; // move to end of stop codon
+              if (startCodonGenomicLoc !== cdsMax) {
+                  promise = new Promise((resolve) => {
+                      updateCDSLocation(cdsMax, startCodonGenomicLoc, feature, false, () => {
+                          resolve(true);
+                      });
+                  });
+              }
+              if (stopCodonGenomicLoc !== cdsMin) {
+                  if (promise) {
+                      void promise.then(() => {
+                          updateCDSLocation(cdsMin, stopCodonGenomicLoc, feature, true);
+                      });
+                  }
+                  else {
+                      updateCDSLocation(cdsMin, stopCodonGenomicLoc, feature, true);
+                  }
+              }
+          }
+          notify('Translation sequence trimmed to start and stop codons', 'success');
+      };
+      return (jsxRuntime.jsx("div", { children: jsxRuntime.jsxs(material.Accordion, { children: [jsxRuntime.jsx(StyledAccordionSummary$1, { expandIcon: jsxRuntime.jsx(ExpandMoreIcon, { style: { color: 'white' } }), "aria-controls": "panel1-content", id: "panel1-header", children: jsxRuntime.jsx(material.Typography, { component: "span", fontWeight: 'bold', children: "Translation" }) }), jsxRuntime.jsxs(material.AccordionDetails, { children: [jsxRuntime.jsx(SequenceContainer, { children: jsxRuntime.jsx(material.Typography, { component: 'span', ref: seqRef, style: { maxHeight: 120, overflowY: 'scroll' }, children: proteinSequence.map((protein, idx) => {
+                                      const codonGenomicPos = idx * 3;
+                                      if (protein === 'M') {
+                                          return (jsxRuntime.jsx(material.Typography, { component: 'span', style: {
+                                                  backgroundColor: changeInProgress
+                                                      ? 'lightgray'
+                                                      : 'yellow',
+                                                  cursor: 'pointer',
+                                                  border: '1px solid black',
+                                              }, onClick: () => {
+                                                  if (changeInProgress) {
+                                                      return;
+                                                  }
+                                                  // NOTE: codonGenomicPos is important here for calculating the genomic location
+                                                  // of the start codon. We are using the codonGenomicPos as the key in the typography
+                                                  // elements to maintain the genomic postion of the codon start
+                                                  const startCodonGenomicLocation = getCodonGenomicLocation(codonGenomicPos);
+                                                  if (startCodonGenomicLocation !== cdsMin &&
+                                                      strand === 1) {
+                                                      updateCDSLocation(cdsMin, startCodonGenomicLocation, feature, true);
+                                                  }
+                                                  if (startCodonGenomicLocation !== cdsMax &&
+                                                      strand === -1) {
+                                                      updateCDSLocation(cdsMax, startCodonGenomicLocation, feature, false);
+                                                  }
+                                              }, children: protein }, codonGenomicPos));
+                                      }
+                                      if (protein === '*') {
+                                          return (jsxRuntime.jsx(material.Typography, { style: { backgroundColor: 'red', color: 'white' }, component: 'span', children: protein }, codonGenomicPos));
+                                      }
+                                      // Pass the codonGenomicPos as the key to maintain the genomic position of the codon
+                                      return (jsxRuntime.jsx(material.Typography, { component: 'span', children: protein }, codonGenomicPos));
+                                  }) }) }), jsxRuntime.jsxs("div", { style: {
+                                  marginTop: 10,
+                                  display: 'flex',
+                                  flexDirection: 'row',
+                                  alignItems: 'center',
+                                  gap: 10,
+                              }, children: [jsxRuntime.jsx(material.Tooltip, { title: "Copy", children: jsxRuntime.jsx("button", { onClick: onCopyClick, style: { border: 'none', background: 'none', padding: 0 }, disabled: changeInProgress, children: jsxRuntime.jsx(ContentCopyIcon, { style: { fontSize: 15 } }) }) }), jsxRuntime.jsx(material.Tooltip, { title: "Trim", children: jsxRuntime.jsx("button", { onClick: trimTranslationSequence, style: { border: 'none', background: 'none', padding: 0 }, disabled: changeInProgress, children: jsxRuntime.jsx(ContentCutIcon, { style: { fontSize: 15 } }) }) })] })] })] }) }));
+  }
+
+  const StyledTextField = newStyled(NumberTextField)(() => ({
+      '&.MuiFormControl-root': {
+          marginTop: 0,
+          marginBottom: 0,
+          width: '100%',
+      },
+      '& .MuiInputBase-input': {
+          fontSize: 12,
+          height: 20,
+          padding: 1,
+          paddingLeft: 10,
+      },
+  }));
   const Strand = (props) => {
       const { strand } = props;
       return (jsxRuntime.jsx("div", { children: strand === 1 ? (jsxRuntime.jsx(AddIcon, {})) : strand === -1 ? (jsxRuntime.jsx(RemoveIcon, {})) : (jsxRuntime.jsx(material.Typography, { component: 'span', children: "N/A" })) }));
@@ -29289,7 +29945,6 @@
       const currentAssembly = session.apolloDataStore.assemblies.get(assembly);
       const refData = currentAssembly?.getByRefName(refName);
       const { changeManager } = session.apolloDataStore;
-      const seqRef = React.useRef(null);
       const { changeInProgress } = session;
       if (!refData) {
           return null;
@@ -29716,211 +30371,33 @@
               },
           ];
       };
-      const getTranslationSequence = () => {
-          let wholeSequence = '';
-          const [firstLocation] = cdsLocations;
-          const sortedCDSLocations = firstLocation.toSorted(({ min: a }, { min: b }) => a - b);
-          for (const loc of sortedCDSLocations) {
-              wholeSequence += refData.getSequence(loc.min, loc.max);
-          }
-          if (strand === -1) {
-              // Original: ACGCAT
-              // Complement: TGCGTA
-              // Reverse complement: ATGCGT
-              wholeSequence = util$1.revcom(wholeSequence);
-          }
-          const elements = [];
-          for (let codonGenomicPos = 0; codonGenomicPos < wholeSequence.length; codonGenomicPos += 3) {
-              const codonSeq = wholeSequence
-                  .slice(codonGenomicPos, codonGenomicPos + 3)
-                  .toUpperCase();
-              const protein = util$1.defaultCodonTable[codonSeq] || '&';
-              // highlight start codon and stop codons
-              if (codonSeq === 'ATG') {
-                  elements.push(jsxRuntime.jsx(material.Typography, { component: 'span', style: {
-                          backgroundColor: changeInProgress ? 'lightgray' : 'yellow',
-                          cursor: 'pointer',
-                          border: '1px solid black',
-                      }, onClick: () => {
-                          if (changeInProgress) {
-                              return;
-                          }
-                          // NOTE: codonGenomicPos is important here for calculating the genomic location
-                          // of the start codon. We are using the codonGenomicPos as the key in the typography
-                          // elements to maintain the genomic postion of the codon start
-                          const startCodonGenomicLocation = getCodonGenomicLocation(codonGenomicPos);
-                          if (startCodonGenomicLocation !== cdsMin && strand === 1) {
-                              updateCDSLocation(cdsMin, startCodonGenomicLocation, feature, true);
-                          }
-                          if (startCodonGenomicLocation !== cdsMax && strand === -1) {
-                              updateCDSLocation(cdsMax, startCodonGenomicLocation, feature, false);
-                          }
-                      }, children: protein }, codonGenomicPos));
-              }
-              else if (['TAA', 'TAG', 'TGA'].includes(codonSeq)) {
-                  elements.push(jsxRuntime.jsx(material.Typography, { style: { backgroundColor: 'red', color: 'white' }, component: 'span', children: protein }, codonGenomicPos));
-              }
-              else {
-                  elements.push(
-                  // Pass the codonGenomicPos as the key to maintain the genomic position of the codon
-                  jsxRuntime.jsx(material.Typography, { component: 'span', children: protein }, codonGenomicPos));
-              }
-          }
-          return elements;
-      };
-      // Codon position is the index of the start codon in the CDS genomic sequence
-      // Calculate the genomic location of the start codon based on the codon position in the CDS
-      const getCodonGenomicLocation = (codonGenomicPosition) => {
-          const [firstLocation] = cdsLocations;
-          let cdsLen = 0;
-          const sortedCDSLocations = firstLocation.toSorted(({ min: a }, { min: b }) => a - b);
-          // Suppose CDS locations are [{min: 0, max: 10}, {min: 20, max: 30}, {min: 40, max: 50}]
-          // and codonGenomicPosition is 25
-          // ((10 - 0) + (30 - 20) + (50 - 40)) > 25
-          // So, start codon is in (40, 50)
-          // 40 + (25-20) = 45 is the genomic location of the start codon
-          if (strand === 1) {
-              for (const loc of sortedCDSLocations) {
-                  const locLength = loc.max - loc.min;
-                  if (cdsLen + locLength > codonGenomicPosition) {
-                      return loc.min + (codonGenomicPosition - cdsLen);
-                  }
-                  cdsLen += locLength;
-              }
-          }
-          else if (strand === -1) {
-              for (let i = sortedCDSLocations.length - 1; i >= 0; i--) {
-                  const loc = sortedCDSLocations[i];
-                  const locLength = loc.max - loc.min;
-                  if (cdsLen + locLength > codonGenomicPosition) {
-                      return loc.max - (codonGenomicPosition - cdsLen);
-                  }
-                  cdsLen += locLength;
-              }
-          }
-          if (strand === 1) {
-              return cdsMin;
-          }
-          return cdsMax;
-      };
-      const trimTranslationSequence = () => {
-          const sequenceElements = getTranslationSequence();
-          const translationSequence = sequenceElements
-              .map((el) => el.props.children)
-              .join('');
-          if (translationSequence.startsWith('M') &&
-              translationSequence.endsWith('*')) {
-              return;
-          }
-          // NOTE: We are maintaining the genomic location of the codon start as the "key"
-          // in typography elements. See getTranslationSequence function
-          const translSeqCodonStartGenomicPosArr = [];
-          for (const el of sequenceElements) {
-              translSeqCodonStartGenomicPosArr.push({
-                  codonGenomicPos: el.key,
-                  sequenceLetter: el.props.children,
-              });
-          }
-          if (translSeqCodonStartGenomicPosArr.length === 0) {
-              return;
-          }
-          // Trim any sequence before first start codon and after stop codon
-          const startCodonIndex = translationSequence.indexOf('M');
-          const stopCodonIndex = translationSequence.indexOf('*');
-          const startCodonPos = translSeqCodonStartGenomicPosArr[startCodonIndex].codonGenomicPos;
-          const stopCodonPos = translSeqCodonStartGenomicPosArr[stopCodonIndex].codonGenomicPos;
-          if (!startCodonPos || !stopCodonPos) {
-              return;
-          }
-          const startCodonGenomicLoc = getCodonGenomicLocation(startCodonPos);
-          let stopCodonGenomicLoc = getCodonGenomicLocation(stopCodonPos);
-          if (strand === 1) {
-              if (startCodonGenomicLoc > stopCodonGenomicLoc) {
-                  notify('Start codon genomic location should be less than stop codon genomic location', 'error');
-                  return;
-              }
-              let promise;
-              stopCodonGenomicLoc += 3; // move to end of stop codon
-              if (startCodonGenomicLoc !== cdsMin) {
-                  promise = new Promise((resolve) => {
-                      updateCDSLocation(cdsMin, startCodonGenomicLoc, feature, true, () => {
-                          resolve(true);
-                      });
-                  });
-              }
-              if (stopCodonGenomicLoc !== cdsMax) {
-                  if (promise) {
-                      void promise.then(() => {
-                          updateCDSLocation(cdsMax, stopCodonGenomicLoc, feature, false);
-                      });
-                  }
-                  else {
-                      updateCDSLocation(cdsMax, stopCodonGenomicLoc, feature, false);
-                  }
-              }
-          }
-          if (strand === -1) {
-              // reverse strand
-              if (startCodonGenomicLoc < stopCodonGenomicLoc) {
-                  notify('Start codon genomic location should be less than stop codon genomic location', 'error');
-                  return;
-              }
-              let promise;
-              stopCodonGenomicLoc -= 3; // move to end of stop codon
-              if (startCodonGenomicLoc !== cdsMax) {
-                  promise = new Promise((resolve) => {
-                      updateCDSLocation(cdsMax, startCodonGenomicLoc, feature, false, () => {
-                          resolve(true);
-                      });
-                  });
-              }
-              if (stopCodonGenomicLoc !== cdsMin) {
-                  if (promise) {
-                      void promise.then(() => {
-                          updateCDSLocation(cdsMin, stopCodonGenomicLoc, feature, true);
-                      });
-                  }
-                  else {
-                      updateCDSLocation(cdsMin, stopCodonGenomicLoc, feature, true);
-                  }
-              }
-          }
-          notify('Translation sequence trimmed to start and stop codons', 'success');
-      };
-      const onCopyClick = () => {
-          const seqDiv = seqRef.current;
-          if (!seqDiv) {
-              return;
-          }
-          void copyToClipboard(seqDiv);
-      };
-      return (jsxRuntime.jsxs("div", { children: [cdsPresent && (jsxRuntime.jsxs("div", { children: [jsxRuntime.jsxs(material.Accordion, { children: [jsxRuntime.jsx(StyledAccordionSummary$1, { expandIcon: jsxRuntime.jsx(ExpandMoreIcon, { style: { color: 'white' } }), "aria-controls": "panel1-content", id: "panel1-header", children: jsxRuntime.jsx(material.Typography, { component: "span", fontWeight: 'bold', children: "Translation" }) }), jsxRuntime.jsxs(material.AccordionDetails, { children: [jsxRuntime.jsx(SequenceContainer, { children: jsxRuntime.jsx(material.Typography, { component: 'span', ref: seqRef, style: { maxHeight: 120, overflowY: 'scroll' }, children: getTranslationSequence() }) }), jsxRuntime.jsxs("div", { style: {
-                                              marginTop: 10,
-                                              display: 'flex',
-                                              flexDirection: 'row',
-                                              alignItems: 'center',
-                                              gap: 10,
-                                          }, children: [jsxRuntime.jsx(material.Tooltip, { title: "Copy", children: jsxRuntime.jsx("button", { onClick: onCopyClick, style: { border: 'none', background: 'none', padding: 0 }, disabled: changeInProgress, children: jsxRuntime.jsx(ContentCopyIcon, { style: { fontSize: 15 } }) }) }), jsxRuntime.jsx(material.Tooltip, { title: "Trim", children: jsxRuntime.jsx("button", { onClick: trimTranslationSequence, style: { border: 'none', background: 'none', padding: 0 }, disabled: changeInProgress, children: jsxRuntime.jsx(ContentCutIcon, { style: { fontSize: 15 } }) }) })] })] })] }), jsxRuntime.jsxs(material.Grid, { container: true, justifyContent: "center", alignItems: "center", style: { textAlign: 'center', marginTop: 10 }, children: [jsxRuntime.jsx(material.Grid, { size: 1 }), strand === 1 ? (jsxRuntime.jsx(material.Grid, { size: 4, children: jsxRuntime.jsx(StyledTextField, { margin: "dense", variant: "outlined", value: cdsMin + 1, onChangeCommitted: (newLocation) => {
-                                          return updateCDSLocation(cdsMin, newLocation - 1, feature, true);
-                                      }, style: { border: '1px solid black', borderRadius: 5 }, disabled: changeInProgress }) })) : (jsxRuntime.jsx(material.Grid, { size: 4, children: jsxRuntime.jsx(StyledTextField, { margin: "dense", variant: "outlined", value: cdsMax, onChangeCommitted: (newLocation) => {
-                                          return updateCDSLocation(cdsMax, newLocation, feature, false);
-                                      }, style: { border: '1px solid black', borderRadius: 5 }, disabled: changeInProgress }) })), jsxRuntime.jsx(material.Grid, { size: 2, children: jsxRuntime.jsx(material.Typography, { component: 'span', children: "CDS" }) }), strand === 1 ? (jsxRuntime.jsx(material.Grid, { size: 4, children: jsxRuntime.jsx(StyledTextField, { margin: "dense", variant: "outlined", value: cdsMax, onChangeCommitted: (newLocation) => {
-                                          return updateCDSLocation(cdsMax, newLocation, feature, false);
-                                      }, style: { border: '1px solid black', borderRadius: 5 }, disabled: changeInProgress }) })) : (jsxRuntime.jsx(material.Grid, { size: 4, children: jsxRuntime.jsx(StyledTextField, { margin: "dense", variant: "outlined", value: cdsMin + 1, onChangeCommitted: (newLocation) => {
-                                          return updateCDSLocation(cdsMin, newLocation - 1, feature, true);
-                                      }, style: { border: '1px solid black', borderRadius: 5 }, disabled: changeInProgress }) })), jsxRuntime.jsx(material.Grid, { size: 1 })] })] })), jsxRuntime.jsx("div", { style: { marginTop: 5 }, children: transcriptExonParts.map((loc, index) => {
-                      return (jsxRuntime.jsx("div", { children: loc.type === 'exon' && (jsxRuntime.jsxs(material.Grid, { container: true, justifyContent: "center", alignItems: "center", style: { textAlign: 'center' }, children: [jsxRuntime.jsx(material.Grid, { size: 1, children: index !== 0 &&
-                                          getFivePrimeSpliceSite(loc, index).map((site, idx) => (jsxRuntime.jsx(material.Typography, { component: 'span', color: site.color, children: site.spliceSite }, idx))) }), strand === 1 ? (jsxRuntime.jsx(material.Grid, { size: 4, style: { padding: 0 }, children: jsxRuntime.jsx(StyledTextField, { margin: "dense", variant: "outlined", value: loc.min + 1, onChangeCommitted: (newLocation) => {
-                                              return handleExonLocationChange(loc.min, newLocation - 1, feature, true);
-                                          }, disabled: changeInProgress }) })) : (jsxRuntime.jsx(material.Grid, { size: 4, style: { padding: 0 }, children: jsxRuntime.jsx(StyledTextField, { margin: "dense", variant: "outlined", value: loc.max, onChangeCommitted: (newLocation) => {
-                                              return handleExonLocationChange(loc.max, newLocation, feature, false);
-                                          }, disabled: changeInProgress }) })), jsxRuntime.jsx(material.Grid, { size: 2, children: jsxRuntime.jsx(Strand, { strand: feature.strand }) }), strand === 1 ? (jsxRuntime.jsx(material.Grid, { size: 4, style: { padding: 0 }, children: jsxRuntime.jsx(StyledTextField, { margin: "dense", variant: "outlined", value: loc.max, onChangeCommitted: (newLocation) => {
-                                              return handleExonLocationChange(loc.max, newLocation, feature, false);
-                                          }, disabled: changeInProgress }) })) : (jsxRuntime.jsx(material.Grid, { size: 4, style: { padding: 0 }, children: jsxRuntime.jsx(StyledTextField, { margin: "dense", variant: "outlined", value: loc.min + 1, onChangeCommitted: (newLocation) => {
-                                              return handleExonLocationChange(loc.min, newLocation - 1, feature, true);
-                                          }, disabled: changeInProgress }) })), jsxRuntime.jsx(material.Grid, { size: 1, children: index !== transcriptExonParts.length - 1 &&
-                                          getThreePrimeSpliceSite(loc, index).map((site, idx) => (jsxRuntime.jsx(material.Typography, { component: 'span', color: site.color, children: site.spliceSite }, idx))) })] })) }, index));
-                  }) })] }));
+      return (jsxRuntime.jsxs("div", { children: [cdsPresent && (jsxRuntime.jsx("div", { children: jsxRuntime.jsxs(material.Grid, { container: true, justifyContent: "center", alignItems: "center", style: { textAlign: 'center' }, children: [jsxRuntime.jsx(material.Grid, { size: 1 }), strand === 1 ? (jsxRuntime.jsx(material.Grid, { size: 4, children: jsxRuntime.jsx(StyledTextField, { margin: "dense", variant: "outlined", value: cdsMin + 1, onChangeCommitted: (newLocation) => {
+                                      return updateCDSLocation(cdsMin, newLocation - 1, feature, true);
+                                  }, style: { border: '1px solid black', borderRadius: 5 }, disabled: changeInProgress }) })) : (jsxRuntime.jsx(material.Grid, { size: 4, children: jsxRuntime.jsx(StyledTextField, { margin: "dense", variant: "outlined", value: cdsMax, onChangeCommitted: (newLocation) => {
+                                      return updateCDSLocation(cdsMax, newLocation, feature, false);
+                                  }, style: { border: '1px solid black', borderRadius: 5 }, disabled: changeInProgress }) })), jsxRuntime.jsx(material.Grid, { size: 2, children: jsxRuntime.jsx(material.Typography, { component: 'span', children: "CDS" }) }), strand === 1 ? (jsxRuntime.jsx(material.Grid, { size: 4, children: jsxRuntime.jsx(StyledTextField, { margin: "dense", variant: "outlined", value: cdsMax, onChangeCommitted: (newLocation) => {
+                                      return updateCDSLocation(cdsMax, newLocation, feature, false);
+                                  }, style: { border: '1px solid black', borderRadius: 5 }, disabled: changeInProgress }) })) : (jsxRuntime.jsx(material.Grid, { size: 4, children: jsxRuntime.jsx(StyledTextField, { margin: "dense", variant: "outlined", value: cdsMin + 1, onChangeCommitted: (newLocation) => {
+                                      return updateCDSLocation(cdsMin, newLocation - 1, feature, true);
+                                  }, style: { border: '1px solid black', borderRadius: 5 }, disabled: changeInProgress }) })), jsxRuntime.jsx(material.Grid, { size: 1 })] }) })), jsxRuntime.jsxs("div", { style: { marginTop: 5, marginBottom: 10 }, children: [jsxRuntime.jsx("div", { style: { textAlign: 'center' }, children: jsxRuntime.jsx(material.Typography, { children: "Exons" }) }), transcriptExonParts.map((loc, index) => {
+                          return (
+                          // eslint-disable-next-line @eslint-react/no-array-index-key
+                          jsxRuntime.jsx("div", { children: loc.type === 'exon' && (jsxRuntime.jsxs(material.Grid, { container: true, justifyContent: "center", alignItems: "center", style: { textAlign: 'center' }, children: [jsxRuntime.jsx(material.Grid, { size: 1, children: index !== 0 &&
+                                              getFivePrimeSpliceSite(loc, index).map((site, idx) => (jsxRuntime.jsx(material.Typography
+                                              // eslint-disable-next-line @eslint-react/no-array-index-key
+                                              , { component: 'span', color: site.color, children: site.spliceSite }, idx))) }), strand === 1 ? (jsxRuntime.jsx(material.Grid, { size: 4, style: { padding: 0 }, children: jsxRuntime.jsx(StyledTextField, { margin: "dense", variant: "outlined", value: loc.min + 1, onChangeCommitted: (newLocation) => {
+                                                  return handleExonLocationChange(loc.min, newLocation - 1, feature, true);
+                                              }, disabled: changeInProgress }) })) : (jsxRuntime.jsx(material.Grid, { size: 4, style: { padding: 0 }, children: jsxRuntime.jsx(StyledTextField, { margin: "dense", variant: "outlined", value: loc.max, onChangeCommitted: (newLocation) => {
+                                                  return handleExonLocationChange(loc.max, newLocation, feature, false);
+                                              }, disabled: changeInProgress }) })), jsxRuntime.jsx(material.Grid, { size: 2, children: jsxRuntime.jsx(Strand, { strand: feature.strand }) }), strand === 1 ? (jsxRuntime.jsx(material.Grid, { size: 4, style: { padding: 0 }, children: jsxRuntime.jsx(StyledTextField, { margin: "dense", variant: "outlined", value: loc.max, onChangeCommitted: (newLocation) => {
+                                                  return handleExonLocationChange(loc.max, newLocation, feature, false);
+                                              }, disabled: changeInProgress }) })) : (jsxRuntime.jsx(material.Grid, { size: 4, style: { padding: 0 }, children: jsxRuntime.jsx(StyledTextField, { margin: "dense", variant: "outlined", value: loc.min + 1, onChangeCommitted: (newLocation) => {
+                                                  return handleExonLocationChange(loc.min, newLocation - 1, feature, true);
+                                              }, disabled: changeInProgress }) })), jsxRuntime.jsx(material.Grid, { size: 1, children: index !== transcriptExonParts.length - 1 &&
+                                              getThreePrimeSpliceSite(loc, index).map((site, idx) => (jsxRuntime.jsx(material.Typography
+                                              // eslint-disable-next-line @eslint-react/no-array-index-key
+                                              , { component: 'span', color: site.color, children: site.spliceSite }, idx))) })] })) }, index));
+                      })] }), cdsPresent && (jsxRuntime.jsx(Translation, { changeInProgress: changeInProgress, cdsLocations: cdsLocations, refData: refData, strand: strand, updateCDSLocation: updateCDSLocation, cdsMin: cdsMin, cdsMax: cdsMax, feature: feature, session: session }))] }));
   });
 
   const HeaderTableCell = newStyled(material.TableCell)(() => ({
@@ -29957,7 +30434,7 @@
       const { assembly, feature, refName } = model;
       React.useEffect(() => {
           setPanelState(DEFAULT_PANELS);
-          // eslint-disable-next-line react-hooks/exhaustive-deps
+          // eslint-disable-next-line @eslint-react/exhaustive-deps
       }, [feature]);
       const session = util$1.getSession(model);
       const { pluginManager } = util$1.getEnv(session);
@@ -30016,8 +30493,8 @@
           typeName: 'TypeChange',
           changedIds: [featureId],
           featureId,
-          oldType: String(oldType),
-          newType: String(newType),
+          oldType,
+          newType,
           assembly: feature.assemblyId,
       });
       return changeManager.submit(change);
@@ -30113,7 +30590,7 @@
           if (initialValue !== value) {
               setValue(initialValue);
           }
-          // eslint-disable-next-line react-hooks/exhaustive-deps
+          // eslint-disable-next-line @eslint-react/exhaustive-deps
       }, [initialValue]);
       React.useEffect(() => {
           if (blur) {
@@ -30626,11 +31103,28 @@
       const height = apolloRowHeight;
       return [top, left, width, height];
   }
-  function drawHighlight$1(display, ctx, left, top, width, height, selected = false) {
+  function getOverlayColor(display, feature, overlayType) {
       const { theme } = display;
-      ctx.fillStyle = selected
-          ? theme.palette.action.disabled
-          : theme.palette.action.focus;
+      switch (overlayType) {
+          case 'select': {
+              return theme.palette.action.disabled;
+          }
+          case 'hover': {
+              return theme.palette.action.focus;
+          }
+          case 'highlight': {
+              const { attributes } = feature;
+              const colorAttribute = attributes.get('apollo_color');
+              return colorAttribute?.[0];
+          }
+      }
+  }
+  function drawOverlayBox(display, ctx, left, top, width, height, feature, overlayType) {
+      const color = getOverlayColor(display, feature, overlayType);
+      if (!color) {
+          return;
+      }
+      ctx.fillStyle = material.alpha(color, 0.3);
       ctx.fillRect(left, top, width, height);
   }
   /**
@@ -30674,12 +31168,12 @@
       }
       strokeRectInner(ctx, left, top, width, height, theme.palette.text.primary);
       if (isSelectedFeature(feature, selectedFeature)) {
-          drawHighlight$1(display, ctx, left, top, width, height, true);
+          drawOverlay$6(display, ctx, feature, row, block, 'select');
       }
   }
-  function drawHover$6(display, overlayCtx, feature, row, block) {
+  function drawOverlay$6(display, overlayCtx, feature, row, block, overlayType) {
       const [top, left, width, height] = getFeatureBox(display, feature, row, block);
-      drawHighlight$1(display, overlayCtx, left, top, width, height);
+      drawOverlayBox(display, overlayCtx, left, top, width, height, feature, overlayType);
   }
   function drawDragPreview$6(display, overlayCtx, feature, row, block) {
       const { apolloDragging, theme } = display;
@@ -30713,7 +31207,7 @@
   const boxGlyph = {
       draw: draw$6,
       drawDragPreview: drawDragPreview$6,
-      drawHover: drawHover$6,
+      drawOverlay: drawOverlay$6,
       getContextMenuItems: getContextMenuItems$6,
       getLayout: getLayout$5,
       isDraggable: true,
@@ -30762,18 +31256,16 @@
       for (const cdsLocation of thisCDSLocations) {
           drawCDSLocation(display, ctx, cdsLocation, cds.strand, row, block);
       }
-      const { apolloRowHeight, selectedFeature } = display;
+      const { selectedFeature } = display;
       if (isSelectedFeature(cds, selectedFeature)) {
-          const [top, left, width] = getFeatureBox(display, cds, row, block);
-          const height = getRowCount$3() * apolloRowHeight;
-          drawHighlight$1(display, ctx, left, top, width, height, true);
+          drawOverlay$5(display, ctx, cds, row, block, 'select');
       }
   }
-  function drawHover$5(display, overlayCtx, cds, row, block) {
+  function drawOverlay$5(display, overlayCtx, cds, row, block, overlayType) {
       const { apolloRowHeight } = display;
       const [top, left, width] = getFeatureBox(display, cds, row, block);
       const height = getRowCount$3() * apolloRowHeight;
-      drawHighlight$1(display, overlayCtx, left, top, width, height);
+      drawOverlayBox(display, overlayCtx, left, top, width, height, cds, overlayType);
   }
   function getLayout$4(display, feature) {
       return {
@@ -30796,7 +31288,7 @@
   const cdsGlyph = {
       draw: draw$5,
       drawDragPreview: drawDragPreview$5,
-      drawHover: drawHover$5,
+      drawOverlay: drawOverlay$5,
       getContextMenuItems: getContextMenuItems$5,
       getLayout: getLayout$4,
       isDraggable: true,
@@ -30828,16 +31320,16 @@
       }
       strokeRectInner(ctx, left, top, width, height, theme.palette.text.primary);
       if (isSelectedFeature(exon, selectedFeature)) {
-          drawHighlight$1(display, ctx, left, top, width, height, true);
+          drawOverlay$4(display, ctx, exon, row, block, 'select');
       }
   }
-  function drawHover$4(display, overlayCtx, exon, row, block) {
+  function drawOverlay$4(display, overlayCtx, exon, row, block, overlayType) {
       const { apolloRowHeight } = display;
       const [, left, width] = getFeatureBox(display, exon, row, block);
       const height = Math.round(0.6 * apolloRowHeight);
       const halfHeight = Math.round(height / 2);
       const top = Math.round(halfHeight / 2) + row * apolloRowHeight;
-      drawHighlight$1(display, overlayCtx, left, top, width, height);
+      drawOverlayBox(display, overlayCtx, left, top, width, height, exon, overlayType);
   }
   function getLayout$3(display, feature) {
       return {
@@ -30930,7 +31422,7 @@
   const exonGlyph = {
       draw: draw$4,
       drawDragPreview: drawDragPreview$4,
-      drawHover: drawHover$4,
+      drawOverlay: drawOverlay$4,
       getContextMenuItems: getContextMenuItems$4,
       getLayout: getLayout$3,
       isDraggable: true,
@@ -30947,21 +31439,25 @@
       const [top, left, width] = getFeatureBox(display, gene, row, block);
       const height = getRowCount$2(display, gene) * apolloRowHeight;
       if (width > 2) {
-          let selectedColor = configuration.readConfObject(session.getPluginConfiguration(), 'geneBackgroundColor', { featureType: gene.type });
-          selectedColor = material.alpha(theme.palette.background.paper, 0.6);
+          const selectedColor = configuration.readConfObject(session.getPluginConfiguration(), 'geneBackgroundColor', {
+              featureType: gene.type,
+          }) ?? material.alpha(theme.palette.background.paper, 0.6);
           ctx.fillStyle = selectedColor;
           ctx.fillRect(left, top, width, height);
       }
       strokeRectInner(ctx, left, top, width, height, theme.palette.text.primary);
       if (isSelectedFeature(gene, selectedFeature)) {
-          drawHighlight$1(display, ctx, left, top, width, height, true);
+          drawOverlay$3(display, ctx, gene, row, block, 'select', rowInFeature);
       }
   }
-  function drawHover$3(display, ctx, gene, row, block) {
+  function drawOverlay$3(display, ctx, gene, row, block, overlayType, rowInFeature) {
+      if (rowInFeature > 0) {
+          return;
+      }
       const { apolloRowHeight } = display;
       const [top, left, width] = getFeatureBox(display, gene, row, block);
       const height = getRowCount$2(display, gene) * apolloRowHeight;
-      drawHighlight$1(display, ctx, left, top, width, height);
+      drawOverlayBox(display, ctx, left, top, width, height, gene, overlayType);
   }
   function getLayout$2(display, feature) {
       const layout = {
@@ -31004,7 +31500,7 @@
   const geneGlyph$1 = {
       draw: draw$3,
       drawDragPreview: drawDragPreview$3,
-      drawHover: drawHover$3,
+      drawOverlay: drawOverlay$3,
       getContextMenuItems: getContextMenuItems$3,
       getLayout: getLayout$2,
       isDraggable: false,
@@ -31027,14 +31523,14 @@
       strokeRectInner(ctx, left, top, width, height, theme.palette.text.primary);
       boxGlyph.draw(display, ctx, feature, row, 0, block);
       if (isSelectedFeature(feature, selectedFeature)) {
-          drawHighlight$1(display, ctx, left, top, width, height, true);
+          drawOverlay$2(display, ctx, feature, row, block, 'select');
       }
   }
-  function drawHover$2(display, overlayCtx, feature, row, block) {
+  function drawOverlay$2(display, overlayCtx, feature, row, block, overlayType) {
       const { apolloRowHeight } = display;
       const [top, left, width] = getFeatureBox(display, feature, row, block);
       const height = getRowCount$1(display, feature) * apolloRowHeight;
-      drawHighlight$1(display, overlayCtx, left, top, width, height);
+      drawOverlayBox(display, overlayCtx, left, top, width, height, feature, overlayType);
   }
   function getLayout$1(display, feature) {
       const layout = {
@@ -31076,7 +31572,7 @@
   const genericChildGlyph = {
       draw: draw$2,
       drawDragPreview: drawDragPreview$2,
-      drawHover: drawHover$2,
+      drawOverlay: drawOverlay$2,
       getContextMenuItems: getContextMenuItems$2,
       getLayout: getLayout$1,
       isDraggable: true,
@@ -31154,18 +31650,16 @@
   }
   function draw$1(display, ctx, transcript, row, rowInFeature, block) {
       drawTranscriptLine(display, ctx, transcript, row, block);
-      const { apolloRowHeight, selectedFeature } = display;
+      const { selectedFeature } = display;
       if (isSelectedFeature(transcript, selectedFeature)) {
-          const [top, left, width] = getFeatureBox(display, transcript, row, block);
-          const height = apolloRowHeight * getRowCount(display, transcript);
-          drawHighlight$1(display, ctx, left, top, width, height, true);
+          drawOverlay$1(display, ctx, transcript, row, block, 'select');
       }
   }
-  function drawHover$1(display, overlayCtx, transcript, row, block) {
+  function drawOverlay$1(display, overlayCtx, transcript, row, block, overlayType) {
       const { apolloRowHeight } = display;
       const [top, left, width] = getFeatureBox(display, transcript, row, block);
       const height = apolloRowHeight * getRowCount(display, transcript);
-      drawHighlight$1(display, overlayCtx, left, top, width, height);
+      drawOverlayBox(display, overlayCtx, left, top, width, height, transcript, overlayType);
   }
   function getLayout(display, feature) {
       const layout = {
@@ -31220,7 +31714,7 @@
       }
       return layout;
   }
-  function getContextMenuItems$1(display, feature) {
+  function getContextMenuItems$1(display, transcript) {
       const { changeManager, regions, selectedFeature, session } = display;
       const [region] = regions;
       const currentAssemblyId = display.getAssemblyId(region.assemblyName);
@@ -31230,7 +31724,7 @@
               label: 'Open transcript editor',
               onClick: () => {
                   const apolloTranscriptWidget = session.addWidget('ApolloTranscriptDetails', 'apolloTranscriptDetails', {
-                      feature,
+                      feature: transcript,
                       assembly: currentAssemblyId,
                       changeManager,
                       refName: region.refName,
@@ -31250,7 +31744,7 @@
                           doneCallback();
                       },
                       changeManager,
-                      sourceFeature: feature,
+                      sourceFeature: transcript,
                       sourceAssemblyId: currentAssemblyId,
                       selectedFeature,
                       setSelectedFeature: (feature) => {
@@ -31270,7 +31764,7 @@
                           doneCallback();
                       },
                       changeManager,
-                      sourceFeature: feature,
+                      sourceFeature: transcript,
                       sourceAssemblyId: currentAssemblyId,
                       selectedFeature,
                       setSelectedFeature: (feature) => {
@@ -31280,6 +31774,31 @@
               ]);
           },
       });
+      const { children } = transcript;
+      if (!children) {
+          return [];
+      }
+      const cdsChildren = [...children.values()].filter((child) => isCDSFeature(child, session));
+      if (cdsChildren.length === 0) {
+          menuItems.push({
+              label: 'Add coding sequence',
+              onClick: () => {
+                  session.queueDialog((doneCallback) => [
+                      AddCodingSequence,
+                      {
+                          session,
+                          handleClose: () => {
+                              doneCallback();
+                          },
+                          changeManager,
+                          sourceFeature: transcript,
+                          sourceAssemblyId: currentAssemblyId,
+                          refName: region.refName,
+                      },
+                  ]);
+              },
+          });
+      }
       return menuItems;
   }
   // False positive here, none of these functions use "this"
@@ -31289,7 +31808,7 @@
   const transcriptGlyph = {
       draw: draw$1,
       drawDragPreview: drawDragPreview$1,
-      drawHover: drawHover$1,
+      drawOverlay: drawOverlay$1,
       getContextMenuItems: getContextMenuItems$1,
       getLayout,
       isDraggable: false,
@@ -31466,7 +31985,7 @@
           letterUpper === 'C' ||
           letterUpper === 'G' ||
           letterUpper === 'T') {
-          return theme.palette.bases[letterUpper].main.toString();
+          return theme.palette.bases[letterUpper].main;
       }
       return 'lightgray';
   }
@@ -31563,8 +32082,7 @@
               return internetAccounts.find((ia) => configuration.getConf(ia, 'internetAccountId') === internetAccountConfigId);
           },
           get changeManager() {
-              return self.session.apolloDataStore
-                  .changeManager;
+              return self.session.apolloDataStore.changeManager;
           },
           getAssemblyId(assemblyName) {
               const { assemblyManager } = self.session;
@@ -31575,12 +32093,10 @@
               return assembly.name;
           },
           get selectedFeature() {
-              return self.session
-                  .apolloSelectedFeature;
+              return self.session.apolloSelectedFeature;
           },
           get hoveredFeature() {
-              return self.session
-                  .apolloHoveredFeature;
+              return self.session.apolloHoveredFeature;
           },
       }))
           .actions((self) => ({
@@ -31625,8 +32141,11 @@
           const { filteredFeatureTypes, trackMenuItems: superTrackMenuItems } = self;
           return {
               trackMenuItems() {
-                  const { graphical, table, showCheckResults } = self;
-                  return [
+                  const { graphical, table, showCheckResults, session } = self;
+                  const [region] = self.regions;
+                  const { assemblyName } = region;
+                  const backendDriver = session.apolloDataStore.getBackendDriver(assemblyName);
+                  const items = [
                       ...superTrackMenuItems(),
                       {
                           type: 'subMenu',
@@ -31678,7 +32197,7 @@
                       {
                           label: 'Filter features by type',
                           onClick: () => {
-                              const session = self.session;
+                              const { session } = self;
                               self.session.queueDialog((doneCallback) => [
                                   FilterFeatures,
                                   {
@@ -31694,76 +32213,93 @@
                               ]);
                           },
                       },
-                      {
-                          label: 'Export annotations',
-                          icon: Export,
-                          onClick: () => {
-                              const [region] = self.regions;
-                              const { assemblyName } = region;
-                              const assembly = self.getAssemblyId(assemblyName);
-                              if (!assembly) {
-                                  return;
-                              }
-                              const session = self.session;
-                              session.queueDialog((doneCallback) => [
-                                  DownloadGFF3,
-                                  {
-                                      session,
-                                      handleClose: () => {
-                                          doneCallback();
-                                      },
-                                      assembly,
-                                  },
-                              ]);
-                          },
-                      },
-                      {
-                          label: 'View Change Log',
-                          icon: TrackChangesIcon,
-                          onClick: () => {
-                              const [region] = self.regions;
-                              const { assemblyName } = region;
-                              const assembly = self.getAssemblyId(assemblyName);
-                              if (!assembly) {
-                                  return;
-                              }
-                              const session = self.session;
-                              session.queueDialog((doneCallback) => [
-                                  ViewChangeLog,
-                                  {
-                                      session,
-                                      handleClose: () => {
-                                          doneCallback();
-                                      },
-                                      assembly,
-                                  },
-                              ]);
-                          },
-                      },
-                      {
-                          label: 'View Check Results',
-                          icon: FactCheckIcon,
-                          onClick: () => {
-                              const [region] = self.regions;
-                              const { assemblyName } = region;
-                              const assembly = self.getAssemblyId(assemblyName);
-                              if (!assembly) {
-                                  return;
-                              }
-                              const session = self.session;
-                              session.queueDialog((doneCallback) => [
-                                  ViewCheckResults,
-                                  {
-                                      session,
-                                      handleClose: () => {
-                                          doneCallback();
-                                      },
-                                      assembly,
-                                  },
-                              ]);
-                          },
-                      },
                   ];
+                  if (backendDriver instanceof LocalDriver) {
+                      items.push({
+                          label: 'Import annotations',
+                          icon: InputIcon,
+                          onClick: () => {
+                              session.queueDialog((doneCallback) => [
+                                  ImportAnnotations,
+                                  {
+                                      session,
+                                      assemblyName,
+                                      handleClose: () => {
+                                          doneCallback();
+                                      },
+                                  },
+                              ]);
+                          },
+                      });
+                  }
+                  items.push({
+                      label: 'Export annotations',
+                      icon: Export,
+                      onClick: () => {
+                          const [region] = self.regions;
+                          const { assemblyName } = region;
+                          const assembly = self.getAssemblyId(assemblyName);
+                          if (!assembly) {
+                              return;
+                          }
+                          const { session } = self;
+                          session.queueDialog((doneCallback) => [
+                              DownloadGFF3,
+                              {
+                                  session,
+                                  handleClose: () => {
+                                      doneCallback();
+                                  },
+                                  assembly,
+                              },
+                          ]);
+                      },
+                  }, {
+                      label: 'View Change Log',
+                      icon: TrackChangesIcon,
+                      onClick: () => {
+                          const [region] = self.regions;
+                          const { assemblyName } = region;
+                          const assembly = self.getAssemblyId(assemblyName);
+                          if (!assembly) {
+                              return;
+                          }
+                          const { session } = self;
+                          session.queueDialog((doneCallback) => [
+                              ViewChangeLog,
+                              {
+                                  session,
+                                  handleClose: () => {
+                                      doneCallback();
+                                  },
+                                  assembly,
+                              },
+                          ]);
+                      },
+                  }, {
+                      label: 'View Check Results',
+                      icon: FactCheckIcon,
+                      onClick: () => {
+                          const [region] = self.regions;
+                          const { assemblyName } = region;
+                          const assembly = self.getAssemblyId(assemblyName);
+                          if (!assembly) {
+                              return;
+                          }
+                          const { session } = self;
+                          session.queueDialog((doneCallback) => [
+                              ViewCheckResults,
+                              {
+                                  session,
+                                  handleClose: () => {
+                                      doneCallback();
+                                  },
+                                  assembly,
+                              },
+                          ]);
+                      },
+                  });
+                  return items;
               },
           };
       })
@@ -32220,6 +32756,17 @@
                                   .draw(self, ctx, feature, row, rowInFeature, block);
                           }
                       }
+                      for (const [row, layoutRow] of byRow.entries()) {
+                          for (const layoutFeature of layoutRow) {
+                              const { feature, rowInFeature } = layoutFeature;
+                              if (!util$1.doesIntersect2(block.start, block.end, feature.min, feature.max)) {
+                                  continue;
+                              }
+                              self.getGlyph(feature).drawOverlay(
+                              // @ts-expect-error ts doesn't understand mst extension
+                              self, ctx, feature, row, block, 'highlight', rowInFeature);
+                          }
+                      }
                       ctx.restore();
                   }
               }, { name: 'LinearApolloDisplayRenderFeatures' }));
@@ -32487,9 +33034,9 @@
                       if (block.assemblyName === feature.assemblyId &&
                           util$1.doesIntersect2(block.start, block.end, feature.min, feature.max)) {
                           // draw mouseover hovers
-                          glyph.drawHover(
+                          glyph.drawOverlay(
                           // @ts-expect-error ts doesn't understand mst extension
-                          self, ctx, feature, row, block);
+                          self, ctx, feature, row, block, 'hover');
                       }
                       if (apolloDragging) {
                           const { current, start, feature: dragFeature, } = apolloDragging;
@@ -32563,7 +33110,7 @@
       ctx.strokeStyle = theme.palette.text.primary;
       ctx.strokeRect(left, top, width, height);
   }
-  function drawHighlight(ctx, feature, bpPerPx, offsetPx, rowHeight, block, theme, selected = false) {
+  function drawHover(ctx, feature, bpPerPx, offsetPx, rowHeight, block, theme, selected = false) {
       const row = getSeqRow(feature.strand, bpPerPx, block.reversed);
       if (row === undefined) {
           return;
@@ -32614,7 +33161,7 @@
                   drawCDSHighlight(ctx, feature, bpPerPx, offsetPx, rowHeight, block, theme, feature._id === selectedFeature?._id);
               }
               else {
-                  drawHighlight(ctx, feature, bpPerPx, offsetPx, rowHeight, block, theme, feature._id === selectedFeature?._id);
+                  drawHover(ctx, feature, bpPerPx, offsetPx, rowHeight, block, theme, feature._id === selectedFeature?._id);
               }
           }
           ctx.restore();
@@ -32780,13 +33327,28 @@
               return regions;
           },
           regionCannotBeRendered( /* region */) {
-              if (self.lgv && self.lgv.bpPerPx >= 3) {
+              if (self.lgv && self.lgv.bpPerPx > 3) {
                   return 'Zoom in to see sequence';
               }
               return;
           },
       }))
           .views((self) => ({
+          get expandedRegions() {
+              const regions = self.lgv.dynamicBlocks.contentBlocks.map((block) => {
+                  const { assemblyName, end, refName, start } = block;
+                  const { parentRegion } = block;
+                  const expandedStart = Math.round(Math.max(start - 5, parentRegion.start));
+                  const expandedEnd = Math.round(Math.min(end + 5, parentRegion.end));
+                  return {
+                      assemblyName,
+                      refName,
+                      start: expandedStart,
+                      end: expandedEnd,
+                  };
+              });
+              return regions;
+          },
           get apolloInternetAccount() {
               const [region] = self.regions;
               const { internetAccounts } = mobxStateTree.getRoot(self);
@@ -32803,8 +33365,7 @@
               return internetAccounts.find((ia) => configuration.getConf(ia, 'internetAccountId') === internetAccountConfigId);
           },
           get changeManager() {
-              return self.session.apolloDataStore
-                  .changeManager;
+              return self.session.apolloDataStore.changeManager;
           },
           getAssemblyId(assemblyName) {
               const { assemblyManager } = self.session;
@@ -32815,12 +33376,10 @@
               return assembly.name;
           },
           get selectedFeature() {
-              return self.session
-                  .apolloSelectedFeature;
+              return self.session.apolloSelectedFeature;
           },
           get hoveredFeature() {
-              return self.session
-                  .apolloHoveredFeature;
+              return self.session.apolloHoveredFeature;
           },
           get height() {
               const { sequenceRowHeight } = self;
@@ -32903,7 +33462,7 @@
                       return;
                   }
                   if (self.lgv.bpPerPx <= 3) {
-                      void self.session.apolloDataStore.loadRefSeq(self.regions);
+                      void self.session.apolloDataStore.loadRefSeq(self.expandedRegions);
                   }
               }, {
                   name: 'LinearApolloReferenceSequenceDisplayLoadFeatures',
@@ -33032,11 +33591,9 @@
           onUpdate(newForms);
           setExcludedTranscripts(newForms);
       };
-      return (jsxRuntime.jsx(Dialog, { open: true, maxWidth: false, "data-testid": "filter-transcripts-dialog", title: "Filter transcripts by ID", handleClose: handleClose, children: jsxRuntime.jsxs(material.DialogContent, { children: [jsxRuntime.jsx(material.DialogContentText, { children: "Select the alternate transcripts you want to display in the apollo track" }), jsxRuntime.jsx(material.Grid, { container: true, spacing: 2, children: jsxRuntime.jsx(material.Grid, { size: 8, children: jsxRuntime.jsx(material.FormGroup, { children: allTranscripts.map((item) => (
-                              // eslint-disable-next-line react/jsx-key
-                              jsxRuntime.jsx(material.FormControlLabel, { control: jsxRuntime.jsx(material.Checkbox, { checked: !excludedTranscripts.includes(item), onChange: () => {
+      return (jsxRuntime.jsx(Dialog, { open: true, maxWidth: false, "data-testid": "filter-transcripts-dialog", title: "Filter transcripts by ID", handleClose: handleClose, children: jsxRuntime.jsxs(material.DialogContent, { children: [jsxRuntime.jsx(material.DialogContentText, { children: "Select the alternate transcripts you want to display in the apollo track" }), jsxRuntime.jsx(material.Grid, { container: true, spacing: 2, children: jsxRuntime.jsx(material.Grid, { size: 8, children: jsxRuntime.jsx(material.FormGroup, { children: allTranscripts.map((item) => (jsxRuntime.jsx(material.FormControlLabel, { control: jsxRuntime.jsx(material.Checkbox, { checked: !excludedTranscripts.includes(item), onChange: () => {
                                           handleChange(item);
-                                      }, slotProps: { input: { 'aria-label': 'controlled' } } }), label: item }))) }) }) })] }) }));
+                                      }, slotProps: { input: { 'aria-label': 'controlled' } } }), label: item }, item))) }) }) })] }) }));
   });
 
   let forwardFillLight = null;
@@ -33358,7 +33915,7 @@
       overlayCtx.fillStyle = material.alpha(theme.palette.info.main, 0.2);
       overlayCtx.fillRect(rectX, rectY, rectWidth, rectHeight);
   }
-  function drawHover(stateModel, ctx) {
+  function drawOverlay(stateModel, ctx) {
       const { hoveredFeature, apolloRowHeight, filteredTranscripts, lgv, highestRow, session, showFeatureLabels, } = stateModel;
       if (!hoveredFeature) {
           return;
@@ -33781,7 +34338,7 @@
   const geneGlyph = {
       draw,
       drawDragPreview,
-      drawHover,
+      drawOverlay,
       drawTooltip,
       getContextMenuItems,
       getContextMenuItemsForFeature,
@@ -33882,8 +34439,7 @@
               return internetAccounts.find((ia) => configuration.getConf(ia, 'internetAccountId') === internetAccountConfigId);
           },
           get changeManager() {
-              return self.session.apolloDataStore
-                  .changeManager;
+              return self.session.apolloDataStore.changeManager;
           },
           getAssemblyId(assemblyName) {
               const { assemblyManager } = self.session;
@@ -33894,12 +34450,10 @@
               return assembly.name;
           },
           get selectedFeature() {
-              return self.session
-                  .apolloSelectedFeature;
+              return self.session.apolloSelectedFeature;
           },
           get hoveredFeature() {
-              return self.session
-                  .apolloHoveredFeature;
+              return self.session.apolloHoveredFeature;
           },
       }))
           .actions((self) => ({
@@ -34027,7 +34581,7 @@
                       {
                           label: 'Filter features by type',
                           onClick: () => {
-                              const session = self.session;
+                              const { session } = self;
                               self.session.queueDialog((doneCallback) => [
                                   FilterFeatures,
                                   {
@@ -34465,17 +35019,12 @@
               if (!featureTypeOntology) {
                   throw new Error('featureTypeOntology is undefined');
               }
-              let foundFeature;
-              if (self.geneTrackRowNums.includes(row)) {
-                  foundFeature = layoutRow.find((f) => f.feature.type == 'exon' &&
+              const foundFeature = self.geneTrackRowNums.includes(row)
+                  ? layoutRow.find((f) => f.feature.type == 'exon' &&
                       bp >= f.feature.min &&
-                      bp <= f.feature.max);
-                  if (!foundFeature) {
-                      foundFeature = layoutRow.find((f) => bp >= f.feature.min && bp <= f.feature.max);
-                  }
-              }
-              else {
-                  foundFeature = layoutRow.find((f) => {
+                      bp <= f.feature.max) ??
+                      layoutRow.find((f) => bp >= f.feature.min && bp <= f.feature.max)
+                  : layoutRow.find((f) => {
                       const { feature } = f;
                       const featureID = feature.attributes.get('gff_id')?.toString();
                       const isTranscript = featureTypeOntology.isTypeOf(feature.type, 'transcript');
@@ -34497,7 +35046,6 @@
                       }
                       return false;
                   });
-              }
               if (!foundFeature) {
                   return mousePosition;
               }
@@ -34673,7 +35221,7 @@
                   }
                   const glyph = self.getGlyph(hoveredFeature.feature);
                   // draw mouseover hovers
-                  glyph.drawHover(self, ctx);
+                  glyph.drawOverlay(self, ctx);
                   // draw tooltip on hover
                   glyph.drawTooltip(self, ctx);
                   // dragging previews
@@ -34821,26 +35369,32 @@
       const apolloAssembly = apolloSessionModel.apolloDataStore.assemblies.get(assembly.name);
       const refSeq = apolloAssembly?.refSeqs.get(refSeqId);
       const features = refSeq?.getFeatures(region.start, region.end);
-      const getDestinationFeatures = () => {
-          const filteredFeatures = [];
-          for (const f of features ?? []) {
-              if (f.min > region.end || f.max < region.start) {
-                  continue;
-              }
-              // Destination feature should be of type gene
-              if (featureTypeOntology?.isTypeOf(f.type, 'gene')) {
-                  const featureSnapshot = mobxStateTree.getSnapshot(f);
-                  filteredFeatures.push(featureSnapshot);
-              }
-          }
-          return filteredFeatures;
-      };
       React.useEffect(() => {
+          const getDestinationFeatures = () => {
+              const filteredFeatures = [];
+              for (const f of features ?? []) {
+                  if (f.min > region.end || f.max < region.start) {
+                      continue;
+                  }
+                  // Destination feature should be of type gene
+                  if (featureTypeOntology?.isTypeOf(f.type, 'gene')) {
+                      const featureSnapshot = mobxStateTree.getSnapshot(f);
+                      filteredFeatures.push(featureSnapshot);
+                  }
+              }
+              return filteredFeatures;
+          };
           setErrorMessage('');
-          const features = getDestinationFeatures();
-          setDestinationFeatures(features);
-          setSelectedDestinationFeature(features[0]);
-      }, [checkedChildrens, parentFeatureChecked, region]);
+          const destinationFeatures = getDestinationFeatures();
+          setDestinationFeatures(destinationFeatures);
+          setSelectedDestinationFeature(destinationFeatures[0]);
+      }, [
+          checkedChildrens,
+          featureTypeOntology,
+          features,
+          parentFeatureChecked,
+          region,
+      ]);
       const handleParentFeatureCheck = (event) => {
           const isChecked = event.target.checked;
           setParentFeatureChecked(isChecked);
@@ -35081,6 +35635,11 @@
                                   !selectedDestinationFeature), onClick: handleCreateApolloAnnotation, children: "Create" }), jsxRuntime.jsx(material.Button, { variant: "outlined", type: "submit", onClick: handleClose, children: "Cancel" })] }), errorMessage ? (jsxRuntime.jsx(material.DialogContent, { children: jsxRuntime.jsx(material.DialogContentText, { color: "error", children: errorMessage }) })) : null] }));
   }
 
+  // Icon source: https://developers.google.com/identity/branding-guidelines
+  function Apollo(props) {
+      return (jsxRuntime.jsx(material.SvgIcon, { viewBox: "0 0 856 855", style: { fontSize: 18, marginRight: 4 }, ...props, children: jsxRuntime.jsxs("g", { children: [jsxRuntime.jsx("path", { style: { opacity: 0.68, fill: '#AEAEAE' }, d: "M276.7,656.9l85-148h102.9c23.1,0,16.1-16,11.1-25l-134-238.5l85-148l185,315.6c0,0-15-26.3,0,0\n\t\t\tc53,92.9-24,243.9-132,243.9c-6,0-4,0-6.4,0H276.7z" }), jsxRuntime.jsx("polygon", { style: { opacity: 0.85, fill: '#717171' }, points: "49.7,756.9 219.1,756.9 513.7,246.9 425.7,99.9 \t\t" }), jsxRuntime.jsx("polygon", { style: { opacity: 0.85, fill: '#717171' }, points: "630,756.9 806.4,756.9 513.7,246.9 425.1,400.2 \t\t" }), jsxRuntime.jsx("polygon", { style: { fill: '#C6C6C6' }, points: "175.7,657.3 195.6,657.3 277.9,508.9 254.1,508.9 170.6,657.3 \t\t" }), jsxRuntime.jsx("polygon", { style: { fill: '#C6C6C6' }, points: "369.7,657.3 389.6,657.3 471.9,508.9 448.1,508.9 364.6,657.3 \t\t" }), jsxRuntime.jsx("polygon", { style: { fill: '#C6C6C6' }, points: "321.7,657.3 341.6,657.3 423.9,508.9 400.1,508.9 316.6,657.3 \t\t" }), jsxRuntime.jsx("polygon", { style: { fill: '#C6C6C6' }, points: "224.7,657.3 244.6,657.3 326.9,508.9 303.1,508.9 219.6,657.3 \t\t" }), jsxRuntime.jsx("polygon", { style: { fill: '#C6C6C6' }, points: "273.7,657.3 293.6,657.3 375.9,508.9 352.1,508.9 268.6,657.3 \t\t" })] }) }));
+  }
+
   function parseCigar(cigar) {
       const regex = /(\d+)([MIDNSHPX=])/g;
       const result = [];
@@ -35115,8 +35674,21 @@
           getAnnotationFeature(jbrowseFeature, refSeqId) {
               const start = jbrowseFeature.get('start');
               const end = jbrowseFeature.get('end');
-              const strand = jbrowseFeature.get('strand');
               const name = jbrowseFeature.get('name');
+              let strand;
+              const tags = jbrowseFeature.get('tags');
+              const { ts, TS, XS } = tags;
+              for (const tag of [ts, TS, XS]) {
+                  if (!strand && tag) {
+                      if ([1, '1', '+'].includes(tag)) {
+                          strand = 1;
+                      }
+                      else if ([-1, '-1', '-'].includes(tag)) {
+                          strand = -1;
+                      }
+                  }
+              }
+              strand ??= jbrowseFeature.get('strand');
               const cigarData = jbrowseFeature.get('CIGAR');
               const ops = parseCigar(cigarData);
               let position = start;
@@ -35132,9 +35704,7 @@
                       case 'M':
                       case '=':
                       case 'X': {
-                          if (currentExonStart === undefined) {
-                              currentExonStart = position;
-                          }
+                          currentExonStart ??= position;
                           position += len;
                           break;
                       }
@@ -35218,7 +35788,7 @@
                       ...superContextMenuItems(),
                       {
                           label: 'Create Apollo annotation',
-                          icon: AddIcon,
+                          icon: Apollo,
                           onClick: async () => {
                               const backendDriver = session.apolloDataStore.getBackendDriver(region.assemblyName);
                               let refSeqId = region.refName;
@@ -35283,27 +35853,61 @@
   function jbrowseFeatureToAnnotationFeature(feature, refSeqId) {
       return gff3ToAnnotationFeature(simpleFeatureToGFF3Feature(feature, refSeqId));
   }
+  const fieldsToSkip = new Set([
+      'start',
+      'end',
+      'type',
+      'strand',
+      'refName',
+      'subfeatures',
+      'derived_features',
+      'phase',
+      'source',
+      'score',
+      'parent',
+      // From https://github.com/GMOD/jbrowse-components/blob/ab3126374367f43d01038d6d2e86d8db03c4d8d8/packages/core/src/BaseFeatureWidget/BaseFeatureDetail/Attributes.tsx#L12-L24
+      '__jbrowsefmt',
+      'length',
+      'position',
+      'uniqueId',
+      'exonFrames',
+      'parentId',
+      'thickStart',
+      'thickEnd',
+      '_lineHash',
+  ]);
+  const fieldsToRename = {
+      id: 'gff_id',
+      name: 'gff_name',
+      alias: 'gff_alias',
+      target: 'gff_target',
+      gap: 'gff_gap',
+      derives_from: 'gff_derives_from',
+      note: 'gff_note',
+      dbxref: 'gff_dbxref',
+      ontology_term: 'gff_ontology_term',
+      is_circular: 'gff_is_circular',
+  };
   function convertFeatureAttributes(feature) {
       const attributes = {};
-      const defaultFields = new Set([
-          'start',
-          'end',
-          'type',
-          'strand',
-          'refName',
-          'subfeatures',
-          'derived_features',
-          'phase',
-          'source',
-          'score',
-      ]);
-      for (const [key, value] of Object.entries(feature.toJSON())) {
-          if (defaultFields.has(key)) {
+      for (const [originalKey, value] of Object.entries(feature.toJSON())) {
+          if (fieldsToSkip.has(originalKey)) {
               continue;
           }
+          const renamedKey = fieldsToRename[originalKey];
+          const key = renamedKey ?? originalKey;
           attributes[key] = Array.isArray(value) ? value.map(String) : [String(value)];
       }
       return attributes;
+  }
+  function getTopLevelSimpleFeature(feature) {
+      let topLevel = feature;
+      let parent = feature.get('parent');
+      while (parent) {
+          topLevel = parent;
+          parent = parent.get('parent');
+      }
+      return topLevel;
   }
   function annotationFromJBrowseFeature(pluggableElement) {
       if (pluggableElement.name !== 'LinearBasicDisplay') {
@@ -35339,11 +35943,12 @@
                   if (!feature) {
                       return superContextMenuItems();
                   }
+                  const topLevelFeature = getTopLevelSimpleFeature(feature);
                   return [
                       ...superContextMenuItems(),
                       {
                           label: 'Create Apollo annotation',
-                          icon: AddIcon,
+                          icon: Apollo,
                           onClick: async () => {
                               const backendDriver = session.apolloDataStore.getBackendDriver(region.assemblyName);
                               let refSeqId = region.refName;
@@ -35354,7 +35959,7 @@
                                   }
                                   refSeqId = backendRefSeqId;
                               }
-                              const annotationFeature = jbrowseFeatureToAnnotationFeature(feature, refSeqId);
+                              const annotationFeature = jbrowseFeatureToAnnotationFeature(topLevelFeature, refSeqId);
                               session.queueDialog((doneCallback) => [
                                   CreateApolloAnnotation,
                                   {
@@ -35525,7 +36130,7 @@
                               : undefined, menuItems: contextMenuItems })] }))] }));
   });
 
-  const TrackLines = mobxReact.observer(function TrackLines({ model, hrStyle = { margin: 0, top: 0, color: 'black' }, idx = 0, }) {
+  const TrackLines = mobxReact.observer(function TrackLines({ model, hrStyle = { margin: 0, top: 0, color: 'black' }, idx, }) {
       const { apolloRowHeight, highestRow, showFeatureLabels } = model;
       const featureLabelSpacer = showFeatureLabels ? 2 : 1;
       return (jsxRuntime.jsx("div", { style: {
@@ -35597,8 +36202,7 @@
                                           regionNumber: idx,
                                       })?.offsetPx ?? 0) - lgv.offsetPx;
                                       const [feature] = checkResult.featureIds;
-                                      if (!feature ||
-                                          !feature.parent ||
+                                      if (!feature?.parent ||
                                           !looksLikeGene(feature.parent, session)) {
                                           return null;
                                       }
@@ -35866,18 +36470,15 @@
     d: "M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3m3-10H5V5h10z"
   }), 'Save');
 
-  /* eslint-disable @typescript-eslint/no-unsafe-assignment */
   /* eslint-disable @typescript-eslint/no-confusing-void-expression */
   const ApolloJobModel = mobxStateTree.types
       .model('JobsManager', {})
       .views((self) => ({
       get jobStatusWidget() {
           const { widgets } = util$1.getSession(self);
-          let jobStatusWidget = widgets.get('JobsList');
-          if (!jobStatusWidget) {
+          const jobStatusWidget = widgets.get('JobsList') ??
               // @ts-expect-error: addWidget function not detected on the session
-              jobStatusWidget = util$1.getSession(self).addWidget('JobsListWidget', 'JobsList');
-          }
+              util$1.getSession(self).addWidget('JobsListWidget', 'JobsList');
           return jobStatusWidget;
       },
   }))
@@ -36156,19 +36757,15 @@
                       continue;
                   }
                   const { assemblyName, refName } = region;
-                  let assembly = self.assemblies.get(assemblyName);
-                  if (!assembly) {
-                      assembly = self.assemblies.put({ _id: assemblyName, refSeqs: {} });
-                  }
+                  const assembly = self.assemblies.get(assemblyName) ??
+                      self.assemblies.put({ _id: assemblyName, refSeqs: {} });
                   const [firstFeature] = features;
-                  let ref = assembly.refSeqs.get(firstFeature.refSeq);
-                  if (!ref) {
-                      ref = assembly.refSeqs.put({
+                  const ref = assembly.refSeqs.get(firstFeature.refSeq) ??
+                      assembly.refSeqs.put({
                           _id: firstFeature.refSeq,
                           name: refName,
                           features: {},
                       });
-                  }
                   for (const feature of features) {
                       if (!ref.features.has(feature._id)) {
                           ref.features.put(feature);
@@ -36185,22 +36782,151 @@
                   }
                   const { refSeq, seq } = yield backendDriver.getSequence(region);
                   const { assemblyName, end, refName, start } = region;
-                  let assembly = self.assemblies.get(assemblyName);
-                  if (!assembly) {
-                      assembly = self.assemblies.put({ _id: assemblyName, refSeqs: {} });
-                  }
-                  let ref = assembly.refSeqs.get(refSeq);
-                  if (!ref) {
-                      ref = assembly.refSeqs.put({
-                          _id: refSeq,
-                          name: refName,
-                          sequence: [],
-                      });
-                  }
+                  const assembly = self.assemblies.get(assemblyName) ??
+                      self.assemblies.put({ _id: assemblyName, refSeqs: {} });
+                  const ref = assembly.refSeqs.get(refSeq) ??
+                      assembly.refSeqs.put({ _id: refSeq, name: refName, sequence: [] });
                   ref.addSequence({ start, stop: end, sequence: seq });
               }
           }),
       }));
+  }
+
+  function reassignIds(feature) {
+      const newChildren = {};
+      if (feature.children) {
+          for (const child of Object.values(feature.children)) {
+              const newChild = reassignIds(child);
+              newChildren[newChild._id] = newChild;
+          }
+      }
+      return {
+          ...feature,
+          _id: new ObjectID().toHexString(),
+          children: feature.children ? newChildren : undefined,
+      };
+  }
+  function DuplicateFeatureDialog({ assemblyName, changeManager, existingFeature, featureSnapshot, handleClose, }) {
+      const [choice, setChoice] = React.useState('keepExisting');
+      const [errorMessage, setErrorMessage] = React.useState('');
+      const [submitted, setSubmitted] = React.useState(false);
+      const handleSubmit = async () => {
+          setErrorMessage('');
+          setSubmitted(true);
+          try {
+              if (choice === 'useNew') {
+                  const deleteChange = new DeleteFeatureChange({
+                      typeName: 'DeleteFeatureChange',
+                      assembly: assemblyName,
+                      changedIds: [existingFeature._id],
+                      deletedFeature: existingFeature,
+                  });
+                  await changeManager.submit(deleteChange);
+                  const addChange = new AddFeatureChange({
+                      typeName: 'AddFeatureChange',
+                      assembly: assemblyName,
+                      changedIds: [featureSnapshot._id],
+                      addedFeature: featureSnapshot,
+                  });
+                  await changeManager.submit(addChange);
+              }
+              else if (choice === 'keepBoth') {
+                  const newSnapshot = reassignIds(featureSnapshot);
+                  const addChange = new AddFeatureChange({
+                      typeName: 'AddFeatureChange',
+                      assembly: assemblyName,
+                      changedIds: [newSnapshot._id],
+                      addedFeature: newSnapshot,
+                  });
+                  await changeManager.submit(addChange);
+              }
+              handleClose();
+          }
+          catch (error) {
+              setErrorMessage(String(error));
+              setSubmitted(false);
+          }
+      };
+      return (jsxRuntime.jsxs(Dialog, { open: true, title: "Duplicate Feature Detected", handleClose: handleClose, maxWidth: "sm", fullWidth: true, children: [jsxRuntime.jsxs(material.DialogContent, { children: [jsxRuntime.jsxs(material.DialogContentText, { children: ["A feature with ID \u201C", featureSnapshot._id, "\u201D already exists. How would you like to resolve this conflict?"] }), jsxRuntime.jsxs(material.FormControl, { component: "fieldset", sx: { mt: 2 }, children: [jsxRuntime.jsx(material.FormLabel, { component: "legend", children: "Resolution" }), jsxRuntime.jsxs(material.RadioGroup, { value: choice, onChange: (e) => {
+                                      setChoice(e.target.value);
+                                  }, children: [jsxRuntime.jsx(material.FormControlLabel, { value: "keepExisting", control: jsxRuntime.jsx(material.Radio, {}), label: "Keep the existing feature" }), jsxRuntime.jsx(material.FormControlLabel, { value: "useNew", control: jsxRuntime.jsx(material.Radio, {}), label: "Replace with the new feature" }), jsxRuntime.jsx(material.FormControlLabel, { value: "keepBoth", control: jsxRuntime.jsx(material.Radio, {}), label: "Keep both (assign new IDs to the incoming feature)" })] })] }), errorMessage ? (jsxRuntime.jsx(material.DialogContentText, { color: "error", sx: { mt: 1 }, children: errorMessage })) : null] }), jsxRuntime.jsxs(material.DialogActions, { children: [jsxRuntime.jsx(material.Button, { variant: "contained", onClick: handleSubmit, disabled: submitted, children: "Confirm" }), jsxRuntime.jsx(material.Button, { onClick: handleClose, disabled: submitted, children: "Cancel" })] })] }));
+  }
+
+  function fromUrlSafeBase64(urlSafeBase64) {
+      let base64 = urlSafeBase64.replaceAll('-', '+').replaceAll('_', '/');
+      const pad = base64.length % 4;
+      if (pad) {
+          base64 += '='.repeat(4 - pad);
+      }
+      return base64;
+  }
+  // Base64 decode + decompress
+  async function decompress(encoded) {
+      const binaryString = atob(encoded);
+      // eslint-disable-next-line unicorn/prefer-code-point
+      const bytes = Uint8Array.from(binaryString, (char) => char.charCodeAt(0));
+      const stream = new Blob([bytes]).stream();
+      const decompressionStream = new DecompressionStream('gzip');
+      const decompressedStream = stream.pipeThrough(decompressionStream);
+      const response = new Response(decompressedStream);
+      const decompressed = await response.arrayBuffer();
+      return JSON.parse(new TextDecoder().decode(decompressed));
+  }
+  async function handleApolloFeaturesUrlParam(encodedFeatures, apolloDataStore, assemblyManager, session) {
+      const base64 = fromUrlSafeBase64(encodedFeatures);
+      const decompressed = await decompress(base64);
+      const featuresData = decompressed;
+      for (const [assemblyName, featureSnapshots] of Object.entries(featuresData)) {
+          const backendDriver = apolloDataStore.getBackendDriver(assemblyName);
+          if (!(backendDriver instanceof LocalDriver)) {
+              continue;
+          }
+          const assembly = (await assemblyManager.waitForAssembly(assemblyName));
+          if (!assembly) {
+              throw new Error(`Assembly not found: "${assemblyName}"`);
+          }
+          const { regions } = assembly;
+          if (!regions) {
+              throw new Error(`Assembly not found: "${assemblyName}"`);
+          }
+          const refNames = regions.map((r) => r.refName);
+          const db = await openDb(assemblyName, refNames);
+          for (const featureSnapshot of featureSnapshots) {
+              const storeName = `features-${featureSnapshot.refSeq}`;
+              const existing = (await db.get(storeName, featureSnapshot._id));
+              if (existing === undefined) {
+                  const change = new AddFeatureChange({
+                      typeName: 'AddFeatureChange',
+                      assembly: assemblyName,
+                      changedIds: [featureSnapshot._id],
+                      addedFeature: featureSnapshot,
+                  });
+                  await apolloDataStore.changeManager.submit(change);
+              }
+              else {
+                  // get rid of undefined values in JSON
+                  // eslint-disable-next-line unicorn/prefer-structured-clone
+                  const existingFeature = JSON.parse(JSON.stringify(existing));
+                  if (!equal(featureSnapshot, existingFeature)) {
+                      await new Promise((resolve) => {
+                          session.queueDialog((doneCallback) => [
+                              DuplicateFeatureDialog,
+                              {
+                                  featureSnapshot,
+                                  existingFeature,
+                                  assemblyName,
+                                  changeManager: apolloDataStore.changeManager,
+                                  handleClose: () => {
+                                      doneCallback();
+                                      resolve();
+                                  },
+                              },
+                          ]);
+                      });
+                  }
+              }
+          }
+      }
   }
 
   /* eslint-disable @typescript-eslint/no-unnecessary-condition */
@@ -36288,8 +37014,7 @@
                       for (const block of dynamicBlocks.contentBlocks) {
                           const { assemblyName, end, refName, start } = block;
                           const assembly = self.apolloDataStore.assemblies.get(assemblyName);
-                          if (assembly &&
-                              assembly.backendDriverType === 'CollaborationServerDriver') {
+                          if (assembly?.backendDriverType === 'CollaborationServerDriver') {
                               locations.push({ assemblyName, refName, start, end });
                           }
                       }
@@ -36348,8 +37073,8 @@
                           for (const block of dynamicBlocks.contentBlocks) {
                               const { assemblyName, end, refName, start } = block;
                               const assembly = self.apolloDataStore.assemblies.get(assemblyName);
-                              if (assembly &&
-                                  assembly.backendDriverType === 'CollaborationServerDriver') {
+                              if (assembly?.backendDriverType ===
+                                  'CollaborationServerDriver') {
                                   locations.push({ assemblyName, refName, start, end });
                               }
                           }
@@ -36470,20 +37195,52 @@
               self.abortController.abort(new DOMException('Clean up Apollo session', 'AbortError'));
           },
       }))
+          .actions((self) => ({
+          async afterCreate() {
+              if (util$1.isElectron) {
+                  return;
+              }
+              const url = new URL(globalThis.location.href);
+              const apolloFeatures = url.searchParams.get('apolloFeatures');
+              if (!apolloFeatures) {
+                  return;
+              }
+              const { assemblyManager } = self;
+              await handleApolloFeaturesUrlParam(apolloFeatures, self.apolloDataStore, assemblyManager, self);
+              await new Promise((resolve) => setTimeout(resolve, 2000));
+              const updatedURL = new URL(globalThis.location.href);
+              updatedURL.searchParams.delete('apolloFeatures');
+              globalThis.history.replaceState(null, '', updatedURL.toString());
+          },
+          afterAttach() {
+              mobxStateTree.addDisposer(self, mobx.autorun((reaction) => {
+                  const { focusedViewId, activeWidgets } = self;
+                  if (!(focusedViewId && activeWidgets)) {
+                      return;
+                  }
+                  const trackSelector = activeWidgets.get('hierarchicalTrackSelector');
+                  // @ts-expect-error Don't have type for track selector
+                  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+                  trackSelector?.setView(focusedViewId);
+                  reaction.dispose();
+              }));
+          },
+      }))
           .views((self) => {
-          const superTrackActionMenuItems = self.getTrackActionMenuItems;
+          const superTrackActions = self
+              .getTrackActions;
           return {
-              getTrackActionMenuItems(conf) {
+              getTrackActions(conf) {
                   if (conf.type === 'ApolloTrack' ||
                       conf.type === 'ReferenceSequenceTrack') {
-                      return superTrackActionMenuItems?.(conf);
+                      return superTrackActions?.(conf);
                   }
                   const trackId = configuration.readConfObject(conf, 'trackId');
                   const sessionTrackIdentifier = '-sessionTrack';
                   const isSessionTrack = trackId.endsWith(sessionTrackIdentifier);
                   return isSessionTrack
                       ? [
-                          ...(superTrackActionMenuItems?.(conf) ?? []),
+                          ...(superTrackActions?.(conf) ?? []),
                           {
                               label: 'Save track to Apollo',
                               onClick: async () => {
@@ -36532,7 +37289,7 @@
                           },
                       ]
                       : [
-                          ...(superTrackActionMenuItems?.(conf) ?? []),
+                          ...(superTrackActions?.(conf) ?? []),
                           {
                               label: 'Remove track from Apollo',
                               onClick: async () => {
@@ -36599,7 +37356,6 @@
   }
 
   /* eslint-disable @typescript-eslint/unbound-method */
-  /* eslint-disable @typescript-eslint/no-unnecessary-condition */
   /* eslint-disable @typescript-eslint/no-misused-promises */
   /* eslint-disable @typescript-eslint/no-explicit-any */
   function isApolloMessageData(data) {
@@ -36743,6 +37499,37 @@
           });
           pluginManager.addToExtensionPoint('Core-extendPluggableElement', annotationFromPileup);
           pluginManager.addToExtensionPoint('Core-extendPluggableElement', annotationFromJBrowseFeature);
+          pluginManager.addToExtensionPoint('Core-preProcessTrackConfig', (snap) => {
+              if (snap.type !== 'ReferenceSequenceTrack') {
+                  return snap;
+              }
+              const displays = snap.displays ?? [];
+              const apolloDisplayIdx = displays.findIndex((d) => d.type === 'LinearApolloReferenceSequenceDisplay');
+              if (apolloDisplayIdx === 0) {
+                  return snap;
+              }
+              if (apolloDisplayIdx === -1) {
+                  return {
+                      ...snap,
+                      displays: [
+                          {
+                              type: 'LinearApolloReferenceSequenceDisplay',
+                              displayId: `${snap.trackId}-LinearApolloReferenceSequenceDisplay`,
+                          },
+                          ...displays,
+                      ],
+                  };
+              }
+              const reorderedDisplays = displays.toSpliced(apolloDisplayIdx, 1);
+              reorderedDisplays.unshift({
+                  type: 'LinearApolloReferenceSequenceDisplay',
+                  displayId: `${snap.trackId}-LinearApolloReferenceSequenceDisplay`,
+              });
+              return {
+                  ...snap,
+                  displays: reorderedDisplays,
+              };
+          });
           pluginManager.addToExtensionPoint('LinearGenomeView-searchResultSelected', (_, props) => {
               const { session, result } = props;
               const trackId = result.getTrackId();
@@ -36756,10 +37543,10 @@
           });
           if (!inWebWorker) {
               pluginManager.addToExtensionPoint('Core-extendWorker', (handle) => {
-                  if (!('on' in handle && handle.on)) {
+                  if (!('on' in handle.client && handle.client.on)) {
                       return handle;
                   }
-                  handle.on('apollo', async (event) => {
+                  handle.client.on('apollo', async (event) => {
                       if (!isApolloMessageData(event)) {
                           return;
                       }
@@ -36777,7 +37564,7 @@
                                   break;
                               }
                               const { seq: sequence } = await backendDriver.getSequence(region);
-                              handle.workers[0].postMessage({
+                              handle.worker.postMessage({
                                   apollo,
                                   messageId,
                                   sequence,
@@ -36795,7 +37582,7 @@
                                   break;
                               }
                               const regions = await backendDriver.getRegions(assembly);
-                              handle.workers[0].postMessage({
+                              handle.worker.postMessage({
                                   apollo,
                                   messageId,
                                   regions,
@@ -36813,7 +37600,7 @@
                                   break;
                               }
                               const refNameAliases = await backendDriver.getRefNameAliases(assembly);
-                              handle.workers[0].postMessage({
+                              handle.worker.postMessage({
                                   apollo,
                                   messageId,
                                   refNameAliases,
