@@ -7115,7 +7115,7 @@
     d: "M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6z"
   }), 'Add');
 
-  var version = "1.1.0";
+  var version = "1.1.1";
 
   const ApolloConfigSchema = configuration.ConfigurationSchema('ApolloInternetAccount', {
       baseURL: {
@@ -29815,7 +29815,15 @@
           }
           // Trim any sequence before first start codon and after stop codon
           const startCodonIndex = proteinSequence.indexOf('M');
-          const stopCodonIndex = proteinSequence.lastIndexOf('*');
+          if (startCodonIndex === -1) {
+              notify('Start codon not found', 'error');
+              return;
+          }
+          const stopCodonIndex = proteinSequence.indexOf('*', startCodonIndex);
+          if (stopCodonIndex === -1) {
+              notify('Stop codon not found', 'error');
+              return;
+          }
           const startCodonPos = startCodonIndex * 3;
           const stopCodonPos = stopCodonIndex * 3;
           const startCodonGenomicLoc = getCodonGenomicLocation(startCodonPos);
@@ -35368,7 +35376,7 @@
       const [selectedDestinationFeature, setSelectedDestinationFeature] = React.useState();
       const apolloAssembly = apolloSessionModel.apolloDataStore.assemblies.get(assembly.name);
       const refSeq = apolloAssembly?.refSeqs.get(refSeqId);
-      const features = refSeq?.getFeatures(region.start, region.end);
+      const features = React.useMemo(() => refSeq?.getFeatures(region.start, region.end), [refSeq, region.start, region.end]);
       React.useEffect(() => {
           const getDestinationFeatures = () => {
               const filteredFeatures = [];
